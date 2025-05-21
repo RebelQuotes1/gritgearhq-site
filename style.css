@@ -1,0 +1,41 @@
+
+body {
+    background: #111;
+    color: #eee;
+    font-family: sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+header, footer {
+    margin-bottom: 20px;
+}
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.grid div, .columns div {
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 200px;
+}
+.gallery img {
+    max-width: 200px;
+    margin: 10px;
+}
+.columns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+}
+button {
+    padding: 10px 20px;
+    background: #444;
+    color: white;
+    border: none;
+}
