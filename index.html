@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>GRIT GEAR HQ</h1>
+    <p>Rough Gear for Rougher Times</p>
+  </header>
+
+  <section class="raffle">
+    <h2>🔥 Enter to Win a Bug-Out Mystery Box!</h2>
+    <button onclick="alert('You're in. Hope you survive.')">Enter Now</button>
+  </section>
+
+  <section class="countdown">
+    <h3>Doomsday Countdown</h3>
+    <div id="doomsday-timer">00:00:00</div>
+  </section>
+
+  <section class="featured">
+    <h3>🛠 Gear of the Day</h3>
+    <div id="gear-of-day"></div>
+  </section>
+
+  <section class="tip">
+    <h3>⚠️ Survival Tip of the Day</h3>
+    <div id="daily-tip"></div>
+  </section>
+
+  <section class="quotes">
+    <h3>💬 Rotating Quotes & Jokes</h3>
+    <div id="rotating-quotes"></div>
+  </section>
+
+  <section class="nav-buttons">
+    <a href="store.html">Visit Store</a>
+    <a href="blog.html">Read the Blog</a>
+    <a href="grittest.html">Take the Grit Test</a>
+    <a href="books.html">Books</a>
+  </section>
+
+  <section class="comments">
+    <h3>🗣 Leave a Comment</h3>
+    <textarea id="comment-box" placeholder="Leave your mark..."></textarea>
+    <button onclick="postComment()">Post</button>
+    <div id="comment-section"></div>
+  </section>
+
+  <footer>
+    <p>© Serpico, 2024 – Stay gritty.</p>
+    <a href="privacy.html">Privacy</a> | 
+    <a href="terms.html">Terms</a> | 
+    <a href="affiliate.html">Affiliate Disclosure</a>
+    <button id="muteToggle">🔊 Mute Wind</button>
+  </footer>
+
+  <audio id="windAudio" loop autoplay>
+    <source src="wind.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
