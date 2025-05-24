@@ -1,0 +1,86 @@
+
+body {
+  background-color: #111;
+  color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #222;
+  color: #ffcc00;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ccc;
+}
+.navbar nav a:hover {
+  color: #fff;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.container {
+  padding: 30px;
+}
+.hero {
+  text-align: center;
+  padding: 40px 0;
+  background: #1a1a1a;
+  border-radius: 8px;
+}
+.hero h1 {
+  color: #ffcc00;
+}
+button {
+  background-color: #444;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #555;
+}
+.highlight {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+  gap: 20px;
+}
+.countdown-box, .gear-box {
+  background: #222;
+  padding: 20px;
+  flex: 1;
+  border-radius: 8px;
+}
+.extra {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #101010;
+  color: #888;
+  margin-top: 40px;
+}
+.footer-links a {
+  color: #888;
+  margin: 0 8px;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  color: #ccc;
+}

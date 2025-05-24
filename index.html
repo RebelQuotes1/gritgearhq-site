@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ | Survival Gear Store</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🛡️ GRIT GEAR HQ</div>
+    <nav>
+      <a href="store.html">Store</a>
+      <a href="blog.html">Blog</a>
+      <a href="grit-test.html">Grit Test</a>
+      <a href="books.html">Books</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Elite Survival Gear for Dangerous Times</h1>
+      <p>Tested tools. No-nonsense advice. Built for grit.</p>
+      <button onclick="alert('You are now entered.')">🔥 Enter the Bug-Out Mystery Box Raffle</button>
+    </section>
+
+    <section class="highlight">
+      <div class="countdown-box">
+        <h2>Doomsday Clock</h2>
+        <p id="doomsday-timer">00:00:00</p>
+      </div>
+      <div class="gear-box">
+        <h2>Gear of the Day</h2>
+        <div id="gear-of-day"></div>
+      </div>
+    </section>
+
+    <section class="extra">
+      <h2>Survival Tip of the Day</h2>
+      <p id="daily-tip"></p>
+      <h2>Rotating Quote</h2>
+      <p id="rotating-quotes"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Serpico, 2024 – Grit Gear HQ</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a> | 
+      <a href="terms.html">Terms</a> | 
+      <a href="affiliate.html">Affiliate Disclosure</a>
+    </div>
+    <button id="muteToggle">🔊 Mute Wind</button>
+  </footer>
+
+  <audio id="windAudio" loop autoplay>
+    <source src="wind.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
