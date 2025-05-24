@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ | Survival Gear Store</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script defer src="script.js"></script>
+  <style>
+    .featured-book {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 40px;
+      color: #ccc;
+    }
+    .featured-book h2 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    .featured-book p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .featured-book a {
+      color: #4af;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .featured-book a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="navbar" style="background-color:#111; border-bottom: 1px solid #333;">
+
+    <div class="logo">🛡️ <span>GRIT GEAR HQ</span></div>
+    <nav>
+      <a href="store.html">Store</a>
+      <a href="blog.html">Blog</a>
+      <a href="grit-test.html">Grit Test</a>
+      <a href="books.html">Books</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero-bg" style="background-image: url('hero-outdoor.jpg'); background-size: cover; background-position: center; padding: 100px 20px; border-radius: 12px; text-align: center; color: #fff;">
+      <div class="overlay" style="background: rgba(0,0,0,0.5); padding: 40px; border-radius: 10px;">
+        <h1 style="font-size: 2.8rem; color: #ffcc00;">Elite Survival Gear for Dangerous Times</h1>
+        <p style="font-size: 1.1rem;">Tested tools. No-nonsense advice. Built for grit.</p>
+        <button style="margin-top: 20px;" onclick="alert('You are now entered.')">🔥 Enter the Bug-Out Mystery Box Raffle</button>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="countdown-box">
+        <h2>☢️ Doomsday Clock</h2>
+        <p id="doomsday-timer">00:00:00</p>
+      </div>
+      <div class="gear-box">
+        <h2>🛠️ Gear of the Day</h2>
+        <div id="gear-of-day"></div>
+      </div>
+    </section>
+
+    <section class="extra">
+      <h2>🧭 Survival Tip of the Day</h2>
+      <p id="daily-tip"></p>
+      <h2>💀 Rotating Quote</h2>
+      <p id="rotating-quotes"></p>
+    </section>
+
+    
+    <section class="featured-book" style="display: flex; align-items: flex-start; gap: 20px;">
+      <img src="unfuck-book-thumb.jpg" alt="How to Unf*ck Your Life Book Cover" style="width: 120px; height: auto; border-radius: 6px; border: 1px solid #444;">
+      <div>
+
+      <h2>📘 Featured Book: How to Unf*ck Your Life</h2>
+      <p><strong>Author:</strong> Serpico</p>
+      <p>A raw, hilarious, and brutally honest guide to rebuilding your life from the ground up. No fluff. No coddling. Just real tools for real people.</p>
+      <p><em>“Read it in one sitting — then read it again with a notebook.” ★★★★★</em></p>
+      <p><em>“Feels like a slap and a hug at the same time. Exactly what I needed.” ★★★★☆</em></p>
+      <a href="https://www.amazon.com/dp/B0CW8PRG1D?tag=dailygritquot-20" target="_blank">Buy on Amazon</a>
+    
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Grit Gear HQ</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a> | 
+      <a href="terms.html">Terms</a> | 
+      <a href="affiliate.html">Affiliate Disclosure</a>
+    </div>
+    <button id="muteToggle">🔊 Mute Wind</button>
+  </footer>
+
+  <audio id="windAudio" loop autoplay>
+    <source src="wind.mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
