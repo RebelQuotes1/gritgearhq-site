@@ -1,68 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Grit Gear HQ</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       background-color: #111;
       color: #eee;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      padding: 20px;
+      line-height: 1.6;
     }
+
     .header {
       text-align: center;
-      padding: 30px 10px;
     }
-    .header h1 {
-      font-size: 2.5em;
-      color: #fff;
-    }
-    .header p {
-      color: #bbb;
-      font-style: italic;
-    }
+
     .nav {
+      margin: 30px 0;
       text-align: center;
-      margin: 20px 0;
     }
+
     .nav a {
-      color: #00b7ff;
+      margin: 0 10px;
+      color: orange;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
     }
-    .featured {
-      text-align: center;
-      padding: 40px 10px;
-    }
-    .featured h2 {
-      font-size: 1.8em;
-    }
-    .gear-box {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin-top: 30px;
-    }
-    .gear-item {
-      text-align: center;
-      max-width: 220px;
-    }
-    .gear-item img {
-      width: 100%;
+
+    .nav-button {
+      display: inline-block;
+      background-color: #333;
+      color: orange;
+      font-weight: bold;
+      padding: 12px 20px;
       border-radius: 8px;
+      text-decoration: none;
+      margin: 10px auto;
+      text-align: center;
+      box-shadow: 0 0 5px #000;
     }
-    .gear-item h3 {
-      margin: 10px 0 5px;
-    }
-    .gear-item p {
-      font-size: 0.9em;
-      color: #aaa;
-    }
+
     .footer {
       text-align: center;
       padding: 20px;
@@ -72,52 +51,27 @@
   </style>
 </head>
 <body>
-
   <div class="header">
-    <h1>Welcome to Grit Gear HQ</h1>
-    <p>Rough Gear for Rougher Times</p>
-    <div class="nav">
-      <a href="store.html">Store</a> | 
-      <a href="books.html" style="
-  display: inline-block;
-  background-color: #333;
-  color: orange;
-  font-weight: bold;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin: 10px auto;
-  text-align: center;
-  box-shadow: 0 0 5px #000;
-">📚 Grit Gear Books</a>
-
-      <a href="blog.html">Blog</a> |
-      <a href="grit-test.html">Grit Test</a> |
-      <a href="gear.html">Gear</a> |
-      <a href="raffle.html">Raffle</a> |
-      <a href="privacy.html">Privacy Policy</a>
-    </div>
+    <h1>🛒 Grit Gear Store</h1>
+    <p>Handpicked survival tools & badass gear</p>
   </div>
 
-  <div class="featured">
-    <h2>🔥 Featured Survival Gear</h2>
-    <div class="gear-box">
-      <div class="gear-item">
-        <img src="flashlight.jpg" alt="Flashlight">
-        <h3>PillTac</h3>
-        <p>Tactical Flashlight – Multi-mode, compact, built for chaos.</p>
-      </div>
-      <div class="gear-item">
-        <img src="radio.jpg" alt="Radio">
-        <h3>Emergency Radio</h3>
-        <p>Solar, hand-crank, AM/FM/NOAA compatible.</p>
-      </div>
-    </div>
+  <div class="nav">
+    <a href="store.html">Store</a> |
+    <a href="books.html" class="nav-button">📚 Grit Gear Books</a>
+  </div>
+
+  <div class="nav">
+    <a href="blog.html">Blog</a> |
+    <a href="grit-test.html">Grit Test</a> |
+    <a href="gear.html">Gear</a> |
+    <a href="raffle.html">Raffle</a> |
+    <a href="privacy.html">Privacy Policy</a>
   </div>
 
   <div class="footer">
-    <p>© 2024 Serpico | Grit Gear HQ | Read up. Get dangerous.</p>
+    &copy; Grit Gear HQ<br />
+    Built for survivors, rebels, and the rough road ahead.
   </div>
-
 </body>
 </html>
