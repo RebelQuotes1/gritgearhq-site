@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0e0e0e;
+      color: #ccc;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background-color: #111;
+      border-bottom: 1px solid #333;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+    nav a {
+      color: #ccc;
+      margin-left: 16px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .header-forest {
+      background-image: url('forest-header-clean.png');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .header-forest h1 {
+      font-size: 2.6rem;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    .header-forest p {
+      font-size: 1.1rem;
+      color: #eee;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #888;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .section-box {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .featured-book {
+      display: flex;
+      gap: 20px;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .featured-book img {
+      width: 100px;
+      height: auto;
+      border: 1px solid #444;
+      border-radius: 6px;
+    }
+    .featured-book a {
+      color: #4af;
+      text-decoration: none;
+    }
+    .featured-book a:hover {
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      color: #666;
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🛡️ GRIT GEAR HQ</div>
+    <nav>
+      <a href="store.html">Store</a>
+      <a href="blog.html">Blog</a>
+      <a href="grit-test.html">Grit Test</a>
+      <a href="books.html">Books</a>
+    </nav>
+  </header>
+
+  <section class="header-forest">
+    <h1>Elite Survival Gear for Dangerous Times</h1>
+    <p>Tested tools. No-nonsense advice. Built for grit.</p>
+    <button class="btn" onclick="alert('You are now entered.')">🔥 Enter the Bug-Out Mystery Box Raffle</button>
+  </section>
+
+  <div class="section">
+    <div class="section-box">
+      <h2>☢️ Doomsday Clock</h2>
+      <p id="doomsday-timer">00:00:00</p>
+    </div>
+
+    <div class="section-box">
+      <h2>🛠️ Gear of the Day</h2>
+      <div id="gear-of-day"></div>
+    </div>
+
+    <div class="section-box">
+      <h2>🧭 Survival Tip of the Day</h2>
+      <p id="daily-tip">Don't rely on GPS. Learn to read a map.</p>
+      <h2>💀 Rotating Quote</h2>
+      <p id="rotating-quotes">"In the midst of chaos, there is also opportunity." — Sun Tzu</p>
+    </div>
+
+    <div class="featured-book">
+      <img src="unfuck-book-thumb.jpg" alt="How to Unf*ck Your Life">
+      <div>
+        <h2>📘 Featured Book: How to Unf*ck Your Life</h2>
+        <p><strong>Author:</strong> Serpico</p>
+        <p>A raw, hilarious, and brutally honest guide to rebuilding your life from the ground up.</p>
+        <p><em>“Read it in one sitting — then read it again with a notebook.” ★★★★★</em></p>
+        <p><em>“Feels like a slap and a hug at the same time. Exactly what I needed.” ★★★★☆</em></p>
+        <a href="https://www.amazon.com/dp/B0CW8PRG1D?tag=dailygritquot-20" target="_blank">Buy on Amazon</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2024 Grit Gear HQ</p>
+    <a href="privacy.html">Privacy</a> | 
+    <a href="terms.html">Terms</a> | 
+    <a href="affiliate.html">Affiliate Disclosure</a>
+  </footer>
+</body>
+</html>
