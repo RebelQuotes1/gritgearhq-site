@@ -1,29 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<header class="site-header">
-  <img src="grit_gear_header.png" alt="Grit Gear HQ banner" style="width:100%; display:block;" />
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grit Gear HQ</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #111;
+        color: #eee;
+        font-family: 'Segoe UI', sans-serif;
+      }
 
-<body>
+      .site-header img {
+        width: 100%;
+        display: block;
+      }
 
-<div class="forest-header">
-    <div class="forest-header-content">
-        <h1>Elite Survival Gear for Dangerous Times</h1>
-        <p>Tested tools. No-nonsense advice. Built for grit.</p>
-        <button onclick="location.href='raffle.html'">🎯 Enter the Bug-Out Mystery Box Raffle</button>
-    </div>
-</div>
+      .nav-bar {
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 15px 0;
+        font-size: 1.1em;
+      }
 
-<main>
-    <section class="featured-book" style="text-align:center; padding: 40px 0;">
-        <img src="unfuck-book-thumb.jpg" alt="How to Unf*ck Your Life Book">
+      .nav-bar a {
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      .nav-bar a:hover {
+        color: #fff;
+      }
+
+      .featured-book {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #1a1a1a;
+      }
+
+      .featured-book img {
+        width: 150px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        box-shadow: 0 0 10px #000;
+      }
+
+      .featured-book h2 {
+        font-size: 2em;
+        color: #ffcc00;
+        margin-bottom: 10px;
+      }
+
+      .stars {
+        font-size: 1.5em;
+        color: #ffcc00;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <img src="grit_gear_header.png" alt="Grit Gear HQ Banner" />
+    </header>
+
+    <nav class="nav-bar">
+      <a href="store.html">Store</a>
+      <a href="blog.html">Blog</a>
+      <a href="grit-test.html">Grit Test</a>
+      <a href="books.html">Books</a>
+    </nav>
+
+    <main>
+      <section class="featured-book">
+        <img src="unfuck-book-thumb.jpg" alt="How to Unf*ck Your Life Book" />
         <h2>Featured Book</h2>
         <p><strong>How to Unf*ck Your Life</strong> by Serpico</p>
         <p class="stars">★★★★☆</p>
         <p>A no-BS guide to resetting your life, reclaiming your power, and getting out of your own way.</p>
-    </section>
-</main>
-
-</body>
+      </section>
+    </main>
+  </body>
 </html>
