@@ -1,62 +1,60 @@
 
 body {
-  margin: 0;
-  font-family: monospace;
-  background: #111;
-  color: #eee;
-  text-align: center;
+    background-color: #111;
+    color: #eee;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
+
 header {
-  background: #222;
-  padding: 10px;
+    background-color: #222;
+    padding: 1em;
 }
+
 .logo {
-  width: 120px;
-  margin: 10px auto;
-  display: block;
+    max-height: 60px;
 }
+
 nav a {
-  color: #f1c40f;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
+    margin: 0 10px;
+    color: #fdd835;
+    text-decoration: none;
+    font-weight: bold;
 }
+
 .quote {
-  background: #333;
-  padding: 5px;
-  font-style: italic;
+    margin-top: 0.5em;
+    font-style: italic;
+    color: #aaa;
 }
+
 main {
-  padding: 20px;
+    padding: 2em;
 }
-.featured {
-  margin-bottom: 40px;
-}
+
 .card {
-  background: #222;
-  border-radius: 10px;
-  margin: 10px auto;
-  padding: 15px;
-  width: 300px;
-  box-shadow: 0 0 5px #555;
+    background-color: #222;
+    border-radius: 10px;
+    margin: 1em auto;
+    padding: 1em;
+    max-width: 300px;
+    box-shadow: 0 0 10px #000;
 }
+
 .card a {
-  color: #1e90ff;
+    color: #4fc3f7;
+    text-decoration: none;
 }
-.review {
-  color: #0f0;
+
+.stars {
+    color: #66bb6a;
 }
-.raffle input {
-  padding: 5px;
-}
-.raffle button {
-  background: #f1c40f;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-}
+
 footer {
-  background: #000;
-  padding: 10px;
-  font-size: 0.9em;
+    background-color: #000;
+    padding: 1em;
+    font-size: 0.9em;
+    color: #888;
 }
