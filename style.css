@@ -1,0 +1,52 @@
+
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin: 0;
+}
+header {
+  background: #222;
+  padding: 1em 0;
+}
+nav a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: gold;
+  font-weight: bold;
+}
+.quote-bar {
+  background: #333;
+  padding: 0.5em;
+  font-style: italic;
+}
+main {
+  padding: 2em;
+}
+.featured h2, .raffle h2, .free-pdf h2 {
+  margin-bottom: 1em;
+}
+.card {
+  background: #1a1a1a;
+  padding: 1em;
+  margin: 1em auto;
+  max-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000;
+}
+.card img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.book-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+footer {
+  background: #222;
+  padding: 1em;
+  margin-top: 2em;
+}
