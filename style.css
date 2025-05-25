@@ -1,53 +1,19 @@
 
 body {
-    background-color: #111;
-    color: #eee;
+    background-color: #121212;
+    color: #f1f1f1;
     font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 0;
 }
-header.site-header {
-    background-color: #222;
-    text-align: center;
-    padding: 20px;
+h1 {
+    color: #ffa500;
 }
-header .banner-img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-}
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-nav ul li a {
-    color: #fdd835;
-    text-decoration: none;
-}
-main {
-    padding: 20px;
-}
-.gear-item {
-    background-color: #1c1c1c;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 15px;
-    width: 200px;
-    display: inline-block;
-    vertical-align: top;
-}
-.gear-item img {
-    width: 100%;
-    border-radius: 5px;
+a {
+    color: #1e90ff;
 }
 footer {
-    background-color: #222;
+    margin-top: 3rem;
+    padding: 1rem;
+    background-color: #1e1e1e;
     text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-    color: #aaa;
+    color: #888;
 }
