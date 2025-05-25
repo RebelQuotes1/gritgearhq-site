@@ -1,1 +1,0 @@
-console.log('Grit Gear JS Loaded');
