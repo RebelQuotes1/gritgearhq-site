@@ -1,148 +1,90 @@
-
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grit Gear HQ</title>
-  <style>
-    body {
-      margin: 0;
-      background: #0f0f0f;
-      color: #eee;
-      font-family: Arial, sans-serif;
-    }
-    header img {
-      width: 100%;
-      display: block;
-    }
-    nav {
-      background: #000;
-      text-align: center;
-      padding: 15px;
-    }
-    nav a {
-      color: #ffcc00;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #fff;
-    }
-    .featured-book, .gear-grid {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .featured-book img {
-      height: 180px;
-      border-radius: 6px;
-      box-shadow: 0 0 10px #000;
-    }
-    .gear-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      background: #1a1a1a;
-      padding: 40px;
-    }
-    .gear-item {
-      background: #222;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px #000;
-    }
-    .gear-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-    }
-    .gear-item h3 {
-      color: #ffcc00;
-      margin: 10px 0 5px;
-    }
-    .gear-item p {
-      font-size: 0.9em;
-      margin: 5px 0;
-    }
-    footer {
-      background: #000;
-      text-align: center;
-      color: #aaa;
-      padding: 20px 10px;
-      font-size: 0.9em;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<header>
-  <img src="grit_gear_hq_final_header.png" alt="Grit Gear HQ Banner">
-</header>
-
-<nav>
-  <a href="store.html">Store</a>
-  <a href="blog.html">Blog</a>
-  <a href="grit-test.html">Grit Test</a>
-  <a href="books.html">Books</a>
-</nav>
-
-<section class="featured-book">
-  <img src="unfuck-book-thumb.jpg" alt="How to Unf*ck Your Life Book">
-  <h2>Featured Book</h2>
-  <p><strong>How to Unf*ck Your Life</strong> by Serpico</p>
-  <p style="color: #ffcc00;">★★★★☆</p>
-  <p>A gritty, no-BS guide to taking back control, healing scars, and staying sharp in a world gone soft.</p>
-</section>
-
-<section class="gear-grid">
-  <div class="gear-item">
-    <img src="https://via.placeholder.com/240x160?text=LifeStraw" alt="LifeStraw">
-    <h3>LifeStraw Water Filter</h3>
-    <p>Stay alive. Drink anything. Filters 99.999% of nastiness.</p>
-    <p><strong>★★★★★</strong></p>
-    <p><a href="#">Buy on Amazon</a></p>
-  </div>
-  <div class="gear-item">
-    <img src="https://via.placeholder.com/240x160?text=Blankets" alt="Blankets">
-    <h3>Emergency Blankets (4-pack)</h3>
-    <p>Space-age insulation. Paper-thin. Body-warming.</p>
-    <p><strong>★★★★☆</strong></p>
-    <p><a href="#">Buy on Amazon</a></p>
-  </div>
-  <div class="gear-item">
-    <img src="https://via.placeholder.com/240x160?text=Crank+Radio" alt="Radio">
-    <h3>Hand Crank Radio</h3>
-    <p>Charge your phone, hear the news, and stay lit when the grid dies.</p>
-    <p><strong>★★★★☆</strong></p>
-    <p><a href="#">Buy on Amazon</a></p>
-  </div>
-  <div class="gear-item">
-    <img src="https://via.placeholder.com/240x160?text=Knife" alt="Knife">
-    <h3>Tactical Folding Knife</h3>
-    <p>Fast, mean, and built like a tank. Cuts everything except corners.</p>
-    <p><strong>★★★★★</strong></p>
-    <p><a href="#">Buy on Amazon</a></p>
-  </div>
-  <div class="gear-item">
-    <img src="https://via.placeholder.com/240x160?text=Fire+Rod" alt="Fire Rod">
-    <h3>Magnesium Fire Rod</h3>
-    <p>Rain-proof fire starter. Works when your lighter cries.</p>
-    <p><strong>★★★★☆</strong></p>
-    <p><a href="#">Buy on Amazon</a></p>
-  </div>
-  <div class="gear-item">
-    <img src="https://via.placeholder.com/240x160?text=Tent" alt="Tent">
-    <h3>Emergency Tent Shelter</h3>
-    <p>Folds to nothing. Saves your ass in a storm. Essential.</p>
-    <p><strong>★★★★☆</strong></p>
-    <p><a href="#">Buy on Amazon</a></p>
-  </div>
-</section>
-
-<footer>
-  &copy; 2024 Grit Gear HQ • Built to endure. Stay sharp, stay ready.
-</footer>
-
+  <header class="site-header">
+    <img src="Grit_Gear_HQ_Header_UniqueFix.png" alt="Grit Gear HQ Banner" class="header-img"/>
+    <nav>
+      <a href="store.html">Store</a>
+      <a href="blog.html">Blog</a>
+      <a href="grit-test.html">Grit Test</a>
+      <a href="books.html">Books</a>
+    </nav>
+  </header>
+  <main>
+    <section class="featured-gear">
+      <h2>Featured Gear</h2>
+      <div class="gear-grid">
+        <div class="gear-item">
+          <img src="lifestraw.jpg" alt="LifeStraw">
+          <h3>LifeStraw Water Filter</h3>
+          <p>Stay alive. Drink anything. Filters 99.999% of nastiness.</p>
+          <span class="stars">★★★★★</span>
+          <a href="#">Buy on Amazon</a>
+        </div>
+        <div class="gear-item">
+          <img src="blankets.jpg" alt="Blankets">
+          <h3>Emergency Blankets (4-pack)</h3>
+          <p>Paper-thin space-age insulation. Warmth in your wallet.</p>
+          <span class="stars">★★★★☆</span>
+          <a href="#">Buy on Amazon</a>
+        </div>
+        <div class="gear-item">
+          <img src="radio.jpg" alt="Radio">
+          <h3>Hand Crank Radio</h3>
+          <p>Charge your phone. Hear the news. No power needed.</p>
+          <span class="stars">★★★★★</span>
+          <a href="#">Buy on Amazon</a>
+        </div>
+        <div class="gear-item">
+          <img src="knife.jpg" alt="Knife">
+          <h3>Tactical Folding Knife</h3>
+          <p>Sharp. Mean. Tank-tough. Cuts everything but corners.</p>
+          <span class="stars">★★★★★</span>
+          <a href="#">Buy on Amazon</a>
+        </div>
+        <div class="gear-item">
+          <img src="firestarter.jpg" alt="Fire Rod">
+          <h3>Magnesium Fire Rod</h3>
+          <p>Waterproof. Wild-tested. Lights up when lighters die.</p>
+          <span class="stars">★★★★★</span>
+          <a href="#">Buy on Amazon</a>
+        </div>
+        <div class="gear-item">
+          <img src="tent.jpg" alt="Tent">
+          <h3>Emergency Tent Shelter</h3>
+          <p>Foldable. Lightweight. Saves your ass when storms hit.</p>
+          <span class="stars">★★★★★</span>
+          <a href="#">Buy on Amazon</a>
+        </div>
+        <div class="gear-item">
+          <img src="unfuck-book-thumb.jpg" alt="Book 1">
+          <h3>How to Unf*ck Your Life</h3>
+          <p>No-BS guide to surviving yourself and the world.</p>
+          <span class="stars">★★★★☆</span>
+          <a href="#">Buy on Amazon</a>
+        </div>
+        <div class="gear-item">
+          <img src="grit-blueprint.jpg" alt="Book 2">
+          <h3>The Digital Hustler's Blueprint</h3>
+          <p>Earn online. Escape the grind. Get paid while living free.</p>
+          <span class="stars">★★★★★</span>
+          <a href="#">Buy on Amazon</a>
+        </div>
+      </div>
+    </section>
+    <section class="quotes">
+      <p>💬 “Your comfort zone is your coffin.”</p>
+      <p>💬 “One match is worth a thousand likes.”</p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Grit Gear HQ • Built to endure. Stay sharp, stay ready.</p>
+  </footer>
 </body>
 </html>
