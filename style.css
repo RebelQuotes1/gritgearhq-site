@@ -1,0 +1,53 @@
+
+body {
+  background-color: #111;
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #222;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  color: #ffd700;
+}
+nav a {
+  color: #ccc;
+  margin: 0 10px;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #fff;
+}
+.featured, .featured-books, .raffle-box, .free-pdf {
+  padding: 20px;
+}
+.card {
+  background: #222;
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+.card img {
+  width: 100%;
+}
+.quote-box {
+  background: #333;
+  padding: 10px;
+  text-align: center;
+  font-style: italic;
+}
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #222;
+  font-size: 0.9em;
+  color: #aaa;
+}
