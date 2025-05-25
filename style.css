@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: monospace;
+  background: #111;
+  color: #eee;
+  text-align: center;
+}
+header {
+  background: #222;
+  padding: 20px;
+}
+.logo {
+  max-height: 80px;
+}
+nav a {
+  margin: 0 15px;
+  color: gold;
+  text-decoration: none;
+}
+.quote {
+  background: #333;
+  padding: 10px;
+  font-style: italic;
+}
+main {
+  padding: 20px;
+}
+.card {
+  background: #222;
+  padding: 15px;
+  margin: 10px auto;
+  border-radius: 8px;
+  max-width: 400px;
+  box-shadow: 0 0 10px #000;
+}
+.card a {
+  color: #87cefa;
+}
+footer {
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+  background: #000;
+}
