@@ -1,77 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grit Gear HQ</title>
-  <link rel="stylesheet" href="style.css" />
-  
-  <!-- AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583"
-    crossorigin="anonymous"></script>
-</head>
-<body>
-  <h1 class="glow-title">Grit Gear</h1>
-  <p class="rotating-quote" id="quoteBox">"Adapt or die."</p>
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffae42;
+  text-shadow: 1px 1px 2px #000;
+}
 
-  <div class="button-container">
-    <a href="store.html"><button>Store</button></a>
-    <a href="blog.html"><button>Blog</button></a>
-    <a href="grit-test.html"><button>Grit Test</button></a>
-    <a href="legal.html"><button>Legal</button></a>
-  </div>
+h1.glow-title {
+  font-size: 48px;
+  color: #ffae42;
+  text-shadow: 0 0 10px #ffae42, 0 0 20px #ffae42;
+  margin-bottom: 10px;
+}
 
-  <div class="raffle-box">
-    💥 Enter to Win a Bug-Out Mystery Box! Only 3 Spots Left! 💥
-    <br /><button>Enter Now</button>
-  </div>
+.rotating-quote {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 30px;
+}
 
-  <!-- Mid-Page Ad -->
-  <div class="ad-box">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-1532367766505583"
-         data-ad-slot="6180940511"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
+.button-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
 
-  <div class="reviews">
-    <p>★★★★★ "Best prepper gear I’ve ever bought!"</p>
-    <p>★★★★★ "Feels like Fallout met Amazon — love it."</p>
-    <p>★★★★☆ "Rugged, reliable, worth every penny."</p>
-  </div>
+button {
+  padding: 15px 25px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffae42;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #ffae42;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #ffae42, 0 0 15px rgba(255, 174, 66, 0.7);
+  transition: all 0.3s ease-in-out;
+}
 
-  <footer>© 2024 Serpico — “Die young as late as possible.”</footer>
+button:hover {
+  background-color: #222;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #ffae42, 0 0 25px #ffae42;
+}
 
-  <!-- Sticky Footer Ad -->
-  <div class="ad-footer">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-1532367766505583"
-         data-ad-slot="6180940511"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
+.raffle-box {
+  background-color: rgba(255, 69, 0, 0.1);
+  border: 2px dashed #ffae42;
+  padding: 20px;
+  margin: 20px;
+  font-size: 18px;
+  text-align: center;
+  max-width: 400px;
+}
 
-  <script>
-    const quotes = [
-      `"The more you sweat in peace, the less you bleed in war."`,
-      `"When the power goes out, the real ones light up."`,
-      `"You don't rise to the occasion. You fall to your level of training."`,
-      `"Comfort is a slow death. Choose grit."`,
-      `"No backup is coming. Be ready."`
-    ];
-    setInterval(() => {
-      document.getElementById("quoteBox").textContent =
-        quotes[Math.floor(Math.random() * quotes.length)];
-    }, 5000);
-  </script>
-</body>
-</html>
+.reviews {
+  margin-top: 20px;
+  font-size: 15px;
+  text-align: center;
+  max-width: 600px;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.ad-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.95);
+  z-index: 999;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 -1px 5px rgba(255, 174, 66, 0.2);
+}
+
+.ad-box {
+  margin-top: 30px;
+  text-align: center;
+}
