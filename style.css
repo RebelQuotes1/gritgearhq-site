@@ -20,3 +20,18 @@ h1.glow-title {
   color: #ffae42;
   text-shadow: 0 0 10px #ffae42, 0 0 20px #ffae42;
   margin-bott
+.legal-box {
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ffae42;
+  margin-top: 30px;
+  color: #ffae42;
+  text-align: left;
+  line-height: 1.6;
+}
+.legal-box h2 {
+  margin-top: 20px;
+  color: #ffd580;
+}
