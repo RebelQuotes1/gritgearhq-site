@@ -1,20 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Grit Gear HQ</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grit Gear HQ</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="nav">
-        <a href="store.html">Store</a>
-        <a href="blog.html">Blog</a>
-        <a href="grit-test.html">Grit Test</a>
-        <a href="legal.html">Legal</a>
-    </div>
-    <footer>
-        <p>© 2024 Serpico — "Die young as late as possible."</p>
-    </footer>
+  <h1 class="glow-title">Grit Gear</h1>
+  <p class="rotating-quote" id="quoteBox">"Adapt or die."</p>
+
+  <div class="button-container">
+    <a href="store.html"><button>Store</button></a>
+    <a href="blog.html"><button>Blog</button></a>
+    <a href="grit-test.html"><button>Grit Test</button></a>
+    <a href="legal.html"><button>Legal</button></a>
+  </div>
+
+  <div class="raffle-box">
+    💥 Enter to Win a Bug-Out Mystery Box! Only 3 Spots Left! 💥
+    <br /><button>Enter Now</button>
+  </div>
+
+  <div class="reviews">
+    <p>★★★★★ "Best prepper gear I’ve ever bought!"</p>
+    <p>★★★★★ "Feels like Fallout met Amazon — love it."</p>
+    <p>★★★★☆ "Rugged, reliable, worth every penny."</p>
+  </div>
+
+  <footer>© 2024 Serpico — “Die young as late as possible.”</footer>
+
+  <script>
+    const quotes = [
+      `"The more you sweat in peace, the less you bleed in war."`,
+      `"When the power goes out, the real ones light up."`,
+      `"You don't rise to the occasion. You fall to your level of training."`,
+      `"Comfort is a slow death. Choose grit."`,
+      `"No backup is coming. Be ready."`
+    ];
+    setInterval(() => {
+      document.getElementById("quoteBox").textContent =
+        quotes[Math.floor(Math.random() * quotes.length)];
+    }, 5000);
+  </script>
 </body>
 </html>
