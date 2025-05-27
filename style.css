@@ -51,7 +51,9 @@ h1.glow-title {
   color: #ffd580;
 }
 .logo {
-  width: 150px;
+  width: 120px;
   margin-bottom: 20px;
-  filter: drop-shadow(0 0 5px #ffae42);
+  display: block;
+  filter: drop-shadow(0 0 2px #ffae42);
+
 }
