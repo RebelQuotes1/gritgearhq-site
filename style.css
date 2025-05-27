@@ -1,0 +1,30 @@
+
+body {
+  background-color: #111;
+  color: #f0f0f0;
+  font-family: monospace;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #000;
+  padding: 1rem;
+}
+.header-image {
+  max-width: 100%;
+  height: auto;
+}
+nav a {
+  color: yellow;
+  text-decoration: none;
+  margin: 0 10px;
+}
+main {
+  padding: 1rem;
+}
+footer {
+  background-color: #000;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
