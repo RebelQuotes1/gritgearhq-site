@@ -1,59 +1,47 @@
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-image: url('background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: #ffae42;
-  text-shadow: 1px 1px 2px #000;
+/* Raffle Box */
+.raffle-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ffea42;
+    color: #ffea42;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-h1.glow-title {
-  font-size: 48px;
-  color: #ffae42;
-  text-shadow: 0 0 10px #ffae42, 0 0 20px #ffae42;
-  margin-bott
-.legal-box {
-  max-width: 800px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 25px;
-  border-radius: 10px;
-  border: 1px solid #ffae42;
-  margin-top: 30px;
-  color: #ffae42;
-  text-align: left;
-  line-height: 1.6;
+/* Centering the email field and button */
+.raffle-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.legal-box h2 {
-  margin-top: 20px;
-  color: #ffd580;
-}
-.legal-box {
-  max-width: 800px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 25px;
-  border-radius: 10px;
-  border: 1px solid #ffae42;
-  margin-top: 30px;
-  color: #ffae42;
-  text-align: left;
-  line-height: 1.6;
-}
-.legal-box h2 {
-  margin-top: 20px;
-  color: #ffd580;
-}
-.logo {
-  width: 120px;
-  margin-bottom: 20px;
-  display: block;
-  filter: drop-shadow(0 0 2px #ffae42);
 
+.raffle-box input[type="email"] {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ffea42;
+    margin-bottom: 10px;
+}
+
+.raffle-box button[type="submit"] {
+    background-color: #ffea42;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.raffle-box button[type="submit"]:hover {
+    background-color: #f0c42e;
 }
