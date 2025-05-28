@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+    <title>Grit Gear HQ</title>
     <link rel="stylesheet" href="style.css" />
     <!-- AdSense Script -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532677665058583" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367665058583" crossorigin="anonymous"></script>
 </head>
 <body>
-    <img src="logo.png" alt="Grit Gear Logo" class="logo" />
 
+    <img src="logo.png" alt="Grit Gear Logo" class="logo" />
+    <h1 class="glow-title">Grit Gear</h1>
     <p class="rotating-quote" id="quoteBox">"Adapt or die."</p>
 
     <div class="button-container">
@@ -21,49 +22,14 @@
     </div>
 
     <!-- Raffle and Email Section -->
-/* Centering the email field and button */
-.raffle-box {
-    text-align: center; /* Centers the content inside */
-    margin: 0 auto; /* Centers the box */
-    width: 80%; /* Sets width to 80% */
-    max-width: 600px; /* Sets a max width */
-    margin-top: 20px; /* Adds space at the top */
-}
-
-/* Style for the email input field */
-.raffle-box input[type="email"] {
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 14px;
-    width: 80%;
-    border-radius: 5px;
-    border: 1px solid #ffe42a;
-    margin-bottom: 10px;
-}
-
-/* Style for the submit button */
-.raffle-box button[type="submit"] {
-    background-color: #ffe42a;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.raffle-box button[type="submit"]:hover {
-    background-color: #f04e2e;
-}
-
-/* Styling for the button container */
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
+    <div class="raffle-box">
+        🎁 Win a Bug-Out Mystery Box! Enter now. Limited spots.🔥<br>
+        <button onClick="alert('You\'re in! (Not really)')">Enter Raffle</button>
+        <p><strong>Sign up to be notified:</strong></p>
+        <form action="" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required />
+            <button type="submit">Sign Up</button>
+        </form>
     </div>
 
     <!-- Customer Reviews -->
@@ -97,5 +63,6 @@
             document.getElementById("gritResult").innerHTML = `<p>${randomJoke}</p>`;
         });
     </script>
+
 </body>
 </html>
