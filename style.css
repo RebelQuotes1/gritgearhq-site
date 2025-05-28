@@ -1,67 +1,43 @@
+/* General styles */
 body {
     margin: 0;
-    height: 100%;
+    padding: 0;
     background-image: url('background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #ffe42a;
+    align-items: center;
+    flex-direction: column;
+    color: #fffe42;
+    text-shadow: 1px 1px 2px #000;
 }
 
-h1.glow-title {
+.glow-title {
     font-size: 48px;
-    color: #ffe42a;
-    text-shadow: 0 10px 10px #ffe42a, 0 0 20px #ffe42a;
+    color: #fffe42;
+    text-shadow: 10px 10px #ffe42a, 0 0 20px #ffe42a;
     margin-bottom: 10px;
 }
 
-.raffle-box {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 25px;
-    border-radius: 10px;
-    margin-top: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+/* Button container styles */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-.raffle-box input[type="email"] {
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 14px;
-    width: 80%;
-    border-radius: 5px;
-    border: 1px solid #ffe42a;
-    margin-bottom: 10px;
-}
-
-.raffle-box button[type="submit"] {
-    background-color: #ffe42a;
-    border: none;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.raffle-box button[type="submit"]:hover {
-    background-color: #f04e2e;
-}
-
+/* Styling for each button */
 button {
     background-color: #ffe42a;
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
-    color: black;
+    color: #000;
     cursor: pointer;
+    font-size: 14px;
 }
 
 button:hover {
@@ -72,8 +48,51 @@ button:active {
     transform: scale(0.98);
 }
 
-button-container {
+/* Centered email field and button for the raffle */
+.raffle-box form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
+    margin: 10px;
+}
+
+.raffle-box input[type="email"], .raffle-box button[type="submit"] {
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ffe42a;
+    margin-bottom: 10px;
+}
+
+.raffle-box button[type="submit"] {
+    background-color: #ffe42a;
+    color: #000;
+    cursor: pointer;
+}
+
+.raffle-box button[type="submit"]:hover {
+    background-color: #f04e2e;
+}
+
+/* Reviews section */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #fffe42;
+}
+
+.reviews p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+.reviews h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
 }
