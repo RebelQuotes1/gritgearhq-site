@@ -1,39 +1,138 @@
-<div class="product-section">
-  <!-- This is where we paste the store code -->
-  <section class="store-container">
-    <!-- Survival Gear Section -->
-    <div class="category-header">
-      <h2>Survival Gear</h2>
-    </div>
-    
-    <div class="product-grid">
-      <!-- Tactical Flashlight -->
-      <div class="product-item">
-        <img src="https://via.placeholder.com/150?text=Tactical+Flashlight" alt="Tactical Flashlight" class="product-image"/>
-        <h3>Tactical Flashlight</h3>
-        <p class="product-description">Ultra-bright, long-lasting flashlight for all your survival needs.</p>
-        <span class="price">$49.99</span>
-        <a href="https://www.amazon.com/dp/B08Y7F54LR" class="cta-button">Buy Here</a>
-      </div>
-      <!-- Repeat similar blocks for other products -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Grit Gear HQ</title>
+    <style>
+        /* Basic CSS to style the store */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: #333;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .store-container {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .category-header {
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product-item {
+            background: #444;
+            margin: 15px;
+            padding: 20px;
+            width: 250px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-description {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #ff9800;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff5722;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Grit Gear HQ - Store
     </div>
 
-    <!-- Books Section -->
-    <div class="category-header">
-      <h2>Books</h2>
-    </div>
-    
-    <div class="product-grid">
-      <!-- How to Unf*ck Your Life -->
-      <div class="product-item">
-        <img src="https://via.placeholder.com/150?text=How+to+Unf*ck+Your+Life" alt="How to Unf*ck Your Life" class="product-image"/>
-        <h3>How to Unf*ck Your Life</h3>
-        <p class="product-description">A no-nonsense guide to taking control and making real change.</p>
-        <span class="price">$14.99</span>
-        <a href="https://www.amazon.com/dp/B08K2JZV6Y" class="cta-button">Buy Now</a>
-      </div>
-      <!-- Repeat similar blocks for other books -->
-    </div>
-  </section>
-  <!-- End of store content -->
-</div>
+    <section class="store-container">
+        <!-- Survival Gear Section -->
+        <div class="category-header">
+            <h2>Survival Gear</h2>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Product Example 1 -->
+            <div class="product-item">
+                <img src="https://via.placeholder.com/150?text=Tactical+Flashlight" alt="Tactical Flashlight" class="product-image"/>
+                <h3>Tactical Flashlight</h3>
+                <p class="product-description">Ultra-bright, long-lasting flashlight for all your survival needs.</p>
+                <span class="price">$49.99</span>
+                <a href="https://www.amazon.com/dp/B08Y7F54LR" class="cta-button">Buy Here</a>
+            </div>
+
+            <!-- Other survival gear items go here, in similar format -->
+
+        </div>
+
+        <!-- Books Section -->
+        <div class="category-header">
+            <h2>Books</h2>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Your Book Example -->
+            <div class="product-item">
+                <img src="https://via.placeholder.com/150?text=How+to+Unf*ck+Your+Life" alt="How to Unf*ck Your Life" class="product-image"/>
+                <h3>How to Unf*ck Your Life</h3>
+                <p class="product-description">A no-nonsense guide to taking control and making real change.</p>
+                <span class="price">$14.99</span>
+                <a href="https://www.amazon.com/dp/B08K2JZV6Y" class="cta-button">Buy Now</a>
+            </div>
+
+            <!-- Other books go here, in similar format -->
+
+        </div>
+    </section>
+</body>
+</html>
