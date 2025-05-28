@@ -1,138 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store - Grit Gear HQ</title>
-    <style>
-        /* Basic CSS to style the store */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ - Store</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
 
-        .header {
-            background: #333;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 2em;
-        }
+    .header {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      color: #ff6600;
+    }
 
-        .store-container {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+    .category-title {
+      margin: 30px 0 10px;
+      font-size: 1.8em;
+      text-align: center;
+      color: #f0f0f0;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
 
-        .category-header {
-            width: 100%;
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+    .product-card {
+      background-color: #2b2b2b;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      transition: transform 0.2s ease;
+    }
 
-        .product-item {
-            background: #444;
-            margin: 15px;
-            padding: 20px;
-            width: 250px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
+    .product-card:hover {
+      transform: scale(1.03);
+    }
 
-        .product-item:hover {
-            transform: scale(1.05);
-        }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: #000;
+    }
 
-        .product-image {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
+    .product-details {
+      padding: 15px;
+    }
 
-        .product-description {
-            margin: 10px 0;
-            font-size: 1em;
-        }
+    .product-title {
+      font-size: 1.2em;
+      margin: 10px 0 5px;
+    }
 
-        .price {
-            font-size: 1.2em;
-            color: #ff9800;
-        }
+    .product-description {
+      font-size: 0.9em;
+      color: #ccc;
+      min-height: 60px;
+    }
 
-        .cta-button {
-            display: inline-block;
-            background-color: #ff5722;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
+    .price {
+      color: #ff9900;
+      font-size: 1.1em;
+      margin: 10px 0;
+      font-weight: bold;
+    }
 
-        .cta-button:hover {
-            background-color: #f44336;
-        }
-    </style>
+    .buy-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff4500;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background 0.3s;
+    }
+
+    .buy-button:hover {
+      background-color: #e63900;
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        Grit Gear HQ - Store
+
+  <div class="header">Grit Gear HQ - Store</div>
+
+  <div class="category-title">Survival Gear</div>
+  <div class="store-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x200?text=Tactical+Flashlight" class="product-image" alt="Tactical Flashlight">
+      <div class="product-details">
+        <div class="product-title">Tactical Flashlight</div>
+        <div class="product-description">Bright, durable, built like a tank. For the man who needs light in hell.</div>
+        <div class="price">$49.99</div>
+        <a href="https://www.amazon.com/dp/B08Y7F54LR" class="buy-button" target="_blank">Buy Now</a>
+      </div>
     </div>
 
-    <section class="store-container">
-        <!-- Survival Gear Section -->
-        <div class="category-header">
-            <h2>Survival Gear</h2>
-        </div>
-        
-        <div class="product-grid">
-            <!-- Product Example 1 -->
-            <div class="product-item">
-                <img src="https://via.placeholder.com/150?text=Tactical+Flashlight" alt="Tactical Flashlight" class="product-image"/>
-                <h3>Tactical Flashlight</h3>
-                <p class="product-description">Ultra-bright, long-lasting flashlight for all your survival needs.</p>
-                <span class="price">$49.99</span>
-                <a href="https://www.amazon.com/dp/B08Y7F54LR" class="cta-button">Buy Here</a>
-            </div>
+    <!-- Add more products using the same block format -->
+  </div>
 
-            <!-- Other survival gear items go here, in similar format -->
+  <div class="category-title">Books</div>
+  <div class="store-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x200?text=How+to+Unf*ck+Your+Life" class="product-image" alt="How to Unf*ck Your Life">
+      <div class="product-details">
+        <div class="product-title">How to Unf*ck Your Life</div>
+        <div class="product-description">A no-BS guide to fixing your head and your habits. Straight truth.</div>
+        <div class="price">$14.99</div>
+        <a href="https://www.amazon.com/dp/B08K2JZV6Y" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+  </div>
 
-        </div>
-
-        <!-- Books Section -->
-        <div class="category-header">
-            <h2>Books</h2>
-        </div>
-        
-        <div class="product-grid">
-            <!-- Your Book Example -->
-            <div class="product-item">
-                <img src="https://via.placeholder.com/150?text=How+to+Unf*ck+Your+Life" alt="How to Unf*ck Your Life" class="product-image"/>
-                <h3>How to Unf*ck Your Life</h3>
-                <p class="product-description">A no-nonsense guide to taking control and making real change.</p>
-                <span class="price">$14.99</span>
-                <a href="https://www.amazon.com/dp/B08K2JZV6Y" class="cta-button">Buy Now</a>
-            </div>
-
-            <!-- Other books go here, in similar format -->
-
-        </div>
-    </section>
 </body>
 </html>
