@@ -26,3 +26,20 @@
   <div class="raffle-box">
    💥 Enter to Win a Bug-Out Mystery Box! Only 3 Spots Left! 💥
 
+<script>
+  const gritJokes = [
+    "💀 You thought MREs were a rap group. You're done.",
+    "🪓 You bartered your last match for a vape cartridge.",
+    "🐗 You screamed 'Alexa, help' and a wild boar came. He wasn't feeling it.",
+    "🥫 You asked a prepper if they take Venmo. They took your boots instead.",
+    "📦 You packed Hot Pockets in your bug-out bag. Genius.",
+    "📱 You brought a ring light to the collapse. At least you'll look good failing.",
+    "🔥 You said, 'I don't need flint, I have a microwave.'"
+  ];
+
+  document.querySelector("a[href='grit-test.html']").addEventListener("click", function (e) {
+    e.preventDefault();
+    const randomJoke = gritJokes[Math.floor(Math.random() * gritJokes.length)];
+    document.getElementById("gritResult").innerHTML = `<p>${randomJoke}</p>`;
+  });
+</script>
