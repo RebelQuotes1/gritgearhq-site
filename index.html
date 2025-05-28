@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grit Gear HQ</title>
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Google AdSense Script -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367665058583"
-    crossorigin="anonymous"></script>
+    <!-- AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532677665058583" crossorigin="anonymous"></script>
 </head>
 <body>
-
     <img src="logo.png" alt="Grit Gear Logo" class="logo" />
-
+    <h1 class="glow-title">Grit Gear</h1>
     <p class="rotating-quote" id="quoteBox">"Adapt or die."</p>
 
     <div class="button-container">
@@ -23,26 +20,30 @@
         <a href="legal.html"><button>Legal</button></a>
     </div>
 
+    <!-- Raffle and Email Section -->
     <div class="raffle-box">
-        <h3>🎁 Win a Bug-Out Mystery Box! Enter now. Limited spots.🔥</h3>
-        <button onClick="alert('You\'re in! (Not really!)')">Enter Raffle</button>
+        🎁 Win a Bug-Out Mystery Box! Enter now. Limited spots.🔥<br>
+        <button onClick="alert('You\'re in! (Not really)')">Enter Raffle</button>
         <p><strong>Sign up to be notified:</strong></p>
-        <form action="POST">
+        <form action="" method="POST">
             <input type="email" name="email" placeholder="Enter your email" required />
             <button type="submit">Sign Up</button>
         </form>
     </div>
 
-    <div class="raffle-box">
-        <h3>🎁 Win a Bug-Out Mystery Box! Only 3 Spots Left! 🔥</h3>
-        <button onClick="alert('You\'re in! (Not really!)')">Enter Raffle</button>
-        <p><strong>Sign up to be notified:</strong></p>
-        <form action="POST">
-            <input type="email" name="email" placeholder="Enter your email" required />
-            <button type="submit">Sign Up</button>
-        </form>
+    <!-- Customer Reviews -->
+    <div class="reviews">
+        <h3>Customer Reviews</h3>
+        <p>⭐⭐⭐⭐⭐ "Best prepper gear I’ve ever bought!"</p>
+        <p>⭐⭐⭐⭐⭐ "Feels like Fallout met Amazon — love it."</p>
+        <p>⭐⭐⭐⭐⭐ "I thought MREs were a rap group. You’re done." </p>
     </div>
 
+    <div class="raffle-box">
+        <strong>Enter to Win a Bug-Out Mystery Box! Only 3 Spots Left! </strong>❌
+    </div>
+
+    <!-- Scripts -->
     <script>
         const gritJokes = [
             "You thought MREs were a rap group. You're done.",
@@ -50,8 +51,9 @@
             "You screamed 'Alexa, help' and a wild boar came. He wasn't feeling it.",
             "You asked a prepper if they take Venmo. They took your boots instead.",
             "You packed Hot Pockets in your bug-out bag. Genius.",
+            "You brought a ring light to the collapse. At least you'll look good failing.",
             "You said, 'I'll stream the collapse live.' You streamed your own death.",
-            "You said, 'I don't need Flint, I have a microwave.'"
+            "You said, 'I don't need flint, I have a microwave.'"
         ];
 
         document.querySelector("a[href='grit-test.html']").addEventListener("click", function (e) {
@@ -60,6 +62,5 @@
             document.getElementById("gritResult").innerHTML = `<p>${randomJoke}</p>`;
         });
     </script>
-
 </body>
 </html>
