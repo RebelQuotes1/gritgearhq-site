@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grit Gear HQ</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Adsense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="background-image: url('background.png'); background-size: cover;">
+  <!-- Logo Image -->
   <img src="logo.png" alt="Grit Gear Logo" class="logo" />
-
+  
+  <!-- Header -->
   <h1 class="glow-title">Grit Gear</h1>
   <p class="rotating-quote" id="quoteBox">Adapt or die.</p>
 
+  <!-- Button Container -->
   <div class="button-container">
     <a href="store.html"><button>Store</button></a>
     <a href="blog.html"><button>Blog</button></a>
@@ -20,6 +24,7 @@
     <a href="legal.html"><button>Legal</button></a>
   </div>
 
+  <!-- Raffle Box -->
   <div class="raffle-box">
     🎁 Win a Bug-Out Mystery Box! Enter now. Limited spots. 🔥<br>
     <button onclick="alert('You’re in! (Not really)')">Enter Raffle</button>
@@ -30,12 +35,10 @@
     </form>
   </div>
 
-  <div class="raffle-box">
-    ❌ Enter to Win a Bug-Out Mystery Box! Only 3 Spots Left! ❌
-  </div>
-
+  <!-- Grit Test Result Box -->
   <div id="gritResult" class="grit-result"></div>
 
+  <!-- Grit Test Joke Script -->
   <script>
     const gritJokes = [
       "💀 You thought MREs were a rap group. You're done.",
@@ -53,5 +56,6 @@
       document.getElementById("gritResult").innerHTML = `<p>${randomJoke}</p>`;
     });
   </script>
+  
 </body>
 </html>
