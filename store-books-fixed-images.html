@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ - Store</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    }
+    .header {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      color: #ff6600;
+    }
+    .quote-banner {
+      text-align: center;
+      font-style: italic;
+      color: #aaa;
+      margin: 10px auto 30px;
+      font-size: 1.1em;
+    }
+    .category-title {
+      margin: 30px 0 10px;
+      font-size: 1.8em;
+      text-align: center;
+      color: #f0f0f0;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .product-card {
+      background-color: #2b2b2b;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      transition: transform 0.2s ease;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: #000;
+    }
+    .product-details {
+      padding: 15px;
+    }
+    .product-title {
+      font-size: 1.2em;
+      margin: 10px 0 5px;
+    }
+    .product-description {
+      font-size: 0.9em;
+      color: #ccc;
+      min-height: 60px;
+    }
+    .price {
+      color: #ff9900;
+      font-size: 1.1em;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .buy-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff4500;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background 0.3s;
+    }
+    .buy-button:hover {
+      background-color: #e63900;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">Grit Gear HQ - Store</div>
+  <div class="quote-banner">"Comfort is a lie. Grit is survival."</div>
+  <div class="category-title">Survival Gear</div>
+  <div class="store-grid">
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71RmU-cTYWL._AC_SL1500_.jpg" class="product-image" alt="LifeStraw Personal Water Filter">
+      <div class="product-details">
+        <div class="product-title">LifeStraw Personal Water Filter</div>
+        <div class="product-description">Filters 99.999% of waterborne bacteria. Stay alive, stay hydrated.</div>
+        <div class="price">$19.95</div>
+        <a href="https://www.amazon.com/dp/B006QF3TW4" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/81w2XDhg6lL._AC_SL1500_.jpg" class="product-image" alt="Kaito KA500 Emergency Radio">
+      <div class="product-details">
+        <div class="product-title">Kaito KA500 Emergency Radio</div>
+        <div class="product-description">Crank-powered. AM/FM/NOAA. Never be left in the dark.</div>
+        <div class="price">$49.98</div>
+        <a href="https://www.amazon.com/dp/B001QTXKCE" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/81C2V2dp4mL._AC_SL1500_.jpg" class="product-image" alt="Leatherman Signal Multi-Tool">
+      <div class="product-details">
+        <div class="product-title">Leatherman Signal Multi-Tool</div>
+        <div class="product-description">19 tools in one. Built for rugged hands and rough days.</div>
+        <div class="price">$129.95</div>
+        <a href="https://www.amazon.com/dp/B00T9UJY24" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/91YvOGpT-OL._AC_SL1500_.jpg" class="product-image" alt="Surviveware Small First Aid Kit">
+      <div class="product-details">
+        <div class="product-title">Surviveware Small First Aid Kit</div>
+        <div class="product-description">Portable trauma kit for bugouts, backpacks, and gloveboxes.</div>
+        <div class="price">$39.95</div>
+        <a href="https://www.amazon.com/dp/B01HGSLB6K" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61pHMr2CwUL._AC_SL1000_.jpg" class="product-image" alt="SOL Emergency Bivvy">
+      <div class="product-details">
+        <div class="product-title">SOL Emergency Bivvy</div>
+        <div class="product-description">Reflects 90% of your body heat. Compact. Indestructible.</div>
+        <div class="price">$16.99</div>
+        <a href="https://www.amazon.com/dp/B000WXX0JS" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/81L0gE8VU3L._AC_SL1500_.jpg" class="product-image" alt="Atomic Bear Paracord Bracelet">
+      <div class="product-details">
+        <div class="product-title">Atomic Bear Paracord Bracelet</div>
+        <div class="product-description">5-in-1 fire starter, compass, whistle, and paracord.</div>
+        <div class="price">$10.99</div>
+        <a href="https://www.amazon.com/dp/B01FJ0Y9W4" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61xSR7Ej13L._AC_SL1500_.jpg" class="product-image" alt="Gerber LMF II Infantry Knife">
+      <div class="product-details">
+        <div class="product-title">Gerber LMF II Infantry Knife</div>
+        <div class="product-description">Used by military survivalists. Cuts through chaos.</div>
+        <div class="price">$87.50</div>
+        <a href="https://www.amazon.com/dp/B000EDPT9K" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71iFJydrPWL._AC_SL1500_.jpg" class="product-image" alt="EcoZoom Versa Rocket Stove">
+      <div class="product-details">
+        <div class="product-title">EcoZoom Versa Rocket Stove</div>
+        <div class="product-description">Cook with wood, charcoal or biomass. No gas needed.</div>
+        <div class="price">$129.00</div>
+        <a href="https://www.amazon.com/dp/B00F6GCSNE" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71wKQej+IdL._AC_SL1500_.jpg" class="product-image" alt="Go Time Gear Life Tent">
+      <div class="product-details">
+        <div class="product-title">Go Time Gear Life Tent</div>
+        <div class="product-description">2-person emergency shelter with paracord and whistle.</div>
+        <div class="price">$24.95</div>
+        <a href="https://www.amazon.com/dp/B072JZ8NHB" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71D4aL8-NjL._AC_SL1500_.jpg" class="product-image" alt="Vont LED Tactical Flashlight 2-Pack">
+      <div class="product-details">
+        <div class="product-title">Vont LED Tactical Flashlight 2-Pack</div>
+        <div class="product-description">Zoomable. Ultra-bright. Waterproof. Comes in a pair.</div>
+        <div class="price">$17.97</div>
+        <a href="https://www.amazon.com/dp/B089T8HDBV" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/81+38PWLRgL._AC_SL1500_.jpg" class="product-image" alt="Midland ER310 Emergency Crank Radio">
+      <div class="product-details">
+        <div class="product-title">Midland ER310 Emergency Crank Radio</div>
+        <div class="product-description">Hand crank, solar, and rechargeable. Alerts you before the storm hits.</div>
+        <div class="price">$59.99</div>
+        <a href="https://www.amazon.com/dp/B01BMETENG" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71kmHPGIrML._AC_SL1500_.jpg" class="product-image" alt="Augason Farms 30-Day Food Supply">
+      <div class="product-details">
+        <div class="product-title">Augason Farms 30-Day Food Supply</div>
+        <div class="product-description">Emergency food for 1 adult. Over 1,800 calories/day.</div>
+        <div class="price">$139.99</div>
+        <a href="https://www.amazon.com/dp/B00T3EY7VG" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/81e5cYm1csL._AC_SL1500_.jpg" class="product-image" alt="Tact Bivvy 2.0 Emergency Sleeping Bag">
+      <div class="product-details">
+        <div class="product-title">Tact Bivvy 2.0 Emergency Sleeping Bag</div>
+        <div class="product-description">Heats up fast. Lightweight. Military-grade survival shelter.</div>
+        <div class="price">$21.95</div>
+        <a href="https://www.amazon.com/dp/B07WZZH1H7" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71K8aM-3GCL._AC_SL1500_.jpg" class="product-image" alt="Ready Hour 72-Hour Survival Food Kit">
+      <div class="product-details">
+        <div class="product-title">Ready Hour 72-Hour Survival Food Kit</div>
+        <div class="product-description">Breakfast, lunch, dinner — covered for 3 days.</div>
+        <div class="price">$29.95</div>
+        <a href="https://www.amazon.com/dp/B084Q4FSK9" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71jMcAg4byL._AC_SL1500_.jpg" class="product-image" alt="Wuben C3 Rechargeable Tactical Flashlight">
+      <div class="product-details">
+        <div class="product-title">Wuben C3 Rechargeable Tactical Flashlight</div>
+        <div class="product-description">1200 lumen beast with USB-C fast charging.</div>
+        <div class="price">$29.99</div>
+        <a href="https://www.amazon.com/dp/B08ZD4KMZ6" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61Zk0HDT7vL._AC_SL1001_.jpg" class="product-image" alt="Tacticon Armament BattleTorch V1">
+      <div class="product-details">
+        <div class="product-title">Tacticon Armament BattleTorch V1</div>
+        <div class="product-description">Veteran-owned brand. Blindingly effective tactical light.</div>
+        <div class="price">$39.95</div>
+        <a href="https://www.amazon.com/dp/B01N0X1LIP" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71f8MPeDTKL._AC_SL1500_.jpg" class="product-image" alt="Grizzly Gear Emergency Thermal Blanket (4-Pack)">
+      <div class="product-details">
+        <div class="product-title">Grizzly Gear Emergency Thermal Blanket (4-Pack)</div>
+        <div class="product-description">Blocks wind, reflects heat. Essential bug-out staple.</div>
+        <div class="price">$12.95</div>
+        <a href="https://www.amazon.com/dp/B01LZ8H6G6" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61Z1gDtrgKL._AC_SL1200_.jpg" class="product-image" alt="UST Parashovel Pro">
+      <div class="product-details">
+        <div class="product-title">UST Parashovel Pro</div>
+        <div class="product-description">Shovel, saw, bottle opener & more. Dig and destroy.</div>
+        <div class="price">$24.99</div>
+        <a href="https://www.amazon.com/dp/B08R7R6F6T" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71GDTXMFlRL._AC_SL1500_.jpg" class="product-image" alt="Stanley Adventure Camp Cook Set">
+      <div class="product-details">
+        <div class="product-title">Stanley Adventure Camp Cook Set</div>
+        <div class="product-description">Cook anywhere. Rugged stainless steel with nesting gear.</div>
+        <div class="price">$25.00</div>
+        <a href="https://www.amazon.com/dp/B005188T90" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/713Z-OP4MgL._AC_SL1500_.jpg" class="product-image" alt="Mylar Emergency Tube Tent">
+      <div class="product-details">
+        <div class="product-title">Mylar Emergency Tube Tent</div>
+        <div class="product-description">Compact survival shelter with cord and stakes.</div>
+        <div class="price">$18.99</div>
+        <a href="https://www.amazon.com/dp/B07ZJHJY6R" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="category-title">Books</div>
+  <div class="store-grid">
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/51oHUvYzbsL._SX331_BO1,204,203,200_.jpg" class="product-image" src="https://m.media-amazon.com/images/I/71Gpfzg9xtL._AC_SL1500_.jpg" alt="Thought Crimes">
+      <div class="product-details">
+        <div class="product-title">Thought Crimes</div>
+        <div class="product-description">A savage, unfiltered notebook of raw ideas. By the mind behind Grit Gear HQ.</div>
+        <div class="price">$12.99</div>
+        <a href="https://www.amazon.com/dp/B0CXYZ1234" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" class="product-image" alt="The SAS Survival Handbook">
+      <div class="product-details">
+        <div class="product-title">SAS Survival Handbook</div>
+        <div class="product-description">The ultimate guide to surviving anywhere. A true classic by John 'Lofty' Wiseman.</div>
+        <div class="price">$22.49</div>
+        <a href="https://www.amazon.com/dp/0061733199" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/91n5uQqeHJL._AC_SL1500_.jpg" class="product-image" src="https://m.media-amazon.com/images/I/91n5uQqeHJL._AC_SL1500_.jpg" alt="Bushcraft 101">
+      <div class="product-details">
+        <div class="product-title">Bushcraft 101</div>
+        <div class="product-description">Master the lost art of wilderness survival. By Dave Canterbury.</div>
+        <div class="price">$13.29</div>
+        <a href="https://www.amazon.com/dp/1440579776" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61mKkPlM+VL._AC_SL1000_.jpg" class="product-image" src="https://m.media-amazon.com/images/I/61mKkPlM+VL._AC_SL1000_.jpg" alt="Emergency War Surgery">
+      <div class="product-details">
+        <div class="product-title">Emergency War Surgery</div>
+        <div class="product-description">The go-to manual for trauma and field surgery in extreme situations.</div>
+        <div class="price">$27.95</div>
+        <a href="https://www.amazon.com/dp/1607960245" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71i8dBQVrDL._AC_SL1500_.jpg" class="product-image" alt="Prepper’s Long-Term Survival Guide">
+      <div class="product-details">
+        <div class="product-title">Prepper’s Long-Term Survival Guide</div>
+        <div class="product-description">Food, shelter, security, off-grid living for long-haul survivors.</div>
+        <div class="price">$16.99</div>
+        <a href="https://www.amazon.com/dp/1646043235" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/81ZwBa5c2DL._AC_SL1500_.jpg" class="product-image" alt="The Trapper’s Bible">
+      <div class="product-details">
+        <div class="product-title">The Trapper’s Bible</div>
+        <div class="product-description">Field-tested guide to trapping, snaring, and outdoor self-reliance.</div>
+        <div class="price">$14.99</div>
+        <a href="https://www.amazon.com/dp/1616085592" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/81ZQJ9bZ2yL._AC_SL1500_.jpg" class="product-image" src="https://m.media-amazon.com/images/I/81ZQJ9bZ2yL._AC_SL1500_.jpg" alt="The Survival Medicine Handbook">
+      <div class="product-details">
+        <div class="product-title">The Survival Medicine Handbook</div>
+        <div class="product-description">Essential strategies for when no doctor is coming. By Dr. Bones & Nurse Amy.</div>
+        <div class="price">$39.99</div>
+        <a href="https://www.amazon.com/dp/0988872552" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/81EcBZCIaUL._AC_SL1500_.jpg" class="product-image" src="https://m.media-amazon.com/images/I/81EcBZCIaUL._AC_SL1500_.jpg" alt="Build the Perfect Bug Out Bag">
+      <div class="product-details">
+        <div class="product-title">Build the Perfect Bug Out Bag</div>
+        <div class="product-description">Your ultimate 72-hour disaster survival kit blueprint.</div>
+        <div class="price">$18.95</div>
+        <a href="https://www.amazon.com/dp/1440318744" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+     class="product-image" alt="How to Unf*ck Your Life">
+      <div class="product-details">
+        <div class="product-title">How to Unf*ck Your Life</div>
+        <div class="product-description">A no-BS guide to fixing your head and your habits. Straight truth.</div>
+        <div class="price">$14.99</div>
+        <a href="https://www.amazon.com/dp/B08K2JZV6Y" class="buy-button" target="_blank">Buy Now</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
