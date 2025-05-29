@@ -1,102 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grit Gear HQ - Store</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      background-color: #121212;
-      font-family: Arial, sans-serif;
-      color: #f0f0f0;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      font-family: sans-serif;
       text-align: center;
     }
-    h1 {
-      color: #ff6600;
-      margin-top: 30px;
-    }
-    .quote {
-      font-style: italic;
-      color: #ccc;
-      margin-bottom: 30px;
-    }
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+    .product {
+      display: inline-block;
+      background-color: rgba(0,0,0,0.7);
       padding: 20px;
-    }
-    .product-card {
-      background-color: #1e1e1e;
+      margin: 10px;
       border-radius: 10px;
-      padding: 20px;
       width: 200px;
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
     }
-    .product-image {
+    .product img {
       width: 100px;
       height: 100px;
-      object-fit: contain;
-      margin-bottom: 10px;
     }
-    .product-title {
-      font-weight: bold;
+    .product h3 {
       margin: 10px 0 5px;
     }
-    .product-description {
-      font-size: 0.9em;
-      color: #ccc;
+    .product p {
+      margin: 5px 0;
     }
-    .price {
-      color: #ff9900;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    .buy-button {
-      background-color: #ff3300;
+    .product button {
+      background-color: #ff4500;
       color: white;
       border: none;
       padding: 8px 16px;
-      border-radius: 4px;
-      text-decoration: none;
-      display: inline-block;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background-color: #e03e00;
     }
   </style>
 </head>
 <body>
-  <h1>Grit Gear HQ - Store</h1>
-  <div class="quote">"Comfort is a lie. Grit is survival."</div>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="images/gear1.png" alt="Gear Product" class="product-image" />
-      <div class="product-title">Tactical Backpack</div>
-      <div class="product-description">Heavy-duty pack built for any mission.</div>
-      <div class="price">$129.99</div>
-      <a href="#" class="buy-button">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="images/gear2.png" alt="Gear Product" class="product-image" />
-      <div class="product-title">Firestarter Kit</div>
-      <div class="product-description">Compact and waterproof ignition system.</div>
-      <div class="price">$24.95</div>
-      <a href="#" class="buy-button">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="images/gear3.png" alt="Gear Product" class="product-image" />
-      <div class="product-title">Combat Knife</div>
-      <div class="product-description">Razor-sharp fixed blade with sheath.</div>
-      <div class="price">$89.00</div>
-      <a href="#" class="buy-button">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="images/gear4.png" alt="Gear Product" class="product-image" />
-      <div class="product-title">Water Filter Straw</div>
-      <div class="product-description">Clean water anywhere, anytime.</div>
-      <div class="price">$19.99</div>
-      <a href="#" class="buy-button">Buy Now</a>
-    </div>
-  </div>
+<h1>Grit Gear HQ - Store</h1>
+<p><em>"Comfort is a lie. Grit is survival."</em></p>
+
+<div class="product">
+  <img src="https://rebelquotes1.github.io/gritgearhq-site/images/gear1.png" alt="Tactical Backpack">
+  <h3>Tactical Backpack</h3>
+  <p>Heavy-duty pack built for any mission.</p>
+  <p>$129.99</p>
+  <button onclick="window.location.href='https://www.amazon.com/dp/B07PGL2ZSL'">Buy Now</button>
+</div>
+
+<div class="product">
+  <img src="https://rebelquotes1.github.io/gritgearhq-site/images/gear2.png" alt="Firestarter Kit">
+  <h3>Firestarter Kit</h3>
+  <p>Compact and waterproof ignition system.</p>
+  <p>$24.95</p>
+  <button onclick="window.location.href='https://www.amazon.com/dp/B0792Q3Y1H'">Buy Now</button>
+</div>
+
+<div class="product">
+  <img src="https://rebelquotes1.github.io/gritgearhq-site/images/gear3.png" alt="Combat Knife">
+  <h3>Combat Knife</h3>
+  <p>Razor-sharp fixed blade with sheath.</p>
+  <p>$89.00</p>
+  <button onclick="window.location.href='https://www.amazon.com/dp/B08H5WNMMQ'">Buy Now</button>
+</div>
+
+<div class="product">
+  <img src="https://rebelquotes1.github.io/gritgearhq-site/images/gear4.png" alt="Water Filter Straw">
+  <h3>Water Filter Straw</h3>
+  <p>Clean water anywhere, anytime.</p>
+  <p>$19.99</p>
+  <button onclick="window.location.href='https://www.amazon.com/dp/B01G7SQBPQ'">Buy Now</button>
+</div>
+
 </body>
 </html>
