@@ -2,70 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit Gear HQ - Simplified Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grit Gear HQ</title>
   <style>
     body {
-      background-color: #111;
-      color: #eee;
+      background-color: #121212;
+      color: #f1c40f;
       font-family: Arial, sans-serif;
-      padding: 40px;
+      margin: 0;
+      padding: 0;
     }
-
     h1 {
       text-align: center;
-      color: #f0c040;
-      font-size: 36px;
+      padding: 20px 0;
+      color: #f39c12;
     }
-
     .category {
-      margin-top: 40px;
+      margin: 40px auto;
+      max-width: 1000px;
+      padding: 0 20px;
     }
-
-    .category h2 {
-      border-bottom: 2px solid #555;
-      padding-bottom: 10px;
-      color: #f0c040;
+    .category-title {
+      font-size: 28px;
+      margin-bottom: 10px;
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    .category-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 2px solid #f39c12;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      margin-top: 20px;
     }
-
-    .item {
-      background-color: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 20px;
+    .product-card {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 15px;
+      width: 220px;
       text-align: center;
-      box-shadow: 0 0 5px #000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
-
-    .icon {
-      font-size: 48px;
-      margin-bottom: 10px;
+    .product-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
     }
-
-    .title {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .buy {
-      display: inline-block;
-      padding: 8px 16px;
-      background-color: #f0c040;
+    .buy-btn {
+      background-color: #f39c12;
       color: #000;
-      text-decoration: none;
+      padding: 8px 16px;
+      border: none;
       border-radius: 6px;
+      margin-top: 10px;
+      cursor: pointer;
       font-weight: bold;
     }
-
-    .buy:hover {
-      background-color: #e6b800;
+    .buy-btn:hover {
+      background-color: #ffa500;
     }
   </style>
 </head>
@@ -73,46 +72,97 @@
   <h1>Grit Gear HQ</h1>
 
   <div class="category">
-    <h2>Gear 🛠️</h2>
-    <div class="grid">
-      <!-- Gear Items -->
-      <!-- Reuse same structure for each -->
-      ${[...Array(10).keys()].map(i => `
-      <div class="item">
-        <div class="icon">🛠️</div>
-        <div class="title">Gear Item ${i+1}</div>
-        <a href="https://www.amazon.com" class="buy" target="_blank">Buy Now</a>
+    <div class="category-title">Gear 🛠️</div>
+    <img class="category-image" src="https://rebelquotes1.github.io/gritgearhq-site/images/gear-category.jpg" alt="Gear Category" />
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-title">QT&QY Military Tactical Backpack</div>
+        <a href="https://www.amazon.com/dp/B08QNHKFXX" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
       </div>
-      `).join('')}
+      <div class="product-card">
+        <div class="product-title">Überleben Fire Starting Kit</div>
+        <a href="https://www.amazon.com/dp/B0D6STKX9B" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
+      </div>
+      <div class="product-card">
+        <div class="product-title">Hand Crank Emergency Radio</div>
+        <a href="https://www.amazon.com/dp/B0B9H9JWCJ" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
+      </div>
+      <div class="product-card">
+        <div class="product-title">LifeStraw Personal Water Filter</div>
+        <a href="https://www.amazon.com/dp/B0BD62WV2V" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
+      </div>
     </div>
   </div>
 
   <div class="category">
-    <h2>Self Defense 🛡️</h2>
-    <div class="grid">
-      <!-- Self Defense Items -->
-      ${[...Array(10).keys()].map(i => `
-      <div class="item">
-        <div class="icon">🛡️</div>
-        <div class="title">Self Defense Item ${i+1}</div>
-        <a href="https://www.amazon.com" class="buy" target="_blank">Buy Now</a>
+    <div class="category-title">Self Defense 🛡️</div>
+    <img class="category-image" src="https://rebelquotes1.github.io/gritgearhq-site/images/selfdefense-category.jpg" alt="Self Defense Category" />
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-title">SABRE Pepper Gel Spray</div>
+        <a href="https://www.amazon.com/dp/B087RJBTT8" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
       </div>
-      `).join('')}
+      <div class="product-card">
+        <div class="product-title">VIPERTEK VTS-195 Stun Gun Flashlight</div>
+        <a href="https://www.amazon.com/dp/B01FL444JW" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
+      </div>
+      <div class="product-card">
+        <div class="product-title">Atomic Bear Tactical Pen</div>
+        <a href="https://www.amazon.com/dp/B01MG25VN1" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
+      </div>
+      <div class="product-card">
+        <div class="product-title">Kershaw Appa Folding Pocket Knife</div>
+        <a href="https://www.amazon.com/dp/B09T8YPT1X" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
+      </div>
     </div>
   </div>
 
   <div class="category">
-    <h2>Books 📘</h2>
-    <div class="grid">
-      <!-- Books -->
-      ${[...Array(10).keys()].map(i => `
-      <div class="item">
-        <div class="icon">📘</div>
-        <div class="title">Book ${i+1}</div>
-        <a href="https://www.amazon.com" class="buy" target="_blank">Buy Now</a>
+    <div class="category-title">Books 📘</div>
+    <img class="category-image" src="https://rebelquotes1.github.io/gritgearhq-site/images/books-category.jpg" alt="Books Category" />
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-title">SAS Survival Handbook</div>
+        <a href="https://www.amazon.com/dp/0061733199" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
       </div>
-      `).join('')}
+      <div class="product-card">
+        <div class="product-title">Bushcraft 101</div>
+        <a href="https://www.amazon.com/dp/1440579776" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
+      </div>
+      <div class="product-card">
+        <div class="product-title">Prepper’s Long-Term Survival Guide</div>
+        <a href="https://www.amazon.com/dp/1646043325" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
+      </div>
+      <div class="product-card">
+        <div class="product-title">The Trapper’s Bible</div>
+        <a href="https://www.amazon.com/dp/1581605854" target="_blank">
+          <button class="buy-btn">Buy Now</button>
+        </a>
+      </div>
     </div>
   </div>
+
 </body>
 </html>
