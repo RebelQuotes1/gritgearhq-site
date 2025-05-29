@@ -6,135 +6,111 @@
   <title>Grit Gear HQ</title>
   <style>
     body {
-      background-color: #111;
-      color: #f9c440;
       font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
       margin: 0;
       padding: 0;
+    }
+    h1, h2 {
       text-align: center;
+      margin-top: 1rem;
     }
-
-    h1 {
-      margin: 30px 0 10px;
-      font-size: 2.5em;
+    .category-image {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #000;
     }
-
-    h2 {
-      margin: 40px 0 10px;
-      font-size: 1.8em;
-      color: #f0c040;
-    }
-
-    .section-image {
-      width: 90%;
-      max-width: 1000px;
-      margin-bottom: 25px;
-      border-radius: 10px;
-    }
-
-    .product-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      margin-bottom: 40px;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
-
-    .product-card {
+    .item {
       background-color: #222;
-      padding: 20px;
-      width: 220px;
+      padding: 1rem;
       border-radius: 10px;
-      color: white;
+      text-align: center;
       box-shadow: 0 0 10px #000;
     }
-
-    .product-card h3 {
-      margin: 10px 0;
-      font-size: 1.1em;
-      color: white;
+    .item img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
     }
-
-    .product-card a {
-      display: inline-block;
-      margin-top: 10px;
-      background-color: #f90;
-      color: black;
-      padding: 10px 20px;
+    .item a {
+      color: #00ff99;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
+      display: block;
+      margin-top: 0.5rem;
     }
-
-    .product-card a:hover {
-      background-color: #fb3;
+    .item a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <h1>Grit Gear HQ</h1>
 
   <h2>Gear</h2>
-  <img class="section-image" src="https://rebelquotes1.github.io/gritgearhq-site/images/gear-banner.jpg" alt="Gear Section Image"/>
-  <div class="product-container">
-    <div class="product-card">
-      <h3>GT&QY Military Tactical Backpack</h3>
-      <a href="https://amzn.to/3UzFcT9" target="_blank">Buy Now</a>
+  <img src="https://images.unsplash.com/photo-1618354691213-0bdee0e3a930" alt="Survival Gear" class="category-image"/>
+  <div class="grid">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71N0U3JAk3L.jpg" alt="Leatherman Wave Plus">
+      <a href="https://www.amazon.com/dp/B079MJBP21" target="_blank">Leatherman Wave Plus</a>
     </div>
-    <div class="product-card">
-      <h3>Überleben Fire Starting Kit</h3>
-      <a href="https://amzn.to/3KpLCQ1" target="_blank">Buy Now</a>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81HE3hZoyzL.jpg" alt="EcoZoom Rocket Stove">
+      <a href="https://www.amazon.com/dp/B00DQYN9DG" target="_blank">EcoZoom Rocket Stove</a>
     </div>
-    <div class="product-card">
-      <h3>Hand Crank Emergency Radio</h3>
-      <a href="https://amzn.to/3UuGpUc" target="_blank">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <h3>LifeStraw Personal Water Filter</h3>
-      <a href="https://amzn.to/3yCYDoS" target="_blank">Buy Now</a>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81sPaGZahjL.jpg" alt="Life Tent Emergency Shelter">
+      <a href="https://www.amazon.com/dp/B078JMH6TM" target="_blank">Life Tent Emergency Shelter</a>
     </div>
   </div>
 
   <h2>Self Defense</h2>
-  <img class="section-image" src="https://rebelquotes1.github.io/gritgearhq-site/images/selfdefense-banner.jpg" alt="Self Defense Section Image"/>
-  <div class="product-container">
-    <div class="product-card">
-      <h3>SABRE Pepper Gel Spray</h3>
-      <a href="https://amzn.to/3UulJb3" target="_blank">Buy Now</a>
+  <img src="https://images.unsplash.com/photo-1602955352824-3b7e8655cb06" alt="Self Defense Tools" class="category-image"/>
+  <div class="grid">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61rX+xFjKxL.jpg" alt="Tacticon Armament Laser">
+      <a href="https://www.amazon.com/dp/B01MZ96HXL" target="_blank">Tacticon Armament Laser</a>
     </div>
-    <div class="product-card">
-      <h3>VIPERTEK VTS-195 Stun Gun Flashlight</h3>
-      <a href="https://amzn.to/3WZ5xw0" target="_blank">Buy Now</a>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81eFlVb+nRL.jpg" alt="Wuben Tactical Flashlight">
+      <a href="https://www.amazon.com/dp/B07PX5RZN7" target="_blank">Wuben Tactical Flashlight</a>
     </div>
-    <div class="product-card">
-      <h3>Atomic Bear Tactical Pen</h3>
-      <a href="https://amzn.to/4bNReA3" target="_blank">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <h3>Kershaw Appa Folding Pocket Knife</h3>
-      <a href="https://amzn.to/3KpHOnX" target="_blank">Buy Now</a>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81YVVu1O9uL.jpg" alt="Atomic Bear Parashovel">
+      <a href="https://www.amazon.com/dp/B07GRD5C1N" target="_blank">Atomic Bear Parashovel</a>
     </div>
   </div>
 
   <h2>Books</h2>
-  <img class="section-image" src="https://rebelquotes1.github.io/gritgearhq-site/images/books-banner.jpg" alt="Books Section Image"/>
-  <div class="product-container">
-    <div class="product-card">
-      <h3>SAS Survival Handbook</h3>
-      <a href="https://amzn.to/4bRRHKp" target="_blank">Buy Now</a>
+  <img src="https://images.unsplash.com/photo-1611175694986-5c0a424e4b2d" alt="Survival Books" class="category-image"/>
+  <div class="grid">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71aytTn8WnL.jpg" alt="Bushcraft 101">
+      <a href="https://www.amazon.com/dp/1440579776" target="_blank">Bushcraft 101</a>
     </div>
-    <div class="product-card">
-      <h3>Bushcraft 101</h3>
-      <a href="https://amzn.to/3UzN6Tu" target="_blank">Buy Now</a>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81fxzFFKDiL.jpg" alt="How to Stay Alive in the Woods">
+      <a href="https://www.amazon.com/dp/1579125517" target="_blank">Stay Alive in the Woods</a>
     </div>
-    <div class="product-card">
-      <h3>Prepper's Long-Term Survival Guide</h3>
-      <a href="https://amzn.to/3yCb3Re" target="_blank">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <h3>The Trapper’s Bible</h3>
-      <a href="https://amzn.to/3yC89oN" target="_blank">Buy Now</a>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71ShyYO+pFL.jpg" alt="Thought Crimes by Serpico">
+      <a href="#" target="_blank">Thought Crimes by Serpico</a>
     </div>
   </div>
+
 </body>
 </html>
