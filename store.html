@@ -1,108 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Grit Gear HQ</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ - Store</title>
   <style>
     body {
       background-color: #111;
-      color: #f8f8f8;
+      color: #f0a500;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
     }
     h1 {
-      color: #f4a300;
-      font-size: 2.8em;
+      margin-top: 30px;
+      font-size: 2em;
     }
-    h2 {
-      color: #f4a300;
-      margin-top: 40px;
+    .category {
+      margin: 50px auto;
+      max-width: 1000px;
     }
-    .category-image {
-      max-width: 300px;
-      margin-bottom: 20px;
+    .category img {
+      width: 300px;
+      height: auto;
       border-radius: 10px;
+      margin: 20px 0;
     }
     .grid {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      margin-bottom: 40px;
     }
     .item {
-      background-color: #222;
-      padding: 15px;
-      border-radius: 10px;
-      width: 200px;
+      background: #1b1b1b;
+      border-radius: 12px;
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.2);
+      color: #eee;
+      text-align: left;
     }
-    .item img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 10px;
+    .item h3 {
+      margin-top: 0;
+      color: #f0a500;
+    }
+    .item p {
+      font-size: 0.9em;
+      color: #ccc;
     }
     .item a {
-      color: #00ff99;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #f0a500;
+      color: black;
+      border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
-      display: block;
-      margin-top: 5px;
+    }
+    .item a:hover {
+      background: #ffc733;
     }
   </style>
 </head>
 <body>
   <h1>Grit Gear HQ</h1>
 
-  <h2>Gear</h2>
-  <img src="https://images.unsplash.com/photo-1624818774559-eee1f1f192cb" alt="Survival Gear" class="category-image">
-  <div class="grid">
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/71N8U03JAkL.jpg" alt="Leatherman Wave Plus">
-      <a href="https://www.amazon.com/dp/B079HQBP21" target="_blank">Leatherman Wave Plus</a>
-    </div>
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/81HEh3h20yL.jpg" alt="EcoZoom Rocket Stove">
-      <a href="https://www.amazon.com/dp/B00MBQo0B0" target="_blank">EcoZoom Rocket Stove</a>
-    </div>
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/81spPaGzh6L.jpg" alt="Life Tent Emergency Shelter">
-      <a href="https://www.amazon.com/dp/B0783HM6TF" target="_blank">Life Tent Emergency Shelter</a>
-    </div>
-  </div>
-
-  <h2>Self Defense</h2>
-  <img src="https://images.unsplash.com/photo-1602955355224-3b7e8655cb06" alt="Self Defense Tools" class="category-image">
-  <div class="grid">
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/61rxKv4sFjL._AC_SL1500_.jpg" alt="Tacticon Armament Laser">
-      <a href="https://www.amazon.com/dp/B07B2X9GLQ" target="_blank">Tacticon Armament Laser</a>
-    </div>
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/81elYbvoRRL.jpg" alt="Wuben Tactical Flashlight">
-      <a href="https://www.amazon.com/dp/B07XPZSKJP" target="_blank">Wuben Tactical Flashlight</a>
-    </div>
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/81V1W0Uq0dL.jpg" alt="Atomic Bear Parashovel">
-      <a href="https://www.amazon.com/dp/B07GD8S1CM" target="_blank">Atomic Bear Parashovel</a>
+  <!-- Gear -->
+  <div class="category">
+    <h2>Gear</h2>
+    <img src="https://i.imgur.com/mtFTWGH.jpeg" alt="Survival Gear Image" />
+    <div class="grid">
+      <div class="item">
+        <h3>Leatherman Wave Plus</h3>
+        <p>Multi-tool with 18 functions for survival, repairs, and everyday carry.</p>
+        <a href="https://www.amazon.com/dp/B07H9Q8PZ1" target="_blank">Buy Now</a>
+      </div>
+      <div class="item">
+        <h3>EcoZoom Rocket Stove</h3>
+        <p>Fuel-efficient wood-burning stove for off-grid cooking and emergencies.</p>
+        <a href="https://www.amazon.com/dp/B01H8H2YOJ" target="_blank">Buy Now</a>
+      </div>
+      <div class="item">
+        <h3>Life Tent Emergency Shelter</h3>
+        <p>Compact 2-person survival tent for harsh environments. Lightweight and fast setup.</p>
+        <a href="https://www.amazon.com/dp/B078D3H6TM" target="_blank">Buy Now</a>
+      </div>
     </div>
   </div>
 
-  <h2>Books</h2>
-  <img src="https://images.unsplash.com/photo-1611175694698-5c0ad24e2bd2" alt="Survival Books" class="category-image">
-  <div class="grid">
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/71aytnB8m8L.jpg" alt="Bushcraft 101">
-      <a href="https://www.amazon.com/dp/1440579776" target="_blank">Bushcraft 101</a>
+  <!-- Self Defense -->
+  <div class="category">
+    <h2>Self Defense</h2>
+    <img src="https://i.imgur.com/T5Bz5D1.jpeg" alt="Stun Gun Self Defense Image" />
+    <div class="grid">
+      <div class="item">
+        <h3>Tacticon Armament Laser</h3>
+        <p>Rechargeable laser sight with adjustable windage and elevation. Great for tactical prep.</p>
+        <a href="https://www.amazon.com/dp/B07D1X9GKL" target="_blank">Buy Now</a>
+      </div>
+      <div class="item">
+        <h3>Wuben Tactical Flashlight</h3>
+        <p>High-lumen, USB-rechargeable flashlight built to withstand tough survival conditions.</p>
+        <a href="https://www.amazon.com/dp/B07XP8ZKMP" target="_blank">Buy Now</a>
+      </div>
+      <div class="item">
+        <h3>Atomic Bear Parashovel</h3>
+        <p>Folding multi-tool shovel with saw, firestarter, and tactical durability.</p>
+        <a href="https://www.amazon.com/dp/B078GR05CJ" target="_blank">Buy Now</a>
+      </div>
     </div>
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/81h3FKF0IiL.jpg" alt="Stay Alive in the Woods">
-      <a href="https://www.amazon.com/dp/1599217595" target="_blank">Stay Alive in the Woods</a>
-    </div>
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/71Shy0YoPFL.jpg" alt="Thought Crimes by Serpico">
-      <a href="#" target="_blank">Thought Crimes by Serpico</a>
+  </div>
+
+  <!-- Books -->
+  <div class="category">
+    <h2>Books</h2>
+    <img src="https://i.imgur.com/uvDfyoU.jpeg" alt="Survival Books Image" />
+    <div class="grid">
+      <div class="item">
+        <h3>Bushcraft 101</h3>
+        <p>Essential wilderness survival skills guide by expert Dave Canterbury.</p>
+        <a href="https://www.amazon.com/dp/1440579776" target="_blank">Buy Now</a>
+      </div>
+      <div class="item">
+        <h3>How to Stay Alive in the Woods</h3>
+        <p>Classic manual on food, shelter, signaling, and survival psychology.</p>
+        <a href="https://www.amazon.com/dp/1599214517" target="_blank">Buy Now</a>
+      </div>
+      <div class="item">
+        <h3>Thought Crimes by Serpico</h3>
+        <p>Gritty, raw notebook of dangerous ideas from the creator of Grit Gear HQ.</p>
+        <a href="#" target="_blank">Buy Now</a>
+      </div>
     </div>
   </div>
 </body>
