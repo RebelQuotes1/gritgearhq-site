@@ -1,81 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Grit Gear HQ - Store</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ Store</title>
   <style>
     body {
-      background: url('background.png') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-    }
-    .product {
-      display: inline-block;
-      background-color: rgba(0,0,0,0.7);
+      background-color: #111;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
       padding: 20px;
-      margin: 10px;
+    }
+    h1 {
+      text-align: center;
+      color: #d4af37;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .item {
+      background-color: #1e1e1e;
+      padding: 15px;
       border-radius: 10px;
-      width: 200px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 0 10px #333;
     }
-    .product img {
-      width: 100px;
-      height: 100px;
+    .item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
     }
-    .product h3 {
-      margin: 10px 0 5px;
+    .item h3 {
+      margin: 10px 0;
+      color: #fff;
     }
-    .product p {
-      margin: 5px 0;
-    }
-    .product button {
-      background-color: #ff4500;
-      color: white;
-      border: none;
-      padding: 8px 16px;
+    .item a {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #d4af37;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
       border-radius: 5px;
-      cursor: pointer;
     }
-    .product button:hover {
-      background-color: #e03e00;
+    .item a:hover {
+      background-color: #b38f2f;
     }
   </style>
 </head>
 <body>
-<h1>Grit Gear HQ - Store</h1>
-<p><em>"Comfort is a lie. Grit is survival."</em></p>
+  <h1>Grit Gear HQ Store</h1>
+  <div class="grid">
 
-<div class="product">
-  <img src="https://rebelquotes1.github.io/gritgearhq-site/images/gear1.png" alt="Tactical Backpack">
-  <h3>Tactical Backpack</h3>
-  <p>Heavy-duty pack built for any mission.</p>
-  <p>$129.99</p>
-  <button onclick="window.location.href='https://www.amazon.com/dp/B07PGL2ZSL'">Buy Now</button>
-</div>
+    <div class="item">
+      <img src="https://tse2.mm.bing.net/th?id=OIP.l9U6GTvuaWrUQzl2HX-0BwHaJr&pid=Api" alt="Tactical Backpack">
+      <h3>Falko Tactical Backpack 50L</h3>
+      <a href="https://www.amazon.com/dp/B093Y9P8ZS" target="_blank">Buy Now</a>
+    </div>
 
-<div class="product">
-  <img src="https://rebelquotes1.github.io/gritgearhq-site/images/gear2.png" alt="Firestarter Kit">
-  <h3>Firestarter Kit</h3>
-  <p>Compact and waterproof ignition system.</p>
-  <p>$24.95</p>
-  <button onclick="window.location.href='https://www.amazon.com/dp/B0792Q3Y1H'">Buy Now</button>
-</div>
+    <div class="item">
+      <img src="https://tse4.mm.bing.net/th?id=OIP.Hf86NrRw2uOvguK9bTpi_QHaLH&pid=Api" alt="Fire Starter Kit">
+      <h3>Weyland Fire Starter Kit</h3>
+      <a href="https://www.amazon.com/dp/B08T3VWZ9S" target="_blank">Buy Now</a>
+    </div>
 
-<div class="product">
-  <img src="https://rebelquotes1.github.io/gritgearhq-site/images/gear3.png" alt="Combat Knife">
-  <h3>Combat Knife</h3>
-  <p>Razor-sharp fixed blade with sheath.</p>
-  <p>$89.00</p>
-  <button onclick="window.location.href='https://www.amazon.com/dp/B08H5WNMMQ'">Buy Now</button>
-</div>
+    <div class="item">
+      <img src="https://tse1.mm.bing.net/th?id=OIP.SgejAGY7ZfjRiZerOg6FlQHaHa&pid=Api" alt="Combat Knife">
+      <h3>M48 Tactical Commando Knife</h3>
+      <a href="https://www.budk.com/M48-Tactical-Commando-Knife-27701" target="_blank">Buy Now</a>
+    </div>
 
-<div class="product">
-  <img src="https://rebelquotes1.github.io/gritgearhq-site/images/gear4.png" alt="Water Filter Straw">
-  <h3>Water Filter Straw</h3>
-  <p>Clean water anywhere, anytime.</p>
-  <p>$19.99</p>
-  <button onclick="window.location.href='https://www.amazon.com/dp/B01G7SQBPQ'">Buy Now</button>
-</div>
+    <div class="item">
+      <img src="https://tse4.mm.bing.net/th?id=OIP.WNlX22juvDti-RlKBQbY1QHaHa&pid=Api" alt="Water Filter Straw">
+      <h3>LifeStraw Personal Water Filter</h3>
+      <a href="https://www.amazon.com/dp/B01G7SQBPQ" target="_blank">Buy Now</a>
+    </div>
 
+  </div>
 </body>
 </html>
