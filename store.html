@@ -7,111 +7,107 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #1b1b1b;
-      color: #f0f0f0;
+      background-color: #1c1c1c;
+      color: #f1f1f1;
       margin: 0;
       padding: 20px;
     }
     h1 {
       text-align: center;
-      margin-bottom: 30px;
-      color: #e0e000;
+      color: #ffcc00;
     }
-    .grid {
+    .store-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
+      margin-top: 30px;
     }
-    .item {
-      background-color: #2a2a2a;
-      padding: 15px;
+    .item-card {
+      background-color: #2c2c2c;
+      border: 1px solid #444;
       border-radius: 10px;
+      padding: 15px;
       text-align: center;
-      box-shadow: 0 0 8px #000;
     }
-    .item img {
-      width: 100%;
+    .item-card img {
+      max-width: 100%;
+      border-radius: 8px;
       height: 200px;
       object-fit: cover;
-      border-radius: 6px;
     }
-    .item h3 {
+    .item-card h2 {
       font-size: 18px;
       margin: 10px 0;
     }
-    .buy-btn {
-      background-color: #e0e000;
-      color: #000;
-      padding: 10px 20px;
-      text-decoration: none;
+    .item-card a {
       display: inline-block;
-      border-radius: 5px;
       margin-top: 10px;
-      font-weight: bold;
-    }
-    .buy-btn:hover {
+      padding: 10px 15px;
       background-color: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .item-card a:hover {
+      background-color: #e6b800;
     }
   </style>
 </head>
 <body>
   <h1>Grit Gear HQ Store</h1>
-  <div class="grid">
-    
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/81lQp6lreZL._AC_SL1500_.jpg" alt="Life Tent">
-      <h3>2-Person Emergency Life Tent</h3>
-      <a class="buy-btn" href="https://www.amazon.com/dp/B078J5MY8J" target="_blank">Buy Now</a>
+  <div class="store-grid">
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/81vOtbYUGlL._AC_SL1500_.jpg" alt="Leatherman Wave Plus">
+      <h2>Leatherman Wave+ Multitool</h2>
+      <a href="https://www.amazon.com/dp/B079MJBP21" target="_blank">Buy Now</a>
     </div>
-
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/81Jt9v5LFoL._AC_SL1500_.jpg" alt="Leatherman Wave Plus">
-      <h3>Leatherman Wave Plus Multitool</h3>
-      <a class="buy-btn" href="https://www.amazon.com/dp/B079MJBP21" target="_blank">Buy Now</a>
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/71SB0xukbXL._AC_SL1500_.jpg" alt="Atomic Bear Paracord Bracelet">
+      <h2>Atomic Bear Paracord Survival Bracelet</h2>
+      <a href="https://www.amazon.com/dp/B07CVX3516" target="_blank">Buy Now</a>
     </div>
-
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/71gRoViyjLL._AC_SL1500_.jpg" alt="EcoZoom Rocket Stove">
-      <h3>EcoZoom Versa Rocket Stove</h3>
-      <a class="buy-btn" href="https://www.amazon.com/dp/B00FGLDF1I" target="_blank">Buy Now</a>
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/81q7IEXJw2L._AC_SL1500_.jpg" alt="EcoZoom Rocket Stove">
+      <h2>EcoZoom Versa Rocket Stove</h2>
+      <a href="https://www.amazon.com/dp/B00GRFS4GG" target="_blank">Buy Now</a>
     </div>
-
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/81PbPy-yi3L._AC_SL1500_.jpg" alt="Atomic Bear Bracelet">
-      <h3>Atomic Bear Paracord Bracelet</h3>
-      <a class="buy-btn" href="https://www.amazon.com/dp/B01F5XQB3K" target="_blank">Buy Now</a>
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/61IkLVeEekL._AC_SL1000_.jpg" alt="Life Tent Emergency Shelter">
+      <h2>Life Tent Emergency Survival Shelter</h2>
+      <a href="https://www.amazon.com/dp/B078JBBPXV" target="_blank">Buy Now</a>
     </div>
-
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/61EZ02QbjhL._AC_SL1200_.jpg" alt="WUBEN Flashlight">
-      <h3>WUBEN C3 1200 Lumens Flashlight</h3>
-      <a class="buy-btn" href="https://www.amazon.com/dp/B09YV55SRZ" target="_blank">Buy Now</a>
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/71jG6LJAhBL._AC_SL1500_.jpg" alt="ReadyWise 30-Day Food Supply">
+      <h2>ReadyWise 30-Day Emergency Food Supply</h2>
+      <a href="https://www.amazon.com/dp/B085HRYRBV" target="_blank">Buy Now</a>
     </div>
-
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/71q4ul8QRSL._AC_SL1500_.jpg" alt="72 Hour Food Kit">
-      <h3>ReadyWise 72-Hour Emergency Food Kit</h3>
-      <a class="buy-btn" href="https://www.amazon.com/dp/B0096UXXGQ" target="_blank">Buy Now</a>
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/81wAVhzSSnL._AC_SL1500_.jpg" alt="Tacticon Armament Battle Torch">
+      <h2>Tacticon Armament Battle Torch V1</h2>
+      <a href="https://www.amazon.com/dp/B00SZ8F3TM" target="_blank">Buy Now</a>
     </div>
-
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/91v27K+PszL._AC_SL1500_.jpg" alt="Tacticon Armament Molle Pouch">
-      <h3>Tacticon Tactical Molle Pouch</h3>
-      <a class="buy-btn" href="https://www.amazon.com/dp/B07DWZC5JK" target="_blank">Buy Now</a>
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/61kMTkL05iL._AC_SL1000_.jpg" alt="WUBEN C3 Tactical Flashlight">
+      <h2>WUBEN C3 1200 Lumen Tactical Flashlight</h2>
+      <a href="https://www.amazon.com/dp/B08HVGV5B5" target="_blank">Buy Now</a>
     </div>
-
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/71RnFeMTmZL._AC_SL1500_.jpg" alt="30 Day Emergency Food Supply">
-      <h3>Augason Farms 30-Day Emergency Food Supply</h3>
-      <a class="buy-btn" href="https://www.amazon.com/dp/B0096UXXGQ" target="_blank">Buy Now</a>
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/91r3dthzVaL._AC_SL1500_.jpg" alt="Augason Farms 72-Hour Kit">
+      <h2>Augason Farms 72-Hour Emergency Food Kit</h2>
+      <a href="https://www.amazon.com/dp/B0096KJTU6" target="_blank">Buy Now</a>
     </div>
-
-    <div class="item">
-      <img src="https://m.media-amazon.com/images/I/61FIMb4v78L._AC_SL1000_.jpg" alt="Grizzly Gear Mylar Tube Tent">
-      <h3>Grizzly Gear Emergency Tube Tent</h3>
-      <a class="buy-btn" href="https://www.amazon.com/dp/B01M26WJX8" target="_blank">Buy Now</a>
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/71Z0i7xPUvL._AC_SL1500_.jpg" alt="S.O.L. Bivvy 2.0">
+      <h2>S.O.L. Bivvy 2.0 Emergency Sleeping Bag</h2>
+      <a href="https://www.amazon.com/dp/B07KRHYLS7" target="_blank">Buy Now</a>
     </div>
-
+    <div class="item-card">
+      <img src="https://m.media-amazon.com/images/I/71cu7K+OBTL._AC_SL1500_.jpg" alt="Grizzly Gear Mylar Tube Tent">
+      <h2>Grizzly Gear Mylar Emergency Tube Tent</h2>
+      <a href="https://www.amazon.com/dp/B07YPLX9J9" target="_blank">Buy Now</a>
+    </div>
   </div>
 </body>
 </html>
+
