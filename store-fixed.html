@@ -1,31 +1,102 @@
-
 <!DOCTYPE html>
-<html>
-<head><title>Grit Gear HQ - Store</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ - Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #121212;
+      font-family: Arial, sans-serif;
+      color: #f0f0f0;
+      text-align: center;
+    }
+    h1 {
+      color: #ff6600;
+      margin-top: 30px;
+    }
+    .quote {
+      font-style: italic;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product-card {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      width: 200px;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    .product-image {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .product-title {
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+    .product-description {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    .price {
+      color: #ff9900;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .buy-button {
+      background-color: #ff3300;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
 <body>
-<div class="product">
-  <img src="images/gear1.png" alt="Gear Product" class="product-image">
-  <h3>Sample Product</h3>
-  <p>$99.99</p>
-  <button>Buy Now</button>
-</div>
-<div class="product">
-  <img src="images/gear2.png" alt="Gear Product" class="product-image">
-  <h3>Sample Product</h3>
-  <p>$99.99</p>
-  <button>Buy Now</button>
-</div>
-<div class="product">
-  <img src="images/gear3.png" alt="Gear Product" class="product-image">
-  <h3>Sample Product</h3>
-  <p>$99.99</p>
-  <button>Buy Now</button>
-</div>
-<div class="product">
-  <img src="images/gear4.png" alt="Gear Product" class="product-image">
-  <h3>Sample Product</h3>
-  <p>$99.99</p>
-  <button>Buy Now</button>
-</div>
+  <h1>Grit Gear HQ - Store</h1>
+  <div class="quote">"Comfort is a lie. Grit is survival."</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="images/gear1.png" alt="Gear Product" class="product-image" />
+      <div class="product-title">Tactical Backpack</div>
+      <div class="product-description">Heavy-duty pack built for any mission.</div>
+      <div class="price">$129.99</div>
+      <a href="#" class="buy-button">Buy Now</a>
+    </div>
+    <div class="product-card">
+      <img src="images/gear2.png" alt="Gear Product" class="product-image" />
+      <div class="product-title">Firestarter Kit</div>
+      <div class="product-description">Compact and waterproof ignition system.</div>
+      <div class="price">$24.95</div>
+      <a href="#" class="buy-button">Buy Now</a>
+    </div>
+    <div class="product-card">
+      <img src="images/gear3.png" alt="Gear Product" class="product-image" />
+      <div class="product-title">Combat Knife</div>
+      <div class="product-description">Razor-sharp fixed blade with sheath.</div>
+      <div class="price">$89.00</div>
+      <a href="#" class="buy-button">Buy Now</a>
+    </div>
+    <div class="product-card">
+      <img src="images/gear4.png" alt="Gear Product" class="product-image" />
+      <div class="product-title">Water Filter Straw</div>
+      <div class="product-description">Clean water anywhere, anytime.</div>
+      <div class="price">$19.99</div>
+      <a href="#" class="buy-button">Buy Now</a>
+    </div>
+  </div>
 </body>
 </html>
