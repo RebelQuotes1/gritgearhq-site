@@ -3,128 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit Gear HQ - Survival Store</title>
+  <title>Grit Gear HQ Store</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
-      color: #f0f0f0;
-      background-image: url('background.jpg'); /* Replace with your actual background */
+      background: url('https://images.unsplash.com/photo-1600490211144-df7ceff94e2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
     }
 
-    header {
+    h1 {
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 1rem;
+      text-shadow: 2px 2px 6px #000;
     }
 
-    header h1 {
-      font-size: 3em;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 10px #000;
+    .section {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      margin: 1rem;
+      border-radius: 10px;
     }
 
-    .store {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      padding: 40px;
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
     }
 
     .item {
-      background-color: rgba(0,0,0,0.8);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #000;
-      transition: transform 0.3s;
-    }
-
-    .item:hover {
-      transform: scale(1.03);
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 300px;
     }
 
     .item img {
       width: 100%;
-      border-radius: 8px;
-      height: 200px;
-      object-fit: cover;
+      border-radius: 6px;
     }
 
     .item h3 {
-      margin-top: 15px;
-      font-size: 1.2em;
+      margin: 0.5rem 0 0.2rem;
     }
 
     .item p {
-      font-size: 0.95em;
-      margin: 10px 0;
+      font-size: 0.9rem;
     }
 
     .stars {
       color: gold;
-      margin-bottom: 10px;
+      font-size: 1rem;
     }
 
-    .buy-btn {
+    .buy {
       display: inline-block;
-      margin-top: 10px;
-      background-color: #e91e63;
-      color: white;
-      padding: 10px 18px;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: darkred;
+      color: #fff;
       text-decoration: none;
-      border-radius: 6px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #888;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
+  <h1>Grit Gear HQ</h1>
 
-  <header>
-    <h1>Grit Gear HQ</h1>
-    <p>Rough Gear for Rougher Times</p>
-  </header>
+  <div class="section">
+    <h2>Essential Gear</h2>
+    <div class="grid">
+      <div class="item">
+        <img src="https://m.media-amazon.com/images/I/81a4kCNuH+L._AC_SL1500_.jpg" alt="Tactical Backpack">
+        <h3>Military Tactical Backpack</h3>
+        <p>Rugged 3-day assault pack with molle webbing. Water-resistant and durable.</p>
+        <p class="stars">★★★★☆</p>
+        <a class="buy" href="https://amzn.to/3yMDEBq" target="_blank">Buy Now</a>
+      </div>
 
-  <section class="store">
-
-    <div class="item">
-      <img src="images/firestarter.jpg" alt="Firestarter Kit">
-      <h3>5-in-1 Firestarter Survival Tool</h3>
-      <div class="stars">★★★★☆</div>
-      <p>Reliable firestarter kit with compass, whistle, scraper, and rod for emergency use.</p>
-      <a href="https://www.amazon.com/dp/B08L4YS7W5" class="buy-btn" target="_blank">Buy Now</a>
+      <div class="item">
+        <img src="https://m.media-amazon.com/images/I/71NvYbQd6iL._AC_SL1500_.jpg" alt="Survival Water Filter">
+        <h3>LifeStraw Water Filter</h3>
+        <p>Filter up to 1000 gallons with no moving parts. Trusted by survivalists worldwide.</p>
+        <p class="stars">★★★★★</p>
+        <a class="buy" href="https://amzn.to/3U2ykRI" target="_blank">Buy Now</a>
+      </div>
     </div>
+  </div>
 
-    <div class="item">
-      <img src="images/stun-gun.jpg" alt="Stun Gun Self Defense">
-      <h3>Vipertek Heavy Duty Stun Gun</h3>
-      <div class="stars">★★★★★</div>
-      <p>Rechargeable self-defense stun gun with LED flashlight. Compact and powerful.</p>
-      <a href="https://www.amazon.com/dp/B01HUFE2PU" class="buy-btn" target="_blank">Buy Now</a>
+  <div class="section">
+    <h2>Self-Defense Tools</h2>
+    <div class="grid">
+      <div class="item">
+        <img src="https://m.media-amazon.com/images/I/61Ea+O7VbGL._AC_SL1500_.jpg" alt="Stun Gun">
+        <h3>Sabre Stun Gun</h3>
+        <p>Compact stun gun with flashlight. Strong stopping power for personal safety.</p>
+        <p class="stars">★★★★☆</p>
+        <a class="buy" href="https://amzn.to/4dHCzDj" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="item">
+        <img src="https://m.media-amazon.com/images/I/71xYyy5pTtL._AC_SL1500_.jpg" alt="Tactical Pen">
+        <h3>Smith & Wesson Tactical Pen</h3>
+        <p>Glass breaker and defense tool in one. Sleek and reliable.</p>
+        <p class="stars">★★★★★</p>
+        <a class="buy" href="https://amzn.to/3X6VGzX" target="_blank">Buy Now</a>
+      </div>
     </div>
+  </div>
 
-    <div class="item">
-      <img src="images/survival-book.jpg" alt="Survival Book">
-      <h3>100 Deadly Skills Survival Edition</h3>
-      <div class="stars">★★★★☆</div>
-      <p>Learn survival skills from a former Navy SEAL. A must-read guide for any prepper.</p>
-      <a href="https://www.amazon.com/dp/1501143905" class="buy-btn" target="_blank">Buy Now</a>
+  <div class="section">
+    <h2>Books Worth Reading</h2>
+    <div class="grid">
+      <div class="item">
+        <img src="https://m.media-amazon.com/images/I/81wA-qRUPDL._SL1500_.jpg" alt="Survival Book">
+        <h3>Bushcraft 101</h3>
+        <p>Field guide to wilderness survival by Dave Canterbury. Master the outdoors.</p>
+        <p class="stars">★★★★☆</p>
+        <a class="buy" href="https://amzn.to/4dH9EQj" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="item">
+        <img src="https://m.media-amazon.com/images/I/91AzAEk+HHL._SL1500_.jpg" alt="Prepper Book">
+        <h3>The Prepper’s Blueprint</h3>
+        <p>Comprehensive guide for prepping long-term with actionable steps.</p>
+        <p class="stars">★★★★★</p>
+        <a class="buy" href="https://amzn.to/4bJ6OfO" target="_blank">Buy Now</a>
+      </div>
     </div>
-
-    <!-- Add more items here in same format -->
-
-  </section>
-
-  <footer>
-    &copy; 2025 Grit Gear HQ. Stay rugged, stay ready.
-  </footer>
-
+  </div>
 </body>
 </html>
