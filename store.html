@@ -6,135 +6,174 @@
   <title>Grit Gear HQ Store</title>
   <style>
     body {
-      background: url('https://images.unsplash.com/photo-1600490211144-df7ceff94e2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
-      font-family: Arial, sans-serif;
-      color: #fff;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2e2e2e;
+      color: white;
     }
 
     h1 {
       text-align: center;
-      padding: 1rem;
-      text-shadow: 2px 2px 6px #000;
+      padding: 30px 0 10px;
+      font-size: 42px;
+      color: #ffcc00;
+      text-shadow: 2px 2px 4px #000;
     }
 
     .section {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      margin: 1rem;
+      padding: 40px 20px;
+      background-color: #444;
+      margin-bottom: 20px;
       border-radius: 10px;
     }
 
-    .grid {
+    .section h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #ffffff;
+      border-bottom: 2px solid #999;
+      padding-bottom: 10px;
+    }
+
+    .items {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
       justify-content: center;
+      gap: 20px;
     }
 
     .item {
       background-color: #111;
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 1rem;
-      width: 300px;
+      width: 250px;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px #000;
     }
 
     .item img {
       width: 100%;
+      height: auto;
       border-radius: 6px;
     }
 
     .item h3 {
-      margin: 0.5rem 0 0.2rem;
+      margin: 10px 0 5px;
+      color: #ffcc00;
     }
 
     .item p {
-      font-size: 0.9rem;
+      font-size: 14px;
+      color: #ccc;
+      min-height: 50px;
     }
 
-    .stars {
+    .item .stars {
       color: gold;
-      font-size: 1rem;
+      margin: 6px 0;
+      font-size: 14px;
     }
 
-    .buy {
+    .item a {
       display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.4rem 0.8rem;
-      background: darkred;
-      color: #fff;
-      text-decoration: none;
+      background-color: #c00;
+      color: white;
+      padding: 8px 16px;
       border-radius: 5px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .item a:hover {
+      background-color: #a00;
     }
   </style>
 </head>
 <body>
-  <h1>Grit Gear HQ</h1>
 
-  <div class="section">
-    <h2>Essential Gear</h2>
-    <div class="grid">
-      <div class="item">
-        <img src="https://m.media-amazon.com/images/I/81a4kCNuH+L._AC_SL1500_.jpg" alt="Tactical Backpack">
-        <h3>Military Tactical Backpack</h3>
-        <p>Rugged 3-day assault pack with molle webbing. Water-resistant and durable.</p>
-        <p class="stars">★★★★☆</p>
-        <a class="buy" href="https://amzn.to/3yMDEBq" target="_blank">Buy Now</a>
-      </div>
+<h1>Grit Gear HQ</h1>
 
-      <div class="item">
-        <img src="https://m.media-amazon.com/images/I/71NvYbQd6iL._AC_SL1500_.jpg" alt="Survival Water Filter">
-        <h3>LifeStraw Water Filter</h3>
-        <p>Filter up to 1000 gallons with no moving parts. Trusted by survivalists worldwide.</p>
-        <p class="stars">★★★★★</p>
-        <a class="buy" href="https://amzn.to/3U2ykRI" target="_blank">Buy Now</a>
-      </div>
+<div class="section">
+  <h2>Survival Gear</h2>
+  <div class="items">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81HKAEy7CzL.jpg" alt="Leatherman Wave Plus">
+      <h3>Leatherman Wave Plus</h3>
+      <p>Multi-tool with 18 functions for survival, repairs, and everyday carry.</p>
+      <div class="stars">★★★★★ - “A must-have for any bug-out bag.”</div>
+      <a href="https://www.amazon.com/dp/B079MJBP21" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81HEh3n0yzL.jpg" alt="EcoZoom Rocket Stove">
+      <h3>EcoZoom Rocket Stove</h3>
+      <p>Fuel-efficient wood-burning stove for off-grid cooking and emergencies.</p>
+      <div class="stars">★★★★★ - “Boiled water faster than my gas stove.”</div>
+      <a href="https://www.amazon.com/dp/B00B1N06D0" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81spPGAzhzL.jpg" alt="Life Tent Emergency Shelter">
+      <h3>Life Tent Emergency Shelter</h3>
+      <p>Compact 2-person survival tent for harsh conditions. Lightweight and fast setup.</p>
+      <div class="stars">★★★★☆ - “Kept me warm through a windy night.”</div>
+      <a href="https://www.amazon.com/dp/B07873MHFH" target="_blank">Buy Now</a>
     </div>
   </div>
+</div>
 
-  <div class="section">
-    <h2>Self-Defense Tools</h2>
-    <div class="grid">
-      <div class="item">
-        <img src="https://m.media-amazon.com/images/I/61Ea+O7VbGL._AC_SL1500_.jpg" alt="Stun Gun">
-        <h3>Sabre Stun Gun</h3>
-        <p>Compact stun gun with flashlight. Strong stopping power for personal safety.</p>
-        <p class="stars">★★★★☆</p>
-        <a class="buy" href="https://amzn.to/4dHCzDj" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="item">
-        <img src="https://m.media-amazon.com/images/I/71xYyy5pTtL._AC_SL1500_.jpg" alt="Tactical Pen">
-        <h3>Smith & Wesson Tactical Pen</h3>
-        <p>Glass breaker and defense tool in one. Sleek and reliable.</p>
-        <p class="stars">★★★★★</p>
-        <a class="buy" href="https://amzn.to/3X6VGzX" target="_blank">Buy Now</a>
-      </div>
+<div class="section">
+  <h2>Self-Defense Tools</h2>
+  <div class="items">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61rKvsX-j5L.jpg" alt="Stun Gun Flashlight">
+      <h3>Vipertek VTS-989</h3>
+      <p>Rechargeable stun gun flashlight for personal defense with LED beam.</p>
+      <div class="stars">★★★★★ - “Scared off a dog and saved my life.”</div>
+      <a href="https://www.amazon.com/dp/B01N2G9O7R" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81efVb0vRRL.jpg" alt="Tactical Pen">
+      <h3>Atomic Bear Tactical Pen</h3>
+      <p>Multi-function pen with glass breaker and self-defense features.</p>
+      <div class="stars">★★★★★ - “Great for writing AND emergency use.”</div>
+      <a href="https://www.amazon.com/dp/B074XPZSPK" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81VN1Up0UdL.jpg" alt="Pepper Spray">
+      <h3>SABRE Red Pepper Spray</h3>
+      <p>Police-strength pepper spray with belt clip. Compact & reliable.</p>
+      <div class="stars">★★★★☆ - “Never walk alone without it.”</div>
+      <a href="https://www.amazon.com/dp/B07Q8R5CJM" target="_blank">Buy Now</a>
     </div>
   </div>
+</div>
 
-  <div class="section">
-    <h2>Books Worth Reading</h2>
-    <div class="grid">
-      <div class="item">
-        <img src="https://m.media-amazon.com/images/I/81wA-qRUPDL._SL1500_.jpg" alt="Survival Book">
-        <h3>Bushcraft 101</h3>
-        <p>Field guide to wilderness survival by Dave Canterbury. Master the outdoors.</p>
-        <p class="stars">★★★★☆</p>
-        <a class="buy" href="https://amzn.to/4dH9EQj" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="item">
-        <img src="https://m.media-amazon.com/images/I/91AzAEk+HHL._SL1500_.jpg" alt="Prepper Book">
-        <h3>The Prepper’s Blueprint</h3>
-        <p>Comprehensive guide for prepping long-term with actionable steps.</p>
-        <p class="stars">★★★★★</p>
-        <a class="buy" href="https://amzn.to/4bJ6OfO" target="_blank">Buy Now</a>
-      </div>
+<div class="section">
+  <h2>Books Worth Reading</h2>
+  <div class="items">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71aynt6bNnL.jpg" alt="Bushcraft 101">
+      <h3>Bushcraft 101</h3>
+      <p>Classic guide to wilderness survival skills by Dave Canterbury.</p>
+      <div class="stars">★★★★★ - “The bush bible. Essential reading.”</div>
+      <a href="https://www.amazon.com/dp/1440579776" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71hFxFK0IdL.jpg" alt="Stay Alive in the Woods">
+      <h3>How to Stay Alive in the Woods</h3>
+      <p>Old-school survival wisdom—this timeless knowledge still relevant.</p>
+      <div class="stars">★★★★★ - “Read it twice. Gave a copy to my son.”</div>
+      <a href="https://www.amazon.com/dp/1599217591" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71Shy0uYoFL.jpg" alt="Thought Crimes by Serpico">
+      <h3>Thought Crimes by Serpico</h3>
+      <p>Raw, gritty, and unfiltered—this notebook doesn’t pull punches. Don’t pull yours.</p>
+      <div class="stars">★★★★★ - “Finally, a voice that doesn’t lie to me.”</div>
+      <a href="#" target="_blank">Buy Now</a>
     </div>
   </div>
+</div>
+
 </body>
 </html>
