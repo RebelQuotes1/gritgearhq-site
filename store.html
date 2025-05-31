@@ -3,89 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit Gear HQ</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Grit Gear HQ – Survival Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://rebelquotes1.github.io/roughgrit/assets/bg-store.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #f1f1f1;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px #000;
+      color: #ffe200;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .product {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 15px;
+      max-width: 280px;
+      text-align: center;
+      box-shadow: 0 0 10px #111;
+    }
+
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .product h2 {
+      font-size: 1.2rem;
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #ffe200;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .buy-btn:hover {
+      background-color: #f5c400;
+    }
+  </style>
 </head>
 <body>
-  <img id="logo-title" src="logo.png" alt="Grit Gear Logo" />
-  <h1 id="main-title">Grit Gear HQ</h1>
+  <header>
+    <h1>Grit Gear HQ</h1>
+  </header>
 
-  <!-- Gear Section -->
-  <h2 class="category-title">Gear</h2>
-  <div class="grid">
-    <div class="item">
-      <img src="images/gear1.png" alt="Leatherman Wave Plus" />
-      <p class="item-name">Leatherman Wave Plus</p>
-      <p>Multi-tool with 18 functions for survival, repairs, and everyday carry.</p>
-      <a class="item-link" href="https://www.amazon.com/dp/B07P9BQPZ1" target="_blank">Buy Now</a>
-      <p class="review">★★★★★ - “A must-have for any bug-out bag.”</p>
+  <section class="product-grid">
+    <!-- Example product -->
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/81XzuV2i1wL._AC_SL1500_.jpg" alt="Tactical Backpack"/>
+      <h2>Tactical Survival Backpack</h2>
+      <p>Rugged, waterproof, and ready for any terrain. Bug out in style.</p>
+      <a class="buy-btn" href="https://amzn.to/3VRBqVg" target="_blank">Buy Now</a>
     </div>
-    <div class="item">
-      <img src="images/gear2.png" alt="EcoZoom Rocket Stove" />
-      <p class="item-name">EcoZoom Rocket Stove</p>
-      <p>Fuel-efficient wood-burning stove for off-grid cooking and emergencies.</p>
-      <a class="item-link" href="https://www.amazon.com/dp/B00QHHR7RO" target="_blank">Buy Now</a>
-      <p class="review">★★★★★ - “Boiled water faster than my gas stove.”</p>
-    </div>
-    <div class="item">
-      <img src="images/gear3.png" alt="Life Tent Emergency Shelter" />
-      <p class="item-name">Life Tent Emergency Shelter</p>
-      <p>Compact 2-person tent for harsh conditions. Lightweight and fast setup.</p>
-      <a class="item-link" href="https://www.amazon.com/dp/B073T8HMFJ" target="_blank">Buy Now</a>
-      <p class="review">★★★★★ - “Kept me warm through a windy night.”</p>
-    </div>
-  </div>
 
-  <!-- Self Defense Section -->
-  <h2 class="category-title">Self Defense</h2>
-  <div class="grid">
-    <div class="item">
-      <img src="images/defense1.png" alt="Stun Gun Flashlight" />
-      <p class="item-name">Vipertek VTS-989</p>
-      <p>Rechargeable stun gun flashlight for personal defense with LED beam.</p>
-      <a class="item-link" href="https://www.amazon.com/dp/B00F44V6YG" target="_blank">Buy Now</a>
-      <p class="review">★★★★★ - “Scared off a dog and saved my life.”</p>
-    </div>
-    <div class="item">
-      <img src="images/defense2.png" alt="Tactical Pen" />
-      <p class="item-name">Atomic Bear Tactical Pen</p>
-      <p>Multi-function pen with glass breaker and self-defense features.</p>
-      <a class="item-link" href="https://www.amazon.com/dp/B01H1QZ9PI" target="_blank">Buy Now</a>
-      <p class="review">★★★★★ - “Great for writing AND emergency use.”</p>
-    </div>
-    <div class="item">
-      <img src="images/defense3.png" alt="Pepper Spray" />
-      <p class="item-name">SABRE Red Pepper Spray</p>
-      <p>Police-strength pepper spray with belt clip. Compact & reliable.</p>
-      <a class="item-link" href="https://www.amazon.com/dp/B002E6RERU" target="_blank">Buy Now</a>
-      <p class="review">★★★★★ - “Never walk alone without it.”</p>
-    </div>
-  </div>
+    <!-- Add more products as needed... -->
 
-  <!-- Books Section -->
-  <h2 class="category-title">Books</h2>
-  <div class="grid">
-    <div class="item">
-      <img src="images/book1.png" alt="Bushcraft 101" />
-      <p class="item-name">Bushcraft 101</p>
-      <p>Classic guide to wilderness survival skills by Dave Canterbury.</p>
-      <a class="item-link" href="https://www.amazon.com/dp/1440579776" target="_blank">Buy Now</a>
-      <p class="review">★★★★★ - “The bush bible. Essential reading.”</p>
-    </div>
-    <div class="item">
-      <img src="images/book2.png" alt="Stay Alive in the Woods" />
-      <p class="item-name">How to Stay Alive in the Woods</p>
-      <p>Old-school survival strategies. Timeless knowledge still relevant.</p>
-      <a class="item-link" href="https://www.amazon.com/dp/1620873613" target="_blank">Buy Now</a>
-      <p class="review">★★★★★ - “Read it twice. Gave a copy to my son.”</p>
-    </div>
-    <div class="item">
-      <img src="images/book3.png" alt="Thought Crimes by Serpico" />
-      <p class="item-name">Thought Crimes by Serpico</p>
-      <p>Raw, gritty, and unfiltered—this notebook doesn’t pull punches.</p>
-      <a class="item-link" href="https://www.amazon.com/dp/B0CZNZ6N3F" target="_blank">Buy Now</a>
-      <p class="review">★★★★★ - “Finally, a voice that doesn’t lie to me.”</p>
-    </div>
-  </div>
+  </section>
 </body>
 </html>
