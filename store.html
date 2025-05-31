@@ -3,123 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit Gear HQ Store</title>
+  <title>Grit Gear HQ – Battle-Tested Picks</title>
   <style>
     body {
-      background-color: #2e2e2e;
-      font-family: Arial, sans-serif;
-      color: #f1f1f1;
       margin: 0;
-      padding: 20px;
+      padding: 40px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #2e2e2e;
+      color: #f5f5f5;
     }
 
     h1 {
       text-align: center;
-      text-shadow: 2px 2px 4px #000;
-      color: #ffcc00;
+      font-size: 32px;
+      color: #ffdc3d;
+      margin-bottom: 40px;
     }
 
     .grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
+      gap: 20px;
     }
 
-    .item {
-      background-color: #3e3e3e;
+    .card {
+      background-color: #1a1a1a;
       border-radius: 10px;
-      padding: 15px;
-      width: 280px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      width: 240px;
+      padding: 20px;
       text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
 
-    .item img {
-      max-width: 100%;
-      border-radius: 6px;
-      margin-bottom: 15px;
+    .card h2 {
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 10px;
     }
 
-    .item h2 {
-      font-size: 1.1em;
-      margin: 10px 0 5px;
-    }
-
-    .item p {
-      font-size: 0.95em;
-      color: #ddd;
-      margin: 5px 0;
+    .card p {
+      font-size: 13px;
+      color: #ccc;
     }
 
     .stars {
       color: gold;
-      margin: 5px 0;
+      margin: 8px 0;
     }
 
     .buy-btn {
-      background-color: #ffcc00;
-      color: #000;
-      padding: 10px 15px;
+      background-color: #ffc107;
       border: none;
+      padding: 10px 20px;
       border-radius: 5px;
-      cursor: pointer;
+      color: #000;
       font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
+      cursor: pointer;
       margin-top: 10px;
     }
 
     .buy-btn:hover {
-      background-color: #ffdb4d;
+      background-color: #ffdb58;
     }
   </style>
 </head>
 <body>
   <h1>Grit Gear HQ – Battle-Tested Picks</h1>
   <div class="grid">
-    
-    <div class="item">
-      <img src="images/gear1.png" alt="Tactical Backpack">
+    <div class="card">
       <h2>Tactical Military Backpack</h2>
       <p>Heavy-duty 40L pack, perfect for bug-outs.</p>
-      <p class="stars">★★★★☆</p>
-      <a href="https://www.amazon.com/dp/B07K1VL9DK" class="buy-btn" target="_blank">Buy Now</a>
+      <div class="stars">★★★★★</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
     </div>
 
-    <div class="item">
-      <img src="images/gear2.png" alt="Solar Charger">
-      <h2>Survival Solar Power Bank</h2>
-      <p>Charge phones off-grid. Shockproof & waterproof.</p>
-      <p class="stars">★★★★★</p>
-      <a href="https://www.amazon.com/dp/B07T1X6W4Z" class="buy-btn" target="_blank">Buy Now</a>
+    <div class="card">
+      <h2>Solar Power Bank</h2>
+      <p>Charge phones off-grid. Waterproof & shockproof.</p>
+      <div class="stars">★★★★☆</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
     </div>
 
-    <div class="item">
-      <img src="images/gear3.png" alt="Stun Gun Flashlight">
-      <h2>Stun Gun Flashlight Combo</h2>
-      <p>Compact defense tool with bright LED & 90M volts.</p>
-      <p class="stars">★★★★☆</p>
-      <a href="https://www.amazon.com/dp/B00FQOL0MG" class="buy-btn" target="_blank">Buy Now</a>
+    <div class="card">
+      <h2>Stun Gun Flashlight</h2>
+      <p>Self-defense with 90M volts & bright LED.</p>
+      <div class="stars">★★★★★</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
     </div>
 
-    <div class="item">
-      <img src="images/gear4.png" alt="Emergency Food Bucket">
-      <h2>Augason Farms 30-Day Emergency Food</h2>
-      <p>Over 300 meals. Long shelf life. Great taste.</p>
-      <p class="stars">★★★★★</p>
-      <a href="https://www.amazon.com/dp/B0096TWKCW" class="buy-btn" target="_blank">Buy Now</a>
+    <div class="card">
+      <h2>30-Day Emergency Food Supply</h2>
+      <p>Over 300 meals. Long shelf life.</p>
+      <div class="stars">★★★★★</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
     </div>
 
-    <div class="item">
-      <img src="images/gear5.png" alt="Water Filtration Straw">
+    <div class="card">
       <h2>LifeStraw Personal Water Filter</h2>
       <p>Drink safely from any water source.</p>
-      <p class="stars">★★★★☆</p>
-      <a href="https://www.amazon.com/dp/B006QF3TW4" class="buy-btn" target="_blank">Buy Now</a>
+      <div class="stars">★★★★☆</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
     </div>
 
+    <div class="card">
+      <h2>Fire Starter Kit</h2>
+      <p>Reliable magnesium fire starter in any condition.</p>
+      <div class="stars">★★★★★</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
+    </div>
+
+    <div class="card">
+      <h2>Paracord Bracelet Tool</h2>
+      <p>5-in-1 survival bracelet with compass, whistle, and more.</p>
+      <div class="stars">★★★★☆</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
+    </div>
+
+    <div class="card">
+      <h2>Survival Knife</h2>
+      <p>Full-tang steel blade. Includes sheath & fire starter.</p>
+      <div class="stars">★★★★☆</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
+    </div>
+
+    <div class="card">
+      <h2>Mini First Aid Kit</h2>
+      <p>Compact medkit with 110 emergency supplies.</p>
+      <div class="stars">★★★★★</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
+    </div>
+
+    <div class="card">
+      <h2>Prepper’s Long-Term Survival Guide</h2>
+      <p>Must-read manual for self-reliance & disaster prep.</p>
+      <div class="stars">★★★★★</div>
+      <a href="#"><button class="buy-btn">Buy Now</button></a>
+    </div>
   </div>
 </body>
 </html>
