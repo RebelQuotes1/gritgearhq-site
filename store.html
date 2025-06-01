@@ -2,154 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grit Gear HQ – Battle-Tested Picks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ - Store</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('images/tt.png') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #1a1a1a;
       color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
     }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 40px;
-      min-height: 100vh;
-    }
-
     h1 {
       text-align: center;
-      font-size: 2.5em;
+      font-size: 2.5rem;
       margin-bottom: 30px;
-      text-shadow: 2px 2px 5px #000;
-      color: #ffdc00;
     }
-
-    .grid {
+    .store-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 20px;
     }
-
-    .card {
-      background: #111;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    .item {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 15px;
       text-align: center;
     }
-
-    .card h3 {
-      color: #ffe22b;
+    .item img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: contain;
       margin-bottom: 10px;
     }
-
-    .card p {
-      font-size: 0.95em;
-      margin-bottom: 10px;
-      color: #ddd;
+    .item h3 {
+      font-size: 1.1rem;
+      margin: 10px 0 5px;
     }
-
-    .stars {
-      color: #fcd703;
-      margin-bottom: 12px;
-      font-size: 0.9em;
+    .item p {
+      font-size: 0.95rem;
+      margin: 5px 0;
     }
-
-    .btn {
-      background-color: #ffc107;
-      color: #000;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s ease;
+    .item a {
       display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #4caf50;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
     }
-
-    .btn:hover {
-      background-color: #e0a800;
+    .stars {
+      color: gold;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>Grit Gear HQ – Battle-Tested Picks</h1>
-    <div class="grid">
-
-      <div class="card">
-        <h3>Tactical Military Backpack</h3>
-        <p>Heavy-duty 40L pack. Perfect for bug-outs and tough treks.</p>
-        <div class="stars">★★★★★</div>
-        <a href="https://www.amazon.com/dp/B01N6QKQ1F" class="btn" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Survival Solar Power Bank</h3>
-        <p>Charge phones off-grid. Waterproof and shockproof.</p>
-        <div class="stars">★★★★★</div>
-        <a href="https://www.amazon.com/dp/B08DKDYJST" class="btn" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Stun Gun Flashlight Combo</h3>
-        <p>Compact defense tool with bright LED & 90M volts.</p>
-        <div class="stars">★★★★★</div>
-        <a href="https://www.amazon.com/dp/B00F4AX4L4" class="btn" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Augason Farms 30-Day Emergency Food</h3>
-        <p>Over 300 meals. Long shelf life. Great taste.</p>
-        <div class="stars">★★★★★</div>
-        <a href="https://www.amazon.com/dp/B0096FG08K" class="btn" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>LifeStraw Personal Water Filter</h3>
-        <p>Drink safely from any water source. Filters up to 1,000 gallons.</p>
-        <div class="stars">★★★★★</div>
-        <a href="https://www.amazon.com/dp/B006QF3TW4" class="btn" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Atomic Bear Tactical Pen</h3>
-        <p>Glass breaker & self-defense tool. Sleek and reliable.</p>
-        <div class="stars">★★★★☆</div>
-        <a href="https://www.amazon.com/dp/B06XRH46JX" class="btn" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Swiss Safe 2-in-1 Fire Starter</h3>
-        <p>Reliable ignition for hundreds of fires. Weatherproof design.</p>
-        <div class="stars">★★★★☆</div>
-        <a href="https://www.amazon.com/dp/B01F7EK1MI" class="btn" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Bushcraft 101 Survival Book</h3>
-        <p>Classic guide to wilderness survival by Dave Canterbury.</p>
-        <div class="stars">★★★★★</div>
-        <a href="https://www.amazon.com/dp/1440579776" class="btn" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>UST Compact Survival Blanket</h3>
-        <p>Reflects heat, waterproof, and compact. A must for bug-outs.</p>
-        <div class="stars">★★★★☆</div>
-        <a href="https://www.amazon.com/dp/B00452C7NA" class="btn" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Morakniv Companion Fixed Blade</h3>
-        <p>High-carbon steel blade. Perfect for outdoor use and prep.</p>
-        <div class="stars">★★★★★</div>
-        <a href="https://www.amazon.com/dp/B004TNWD40" class="btn" target="_blank">Buy Now</a>
-      </div>
-
+  <h1>Grit Gear HQ: Battle-Tested Survival Gear</h1>
+  <div class="store-grid">
+    
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/51IjCSyFoWL._AC_SX425_.jpg" alt="Bushcraft 101 Book">
+      <h3>Bushcraft 101: Field Guide</h3>
+      <p>The go-to survival guide for serious outdoorsmen.</p>
+      <p class="stars">★★★★☆</p>
+      <a href="https://amzn.to/3yHz4l9" target="_blank">Buy Now</a>
     </div>
+
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61KGdF8r04L._AC_SX466_.jpg" alt="Fixed Blade Knife">
+      <h3>Full-Tang Fixed Blade Knife</h3>
+      <p>Razor sharp, reliable, and built to last.</p>
+      <p class="stars">★★★★★</p>
+      <a href="https://amzn.to/3ym6coG" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71nMI9GGeRL._AC_SX522_.jpg" alt="LifeStraw Personal Water Filter">
+      <h3>LifeStraw Personal Water Filter</h3>
+      <p>Clean water anywhere. A must-have for bug-outs.</p>
+      <p class="stars">★★★★★</p>
+      <a href="https://amzn.to/3UeUINv" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61GoIb3YYvL._AC_SY450_.jpg" alt="Emergency Thermal Blankets">
+      <h3>Mylar Thermal Blankets (4-Pack)</h3>
+      <p>Compact lifesavers for cold nights.</p>
+      <p class="stars">★★★★☆</p>
+      <a href="https://amzn.to/4dU9whm" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61+q4J3K3pL._AC_SY355_.jpg" alt="Survival Tabs">
+      <h3>Survival Food Tabs - 15 Days</h3>
+      <p>Calorie-dense nutrition in your pocket.</p>
+      <p class="stars">★★★★☆</p>
+      <a href="https://amzn.to/3yGqzWJ" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71Gf1VeX59L._AC_SY355_.jpg" alt="First Aid Kit">
+      <h3>Compact First Aid Kit (100 pcs)</h3>
+      <p>Everything you need to handle injuries on the go.</p>
+      <p class="stars">★★★★★</p>
+      <a href="https://amzn.to/3UlIYwh" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61kKcE3K9dL._AC_SX425_.jpg" alt="Ferro Rod Fire Starter">
+      <h3>Ferro Rod Fire Starter Kit</h3>
+      <p>Throws blazing sparks in any weather.</p>
+      <p class="stars">★★★★☆</p>
+      <a href="https://amzn.to/3WymEZc" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61tvCkOzrhL._AC_SX425_.jpg" alt="Tactical Flashlight">
+      <h3>UltraBright Tactical Flashlight</h3>
+      <p>Rechargeable, water-resistant, tactical beast.</p>
+      <p class="stars">★★★★☆</p>
+      <a href="https://amzn.to/3yKcNPT" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71ZZzY35wvL._AC_SX425_.jpg" alt="Off-Grid Solar Charger">
+      <h3>Portable Solar Power Bank</h3>
+      <p>Keep your devices charged off-grid.</p>
+      <p class="stars">★★★★☆</p>
+      <a href="https://amzn.to/4e2Uxiw" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81QtTV0HwzL._AC_SY355_.jpg" alt="Mini Camping Stove">
+      <h3>Mini Butane Camping Stove</h3>
+      <p>Cook meals fast. Lightweight and rugged.</p>
+      <p class="stars">★★★★☆</p>
+      <a href="https://amzn.to/3yJz5D1" target="_blank">Buy Now</a>
+    </div>
+
   </div>
 </body>
 </html>
