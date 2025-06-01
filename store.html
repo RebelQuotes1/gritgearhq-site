@@ -3,142 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit Gear HQ – Battle-Tested Picks</title>
+  <title>Grit Gear HQ Store</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1a1a1a;
-      color: #f4f4f4;
-      padding: 20px;
+      background-color: #1e1e1e;
+      color: #f1f1f1;
     }
-    h1 {
+
+    header {
+      background-color: #111;
       text-align: center;
+      padding: 30px 0 10px;
+    }
+
+    header h1 {
       font-size: 2.5em;
-      margin-bottom: 30px;
+      color: #e2b007;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px #000;
+    }
+
+    .back-button {
+      text-align: center;
+      margin: 10px 0 30px;
+    }
+
+    .back-button a {
+      color: #fff;
+      background-color: #444;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .back-button a:hover {
+      background-color: #666;
+    }
+
+    .store-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .item {
+      background-color: #2a2a2a;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px #000;
+    }
+
+    .item h3 {
       color: #ffd700;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background-color: #2a2a2a;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      text-align: center;
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #ffffff;
-    }
-    .card p {
+
+    .item p {
       font-size: 0.95em;
-      margin: 10px 0;
+      color: #ccc;
     }
-    .stars {
-      color: gold;
-      margin-bottom: 10px;
-      font-size: 1.1em;
-    }
-    .btn {
+
+    .item a {
       display: inline-block;
       margin-top: 10px;
-      padding: 10px 15px;
-      background: #ffd700;
-      color: #000;
-      font-weight: bold;
+      color: #fff;
+      background-color: #e69500;
+      padding: 8px 15px;
       text-decoration: none;
       border-radius: 5px;
     }
-    .btn:hover {
-      background: #e6c200;
+
+    .item a:hover {
+      background-color: #ffa500;
     }
-    .home-link {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: #ffd700;
-      font-weight: bold;
-      text-decoration: none;
-      border: 2px solid #ffd700;
-      padding: 6px 12px;
-      border-radius: 6px;
-      background: transparent;
-      transition: 0.3s;
-    }
-    .home-link:hover {
-      background: #ffd700;
-      color: #000;
-    }
+
     footer {
-      margin-top: 60px;
-      padding: 30px 20px;
-      background: #111;
+      background-color: #111;
+      color: #888;
       text-align: center;
-      border-top: 2px solid #ffd700;
+      padding: 30px 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      border-top: 1px solid #333;
     }
-    footer p {
-      margin: 10px 0;
-      font-size: 0.95em;
-      color: #999;
-    }
-    footer .quote {
-      font-style: italic;
-      color: #ccc;
-      font-size: 1em;
+
+    footer span {
+      display: block;
+      color: #555;
+      margin-top: 8px;
+      font-size: 0.85em;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Grit Gear HQ</h1>
+  </header>
 
-  <a href="index.html" class="home-link">← Back to Home</a>
+  <div class="back-button">
+    <a href="index.html">⬅ Back to Home</a>
+  </div>
 
-  <h1>Grit Gear HQ – Battle-Tested Picks</h1>
-  <div class="grid">
+  <div class="store-container">
 
-    <!-- Existing 10 Products -->
-    <!-- ... [Your existing 10 product cards go here] ... -->
-
-    <!-- New Product 1 -->
-    <div class="card">
-      <h3>Jeasona Men's Wool Hiking Socks</h3>
-      <p>Warm, breathable, and moisture-wicking socks perfect for outdoor adventures.</p>
-      <div class="stars">★★★★★</div>
-      <a href="https://www.amazon.com/dp/B01N4I3F8M" target="_blank" class="btn">Buy Now</a>
+    <!-- Item 1 -->
+    <div class="item">
+      <h3>Bushcraft 101</h3>
+      <p>The essential survival field guide to wilderness living.</p>
+      <p>⭐⭐⭐⭐⭐ "A must-have for any serious survivalist!"</p>
+      <a href="https://amzn.to/3UtZGmF" target="_blank">Buy Now</a>
     </div>
 
-    <!-- New Product 2 -->
-    <div class="card">
-      <h3>Gordon Emergency Survival Kit</h3>
-      <p>Comprehensive kit with essential tools for emergency preparedness.</p>
-      <div class="stars">★★★★☆</div>
-      <a href="https://www.harborfreight.com/72-hour-emergency-survival-kit-57674.html" target="_blank" class="btn">Buy Now</a>
+    <!-- Item 2 -->
+    <div class="item">
+      <h3>Morakniv Fixed Blade Knife</h3>
+      <p>Razor sharp stainless steel with fire starter.</p>
+      <p>⭐⭐⭐⭐⭐ "Dependable, durable, and affordable!"</p>
+      <a href="https://amzn.to/4dDQQM7" target="_blank">Buy Now</a>
     </div>
 
-    <!-- New Product 3 -->
-    <div class="card">
-      <h3>First Aid Only 299 Piece All-Purpose First Aid Kit</h3>
-      <p>Extensive first aid kit suitable for home, office, or outdoor use.</p>
-      <div class="stars">★★★★★</div>
-      <a href="https://www.amazon.com/dp/B000069EYA" target="_blank" class="btn">Buy Now</a>
+    <!-- Item 3 -->
+    <div class="item">
+      <h3>LifeStraw Personal Water Filter</h3>
+      <p>Drink safely from any river or stream.</p>
+      <p>⭐⭐⭐⭐⭐ "Saved my ass on a backcountry trip!"</p>
+      <a href="https://amzn.to/3w6ivyz" target="_blank">Buy Now</a>
     </div>
 
-    <!-- New Product 4 -->
-    <div class="card">
-      <h3>NOCO Boost Plus GB40 1000A Jump Starter</h3>
-      <p>Compact yet powerful jump starter for 12V batteries, with USB charging.</p>
-      <div class="stars">★★★★☆</div>
-      <a href="https://www.amazon.com/dp/B015TKUPIC" target="_blank" class="btn">Buy Now</a>
+    <!-- Item 4 -->
+    <div class="item">
+      <h3>Survival Tent (2-Person)</h3>
+      <p>Ultra-light and waterproof — fits in your pocket.</p>
+      <p>⭐⭐⭐⭐ "Great for bug-out bags."</p>
+      <a href="https://amzn.to/4bcMgmi" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="item">
+      <h3>Emergency Mylar Blankets (Pack of 4)</h3>
+      <p>Thermal insulation that could save your life.</p>
+      <p>⭐⭐⭐⭐⭐ "Incredibly lightweight, a must-have."</p>
+      <a href="https://amzn.to/3w1Svsu" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="item">
+      <h3>Survival Paracord Bracelet</h3>
+      <p>Fire starter, compass, whistle & cutter all in one.</p>
+      <p>⭐⭐⭐⭐ "Stylish and practical — wear it daily."</p>
+      <a href="https://amzn.to/3UulLul" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 7 -->
+    <div class="item">
+      <h3>All-Weather Notepad</h3>
+      <p>Write in any storm. Waterproof and tearproof.</p>
+      <p>⭐⭐⭐⭐⭐ "Perfect for jotting tactical notes!"</p>
+      <a href="https://amzn.to/3UzAfhJ" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 8 -->
+    <div class="item">
+      <h3>Compact Folding Shovel</h3>
+      <p>Dig trenches, hammer tent stakes, or fight off zombies.</p>
+      <p>⭐⭐⭐⭐⭐ "Solid. Not just a toy."</p>
+      <a href="https://amzn.to/4dBI9GE" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 9 -->
+    <div class="item">
+      <h3>LED Headlamp</h3>
+      <p>Ultra bright, waterproof, and rechargeable.</p>
+      <p>⭐⭐⭐⭐ "Great for night patrols or power outages."</p>
+      <a href="https://amzn.to/4beWMOt" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 10 -->
+    <div class="item">
+      <h3>Waterproof Survival Notebook</h3>
+      <p>Record every gritty detail of your survival journey.</p>
+      <p>⭐⭐⭐⭐⭐ "Love the rugged design."</p>
+      <a href="https://amzn.to/3JIMw4C" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 11 -->
+    <div class="item">
+      <h3>Tactical Pen (with glass breaker)</h3>
+      <p>It writes. It breaks glass. It punches back.</p>
+      <p>⭐⭐⭐⭐ "Surprisingly solid. Not just a gimmick."</p>
+      <a href="https://amzn.to/3x0qGGZ" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 12 -->
+    <div class="item">
+      <h3>Stormproof Matches</h3>
+      <p>Light in wind, rain, or snow — burn for 15+ seconds.</p>
+      <p>⭐⭐⭐⭐⭐ "They really do work in storms."</p>
+      <a href="https://amzn.to/3V0W9fD" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 13 -->
+    <div class="item">
+      <h3>Self-Defense Stun Gun</h3>
+      <p>Portable, powerful, rechargeable protection.</p>
+      <p>⭐⭐⭐⭐⭐ "Peace of mind in your pocket."</p>
+      <a href="https://amzn.to/3z7GUog" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Item 14 -->
+    <div class="item">
+      <h3>Pocket Survival Fishing Kit</h3>
+      <p>Compact tackle with hooks, lines, and floats.</p>
+      <p>⭐⭐⭐⭐ "Clever addition to any kit."</p>
+      <a href="https://amzn.to/3V2RKm7" target="_blank">Buy Now</a>
     </div>
 
   </div>
 
   <footer>
-    <div class="quote">“It’s not the gear that saves you. It’s what you do with it when the world turns to ash.”</div>
-    <p>© 2025 Grit Gear HQ | Built for the End. Survive in Style.</p>
+    <p>“When everything burns down, what you carry is what you survive with.”</p>
+    <span>© 2024 Grit Gear HQ. Stay ready.</span>
   </footer>
-
 </body>
 </html>
