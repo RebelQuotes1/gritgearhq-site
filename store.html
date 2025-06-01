@@ -3,231 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit Gear HQ Store</title>
+  <title>Grit Gear Store</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #1e1e1e;
-      color: #f1f1f1;
-    }
-
-    header {
-      background-color: #111;
-      text-align: center;
-      padding: 30px 0 10px;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      color: #e2b007;
-      letter-spacing: 1px;
-      text-shadow: 2px 2px #000;
-    }
-
-    .back-button {
-      text-align: center;
-      margin: 10px 0 30px;
-    }
-
-    .back-button a {
       color: #fff;
-      background-color: #444;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      margin: 0;
+      padding: 0;
     }
-
-    .back-button a:hover {
-      background-color: #666;
+    header {
+      background-color: #222;
+      padding: 20px;
+      text-align: center;
     }
-
+    header h1 {
+      font-size: 2em;
+      color: #e2b714;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px #000;
+    }
     .store-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 20px;
+      padding: 30px;
       max-width: 1200px;
       margin: auto;
     }
-
     .item {
       background-color: #2a2a2a;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 0 8px #000;
+      box-shadow: 0 0 10px #111;
+      transition: transform 0.2s;
     }
-
+    .item:hover {
+      transform: scale(1.02);
+    }
     .item h3 {
-      color: #ffd700;
+      color: #e2b714;
     }
-
     .item p {
       font-size: 0.95em;
-      color: #ccc;
     }
-
-    .item a {
+    .reviews {
+      font-size: 0.85em;
+      color: #aaa;
+      margin-top: 5px;
+    }
+    .buy-btn {
       display: inline-block;
       margin-top: 10px;
-      color: #fff;
-      background-color: #e69500;
-      padding: 8px 15px;
+      padding: 8px 12px;
+      background-color: #e2b714;
+      color: #000;
       text-decoration: none;
       border-radius: 5px;
+      font-weight: bold;
     }
-
-    .item a:hover {
-      background-color: #ffa500;
+    .back-home {
+      text-align: center;
+      margin: 20px 0;
     }
-
+    .back-home a {
+      color: #e2b714;
+      text-decoration: none;
+      font-weight: bold;
+    }
     footer {
       background-color: #111;
-      color: #888;
       text-align: center;
-      padding: 30px 20px;
-      margin-top: 40px;
-      font-size: 0.9em;
+      color: #777;
+      font-size: 0.85em;
+      padding: 20px;
       border-top: 1px solid #333;
     }
-
-    footer span {
-      display: block;
-      color: #555;
-      margin-top: 8px;
-      font-size: 0.85em;
+    footer p {
+      margin: 0;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Grit Gear HQ</h1>
+    <h1>Grit Gear HQ – Battle-Tested Picks</h1>
   </header>
 
-  <div class="back-button">
-    <a href="index.html">⬅ Back to Home</a>
+  <div class="store-container">
+    <div class="item">
+      <h3>1. Bushcraft 101</h3>
+      <p>The ultimate survival guide for mastering the art of wilderness self-reliance.</p>
+      <p class="reviews">★★★★★ (4.7/5) – “A must-read for preppers!”</p>
+      <a class="buy-btn" href="https://amzn.to/3UT7Z3W" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>2. Morakniv Fixed Blade Knife</h3>
+      <p>Trusted by survivalists worldwide, this carbon steel blade handles any job.</p>
+      <p class="reviews">★★★★★ (4.8/5) – “Razor-sharp and tough as hell.”</p>
+      <a class="buy-btn" href="https://amzn.to/4aAFnZf" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>3. LifeStraw Personal Water Filter</h3>
+      <p>Turn streams into clean drinking water instantly. A must for any bug-out bag.</p>
+      <p class="reviews">★★★★☆ (4.6/5) – “Saved my life on the trail.”</p>
+      <a class="buy-btn" href="https://amzn.to/3Ukz5Xk" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>4. Titan Emergency Mylar Blankets</h3>
+      <p>Stay warm, dry, and alive in harsh weather. Compact, durable, essential.</p>
+      <p class="reviews">★★★★☆ (4.5/5) – “In every one of my kits.”</p>
+      <a class="buy-btn" href="https://amzn.to/3Uj5jKj" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>5. Off-Grid First Aid Kit</h3>
+      <p>Comprehensive, compact, and designed for real emergencies.</p>
+      <p class="reviews">★★★★★ (4.8/5) – “Better than what the army gave me.”</p>
+      <a class="buy-btn" href="https://amzn.to/3UjkgYx" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>6. 4Patriots Survival Food</h3>
+      <p>25-year shelf life. Delicious and filling meals for true emergencies.</p>
+      <p class="reviews">★★★★☆ (4.6/5) – “Tastes better than expected!”</p>
+      <a class="buy-btn" href="https://amzn.to/3WYM9dc" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>7. Etekcity Camping Stove</h3>
+      <p>Ultra-light and efficient mini stove for outdoor cooking or disaster prep.</p>
+      <p class="reviews">★★★★☆ (4.5/5) – “Fires up fast, great little unit.”</p>
+      <a class="buy-btn" href="https://amzn.to/4byT5pF" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>8. BioLite Solar Panel 10+</h3>
+      <p>Harness the sun to power your devices off-grid. Lightweight and waterproof.</p>
+      <p class="reviews">★★★★☆ (4.4/5) – “Surprisingly effective!”</p>
+      <a class="buy-btn" href="https://amzn.to/3VqStFX" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>9. Surviveware Waterproof Bag</h3>
+      <p>Protect gear from rain, mud, or floods. Indestructible and easy to carry.</p>
+      <p class="reviews">★★★★★ (4.9/5) – “My gear was bone-dry in a monsoon.”</p>
+      <a class="buy-btn" href="https://amzn.to/3VcH3Ff" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>10. Fenix Tactical Flashlight</h3>
+      <p>Blinding brightness, waterproof body, and tough enough to hammer nails.</p>
+      <p class="reviews">★★★★★ (4.9/5) – “Lights up the entire forest.”</p>
+      <a class="buy-btn" href="https://amzn.to/3WZbA1M" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>11. Bearhard Compact Axe</h3>
+      <p>Multi-use axe with hammer and pry features. Packs small, hits hard.</p>
+      <p class="reviews">★★★★☆ (4.5/5) – “Fits in any pack and does the job.”</p>
+      <a class="buy-btn" href="https://amzn.to/4bBhQVA" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>12. Sawyer Mini Water Filter</h3>
+      <p>Filters up to 100,000 gallons. Trusted by hikers, preppers, and soldiers.</p>
+      <p class="reviews">★★★★★ (4.8/5) – “Tiny and powerful.”</p>
+      <a class="buy-btn" href="https://amzn.to/3WZ13Wk" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>13. ReadyWise 60-Serving Bucket</h3>
+      <p>Long-term food supply with real ingredients and excellent flavor.</p>
+      <p class="reviews">★★★★☆ (4.5/5) – “My backup plan for the end.”</p>
+      <a class="buy-btn" href="https://amzn.to/3WZtKwX" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>14. Survival Tabs 15-Day Pack</h3>
+      <p>High-calorie, shelf-stable food tabs for minimal space and maximum utility.</p>
+      <p class="reviews">★★★★☆ (4.6/5) – “Just in case I have to run.”</p>
+      <a class="buy-btn" href="https://amzn.to/3VgHtGb" target="_blank">Buy Now</a>
+    </div>
+    <div class="item">
+      <h3>15. KEPEAK Tactical Pen</h3>
+      <p>Writes like a dream, defends like a beast. Hidden tool, solid feel.</p>
+      <p class="reviews">★★★★★ (4.9/5) – “Saved my ass in a parking lot.”</p>
+      <a class="buy-btn" href="https://amzn.to/3WZ04Ex" target="_blank">Buy Now</a>
+    </div>
   </div>
 
-  <div class="store-container">
-
-    <!-- Item 1 -->
-    <div class="item">
-      <h3>Bushcraft 101</h3>
-      <p>The essential survival field guide to wilderness living.</p>
-      <p>⭐⭐⭐⭐⭐ "A must-have for any serious survivalist!"</p>
-      <a href="https://amzn.to/3UtZGmF" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 2 -->
-    <div class="item">
-      <h3>Morakniv Fixed Blade Knife</h3>
-      <p>Razor sharp stainless steel with fire starter.</p>
-      <p>⭐⭐⭐⭐⭐ "Dependable, durable, and affordable!"</p>
-      <a href="https://amzn.to/4dDQQM7" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 3 -->
-    <div class="item">
-      <h3>LifeStraw Personal Water Filter</h3>
-      <p>Drink safely from any river or stream.</p>
-      <p>⭐⭐⭐⭐⭐ "Saved my ass on a backcountry trip!"</p>
-      <a href="https://amzn.to/3w6ivyz" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 4 -->
-    <div class="item">
-      <h3>Survival Tent (2-Person)</h3>
-      <p>Ultra-light and waterproof — fits in your pocket.</p>
-      <p>⭐⭐⭐⭐ "Great for bug-out bags."</p>
-      <a href="https://amzn.to/4bcMgmi" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 5 -->
-    <div class="item">
-      <h3>Emergency Mylar Blankets (Pack of 4)</h3>
-      <p>Thermal insulation that could save your life.</p>
-      <p>⭐⭐⭐⭐⭐ "Incredibly lightweight, a must-have."</p>
-      <a href="https://amzn.to/3w1Svsu" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 6 -->
-    <div class="item">
-      <h3>Survival Paracord Bracelet</h3>
-      <p>Fire starter, compass, whistle & cutter all in one.</p>
-      <p>⭐⭐⭐⭐ "Stylish and practical — wear it daily."</p>
-      <a href="https://amzn.to/3UulLul" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 7 -->
-    <div class="item">
-      <h3>All-Weather Notepad</h3>
-      <p>Write in any storm. Waterproof and tearproof.</p>
-      <p>⭐⭐⭐⭐⭐ "Perfect for jotting tactical notes!"</p>
-      <a href="https://amzn.to/3UzAfhJ" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 8 -->
-    <div class="item">
-      <h3>Compact Folding Shovel</h3>
-      <p>Dig trenches, hammer tent stakes, or fight off zombies.</p>
-      <p>⭐⭐⭐⭐⭐ "Solid. Not just a toy."</p>
-      <a href="https://amzn.to/4dBI9GE" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 9 -->
-    <div class="item">
-      <h3>LED Headlamp</h3>
-      <p>Ultra bright, waterproof, and rechargeable.</p>
-      <p>⭐⭐⭐⭐ "Great for night patrols or power outages."</p>
-      <a href="https://amzn.to/4beWMOt" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 10 -->
-    <div class="item">
-      <h3>Waterproof Survival Notebook</h3>
-      <p>Record every gritty detail of your survival journey.</p>
-      <p>⭐⭐⭐⭐⭐ "Love the rugged design."</p>
-      <a href="https://amzn.to/3JIMw4C" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 11 -->
-    <div class="item">
-      <h3>Tactical Pen (with glass breaker)</h3>
-      <p>It writes. It breaks glass. It punches back.</p>
-      <p>⭐⭐⭐⭐ "Surprisingly solid. Not just a gimmick."</p>
-      <a href="https://amzn.to/3x0qGGZ" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 12 -->
-    <div class="item">
-      <h3>Stormproof Matches</h3>
-      <p>Light in wind, rain, or snow — burn for 15+ seconds.</p>
-      <p>⭐⭐⭐⭐⭐ "They really do work in storms."</p>
-      <a href="https://amzn.to/3V0W9fD" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 13 -->
-    <div class="item">
-      <h3>Self-Defense Stun Gun</h3>
-      <p>Portable, powerful, rechargeable protection.</p>
-      <p>⭐⭐⭐⭐⭐ "Peace of mind in your pocket."</p>
-      <a href="https://amzn.to/3z7GUog" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Item 14 -->
-    <div class="item">
-      <h3>Pocket Survival Fishing Kit</h3>
-      <p>Compact tackle with hooks, lines, and floats.</p>
-      <p>⭐⭐⭐⭐ "Clever addition to any kit."</p>
-      <a href="https://amzn.to/3V2RKm7" target="_blank">Buy Now</a>
-    </div>
-
+  <div class="back-home">
+    <a href="index.html">← Back to Home</a>
   </div>
 
   <footer>
-    <p>“When everything burns down, what you carry is what you survive with.”</p>
-    <span>© 2024 Grit Gear HQ. Stay ready.</span>
+    <p>Grit Gear HQ © 2024 – Built for survivors, not tourists.</p>
   </footer>
+
 </body>
 </html>
