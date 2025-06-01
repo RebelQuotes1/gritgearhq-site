@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
+      background: url('images/tt.png') no-repeat center center fixed;
       background-size: cover;
       color: #f2f2f2;
     }
@@ -22,7 +21,7 @@
 
     h1 {
       text-align: center;
-      font-size: 3rem;
+      font-size: 3em;
       margin-bottom: 30px;
       text-shadow: 2px 2px 5px #000;
       color: #ffc107;
@@ -32,126 +31,81 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .card {
       background: #222;
-      border-radius: 8px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
     .card h3 {
-      margin-top: 0;
-      color: #ffa500;
+      margin: 0 0 10px;
+      color: #fff;
     }
 
     .card p {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
+      font-size: 0.9em;
+      color: #ccc;
     }
 
-    .review {
-      font-size: 0.85rem;
-      color: #bbb;
+    .stars {
+      color: gold;
+      margin: 10px 0;
     }
 
-    .button {
-      background: #28a745;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
+    .btn {
       display: inline-block;
+      padding: 10px 20px;
+      background: #ffc107;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 10px;
     }
 
-    .button:hover {
-      background: #218838;
+    .btn:hover {
+      background: #e0a800;
     }
   </style>
 </head>
 <body>
   <div class="overlay">
-    <h1>Grit Gear HQ</h1>
+    <h1>Grit Gear HQ – Battle-Tested Picks</h1>
     <div class="grid">
-      <!-- Item Cards -->
-      <!-- Repeat for 10 products -->
-      <!-- Example product -->
+      <div class="card">
+        <h3>Tactical Military Backpack</h3>
+        <p>Heavy-duty 40L pack. Perfect for bug-outs and tough treks.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/B01N6QXXF5" class="btn" target="_blank">Buy Now</a>
+      </div>
       <div class="card">
         <h3>Solar Power Bank</h3>
-        <p>Reliable solar charger with dual USB output, perfect for off-grid survival and emergencies.</p>
-        <div class="review">★★★★★ – "Took it hiking and it never failed me."</div>
-        <a href="#" class="button">Buy Now</a>
+        <p>Charge phones off-grid. Waterproof and shockproof.</p>
+        <div class="stars">★★★★☆</div>
+        <a href="https://www.amazon.com/dp/B08DKDVS3T" class="btn" target="_blank">Buy Now</a>
       </div>
-
       <div class="card">
-        <h3>Compact Survival Shovel</h3>
-        <p>Multi-tool shovel with axe edge, saw, and fire starter—built for rugged conditions.</p>
-        <div class="review">★★★★☆ – "Tougher than it looks. A must-have in my bug-out bag."</div>
-        <a href="#" class="button">Buy Now</a>
+        <h3>Stun Gun Flashlight Combo</h3>
+        <p>Compact defense tool with 90M volts and bright LED.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/B00F44XKL4" class="btn" target="_blank">Buy Now</a>
       </div>
-
       <div class="card">
-        <h3>Military-Grade First Aid Kit</h3>
-        <p>Complete tactical trauma kit with tourniquets, bandages, and tools. Field tested.</p>
-        <div class="review">★★★★★ – "Saved my buddy's hand. Enough said."</div>
-        <a href="#" class="button">Buy Now</a>
+        <h3>Augason Farms 30-Day Food Supply</h3>
+        <p>Over 300 meals. Long shelf life and reliable calories.</p>
+        <div class="stars">★★★★☆</div>
+        <a href="https://www.amazon.com/dp/B0096FG0BK" class="btn" target="_blank">Buy Now</a>
       </div>
-
       <div class="card">
-        <h3>Firestarter Survival Tool</h3>
-        <p>Ferro rod with striker and paracord grip. Works in rain, wind, or snow.</p>
-        <div class="review">★★★★★ – "Lights every time. Better than matches."</div>
-        <a href="#" class="button">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Portable Water Filter Straw</h3>
-        <p>Turns river or pond water into clean drinking water instantly. Filters up to 4,000 liters.</p>
-        <div class="review">★★★★☆ – "Compact, effective, and life-saving."</div>
-        <a href="#" class="button">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Heavy-Duty Tarp Shelter</h3>
-        <p>All-weather tarp with reinforced grommets. Lightweight, waterproof, and versatile.</p>
-        <div class="review">★★★★☆ – "Held up to a brutal thunderstorm."</div>
-        <a href="#" class="button">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>LED Tactical Flashlight</h3>
-        <p>Super-bright zoomable beam with strobe and SOS functions. Rechargeable battery.</p>
-        <div class="review">★★★★★ – "Like a spotlight in your hand."</div>
-        <a href="#" class="button">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Emergency Survival Blanket</h3>
-        <p>Thermal mylar blanket traps 90% of body heat. Comes in a compact 4-pack.</p>
-        <div class="review">★★★★★ – "Lightweight but critical in cold weather."</div>
-        <a href="#" class="button">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Self-Defense Stun Gun</h3>
-        <p>Rechargeable high-voltage stun gun with LED light and rubberized grip for safety.</p>
-        <div class="review">★★★★☆ – "Packs a serious punch. Feel safer already."</div>
-        <a href="#" class="button">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <h3>Bug-Out Tactical Backpack</h3>
-        <p>40L MOLLE backpack with compartments for all your survival essentials. Built to last.</p>
-        <div class="review">★★★★★ – "Comfortable, spacious, and tough."</div>
-        <a href="#" class="button">Buy Now</a>
+        <h3>LifeStraw Personal Water Filter</h3>
+        <p>Safe hydration from any water source. Filters up to 1,000 gallons.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/B006QF3TW4" class="btn" target="_blank">Buy Now</a>
       </div>
     </div>
   </div>
