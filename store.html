@@ -1,169 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Grit Gear HQ – Survival Store</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grit Gear HQ – Battle-Tested Picks</title>
   <style>
     body {
-      background-color: #1e1e1e;
-      color: #f4f4f4;
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('images/tt.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f2f2f2;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 40px;
+      min-height: 100vh;
     }
 
     h1 {
       text-align: center;
       font-size: 2.5em;
       margin-bottom: 30px;
-      text-shadow: 2px 2px 6px black;
+      text-shadow: 2px 2px 5px #000;
+      color: #ffdc00;
     }
 
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
     }
 
-    .product-card {
-      background: #2a2a2a;
-      border: 1px solid #444;
+    .card {
+      background: #111;
+      padding: 20px;
       border-radius: 10px;
-      padding: 15px;
-      width: 280px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
       text-align: center;
-      box-shadow: 0 0 10px #000;
     }
 
-    .product-card img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 6px;
+    .card h3 {
+      color: #ffe22b;
+      margin-bottom: 10px;
     }
 
-    .product-card h3 {
-      margin: 10px 0 5px;
+    .card p {
+      font-size: 0.95em;
+      margin-bottom: 10px;
+      color: #ddd;
     }
 
-    .product-card p {
+    .stars {
+      color: #fcd703;
+      margin-bottom: 12px;
       font-size: 0.9em;
     }
 
-    .product-card a {
-      display: inline-block;
-      margin: 10px 0;
-      background: #39a;
-      color: white;
-      padding: 8px 15px;
+    .btn {
+      background-color: #ffc107;
+      color: #000;
+      padding: 10px 20px;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      display: inline-block;
     }
 
-    .review {
-      font-style: italic;
-      font-size: 0.85em;
-      color: #ccc;
+    .btn:hover {
+      background-color: #e0a800;
     }
   </style>
 </head>
 <body>
+  <div class="overlay">
+    <h1>Grit Gear HQ – Battle-Tested Picks</h1>
+    <div class="grid">
 
-<h1>Grit Gear HQ – Battle-Tested Picks</h1>
+      <div class="card">
+        <h3>Tactical Military Backpack</h3>
+        <p>Heavy-duty 40L pack. Perfect for bug-outs and tough treks.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/B01N6QKQ1F" class="btn" target="_blank">Buy Now</a>
+      </div>
 
-<div class="product-grid">
+      <div class="card">
+        <h3>Survival Solar Power Bank</h3>
+        <p>Charge phones off-grid. Waterproof and shockproof.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/B08DKDYJST" class="btn" target="_blank">Buy Now</a>
+      </div>
 
-  <!-- 1 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/71Q0aS3Aj3L._AC_SL1500_.jpg" alt="LifeStraw Water Filter">
-    <h3>LifeStraw Water Filter</h3>
-    <p>Filters 1,000 gallons. Lightweight and perfect for bug-out bags.</p>
-    <a href="https://www.amazon.com/dp/B006QF3TW4?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★★ "Works like magic. Must-have for wilderness hikes."</p>
+      <div class="card">
+        <h3>Stun Gun Flashlight Combo</h3>
+        <p>Compact defense tool with bright LED & 90M volts.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/B00F4AX4L4" class="btn" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Augason Farms 30-Day Emergency Food</h3>
+        <p>Over 300 meals. Long shelf life. Great taste.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/B0096FG08K" class="btn" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <h3>LifeStraw Personal Water Filter</h3>
+        <p>Drink safely from any water source. Filters up to 1,000 gallons.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/B006QF3TW4" class="btn" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Atomic Bear Tactical Pen</h3>
+        <p>Glass breaker & self-defense tool. Sleek and reliable.</p>
+        <div class="stars">★★★★☆</div>
+        <a href="https://www.amazon.com/dp/B06XRH46JX" class="btn" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Swiss Safe 2-in-1 Fire Starter</h3>
+        <p>Reliable ignition for hundreds of fires. Weatherproof design.</p>
+        <div class="stars">★★★★☆</div>
+        <a href="https://www.amazon.com/dp/B01F7EK1MI" class="btn" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Bushcraft 101 Survival Book</h3>
+        <p>Classic guide to wilderness survival by Dave Canterbury.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/1440579776" class="btn" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <h3>UST Compact Survival Blanket</h3>
+        <p>Reflects heat, waterproof, and compact. A must for bug-outs.</p>
+        <div class="stars">★★★★☆</div>
+        <a href="https://www.amazon.com/dp/B00452C7NA" class="btn" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Morakniv Companion Fixed Blade</h3>
+        <p>High-carbon steel blade. Perfect for outdoor use and prep.</p>
+        <div class="stars">★★★★★</div>
+        <a href="https://www.amazon.com/dp/B004TNWD40" class="btn" target="_blank">Buy Now</a>
+      </div>
+
+    </div>
   </div>
-
-  <!-- 2 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/71mfA9Jb7KL._AC_SL1500_.jpg" alt="Thermal Bivvy Sack">
-    <h3>Thermal Bivvy Sack</h3>
-    <p>Retains 90% body heat. Lightweight, tear-resistant, waterproof.</p>
-    <a href="https://www.amazon.com/dp/B00W0L47RY?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★☆ "Saved me from hypothermia. Seriously."</p>
-  </div>
-
-  <!-- 3 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/71vU1vKQ8lL._AC_SL1500_.jpg" alt="Ka-Bar BK2 Knife">
-    <h3>Ka-Bar BK2 Knife</h3>
-    <p>Full-tang beast for chopping, skinning, and smashing your fears.</p>
-    <a href="https://www.amazon.com/dp/B001IPKL9O?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★★ "Thick blade. Heavy. Built to kill a bear."</p>
-  </div>
-
-  <!-- 4 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/81TDTK74EuL._AC_SL1500_.jpg" alt="Solar Power Bank">
-    <h3>Solar Power Bank</h3>
-    <p>Charged by sun or USB. Dual flashlight, waterproof, 20,000mAh.</p>
-    <a href="https://www.amazon.com/dp/B08B81W25G?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★★ "Still charged my phone after 3 nights camping."</p>
-  </div>
-
-  <!-- 5 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/81zz0dZftuL._AC_SL1500_.jpg" alt="Survival First Aid Kit">
-    <h3>Compact Survival First Aid Kit</h3>
-    <p>Everything from trauma shears to bandages. 250+ pieces in one bag.</p>
-    <a href="https://www.amazon.com/dp/B07FMX6C6X?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★☆ "Perfect size and loaded with useful stuff."</p>
-  </div>
-
-  <!-- 6 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/91yV+I0iD0L._AC_SL1500_.jpg" alt="Stun Gun Flashlight">
-    <h3>Vipertek Stun Gun Flashlight</h3>
-    <p>Bright LED + 50 million volts. Rechargeable. Non-lethal defense.</p>
-    <a href="https://www.amazon.com/dp/B01FHDZGGM?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★★ "Loud crackle and serious sting. Love it."</p>
-  </div>
-
-  <!-- 7 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/81GPrzGEZzL._AC_SL1500_.jpg" alt="Camping Mess Kit">
-    <h3>Stainless Camping Mess Kit</h3>
-    <p>Includes plate, cup, utensils, and case. Military-grade durability.</p>
-    <a href="https://www.amazon.com/dp/B0000B15AA?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★☆ "Feels old-school military. Built to last."</p>
-  </div>
-
-  <!-- 8 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/71DY60+fKYL._AC_SL1500_.jpg" alt="Survival Tabs Food">
-    <h3>Survival Tabs – 15 Day Supply</h3>
-    <p>High-calorie compact food tabs. Chocolate flavor. 25-year shelf life.</p>
-    <a href="https://www.amazon.com/dp/B006OMMJ0M?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★★ "Tastes like astronaut food. Surprisingly good."</p>
-  </div>
-
-  <!-- 9 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/81XPWGL35sL._AC_SL1500_.jpg" alt="MRE Meal Pack">
-    <h3>MRE Complete Meal – 12 Pack</h3>
-    <p>Ready-to-eat meals with heaters. Long shelf life. Military-style nutrition.</p>
-    <a href="https://www.amazon.com/dp/B01H4MK3BW?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★★ "Genuine MREs. Good variety and filling meals."</p>
-  </div>
-
-  <!-- 10 -->
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/91aO6rxjYIL._AC_SL1500_.jpg" alt="Camping Tent">
-    <h3>Waterproof 2-Person Tent</h3>
-    <p>Instant pop-up design. All-weather, compact, and easy setup.</p>
-    <a href="https://www.amazon.com/dp/B07P87D5X6?tag=yourtaghere" target="_blank">Buy Now</a>
-    <p class="review">★★★★☆ "Kept me dry through a thunderstorm. Lightweight too."</p>
-  </div>
-
-</div>
-
 </body>
 </html>
