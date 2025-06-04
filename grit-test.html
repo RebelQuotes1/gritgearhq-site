@@ -1,1 +1,22 @@
-<!DOCTYPE html><html><body><h1>Grit Test</h1><p>You clicked the grit test. Congrats, you’re gritty.</p></body></html>
+<div id="grit-test" style="text-align: center; margin: 40px 0;">
+  <h2 style="color: #ffa500; text-shadow: 1px 1px #000;">Take the Grit Test</h2>
+  <button onclick="runGritTest()" style="padding: 12px 20px; background-color: #444; color: #fff; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+    See If You'd Survive
+  </button>
+  <p id="grit-result" style="margin-top: 20px; font-size: 1.1em; color: #eee;"></p>
+</div>
+
+<script>
+  const gritJokes = [
+    "You thought MREs were a rap group. You're done.",
+    "You bartered your last match for a vape cartridge.",
+    "You asked a survivalist if they take Venmo. They took your boots instead.",
+    "You screamed 'Alexa, help!' and a wild boar showed up. He wasn’t feeling it.",
+    "You packed essential oils in your bug-out bag. Bless your heart."
+  ];
+
+  function runGritTest() {
+    const joke = gritJokes[Math.floor(Math.random() * gritJokes.length)];
+    document.getElementById("grit-result").textContent = joke;
+  }
+</script>
