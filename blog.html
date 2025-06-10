@@ -373,6 +373,74 @@
 
   <p><em>— Grit Gear HQ</em></p>
 </div>
+# Create final HTML blog post with real Amazon links
+final_blog_post = f"""
+<article style="font-family: 'Courier New', monospace; background-color: #111; color: #f5f5f5; padding: 2rem; border-radius: 12px; border: 2px solid #444;">
+  <h1 style="text-align: center; color: #ff6a00;">🛡️ Bugging In: Fortify Your Castle Before the Collapse</h1>
+  <p style="font-style: italic; color: #ccc; text-align: center;">Posted on {today} | GritGearHQ.com</p>
+
+  <p>When the world goes sideways, not everyone gets the chance—or even wants—to bug out. Sometimes, your best bet is to <strong>bug in</strong>. That means digging in your heels, locking the doors, and turning your home into a fortress.</p>
+
+  <blockquote style="border-left: 4px solid #ff6a00; padding-left: 1rem; margin-left: 0; color: #bbb;">
+    “Be the castle, not the caravan.”
+  </blockquote>
+
+  <hr style="border: 1px solid #333; margin: 2rem 0;">
+
+  <h2 style="color: #ff6a00;">🔐 Step 1: Lock Down Your Perimeter</h2>
+  <p>Visibility is king. Control is queen. Start your home defense with eyes everywhere.</p>
+
+  <div style="background-color: #222; padding: 1rem; margin-bottom: 1rem; border-left: 5px solid #ff6a00;">
+    <h3 style="color: #fff;">✅ Featured Gear: REOLINK 4K WiFi Outdoor Security Camera</h3>
+    <ul>
+      <li><strong>Price:</strong> ~$130</li>
+      <li><strong>Why It’s Grit-Approved:</strong> Wireless, solar-ready, night vision, rugged shell, motion alerts</li>
+      <li><strong>What It Does:</strong> Lets you see who’s creeping before they start kicking</li>
+    </ul>
+    <a href="https://www.amazon.com/REOLINK-Security-Tracking-Detection-TrackMix/dp/B0B4SB2CRD" target="_blank" style="color: #ff6a00;">🔗 Buy Now on Amazon</a>
+  </div>
+
+  <h2 style="color: #ff6a00;">💥 Step 2: Arm Up for Real Defense</h2>
+  <p>Food and water matter, but nothing stops a threat like the right weapon in the right hands.</p>
+
+  <div style="background-color: #222; padding: 1rem; margin-bottom: 1rem; border-left: 5px solid #ff6a00;">
+    <h3 style="color: #fff;">🔫 Weapon #1: Umarex Gauntlet .25 Cal PCP Tactical Air Rifle</h3>
+    <ul>
+      <li><strong>Price:</strong> ~$320</li>
+      <li><strong>Why It Rocks:</strong> Bolt-action, suppressed, high-velocity pellet rifle with sniper aesthetics and serious punch</li>
+      <li><strong>Purpose:</strong> Silent perimeter defense, pest control, and training without legal headaches</li>
+    </ul>
+    <a href="https://www.amazon.com/Umarex-Gauntlet-PCP-Pellet-Air/dp/B0BB6GT22F" target="_blank" style="color: #ff6a00;">🔗 Buy Now on Amazon</a>
+  </div>
+
+  <div style="background-color: #222; padding: 1rem; margin-bottom: 1rem; border-left: 5px solid #ff6a00;">
+    <h3 style="color: #fff;">🪓 Weapon #2: CRKT Freyr Viking-Style Tactical Axe</h3>
+    <ul>
+      <li><strong>Price:</strong> ~$100</li>
+      <li><strong>Why It’s Grit-Approved:</strong> Balanced for both throwing and door-breaking</li>
+      <li><strong>Purpose:</strong> Intimidation, destruction, or last-resort melee</li>
+    </ul>
+    <a href="https://www.amazon.com/CRKT-Freyr-Axe-Outdoor-Hickory/dp/B0C69RFD2J" target="_blank" style="color: #ff6a00;">🔗 Buy Now on Amazon</a>
+  </div>
+
+  <h2 style="color: #ff6a00;">🧱 Step 3: Reinforce Entry Points</h2>
+  <p>A cheap lock is a welcome mat for thieves. Install high-security deadbolts, reinforced strike plates, and door armor kits. Window bars aren’t crazy—they’re smart.</p>
+
+  <h2 style="color: #ff6a00;">🕯️ Step 4: Blackout and Black In</h2>
+  <p>If they can’t see you, they can’t hurt you. Blackout curtains. Window foil. Paint. Use light discipline like your life depends on it—because it might.</p>
+
+  <hr style="border: 1px solid #333; margin: 2rem 0;">
+
+  <h2 style="color: #ff6a00;">🗣️ Final Thought</h2>
+  <p>You don’t need a mansion. You need <strong>fortitude</strong>, <strong>planning</strong>, and a <strong>will to stand your ground</strong>. Gear helps. But grit is the foundation.</p>
+</article>
+"""
+
+# Save the final blog post to an HTML file
+final_blog_path = Path("/mnt/data/bugging-in-blog-final.html")
+final_blog_path.write_text(final_blog_post, encoding="utf-8")
+
+final_blog_path.name
 
   
 </div>
