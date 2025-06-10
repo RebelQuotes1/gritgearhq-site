@@ -375,76 +375,143 @@
 </div>
 # Create final HTML blog post with real Amazon links
 final_blog_post = f"""
-<article style="font-family: 'Courier New', monospace; background-color: #111; color: #f5f5f5; padding: 2rem; border-radius: 12px; border: 2px solid #444;">
-  <h1 style="text-align: center; color: #ff6a00;">🛡️ Bugging In: Fortify Your Castle Before the Collapse</h1>
-  <p style="font-style: italic; color: #ccc; text-align: center;">Posted on {today} | GritGearHQ.com</p>
+# Build a tabbed (multi-section) version of the blog post in HTML
 
-  <p>When the world goes sideways, not everyone gets the chance—or even wants—to bug out. Sometimes, your best bet is to <strong>bug in</strong>. That means digging in your heels, locking the doors, and turning your home into a fortress.</p>
+tabbed_blog_post = f"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bugging In Blog Post</title>
+  <style>
+    body {{
+      background-color: #111;
+      color: #f5f5f5;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+    }}
+    .tabs {{
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }}
+    .tab-button {{
+      background-color: #222;
+      border: 2px solid #ff6a00;
+      color: #ff6a00;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+    }}
+    .tab-button.active {{
+      background-color: #ff6a00;
+      color: #111;
+    }}
+    .tab-content {{
+      display: none;
+    }}
+    .tab-content.active {{
+      display: block;
+    }}
+    a {{
+      color: #ff6a00;
+    }}
+    blockquote {{
+      border-left: 4px solid #ff6a00;
+      padding-left: 1rem;
+      color: #bbb;
+    }}
+    hr {{
+      border: 1px solid #333;
+      margin: 2rem 0;
+    }}
+  </style>
+  <script>
+    function showTab(tabId) {{
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      document.getElementById('btn-' + tabId).classList.add('active');
+    }}
+  </script>
+</head>
+<body>
+  <h1 style="text-align:center; color:#ff6a00;">🛡️ Bugging In: Fortify Your Castle</h1>
+  <p style="text-align:center; font-style:italic; color:#ccc;">Posted on {today} | GritGearHQ.com</p>
 
-  <blockquote style="border-left: 4px solid #ff6a00; padding-left: 1rem; margin-left: 0; color: #bbb;">
-    “Be the castle, not the caravan.”
-  </blockquote>
-
-  <hr style="border: 1px solid #333; margin: 2rem 0;">
-
-  <h2 style="color: #ff6a00;">🔐 Step 1: Lock Down Your Perimeter</h2>
-  <p>Visibility is king. Control is queen. Start your home defense with eyes everywhere.</p>
-
-  <div style="background-color: #222; padding: 1rem; margin-bottom: 1rem; border-left: 5px solid #ff6a00;">
-    <h3 style="color: #fff;">✅ Featured Gear: REOLINK 4K WiFi Outdoor Security Camera</h3>
-    <ul>
-      <li><strong>Price:</strong> ~$130</li>
-      <li><strong>Why It’s Grit-Approved:</strong> Wireless, solar-ready, night vision, rugged shell, motion alerts</li>
-      <li><strong>What It Does:</strong> Lets you see who’s creeping before they start kicking</li>
-    </ul>
-    <a href="https://www.amazon.com/REOLINK-Security-Tracking-Detection-TrackMix/dp/B0B4SB2CRD" target="_blank" style="color: #ff6a00;">🔗 Buy Now on Amazon</a>
+  <div class="tabs">
+    <button id="btn-intro" class="tab-button active" onclick="showTab('intro')">Intro</button>
+    <button id="btn-step1" class="tab-button" onclick="showTab('step1')">Step 1</button>
+    <button id="btn-step2" class="tab-button" onclick="showTab('step2')">Step 2</button>
+    <button id="btn-step3" class="tab-button" onclick="showTab('step3')">Step 3</button>
+    <button id="btn-final" class="tab-button" onclick="showTab('final')">Final</button>
   </div>
 
-  <h2 style="color: #ff6a00;">💥 Step 2: Arm Up for Real Defense</h2>
-  <p>Food and water matter, but nothing stops a threat like the right weapon in the right hands.</p>
-
-  <div style="background-color: #222; padding: 1rem; margin-bottom: 1rem; border-left: 5px solid #ff6a00;">
-    <h3 style="color: #fff;">🔫 Weapon #1: Umarex Gauntlet .25 Cal PCP Tactical Air Rifle</h3>
-    <ul>
-      <li><strong>Price:</strong> ~$320</li>
-      <li><strong>Why It Rocks:</strong> Bolt-action, suppressed, high-velocity pellet rifle with sniper aesthetics and serious punch</li>
-      <li><strong>Purpose:</strong> Silent perimeter defense, pest control, and training without legal headaches</li>
-    </ul>
-    <a href="https://www.amazon.com/Umarex-Gauntlet-PCP-Pellet-Air/dp/B0BB6GT22F" target="_blank" style="color: #ff6a00;">🔗 Buy Now on Amazon</a>
+  <div id="intro" class="tab-content active">
+    <p>When the world goes sideways, sometimes the smart move is to <strong>bug in</strong>. That means locking the doors and turning your home into a fortress.</p>
+    <blockquote>“Be the castle, not the caravan.”</blockquote>
+    <hr>
   </div>
 
-  <div style="background-color: #222; padding: 1rem; margin-bottom: 1rem; border-left: 5px solid #ff6a00;">
-    <h3 style="color: #fff;">🪓 Weapon #2: CRKT Freyr Viking-Style Tactical Axe</h3>
-    <ul>
-      <li><strong>Price:</strong> ~$100</li>
-      <li><strong>Why It’s Grit-Approved:</strong> Balanced for both throwing and door-breaking</li>
-      <li><strong>Purpose:</strong> Intimidation, destruction, or last-resort melee</li>
-    </ul>
-    <a href="https://www.amazon.com/CRKT-Freyr-Axe-Outdoor-Hickory/dp/B0C69RFD2J" target="_blank" style="color: #ff6a00;">🔗 Buy Now on Amazon</a>
+  <div id="step1" class="tab-content">
+    <h2 style="color:#ff6a00;">🔐 Step 1: Lock Down Your Perimeter</h2>
+    <p>Visibility is king. Control is queen. Start your home defense with eyes everywhere.</p>
+    <div style="background:#222; padding:1rem; border-left:5px solid #ff6a00;">
+      <h3>✅ REOLINK 4K WiFi Outdoor Security Camera</h3>
+      <ul>
+        <li><strong>Price:</strong> ~$130</li>
+        <li><strong>Why It’s Grit-Approved:</strong> Wireless, solar-ready, night vision, rugged shell, motion alerts</li>
+        <li><strong>What It Does:</strong> Lets you see who’s creeping before they start kicking</li>
+      </ul>
+      <a href="https://www.amazon.com/REOLINK-Security-Tracking-Detection-TrackMix/dp/B0B4SB2CRD" target="_blank">🔗 Buy Now on Amazon</a>
+    </div>
   </div>
 
-  <h2 style="color: #ff6a00;">🧱 Step 3: Reinforce Entry Points</h2>
-  <p>A cheap lock is a welcome mat for thieves. Install high-security deadbolts, reinforced strike plates, and door armor kits. Window bars aren’t crazy—they’re smart.</p>
+  <div id="step2" class="tab-content">
+    <h2 style="color:#ff6a00;">💥 Step 2: Arm Up for Real Defense</h2>
+    <p>Food and water matter, but nothing stops a threat like the right weapon in the right hands.</p>
+    <div style="background:#222; padding:1rem; border-left:5px solid #ff6a00; margin-bottom:1rem;">
+      <h3>🔫 Umarex Gauntlet .25 Cal PCP Tactical Air Rifle</h3>
+      <ul>
+        <li><strong>Price:</strong> ~$320</li>
+        <li><strong>Why It Rocks:</strong> Bolt-action, suppressed, high-velocity pellet rifle with sniper aesthetics</li>
+        <li><strong>Purpose:</strong> Silent perimeter defense, pest control, and training without legal headaches</li>
+      </ul>
+      <a href="https://www.amazon.com/Umarex-Gauntlet-PCP-Pellet-Air/dp/B0BB6GT22F" target="_blank">🔗 Buy Now on Amazon</a>
+    </div>
 
-  <h2 style="color: #ff6a00;">🕯️ Step 4: Blackout and Black In</h2>
-  <p>If they can’t see you, they can’t hurt you. Blackout curtains. Window foil. Paint. Use light discipline like your life depends on it—because it might.</p>
+    <div style="background:#222; padding:1rem; border-left:5px solid #ff6a00;">
+      <h3>🪓 CRKT Freyr Viking-Style Tactical Axe</h3>
+      <ul>
+        <li><strong>Price:</strong> ~$100</li>
+        <li><strong>Why It’s Grit-Approved:</strong> Balanced for both throwing and door-breaking</li>
+        <li><strong>Purpose:</strong> Intimidation, destruction, or last-resort melee</li>
+      </ul>
+      <a href="https://www.amazon.com/CRKT-Freyr-Axe-Outdoor-Hickory/dp/B0C69RFD2J" target="_blank">🔗 Buy Now on Amazon</a>
+    </div>
+  </div>
 
-  <hr style="border: 1px solid #333; margin: 2rem 0;">
+  <div id="step3" class="tab-content">
+    <h2 style="color:#ff6a00;">🧱 Step 3: Reinforce Entry Points</h2>
+    <p>A cheap lock is a welcome mat for thieves. Install high-security deadbolts, reinforced strike plates, and door armor kits. Window bars aren’t crazy—they’re smart.</p>
+    <h2 style="color:#ff6a00;">🕯️ Step 4: Blackout and Black In</h2>
+    <p>If they can’t see you, they can’t hurt you. Blackout curtains. Window foil. Paint. Use light discipline like your life depends on it—because it might.</p>
+  </div>
 
-  <h2 style="color: #ff6a00;">🗣️ Final Thought</h2>
-  <p>You don’t need a mansion. You need <strong>fortitude</strong>, <strong>planning</strong>, and a <strong>will to stand your ground</strong>. Gear helps. But grit is the foundation.</p>
-</article>
+  <div id="final" class="tab-content">
+    <h2 style="color:#ff6a00;">🗣️ Final Thought</h2>
+    <p>You don’t need a mansion. You need <strong>fortitude</strong>, <strong>planning</strong>, and a <strong>will to stand your ground</strong>. Gear helps. But grit is the foundation.</p>
+  </div>
+</body>
+</html>
 """
 
-# Save the final blog post to an HTML file
-final_blog_path = Path("/mnt/data/bugging-in-blog-final.html")
-final_blog_path.write_text(final_blog_post, encoding="utf-8")
+# Save the tabbed blog post as a complete HTML file
+tabbed_blog_path = Path("/mnt/data/bugging-in-blog-tabbed.html")
+tabbed_blog_path.write_text(tabbed_blog_post, encoding="utf-8")
 
-final_blog_path.name
+tabbed_blog_path.name
 
-  
-</div>
-  
 
 </body>
 </html>
