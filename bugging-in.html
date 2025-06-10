@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bugging In: Fortify Your Castle</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background-color: #111;
+      color: #f5f5f5;
+      padding: 2rem;
+    }
+    .tab {
+      display: none;
+    }
+    .tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .tab-buttons button {
+      background-color: #222;
+      color: #ff6a00;
+      border: 1px solid #444;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .tab-buttons button.active {
+      background-color: #ff6a00;
+      color: #111;
+    }
+    .tab-content {
+      background-color: #222;
+      border-left: 5px solid #ff6a00;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    h1, h2, h3 {
+      color: #ff6a00;
+    }
+    a {
+      color: #ff6a00;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">🛡️ Bugging In: Fortify Your Castle Before the Collapse</h1>
+<p style="text-align: center; font-style: italic; color: #ccc;">Posted on June 10, 2025 | GritGearHQ.com</p>
+<p style="text-align: center; max-width: 600px; margin: auto;">When the world goes sideways, not everyone gets the chance—or even wants—to bug out. Sometimes, your best bet is to <strong>bug in</strong>. That means digging in your heels, locking the doors, and turning your home into a fortress.</p>
+
+<div class="tab-buttons">
+  <button onclick="showTab(0)" class="active">Step 1: Perimeter</button>
+  <button onclick="showTab(1)">Step 2: Defense</button>
+  <button onclick="showTab(2)">Step 3: Reinforce</button>
+  <button onclick="showTab(3)">Final Thoughts</button>
+</div>
+
+<div id="tabs">
+
+  <div class="tab tab-content" style="display:block;">
+    <h2>🔐 Step 1: Lock Down Your Perimeter</h2>
+    <p>Visibility is king. Control is queen. Start your home defense with eyes everywhere.</p>
+    <h3>✅ Featured Gear: REOLINK 4K WiFi Outdoor Security Camera</h3>
+    <ul>
+      <li><strong>Price:</strong> ~$130</li>
+      <li><strong>Why It’s Grit-Approved:</strong> Wireless, solar-ready, night vision, rugged shell, motion alerts</li>
+      <li><strong>What It Does:</strong> Lets you see who’s creeping before they start kicking</li>
+    </ul>
+    <a href="https://www.amazon.com/REOLINK-Security-Tracking-Detection-TrackMix/dp/B0B4SB2CRD" target="_blank">🔗 Buy Now on Amazon</a>
+  </div>
+
+  <div class="tab tab-content">
+    <h2>💥 Step 2: Arm Up for Real Defense</h2>
+    <p>Food and water matter, but nothing stops a threat like the right weapon in the right hands.</p>
+    <h3>🔫 Weapon #1: Umarex Gauntlet .25 Cal PCP Tactical Air Rifle</h3>
+    <ul>
+      <li><strong>Price:</strong> ~$320</li>
+      <li><strong>Why It Rocks:</strong> Bolt-action, suppressed, high-velocity pellet rifle with sniper aesthetics and serious punch</li>
+      <li><strong>Purpose:</strong> Silent perimeter defense, pest control, and training without legal headaches</li>
+    </ul>
+    <a href="https://www.amazon.com/Umarex-Gauntlet-PCP-Pellet-Air/dp/B0BB6GT22F" target="_blank">🔗 Buy Now on Amazon</a>
+
+    <h3>🪓 Weapon #2: CRKT Freyr Viking-Style Tactical Axe</h3>
+    <ul>
+      <li><strong>Price:</strong> ~$100</li>
+      <li><strong>Why It’s Grit-Approved:</strong> Balanced for both throwing and door-breaking</li>
+      <li><strong>Purpose:</strong> Intimidation, destruction, or last-resort melee</li>
+    </ul>
+    <a href="https://www.amazon.com/CRKT-Freyr-Axe-Outdoor-Hickory/dp/B0C69RFD2J" target="_blank">🔗 Buy Now on Amazon</a>
+  </div>
+
+  <div class="tab tab-content">
+    <h2>🧱 Step 3: Reinforce Entry Points</h2>
+    <p>A cheap lock is a welcome mat for thieves. Install high-security deadbolts, reinforced strike plates, and door armor kits. Window bars aren’t crazy—they’re smart.</p>
+    <h2>🕯️ Step 4: Blackout and Black In</h2>
+    <p>If they can’t see you, they can’t hurt you. Blackout curtains. Window foil. Paint. Use light discipline like your life depends on it—because it might.</p>
+  </div>
+
+  <div class="tab tab-content">
+    <h2>🗣️ Final Thought</h2>
+    <blockquote style="border-left: 4px solid #ff6a00; padding-left: 1rem; color: #bbb;">“Be the castle, not the caravan.”</blockquote>
+    <p>You don’t need a mansion. You need <strong>fortitude</strong>, <strong>planning</strong>, and a <strong>will to stand your ground</strong>. Gear helps. But grit is the foundation.</p>
+  </div>
+
+</div>
+
+<script>
+function showTab(index) {
+  const tabs = document.querySelectorAll('.tab');
+  const buttons = document.querySelectorAll('.tab-buttons button');
+  tabs.forEach((tab, i) => {
+    tab.style.display = i === index ? 'block' : 'none';
+    buttons[i].classList.toggle('active', i === index);
+  });
+}
+</script>
+
+</body>
+</html>
