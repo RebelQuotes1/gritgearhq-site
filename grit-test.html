@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <title>Grit Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0d0d0d">
   <meta name="description" content="Take the Grit Test and see if you'd survive when the world goes sideways.">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
   <style>
     body {
       margin: 0;
+      min-height: 100vh;
       background-color: #0d0d0d;
       background-image: url('https://rebelquotes1.github.io/gritgearhq-site/assets/bg-grunge.jpg');
       background-size: cover;
@@ -19,6 +21,7 @@
       font-family: 'Special Elite', monospace;
       text-align: center;
       padding: 60px 20px;
+      box-sizing: border-box;
     }
     h2 {
       font-size: 2.5rem;
@@ -74,6 +77,9 @@
       margin: 40px auto 20px;
       width: 90%;
     }
+    #guestEntries {
+      word-wrap: break-word;
+    }
   </style>
 </head>
 <body>
@@ -93,6 +99,20 @@
 
   <a href="index.html" class="back-button">← Back to Home</a>
 
+  <!-- Guestbook -->
+  <section id="guestbook" style="margin-top:80px; padding:40px 20px; background:#1a1a1a; border-top:2px solid #ffa500;">
+    <h2 style="color:#ffa500; font-size:2rem; margin-bottom:20px;">📖 Guestbook</h2>
+    <p style="color:#ccc; font-style:italic;">Leave your mark. Or your confession. Just don’t be weird.</p>
+
+    <div style="max-width:500px; margin:30px auto;">
+      <input id="guestName" type="text" placeholder="Name or Alias" style="width:90%; padding:10px; margin-bottom:10px; border:1px solid #444; background:#111; color:#ffa500;"><br>
+      <textarea id="guestMessage" placeholder="Say something gritty..." rows="3" style="width:90%; padding:10px; border:1px solid #444; background:#111; color:#ffa500;"></textarea><br>
+      <button onclick="submitGuestbook()" style="margin-top:10px; background:#ffa500; color:#111; padding:10px 20px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">Sign Guestbook</button>
+    </div>
+
+    <div id="guestEntries" style="max-width:700px; margin:40px auto; color:#ddd;"></div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <hr />
@@ -104,7 +124,6 @@
     </p>
   </footer>
 
-  <!-- Joke Script -->
   <script>
     const gritJokes = [
       "You thought MREs were a rap group. You're done.",
@@ -118,37 +137,21 @@
       const joke = gritJokes[Math.floor(Math.random() * gritJokes.length)];
       document.getElementById("grit-result").textContent = joke;
     }
+
+    function submitGuestbook() {
+      const name = document.getElementById('guestName').value.trim();
+      const message = document.getElementById('guestMessage').value.trim();
+      if (!name || !message) return alert("Don't half-ass it. Fill both fields.");
+
+      const entry = document.createElement('div');
+      entry.style.marginBottom = '20px';
+      entry.innerHTML = `<strong style="color:#ffa500;">${name}</strong>: ${message}`;
+      document.getElementById('guestEntries').prepend(entry);
+
+      document.getElementById('guestName').value = '';
+      document.getElementById('guestMessage').value = '';
+    }
   </script>
-<section id="guestbook" style="margin-top:80px; padding:40px 20px; background:#1a1a1a; border-top:2px solid #ffa500;">
-  <h2 style="color:#ffa500; text-align:center; font-size:2rem; margin-bottom:20px;">📖 Guestbook</h2>
-  <p style="color:#ccc; text-align:center; font-style:italic;">Leave your mark. Or your confession. Just don’t be weird.</p>
-
-  <div style="max-width:500px; margin:30px auto; text-align:center;">
-    <input id="guestName" type="text" placeholder="Name or Alias" style="width:90%; padding:10px; margin-bottom:10px; border:1px solid #444; background:#111; color:#ffa500;"><br>
-    <textarea id="guestMessage" placeholder="Say something gritty..." rows="3" style="width:90%; padding:10px; border:1px solid #444; background:#111; color:#ffa500;"></textarea><br>
-    <button onclick="submitGuestbook()" style="margin-top:10px; background:#ffa500; color:#111; padding:10px 20px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">Sign Guestbook</button>
-  </div>
-
-  <div id="guestEntries" style="max-width:700px; margin:40px auto; color:#ddd; font-family:'Special Elite', monospace;">
-    <!-- New entries will appear here -->
-  </div>
-</section>
-
-<script>
-  function submitGuestbook() {
-    const name = document.getElementById('guestName').value.trim();
-    const message = document.getElementById('guestMessage').value.trim();
-    if (!name || !message) return alert("Don't half-ass it. Fill both fields.");
-
-    const entry = document.createElement('div');
-    entry.style.marginBottom = '20px';
-    entry.innerHTML = `<strong style="color:#ffa500;">${name}</strong>: ${message}`;
-    document.getElementById('guestEntries').prepend(entry);
-
-    document.getElementById('guestName').value = '';
-    document.getElementById('guestMessage').value = '';
-  }
-</script>
 
 </body>
 </html>
