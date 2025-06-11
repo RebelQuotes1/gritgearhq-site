@@ -119,6 +119,36 @@
       document.getElementById("grit-result").textContent = joke;
     }
   </script>
+<section id="guestbook" style="margin-top:80px; padding:40px 20px; background:#1a1a1a; border-top:2px solid #ffa500;">
+  <h2 style="color:#ffa500; text-align:center; font-size:2rem; margin-bottom:20px;">📖 Guestbook</h2>
+  <p style="color:#ccc; text-align:center; font-style:italic;">Leave your mark. Or your confession. Just don’t be weird.</p>
+
+  <div style="max-width:500px; margin:30px auto; text-align:center;">
+    <input id="guestName" type="text" placeholder="Name or Alias" style="width:90%; padding:10px; margin-bottom:10px; border:1px solid #444; background:#111; color:#ffa500;"><br>
+    <textarea id="guestMessage" placeholder="Say something gritty..." rows="3" style="width:90%; padding:10px; border:1px solid #444; background:#111; color:#ffa500;"></textarea><br>
+    <button onclick="submitGuestbook()" style="margin-top:10px; background:#ffa500; color:#111; padding:10px 20px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">Sign Guestbook</button>
+  </div>
+
+  <div id="guestEntries" style="max-width:700px; margin:40px auto; color:#ddd; font-family:'Special Elite', monospace;">
+    <!-- New entries will appear here -->
+  </div>
+</section>
+
+<script>
+  function submitGuestbook() {
+    const name = document.getElementById('guestName').value.trim();
+    const message = document.getElementById('guestMessage').value.trim();
+    if (!name || !message) return alert("Don't half-ass it. Fill both fields.");
+
+    const entry = document.createElement('div');
+    entry.style.marginBottom = '20px';
+    entry.innerHTML = `<strong style="color:#ffa500;">${name}</strong>: ${message}`;
+    document.getElementById('guestEntries').prepend(entry);
+
+    document.getElementById('guestName').value = '';
+    document.getElementById('guestMessage').value = '';
+  }
+</script>
 
 </body>
 </html>
