@@ -98,11 +98,51 @@
 <div id="featured-rotator" style="margin: 20px auto; padding: 20px; background: radial-gradient(#1a1a1a, #000); border-radius: 12px; max-width: 520px; text-align: center; color: #ccc; box-shadow: 0 0 25px #000000aa;">
   <img id="feature-img" src="ll.png" alt="Featured Item" style="max-width: 100%; border-radius: 10px; border: 2px solid #333; box-shadow: 0 0 12px #ff4500;">
   <p id="feature-title" style="font-family:'Special Elite', monospace; font-size: 1.4em; color:#ff6600; margin-top: 12px;">Forged Viking Neck Knife</p>
-  <p id="feature-desc">Primitive by design. Razor-sharp by intent. A compact forged steel neck knife for when things go full savage.</p>
+  <p id="feature-desc">Primitive by design. Razor‑sharp by intent. A compact forged steel neck knife for when things go full savage.</p>
   <p><a id="feature-link" href="https://amzn.to/4l6MSGq" target="_blank" style="display:inline-block; margin: 10px auto; padding: 10px 20px; background:#ff6600; color:#000; text-decoration:none; border-radius:5px; font-weight:bold; box-shadow: 0 0 10px #ff6600;">View on Amazon</a></p>
   <p style="font-size: 0.95em; color:#bbb; font-style: italic;" id="review">⭐️⭐️⭐️⭐️½ – “Surprisingly lethal. Hung it next to my bear traps.” – Mason K.</p>
   <p id="view-count" style="font-size: 0.85em; color:#777;">View count: <span id="view-num">5,423</span></p>
 </div>
+
+<script>
+  const items = [
+    {
+      img: "ll.png",
+      title: "Forged Viking Neck Knife",
+      desc: "Primitive by design. Razor‑sharp by intent. A compact forged steel neck knife for when things go full savage.",
+      link: "https://amzn.to/4l6MSGq",
+      review: "⭐️⭐️⭐️⭐️½ – “Surprisingly lethal. Hung it next to my bear traps.” – Mason K."
+    },
+    {
+      img: "lll.jpg",
+      title: "Military‑Grade NATO‑Style Jerry Can (20 L)",
+      desc: "Steel‑welded, leak‑proof, and NATO‑tough. Road‑ready fuel storage that won’t quit when civilization does.",
+      link: "https://amzn.to/4413Ui6",
+      review: "⭐️⭐️⭐️⭐️⭐️ – “Used it in the desert for a month. Zero leaks. Rugged as hell.” – Travis B."
+    },
+    {
+      img: "knuk.jpg",
+      title: "EDC Brass Knuckle Bottle Opener",
+      desc: "Disguised as a bottle opener. Designed to wreck bones. It hits like a hammer, but you sip like a king.",
+      link: "https://amzn.to/3HDNVzb",
+      review: "⭐️⭐️⭐️⭐️ – “Looks legal. Hits criminal.” – JD R."
+    }
+  ];
+
+  let current = 0;
+  const rotate = () => {
+    current = (current + 1) % items.length;
+    document.getElementById("feature-img").src = items[current].img;
+    document.getElementById("feature-title").textContent = items[current].title;
+    document.getElementById("feature-desc").textContent = items[current].desc;
+    document.getElementById("feature-link").href = items[current].link;
+    document.getElementById("review").textContent = items[current].review;
+    document.getElementById("view-num").textContent = (Math.floor(5000 + Math.random() * 1500)).toLocaleString();
+  };
+
+  setInterval(rotate, 6000);
+</script>
+
 
 <script>
   const items = [
