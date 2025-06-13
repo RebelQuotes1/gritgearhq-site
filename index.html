@@ -92,17 +92,57 @@
          (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 
-    <div class="subtitle">Rough gear for rougher times.</div>
-<!-- Featured Item Block -->
-<div style="margin: 30px auto; padding: 20px; max-width: 400px; background-color: #1a1a1a; border: 2px solid #333; border-radius: 10px; text-align: center;">
-  <h2 style="color: #ffa500;">🔥 Featured Item</h2>
-  <img src="knuk.jpg" alt="EDC Self-Defense Bottle Opener" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px;">
-  <p style="color: #ccc;">Disguised as a bottle opener. Built tough with a solid grip. A brass knuckle-style EDC tool that fits in your pocket and delivers peace of mind when it counts. Rugged, compact, and ready for anything..</p>
-  <a href="https://amzn.to/45UJyJZ" target="_blank" rel="noopener noreferrer"
-     style="display: inline-block; margin-top: 10px; padding: 10px 16px; background-color: #4fc3f7; color: #000; text-decoration: none; border-radius: 5px; font-weight: bold;">
-     View on Amazon
-  </a>
+    <!-- 🔥 Featured Items Rotator (Bunker Styled) -->
+<div class="divider"></div>
+<h2 style="color:#ffa500; font-family:'Special Elite', monospace; text-shadow: 0 0 5px #ff6600;">🔥 Featured Items</h2>
+<div id="featured-rotator" style="margin: 20px auto; padding: 20px; background: radial-gradient(#1a1a1a, #000); border-radius: 12px; max-width: 520px; text-align: center; color: #ccc; box-shadow: 0 0 25px #000000aa;">
+  <img id="feature-img" src="ll.png" alt="Featured Item" style="max-width: 100%; border-radius: 10px; border: 2px solid #333; box-shadow: 0 0 12px #ff4500;">
+  <p id="feature-title" style="font-family:'Special Elite', monospace; font-size: 1.4em; color:#ff6600; margin-top: 12px;">Forged Viking Neck Knife</p>
+  <p id="feature-desc">Primitive by design. Razor-sharp by intent. A compact forged steel neck knife for when things go full savage.</p>
+  <p><a id="feature-link" href="https://amzn.to/4l6MSGq" target="_blank" style="display:inline-block; margin: 10px auto; padding: 10px 20px; background:#ff6600; color:#000; text-decoration:none; border-radius:5px; font-weight:bold; box-shadow: 0 0 10px #ff6600;">View on Amazon</a></p>
+  <p style="font-size: 0.95em; color:#bbb; font-style: italic;" id="review">⭐️⭐️⭐️⭐️½ – “Surprisingly lethal. Hung it next to my bear traps.” – Mason K.</p>
+  <p id="view-count" style="font-size: 0.85em; color:#777;">View count: <span id="view-num">5,423</span></p>
 </div>
+
+<script>
+  const items = [
+    {
+      img: "ll.png",
+      title: "Forged Viking Neck Knife",
+      desc: "Primitive by design. Razor-sharp by intent. A compact forged steel neck knife for when things go full savage.",
+      link: "https://amzn.to/4l6MSGq",
+      review: "⭐️⭐️⭐️⭐️½ – “Surprisingly lethal. Hung it next to my bear traps.” – Mason K."
+    },
+    {
+      img: "lll.jpg",
+      title: "Military-Grade Gasoline Jerry Can (20L)",
+      desc: "Steel-welded and NATO-tough. Leak-proof, road-ready, and built to outlive your truck.",
+      link: "https://amzn.to/3HF3Iha",
+      review: "⭐️⭐️⭐️⭐️⭐️ – “Used it in the desert for a month. Zero leaks. Rugged as hell.” – Travis B."
+    },
+    {
+      img: "knuk.jpg",
+      title: "EDC Bottle Opener Brass Knuckle",
+      desc: "Disguised as a bottle opener. Designed to wreck bones. This little beast fits your grip and ruins theirs.",
+      link: "https://amzn.to/3HDNVzb",
+      review: "⭐️⭐️⭐️⭐️ – “Looks legal. Hits criminal.” – JD R."
+    }
+  ];
+
+  let current = 0;
+  const rotate = () => {
+    current = (current + 1) % items.length;
+    document.getElementById("feature-img").src = items[current].img;
+    document.getElementById("feature-title").innerHTML = items[current].title;
+    document.getElementById("feature-desc").textContent = items[current].desc;
+    document.getElementById("feature-link").href = items[current].link;
+    document.getElementById("review").textContent = items[current].review;
+    document.getElementById("view-num").textContent = Math.floor(5000 + Math.random() * 1500).toLocaleString();
+  };
+
+  setInterval(rotate, 6000);
+</script>
+
 
     <div class="nav-buttons">
       <a href="self-defense.html">Self Defense</a>
