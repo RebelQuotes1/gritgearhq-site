@@ -201,36 +201,86 @@
       color: #aaa;
     }
   </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shelter Gear Accordion</title>
+  <style>
+    body {
+      background: #111;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .accordion {
+      background-color: #222;
+      color: #eee;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      transition: 0.4s;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .active, .accordion:hover {
+      background-color: #333;
+    }
+    .panel {
+      padding: 0 15px;
+      display: none;
+      background-color: #1a1a1a;
+      overflow: hidden;
+      border-left: 2px solid #444;
+    }
+    .gear-item {
+      margin: 15px 0;
+    }
+    .gear-item a {
+      color: #4fc3f7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <div class="content-wrapper">
-    <h1>Shelter Gear Picks</h1>
 
-    <button class="accordion">Top Shelter Solutions</button>
-    <div class="panel">
-      <div class="gear-item">
-        <p><strong>1 Person Tent for Camping Hiking Mountain Hunting Backpacking Tents 4 Season Resistance to Windproof Rainproof and Waterproof</strong></p>
-        <a href="https://amzn.to/3HCdIrh" target="_blank">Buy on Amazon</a>
-      </div>
-      <div class="gear-item">
-        <p><strong>Onewind Lightweight Poncho Shelter, Solitary Shelter Cape Silnylon Emergency Survival Shelter Ultralight Minimalist Shelter for Camping Hiking Backpacking Bug Out Bag</strong></p>
-        <a href="https://amzn.to/45ntFvn" target="_blank">Buy on Amazon</a>
-      </div>
-      <div class="gear-item">
-        <p><strong>GOLDCAMP Waterproof Camping Tarp，70D Nylon 10X10FT Hammock Rain Fly ，UV 50+ and PU15000mm Tent Tarp Shelter Canopy</strong></p>
-        <a href="https://amzn.to/441xwfl" target="_blank">Buy on Amazon</a>
-      </div>
-    </div>
+<h2>Shelter Gear Picks</h2>
 
-    <footer>
-      <div class="divider"></div>
-      <p><strong>Disclaimers & Legal:</strong></p>
-      <p>This site contains affiliate links. As an Amazon Associate, we earn from qualifying purchases. This comes at no extra cost to you. We only recommend gear we truly believe in.</p>
-      <p>Grit Gear HQ participates in affiliate programs that earn fees through linked product recommendations.</p>
-      <p>All content is for informational and entertainment purposes only. We are not responsible for how you use any gear or advice mentioned on this site. Stay safe. Stay sharp.</p>
-      <p>&copy; 2025 Grit Gear HQ. All rights reserved.</p>
-    </footer>
+<button class="accordion">👉 Click Here for Shelter Gear</button>
+<div class="panel">
+  <div class="gear-item">
+    <p><strong>1 Person Tent for Camping Hiking Mountain Hunting Backpacking Tents 4 Season Resistance to Windproof Rainproof and Waterproof</strong></p>
+    <a href="https://amzn.to/3HCdIrh" target="_blank">Buy on Amazon</a>
   </div>
+  <div class="gear-item">
+    <p><strong>Onewind Lightweight Poncho Shelter, Solitary Shelter Cape Silnylon Emergency Survival Shelter Ultralight Minimalist Shelter for Camping Hiking Backpacking Bug Out Bag</strong></p>
+    <a href="https://amzn.to/45ntFvn" target="_blank">Buy on Amazon</a>
+  </div>
+  <div class="gear-item">
+    <p><strong>GOLDCAMP Waterproof Camping Tarp，70D Nylon 10X10FT Hammock Rain Fly ，UV 50+ and PU15000mm Tent Tarp Shelter Canopy</strong></p>
+    <a href="https://amzn.to/441xwfl" target="_blank">Buy on Amazon</a>
+  </div>
+</div>
+
+<script>
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+  }
+</script>
+
+</body>
+</html>
+
 
   <script>
     const acc = document.getElementsByClassName("accordion");
