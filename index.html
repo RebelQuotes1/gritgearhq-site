@@ -162,36 +162,42 @@
       color: #000;
     }
   </style>
-</head>
-<body>
+<form id="guestForm">
+  <input type="text" id="name" placeholder="Your name" required style="padding:8px;width:100%;margin-bottom:10px;"><br>
+  <textarea id="message" placeholder="Your message" required style="padding:8px;width:100%;height:100px;"></textarea><br>
+  <button type="submit" style="padding:10px 20px; background-color:#ffa500; color:#111; border:none; font-weight:bold;">Sign Guestbook</button>
+</form>
 
-  <h1>📖 Sign the Grit Gear Guest Book</h1>
+<div id="guestResponse" style="margin-top:15px; color:lime;"></div>
 
-  <form onsubmit="submitMessage(event)">
-    <label for="name">Your Name or Alias:</label>
-    <input type="text" id="name" required>
+<script>
+  const form = document.getElementById('guestForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const responseBox = document.getElementById('guestResponse');
 
-    <label for="message">Message:</label>
-    <textarea id="message" rows="5" required></textarea>
-
-    <input type="submit" value="Leave a Message">
-  </form>
-
-  <script>
-    function submitMessage(event) {
-      event.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if (name && message) {
-        alert(`Thanks for signing the book, ${name}! Your grit is noted.`);
-        document.getElementById('name').value = '';
-        document.getElementById('message').value = '';
-      }
+    if (!name || !message) {
+      responseBox.innerText = 'Please fill out both fields.';
+      return;
     }
-  </script>
 
-</body>
-</html>
+    const res = await fetch('https://script.google.com/macros/s/AKfycbzR3zQzQhmEsYUtmGEhM-5PFdA-C2EJdeizeM9si8qbRv_SB3GLlySY_yz_FLVTDQvoBA/exec', {
+      method: 'POST',
+      body: JSON.stringify({ name, message }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (res.ok) {
+      responseBox.innerText = '✅ Message sent to guestbook!';
+      form.reset();
+    } else {
+      responseBox.innerText = '⚠️ Something went wrong.';
+    }
+  });
+</script>
+
 
 <script>
   const items = [
