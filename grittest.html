@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +12,6 @@
       text-align: center;
       padding: 50px;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
     .result {
       background: #1a1a1a;
       border: 1px solid #333;
@@ -27,102 +22,42 @@
     button {
       background-color: #ffa500;
       border: none;
-      padding: 10px 25px;
+      padding: 10px 20px;
       font-weight: bold;
-      font-size: 1.1em;
       color: #111;
       cursor: pointer;
       margin-top: 20px;
-      border-radius: 5px;
-    }
-    .disclaimer {
-      margin-top: 60px;
-      font-size: 0.8em;
-      color: #888;
-    }
-    a {
-      color: #ffa500;
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
   <h1>💀 Take the Grit Test</h1>
-  <p>Click below to find out if you'd survive the collapse — or cry in a ditch.</p>
-  <button onclick="showResult()">Test Your Grit</button>
+  <p>Click below to find out if you’d survive the collapse… or cry in the corner.</p>
+  <button onclick="showResult()">Reveal My Fate</button>
 
-  <div id="result" class="result" style="display:none;"></div>
-
-  <div class="poll" style="margin-top:40px;">
-    <h2>🗳️ How would you rate your survival skills?</h2>
-    <form>
-      <label><input type="radio" name="grit" /> I'm basically Les Stroud</label><br>
-      <label><input type="radio" name="grit" /> I’d last a week—maybe</label><br>
-      <label><input type="radio" name="grit" /> I'd cry before breakfast</label><br>
-    </form>
-  
-  </div>
-
-  <div style="margin-top: 40px;">
-    <a href="index.html">
-      <button style="background:#222; color:#ffa500; font-weight:bold; border:1px solid #ffa500; padding:10px 20px; border-radius:5px;">
-        ⬅️ Back to Home
-      </button>
-    </a>
-  </div>
+  <div class="result" id="gritResult" style="display: none;"></div>
 
   <script>
     const results = [
-      "You packed wet matches in a sandwich bag. <br><a href='https://amzn.to/3HEmtBg' target='_blank'>EXOTAC - MATCHCAP XL Waterproof Camping Match Kit Holder with Integrated Striker</a>",
-      "You said duct tape was your first aid plan. <br><a href='https://amzn.to/4jSOkLv' target='_blank'>Carlebben Tactical MOLLE Medical First Aid Kit Utility Pouch (with Medical Supplies)</a>",
-      "You tried to start a fire with a dead Bic. <br><a href='https://amzn.to/4lbMYg1' target='_blank'>Black Beard Fire Plugs – 50 Plugs, 100% Weatherproof Fire Starter</a>",
-      "You yelled 'Bear!' and it was just your reflection. Classic. <br><a href='https://amzn.to/4lbMYg1' target='_blank'>Black Beard Fire Plugs – Even Bears Respect Fire</a>",
-      "You used your emergency blanket as a fashion cape. <br><a href='https://amzn.to/4jSOkLv' target='_blank'>Carlebben Tactical MOLLE Medical Kit – Not for cosplay</a>",
-      "You brought a yoga mat instead of a sleeping pad. <br><a href='https://amzn.to/4lbMYg1' target='_blank'>Black Beard Fire Plugs – You’re gonna need warmth</a>",
-      "You used a flashlight as a hammer. <br><a href='https://amzn.to/3HEmtBg' target='_blank'>EXOTAC - MATCHCAP XL – Not a multi-tool, genius</a>",
-      "You thought you could 'manifest' your way out of a blizzard. <br><a href='https://amzn.to/3HEmtBg' target='_blank'>EXOTAC - MATCHCAP XL – Fire > Positive Vibes</a>"
+      "You thought MREs were a rap group. You're done.",
+      "You bartered your last match for a vape cartridge.",
+      "You asked a survivalist if they take Venmo. They took your boots instead.",
+      "You screamed 'Alexa, help!' and a wild boar came. He wasn't feeling it.",
+      "You brought oat milk to a firefight. Bold move.",
+      "You looted toilet paper during the EMP. Priorities, I guess.",
+      "You think a ferro rod is a TikTok dance.",
+      "You died googling 'how to start a fire' after the grid went down.",
+      "You have grit. Welcome to the wasteland, champ."
     ];
 
     function showResult() {
-      const random = Math.floor(Math.random() * results.length);
-      document.getElementById('result').innerHTML = results[random];
-      document.getElementById('result').style.display = 'block';
+      const randomIndex = Math.floor(Math.random() * results.length);
+      const resultText = results[randomIndex];
+      document.getElementById('gritResult').textContent = resultText;
+      document.getElementById('gritResult').style.display = 'block';
     }
-
-    // Poll tracking
-    const radios = document.querySelectorAll('input[name="grit"]');
-    let voteCounts = { Les: 0, Week: 0, Cry: 0 };
-
-    const resultBox = document.createElement("div");
-    resultBox.style.marginTop = "20px";
-    resultBox.style.fontSize = "1.1em";
-    resultBox.style.color = "#ffa500";
-    document.querySelector(".poll").appendChild(resultBox);
-
-    function updateResults() {
-      resultBox.innerHTML = `
-        <strong>Live Poll Results:</strong><br>
-        Les Strouds: ${voteCounts.Les}<br>
-        One Weekers: ${voteCounts.Week}<br>
-        Pre-Breakfast Cries: ${voteCounts.Cry}
-      `;
-    }
-
-    radios.forEach((radio, index) => {
-      radio.addEventListener("change", () => {
-        if (index === 0) voteCounts.Les++;
-        if (index === 1) voteCounts.Week++;
-        if (index === 2) voteCounts.Cry++;
-        updateResults();
-      });
-    });
   </script>
-
-  <div class="disclaimer">
-    <p>Disclaimer: This test is for entertainment only. Results are randomized and not based on real-world data.</p>
-    <p>As an Amazon Associate, we earn from qualifying purchases.</p>
-  </div>
 
 </body>
 </html>
