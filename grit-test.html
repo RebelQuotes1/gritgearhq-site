@@ -12,6 +12,10 @@
       text-align: center;
       padding: 50px;
     }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
     .result {
       background: #1a1a1a;
       border: 1px solid #333;
@@ -22,11 +26,43 @@
     button {
       background-color: #ffa500;
       border: none;
-      padding: 10px 20px;
+      padding: 10px 25px;
       font-weight: bold;
+      font-size: 1.1em;
       color: #111;
       cursor: pointer;
       margin-top: 20px;
+      border-radius: 5px;
+    }
+    .disclaimer {
+      margin-top: 60px;
+      font-size: 0.8em;
+      color: #888;
+    }
+    a {
+      color: #ffa500;
+      text-decoration: underline;
+    }
+    .comments {
+      margin-top: 50px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .comments ul {
+      list-style: none;
+      padding: 0;
+    }
+    .comments li {
+      margin-bottom: 10px;
+    }
+    .back-link {
+      margin-top: 40px;
+      display: inline-block;
+      color: #ffa500;
+      text-decoration: underline;
+      font-size: 1em;
     }
   </style>
 </head>
@@ -38,6 +74,19 @@
 
   <div class="result" id="gritResult" style="display: none;"></div>
 
+  <div class="comments">
+    <h2>💬 Grit Test Comments (Totally Real)</h2>
+    <ul>
+      <li>🗯️ "Took the test. My cat scored higher than me." – @urban_prepper_fail</li>
+      <li>🗯️ "I screamed 'Alexa, help!' and now I’m grounded." – @millennialMike</li>
+      <li>🗯️ "Apparently oat milk isn’t tactical gear. Who knew?" – @glampocalypse</li>
+      <li>🗯️ "Thought I was Les Stroud. Turns out I’m less prepared." – @wannabe_survivor</li>
+      <li>🗯️ "Cried before clicking. Got 'You have grit' anyway. Thanks, algorithm!" – @crybaby2077</li>
+    </ul>
+  </div>
+
+  <a class="back-link" href="/index.html">← Back to Home</a>
+
   <script>
     const results = [
       "You thought MREs were a rap group. You're done.",
@@ -48,16 +97,23 @@
       "You looted toilet paper during the EMP. Priorities, I guess.",
       "You think a ferro rod is a TikTok dance.",
       "You died googling 'how to start a fire' after the grid went down.",
-      "You have grit. Welcome to the wasteland, champ."
+      "You have grit. Welcome to the wasteland, champ.",
+      "You packed wet matches in a sandwich bag. <br><a href='https://amzn.to/3HEmtBg' target='_blank'>EXOTAC MATCHCAP XL – Be smarter next time.</a>",
+      "You said duct tape was your first aid plan. <br><a href='https://amzn.to/4jSOkLv' target='_blank'>Carlebben Tactical Medical Kit – Real gear helps.</a>",
+      "You tried to start a fire with a dead Bic. <br><a href='https://amzn.to/4lbMYg1' target='_blank'>Black Beard Fire Plugs – Because flames matter.</a>"
     ];
 
     function showResult() {
       const randomIndex = Math.floor(Math.random() * results.length);
-      const resultText = results[randomIndex];
-      document.getElementById('gritResult').textContent = resultText;
+      document.getElementById('gritResult').innerHTML = results[randomIndex];
       document.getElementById('gritResult').style.display = 'block';
     }
   </script>
+
+  <div class="disclaimer">
+    <p>Disclaimer: This test is for entertainment only. Results are randomized and not based on real-world survival data.</p>
+    <p>As an Amazon Associate, we earn from qualifying purchases.</p>
+  </div>
 
 </body>
 </html>
