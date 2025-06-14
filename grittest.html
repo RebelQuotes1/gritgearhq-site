@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grit Gear HQ – Grit Test</title>
+  <meta name="description" content="Test your survival grit. Do you have what it takes or are you lunch for the wild boars?">
   <style>
     body {
       background: #111;
@@ -13,60 +13,49 @@
       text-align: center;
       padding: 50px;
     }
-    .result {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 20px;
+    h1 {
+      font-size: 2.5em;
     }
     button {
       background-color: #ffa500;
       border: none;
-      padding: 10px 25px;
+      padding: 12px 24px;
       font-weight: bold;
-      font-size: 1.1em;
       color: #111;
+      font-size: 1.2em;
       cursor: pointer;
-      margin-top: 20px;
-      border-radius: 5px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
     }
-    .reviews {
-      margin-top: 40px;
-      text-align: left;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    button:hover {
+      background-color: #ffcc00;
     }
-    .review {
-      border-top: 1px solid #333;
-      padding-top: 10px;
-      margin-top: 10px;
+    .result {
+      margin-top: 30px;
+      background: #1a1a1a;
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 1.2em;
     }
-    .disclaimer {
-      margin-top: 60px;
+    .legal {
+      color: #777;
       font-size: 0.8em;
-      color: #888;
-    }
-    a {
-      color: #ffa500;
-      text-decoration: underline;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
   <h1>💀 Take the Grit Test</h1>
-  <p>Click below to find out if you'd survive the collapse — or cry in a ditch.</p>
-  <button onclick="showResult()">Test Your Grit</button>
+  <p>Click the button to reveal your fate.</p>
+  <button onclick="generateGritResult()">Find Out</button>
 
   <div id="result" class="result" style="display:none;"></div>
 
-  <div class="reviews">
-    <h2>🧠 What Survivors Are Saying</h2>
-    <div class="review"><strong>MadMax_87:</strong> "This test called me out HARD. 10/10, laughed my ass off and bought the fire plugs."</div>
-    <div class="review"><strong>SparrowGirl:</strong> "I failed the test but bought all the gear. Fake it till you make it, right?"</div>
-    <div class="review"><strong>WildernessDad:</strong> "Real grit means taking the test twice. Highly recommend!"</div>
+  <div class="legal">
+    <p>As an Amazon Associate, we may earn from qualifying purchases. This site contains affiliate links and advertising powered by Google AdSense.</p>
+    <p>&copy; GritGearHQ 2024. All rights reserved.</p>
   </div>
 
   <script>
@@ -74,41 +63,22 @@
       "You thought MREs were a rap group. You're done.",
       "You bartered your last match for a vape cartridge.",
       "You asked a survivalist if they take Venmo. They took your boots instead.",
-      "You screamed 'Alexa, help!' and a wild boar came. He wasn't feeling it.",
-      "You brought oat milk to a firefight. Bold move.",
-      "You looted toilet paper during the EMP. Priorities, I guess.",
-      "You think a ferro rod is a TikTok dance.",
-      "You died googling 'how to start a fire' after the grid went down.",
-      "You have grit. Welcome to the wasteland, champ.",
-      "No flashlight, no plan — just vibes. <br><a href='https://amzn.to/3HEmtBg' target='_blank'>EXOTAC MatchCap – Waterproof Match Holder</a>",
-      "You cried over a splinter. <br><a href='https://amzn.to/4jSOkLv' target='_blank'>Carlebben Tactical Medical Kit</a>",
-      "You tried rubbing sticks but used driftwood. <br><a href='https://amzn.to/4lbMYg1' target='_blank'>Black Beard Fire Plugs</a>"
+      "You screamed 'Alexa, help' — a wild boar came. He wasn't feeling it.",
+      "You packed oat milk and bath bombs in your bug-out bag.",
+      "You cried when the WiFi went out. The forest heard you.",
+      "You left a trail of Funyuns. Now they're following you.",
+      "You tagged your location during a collapse. Nice knowing you.",
+      "You mistook a bear for a vegan hiker. RIP.",
+      "You packed bug spray. Shame you forgot the rest of your gear."
     ];
 
-    function showResult() {
-      const randomIndex = Math.floor(Math.random() * results.length);
-      const resultText = results[randomIndex];
-      document.getElementById('result').innerHTML = resultText;
-      document.getElementById('result').style.display = 'block';
+    function generateGritResult() {
+      const result = results[Math.floor(Math.random() * results.length)];
+      const resultBox = document.getElementById("result");
+      resultBox.innerText = result;
+      resultBox.style.display = "block";
     }
   </script>
-
-  <div class="disclaimer">
-    <p>Disclaimer: This test is for entertainment only. Results are randomized and not based on real-world data.</p>
-    <p>As an Amazon Associate, we earn from qualifying purchases.</p>
-  </div>
-
-
-<div style="margin-top:50px;text-align:left;">
-  <h2>💬 Grit Test Comments (Totally Real)</h2>
-  <ul style="list-style:none;padding:0;">
-    <li>🗯️ "Took the test. My cat scored higher than me." – @urban_prepper_fail</li>
-    <li>🗯️ "I screamed 'Alexa, help!' and now I’m grounded." – @millennialMike</li>
-    <li>🗯️ "Apparently oat milk isn’t tactical gear. Who knew?" – @glampocalypse</li>
-    <li>🗯️ "Thought I was Les Stroud. Turns out I’m less prepared." – @wannabe_survivor</li>
-    <li>🗯️ "Cried before clicking. Got 'You have grit' anyway. Thanks, algorithm!" – @crybaby2077</li>
-  </ul>
-</div>
 
 </body>
 </html>
