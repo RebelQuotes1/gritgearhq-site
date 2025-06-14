@@ -184,27 +184,19 @@
       document.getElementById("review").textContent = items[current].review;
       document.getElementById("view-num").textContent = Math.floor(5000 + Math.random() * 1500).toLocaleString();
     };
-    setInterval(rotate, 6000);
-  </script>
-<!-- 💬 Grit Gear Guestbook -->
+ <!-- ✅ Full Guestbook Block for index.html -->
 <section style="margin: 60px auto; max-width: 600px; background: #1a1a1a; padding: 30px; border-radius: 12px; box-shadow: 0 0 15px #000000aa;">
   <h2 style="color: #ffa500; font-family: 'Special Elite', monospace;">📖 Sign the Guestbook</h2>
   <form id="guestForm">
-    <input type="text" id="name" placeholder="Your name" required
-           style="width: 100%; padding: 10px; margin-bottom: 10px; background: #222; color: #fff; border: none; border-radius: 5px;"><br>
-    <textarea id="message" placeholder="Your message" required
-              style="width: 100%; padding: 10px; height: 100px; background: #222; color: #fff; border: none; border-radius: 5px;"></textarea><br>
-    <button type="submit"
-            style="margin-top: 10px; background: #ff6600; color: #000; font-weight: bold; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-      Sign Guestbook
-    </button>
+    <input type="text" id="name" placeholder="Your name" required style="width: 100%; padding: 10px; margin-bottom: 10px; background: #222; color: #fff; border: none; border-radius: 5px;">
+    <textarea id="message" placeholder="Your message" required style="width: 100%; padding: 10px; height: 100px; background: #222; color: #fff; border: none; border-radius: 5px;"></textarea>
+    <button type="submit" style="margin-top: 10px; background: #ff6600; color: #000; font-weight: bold; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Sign Guestbook</button>
   </form>
   <p id="guestResponse" style="color: #ccc; font-style: italic; margin-top: 10px;"></p>
 </section>
 
 <!-- 👥 Guestbook Wall -->
-<section id="guestWall"
-         style="margin: 30px auto 60px; max-width: 600px; padding: 20px; border-radius: 10px; background: #111;">
+<section id="guestWall" style="margin: 30px auto 60px; max-width: 600px; padding: 20px; border-radius: 10px; background: #111;">
   <h3 style="color:#ff6600; font-family:'Special Elite', monospace;">🗣 Recent Signatures</h3>
   <ul id="guestList" style="list-style: none; padding-left: 0; margin-top: 20px;"></ul>
 </section>
@@ -225,16 +217,16 @@
     }
 
     try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbzR3zQzQhmEsYUtmGEhM-5PFdA-C2EJdeizeM9si8qbRv_SB3GLlySY_yz_FLVTDQvoBA/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbxLFYBjitzLxyAeJ2PMjVcpH4YGauh5XPk1iEDugbaJSFIvX5K3ewnpLjCsxWUgvBhW/exec", {
         method: "POST",
-        body: JSON.stringify({ name, message }),
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, message })
       });
 
       if (res.ok) {
         guestResponse.textContent = "✅ Message submitted. You’re immortal now.";
         form.reset();
-        loadGuestbook(); // Refresh the wall
+        loadGuestbook();
       } else {
         guestResponse.textContent = "⚠️ Something went wrong. Try again later.";
       }
@@ -261,6 +253,5 @@
 
   loadGuestbook();
 </script>
-
 </body>
 </html>
