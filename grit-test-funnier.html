@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Gear HQ – Grit Test</title>
+  <style>
+    body {
+      background: #111;
+      color: #ffa500;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 50px;
+    }
+    .result {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    button {
+      background-color: #ffa500;
+      border: none;
+      padding: 10px 25px;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #111;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .reviews {
+      margin-top: 40px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .review {
+      border-top: 1px solid #333;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+    .disclaimer {
+      margin-top: 60px;
+      font-size: 0.8em;
+      color: #888;
+    }
+    a {
+      color: #ffa500;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💀 Take the Grit Test</h1>
+  <p>Click below to find out if you'd survive the collapse — or cry in a ditch.</p>
+  <button onclick="showResult()">Test Your Grit</button>
+
+  <div id="result" class="result" style="display:none;"></div>
+
+  <div class="reviews">
+    <h2>🧠 What Survivors Are Saying</h2>
+    <div class="review"><strong>MadMax_87:</strong> "This test called me out HARD. 10/10, laughed my ass off and bought the fire plugs."</div>
+    <div class="review"><strong>SparrowGirl:</strong> "I failed the test but bought all the gear. Fake it till you make it, right?"</div>
+    <div class="review"><strong>WildernessDad:</strong> "Real grit means taking the test twice. Highly recommend!"</div>
+  </div>
+
+  <script>
+    const results = [
+      "You thought MREs were a rap group. You're done.",
+      "You bartered your last match for a vape cartridge.",
+      "You asked a survivalist if they take Venmo. They took your boots instead.",
+      "You screamed 'Alexa, help!' and a wild boar came. He wasn't feeling it.",
+      "You brought oat milk to a firefight. Bold move.",
+      "You looted toilet paper during the EMP. Priorities, I guess.",
+      "You think a ferro rod is a TikTok dance.",
+      "You died googling 'how to start a fire' after the grid went down.",
+      "You have grit. Welcome to the wasteland, champ.",
+      "No flashlight, no plan — just vibes. <br><a href='https://amzn.to/3HEmtBg' target='_blank'>EXOTAC MatchCap – Waterproof Match Holder</a>",
+      "You cried over a splinter. <br><a href='https://amzn.to/4jSOkLv' target='_blank'>Carlebben Tactical Medical Kit</a>",
+      "You tried rubbing sticks but used driftwood. <br><a href='https://amzn.to/4lbMYg1' target='_blank'>Black Beard Fire Plugs</a>"
+    ];
+
+    function showResult() {
+      const randomIndex = Math.floor(Math.random() * results.length);
+      const resultText = results[randomIndex];
+      document.getElementById('result').innerHTML = resultText;
+      document.getElementById('result').style.display = 'block';
+    }
+  </script>
+
+  <div class="disclaimer">
+    <p>Disclaimer: This test is for entertainment only. Results are randomized and not based on real-world data.</p>
+    <p>As an Amazon Associate, we earn from qualifying purchases.</p>
+  </div>
+
+
+<div style="margin-top:50px;text-align:left;">
+  <h2>💬 Grit Test Comments (Totally Real)</h2>
+  <ul style="list-style:none;padding:0;">
+    <li>🗯️ "Took the test. My cat scored higher than me." – @urban_prepper_fail</li>
+    <li>🗯️ "I screamed 'Alexa, help!' and now I’m grounded." – @millennialMike</li>
+    <li>🗯️ "Apparently oat milk isn’t tactical gear. Who knew?" – @glampocalypse</li>
+    <li>🗯️ "Thought I was Les Stroud. Turns out I’m less prepared." – @wannabe_survivor</li>
+    <li>🗯️ "Cried before clicking. Got 'You have grit' anyway. Thanks, algorithm!" – @crybaby2077</li>
+  </ul>
+</div>
+
+</body>
+</html>
