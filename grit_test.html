@@ -12,6 +12,10 @@
       text-align: center;
       padding: 50px;
     }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
     .result {
       background: #1a1a1a;
       border: 1px solid #333;
@@ -22,35 +26,52 @@
     button {
       background-color: #ffa500;
       border: none;
-      padding: 10px 20px;
+      padding: 10px 25px;
       font-weight: bold;
+      font-size: 1.1em;
       color: #111;
       cursor: pointer;
       margin-top: 20px;
+      border-radius: 5px;
+    }
+    .disclaimer {
+      margin-top: 60px;
+      font-size: 0.8em;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
   <h1>💀 Take the Grit Test</h1>
-  <p>Click below to find out if you’d survive the collapse.</p>
-  <button onclick="showResult()">Test My Grit</button>
+  <p>Click below to find out if you'd survive the collapse.</p>
+  <button onclick="showResult()">Test Your Grit</button>
 
-  <div class="result" id="resultBox"></div>
+  <div id="result" class="result" style="display:none;"></div>
+
+  <div class="disclaimer">
+    <p>Disclaimer: This test is for entertainment only. Results are randomized and not based on real-world data.</p>
+    <p>As an Amazon Associate, we earn from qualifying purchases.</p>
+  </div>
 
   <script>
-    const gritExcuses = [
+    const results = [
       "You thought MREs were a rap group. You're done.",
       "You bartered your last match for a vape cartridge.",
       "You asked a survivalist if they take Venmo. They took your boots instead.",
-      "You screamed 'Alexa, help' and a wild boar came. He wasn't feeling it.",
-      "You brought a ring light instead of a headlamp. You influencer'd yourself into a ditch."
+      "You screamed 'Alexa, help!' and a wild boar came. He wasn't feeling it.",
+      "You packed three phone chargers but forgot water. Bold strategy.",
+      "You brought flip-flops to a bug-out. Now you're bait.",
+      "You used your compass to open a beer. Respect… but you're lost.",
+      "You ran out of gas 20 miles from safety and posted about it on Instagram.",
+      "You screamed 'I’m a sovereign citizen!' and got duct-taped by a militia.",
+      "You tried to microwave jerky in a blackout. Nice try."
     ];
-    
+
     function showResult() {
-      const box = document.getElementById('resultBox');
-      const joke = gritExcuses[Math.floor(Math.random() * gritExcuses.length)];
-      box.innerText = joke;
+      const random = Math.floor(Math.random() * results.length);
+      document.getElementById('result').innerText = results[random];
+      document.getElementById('result').style.display = 'block';
     }
   </script>
 
