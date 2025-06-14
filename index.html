@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,6 @@
   <meta name="description" content="Survival-tested gear, tactical picks, and zero-BS commentary. Take the Grit Test and gear up like it matters.">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
-  <!-- AdSense & Analytics -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17181793261"></script>
   <script>
@@ -183,6 +181,7 @@
         review: "⭐️⭐️⭐️⭐️ – “Looks legal. Hits criminal.” – JD R."
       }
     ];
+
     let current = 0;
     function rotate() {
       current = (current + 1) % items.length;
@@ -208,7 +207,7 @@
         return;
       }
       try {
-        const res = await fetch("https://script.google.com/macros/s/AKfycbxLFYBjitzLxyAeJ2PMjVcpH4YGauh5XPk1iEDugbaJSFIvX5K3ewnpLjCsxWUgvBhW/exec", {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbx1R7q8YoteHD70xjxysDnMUARXGLeS2-ej4-SpaTr2nGl6bvJIBS3D3yw0i-ClOOVt/exec", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, message })
@@ -239,6 +238,7 @@
         guestList.innerHTML = "<li style='color:#777;'>Unable to load guestbook entries.</li>";
       }
     }
+
     loadGuestbook();
   </script>
 </body>
