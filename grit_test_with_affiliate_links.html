@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grit Test – Rough Grit HQ</title>
+  <style>
+    body {
+      background: #111 url('https://www.transparenttextures.com/patterns/concrete-wall.png') repeat;
+      color: #f5f5f5;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    h1 {
+      color: #ffa500;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #ffa500;
+      color: #111;
+      font-size: 1.2em;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ffa50080;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff8c00;
+    }
+    #result {
+      margin-top: 40px;
+      font-size: 1.5em;
+      color: #4fc3f7;
+      padding: 20px;
+    }
+    a {
+      color: #ffa500;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Take the Grit Test</h1>
+  <button onclick="showGritResult()">See How You Did</button>
+  <div id="result"></div>
+
+  <script>
+    const gritTestResults = [
+      "You thought MREs were a rap group. You're done.",
+      "You bartered your last match for a vape cartridge.",
+      "You asked a survivalist if they take Venmo. They took your boots instead.",
+      "You screamed 'Alexa, help' and a wild boar came. He wasn't feeling it.",
+      "You brought a Bluetooth speaker to a bear attack. The bear prefers metal.",
+      "You packed wet wipes but forgot water. At least your corpse will be clean."
+    ];
+
+    const affiliateLinks = [
+      { text: "🔥 Titan Survival Ferro Rod – Lights Fires in the Rain", url: "https://amzn.to/44hckDm" },
+      { text: "🪖 Bug-Out Bag for Real Emergencies", url: "https://amzn.to/45izxWN" },
+      { text: "💧 Sawyer Gravity Water Filter System", url: "https://amzn.to/3SPUbWM" },
+      { text: "🔥 OneTigris Tiger Roar Tent Stove", url: "https://amzn.to/3FR9rQs" },
+      { text: "🏕️ Lightweight Poncho Shelter by Onewind", url: "https://amzn.to/45ntFvn" }
+    ];
+
+    function showGritResult() {
+      const joke = gritTestResults[Math.floor(Math.random() * gritTestResults.length)];
+      const link = affiliateLinks[Math.floor(Math.random() * affiliateLinks.length)];
+      document.getElementById('result').innerHTML = `
+        <p>${joke}</p>
+        <p><strong>Featured Grit Gear:</strong> <a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}</a></p>
+      `;
+    }
+  </script>
+</body>
+</html>
