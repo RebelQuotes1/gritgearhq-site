@@ -356,6 +356,103 @@
   <p>Waterproof floating case, flint wheel ignition, and waxed tinder — compact and storm-ready.</p>
   <a href="https://amzn.to/3SQwhuh" target="_blank">Buy on Amazon</a>
 </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bug-Out Bags Accordion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      background: #000;
+      background-image: url('https://cdn.pixabay.com/photo/2017/10/10/21/46/texture-2836261_1280.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #f5f5f5;
+      font-family: 'Black Ops One', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #ffa500;
+      text-shadow: 2px 2px #000;
+      margin-top: 10px;
+    }
+    .accordion {
+      background-color: rgba(30, 30, 30, 0.95);
+      color: #f5f5f5;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      font-size: 20px;
+      transition: 0.3s;
+      margin-top: 30px;
+      border-radius: 5px;
+    }
+    .accordion:hover, .active {
+      background-color: #333;
+    }
+    .panel {
+      display: none;
+      background-color: rgba(0,0,0,0.9);
+      padding: 0 15px;
+      overflow: hidden;
+      border-left: 3px solid #666;
+    }
+    .gear-item {
+      margin: 15px 0;
+      padding: 10px 0;
+    }
+    .gear-item a {
+      color: #4fc3f7;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🎒 Elite Bug-Out Backpacks</h2>
+
+<button class="accordion">⚙️ Click Here for Tactical Bug-Out Bags</button>
+<div class="panel">
+  <div class="gear-item">
+    <p><strong>5.11 Tactical RUSH72 2.0 Backpack (55L)</strong><br>
+    Built for 72-hour missions. Military-grade with hydration pocket, MOLLE webbing, and a rugged build.</p>
+    <a href="https://amzn.to/45izxWN" target="_blank">Buy on Amazon</a>
+  </div>
+  <div class="gear-item">
+    <p><strong>Maxpedition Vulture-II 3-Day Backpack</strong><br>
+    Durable 1000D nylon, triple coat polyurethane, ergonomic shoulder straps. Built for real-world bug-outs.</p>
+    <a href="https://amzn.to/3HTVC46" target="_blank">Buy on Amazon</a>
+  </div>
+  <div class="gear-item">
+    <p><strong>Direct Action Dragon Egg Tactical Backpack</strong><br>
+    Lightweight, laser-cut MOLLE, durable Cordura fabric. Military-level features in a slick design.</p>
+    <a href="https://amzn.to/4jLXbhR" target="_blank">Buy on Amazon</a>
+  </div>
+</div>
+
+<script>
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+  }
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
