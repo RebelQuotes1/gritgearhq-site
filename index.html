@@ -123,6 +123,20 @@
     <a href="terms.html" style="color:#ffa500;">Terms</a> | 
     <a href="affiliate-disclosure.html" style="color:#ffa500;">Affiliate Disclosure</a>
   </div>
+<!-- ✅ Script to Show Thank You + Delayed PDF Download -->
+<script>
+  document.querySelector('#signup-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const message = document.getElementById('thank-you-message');
+    message.style.display = 'block';
+
+    // Delay 2 seconds before opening PDF
+    setTimeout(() => {
+      window.open('GritGearHQ_Cold_Survival_Guide_Dark.pdf', '_blank');
+    }, 2000);
+  });
+</script>
 
 </body>
 </html>
