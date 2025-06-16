@@ -170,7 +170,7 @@
   <h1>Top Long Weapons for Survival & Defense</h1>
 
 
-<!-- ✅ SV Handmade Manganese Steel Sword Accordion -->
+<!-- ✅ Accordion Items -->
 <button class="accordion" style="background-color: #222; color: #ffa500; font-weight: bold; padding: 14px; border: none; text-align: left; width: 100%; outline: none; cursor: pointer;">
   SV Handmade Manganese Steel Chopping Blade Sword
 </button>
@@ -185,38 +185,12 @@
   </p>
 </div>
 
-<!-- 🧠 Accordion Toggle Script -->
-<script>
-  document.querySelectorAll(".accordion").forEach(button => {
-    button.addEventListener("click", function () {
-      this.classList.toggle("active");
-      const panel = this.nextElementSibling;
-      panel.style.display = (panel.style.display === "block") ? "none" : "block";
-    });
-  });
-</script>
-
-
-<script>
-  document.querySelectorAll('.accordion').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
-      const panel = btn.nextElementSibling;
-      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-    });
-  });
-</script>
-</body>
-</html>
-
-
-<!-- 🔪 CRKT Tomahawk Accordion Item -->
 <button class="accordion" style="background-color: #222; color: #ffa500; font-weight: bold; padding: 14px; border: none; text-align: left; width: 100%; outline: none; cursor: pointer;">
   CRKT Woods Chogan Tomahawk Axe
 </button>
-<div class="panel" style="background-color: #111; padding: 15px; color: #ccc;">
+<div class="panel" style="background-color: #111; padding: 15px; color: #ccc; display: none;">
   <p>
-    Designed by Ryan Johnson: forged carbon steel blade, hammerhead, hickory handle, includes sheath.<br/>
+    Forged carbon steel, hammerhead design, Tennessee hickory handle.<br/>
     <a href="https://www.amazon.com/CRKT-Black-Woods-Chogan-Tomahawk/dp/B0C29CRPQL?tag=gritgearhq-20" 
        target="_blank" 
        style="color: #ffa500; font-weight: bold; text-decoration: none;"
@@ -227,15 +201,12 @@
   </p>
 </div>
 
-
-
- <!-- 🪓 Cold Steel Boar Spear Accordion Item -->
 <button class="accordion" style="background-color: #222; color: #ffa500; font-weight: bold; padding: 14px; border: none; text-align: left; width: 100%; outline: none; cursor: pointer;">
   Cold Steel Boar Spear with Secure‑Ex Sheath
 </button>
-<div class="panel" style="background-color: #111; padding: 15px; color: #ccc;">
+<div class="panel" style="background-color: #111; padding: 15px; color: #ccc; display: none;">
   <p>
-    Classic boar spear with 18″ SK‑5 steel head and ash shaft—serious reach for defense or hunting.<br/>
+    Classic boar spear with 18″ SK‑5 steel head and ash shaft.<br/>
     <a href="https://www.amazon.com/Cold-Steel-95BOASK-Secure-Ex-Sheath/dp/B004N0KVTS?tag=gritgearhq-20" 
        target="_blank" 
        style="color: #ffa500; font-weight: bold; text-decoration: none;"
@@ -246,6 +217,17 @@
   </p>
 </div>
 
+<!-- ✅ Single Toggle Script (Only One Needed) -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".accordion").forEach(button => {
+      button.addEventListener("click", () => {
+        const panel = button.nextElementSibling;
+        panel.style.display = (panel.style.display === "block") ? "none" : "block";
+      });
+    });
+  });
+</script>
 
 
   
