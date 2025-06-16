@@ -174,7 +174,7 @@
 <button class="accordion" style="background-color: #222; color: #ffa500; font-weight: bold; padding: 14px; border: none; text-align: left; width: 100%; outline: none; cursor: pointer;">
   SV Handmade Manganese Steel Chopping Blade Sword
 </button>
-<div class="panel" style="background-color: #111; padding: 15px; color: #ccc;">
+<div class="panel" style="background-color: #111; padding: 15px; color: #ccc; display: none;">
   <p>
     Handmade full‑tang chopping blade in durable manganese steel — great for survival or serious clearing.<br/>
     <a href="https://www.amazon.com/SV-Handmade-manganese-chopping-protective/dp/B0CWNF9PKG?tag=gritgearhq-20" 
@@ -184,6 +184,18 @@
     </a>
   </p>
 </div>
+
+<!-- 🧠 Accordion Toggle Script -->
+<script>
+  document.querySelectorAll(".accordion").forEach(button => {
+    button.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = (panel.style.display === "block") ? "none" : "block";
+    });
+  });
+</script>
+
 
 <script>
   document.querySelectorAll('.accordion').forEach(btn => {
