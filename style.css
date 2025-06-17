@@ -1,4 +1,38 @@
 <head>
+<style>
+  .gear-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .gear-box {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #000;
+    max-width: 300px;
+    flex: 1 1 280px;
+    text-align: center;
+  }
+
+  .gear-box img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 900px) {
+    .gear-section {
+      justify-content: space-evenly;
+    }
+  }
+</style>
+
 .search-container {
   margin: 20px auto;
   text-align: center;
