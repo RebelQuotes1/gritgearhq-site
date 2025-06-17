@@ -17,6 +17,36 @@
       text-align: center;
       padding: 40px 20px;
     }
+
+    .logo-banner {
+      display: block;
+      text-align: center;
+      background-color: #000;
+      padding: 60px 0;
+      filter: brightness(0.6);
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    .logo-banner:hover {
+      filter: brightness(1);
+      transform: scale(1.02);
+    }
+
+    .logo-banner img {
+      max-width: 300px;
+      width: 90%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .logo-tagline {
+      color: #ff6600;
+      font-size: 1.25rem;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
     .nav-buttons {
       margin-top: 40px;
       display: flex;
@@ -24,6 +54,7 @@
       justify-content: center;
       gap: 15px;
     }
+
     .nav-button {
       background: #ff6600;
       color: #111;
@@ -35,10 +66,12 @@
       box-shadow: 0 0 10px #ff660088;
       transition: transform 0.2s ease;
     }
+
     .nav-button:hover {
       transform: scale(1.05);
       background: #ffa500;
     }
+
     .footer {
       margin-top: 60px;
       font-size: 0.9rem;
@@ -49,85 +82,11 @@
 
 <body>
 
-  <!-- 🔥 Grit Gear HQ Logo Banner (Faded, Styled, Clickable) -->
-  <a href="blog.html" style="display:block; text-align:center;">
-    <div style="
-      background-color: #000;
-      padding: 60px 0;
-      filter: brightness(0.6);
-      transition: filter 0.3s ease, transform 0.3s ease;
-    " 
-    onmouseover="this.style.filter='brightness(1)'; this.style.transform='scale(1.02)';"
-    onmouseout="this.style.filter='brightness(0.6)'; this.style.transform='scale(1)';">
-    
-     <style>
-  .logo-banner {
-    background-color: #000;
-    padding: 60px 0;
-    filter: brightness(0.6);
-    transition: filter 0.3s ease, transform 0.3s ease;
-    display: block;
-    text-align: center;
-  }
-
-  .logo-banner:hover {
-    filter: brightness(1);
-    transform: scale(1.02);
-  }
-
-  .logo-banner img {
-    max-width: 300px;
-    width: 90%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 0 20px #000;
-  }
-
-  .logo-tagline {
-    color: #ff6600;
-    font-size: 1.25rem;
-    margin-top: 10px;
-    font-style: italic;
-  }
-</style>
-
-<style>
-  .logo-banner {
-    display: block;
-    text-align: center;
-    background-color: #000;
-    padding: 60px 0;
-    filter: brightness(0.6);
-    transition: filter 0.3s ease, transform 0.3s ease;
-  }
-
-  .logo-banner:hover {
-    filter: brightness(1);
-    transform: scale(1.02);
-  }
-
-  .logo-banner img {
-    max-width: 300px;
-    width: 90%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 0 20px #000;
-  }
-
-  .logo-tagline {
-    color: #ff6600;
-    font-size: 1.25rem;
-    margin-top: 10px;
-    font-style: italic;
-  }
-</style>
-
-<a href="blog.html" class="logo-banner">
-  <img src="grit-gear-logo.png" alt="Grit Gear HQ Logo - Survivalist Prepper Gear Site">
-  <p class="logo-tagline">Built for the Bold. Forged in the Grit.</p>
-</a>
-
-
+  <!-- ✅ Clickable Logo Banner -->
+  <a href="blog.html" class="logo-banner">
+    <img src="grit-gear-logo.png" alt="Grit Gear HQ Logo">
+    <p class="logo-tagline">Built for the Bold. Forged in the Grit.</p>
+  </a>
 
   <!-- ✅ Google AdSense Display Ad -->
   <ins class="adsbygoogle"
@@ -149,34 +108,48 @@
     <a href="contact.html" class="nav-button">📫 Contact</a>
   </div>
 
-      <!-- 💬 Grit Gear Reviews -->
-<section style="background:#111; padding: 40px 20px; border-top: 2px solid #ffa500;">
-  <h2 style="color:#ffa500; font-size:2rem; font-family:'Special Elite', monospace; text-shadow:1px 1px 6px #000;">
-    ⭐ What Gritheads Are Saying
-  </h2>
-  <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:20px;">
+  <!-- 💬 Fake Grit Gear Reviews -->
+  <section style="background:#111; padding: 40px 20px; border-top: 2px solid #ffa500;">
+    <h2 style="color:#ffa500; font-size:2rem; font-family:'Special Elite', monospace; text-shadow:1px 1px 6px #000;">
+      ⭐ What Gritheads Are Saying
+    </h2>
+    <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:20px;">
 
-    <!-- Review 1 -->
-    <div style="background:#1a1a1a; padding:20px; border-radius:12px; width:300px; box-shadow:0 0 10px #000;">
-      <p style="color:#7CFC00;">"Survived the blackout in style. My wife thought I was crazy until the lights went out."</p>
-      <p style="color:#777; font-style:italic;">– Buck M., Missouri</p>
+      <!-- Review 1 -->
+      <div style="background:#1a1a1a; padding:20px; border-radius:12px; width:300px; box-shadow:0 0 10px #000;">
+        <p style="color:#7CFC00;">"Survived the blackout in style. My wife thought I was crazy until the lights went out."</p>
+        <p style="color:#777; font-style:italic;">– Buck M., Missouri</p>
+      </div>
+
+      <!-- Review 2 -->
+      <div style="background:#1a1a1a; padding:20px; border-radius:12px; width:300px; box-shadow:0 0 10px #000;">
+        <p style="color:#7CFC00;">"Bought the gear for the zombie apocalypse. Ended up using it during a storm. 10/10."</p>
+        <p style="color:#777; font-style:italic;">– Tanya R., Texas</p>
+      </div>
+
+      <!-- Review 3 -->
+      <div style="background:#1a1a1a; padding:20px; border-radius:12px; width:300px; box-shadow:0 0 10px #000;">
+        <p style="color:#7CFC00;">"This site made me feel ready to bug out... or barbecue. Either way, I win."</p>
+        <p style="color:#777; font-style:italic;">– Rico D., Florida</p>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Review 2 -->
-    <div style="background:#1a1a1a; padding:20px; border-radius:12px; width:300px; box-shadow:0 0 10px #000;">
-      <p style="color:#7CFC00;">"Bought the gear for the zombie apocalypse. Ended up using it during a storm. 10/10."</p>
-      <p style="color:#777; font-style:italic;">– Tanya R., Texas</p>
-    </div>
-
-    <!-- Review 3 -->
-    <div style="background:#1a1a1a; padding:20px; border-radius:12px; width:300px; box-shadow:0 0 10px #000;">
-      <p style="color:#7CFC00;">"This site made me feel ready to bug out... or barbecue. Either way, I win."</p>
-      <p style="color:#777; font-style:italic;">– Rico D., Florida</p>
-    </div>
-
-  </div>
-</section>
-
+  <!-- 📨 Fake Raffle Email Grab (optional, can style more) -->
+  <section style="margin-top:60px; padding:30px; background:#1a1a1a; border:2px dashed #ff6600; border-radius:10px;">
+    <h2 style="color:#ffa500;">🎁 Win a Bug-Out Mystery Box</h2>
+    <p style="margin:10px 0;">Enter your email for a chance to win exclusive survival gear!</p>
+    <form style="margin-top:20px;">
+      <input type="email" placeholder="Your email" required 
+             style="padding:10px; font-size:1rem; width:250px; border-radius:6px; border:none;"/>
+      <button type="submit"
+              style="margin-left:10px; padding:10px 20px; background:#ff6600; color:#000; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+        Enter Now
+      </button>
+    </form>
+    <p style="font-size:0.8rem; color:#777; margin-top:10px;">No spam. We hate it too.</p>
+  </section>
 
   <!-- ✅ Footer -->
   <div class="footer">
