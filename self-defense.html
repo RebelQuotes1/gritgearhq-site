@@ -288,27 +288,6 @@
 </head>
 <body>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Long Weapons – Grit Gear HQ</title>
-  <style>
-    body { background: #111; color: #f5f5f5; font-family: Arial, sans-serif; padding: 20px; }
-    .accordion { background: #222; color: #f5f5f5; cursor: pointer; padding: 18px; margin-top: 10px;
-                 border: none; text-align: left; width: 100%; font-size: 18px; transition: 0.4s; }
-    .active, .accordion:hover { background: #333; }
-    .panel { background: #1c1c1c; padding: 0 18px; display: none; overflow: hidden; margin-bottom: 10px; }
-    a { color: #7ec8e3; text-decoration: underline; }
-    footer p { font-size: 12px; color: #888; margin-top: 40px; }
-  </style>
-</head>
-<body>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -363,9 +342,46 @@
     }
   </style>
 </head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<body>
+
+  <h1>Top Long Weapons – Grit Gear HQ</h1>
+
+  <!-- Example Accordion -->
+  <button class="accordion">Cold Steel Boar Spear</button>
+  <div class="panel">
+    <p>Classic boar spear with SK-5 steel head and durable ash shaft.</p>
+    <img src="boar_spear.jpg" alt="Boar Spear">
+    <p><a href="https://www.amazon.com/Cold-Steel-95BOASK-Secure-Ex-Sheath/dp/B004N0KVTS?tag=gritgearhq-20" target="_blank">🔗 View on Amazon</a></p>
+  </div>
+
+  <button class="accordion">CRKT Woods Chogan Tomahawk</button>
+  <div class="panel">
+    <p>Hammerhead-style tomahawk with forged carbon steel and hickory handle.</p>
+    <img src="chogan_tomahawk.jpg" alt="Chogan Tomahawk">
+    <p><a href="https://www.amazon.com/CRKT-Black-Woods-Chogan-Tomahawk/dp/B0C29CRPQL?tag=gritgearhq-20" target="_blank">🔗 View on Amazon</a></p>
+  </div>
+
+  <!-- Add more accordions here -->
+
+  <footer>
+    <p>&copy; 2025 Grit Gear HQ. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Top Long Weapons – Grit Gear HQ</title>
