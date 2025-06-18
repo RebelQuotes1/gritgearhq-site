@@ -7,13 +7,15 @@
   <style>
     body {
       margin: 0;
-      background: #111;
+      background-color: #111;
       font-family: 'Share Tech Mono', monospace;
       color: #eee;
       text-align: center;
     }
     .banner {
       width: 100%;
+      max-width: 100%;
+      overflow: hidden;
       border-bottom: 4px solid #ff6600;
       box-shadow: 0 0 25px #000;
     }
@@ -21,13 +23,17 @@
       width: 100%;
       height: auto;
       display: block;
+      object-fit: cover;
       image-rendering: crisp-edges;
     }
   </style>
 </head>
 <body>
+
+  <!-- ✅ Final Full-Width Banner with Baked-in Logo & Text -->
   <div class="banner">
-    <img src="A_banner_image_for_Grit_Gear_HQ,_titled_&quot;Grit’s_Fa.png" alt="Grit’s Favorite Survival Picks of the Now">
+    <img src="Untitled.png" alt="Grit’s Favorite Survival Picks of the Now">
   </div>
+
 </body>
 </html>
