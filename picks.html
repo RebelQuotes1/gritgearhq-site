@@ -18,33 +18,33 @@
       width: 100%;
       border-bottom: 4px solid #ff6600;
       box-shadow: 0 0 25px #000;
-      overflow: hidden;
     }
 
     .header img {
       width: 100%;
-      max-height: 320px; /* ✅ Resize here */
-      object-fit: cover;
+      height: auto; /* ✅ Maintain aspect ratio */
+      max-width: 1200px; /* ✅ Limit full size */
+      margin: 0 auto;
       display: block;
     }
 
     .content {
       padding: 40px 20px;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
     }
   </style>
 </head>
 <body>
 
-  <!-- 🔥 Baked-in Banner Header (Smaller Version) -->
+  <!-- 🔥 Baked-in Banner Header (Scaled Properly) -->
   <section class="header">
     <img src="grit_gear_picks_banner.png" alt="Grit’s Favorite Survival Picks of the Now" loading="lazy">
   </section>
 
-  <!-- Main Content Area -->
+  <!-- Main Content -->
   <div class="content">
-    <!-- Insert product grid, blurbs, or CTAs here -->
+    <!-- Insert your gear picks, product cards, or calls-to-action here -->
   </div>
 
 </body>
