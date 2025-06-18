@@ -3,53 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit's Favorite Picks – Grit Gear HQ</title>
-
-  <!-- Font -->
+  <title>Grit Gear HQ – Picks of the Now</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
   <style>
     body {
       margin: 0;
       background: #111;
       font-family: 'Share Tech Mono', monospace;
       color: #eee;
+    }
+
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      background: url('A_website_header_image_for_"Grit_Gear_HQ"_features.png') center center/cover no-repeat;
+      border-bottom: 4px solid #ff6600;
+      box-shadow: 0 0 40px #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-banner h1 {
+      color: #ff6600;
+      font-size: 2.6rem;
+      text-shadow: 2px 2px 8px #000;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px 30px;
+      border-radius: 10px;
+      letter-spacing: 1px;
+      max-width: 90%;
       text-align: center;
     }
 
-    .header {
-      width: 100%;
-      border-bottom: 4px solid #ff6600;
-      box-shadow: 0 0 25px #000;
-    }
+    @media (max-width: 768px) {
+      .hero-banner {
+        height: 220px;
+      }
 
-    .header img {
-      width: 100%;
-      max-width: 1200px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: 6px;
-    }
-
-    .content {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+      .hero-banner h1 {
+        font-size: 1.6rem;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- 🔥 Grit Gear Promotional Banner -->
-  <section class="header">
-    <img src="grit_gear_final_banner_with_headline.png" alt="Survival Gear Picks Banner">
-  </section>
-
-  <!-- ⬇️ Main Content Section -->
-  <div class="content">
-    <!-- Insert your gear grid or picks content here -->
+  <!-- 🔥 Banner Section -->
+  <div class="hero-banner">
+    <h1>Grit’s Favorite Survival Picks of the Now</h1>
   </div>
 
 </body>
