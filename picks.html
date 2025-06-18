@@ -18,11 +18,13 @@
       width: 100%;
       border-bottom: 4px solid #ff6600;
       box-shadow: 0 0 25px #000;
+      overflow: hidden;
     }
 
     .header img {
       width: 100%;
-      height: auto;
+      max-height: 320px; /* ✅ Resize here */
+      object-fit: cover;
       display: block;
     }
 
@@ -35,14 +37,14 @@
 </head>
 <body>
 
-  <!-- 🔥 Baked-in Banner Header -->
+  <!-- 🔥 Baked-in Banner Header (Smaller Version) -->
   <section class="header">
-    <img src="grit_gear_picks_banner.png" alt="Grit’s Favorite Survival Picks of the Now">
+    <img src="grit_gear_picks_banner.png" alt="Grit’s Favorite Survival Picks of the Now" loading="lazy">
   </section>
 
-  <!-- Your content goes below -->
+  <!-- Main Content Area -->
   <div class="content">
-    <!-- Add gear grid, product list, or callouts here -->
+    <!-- Insert product grid, blurbs, or CTAs here -->
   </div>
 
 </body>
