@@ -638,26 +638,46 @@
 <body>
 
 <!-- ✅ Kimber Pepper Blaster II (3-Pack) -->
-<div class="box">
-  <img src="kimber_blaster.webp" alt="Kimber Pepper Blaster">
-  <h3>Kimber Pepper Blaster II (3-Pack)</h3>
-  <p>Think pepper spray—but meaner, faster, and more accurate. The Kimber Pepper Blaster II fires a powerful OC gel jet at 112 MPH up to 13 feet away. It’s like carrying a mini cannon in your glovebox, purse, or nightstand.</p>
-  <p>Zero aerosol drift. Zero games. Just two shots per unit and three chances to ruin a threat’s whole day.</p>
+<div class="box" style="background: #1a1a1a; padding: 20px; margin-bottom: 30px; border-radius: 10px; box-shadow: 0 0 10px #000; color: #ccc;">
+  <img src="kimber_blaster.webp" alt="Kimber Pepper Blaster" style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 8px #000;">
+  <h3 style="color: #ffa500;">Kimber Pepper Blaster II (3-Pack)</h3>
+  <p>Think pepper spray—but meaner, faster, and more accurate. The Kimber Pepper Blaster II fires a powerful OC gel jet at 112 MPH up to 13 feet. It's like a handheld cannon for close-range defense.</p>
+  <p style="color:#ffcc00; font-weight:bold;">★★★★★</p>
+  <p style="font-style: italic; color: #999;">"Perfect for my glovebox. No blowback, no nonsense. Feels like real protection."</p>
+  <p><strong style="color:#00ffcc;">⏳ Deal ends in: <span id="countdown1">05:00</span></strong></p>
   <p>
-    <a href="https://amzn.to/4jSI9a2" target="_blank" rel="noopener noreferrer">🔗 Grab it on Amazon</a>
+    <a href="https://amzn.to/4jSI9a2" target="_blank" rel="noopener noreferrer" style="color:#ffa500; font-weight:bold;">🔗 Grab it on Amazon</a>
   </p>
 </div>
 
 <!-- ✅ Spyderco Para Military 2 Knife -->
-<div class="box">
-  <img src="spyderco_pm2.webp" alt="Spyderco Para Military 2">
-  <h3>Spyderco Para Military 2 Knife</h3>
-  <p>This isn’t just a blade—it’s a statement. The Para Military 2 is tactical, iconic, and built for serious carry. With a razor-sharp CPM S30V steel blade and buttery compression lock, this knife feels like it wants a challenge.</p>
-  <p>Whether it’s cutting paracord or slicing open a box during a blackout, this blade has your back. Period.</p>
+<div class="box" style="background: #1a1a1a; padding: 20px; margin-bottom: 30px; border-radius: 10px; box-shadow: 0 0 10px #000; color: #ccc;">
+  <img src="spyderco_pm2.webp" alt="Spyderco Para Military 2 Knife" style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 8px #000;">
+  <h3 style="color: #ffa500;">Spyderco Para Military 2 Knife</h3>
+  <p>This isn’t just a blade—it’s a statement. With a razor-sharp CPM S30V steel blade and buttery compression lock, this knife is built for anything from EDC to serious defense.</p>
+  <p style="color:#ffcc00; font-weight:bold;">★★★★★</p>
+  <p style="font-style: italic; color: #999;">"Carried daily for 3 years—zero regrets. Razor sharp and smooth as hell."</p>
+  <p><strong style="color:#00ffcc;">⏳ Deal ends in: <span id="countdown2">05:00</span></strong></p>
   <p>
-    <a href="https://amzn.to/4e55eoN" target="_blank" rel="noopener noreferrer">🔗 Grab it on Amazon</a>
+    <a href="https://amzn.to/4e55eoN" target="_blank" rel="noopener noreferrer" style="color:#ffa500; font-weight:bold;">🔗 Grab it on Amazon</a>
   </p>
 </div>
+
+<!-- ⏱️ Countdown Script -->
+<script>
+function startCountdown(id) {
+  let time = 300;
+  const el = document.getElementById(id);
+  setInterval(() => {
+    const min = Math.floor(time / 60);
+    const sec = time % 60;
+    el.textContent = `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    time = time <= 0 ? 300 : time - 1;
+  }, 1000);
+}
+startCountdown("countdown1");
+startCountdown("countdown2");
+</script>
 
 </body>
 </html>
