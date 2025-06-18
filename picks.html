@@ -28,8 +28,8 @@
     }
 
     .header-content {
-      position: relative;
       text-align: center;
+      z-index: 2;
     }
 
     .header-content h1 {
@@ -42,21 +42,22 @@
       display: inline-block;
     }
 
-    .logo {
+    .header-logo {
       position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 120px;
+      top: 25px;
+      left: 25px;
+      width: 140px;
       height: auto;
+      z-index: 2;
       filter: drop-shadow(2px 2px 5px #000);
     }
 
     @media (max-width: 600px) {
       .header-content h1 {
         font-size: 1.4rem;
-        padding: 8px 16px;
+        padding: 8px 14px;
       }
-      .logo {
+      .header-logo {
         width: 90px;
         top: 10px;
         left: 10px;
@@ -66,9 +67,9 @@
 </head>
 <body>
 
-  <!-- 🔥 Header Banner with Logo -->
+  <!-- 🔥 Header with background and logo -->
   <div class="header">
-    <img src="grit_gear_logo (1).png" alt="Grit Gear Logo" class="logo">
+    <img src="grit_gear_logo (1).png" alt="Grit Gear HQ Logo" class="header-logo">
     <div class="header-content">
       <h1>Grit’s Favorite Survival Picks of the Now</h1>
     </div>
