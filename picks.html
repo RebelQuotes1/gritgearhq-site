@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit's Favorite Picks – Grit Gear HQ</title>
-
-  <!-- Font -->
+  <title>Grit Gear Picks Banner</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
   <style>
@@ -17,125 +15,50 @@
       text-align: center;
     }
 
-    .header {
+    .banner-section {
+      position: relative;
       width: 100%;
+      overflow: hidden;
       border-bottom: 4px solid #ff6600;
       box-shadow: 0 0 25px #000;
     }
 
-    .header img {
+    .banner-section img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    .content {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+    .banner-headline {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ff6600;
+      font-size: 2.4rem;
+      text-shadow: 2px 2px 6px #000;
+      letter-spacing: 1px;
+      padding: 0 20px;
     }
 
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .product-card {
-      background: #1a1a1a;
-      padding: 20px;
-      width: 260px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #000;
-      transition: transform 0.3s ease;
-    }
-
-    .product-card:hover {
-      transform: scale(1.05);
-    }
-
-    .product-card img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
-    .product-card h3 {
-      color: #ffa500;
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-
-    .product-card p {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    .product-card a {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 18px;
-      background: #ff6600;
-      color: #111;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      box-shadow: 0 0 10px #000;
-      transition: background 0.2s ease;
-    }
-
-    .product-card a:hover {
-      background: #ffa500;
+    @media (max-width: 768px) {
+      .banner-headline {
+        font-size: 1.6rem;
+        padding: 0 15px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 🔥 Banner Header -->
-  <section class="header">
-    <img src="grit_picks_header_final.png" alt="Grit’s Favorite Picks of the Now Banner">
-  </section>
-
-  <!-- 🧠 Product Grid -->
-  <div class="content">
-    <div class="product-grid">
-
-      <!-- Product 1 -->
-      <div class="product-card">
-        <img src="41YdNjdjnSL._SX300_SY300_QL70_FMwebp_ (1).webp" alt="Freeze Dried Fruit">
-        <h3>Augason Farms Freeze-Dried Fruit</h3>
-        <p>25-year shelf life. Strawberries, bananas, raspberries, blueberries. Ready for anything.</p>
-        <a href="https://amzn.to/4nmMzJw" target="_blank">View on Amazon</a>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="product-card">
-        <img src="51iJ6cPiOjL._SX300_SY300_QL70_FMwebp_ (1) (1).webp" alt="Dehydrated Veggies">
-        <h3>Augason Farms Dehydrated Veggies</h3>
-        <p>91 servings of long-lasting vegetables. Great in stews or eaten straight. Long shelf life.</p>
-        <a href="https://amzn.to/45ZMlBA" target="_blank">View on Amazon</a>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="product-card">
-        <img src="51dOoqL39UL._SX300_SY300_QL70_FMwebp_ (1) (1).webp" alt="Emergency Meal Kit">
-        <h3>Mountain House 3-Day Meal Kit</h3>
-        <p>Compact, high-calorie, shelf-stable meals. Real food that travels light.</p>
-        <a href="https://amzn.to/45ZMlBA" target="_blank">View on Amazon</a>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="product-card">
-        <img src="41b1cZKH9wL._SX300_SY300_QL70_FMwebp_.webp" alt="Military MREs">
-        <h3>Military Grade MREs – Case of 12</h3>
-        <p>Fully loaded with heaters, entrees, sides, and condiments. Nothing else needed.</p>
-        <a href="https://amzn.to/44nUXAQ" target="_blank">View on Amazon</a>
-      </div>
-
+  <!-- 🔥 Grit Gear HQ Banner with Headline -->
+  <section class="banner-section">
+    <img src="A_digital_painting_promotional_banner_for_Grit_Gea.png" alt="Grit Gear Survival Banner">
+    <div class="banner-headline">
+      Built for Collapse. Chosen by Survivors.
     </div>
-  </div>
+  </section>
 
 </body>
 </html>
