@@ -4,7 +4,6 @@
 
   <body>
   <!-- 🔥 Insert header block here -->
-<!-- 🔥 Grit Gear HQ Banner Header -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,23 +14,64 @@
     body {
       margin: 0;
       background: #111;
-      font-family: 'Share Tech Mono', monospace;
       color: #eee;
+      font-family: 'Share Tech Mono', monospace;
+      text-align: center;
     }
 
-    .banner {
+    .banner-container {
       width: 100%;
-      height: auto;
+      background: #000;
       border-bottom: 4px solid #ff6600;
-      box-shadow: 0 0 25px #000;
+      box-shadow: 0 0 20px #000;
     }
 
-    .banner img {
+    .banner-container img {
       width: 100%;
-      display: block;
       height: auto;
+      display: block;
       image-rendering: crisp-edges;
     }
+
+    footer {
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 100px;
+      padding: 20px 0;
+      border-top: 1px solid #333;
+    }
+
+    footer a {
+      color: #777;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔥 Grit Gear HQ Banner -->
+  <div class="banner-container">
+    <img src="grit_gear_banner_final.png" alt="Grit Gear HQ Banner">
+  </div>
+
+  <!-- You can add product rows, sidebar, etc. below -->
+
+  <!-- 🔻 Footer -->
+  <footer>
+    © 2024 Serpico | Grit Gear HQ <br/>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms & Conditions</a> |
+    <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+  </footer>
+
+</body>
+</html>
+
 
     .footer {
       text-align: center;
