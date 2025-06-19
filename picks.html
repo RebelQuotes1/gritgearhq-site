@@ -3,7 +3,6 @@
 <head>
 
   <body>
-  <!-- 🔥 Insert header block here -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,23 +13,32 @@
     body {
       margin: 0;
       background: #111;
-      color: #eee;
-      font-family: 'Share Tech Mono', monospace;
-      text-align: center;
     }
 
-    .banner-container {
+    .header {
       width: 100%;
-      background: #000;
+      overflow: hidden;
       border-bottom: 4px solid #ff6600;
-      box-shadow: 0 0 20px #000;
+      box-shadow: 0 0 25px #000;
     }
 
-    .banner-container img {
+    .header img {
       width: 100%;
       height: auto;
       display: block;
-      image-rendering: crisp-edges;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔥 Camo Banner with Logo and Text Baked In -->
+  <div class="header">
+    <img src="picksbackgroundheader.png" alt="Grit Gear HQ Picks Banner">
+  </div>
+
+</body>
+</html>
+
     }
 
     footer {
