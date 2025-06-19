@@ -12,33 +12,34 @@
       color: #eee;
     }
 
-    /* 🔥 Banner styling */
     .header-banner {
       width: 100%;
-      display: block;
+      max-height: 500px;
+      object-fit: cover;
       border-bottom: 4px solid #ff6600;
       box-shadow: 0 0 25px #000;
       image-rendering: crisp-edges;
-      filter: contrast(1.1) brightness(1.05) grayscale(10%) saturate(85%);
+      display: block;
+      filter: contrast(1.1) brightness(1.05) saturate(85%) grayscale(10%);
     }
 
     .content {
+      padding: 40px 20px;
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 0 auto;
       text-align: center;
-      padding: 0 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Full-width banner image -->
-  <img src="grit_gear_banner_final.png" alt="Grit Gear HQ Banner" class="header-banner">
+  <!-- ✅ Banner Section -->
+  <img src="grit_gear_banner_final.png" alt="Grit Gear HQ Banner" class="header-banner" />
 
-  <!-- ✅ Main content area -->
+  <!-- ✅ Content Area -->
   <div class="content">
     <h1>Welcome to Grit Gear HQ</h1>
-    <p>Explore rugged gear picks and no-nonsense survival tools built for the bold.</p>
+    <p>Our top rugged survival picks, selected for the bold and ready.</p>
   </div>
 
 </body>
