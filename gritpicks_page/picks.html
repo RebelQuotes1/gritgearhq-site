@@ -10,23 +10,34 @@
       background: #111;
       font-family: 'Share Tech Mono', monospace;
       color: #eee;
-      text-align: center;
     }
 
     .header {
       width: 100%;
       border-bottom: 4px solid #ff6600;
       box-shadow: 0 0 25px #000;
-      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      box-sizing: border-box;
     }
 
     .header img {
-      width: 70%;
-      max-width: 1000px;
+      width: 40%;
+      max-width: 500px;
       height: auto;
       display: block;
-      margin: 0 auto;
-      box-shadow: 0 0 10px #000;
+    }
+
+    .header .slogan {
+      color: #ffa500;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: right;
+      max-width: 50%;
+      line-height: 1.4;
+      text-shadow: 1px 1px 2px #000;
     }
 
     footer {
@@ -35,6 +46,7 @@
       margin-top: 100px;
       padding: 20px 0;
       border-top: 1px solid #333;
+      text-align: center;
     }
 
     footer a {
@@ -51,9 +63,10 @@
 </head>
 <body>
 
-  <!-- 🔥 Grit Gear Picks Banner -->
+  <!-- 🔥 Banner Row with Image and Slogan -->
   <div class="header">
-    <img src="picksbackgroundheader.png" alt="Grit Gear HQ Picks Banner">
+    <img src="picksbackgroundheader.png" alt="Grit Gear HQ Banner">
+    <div class="slogan">Battle-Tested Gear. No B.S. Just What Works.</div>
   </div>
 
   <!-- 🧼 Footer -->
