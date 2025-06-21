@@ -10,7 +10,6 @@
       background: #111;
       font-family: 'Share Tech Mono', monospace;
       color: #eee;
-      text-align: center;
     }
 
     /* 🔥 Header Banner */
@@ -20,6 +19,7 @@
       overflow: hidden;
       border-bottom: 4px solid #ff6600;
       box-shadow: 0 0 20px #000;
+      text-align: center;
     }
 
     .header img {
@@ -29,13 +29,62 @@
       object-fit: cover;
     }
 
-    /* 🧼 Footer Styling */
+    /* 🧰 Layout */
+    .container {
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      margin-right: 20px;
+      border-right: 2px solid #333;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      background-color: #000;
+      border-radius: 8px;
+    }
+
+    .top-strip {
+      background: #1f1f1f;
+      padding: 10px;
+      text-align: center;
+      border-bottom: 2px solid #ff6600;
+    }
+
+    .top-strip .item {
+      display: inline-block;
+      background: #222;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #333;
+      border-radius: 8px;
+    }
+
+    .top-strip .item a {
+      color: #ffa500;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a {
+      color: #ffa500;
+    }
+
+    /* Footer */
     footer {
       font-size: 0.75rem;
       color: #888;
       background-color: #1a1a1a;
       margin-top: 60px;
       padding: 30px 0;
+      text-align: center;
       border-top: 1px solid #333;
     }
 
@@ -53,9 +102,46 @@
 </head>
 <body>
 
-  <!-- 🔥 Banner Image -->
+  <!-- 🔥 Banner -->
   <div class="header">
     <img src="picks_header_final.png" alt="Grit Gear HQ Field Tested Picks">
+  </div>
+
+  <!-- 🚨 Top Product Strip -->
+  <div class="top-strip">
+    <div class="item"><a href="#">🔥 Tactical Flashlight</a></div>
+    <div class="item"><a href="#">⚔️ Survival Blade</a></div>
+    <div class="item"><a href="#">🧯 Fire Starter Kit</a></div>
+    <div class="item"><a href="#">🎒 Bug-Out Bag</a></div>
+    <div class="item"><a href="#">🥩 Survival Rations</a></div>
+  </div>
+
+  <!-- 🧱 Main Layout -->
+  <div class="container">
+    <!-- ⬅️ Sidebar -->
+    <div class="sidebar">
+      <h3 style="color:#ffa500;">🔥 Featured Gear</h3>
+      <p><a href="#">Cold Steel Kukri Machete</a></p>
+      <p><a href="#">LifeStraw Water Filter</a></p>
+      <p><a href="#">Go Time Tactical Sling Bag</a></p>
+      <p><a href="#">Emergency Solar Radio</a></p>
+    </div>
+
+    <!-- ✍️ Blog Content -->
+    <div class="main-content">
+      <h2>10 Hard Lessons from the Field (and the Gear That Survived It)</h2>
+      <p>If you’ve ever slept in the dirt with a busted tarp and a regretful sense of optimism, this one’s for you. Survival isn’t just about tools — it’s about the scars you earn learning how to use them.</p>
+
+      <p>One of the first things I learned the hard way? <strong>Water is gold</strong>. You’ll trade your soul for a clean sip after 2 days in the heat. That’s why I now carry a <a href="#">LifeStraw</a> — compact, cheap, and stupid simple.</p>
+
+      <p>Lesson two: never underestimate fire. It doesn’t matter how tough you are, you’re a shivering wreck without warmth. I keep a <a href="#">ferro rod and tinder pack</a> in every bag I own. Trust me, your life depends on it.</p>
+
+      <p>Third? Weight kills. I once dragged a 70-pound bug-out bag 3 miles and almost left it in a ditch. Now I use this <a href="#">lightweight tactical sling pack</a> — just the essentials, nothing more.</p>
+
+      <p>Want to read the rest? Don’t just prep — field test your life. You’ll learn fast which gear was worth the click.</p>
+
+      <p><em>— Serpico, Grit Gear HQ</em></p>
+    </div>
   </div>
 
   <!-- 🧼 Footer -->
