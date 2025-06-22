@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blog - Rough Grit HQ</title>
+  <title>Picks - Rough Grit HQ</title>
   <style>
     body {
       margin: 0;
@@ -10,102 +10,53 @@
       background-color: #111;
       color: #f5f5f5;
     }
-<!-- 🔥 Picks Banner and Headline -->
-<div style="background: #0f0f0f; padding: 30px 20px; text-align: center; border-bottom: 3px solid #ffa500;">
-  <img src="banner.png" alt="Grit Gear HQ Banner" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 12px #000;">
-  <h2 style="font-family: monospace; font-size: 2em; color: #ffa500; margin-top: 15px; text-shadow: 1px 1px 5px #000;">
-    Grit's Favorite Picks of The Now
-  </h2>
-</div>
-
-<!-- 🧱 Product Grid Row -->
-<div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; padding: 20px; background: #121212; border-bottom: 3px solid #ffa500;">
-  <div class="product-card" style="background: #1b1b1b; border: 1px solid #333; border-radius: 10px; padding: 10px; box-shadow: 0 0 10px #000; text-align: center;">
-    <img src="https://m.media-amazon.com/images/I/71oDqS4BlcL._AC_SL1500_.jpg" alt="Survival Tent" style="width: 100%; border-radius: 6px; margin-bottom: 10px;">
-    <div class="product-title" style="color: #ffa500; font-weight: bold;">Survival Tent</div>
-    <div class="urgency" style="color: #ff4444;">🔥 Winter Rush – Few Left</div>
-    <a href="https://amzn.to/3XtQAXD?tag=gritgearhq-20" target="_blank" style="background-color: #ffa500; color: #111; padding: 6px 12px; font-weight: bold; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 5px;">Buy Now</a>
-  </div>
-
-  <div class="product-card" style="background: #1b1b1b; border: 1px solid #333; border-radius: 10px; padding: 10px; box-shadow: 0 0 10px #000; text-align: center;">
-    <img src="https://m.media-amazon.com/images/I/81ieDoWdPPL._AC_SL1500_.jpg" alt="Portable Stove" style="width: 100%; border-radius: 6px; margin-bottom: 10px;">
-    <div class="product-title" style="color: #ffa500; font-weight: bold;">Portable Stove</div>
-    <div class="urgency" style="color: #ff4444;">⚠️ Top Seller This Month</div>
-    <a href="https://amzn.to/4e9FgFW?tag=gritgearhq-20" target="_blank" style="background-color: #ffa500; color: #111; padding: 6px 12px; font-weight: bold; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 5px;">Buy Now</a>
-  </div>
-
-  <div class="product-card" style="background: #1b1b1b; border: 1px solid #333; border-radius: 10px; padding: 10px; box-shadow: 0 0 10px #000; text-align: center;">
-    <img src="https://m.media-amazon.com/images/I/61N-VvKD0eL._AC_SL1500_.jpg" alt="Fire Starter Kit" style="width: 100%; border-radius: 6px; margin-bottom: 10px;">
-    <div class="product-title" style="color: #ffa500; font-weight: bold;">Fire Starter Kit</div>
-    <div class="urgency" style="color: #ff4444;">🔥 Flash Deal Today</div>
-    <a href="https://amzn.to/4e6oWGG?tag=gritgearhq-20" target="_blank" style="background-color: #ffa500; color: #111; padding: 6px 12px; font-weight: bold; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 5px;">Buy Now</a>
-  </div>
-
-  <div class="product-card" style="background: #1b1b1b; border: 1px solid #333; border-radius: 10px; padding: 10px; box-shadow: 0 0 10px #000; text-align: center;">
-    <img src="https://m.media-amazon.com/images/I/91YyDDNqayL._AC_SL1500_.jpg" alt="Water Filter Straw" style="width: 100%; border-radius: 6px; margin-bottom: 10px;">
-    <div class="product-title" style="color: #ffa500; font-weight: bold;">Water Filter Straw</div>
-    <div class="urgency" style="color: #ff4444;">⏳ Selling Out Fast</div>
-    <a href="https://amzn.to/3RA8cyJ?tag=gritgearhq-20" target="_blank" style="background-color: #ffa500; color: #111; padding: 6px 12px; font-weight: bold; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 5px;">Buy Now</a>
-  </div>
-
-  <div class="product-card" style="background: #1b1b1b; border: 1px solid #333; border-radius: 10px; padding: 10px; box-shadow: 0 0 10px #000; text-align: center;">
-    <img src="https://m.media-amazon.com/images/I/81c7F9AsqML._AC_SL1500_.jpg" alt="Solar Power Bank" style="width: 100%; border-radius: 6px; margin-bottom: 10px;">
-    <div class="product-title" style="color: #ffa500; font-weight: bold;">Solar Power Bank</div>
-    <div class="urgency" style="color: #ff4444;">⚡ #1 Pick for Off-Grid</div>
-    <a href="https://amzn.to/3VxPQNS?tag=gritgearhq-20" target="_blank" style="background-color: #ffa500; color: #111; padding: 6px 12px; font-weight: bold; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 5px;">Buy Now</a>
-  </div>
-</div>
-
 
     a {
       color: #ffa500;
       text-decoration: none;
     }
 
-    .top-bar {
-      display: flex;
-      overflow-x: auto;
-      background-color: #1a1a1a;
-      padding: 15px;
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 15px;
-      border-bottom: 2px solid #ffa500;
+      padding: 20px;
+      background: #121212;
+      border-bottom: 3px solid #ffa500;
     }
 
-    .product {
-      min-width: 200px;
-      background: #222;
+    .product-card {
+      background: #1b1b1b;
       border: 1px solid #333;
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 10px;
       box-shadow: 0 0 10px #000;
       text-align: center;
-      flex-shrink: 0;
     }
 
-    .product img {
-      max-width: 100%;
-      border-radius: 5px;
+    .product-card img {
+      width: 100%;
+      border-radius: 6px;
       margin-bottom: 10px;
     }
 
     .product-title {
       color: #ffa500;
       font-weight: bold;
-      font-size: 1em;
     }
 
     .urgency {
       color: #ff4444;
       font-size: 0.9em;
-      margin: 8px 0;
+      margin: 5px 0;
     }
 
     .buy-button {
       background-color: #ffa500;
-      color: #000;
-      padding: 5px 10px;
+      color: #111;
+      padding: 6px 12px;
       font-weight: bold;
-      border-radius: 5px;
+      border-radius: 6px;
       text-decoration: none;
       display: inline-block;
       margin-top: 5px;
@@ -117,14 +68,14 @@
       background-color: #111;
     }
 
-    .blog-content {
-      padding: 30px 40px;
-    }
-
     .headline {
       font-size: 1.6em;
-      margin-bottom: 20px;
+      margin: 30px 40px 10px;
       color: #ff6600;
+    }
+
+    .blog-content {
+      padding: 0 40px 40px;
     }
   </style>
 </head>
@@ -134,43 +85,7 @@
     <a href="index.html">← Return to Home</a>
   </header>
 
-  <div class="top-bar">
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/71oDqS4BlcL._AC_SL1500_.jpg" alt="Survival Tent">
-      <div class="product-title">Emergency Survival Tent</div>
-      <div class="urgency">🔥 Limited stock – winter rush</div>
-      <a href="https://amzn.to/3XtQAXD?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
-    </div>
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/81ieDoWdPPL._AC_SL1500_.jpg" alt="Portable Stove">
-      <div class="product-title">Portable Propane Stove</div>
-      <div class="urgency">⚠️ Popular – sells out fast</div>
-      <a href="https://amzn.to/4e9FgFW?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
-    </div>
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/61N-VvKD0eL._AC_SL1500_.jpg" alt="Fire Starter Kit">
-      <div class="product-title">Magnesium Fire Starter Kit</div>
-      <div class="urgency">🔥 Deal of the day</div>
-      <a href="https://amzn.to/4e6oWGG?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
-    </div>
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/91YyDDNqayL._AC_SL1500_.jpg" alt="Water Filter Straw">
-      <div class="product-title">Water Filter Straw</div>
-      <div class="urgency">⏳ Almost gone</div>
-      <a href="https://amzn.to/3RA8cyJ?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
-    </div>
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/81c7F9AsqML._AC_SL1500_.jpg" alt="Solar Power Bank">
-      <div class="product-title">Solar Power Bank</div>
-      <div class="urgency">⚡ Best Seller</div>
-      <a href="https://amzn.to/3VxPQNS?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
-    </div>
-  </div>
-
-  <div class="blog-content">
-    <div class="headline">📜 How to Survive When the Grid Goes Down</div>
-    <p>Your gritty blog post starts here...</p>
-  </div>
-
-</body>
-</html>
+  <!-- 🔥 Banner and Headline -->
+  <div style="background: #0f0f0f; padding: 30px 20px; text-align: center; border-bottom: 3px solid #ffa500;">
+    <img src="banner.png" alt="Grit Gear HQ Banner" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 12px #000;">
+    <h2 style="font-family: monospace;
