@@ -38,16 +38,6 @@
       flex: 1;
       padding: 20px;
     }
-    .banner {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .banner img {
-      max-width: 700px;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 12px #000;
-    }
     .section-title {
       font-size: 1.2em;
       margin: 25px 0 10px;
@@ -93,8 +83,49 @@
       margin-top: 6px;
     }
     .blog-section {
-      margin-top: 30px;
+      margin-top: 40px;
       color: #eee;
+      line-height: 1.6;
+    }
+    .blog-section h2 {
+      font-size: 1.5rem;
+      color: #ffa500;
+      margin-bottom: 20px;
+    }
+    .blog-section p {
+      margin-bottom: 16px;
+    }
+    .affiliate-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .affiliate-grid div {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 10px;
+      width: 220px;
+      text-align: center;
+    }
+    .affiliate-grid img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .affiliate-grid h3 {
+      color: #ffa500;
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    .affiliate-grid p {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+    .affiliate-grid a {
+      color: #00d0ff;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -120,10 +151,6 @@
   </aside>
 
   <main class="main-content">
-    <div class="banner">
-      <img src="images/gritgear-fieldtested-banner.jpg" alt="Grit Gear HQ Field-Tested Banner">
-    </div>
-
     <div class="section-title">🔥 Grit's Favorite Picks of The Now</div>
     <div class="gear-grid">
       <div class="gear-item">
@@ -144,69 +171,48 @@
         <div class="tagline">⚡ Flash Deal Today</div>
         <a href="#">Buy Now</a>
       </div>
-      <div class="gear-item">
-        <img src="images/filter.jpg" alt="Water Filter Straw">
-        <div class="title">Water Filter Straw</div>
-        <div class="tagline">⛔ Selling Out Fast</div>
-        <a href="#">Buy Now</a>
-      </div>
-      <div class="gear-item">
-        <img src="images/solar.jpg" alt="Solar Power Bank">
-        <div class="title">Solar Power Bank</div>
-        <div class="tagline">⚡ #1 Pick for Off-Grid</div>
-        <a href="#">Buy Now</a>
-      </div>
     </div>
 
     <div class="blog-section">
-      <div class="section-title">📜 Latest from the Blog</div>
-      <p>Content loads here — blog posts, survival tips, gear guides, and dark grit wisdom...</p>
+      <h2>📜 Grit in the Cold: My Les Stroud Moment at 21</h2>
+      <p>I was 21 when I first saw <em>Survivorman</em>. Les Stroud came on screen—calm, deliberate, alone in the wild—and something inside me lit up. It wasn’t inspiration. It was a challenge. I thought, <em>If he can do it, so can I.</em></p>
+      <p>So, naturally, I packed up the dumbest assortment of camping gear imaginable—gimmicky gadgets, canned food, an unrated sleeping bag—and trudged off alone into the snowy woods. The temperature was somewhere south of 20 below. I didn’t check. I was too busy romanticizing the misery.</p>
+      <p>I had on blue jeans. Not snow pants. Not thermals. Jeans. And steel-toe boots that would later try to claim a few of my toes. My brilliant plan also included bringing along a small bottle of alcohol. I figured it’d help me sleep or maybe boost morale. What it did instead was drop my body temperature even lower while giving me the illusion that I was warm.</p>
+      <p>I stayed the entire night, barely sleeping, curled up next to a 7-foot-long longfire I had to stoke constantly between waves of shivering and half-conscious dreams. That fire—my only warmth—probably saved my life. Without it, I would've frozen to death in my sleep.</p>
+      <p>By morning, I was a wreck. I stumbled back through the woods, barely coherent, numb from the waist down. I got lucky. I didn’t lose any toes, but it was close. That night taught me more about survival than any TV show ever could. It wasn’t about heroism or being hardcore. It was about humility.</p>
+      <p>If Les Stroud had been there, he probably would've smacked me upside the head with a pine branch and told me to go home. And he would’ve been right. But I came out of those woods different—humbled, frostbitten, and one step closer to grit.</p>
+      <p><strong>Shout out to Les for starting my journey.</strong></p>
+
+      <div class="affiliate-grid">
+        <div>
+          <img src="https://m.media-amazon.com/images/I/61qnx8GhPkL.__AC_SX300_SY300_QL70_FMwebp_.webp" alt="Sleeping Bag">
+          <h3>Sub-Zero Mummy Sleeping Bag</h3>
+          <p>Warm, windproof, and not the crap I brought.</p>
+          <a href="https://amzn.to/43SeYPQ" target="_blank">🔗 View on Amazon</a>
+        </div>
+        <div>
+          <img src="https://m.media-amazon.com/images/I/71-zrk9kKTL._AC_SY625_.jpg" alt="Snow Boots">
+          <h3>Insulated Snow Boots</h3>
+          <p>Steel toes? Nah. These actually keep your feet alive.</p>
+          <a href="https://amzn.to/4k5Hwub" target="_blank">🔗 View on Amazon</a>
+        </div>
+        <div>
+          <img src="https://m.media-amazon.com/images/I/5124TIqDXpL.__AC_SX300_SY300_QL70_FMwebp_.webp" alt="Wood Stove">
+          <h3>Portable Wood Stove</h3>
+          <p>If fire saved me, this would've been my best friend.</p>
+          <a href="https://amzn.to/4llGdbx" target="_blank">🔗 View on Amazon</a>
+        </div>
+        <div>
+          <img src="https://m.media-amazon.com/images/I/61aQUL8ItNL._AC_SL1500_.jpg" alt="Winter Pants">
+          <h3>Insulated Outdoor Pants</h3>
+          <p>Blue jeans freeze. These don’t.</p>
+          <a href="https://amzn.to/4llkBfm" target="_blank">🔗 View on Amazon</a>
+        </div>
+      </div>
     </div>
+
   </main>
 </div>
-<!-- ❄️ Gear I Wish I Had That Night -->
-<section style="background-color:#1a1a1a; padding:30px; margin-top:40px; border-radius:12px; box-shadow:0 0 15px #000;">
-  <h2 style="color:#ffa500; font-family:'Courier New', monospace; margin-bottom:20px;">🧊 Gear I Wish I Had That Night</h2>
-  <p style="color:#ccc; font-style:italic; margin-bottom:30px;">Lessons learned the hard way. Here’s what could’ve saved my frozen ass:</p>
-  
-  <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between;">
-    
-    <!-- Sleeping Bag -->
-    <div style="background:#111; padding:15px; border-radius:10px; width:220px; text-align:center;">
-      <img src="https://m.media-amazon.com/images/I/61qnx8GhPkL.__AC_SX300_SY300_QL70_FMwebp_.webp" alt="Sleeping Bag" style="width:100%; border-radius:8px;">
-      <h3 style="color:#ffa500; font-size:1rem; margin:10px 0;">Sub-Zero Mummy Sleeping Bag</h3>
-      <p style="color:#ccc; font-size:0.9rem;">Warm, windproof, and not the crap I brought.</p>
-      <a href="https://amzn.to/43SeYPQ" target="_blank" style="color:#00d0ff;">🔗 View on Amazon</a>
-    </div>
-
-    <!-- Snow Boots -->
-    <div style="background:#111; padding:15px; border-radius:10px; width:220px; text-align:center;">
-      <img src="https://m.media-amazon.com/images/I/71-zrk9kKTL._AC_SY625_.jpg" alt="Snow Boots" style="width:100%; border-radius:8px;">
-      <h3 style="color:#ffa500; font-size:1rem; margin:10px 0;">Insulated Snow Boots</h3>
-      <p style="color:#ccc; font-size:0.9rem;">Steel toes? Nah. These actually keep your feet alive.</p>
-      <a href="https://amzn.to/4k5Hwub" target="_blank" style="color:#00d0ff;">🔗 View on Amazon</a>
-    </div>
-
-    <!-- Wood Stove -->
-    <div style="background:#111; padding:15px; border-radius:10px; width:220px; text-align:center;">
-      <img src="https://m.media-amazon.com/images/I/5124TIqDXpL.__AC_SX300_SY300_QL70_FMwebp_.webp" alt="Portable Stove" style="width:100%; border-radius:8px;">
-      <h3 style="color:#ffa500; font-size:1rem; margin:10px 0;">Portable Wood Stove</h3>
-      <p style="color:#ccc; font-size:0.9rem;">If fire saved me, this would've been my best friend.</p>
-      <a href="https://amzn.to/4llGdbx" target="_blank" style="color:#00d0ff;">🔗 View on Amazon</a>
-    </div>
-
-    <!-- Outdoor Pants -->
-    <div style="background:#111; padding:15px; border-radius:10px; width:220px; text-align:center;">
-      <img src="https://m.media-amazon.com/images/I/61aQUL8ItNL._AC_SL1500_.jpg" alt="Winter Pants" style="width:100%; border-radius:8px;">
-      <h3 style="color:#ffa500; font-size:1rem; margin:10px 0;">Insulated Outdoor Pants</h3>
-      <p style="color:#ccc; font-size:0.9rem;">Blue jeans freeze. These don’t.</p>
-      <a href="https://amzn.to/4llkBfm" target="_blank" style="color:#00d0ff;">🔗 View on Amazon</a>
-    </div>
-
-  </div>
-
-  <p style="color:#888; font-style:italic; text-align:right; margin-top:30px;">"If you're gonna be dumb, be warm."</p>
-</section>
 
 </body>
 </html>
