@@ -2,49 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Picks of the Now</title>
+  <title>Grit Gear HQ - Picks</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #ffa500;
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+      border-bottom: 2px solid #333;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: #ffa500;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 2px solid #222;
+    }
+    nav a {
+      color: #ffa500;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-right: 1px solid #333;
+    }
+    nav a:last-child {
+      border-right: none;
+    }
+    nav a:hover {
+      background-color: #222;
+    }
+    aside {
+      position: fixed;
+      top: 90px;
+      left: 0;
+      width: 250px;
+      padding: 20px;
+      background: #1a1a1a;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+    main {
+      margin-left: 270px;
+      padding: 20px;
+    }
+    .product-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .product-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 0 10px #000;
+    }
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .buy-button {
+      background: orange;
+      color: #000;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+    .blog-section {
+      background: #111;
+      padding: 15px;
+      border-radius: 10px;
+      color: #eee;
+      margin-top: 40px;
+    }
+  </style>
 </head>
-<body style="margin:0; padding:0; background:#111; font-family:'Courier New', monospace; min-height:100vh;">
-
-  <div style="text-align:center; padding: 40px 20px;">
-    <h2 style="color: orange;">🔥 Grit's Favorite Picks of The Now</h2>
-
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px;">
-
-      <!-- Survival Tent -->
-      <div style="background:#1a1a1a; width:220px; padding:15px; border-radius:12px; box-shadow:0 0 15px #000;">
-        <img src="https://m.media-amazon.com/images/I/61q+CChvZcL._AC_SX679_.jpg" alt="Survival Tent" style="width:100%; border-radius:8px;">
-        <h4 style="color: #ffa500; margin-top:10px;">Survival Tent</h4>
-        <p style="color:#ccc;">Winter Rush – Few Left</p>
-        <a href="https://amzn.to/4k6cfHx" target="_blank" style="display:inline-block; background:#ffa500; color:#000; font-weight:bold; padding:8px 12px; border-radius:6px; text-decoration:none; margin-top:10px;">Buy Now</a>
+<body>
+  <header>
+    <h1>Grit Gear HQ</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="manifesto.html">Manifesto</a>
+    <a href="self-defense.html">Store</a>
+    <a href="grit-test.html">Grit Test</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <aside>
+    <p>"Tough times don’t last. But tough bastards do."</p>
+    <p>"You won’t rise until you bleed."</p>
+  </aside>
+  <main>
+    <h2>🔥 Grit's Favorite Picks of The Now</h2>
+    <div class="product-row">
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/61q+CChvZcL._AC_SX679_.jpg" alt="Survival Tent">
+        <h4>Survival Tent</h4>
+        <p>Winter Rush – Few Left</p>
+        <a class="buy-button" href="https://amzn.to/4k6cfHx" target="_blank">Buy Now</a>
       </div>
-
-      <!-- Portable Stove -->
-      <div style="background:#1a1a1a; width:220px; padding:15px; border-radius:12px; box-shadow:0 0 15px #000;">
-        <img src="https://m.media-amazon.com/images/I/71RezPZgUgL._AC_SX679_.jpg" alt="Portable Stove" style="width:100%; border-radius:8px;">
-        <h4 style="color: #ffa500; margin-top:10px;">Portable Stove</h4>
-        <p style="color:#ccc;">Top Seller This Month</p>
-        <a href="https://amzn.to/44dyZzc" target="_blank" style="display:inline-block; background:#ffa500; color:#000; font-weight:bold; padding:8px 12px; border-radius:6px; text-decoration:none; margin-top:10px;">Buy Now</a>
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/61RezPZgUgL.__AC_SX300_SY300_.jpg" alt="Portable Stove">
+        <h4>Portable Stove</h4>
+        <p>📅 Top Seller This Month</p>
+        <a class="buy-button" href="https://amzn.to/44dyZzc" target="_blank">Buy Now</a>
       </div>
-
-      <!-- Fire Starter Kit -->
-      <div style="background:#1a1a1a; width:220px; padding:15px; border-radius:12px; box-shadow:0 0 15px #000;">
-        <img src="https://m.media-amazon.com/images/I/81YCiAsYm7S._AC_SX679_.jpg" alt="Fire Starter Kit" style="width:100%; border-radius:8px;">
-        <h4 style="color: #ffa500; margin-top:10px;">Fire Starter Kit</h4>
-        <p style="color:#ccc;">🔥 Flash Deal Today</p>
-        <a href="https://amzn.to/3SZOhCF" target="_blank" style="display:inline-block; background:#ffa500; color:#000; font-weight:bold; padding:8px 12px; border-radius:6px; text-decoration:none; margin-top:10px;">Buy Now</a>
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/81YCiAsYm7S.__AC_SY300_SX300_.jpg" alt="Fire Starter Kit">
+        <h4>Fire Starter Kit</h4>
+        <p>🔋 Flash Deal Today</p>
+        <a class="buy-button" href="https://amzn.to/3SZOhCF" target="_blank">Buy Now</a>
       </div>
-
-      <!-- Water Filter -->
-      <div style="background:#1a1a1a; width:220px; padding:15px; border-radius:12px; box-shadow:0 0 15px #000;">
-        <img src="https://m.media-amazon.com/images/I/412ECKeXhKL._AC_SX679_.jpg" alt="Water Filter" style="width:100%; border-radius:8px;">
-        <h4 style="color: #ffa500; margin-top:10px;">Water Filter Straw</h4>
-        <p style="color:#ccc;">💧 Selling Out Fast</p>
-        <a href="https://amzn.to/40aNwKQ" target="_blank" style="display:inline-block; background:#ffa500; color:#000; font-weight:bold; padding:8px 12px; border-radius:6px; text-decoration:none; margin-top:10px;">Buy Now</a>
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/412ECKeXhKL._SY445_SX342_.jpg" alt="Water Filter Straw">
+        <h4>Water Filter Straw</h4>
+        <p>💧 Selling Out Fast</p>
+        <a class="buy-button" href="https://amzn.to/40aNwKQ" target="_blank">Buy Now</a>
       </div>
-
     </div>
-  </div>
 
+    <div class="blog-section">
+      <h3>Latest from the Blog</h3>
+      <p><strong>Grit in the Cold:</strong> My Les Stroud Moment at 21 was when I first saw *Survivorman*. Les Stroud came on screen—calm, deliberate, alone in the wild—and something inside me lit up. It wasn’t inspiration. It was a challenge. I thought, “If he can do it, so can I.” So, naturally, I packed up the dumbest assortment of camping gear imaginable—gimmicky gadgets, canned food, an unrated sleeping bag—and trudged off alone into the snowy woods. The temperature was somewhere south of 20 below.
+
+      I didn’t check. I was too busy romanticizing the misery. I had on blue jeans. Not snow pants. Not thermals. Jeans. And steel-toe boots that would later try to claim a few of my toes. My brilliant plan also included bringing along a small bottle of alcohol. I figured it’d help me sleep or maybe boost morale. What it did instead was drop my body temperature even lower while giving me the illusion that I was warm—classic rookie move.
+
+      By the time the breath started curling in my pants and freezing into rigid ice sheets, I knew I had made a huge mistake. I remember trying to start a fire with one forgotten little starter that I barely knew how to use—and losing the will to grip anything. The snow beneath me melted from my heat and turned into ice water. But I stayed alive that night. I curled up beside a 7-foot-long logfire and kept it going like my life depended on it—because it did. I was half-conscious, shivering between dreamlike blackouts, waking only to feed the flames and keep death from creeping in. By morning, I was a wreck. I stumbled back through the woods, barely coherent, fighting panic, numb from the waist down.
+
+      I got lucky. Real lucky. I didn’t lose any toes, but it was close. My boots felt like coffins for my feet. That night taught me more about survival than any TV show ever could. It wasn’t about heroism or being hardcore. It was about humility. And the very real, very stupid ways we underestimate nature. If Les Stroud had been there, he probably would've smacked me upside the head with a pine branch and told me to go home. And he would've been right.
+
+      But I came out of those woods different—humbled, frostbitten, and one step closer to grit. Shout out to Les for starting my journey.</p>
+    </div>
+  </main>
 </body>
 </html>
