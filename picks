@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rough Grit HQ</title>
+  <title>Blog - Rough Grit HQ</title>
   <style>
     body {
       margin: 0;
@@ -11,97 +11,119 @@
       color: #f5f5f5;
     }
 
-    header {
-      background: #222;
-      padding: 20px;
-      text-align: center;
+    a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      display: flex;
+      overflow-x: auto;
+      background-color: #1a1a1a;
+      padding: 15px;
+      gap: 15px;
       border-bottom: 2px solid #ffa500;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #ffa500;
-      text-shadow: 1px 1px #000;
+    .product {
+      min-width: 200px;
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 0 10px #000;
+      text-align: center;
+      flex-shrink: 0;
     }
 
-    nav {
-      background: #333;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 15px 0;
-      border-bottom: 1px solid #444;
+    .product img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
     }
 
-    nav a {
+    .product-title {
       color: #ffa500;
-      text-decoration: none;
       font-weight: bold;
+      font-size: 1em;
     }
 
-    nav a:hover {
-      color: #00ffcc;
+    .urgency {
+      color: #ff4444;
+      font-size: 0.9em;
+      margin: 8px 0;
     }
 
-    .layout {
-      display: flex;
-      padding: 20px;
+    .buy-button {
+      background-color: #ffa500;
+      color: #000;
+      padding: 5px 10px;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 5px;
     }
 
-    .sidebar {
-      width: 250px;
-      padding-right: 20px;
-      border-right: 2px solid #444;
+    header {
+      padding: 10px 20px;
+      font-size: 0.9em;
+      background-color: #111;
     }
 
-    .main-content {
-      flex-grow: 1;
-      padding-left: 20px;
+    .blog-content {
+      padding: 30px 40px;
     }
 
     .headline {
-      font-size: 1.5em;
-      color: #ff6600;
+      font-size: 1.6em;
       margin-bottom: 20px;
-      text-shadow: 0 0 4px #000;
-    }
-
-    .quote-box {
-      font-size: 0.95em;
-      color: #ccc;
-      margin-top: 30px;
-      padding-left: 10px;
-      border-left: 2px solid #ffa500;
+      color: #ff6600;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Rough Grit HQ</h1>
+    <a href="index.html">← Return to Home</a>
   </header>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Blog</a>
-    <a href="#">Store</a>
-    <a href="#">Grit Test</a>
-    <a href="#">Contact</a>
-  </nav>
+  <div class="top-bar">
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71oDqS4BlcL._AC_SL1500_.jpg" alt="Survival Tent">
+      <div class="product-title">Emergency Survival Tent</div>
+      <div class="urgency">🔥 Limited stock – winter rush</div>
+      <a href="https://amzn.to/3XtQAXD?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/81ieDoWdPPL._AC_SL1500_.jpg" alt="Portable Stove">
+      <div class="product-title">Portable Propane Stove</div>
+      <div class="urgency">⚠️ Popular – sells out fast</div>
+      <a href="https://amzn.to/4e9FgFW?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61N-VvKD0eL._AC_SL1500_.jpg" alt="Fire Starter Kit">
+      <div class="product-title">Magnesium Fire Starter Kit</div>
+      <div class="urgency">🔥 Deal of the day</div>
+      <a href="https://amzn.to/4e6oWGG?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/91YyDDNqayL._AC_SL1500_.jpg" alt="Water Filter Straw">
+      <div class="product-title">Water Filter Straw</div>
+      <div class="urgency">⏳ Almost gone</div>
+      <a href="https://amzn.to/3RA8cyJ?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/81c7F9AsqML._AC_SL1500_.jpg" alt="Solar Power Bank">
+      <div class="product-title">Solar Power Bank</div>
+      <div class="urgency">⚡ Best Seller</div>
+      <a href="https://amzn.to/3VxPQNS?tag=gritgearhq-20" class="buy-button" target="_blank">Buy Now</a>
+    </div>
+  </div>
 
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="quote-box">
-        “Tough times don’t last. But tough bastards do.”<br><br>
-        “You won’t rise until you bleed.”
-      </div>
-    </aside>
-
-    <main class="main-content">
-      <div class="headline">🔥 Latest from the Blog</div>
-      <p>Content loads here — blog posts, survival tips, gear guides, and dark grit wisdom...</p>
-    </main>
+  <div class="blog-content">
+    <div class="headline">📜 How to Survive When the Grid Goes Down</div>
+    <p>Your gritty blog post starts here...</p>
   </div>
 
 </body>
