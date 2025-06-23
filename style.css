@@ -139,5 +139,7 @@ body {
   font-size: 1.15em;
   line-height: 1.7;
   color: #bbb;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000, 0 0 20px rgba(0, 255, 0, 0.15);
+}
+
 }
