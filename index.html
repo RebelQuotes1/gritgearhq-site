@@ -8,7 +8,7 @@
   <!-- ✅ Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- ✅ Font and Style (optional add more) -->
+  <!-- ✅ Font and Style -->
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
   <style>
@@ -20,27 +20,37 @@
       padding: 0;
       text-align: center;
     }
-    @keyframes pulseGlow {
-  0% {
-    box-shadow:
-      0 0 10px #000,
-      0 0 25px rgba(0, 255, 0, 0.3),
-      0 0 50px rgba(0, 255, 0, 0.15);
-  }
-  50% {
-    box-shadow:
-      0 0 15px #000,
-      0 0 35px rgba(0, 255, 0, 0.45),
-      0 0 65px rgba(0, 255, 0, 0.3);
-  }
-  100% {
-    box-shadow:
-      0 0 10px #000,
-      0 0 25px rgba(0, 255, 0, 0.3),
-      0 0 50px rgba(0, 255, 0, 0.15);
-  }
-}
 
+    .gear-item {
+      background: #111;
+      padding: 15px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 0 12px #000;
+      text-align: center;
+      animation: pulseGlow 2.5s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow:
+          0 0 10px #000,
+          0 0 25px rgba(0, 255, 0, 0.3),
+          0 0 50px rgba(0, 255, 0, 0.15);
+      }
+      50% {
+        box-shadow:
+          0 0 15px #000,
+          0 0 35px rgba(0, 255, 0, 0.45),
+          0 0 65px rgba(0, 255, 0, 0.3);
+      }
+      100% {
+        box-shadow:
+          0 0 10px #000,
+          0 0 25px rgba(0, 255, 0, 0.3),
+          0 0 50px rgba(0, 255, 0, 0.15);
+      }
+    }
   </style>
 </head>
 <body>
@@ -56,58 +66,21 @@
       filter: brightness(0.8);
       transition: 0.3s ease all;
     " onmouseover="this.style.filter='brightness(1)'" onmouseout="this.style.filter='brightness(0.8)'">
-  
+  </a>
+
   <!-- ✅ Navigation Buttons -->
   <div class="nav-buttons" style="
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    margin: 30px auto;
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit Gear HQ</title>
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- ✅ Font and Style (optional add more) -->
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      background: #111;
-      color: #eee;
-      font-family: 'Special Elite', monospace;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-
-<!-- ✅ Navigation Buttons -->
-<div class="nav-buttons" style="
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 30px auto;
-">
-  <a href="manifesto.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">📜 Manifesto</a>
-  
-  <a href="picks.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">🍲 Picks</a>
-
-  <a href="self-defense.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">🛡️ Self-Defense</a>
-
-  <a href="privacy.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">🔒 Privacy Policy</a>
-
-  <a href="contact.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">📫 Contact</a>
-</div>
+    margin: 30px auto;">
+    <a href="manifesto.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">📜 Manifesto</a>
+    <a href="picks.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">🍲 Picks</a>
+    <a href="self-defense.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">🛡️ Self-Defense</a>
+    <a href="privacy.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">🔒 Privacy Policy</a>
+    <a href="contact.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">📫 Contact</a>
+  </div>
 
   <!-- 💬 Fake Grit Gear Reviews -->
   <section style="background:#111; padding: 40px 20px; border-top: 2px solid #ffa500;">
@@ -116,20 +89,17 @@
     </h2>
     <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:20px;">
 
-      <!-- Review 1 -->
-      <div style="background:#1a1a1a; padding:20px; border-radius:12px; width:300px; box-shadow:0 0 10px #000;">
+      <div class="gear-item">
         <p style="color:#7CFC00;">"Survived the blackout in style. My wife thought I was crazy until the lights went out."</p>
         <p style="color:#777; font-style:italic;">– Buck M., Missouri</p>
       </div>
 
-      <!-- Review 2 -->
-      <div style="background:#1a1a1a; padding:20px; border-radius:12px; width:300px; box-shadow:0 0 10px #000;">
+      <div class="gear-item">
         <p style="color:#7CFC00;">"Bought the gear for the zombie apocalypse. Ended up using it during a storm. 10/10."</p>
         <p style="color:#777; font-style:italic;">– Tanya R., Texas</p>
       </div>
 
-      <!-- Review 3 -->
-      <div style="background:#1a1a1a; padding:20px; border-radius:12px; width:300px; box-shadow:0 0 10px #000;">
+      <div class="gear-item">
         <p style="color:#7CFC00;">"This site made me feel ready to bug out... or barbecue. Either way, I win."</p>
         <p style="color:#777; font-style:italic;">– Rico D., Florida</p>
       </div>
@@ -137,7 +107,7 @@
     </div>
   </section>
 
-  <!-- 📨 Fake Raffle Email Grab (optional, can style more) -->
+  <!-- 📨 Raffle Email Grab -->
   <section style="margin-top:60px; padding:30px; background:#1a1a1a; border:2px dashed #ff6600; border-radius:10px;">
     <h2 style="color:#ffa500;">🎁 Win a Bug-Out Mystery Box</h2>
     <p style="margin:10px 0;">Enter your email for a chance to win exclusive survival gear!</p>
@@ -153,7 +123,7 @@
   </section>
 
   <!-- ✅ Footer -->
-  <div class="footer">
+  <div class="footer" style="margin-top:40px; padding:20px; font-size:0.9rem; color:#888;">
     © 2024 Serpico | Built with grit. | 
     <a href="terms.html" style="color:#ffa500;">Terms</a> | 
     <a href="affiliate-disclosure.html" style="color:#ffa500;">Affiliate Disclosure</a>
