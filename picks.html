@@ -1,46 +1,252 @@
-<div style="background-color: #111; padding: 40px; font-family: Arial, sans-serif; color: #f4f4f4; line-height: 1.6;">
-  <h1 style="color: #ffa500; text-align: center; font-size: 2.4em; margin-bottom: 40px;">🔥 Field-Tested Survival Gear</h1>
-  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grit Gear HQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: url('https://www.transparenttextures.com/patterns/asfalt-light.png') repeat #111;
+      font-family: Arial, sans-serif;
+      color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      display: flex;
+    }
+    .sidebar {
+      width: 320px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      box-shadow: 3px 0 10px #000;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .sidebar h2 {
+      color: #ffa500;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .ad-placeholder {
+      width: 100%;
+      height: 600px;
+      background: linear-gradient(to bottom right, #333, #222);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 1em;
+      border-radius: 8px;
+      box-shadow: inset 0 0 12px #000;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .main-content {
+      flex-grow: 1;
+    }
+    header {
+      background-color: #000;
+      color: #ffa500;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 10px #000;
+    }
+    .gear-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .gear-item {
+      background: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 15px #000;
+      text-align: center;
+    }
+    .gear-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .gear-item h2 {
+      color: #ffa500;
+      font-size: 1.3em;
+      margin: 15px 0 10px;
+    }
+    .gear-item p {
+      margin: 10px 0;
+      font-size: 1em;
+    }
+    .gear-item a {
+      display: inline-block;
+      background: #ffa500;
+      color: #111;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .gear-item a:hover {
+      background: #ff8c00;
+    }
+    .review {
+      color: #ccc;
+      font-style: italic;
+      margin-top: 10px;
+    }
+    .lead-magnet, .blog {
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      padding: 20px;
+      background-color: #181818;
+      color: #ccc;
+      font-size: 1.15em;
+    }
+    .lead-magnet input {
+      width: 250px;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+    .lead-magnet button {
+      background-color: #ffa500;
+      color: #111;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .lead-magnet button:hover {
+      background-color: #ff8c00;
+    }
+    .countdown {
+      font-size: 1.5em;
+      text-align: center;
+      margin: 20px 0;
+      color: #ffa500;
+      background: #000;
+      padding: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body onload="playSound()">
+  <audio id="enterSound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-level-completed-2059.mp3"></audio>
 
-    <!-- Item 1 -->
-    <div style="background: #1c1c1c; border-radius: 12px; padding: 20px; width: 300px; box-shadow: 0 0 15px #000;">
-      <img src="6182wZ073SL.__AC_SX300_SY300_QL70_FMwebp_ (1).webp" alt="Camp Stove" style="width: 100%; border-radius: 8px;">
-      <h2 style="color: #ffa500; font-size: 1.4em; margin: 15px 0 10px;">🔥 Fire-Maple Folding Camp Stove</h2>
-      <p>Compact, rugged, and high-heat for backcountry cooking. Packs small. Burns hot.</p>
-      <a href="https://amzn.to/405AjTN" target="_blank" style="display: inline-block; background: #ffa500; color: #111; padding: 10px 15px; text-decoration: none; border-radius: 6px; font-weight: bold;">View on Amazon</a>
+  <div class="sidebar">
+    <h2>Gear We Put Our Reputation Behind</h2>
+
+    <div class="gear-item">
+      <img src="51+murEPeqL._SX300_SY300_.jpg" alt="MRE">
+      <h2>🥣 U.S. Military MREs</h2>
+      <p>Military rations. Shelf-stable. Eat like a grunt when the grid’s down.</p>
+      <p class="review">★★★★★ "Tastes like sadness but keeps you alive." – Greg H.</p>
+      <a href="https://amzn.to/3HRQ0HS" target="_blank">We Recommend This One</a>
     </div>
 
-    <!-- Item 2 -->
-    <div style="background: #1c1c1c; border-radius: 12px; padding: 20px; width: 300px; box-shadow: 0 0 15px #000;">
-      <img src="51oKcS-K52L.__AC_SY300_SX300_QL70_FMwebp_.webp" alt="Sleeping Bag" style="width: 100%; border-radius: 8px;">
-      <h2 style="color: #ffa500; font-size: 1.4em; margin: 15px 0 10px;">🛏️ Outdoor Vitals StormLoft Sleeping Bag</h2>
-      <p>Ultralight, sub-zero rated, and adventure-tested. Stay warm when it matters.</p>
-      <a href="https://amzn.to/44t00zZ" target="_blank" style="display: inline-block; background: #ffa500; color: #111; padding: 10px 15px; text-decoration: none; border-radius: 6px; font-weight: bold;">View on Amazon</a>
+    <div class="gear-item">
+      <img src="71-zrk9kKTL._AC_SY625_ (1).jpg" alt="Snow Boots">
+      <h2>🥾 Snow Boots</h2>
+      <p>Winterproof and built for abuse. Good traction, great decisions.</p>
+      <p class="review">★★★★★ "Survived a blizzard. Respect." – Danny B.</p>
+      <a href="https://amzn.to/4ec6pml" target="_blank">We Recommend This One</a>
     </div>
 
-    <!-- Item 3 -->
-    <div style="background: #1c1c1c; border-radius: 12px; padding: 20px; width: 300px; box-shadow: 0 0 15px #000;">
-      <img src="51LH6CHrm8L._AC_SX466_.jpg" alt="Fire Kit" style="width: 100%; border-radius: 8px;">
-      <h2 style="color: #ffa500; font-size: 1.4em; margin: 15px 0 10px;">🔥 Überleben Zünden Fire Kit</h2>
-      <p>Ferro rod. Tinder. Scraper. Packed in a black tin with attitude. Lights up when lighters fail.</p>
-      <a href="https://amzn.to/4ndrwcd" target="_blank" style="display: inline-block; background: #ffa500; color: #111; padding: 10px 15px; text-decoration: none; border-radius: 6px; font-weight: bold;">View on Amazon</a>
-    </div>
-
-    <!-- Item 4 -->
-    <div style="background: #1c1c1c; border-radius: 12px; padding: 20px; width: 300px; box-shadow: 0 0 15px #000;">
-      <img src="51+murEPeqL._SX300_SY300_.jpg" alt="MRE" style="width: 100%; border-radius: 8px;">
-      <h2 style="color: #ffa500; font-size: 1.4em; margin: 15px 0 10px;">🥣 Genuine U.S. Military MREs</h2>
-      <p>Military rations. Calorie-packed. Shelf-stable. Eat like a grunt when the grid’s down.</p>
-      <a href="https://amzn.to/3HRQ0HS" target="_blank" style="display: inline-block; background: #ffa500; color: #111; padding: 10px 15px; text-decoration: none; border-radius: 6px; font-weight: bold;">View on Amazon</a>
-    </div>
-
-    <!-- Item 5 -->
-    <div style="background: #1c1c1c; border-radius: 12px; padding: 20px; width: 300px; box-shadow: 0 0 15px #000;">
-      <img src="71-zrk9kKTL._AC_SY625_ (1).jpg" alt="Snow Boots" style="width: 100%; border-radius: 8px;">
-      <h2 style="color: #ffa500; font-size: 1.4em; margin: 15px 0 10px;">🥾 Northside Waterproof Snow Boots</h2>
-      <p>Winterproof and built for abuse. Good traction, good insulation, great decisions.</p>
-      <a href="https://amzn.to/4ec6pml" target="_blank" style="display: inline-block; background: #ffa500; color: #111; padding: 10px 15px; text-decoration: none; border-radius: 6px; font-weight: bold;">View on Amazon</a>
-    </div>
-
+    <div class="ad-placeholder">[ AdSense Slot – 300x600 ]</div>
   </div>
-</div>
+
+  <div class="main-content">
+    <header>🔥 Grit Gear HQ Picks</header>
+
+    <div class="countdown">
+      ⏳ Limited Stock! Next restock in: <span id="timer">05:00</span>
+    </div>
+
+    <div class="gear-grid">
+      <div class="gear-item">
+        <img src="6182wZ073SL.__AC_SX300_SY300_QL70_FMwebp_ (1).webp" alt="Camp Stove">
+        <h2>🔥 Camp Stove</h2>
+        <p>Compact, rugged, and burns hot. Packs small, performs big.</p>
+        <p class="review">★★★★★ "Flamethrower mode. 10/10." – Kyle R.</p>
+        <a href="https://amzn.to/405AjTN" target="_blank">We Recommend This One</a>
+      </div>
+
+      <div class="gear-item">
+        <img src="51oKcS-K52L.__AC_SY300_SX300_QL70_FMwebp_.webp" alt="Sleeping Bag">
+        <h2>🛏️ StormLoft Sleeping Bag</h2>
+        <p>Ultralight, sub-zero rated, adventure-tested warmth.</p>
+        <p class="review">★★★★★ "A womb of goose feathers." – Toni M.</p>
+        <a href="https://amzn.to/44t00zZ" target="_blank">We Recommend This One</a>
+      </div>
+
+      <div class="gear-item">
+        <img src="51LH6CHrm8L._AC_SX466_.jpg" alt="Fire Kit">
+        <h2>🔥 Überleben Fire Kit</h2>
+        <p>Ferro rod. Scraper. Tinder. Reliable ignition when it counts.</p>
+        <p class="review">★★★★★ "Lights every time. Solid backup." – Eli V.</p>
+        <a href="https://amzn.to/4ndrwcd" target="_blank">We Recommend This One</a>
+      </div>
+    </div>
+
+    <div class="lead-magnet">
+      <h2>🎁 Free Survival PDF Guide</h2>
+      <p>Enter your email and get our exclusive "Top 10 Cold Weather Survival Items" PDF instantly.</p>
+      <input type="email" placeholder="you@example.com">
+      <button>Get My Guide</button>
+    </div>
+
+    <div class="blog">
+      <h2>Latest from the Blog</h2>
+
+      <p><strong>Grit in the Cold:</strong> My Les Stroud moment at 21 was when I first saw “Survivorman.” Les Stroud came on screen—calm, deliberate, alone in the wild—and something inside me lit up. It wasn’t inspiration. It was a challenge. I thought, “If he can do it, so can I.”</p>
+
+      <p>So, naturally, I packed up the dumbest assortment of camping gear imaginable—gimmicky gadgets, canned food, an unrated sleeping bag—and trudged off alone into the snowy woods. The temperature was somewhere south of 20 below. I didn’t check. I was too busy romanticizing the misery. I had on blue jeans. Not snow pants. Not thermal layers. And steel-toe boots that would later try to claim a few of my toes.</p>
+
+      <p>I made it through that night by building a longfire nearly seven feet in length—just enough to match my body. I laid in my sleeping bag right beside it, stoking the flames between broken, shivering bouts of sleep. I kept the fire alive like my life depended on it—because it did.</p>
+
+      <p>My steel-toe boots were soaked and freezing, so I took them off and set them near the fire to dry. I wrapped my bare feet in a hoodie and tucked them deep inside the sleeping bag. Then I used the old "buddy system" trick—putting my feet together so they’d warm each other. It worked, barely.</p>
+
+      <p>By morning, my boots were scorched from being too close to the fire. I had to smack out the live coals still clinging to them before I could slide them back onto my feet. It wasn’t comfortable, but it was that or frostbite.</p>
+
+      <p>There was no glory in it. No hero moment. Just stubbornness, instinct, and a little bit of bushcraft keeping me alive through one of the coldest, loneliest nights of my life.</p>
+
+      <p><strong>The Lesson:</strong> Gear matters. Preparation matters more. But when it all goes sideways, it’s your willpower, your grit, and the tricks you remember that make the difference. The cold doesn't care about your ego. Nature doesn’t hand out second chances.</p>
+
+      <p>Shoutout to Les Stroud—the godfather of bushcraft—for planting the seed. I wouldn't recommend trying what I did. But I’ll always respect the fire it lit inside me.</p>
+    </div>
+
+    <div style="margin: 40px auto; text-align: center;">
+      <p style="color: #999;">[ Google Ad Placeholder ]</p>
+    </div>
+  </div>
+
+  <script>
+    let timeLeft = 300;
+    const timerEl = document.getElementById('timer');
+    setInterval(() => {
+      if (timeLeft <= 0) return;
+      timeLeft--;
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      const seconds = String(timeLeft % 60).padStart(2, '0');
+      timerEl.textContent = `${minutes}:${seconds}`;
+    }, 1000);
+
+    function playSound() {
+      document.getElementById("enterSound").play().catch(() => {});
+    }
+  </script>
+</body>
+</html>
