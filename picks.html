@@ -174,61 +174,42 @@
   </style>
 </head>
 <body onload="playSound()">
-<audio id="enterSound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-level-completed-2059.mp3"></audio>
+  <audio id="enterSound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-level-completed-2059.mp3"></audio>
 
-<header>Grit Gear HQ – Rough Gear for Rougher Times</header>
+  <header>Grit Gear HQ – Rough Gear for Rougher Times</header>
 
-<div class="sidebar">
-  <h2>Gear We Put Our Reputation Behind</h2>
-
-  <div class="gear-item">
-    <img src="https://m.media-amazon.com/images/I/71-zrk9kKTL._AC_SL1000_.jpg" alt="Snow Boots">
-    <h2>🥾 Snow Boots</h2>
-    <p>Winterproof and built for abuse. Good traction, great decisions.</p>
-    <p class="review">★★★★★ "Survived a blizzard. Respect." – Danny B.</p>
-    <a href="https://amzn.to/4ec6pml" target="_blank">We Recommend This One</a>
+  <div class="sidebar">
+    <!-- Sidebar content -->
   </div>
 
-  <div class="gear-item">
-    <img src="https://m.media-amazon.com/images/I/51U+murEPeqL._AC_SL1000_.jpg" alt="MRE">
-    <h2>🥣 U.S. Military MREs</h2>
-    <p>Military rations. Shelf-stable. Eat like a grunt when the grid’s down.</p>
-    <p class="review">★★★★★ "Tastes like sadness but keeps you alive." – Greg H.</p>
-    <a href="https://amzn.to/3HRQ0HS" target="_blank">We Recommend This One</a>
+  <div class="main-content">
+    <div class="countdown">
+      ⏳ Limited Stock! Next restock in: <span id="timer">05:00</span>
+    </div>
+
+    <div class="gear-grid">
+      <!-- Gear items -->
+    </div>
+
+    <div class="blog">
+      <!-- Blog content -->
+    </div>
   </div>
 
-  <div class="ad-placeholder">[ AdSense Slot – 300x600 ]</div>
-</div>
+  <script>
+    let timeLeft = 300;
+    const timerEl = document.getElementById('timer');
+    setInterval(() => {
+      if (timeLeft <= 0) return;
+      timeLeft--;
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      const seconds = String(timeLeft % 60).padStart(2, '0');
+      timerEl.textContent = `${minutes}:${seconds}`;
+    }, 1000);
 
-<div class="main-content">
-  <div class="countdown">
-    ⏳ Limited Stock! Next restock in: <span id="timer">05:00</span>
-  </div>
-
-  <div class="gear-grid">
-    <!-- GEAR ITEMS -->
-    <!-- Same as before... -->
-  </div>
-
-  <div class="blog">
-    <!-- BLOG CONTENT -->
-  </div>
-</div>
-
-<script>
-  let timeLeft = 300;
-  const timerEl = document.getElementById('timer');
-  setInterval(() => {
-    if (timeLeft <= 0) return;
-    timeLeft--;
-    const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
-    const seconds = String(timeLeft % 60).padStart(2, '0');
-    timerEl.textContent = `${minutes}:${seconds}`;
-  }, 1000);
-
-  function playSound() {
-    document.getElementById("enterSound").play().catch(() => {});
-  }
-</script>
+    function playSound() {
+      document.getElementById("enterSound").play().catch(() => {});
+    }
+  </script>
 </body>
 </html>
