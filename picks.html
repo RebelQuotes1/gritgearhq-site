@@ -73,8 +73,12 @@
       border-radius: 12px;
       padding: 20px;
       width: 300px;
-      box-shadow: 0 0 15px #000;
       text-align: center;
+      animation: pulseGlow 2.5s infinite;
+      box-shadow:
+        0 0 10px #000,
+        0 0 25px rgba(0, 255, 0, 0.3),
+        0 0 50px rgba(0, 255, 0, 0.15);
     }
     .gear-item img {
       width: 100%;
@@ -114,6 +118,8 @@
       background-color: #181818;
       color: #ccc;
       font-size: 1.15em;
+      box-shadow: none;
+      animation: none;
     }
     .countdown {
       font-size: 1.5em;
@@ -124,35 +130,26 @@
       padding: 10px;
       font-weight: bold;
     }
-    .blog {
-  animation: pulseGlow 2.5s infinite;
-  box-shadow:
-    0 0 10px #000,
-    0 0 25px rgba(0, 255, 0, 0.3),
-    0 0 50px rgba(0, 255, 0, 0.15);
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow:
-      0 0 10px #000,
-      0 0 25px rgba(0, 255, 0, 0.3),
-      0 0 50px rgba(0, 255, 0, 0.15);
-  }
-  50% {
-    box-shadow:
-      0 0 15px #000,
-      0 0 35px rgba(0, 255, 0, 0.45),
-      0 0 65px rgba(0, 255, 0, 0.3);
-  }
-  100% {
-    box-shadow:
-      0 0 10px #000,
-      0 0 25px rgba(0, 255, 0, 0.3),
-      0 0 50px rgba(0, 255, 0, 0.15);
-  }
-}
-
+    @keyframes pulseGlow {
+      0% {
+        box-shadow:
+          0 0 10px #000,
+          0 0 25px rgba(0, 255, 0, 0.3),
+          0 0 50px rgba(0, 255, 0, 0.15);
+      }
+      50% {
+        box-shadow:
+          0 0 15px #000,
+          0 0 35px rgba(0, 255, 0, 0.45),
+          0 0 65px rgba(0, 255, 0, 0.3);
+      }
+      100% {
+        box-shadow:
+          0 0 10px #000,
+          0 0 25px rgba(0, 255, 0, 0.3),
+          0 0 50px rgba(0, 255, 0, 0.15);
+      }
+    }
   </style>
 </head>
 <body onload="playSound()">
