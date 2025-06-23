@@ -2,61 +2,229 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Grit Gear HQ – Favorite Picks</title>
+  <title>Grit Gear HQ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Grit Gear HQ - Field-tested survival gear, cold weather picks, and real-world bushcraft stories.">
+  <meta name="keywords" content="survival gear, bug out bag, bushcraft, cold weather gear, Grit Gear HQ">
+  <style>
+    body {
+      background: url('https://www.transparenttextures.com/patterns/asfalt-light.png') repeat #111;
+      font-family: Arial, sans-serif;
+      color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    header {
+      background: url('https://i.imgur.com/1DkOb5I.jpg') center/cover no-repeat;
+      color: #ffa500;
+      padding: 60px 20px 40px;
+      text-align: center;
+      font-size: 2.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px #000;
+      text-shadow: 3px 3px 4px #000;
+    }
+
+    .sidebar {
+      width: 320px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      box-shadow: 3px 0 10px #000;
+      flex-shrink: 0;
+    }
+
+    .sidebar h2 {
+      color: #ffa500;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .ad-placeholder {
+      width: 100%;
+      height: 600px;
+      background: linear-gradient(to bottom right, #333, #222);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 1em;
+      border-radius: 8px;
+      box-shadow: inset 0 0 12px #000;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      min-width: 0;
+    }
+
+    .gear-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .gear-item {
+      background: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 15px #000;
+      text-align: center;
+    }
+
+    .gear-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .gear-item h2 {
+      color: #ffa500;
+      font-size: 1.3em;
+      margin: 15px 0 10px;
+      text-shadow: 1px 1px #000;
+    }
+
+    .gear-item p {
+      margin: 10px 0;
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    .gear-item a {
+      display: inline-block;
+      background: #ffa500;
+      color: #111;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .gear-item a:hover {
+      background: #ff8c00;
+    }
+
+    .review {
+      color: #ccc;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .lead-magnet, .blog {
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      padding: 20px;
+      background-color: #181818;
+      color: #bbb;
+      font-size: 1.2em;
+      line-height: 1.8;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #000;
+    }
+
+    .countdown {
+      font-size: 1.5em;
+      text-align: center;
+      margin: 20px 0;
+      color: #ffa500;
+      background: #000;
+      padding: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
+  <audio id="enterSound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-level-completed-2059.mp3" autoplay></audio>
 
-  <div class="header">
-    <img src="grit_gear_logo.png" alt="Grit Gear HQ Logo" class="logo">
-    <h1>Grit Gear HQ</h1>
+  <div class="sidebar">
+    <h2>Gear We Put Our Reputation Behind</h2>
+
+    <div class="gear-item">
+      <img src="71-zrk9kKTL._AC_SY625_.jpg" alt="Snow Boots">
+      <h2>🥾 Snow Boots</h2>
+      <p>Winterproof and built for abuse. Good traction, great decisions.</p>
+      <p class="review">★★★★★ "Survived a blizzard. Respect." – Danny B.</p>
+      <a href="https://amzn.to/4ec6pml" target="_blank">We Recommend This One</a>
+    </div>
+
+    <div class="gear-item">
+      <img src="51+murEPeqL._SX300_SY300_.jpg" alt="MRE">
+      <h2>🥣 U.S. Military MREs</h2>
+      <p>Military rations. Shelf-stable. Eat like a grunt when the grid’s down.</p>
+      <p class="review">★★★★★ "Tastes like sadness but keeps you alive." – Greg H.</p>
+      <a href="https://amzn.to/3HRQ0HS" target="_blank">We Recommend This One</a>
+    </div>
+
+    <div class="ad-placeholder">[ AdSense Slot – 300x600 ]</div>
   </div>
 
-  <div class="sub-banner">
-    Hard-Earned Wisdom from the Wasteland
-  </div>
+  <div class="main-content">
+    <header>🔥 Grit Gear HQ Picks</header>
 
-  <div class="content-wrapper">
-
-    <div class="sidebar">
-      <h3>🔥 Grit Gear’s Favorite Picks</h3>
-      <div class="ad-placeholder">
-        [AdSense Slot – 300x600]
-      </div>
+    <div class="countdown">
+      ⏳ Limited Stock! Next restock in: <span id="timer">05:00</span>
     </div>
 
     <div class="gear-grid">
-
-      <!-- Gear Item 1 -->
       <div class="gear-item">
-        <img src="mre.jpg" alt="U.S. Military MREs">
-        <h4>🥫 U.S. Military MREs</h4>
-        <p>Military rations. Eat like a grunt when the grid’s down.</p>
-        <p class="review">★★★★★ “Tastes like sadness but keeps you alive.” – Greg H.</p>
-        <a href="https://amzn.to/3VGrY5i?tag=gritgearhq-20" target="_blank">We Recommend This One</a>
+        <img src="6182wZ073SL.__AC_SX300_SY300_QL70_FMwebp_.webp" alt="Camp Stove">
+        <h2>🔥 Camp Stove</h2>
+        <p>Compact, rugged, and burns hot. Packs small, performs big.</p>
+        <p class="review">★★★★★ "Flamethrower mode. 10/10." – Kyle R.</p>
+        <a href="https://amzn.to/405AjTN" target="_blank">We Recommend This One</a>
       </div>
 
-      <!-- Gear Item 2 -->
       <div class="gear-item">
-        <img src="snow_boots.jpg" alt="Snow Boots">
-        <h4>🥾 Snow Boots</h4>
-        <p>Waterproof. Built for abuse. Good traction, great decisions.</p>
-        <p class="review">★★★★★ “The warmth hug that the frozen tundra promised me.” – Jack R.</p>
-        <a href="https://amzn.to/3xYZboot?tag=gritgearhq-20" target="_blank">We Recommend This One</a>
+        <img src="51oKcS-K52L.__AC_SY300_SX300_QL70_FMwebp_.webp" alt="Sleeping Bag">
+        <h2>🛏️ StormLoft Sleeping Bag</h2>
+        <p>Ultralight, sub-zero rated, adventure-tested warmth.</p>
+        <p class="review">★★★★★ "A womb of goose feathers." – Toni M.</p>
+        <a href="https://amzn.to/44t00zZ" target="_blank">We Recommend This One</a>
       </div>
 
-      <!-- Add more gear items here as needed -->
+      <div class="gear-item">
+        <img src="51LH6CHrm8L._AC_SX466_.jpg" alt="Fire Kit">
+        <h2>🔥 Überleben Fire Kit</h2>
+        <p>Ferro rod. Scraper. Tinder. Reliable ignition when it counts.</p>
+        <p class="review">★★★★★ "Lights every time. Solid backup." – Eli V.</p>
+        <a href="https://amzn.to/4ndrwcd" target="_blank">We Recommend This One</a>
+      </div>
+    </div>
 
+    <div class="blog">
+      <h2>Latest from the Blog</h2>
+      <p><strong>Grit in the Cold:</strong> My Les Stroud moment at 21 was when I first saw “Survivorman.” Les Stroud came on screen—calm, deliberate, alone in the wild—and something inside me lit up. It wasn’t inspiration. It was a challenge. I thought, “If he can do it, so can I.”</p>
+      <p>So, naturally, I packed up the dumbest assortment of camping gear imaginable—gimmicky gadgets, canned food, an unrated sleeping bag—and trudged off alone into the snowy woods. The temperature was somewhere south of 20 below. I didn’t check. I was too busy romanticizing the misery. I had on blue jeans. Not snow pants. Not thermal layers. And steel-toe boots that would later try to claim a few of my toes.</p>
+      <p>I made it through that night by building a longfire nearly seven feet in length—just enough to match my body. I laid in my sleeping bag right beside it, stoking the flames between broken, shivering bouts of sleep. I kept the fire alive like my life depended on it—because it did.</p>
+      <p>By morning, my boots were scorched. My hoodie smelled like smoke. I was alive. And something inside me was harder, stronger, wiser.</p>
+      <p><strong>Lesson Learned:</strong> Nature doesn’t negotiate. It exposes your weakness and respects your grit. Don’t rely on fantasy. Rely on fire. On will. On skill.</p>
+      <p><strong>Shoutout:</strong> Les Stroud—true godfather of bushcraft. You lit the spark, brother. I kept it burning.</p>
     </div>
   </div>
 
-  <div class="blog">
-    <h2>🔥 My Les Stroud Moment</h2>
-    <p>When I was 21, I watched *Survivorman* and thought: “If he can do it, so can I.” So I marched into the freezing woods alone, in steel-toe boots and jeans, dragging a pile of random gear. Romanticized misery turned into survival real quick.</p>
-    <p>I slept by a 7-foot longfire, boots off, feet wrapped in a hoodie using the old buddy-system—foot to foot for warmth. My boots got so close to the flames they were scorched by morning. I put out the coals, slipped on the crispy toes, and hiked out burned but proud.</p>
-    <p>Lesson: Never underestimate nature. Or your own grit. And shoutout to Les Stroud—the godfather of bushcraft—for lighting the fire inside me long before I lit that one in the woods.</p>
-  </div>
-
+  <script>
+    let timeLeft = 300;
+    const timerEl = document.getElementById('timer');
+    setInterval(() => {
+      if (timeLeft <= 0) return;
+      timeLeft--;
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      const seconds = String(timeLeft % 60).padStart(2, '0');
+      timerEl.textContent = `${minutes}:${seconds}`;
+    }, 1000);
+  </script>
 </body>
 </html>
