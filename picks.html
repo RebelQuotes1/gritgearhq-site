@@ -206,6 +206,72 @@
   }
 </style>
 
+<style>
+  .gear-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px 10px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .gear-item {
+    background: #1c1c1c;
+    border-radius: 12px;
+    padding: 20px;
+    width: 23%;
+    min-width: 250px;
+    box-shadow: 0 0 15px #000;
+    text-align: center;
+    flex-grow: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .gear-item:hover {
+    transform: scale(1.03);
+  }
+
+  .gear-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .gear-item h2 {
+    color: #ffa500;
+    font-size: 1.1em;
+    margin: 10px 0;
+  }
+
+  .gear-item p {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+  }
+
+  .gear-item a {
+    display: inline-block;
+    background: #ffa500;
+    color: #111;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+
+  .gear-item a:hover {
+    background: #ff8c00;
+  }
+
+  @media screen and (max-width: 768px) {
+    .gear-item {
+      width: 100%;
+    }
+  }
+</style>
+
 <div class="gear-grid">
   <div class="gear-item">
     <img src="https://m.media-amazon.com/images/I/81PWGdwvJaL._AC_SX300_SY300_QL70_FMwebp_.webp" alt="Water Purification Tabs">
@@ -223,15 +289,15 @@
 
   <div class="gear-item">
     <img src="https://m.media-amazon.com/images/I/511uhGf0BhL._SX522_.jpg" alt="Survival Filter Bottle">
-    <h2>🫗 MRE Survival Rations</h2>
-    <p>High-cal, long-shelf meals—practical, gritty.</p>
+    <h2>🫗 Survival Filter Bottle</h2>
+    <p>Turn any stream or puddle into safe drinking water.</p>
     <a href="https://amzn.to/3TEWqMW" target="_blank">We Recommend This One</a>
   </div>
 
   <div class="gear-item">
-    <img src="https://m.media-amazon.com/images/I/61K%2BMrrNb4L._AC_SX679_.jpg" alt="Tactical Gloves">
-    <h2>🧤 Tactical Gloves</h2>
-    <p>Grip, protection, precision—hand armor for the field.</p>
+    <img src="https://m.media-amazon.com/images/I/61K%2BMrrNb4L._AC_SX679_.jpg" alt="Tactical Knife">
+    <h2>🗡 Tactical Knife</h2>
+    <p>Sturdy, compact, and always ready for real work.</p>
     <a href="https://amzn.to/3IcKPCc" target="_blank">We Recommend This One</a>
   </div>
 </div>
