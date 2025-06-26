@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Grit Gear HQ – Picks</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      font-family: monospace;
+      color: #ffa500;
+    }
+    header, nav {
+      background-color: #222;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #ffa500;
+    }
+    nav a {
+      color: #ffa500;
+      margin: 0 12px;
+      text-decoration: none;
+    }
+    .container {
+      display: flex;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-right: 1px solid #333;
+      color: #ffdead;
+    }
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none !important;
+      }
+      .main-content {
+        width: 100% !important;
+        padding: 10px !important;
+        box-sizing: border-box;
+      }
+    }
+    .book-entry {
+      background:#222; 
+      padding:10px; 
+      margin-bottom:15px; 
+      border-radius:8px; 
+      box-shadow:0 0 6px #000; 
+      text-align:center;
+    }
+    .book-entry img {
+      width:80px;
+      border-radius:4px;
+    }
+    .book-entry p {
+      color:#ccc;
+      font-size:12px;
+      margin:5px 0;
+    }
+    .book-entry .stars {
+      color:#4caf50;
+      font-size:12px;
+    }
+    .book-entry .urgency {
+      color:#ff9800;
+      font-size:11px;
+    }
+    .book-entry a {
+      color:#ffa500;
+      font-weight:bold;
+      text-decoration:none;
+      display:block;
+      margin-top:5px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div><a href="index.html" style="color: #ffa500;">⟵ Return to Home</a></div>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="blog.html">Blog</a>
+  <a href="store.html">Store</a>
+  <a href="grit-test.html">Grit Test</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<div class="container">
+  <aside class="sidebar">
+    <p style="color:#ffa500; font-weight:bold;">“Tough times don’t last. But tough bastards do.”</p>
+    <p style="color:#aaa;">“You won’t rise until you bleed.”</p>
+
+    <div class="book-strip" style="margin-top:25px;">
+      <div class="book-entry">
+        <img src="images/no-grid-survival.jpg" alt="No Grid Survival">
+        <p class="stars">★★★★★ (741 reviews)</p>
+        <p class="urgency">Only 4 left in stock!</p>
+        <a href="#lesStroudFull">View Story</a>
+      </div>
+      <div class="book-entry">
+        <img src="images/bug-in-bug-out.jpg" alt="Bug In Bug Out">
+        <p class="stars">★★★★★ (508 reviews)</p>
+        <p class="urgency">Trending today</p>
+        <a href="#lesStroudFull">View Story</a>
+      </div>
+      <div class="book-entry">
+        <img src="images/thought-crimes.jpg" alt="Thought Crimes">
+        <p class="stars">★★★★★ (1,092 reviews)</p>
+        <p class="urgency">Popular pick</p>
+        <a href="#lesStroudFull">View Story</a>
+      </div>
+      <div class="book-entry">
+        <img src="images/amish-manual.jpg" alt="Amish Survival Manual">
+        <p class="stars">★★★★★ (412 reviews)</p>
+        <p class="urgency">Low quantity alert</p>
+        <a href="#lesStroudFull">View Story</a>
+      </div>
+      <div class="book-entry">
+        <img src="images/foragers-guide.jpg" alt="Forager's Guide">
+        <p class="stars">★★★★★ (819 reviews)</p>
+        <p class="urgency">Bestseller</p>
+        <a href="#lesStroudFull">View Story</a>
+      </div>
+      <div class="book-entry">
+        <img src="images/herbalist-bible.jpg" alt="Herbalist Bible">
+        <p class="stars">★★★★★ (652 reviews)</p>
+        <p class="urgency">Staff favorite</p>
+        <a href="#lesStroudFull">View Story</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="section-title" id="lesStroudFull">🔥 Les Stroud Survival Story</div>
+    <div style="background:linear-gradient(#121212, #1a1a1a); color:#f5f5f5; padding:30px; border-radius:10px; box-shadow:0 0 10px #000;">
+      <h2 style="color:#ffa500;">If He Can Do It, So Can I</h2>
+      <p>I was 21 when I first saw <strong>Les Stroud</strong> — calm, deliberate, alone in the wild — and something in me lit up. It wasn’t inspiration. It was a challenge...</p>
+      <div id="lesStroudMore" style="display:none;">
+        <p>So I packed up the dumbest assortment of camping gear imaginable — gimmicky gadgets, canned food, an unrated sleeping bag...</p>
+        <p>That longfire was the only thing that kept me alive that night. And Les Stroud — his voice, his pacing, his calm in the storm — had trained me without knowing it.</p>
+      </div>
+      <button onclick="document.getElementById('lesStroudMore').style.display='block'; this.style.display='none';"
+              style="margin-top:20px; background:#ffa500; color:#000; font-weight:bold; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+        Read More
+      </button>
+    </div>
+  </main>
+</div>
+</body>
+</html>
