@@ -1,133 +1,134 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grit Gear HQ</title>
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- ✅ Font and Style -->
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-
+  <title>Grit Gear HQ – Survival Picks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      background: #111;
-      color: #eee;
-      font-family: 'Special Elite', monospace;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      background-color: #111;
+      font-family: monospace;
+      color: #ffa500;
     }
-
-    .gear-item {
-      background: #111;
-      padding: 15px;
+    header {
+      background: #222;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-bottom: 2px solid #333;
+    }
+    header a {
+      color: #ffa500;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .main-container {
+      display: flex;
+    }
+    aside {
+      width: 200px;
+      background: #1a1a1a;
+      padding: 12px;
+      border-right: 2px solid #333;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    aside img {
+      width: 100px;
+      margin-bottom: 6px;
+      border-radius: 6px;
+    }
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+    .blog-post {
+      background: #1a1a1a;
+      padding: 20px;
       border-radius: 10px;
-      width: 280px;
-      box-shadow: 0 0 12px #000;
-      text-align: center;
-      animation: pulseGlow 2.5s infinite;
+      box-shadow: 0 0 10px #000;
+      color: #f5f5f5;
     }
-
-    @keyframes pulseGlow {
-      0% {
-        box-shadow:
-          0 0 10px #000,
-          0 0 25px rgba(0, 255, 0, 0.3),
-          0 0 50px rgba(0, 255, 0, 0.15);
-      }
-      50% {
-        box-shadow:
-          0 0 15px #000,
-          0 0 35px rgba(0, 255, 0, 0.45),
-          0 0 65px rgba(0, 255, 0, 0.3);
-      }
-      100% {
-        box-shadow:
-          0 0 10px #000,
-          0 0 25px rgba(0, 255, 0, 0.3),
-          0 0 50px rgba(0, 255, 0, 0.15);
-      }
+    .cta {
+      display: inline-block;
+      margin-top: 20px;
+      background: #ffa500;
+      color: #000;
+      font-weight: bold;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .gear-bar {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 20px;
+      background: #1a1a1a;
+      border-bottom: 2px solid #333;
+    }
+    .gear-bar article {
+      min-width: 150px;
+      background: #111;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .gear-bar img {
+      width: 100%;
+      max-width: 120px;
+      height: auto;
+      border-radius: 6px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <a href="index.html">🏠 Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="store.html">Store</a>
+    <a href="grit-test.html">Grit Test</a>
+    <a href="contact.html">Contact</a>
+  </header>
 
-  <!-- 🔥 Grit Gear HQ Logo Header -->
-  <a href="blog.html" style="display:block; text-align:center; background:#000; padding:40px 0;">
-    <img src="grit_gear_logo.png" alt="Grit Gear HQ Logo" style="
-      max-width: 400px;
-      width: 90%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 25px #000;
-      filter: brightness(0.8);
-      transition: 0.3s ease all;
-    " onmouseover="this.style.filter='brightness(1)'" onmouseout="this.style.filter='brightness(0.8)'">
-  </a>
+  <section class="gear-bar">
+    <article><img src="knife.jpg" alt="Knife"><p>S&W Knife<br><a href="https://amzn.to/4kciQ3a?tag=gritgearhq-20">Buy Now</a></p></article>
+    <article><img src="boots.jpg" alt="Boots"><p>Combat Boots<br><a href="https://amzn.to/3ZPOT1x?tag=gritgearhq-20">Buy Now</a></p></article>
+    <article><img src="stove.jpg" alt="Stove"><p>Fire-Maple Stove<br><a href="https://amzn.to/4nmwTWp?tag=gritgearhq-20">Buy Now</a></p></article>
+    <article><img src="food.jpg" alt="Food"><p>Biscuits MRE<br><a href="https://amzn.to/4nm3xYn?tag=gritgearhq-20">Buy Now</a></p></article>
+    <article><img src="tent.jpg" alt="Tent"><p>Survival Tent<br><a href="https://amzn.to/44khKMB?tag=gritgearhq-20">Buy Now</a></p></article>
+    <article><img src="solar.jpg" alt="Solar"><p>Solar Kit<br><a href="https://amzn.to/3FWntQU?tag=gritgearhq-20">Buy Now</a></p></article>
+  </section>
 
-  <!-- ✅ Navigation Buttons -->
-  <div class="nav-buttons" style="
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px auto;">
-    <a href="manifesto.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">📜 Manifesto</a>
-    <a href="picks.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">🍲 Picks</a>
-    <a href="self-defense.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">🛡️ Self-Defense</a>
-    <a href="privacy.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">🔒 Privacy Policy</a>
-    <a href="contact.html" class="nav-button" style="background: #ff6600; color: #111; padding: 14px 24px; font-weight: bold; font-size: 1.1rem; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff660088; transition: transform 0.2s ease;">📫 Contact</a>
-  </div>
+  <div class="main-container">
+    <aside>
+      <h3>📚 Books</h3>
+      <a href="https://www.amazon.com/dp/0061733199?tag=gritgearhq-20"><img src="book1.jpg" alt="98.6 Degrees"></a>
+      <a href="https://www.amazon.com/dp/0061992860?tag=gritgearhq-20"><img src="book2.jpg" alt="Deep Survival"></a>
+      <a href="https://www.amazon.com/dp/1642505366?tag=gritgearhq-20"><img src="book3.jpg" alt="The Unthinkable"></a>
+      <a href="https://www.amazon.com/dp/0312347294?tag=gritgearhq-20"><img src="book4.jpg" alt="When All Hell Breaks Loose"></a>
+      <a href="https://www.amazon.com/dp/0312361644?tag=gritgearhq-20"><img src="book5.jpg" alt="Emergency"></a>
+      <a href="https://www.amazon.com/dp/0399166158?tag=gritgearhq-20"><img src="book6.jpg" alt="Disaster-Ready Home"></a>
+    </aside>
 
-  <!-- 💬 Fake Grit Gear Reviews -->
-  <section style="background:#111; padding: 40px 20px; border-top: 2px solid #ffa500;">
-    <h2 style="color:#ffa500; font-size:2rem; font-family:'Special Elite', monospace; text-shadow:1px 1px 6px #000;">
-      ⭐ What Gritheads Are Saying
-    </h2>
-    <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:20px;">
-
-      <div class="gear-item">
-        <p style="color:#7CFC00;">"Survived the blackout in style. My wife thought I was crazy until the lights went out."</p>
-        <p style="color:#777; font-style:italic;">– Buck M., Missouri</p>
+    <div class="main">
+      <div class="blog-post">
+        <h2>🔥 Les Stroud Survival Story</h2>
+        <h3>If He Can Do It, So Can I</h3>
+        <p>I was 21 when I first saw Les Stroud — calm, deliberate, alone in the wild — and something in me lit up. It wasn’t inspiration. It was a challenge.</p>
+        <p>So, naturally, I packed up the dumbest assortment of camping gear imaginable — gimmicky gadgets, canned food, an unrated sleeping bag — and trudged off alone into the snowy woods.</p>
+        <p>The temperature was somewhere south of 20 below. I didn’t check. I was too busy romanticizing the misery. I had on blue jeans. Not snow pants. Not thermal layers. And steel-toe boots that would later try to claim a few of my toes.</p>
+        <p>My brilliant plan also included bringing along a small bottle of alcohol. I figured it’d help me sleep or maybe boost morale. What it did instead was drop my body temperature even lower while giving me the illusion that I wasn’t a first-class nickel rookie.</p>
+        <p>By the time I started hiking, the snow had gotten deeper, and my boots were soaked through. I was miles from anything. No phone. No backup plan. Just frozen beans, dumb pride, and one very bad idea about to become a memory I'd carry for life.</p>
+        <p>I ended up digging into a snowbank and lighting what I now call the “Longfire” — a trench fire about six feet long that saved my dumb ass from frostbite or worse.</p>
+        <p>That night, I didn’t feel brave. I didn’t feel strong. But I proved something to myself.</p>
+        <p>And that’s the thing about grit. It doesn’t always look like the movies. Sometimes it looks like shivering in the dark, alone, embarrassed, and alive.</p>
+        <a class="cta" href="gear-up-like-les.html">🔥 Gear Up Like Les</a>
       </div>
-
-      <div class="gear-item">
-        <p style="color:#7CFC00;">"Bought the gear for the zombie apocalypse. Ended up using it during a storm. 10/10."</p>
-        <p style="color:#777; font-style:italic;">– Tanya R., Texas</p>
-      </div>
-
-      <div class="gear-item">
-        <p style="color:#7CFC00;">"This site made me feel ready to bug out... or barbecue. Either way, I win."</p>
-        <p style="color:#777; font-style:italic;">– Rico D., Florida</p>
-      </div>
-
     </div>
-  </section>
-
-  <!-- 📨 Raffle Email Grab -->
-  <section style="margin-top:60px; padding:30px; background:#1a1a1a; border:2px dashed #ff6600; border-radius:10px;">
-    <h2 style="color:#ffa500;">🎁 Win a Bug-Out Mystery Box</h2>
-    <p style="margin:10px 0;">Enter your email for a chance to win exclusive survival gear!</p>
-    <form style="margin-top:20px;">
-      <input type="email" placeholder="Your email" required 
-             style="padding:10px; font-size:1rem; width:250px; border-radius:6px; border:none;"/>
-      <button type="submit"
-              style="margin-left:10px; padding:10px 20px; background:#ff6600; color:#000; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
-        Enter Now
-      </button>
-    </form>
-    <p style="font-size:0.8rem; color:#777; margin-top:10px;">No spam. We hate it too.</p>
-  </section>
-
-  <!-- ✅ Footer -->
-  <div class="footer" style="margin-top:40px; padding:20px; font-size:0.9rem; color:#888;">
-    © 2024 Serpico | Built with grit. | 
-    <a href="terms.html" style="color:#ffa500;">Terms</a> | 
-    <a href="affiliate-disclosure.html" style="color:#ffa500;">Affiliate Disclosure</a>
   </div>
-
 </body>
 </html>
