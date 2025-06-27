@@ -1,0 +1,67 @@
+<div style="display: flex; flex-direction: column; gap: 20px; padding: 10px;">
+  <!-- Book 1 -->
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="sidebar_realistic_covers/grid-survival.jpg" alt="Grid Survival" style="width: 70px; border: 2px solid #333;">
+    <div>
+      <strong style="color:#ffa500;">Grid Survival</strong><br>
+      ★★★★★ (741 reviews)<br>
+      <em>Only 4 left!</em><br>
+      <a href="https://www.amazon.com/dp/B0948K6H12?tag=gritgearhq-20" target="_blank" style="color:#00f;">Check It Out</a>
+    </div>
+  </div>
+
+  <!-- Book 2 -->
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="sidebar_realistic_covers/bug-in-bug-out.jpg" alt="Bug In Bug Out" style="width: 70px; border: 2px solid #333;">
+    <div>
+      <strong style="color:#ffa500;">Bug In Bug Out</strong><br>
+      ★★★★☆ (588 reviews)<br>
+      <em>Trending today</em><br>
+      <a href="https://www.amazon.com/dp/B08R6FQZ9X?tag=gritgearhq-20" target="_blank" style="color:#00f;">Grab Your Copy</a>
+    </div>
+  </div>
+
+  <!-- Book 3 -->
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="sidebar_realistic_covers/thought-crimes.jpg" alt="Thought Crimes" style="width: 70px; border: 2px solid #333;">
+    <div>
+      <strong style="color:#ffa500;">Thought Crimes</strong><br>
+      ★★★★☆ (1,892 reviews)<br>
+      <em>Popular pick</em><br>
+      <a href="https://www.amazon.com/dp/B08CXYQJ4J?tag=gritgearhq-20" target="_blank" style="color:#00f;">See Why</a>
+    </div>
+  </div>
+
+  <!-- Book 4 -->
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="sidebar_realistic_covers/amish-manual.jpg" alt="Amish Survival Manual" style="width: 70px; border: 2px solid #333;">
+    <div>
+      <strong style="color:#ffa500;">Amish Survival Manual</strong><br>
+      ★★★★☆ (412 reviews)<br>
+      <em>Low quantity alert</em><br>
+      <a href="https://www.amazon.com/dp/B08WMPW1GZ?tag=gritgearhq-20" target="_blank" style="color:#00f;">Browse Manual</a>
+    </div>
+  </div>
+
+  <!-- Book 5 -->
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="sidebar_realistic_covers/foragers-guide.jpg" alt="Forager’s Guide" style="width: 70px; border: 2px solid #333;">
+    <div>
+      <strong style="color:#ffa500;">Forager’s Guide</strong><br>
+      ★★★★★ (819 reviews)<br>
+      <em>Bestseller</em><br>
+      <a href="https://www.amazon.com/dp/B0948K6H12?tag=gritgearhq-20" target="_blank" style="color:#00f;">Discover Now</a>
+    </div>
+  </div>
+
+  <!-- Book 6 -->
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="sidebar_realistic_covers/herbalist-bible.jpg" alt="Herbalist Bible" style="width: 70px; border: 2px solid #333;">
+    <div>
+      <strong style="color:#ffa500;">Herbalist Bible</strong><br>
+      ★★★★☆ (652 reviews)<br>
+      <em>Staff favorite</em><br>
+      <a href="https://www.amazon.com/dp/B09D8XQJZC?tag=gritgearhq-20" target="_blank" style="color:#00f;">Read More</a>
+    </div>
+  </div>
+</div>
