@@ -94,49 +94,241 @@
     <a href="contact.html">Contact</a>
   </header>
 
- <!-- ✅ TOP GEAR BAR WITH WORKING AFFILIATE LINKS AND FIXED IMAGES -->
-<div style="display: flex; overflow-x: auto; gap: 16px; padding: 15px; background: #1a1a1a; border-bottom: 2px solid #333; font-family: monospace;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grit Gear HQ – Survival Picks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      font-family: monospace;
+      color: #ffa500;
+    }
 
-  <!-- LifeStraw -->
-  <div style="min-width: 160px; background: #222; border: 1px solid #333; border-radius: 8px; padding: 10px; text-align: center; color: #ffa500; box-shadow: 0 0 10px #000;">
-    <img src="images/lifestraw.jpg" alt="LifeStraw Water Filter" style="width: 100%; border-radius: 4px; margin-bottom: 6px;">
-    <strong>LifeStraw Filter</strong><br>
-    ★★★★★<br>
-    <a href="https://www.amazon.com/dp/B006QF3TW4?tag=gritgearhq-20" target="_blank" style="color:#00bfff;">Check Price</a>
+    header {
+      background: #222;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-bottom: 2px solid #333;
+    }
+
+    header a {
+      color: #ffa500;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .top-gear-row {
+      display: flex;
+      overflow-x: auto;
+      padding: 20px;
+      background: #1a1a1a;
+      border-bottom: 2px solid #333;
+    }
+
+    .gear-card {
+      flex: 0 0 auto;
+      width: 180px;
+      margin-right: 20px;
+      background: #222;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .gear-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .gear-card a {
+      display: block;
+      margin-top: 10px;
+      color: #00bfff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .main-container {
+      display: flex;
+    }
+
+    .book-sidebar {
+      width: 280px;
+      padding: 20px;
+      background: #111;
+      border-right: 2px solid #333;
+    }
+
+    .book-entry {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .book-entry img {
+      width: 80px;
+      border: 2px solid #333;
+    }
+
+    .book-entry a {
+      color: #00bfff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .main-blog {
+      flex: 1;
+      padding: 40px;
+      color: #eee;
+    }
+
+    .blog-box {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .cta-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: orange;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/">🔙 Return to Home</a>
+  <a href="/self-defense.html">Store</a>
+  <a href="/manifesto.html">Blog</a>
+  <a href="/grittest.html">Grit Test</a>
+  <a href="/contact.html">Contact</a>
+</header>
+
+<!-- 🔥 Top Gear Bar -->
+<div class="top-gear-row">
+  <div class="gear-card">
+    <img src="/images/lifestraw.jpg" alt="LifeStraw Water Filter">
+    <a href="https://www.amazon.com/dp/B006QF3TW4?tag=gritgearhq-20" target="_blank">LifeStraw</a>
+  </div>
+  <div class="gear-card">
+    <img src="/images/solo-stove.jpg" alt="Solo Stove Lite">
+    <a href="https://www.amazon.com/dp/B00XN8ZB5E?tag=gritgearhq-20" target="_blank">Solo Stove</a>
+  </div>
+  <div class="gear-card">
+    <img src="/images/ferro-kit.jpg" alt="Ferro Rod Fire Kit">
+    <a href="https://www.amazon.com/dp/B09QNG8YXM?tag=gritgearhq-20" target="_blank">Ferro Rod Kit</a>
+  </div>
+  <div class="gear-card">
+    <img src="/images/wool-socks.jpg" alt="Wool Socks">
+    <a href="https://www.amazon.com/dp/B07D1BD1JG?tag=gritgearhq-20" target="_blank">Wool Socks</a>
+  </div>
+  <div class="gear-card">
+    <img src="/images/snow-pants.jpg" alt="Snow Pants">
+    <a href="https://www.amazon.com/dp/B07NQ5NZSC?tag=gritgearhq-20" target="_blank">Snow Pants</a>
+  </div>
+</div>
+
+<div class="main-container">
+  <!-- 📚 Sidebar Book List -->
+  <div class="book-sidebar">
+    <div class="book-entry">
+      <img src="/sidebar_realistic_covers/grid-survival.jpg" alt="Grid Survival">
+      <div>
+        <strong>Grid Survival</strong><br>
+        ★★★★★ (741 reviews)<br>
+        <em style="color:red;">Only 4 left! ⏳</em><br>
+        <a href="https://www.amazon.com/dp/B0948K6H12?tag=gritgearhq-20" target="_blank">Check It Out</a>
+      </div>
+    </div>
+
+    <div class="book-entry">
+      <img src="/sidebar_realistic_covers/bug-in-bug-out.jpg" alt="Bug In Bug Out">
+      <div>
+        <strong>Bug In Bug Out</strong><br>
+        ★★★★☆ (588 reviews)<br>
+        <em>Trending today</em><br>
+        <a href="https://www.amazon.com/dp/B08R6FQZ9X?tag=gritgearhq-20" target="_blank">Grab Your Copy</a>
+      </div>
+    </div>
+
+    <div class="book-entry">
+      <img src="/sidebar_realistic_covers/thought-crimes.jpg" alt="Thought Crimes">
+      <div>
+        <strong>Thought Crimes</strong><br>
+        ★★★★☆ (1,892 reviews)<br>
+        <em>Popular pick</em><br>
+        <a href="https://www.amazon.com/dp/B08CXYQJ4J?tag=gritgearhq-20" target="_blank">See Why</a>
+      </div>
+    </div>
+
+    <div class="book-entry">
+      <img src="/sidebar_realistic_covers/amish-manual.jpg" alt="Amish Manual">
+      <div>
+        <strong>Amish Survival</strong><br>
+        ★★★★☆ (412 reviews)<br>
+        <em style="color:orange;">Low stock warning</em><br>
+        <a href="https://www.amazon.com/dp/B08WMPW1GZ?tag=gritgearhq-20" target="_blank">Browse Manual</a>
+      </div>
+    </div>
+
+    <div class="book-entry">
+      <img src="/sidebar_realistic_covers/foragers-guide.jpg" alt="Forager's Guide">
+      <div>
+        <strong>Forager's Guide</strong><br>
+        ★★★★★ (819 reviews)<br>
+        <em>Bestseller</em><br>
+        <a href="https://www.amazon.com/dp/B0948K6H12?tag=gritgearhq-20" target="_blank">Discover Now</a>
+      </div>
+    </div>
+
+    <div class="book-entry">
+      <img src="/sidebar_realistic_covers/herbalist-bible.jpg" alt="Herbalist Bible">
+      <div>
+        <strong>Herbalist Bible</strong><br>
+        ★★★★☆ (652 reviews)<br>
+        <em>Staff favorite</em><br>
+        <a href="https://www.amazon.com/dp/B09D8XQJZC?tag=gritgearhq-20" target="_blank">Read More</a>
+      </div>
+    </div>
   </div>
 
-  <!-- Solo Stove Lite -->
-  <div style="min-width: 160px; background: #222; border: 1px solid #333; border-radius: 8px; padding: 10px; text-align: center; color: #ffa500; box-shadow: 0 0 10px #000;">
-    <img src="images/solo-stove.jpg" alt="Solo Stove Lite" style="width: 100%; border-radius: 4px; margin-bottom: 6px;">
-    <strong>Solo Stove Lite</strong><br>
-    ★★★★☆<br>
-    <a href="https://www.amazon.com/dp/B00XN8ZB5E?tag=gritgearhq-20" target="_blank" style="color:#00bfff;">See Details</a>
+  <!-- 📝 Blog Main -->
+  <div class="main-blog">
+    <div class="blog-box">
+      <h2>🧭 Les Stroud Survival Story</h2>
+      <h3>If He Can Do It, So Can I</h3>
+      <p>
+        I was 21 when I first saw Les Stroud – calm, deliberate, alone in the wild – and something in me lit up. It wasn’t inspiration. It was a challenge.<br><br>
+        So, naturally, I packed up the dumbest assortment of camping gear imaginable – gimmicky gadgets, canned food, an unrated sleeping bag – and trudged off alone into the snowy woods.<br><br>
+        The temperature was somewhere south of 20 below. I didn’t check. I was too busy romanticizing the misery. I had on blue jeans. Not snow pants. Not thermal layers. And steel-toe boots that would later try to claim a few of my toes.<br><br>
+        My brilliant plan also included bringing along a small bottle of alcohol. I figured it’d help me sleep or maybe boost morale. What it did instead was drop my body temperature even lower while giving me the illusion that I wasn’t a first-class nickel rookie.<br><br>
+        By the time I started hiking, the snow had gotten deeper, and my boots were soaked through. I was miles from anything. No phone. No backup plan. Just frozen beans, dumb pride, and one very bad idea about to become a memory I’d carry for life.<br><br>
+        I ended up digging into a snowbank and lighting what I now call the “Longfire” – a trench fire about six feet long that saved my dumb ass from frostbite or worse.<br><br>
+        That night, I didn’t feel brave. I didn’t feel strong. But I proved something to myself.<br><br>
+        And that’s the thing about grit. It doesn’t always look like the movies. Sometimes it looks like shivering in the dark, alone, embarrassed, and alive.
+      </p>
+      <a href="/self-defense.html" class="cta-button">🛠 Gear Up Like Les</a>
+    </div>
   </div>
+</div>
 
-  <!-- Ferro Rod Fire Kit -->
-  <div style="min-width: 160px; background: #222; border: 1px solid #333; border-radius: 8px; padding: 10px; text-align: center; color: #ffa500; box-shadow: 0 0 10px #000;">
-    <img src="images/ferro-kit.jpg" alt="Ferro Rod Kit" style="width: 100%; border-radius: 4px; margin-bottom: 6px;">
-    <strong>Ferro Rod Kit</strong><br>
-    ★★★★☆<br>
-    <a href="https://www.amazon.com/dp/B09QNG8YXM?tag=gritgearhq-20" target="_blank" style="color:#00bfff;">Strike Fire</a>
-  </div>
-
-  <!-- Wool Thermal Socks -->
-  <div style="min-width: 160px; background: #222; border: 1px solid #333; border-radius: 8px; padding: 10px; text-align: center; color: #ffa500; box-shadow: 0 0 10px #000;">
-    <img src="images/wool-socks.jpg" alt="Wool Socks" style="width: 100%; border-radius: 4px; margin-bottom: 6px;">
-    <strong>Wool Thermal Socks</strong><br>
-    ★★★★★<br>
-    <a href="https://www.amazon.com/dp/B07D1BD1JG?tag=gritgearhq-20" target="_blank" style="color:#00bfff;">Buy Warm</a>
-  </div>
-
-  <!-- Tactical Snow Pants -->
-  <div style="min-width: 160px; background: #222; border: 1px solid #333; border-radius: 8px; padding: 10px; text-align: center; color: #ffa500; box-shadow: 0 0 10px #000;">
-    <img src="images/snow-pants.jpg" alt="Tactical Snow Pants" style="width: 100%; border-radius: 4px; margin-bottom: 6px;">
-    <strong>Snow Pants</strong><br>
-    ★★★★☆<br>
-    <a href="https://www.amazon.com/dp/B07NQ5NZSC?tag=gritgearhq-20" target="_blank" style="color:#00bfff;">Gear Up</a>
-  </div>
-
+</body>
+</html>
 
 </div>
 
