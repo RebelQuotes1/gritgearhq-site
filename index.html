@@ -1,134 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Grit Gear HQ – Survival Picks</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grit Gear HQ – Rough Gear for Rougher Times. Trusted by survivors nationwide. Survival gear, blog, grit test, and more.">
+  <meta name="keywords" content="survival gear, prepper gear, bug out, lifestraw, emergency gear, rugged equipment">
+  <meta name="author" content="Grit Gear HQ">
+  <title>Grit Gear HQ – Rough Gear for Rougher Times</title>
   <style>
     body {
       margin: 0;
-      background-color: #111;
-      font-family: monospace;
-      color: #ffa500;
-    }
-    header {
-      background: #222;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      border-bottom: 2px solid #333;
-    }
-    header a {
-      color: #ffa500;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .main-container {
-      display: flex;
-    }
-    aside {
-      width: 200px;
-      background: #1a1a1a;
-      padding: 12px;
-      border-right: 2px solid #333;
-      height: 100vh;
-      overflow-y: auto;
-    }
-    aside img {
-      width: 100px;
-      margin-bottom: 6px;
-      border-radius: 6px;
-    }
-    .main {
-      flex: 1;
-      padding: 20px;
-    }
-    .blog-post {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #000;
-      color: #f5f5f5;
-    }
-    .cta {
-      display: inline-block;
-      margin-top: 20px;
-      background: #ffa500;
-      color: #000;
-      font-weight: bold;
-      padding: 10px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    .gear-bar {
-      display: flex;
-      overflow-x: auto;
-      gap: 12px;
-      padding: 20px;
-      background: #1a1a1a;
-      border-bottom: 2px solid #333;
-    }
-    .gear-bar article {
-      min-width: 150px;
-      background: #111;
-      padding: 10px;
-      border-radius: 10px;
+      background: url('file_0000000014f461fdbd4189468d92b2b6%20(1).png') no-repeat center top;
+      background-size: cover;
+      font-family: sans-serif;
+      color: #f2f2f2;
       text-align: center;
     }
-    .gear-bar img {
-      width: 100%;
-      max-width: 120px;
-      height: auto;
-      border-radius: 6px;
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 160px;
+    }
+    .nav a {
+      background: #2d2d2d;
+      color: #ffa500;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #000;
+    }
+    .section {
+      max-width: 800px;
+      margin: 60px auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 100px;
+      color: #ffa500;
+    }
+    .button {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #ffa500;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 2px 2px 10px #000;
+    }
+    .featured, .blog, .grit {
+      margin-top: 30px;
+    }
+    .grit a {
+      color: #ffa500;
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="index.html">🏠 Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="store.html">Store</a>
-    <a href="grit-test.html">Grit Test</a>
-    <a href="contact.html">Contact</a>
-  </header>
+  <h1>GRIT GEAR HQ</h1>
+  <h2>Rough Gear for Rougher Times</h2>
+  <div class="nav">
+    <a href="/picks.html">Gear Store</a>
+    <a href="/blog.html">Survival Blog</a>
+    <a href="/grittest.html">Grit Test</a>
+    <a href="/raffle.html">Bug-Out Raffle</a>
+  </div>
 
-  <section class="gear-bar">
-    <article><img src="knife.jpg" alt="Knife"><p>S&W Knife<br><a href="https://amzn.to/4kciQ3a?tag=gritgearhq-20">Buy Now</a></p></article>
-    <article><img src="boots.jpg" alt="Boots"><p>Combat Boots<br><a href="https://amzn.to/3ZPOT1x?tag=gritgearhq-20">Buy Now</a></p></article>
-    <article><img src="stove.jpg" alt="Stove"><p>Fire-Maple Stove<br><a href="https://amzn.to/4nmwTWp?tag=gritgearhq-20">Buy Now</a></p></article>
-    <article><img src="food.jpg" alt="Food"><p>Biscuits MRE<br><a href="https://amzn.to/4nm3xYn?tag=gritgearhq-20">Buy Now</a></p></article>
-    <article><img src="tent.jpg" alt="Tent"><p>Survival Tent<br><a href="https://amzn.to/44khKMB?tag=gritgearhq-20">Buy Now</a></p></article>
-    <article><img src="solar.jpg" alt="Solar"><p>Solar Kit<br><a href="https://amzn.to/3FWntQU?tag=gritgearhq-20">Buy Now</a></p></article>
-  </section>
+  <div class="section">
+    <h3>WELCOME TO THE WASTELAND</h3>
+    <p>Preparedness isn’t paranoia. It’s insurance for when the world turns cold, quiet, and cruel. We don’t sell dreams. We equip the dangerous.</p>
+    <p><em>Tough times don’t care how you feel.</em></p>
+    <a class="button" href="/picks.html">Browse Field-Tested Gear</a>
+  </div>
 
-  <div class="main-container">
-    <aside>
-      <h3>📚 Books</h3>
-      <a href="https://www.amazon.com/dp/0061733199?tag=gritgearhq-20"><img src="book1.jpg" alt="98.6 Degrees"></a>
-      <a href="https://www.amazon.com/dp/0061992860?tag=gritgearhq-20"><img src="book2.jpg" alt="Deep Survival"></a>
-      <a href="https://www.amazon.com/dp/1642505366?tag=gritgearhq-20"><img src="book3.jpg" alt="The Unthinkable"></a>
-      <a href="https://www.amazon.com/dp/0312347294?tag=gritgearhq-20"><img src="book4.jpg" alt="When All Hell Breaks Loose"></a>
-      <a href="https://www.amazon.com/dp/0312361644?tag=gritgearhq-20"><img src="book5.jpg" alt="Emergency"></a>
-      <a href="https://www.amazon.com/dp/0399166158?tag=gritgearhq-20"><img src="book6.jpg" alt="Disaster-Ready Home"></a>
-    </aside>
+  <div class="section featured">
+    <h3>🛠️ Featured Pick: LifeStraw Water Filter</h3>
+    <p>Stay alive when the taps go dry. This ultralight filter removes 99.9999% of bacteria and weighs under 2 oz.<br>It’s in every Grit Gear bug-out bag for a reason.</p>
+    <a class="button" href="https://amzn.to/3VGrY5i?tag=gritgearhq-20" target="_blank">Buy on Amazon</a>
+  </div>
 
-    <div class="main">
-      <div class="blog-post">
-        <h2>🔥 Les Stroud Survival Story</h2>
-        <h3>If He Can Do It, So Can I</h3>
-        <p>I was 21 when I first saw Les Stroud — calm, deliberate, alone in the wild — and something in me lit up. It wasn’t inspiration. It was a challenge.</p>
-        <p>So, naturally, I packed up the dumbest assortment of camping gear imaginable — gimmicky gadgets, canned food, an unrated sleeping bag — and trudged off alone into the snowy woods.</p>
-        <p>The temperature was somewhere south of 20 below. I didn’t check. I was too busy romanticizing the misery. I had on blue jeans. Not snow pants. Not thermal layers. And steel-toe boots that would later try to claim a few of my toes.</p>
-        <p>My brilliant plan also included bringing along a small bottle of alcohol. I figured it’d help me sleep or maybe boost morale. What it did instead was drop my body temperature even lower while giving me the illusion that I wasn’t a first-class nickel rookie.</p>
-        <p>By the time I started hiking, the snow had gotten deeper, and my boots were soaked through. I was miles from anything. No phone. No backup plan. Just frozen beans, dumb pride, and one very bad idea about to become a memory I'd carry for life.</p>
-        <p>I ended up digging into a snowbank and lighting what I now call the “Longfire” — a trench fire about six feet long that saved my dumb ass from frostbite or worse.</p>
-        <p>That night, I didn’t feel brave. I didn’t feel strong. But I proved something to myself.</p>
-        <p>And that’s the thing about grit. It doesn’t always look like the movies. Sometimes it looks like shivering in the dark, alone, embarrassed, and alive.</p>
-        <a class="cta" href="gear-up-like-les.html">🔥 Gear Up Like Les</a>
-      </div>
-    </div>
+  <div class="section blog">
+    <h3>📚 Latest from the Blog</h3>
+    <p><strong>Grit in the Cold: My Les Stroud Moment at 21</strong><br>
+      A rookie mistake in -20 windchill taught me more than any survival show ever could. It nearly cost me my toes.</p>
+    <a class="button" href="/blog.html#lesstory">Read Full Story</a>
+  </div>
+
+  <div class="section grit">
+    <p>Think you’d survive the collapse? ➜ <a href="/grittest.html">Take the Grit Test</a></p>
   </div>
 </body>
 </html>
