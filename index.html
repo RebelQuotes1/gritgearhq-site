@@ -29,24 +29,50 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.7); /* dark overlay for contrast */
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
-      margin: 0;
       font-size: 2.8em;
       color: #ffa500;
       text-shadow: 2px 2px 4px #000;
-      position: relative;
-      z-index: 1;
     }
 
     header p {
       font-size: 1.2em;
-      margin-top: 10px;
       color: #ccc;
-      position: relative;
-      z-index: 1;
+      margin-top: 10px;
+    }
+
+    nav {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #f2f2f2;
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1px solid #ffa500;
+      border-radius: 5px;
+      background-color: rgba(255,165,0,0.1);
+      transition: 0.3s;
+      font-size: 1rem;
+      box-shadow: 0 0 10px #000;
+    }
+
+    nav a:hover {
+      background-color: #ffa500;
+      color: #000;
     }
   </style>
 </head>
@@ -55,8 +81,17 @@
     <h1>Grit Gear HQ</h1>
     <p>Rough Gear for Rougher Times</p>
   </header>
+
+  <nav>
+    <a href="#">Self Defense</a>
+    <a href="#">Grit Test</a>
+    <a href="#">Manifesto</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy</a>
+  </nav>
 </body>
 </html>
+
 
 
     nav {
