@@ -6,107 +6,109 @@
   <title>Grit Gear HQ – Rough Gear for Rougher Times</title>
 
   <style>
-    body {
-      margin: 0;
-      background: #0b0b0b;
-      font-family: 'Arial', sans-serif;
-      color: #f2f2f2;
-      text-align: center;
-    }
+  body {
+    margin: 0;
+    background: url('images/txtr.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    color: #f2f2f2;
+    text-align: center;
+  }
 
-    header {
-      background: url('images/txtr.jpg') no-repeat center center;
-      background-size: cover;
-      padding: 60px 20px 50px;
-      border-bottom: 2px solid #ffa500;
-      box-shadow: 0 5px 15px #000;
-      position: relative;
-    }
+  header {
+    background: url('images/txtr.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 60px 20px 50px;
+    border-bottom: 2px solid #ffa500;
+    box-shadow: 0 5px 15px #000;
+    position: relative;
+  }
 
-    header::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 0;
-    }
+  header::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+  }
 
-    header h1, header p, nav {
-      position: relative;
-      z-index: 1;
-    }
+  header h1, header p, nav {
+    position: relative;
+    z-index: 1;
+  }
 
-    header h1 {
-      font-size: 2.8em;
-      color: #ffa500;
-      text-shadow: 2px 2px 4px #000;
-      margin: 0;
-    }
+  header h1 {
+    font-size: 2.8em;
+    color: #ffa500;
+    text-shadow: 2px 2px 4px #000;
+    margin: 0;
+  }
 
-    header p {
-      font-size: 1.2em;
-      color: #ccc;
-      margin-top: 10px;
-    }
+  header p {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-top: 10px;
+  }
 
+  nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    border: 1px solid #ffa500;
+    border-radius: 5px;
+    background-color: rgba(255,165,0,0.1);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #000;
+  }
+
+  nav a:hover {
+    background-color: #ffa500;
+    color: #000;
+  }
+
+  @media (max-width: 600px) {
     nav {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
+      flex-direction: column;
+      gap: 10px;
     }
+  }
 
-    nav a {
-      color: #f2f2f2;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 16px;
-      border: 1px solid #ffa500;
-      border-radius: 5px;
-      background-color: rgba(255,165,0,0.1);
-      transition: background-color 0.3s, color 0.3s;
-      font-size: 1rem;
-      box-shadow: 0 0 10px #000;
-    }
+  .under-header {
+    background: url('images/lwrhdr.jpeg') no-repeat center center;
+    background-size: cover;
+    padding: 60px 20px;
+    position: relative;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
 
-    nav a:hover {
-      background-color: #ffa500;
-      color: #000;
-    }
+  .under-header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
+  .under-header > * {
+    position: relative;
+    z-index: 1;
+  }
+</style>
 
-    .under-header {
-      background: url('images/lwrhdr.jpeg') no-repeat center center;
-      background-size: cover;
-      padding: 60px 20px;
-      position: relative;
-      border-top: 2px solid #000;
-      border-bottom: 2px solid #000;
-    }
-
-    .under-header::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    .under-header > * {
-      position: relative;
-      z-index: 1;
-    }
-  </style>
 </head>
 
 <body>
