@@ -33,7 +33,7 @@
       z-index: 0;
     }
 
-    header h1, header p {
+    header h1, header p, nav {
       position: relative;
       z-index: 1;
     }
@@ -42,6 +42,7 @@
       font-size: 2.8em;
       color: #ffa500;
       text-shadow: 2px 2px 4px #000;
+      margin: 0;
     }
 
     header p {
@@ -61,11 +62,12 @@
     nav a {
       color: #f2f2f2;
       text-decoration: none;
+      font-weight: bold;
       padding: 10px 16px;
       border: 1px solid #ffa500;
       border-radius: 5px;
       background-color: rgba(255,165,0,0.1);
-      transition: 0.3s;
+      transition: background-color 0.3s, color 0.3s;
       font-size: 1rem;
       box-shadow: 0 0 10px #000;
     }
@@ -74,21 +76,27 @@
       background-color: #ffa500;
       color: #000;
     }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Grit Gear HQ</h1>
     <p>Rough Gear for Rougher Times</p>
+    <nav>
+      <a href="self-defense.html">Self Defense</a>
+      <a href="grit-test.html">Grit Test</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
   </header>
-
-  <nav>
-    <a href="#">Self Defense</a>
-    <a href="#">Grit Test</a>
-    <a href="#">Manifesto</a>
-    <a href="#">Contact</a>
-    <a href="#">Privacy</a>
-  </nav>
 </body>
 </html>
 
