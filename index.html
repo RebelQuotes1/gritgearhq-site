@@ -1,7 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grit Gear HQ – Rough Gear for Rougher Times</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0b0b0b;
+      font-family: 'Arial', sans-serif;
+      color: #f2f2f2;
+      text-align: center;
+    }
 
-</body>
-</html>
+    header {
+      background: url('images/header-bg.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 60px 20px 50px;
+      border-bottom: 2px solid #ffa500;
+      box-shadow: 0 5px 15px #000;
+      position: relative;
+    }
 
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+    }
+
+    header h1, header p, nav {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      color: #ffa500;
+      text-shadow: 2px 2px 4px #000;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-top: 10px;
+    }
 
     nav {
       margin-top: 20px;
@@ -10,6 +55,7 @@
       flex-wrap: wrap;
       gap: 15px;
     }
+
     nav a {
       color: #f2f2f2;
       text-decoration: none;
@@ -44,12 +90,13 @@
       <a href="self-defense.html">Self Defense</a>
       <a href="grit-test.html">Grit Test</a>
       <a href="manifesto.html">Manifesto</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="contact.html">Contact</a>
       <a href="privacy.html">Privacy</a>
     </nav>
   </header>
 </body>
 </html>
+
 
 
 
