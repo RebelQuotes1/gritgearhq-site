@@ -147,33 +147,30 @@
   </a>
 </div>
 
-   <!-- 📝 Blog Section -->
-<div style="max-width: 800px; margin: 40px auto 60px 40px; background-color: rgba(0, 0, 0, 0.75); padding: 30px; border-radius: 10px; color: #f2f2f2; font-family: sans-serif; box-shadow: 0 0 10px #000;">
-  <h2 style="color: #ffa500; text-align: left; margin-bottom: 20px;">From the Blog</h2>
+<!-- 📝 Blog Section -->
+<div style="max-width: 1200px; margin: 40px auto 60px; padding: 0 20px; font-family: sans-serif; color: #f2f2f2;">
 
-  <!-- Blog Entry -->
-  <div style="margin-bottom: 25px; text-align: left;">
-    <h3 style="margin-bottom: 8px;">🔥 My Les Stroud Moment</h3>
-    <p style="font-size: 14px; line-height: 1.6;">
-     <div style="background:#1a1a1a; padding:20px; margin-bottom:30px; border-radius:10px; box-shadow:0 0 15px #000; color:#f5f5f5; font-family:sans-serif;">
-  <h2 style="color:#ffa500;">🔥 Grit in the Cold: My Les Stroud Moment at 21</h2>
-  <p>I saw “Survivorman” and thought, “If he can do it, so can I.” So I headed into the freezing woods with gimmicky gear, bad boots, and blind confidence. <br><br>It didn't go well.</p>
-  <a href="les-stroud-story.html" class="button" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; padding:10px 18px; border-radius:5px; text-decoration:none; font-weight:bold;">Read More</a>
-</div>
+  <!-- Blog Entry Block -->
+  <div style="background-color: rgba(0, 0, 0, 0.75); padding: 30px; border-radius: 10px; box-shadow: 0 0 10px #000; margin-bottom: 40px;">
+    <h2 style="color: #ffa500; text-align: center;">🔥 Grit in the Cold: My Les Stroud Moment at 21</h2>
+    <p style="text-align: center;">I saw “Survivorman” and thought, “If he can do it, so can I.” So I headed into the freezing woods with gimmicky gear, bad boots, and blind confidence.<br><br>It didn't go well.</p>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="les-stroud-story.html" class="button" style="background:#ffa500; color:#000; padding:10px 18px; border-radius:5px; text-decoration:none; font-weight:bold;">Read More</a>
+    </div>
+  </div>
 
-  <!-- More coming soon!-->
-<div class="section featured" style="padding: 30px; background: #111;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1200px; margin: auto;">
+  <!-- Featured Gear Section -->
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
 
-    <!-- LifeStraw Featured Pick -->
+    <!-- LifeStraw Card -->
     <div style="flex: 1 1 400px; background-color: rgba(0,0,0,0.75); padding: 30px; border-radius: 10px; box-shadow: 0 0 15px #000;">
       <h3 style="color: #ffa500;">🛠️ Featured Pick: LifeStraw Water Filter</h3>
-      <img src="images/lifestraw.jpg" alt="LifeStraw Water Filter in use" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 0 10px #000; margin: 20px 0;" />
+      <img src="images/lifestraw.jpg" alt="LifeStraw Water Filter" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 0 10px #000; margin: 20px 0;" />
       <p style="color: #ccc;">Stay alive when the taps go dry. This ultralight filter removes 99.9999% of bacteria and weighs under 2 oz. It’s in every Grit Gear bug-out bag for a reason.</p>
       <a href="https://amzn.to/3VGrY5i?tag=gritgearhq-20" target="_blank" style="background: #ffa500; color: #000; padding: 10px 16px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">Buy on Amazon</a>
     </div>
 
-    <!-- Other Water Gear -->
+    <!-- Additional Water Gear -->
     <div style="flex: 1 1 600px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
 
       <!-- Emergency Water -->
@@ -211,10 +208,22 @@
         <p style="color: #ffa500;">★★★★★ (3,412 reviews)</p>
         <a href="https://www.amazon.com/dp/B000MTIUSS?tag=gritgearhq-20" target="_blank" style="background: #ffa500; color: #000; padding: 8px 12px; border-radius: 5px; text-decoration: none;">Buy Now</a>
       </div>
-
     </div>
   </div>
 </div>
+
+<!-- Responsive Fix -->
+<style>
+  @media (max-width: 768px) {
+    h2, h3, p {
+      text-align: center !important;
+    }
+    .button {
+      margin: 0 auto;
+      display: inline-block;
+    }
+  }
+</style>
 
 
   <div class="section grit">
