@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grit Test – Are You Built for This?</title>
+  <style>
+    body {
+      background: #000;
+      color: #ffa500;
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .container h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .container p {
+      color: #ccc;
+    }
+    button {
+      background: #ffa500;
+      color: #000;
+      font-weight: bold;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card {
+      width: 240px;
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .card h3 {
+      color: #ffa500;
+    }
+    .card p {
+      color: #ccc;
+    }
+    .card a {
+      display: inline-block;
+      background: #ffa500;
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    .return-button {
+      margin-top: 50px;
+    }
+    .return-button a {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #333;
+      color: #ffa500;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🧠 Take the Grit Test</h2>
+    <p>Are you built for the wild—or just built different?</p>
+    <button onclick="rotateJoke()">Find Out</button>
+    <p id="gritJoke" style="font-style: italic;">Click the button and prepare to be judged.</p>
+
+    <hr style="margin: 40px 0; border: 1px solid #333;">
+
+    <div class="products">
+      <div class="card">
+        <img src="images/ax.jpg" alt="Tactical Axe">
+        <h3>RXLLY Tactical Axe</h3>
+        <p>Break, chop, claw, survive. Comes with sheath and attitude.</p>
+        <a href="https://amzn.to/4nsmHM7" target="_blank">Grab One</a>
+      </div>
+      <div class="card">
+        <img src="images/tnt.jpg" alt="Tent with Stove Jack">
+        <h3>Fireproof Hot Tent</h3>
+        <p>Canvas and steel pipe dreams. Stay warm when hell freezes over.</p>
+        <a href="https://amzn.to/4eouJSa" target="_blank">Check It Out</a>
+      </div>
+      <div class="card">
+        <img src="images/shoe.jpg" alt="Minimalist Trail Shoes">
+        <h3>Barefoot Trail Shoes</h3>
+        <p>Tough on terrain, kind to your soles. Perfect for stealthy bug-outs.</p>
+        <a href="https://amzn.to/4kdt5nK" target="_blank">Step In</a>
+      </div>
+      <div class="card">
+        <img src="images/chgr.webp" alt="Survival Solar Charger">
+        <h3>Solar Battery Brick</h3>
+        <p>Waterproof, shockproof, and flashlight-equipped. Your phone’s best chance.</p>
+        <a href="https://amzn.to/3Gp5oeh" target="_blank">Charge Up</a>
+      </div>
+    </div>
+
+    <div class="return-button">
+      <a href="index.html">← Return to Homepage</a>
+    </div>
+  </div>
+
+  <script>
+    const jokes = [
+      "You screamed 'Alexa, help!' — a wild boar came instead.",
+      "You bartered your last match for a vape cartridge.",
+      "You thought MREs were a rap group. You're done.",
+      "You asked a survivalist if they take Venmo. They took your boots instead.",
+      "You filtered swamp water through your Yeezys.",
+      "You packed gluten-free rations. For the apocalypse."
+    ];
+    function rotateJoke() {
+      const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+      document.getElementById('gritJoke').innerText = randomJoke;
+    }
+  </script>
+</body>
+</html>
