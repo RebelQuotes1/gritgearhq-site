@@ -4,20 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grit Gear HQ – Les Stroud Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
   <style>
     body {
+      background: url('winter-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #eee;
+      font-family: monospace;
       margin: 0;
       padding: 0;
-      background: url('images/moonlit-winter-path-stockcake.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: monospace;
-      color: #eee;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
     }
 
     h1 {
       color: #ffa500;
       text-align: center;
       padding: 20px;
+      font-family: 'Staatliches', sans-serif;
+      font-size: 2.2em;
+      letter-spacing: 1px;
     }
 
     .main-container {
@@ -39,7 +52,7 @@
 
     .content {
       max-width: 720px;
-      background: rgba(0,0,0,0.75);
+      background: rgba(0, 0, 0, 0.6);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 15px #000;
@@ -77,15 +90,6 @@
       font-weight: bold;
     }
 
-    blockquote {
-      text-align: center;
-      font-size: 1.2em;
-      color: #ffa500;
-      font-style: italic;
-      margin-top: -10px;
-      margin-bottom: 30px;
-    }
-
     @media (max-width: 768px) {
       .main-container {
         flex-direction: column;
@@ -106,6 +110,11 @@
   </style>
 </head>
 <body>
+  <h1>Grit in the Cold: My Les Stroud Moment</h1>
+  <!-- Your content goes here -->
+</body>
+</html>
+
 
 <h1>Grit in the Cold: My Les Stroud Moment</h1>
 
