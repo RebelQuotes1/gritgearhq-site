@@ -10,106 +10,124 @@
       color: #eee;
       font-family: monospace;
       margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #ffa500;
+      text-align: center;
       padding: 20px;
     }
-    h1, h2 {
-      color: #ffa500;
-    }
-    .blog-container {
-      max-width: 800px;
-      margin: auto;
-      padding-bottom: 50px;
-    }
-    .ads-container {
+
+    .main-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: row;
       justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
       gap: 20px;
-      margin-top: 40px;
+      flex-wrap: wrap;
     }
-    .ad-card {
-      background: #1a1a1a;
-      padding: 15px;
-      width: 230px;
-      border: 1px solid #333;
+
+    .sidebar {
+      width: 240px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .content {
+      max-width: 720px;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 12px #000;
+      box-shadow: 0 0 15px #000;
+      color: #f2f2f2;
+      font-family: Georgia, serif;
+      line-height: 1.8;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .ad-card {
+      background: #222;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      color: #ffa500;
       text-align: center;
     }
+
     .ad-card img {
       width: 100%;
-      height: auto;
-      object-fit: cover;
+      border-radius: 4px;
       max-height: 200px;
-      border-radius: 6px;
+      object-fit: cover;
     }
-    .price-tag {
-      color: #0f0;
-      font-weight: bold;
-    }
-    .fake-review {
-      font-size: 0.85em;
-      color: #aaa;
-      margin: 10px 0;
-    }
-    .countdown {
-      color: #f33;
-      font-size: 0.9em;
-      font-weight: bold;
-    }
-    .buy-btn {
-      display: inline-block;
-      margin-top: 10px;
+
+    .ad-card a {
       background: #ffa500;
       color: #000;
-      padding: 8px 12px;
-      border-radius: 5px;
-      font-weight: bold;
       text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .content {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="blog-container">
-    <h1>Grit in the Cold: My Les Stroud Moment</h1>
-    <p>When I first saw Survivorman, Les Stroud came on screen — calm, deliberate, alone in the wild — and something inside me lit up. It wasn’t inspiration. It was a challenge. I thought:
 
-<div style="max-width: 800px; margin: 40px auto; padding: 20px; font-family: 'Georgia', serif; color: #f2f2f2; line-height: 1.8; background-color: rgba(0,0,0,0.6); border-radius: 10px; box-shadow: 0 0 15px #000;">
+<h1>Grit in the Cold: My Les Stroud Moment</h1>
 
-</p>
-
-    <div class="ads-container">
-      <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+<div class="main-container">
 
   <!-- LEFT SIDEBAR -->
-  <div style="display: flex; flex-direction: column; gap: 20px; width: 200px;">
-    <div style="background: #222; padding: 10px; border-radius: 8px; box-shadow: 0 0 10px #000; color: #ffa500; text-align: center;">
-      <img src="images/61PpgblxUrL._AC_SX679_.jpg" style="width: 100%; border-radius: 4px;">
+  <div class="sidebar">
+    <div class="ad-card">
+      <img src="images/61PpgblxUrL._AC_SX679_.jpg">
       <p>🔥 $71.99 (Limited Deal)</p>
       <p>★★★★★ “Took this beast ice fishing. Didn’t freeze or starve.”</p>
       <p>Only 3 left – sale ends in 02:47:39</p>
-      <a href="https://amzn.to/4ezxU9S?tag=gritgearhq-20" target="_blank" style="background:#ffa500; color:#000; text-decoration:none; padding:6px 10px; border-radius:4px; display:inline-block; margin-top:10px;">Gear Up</a>
+      <a href="https://amzn.to/4ezxU9S?tag=gritgearhq-20" target="_blank">Gear Up</a>
     </div>
-
-    <div style="background: #222; padding: 10px; border-radius: 8px; box-shadow: 0 0 10px #000; color: #ffa500; text-align: center;">
-      <img src="images/61aQUL8ItNL.__AC_SX300_SY300_QL70_FMwebp_.webp" style="width: 100%; border-radius: 4px;">
+    <div class="ad-card">
+      <img src="images/61aQUL8ItNL.__AC_SX300_SY300_QL70_FMwebp_.webp">
       <p>$31.99</p>
       <p>★★★★☆ “Kept me warm at 4am in the woods.”</p>
       <p>Ends Tonight</p>
-      <a href="https://amzn.to/3TidiJk?tag=gritgearhq-20" target="_blank" style="background:#ffa500; color:#000; text-decoration:none; padding:6px 10px; border-radius:4px; display:inline-block; margin-top:10px;">Snag Now</a>
+      <a href="https://amzn.to/3TidiJk?tag=gritgearhq-20" target="_blank">Snag Now</a>
     </div>
-
-    <div style="background: #222; padding: 10px; border-radius: 8px; box-shadow: 0 0 10px #000; color: #ffa500; text-align: center;">
-      <img src="images/71kpuDUlvHL.__AC_SY445_SX342_QL70_FMwebp_.webp" style="width: 100%; border-radius: 4px;">
+    <div class="ad-card">
+      <img src="images/71kpuDUlvHL.__AC_SY445_SX342_QL70_FMwebp_.webp">
       <p>$29.99</p>
       <p>★★★★★ “Feels like I’m being hugged by fire.”</p>
       <p>Flash Sale: 4h 12m</p>
-      <a href="https://amzn.to/4lpDhud?tag=gritgearhq-20" target="_blank" style="background:#ffa500; color:#000; text-decoration:none; padding:6px 10px; border-radius:4px; display:inline-block; margin-top:10px;">Stay Warm</a>
+      <a href="https://amzn.to/4lpDhud?tag=gritgearhq-20" target="_blank">Stay Warm</a>
     </div>
   </div>
 
-  <!-- BLOG CONTENT -->
-  <div style="flex: 1; max-width: 700px; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px; color: #f2f2f2; font-family: Georgia, serif; line-height: 1.8; box-shadow: 0 0 15px #000;">
+  <!-- MAIN BLOG CONTENT -->
+  <div class="content">
     <p><strong>“If he can do it, so can I.”</strong></p>
     <p>So, naturally, I packed up the dumbest assortment of camping gear imaginable — gimmicky gadgets, canned food, an unrated sleeping bag — and trudged off alone into the snowy woods.</p>
     <p>The temperature was somewhere south of 20 below. I didn’t check. I was too busy romanticizing the misery.</p>
@@ -121,40 +139,39 @@
     <p>Shoutout to Wes, the friend with gear and a heart, for keeping my stubborn ass alive that night. And thank you, Les Stroud — you didn’t just spark something in me… You lit the fire I nearly froze beside.</p>
   </div>
 
- <!-- RIGHT SIDEBAR -->
-<div style="display: flex; flex-direction: column; gap: 20px; width: 200px;">
-  <div style="background: #222; padding: 10px; border-radius: 8px; box-shadow: 0 0 10px #000; color: #ffa500; text-align: center;">
-    <img src="images/81V0sUov-sL.__AC_SX300_SY300_QL70_FMwebp_.webp" style="width: 100%; border-radius: 4px;">
-    <p>$10.99</p>
-    <p>★★★★☆ “Lasted all night on the hunt.”</p>
-    <p>🔥 Selling Fast</p>
-    <a href="https://amzn.to/45GTEhB?tag=gritgearhq-20" target="_blank" style="background:#ffa500; color:#000; text-decoration:none; padding:6px 10px; border-radius:4px; display:inline-block; margin-top:10px;">Stock Up</a>
+  <!-- RIGHT SIDEBAR -->
+  <div class="sidebar">
+    <div class="ad-card">
+      <img src="images/81V0sUov-sL.__AC_SX300_SY300_QL70_FMwebp_.webp">
+      <p>$10.99</p>
+      <p>★★★★☆ “Lasted all night on the hunt.”</p>
+      <p>🔥 Selling Fast</p>
+      <a href="https://amzn.to/45GTEhB?tag=gritgearhq-20" target="_blank">Stock Up</a>
+    </div>
+    <div class="ad-card">
+      <img src="images/71tmd33aEeL._AC_SX679_.jpg">
+      <p>$47.98</p>
+      <p>★★★★★ “Windproof, waterproof, girlfriend-proof.”</p>
+      <p>Sale ends midnight</p>
+      <a href="https://amzn.to/3TSESNn?tag=gritgearhq-20" target="_blank">Suit Up</a>
+    </div>
+    <div class="ad-card">
+      <img src="images/71Qz48ByjML.__AC_SY300_SX300_QL70_FMwebp_.webp">
+      <p>$6.99 (4-Pack)</p>
+      <p>★★★★★ “These saved my dumb ass.”</p>
+      <p>🔥 Deal of the Day</p>
+      <a href="https://amzn.to/3TflZUJ?tag=gritgearhq-20" target="_blank">Grab ‘Em</a>
+    </div>
+    <div class="ad-card">
+      <img src="images/bivy.webp" alt="USGI Bivy Tent">
+      <p>$169.00</p>
+      <p>★★★★★ “Built like a stealth tank. Slept dry in the rain.”</p>
+      <p>🔥 Top Survival Pick</p>
+      <a href="https://amzn.to/3GccRxl?tag=gritgearhq-20" target="_blank">Own It</a>
+    </div>
   </div>
 
-  <div style="background: #222; padding: 10px; border-radius: 8px; box-shadow: 0 0 10px #000; color: #ffa500; text-align: center;">
-    <img src="images/71tmd33aEeL._AC_SX679_.jpg" style="width: 100%; border-radius: 4px;">
-    <p>$47.98</p>
-    <p>★★★★★ “Windproof, waterproof, girlfriend-proof.”</p>
-    <p>Sale ends midnight</p>
-    <a href="https://amzn.to/3TSESNn?tag=gritgearhq-20" target="_blank" style="background:#ffa500; color:#000; text-decoration:none; padding:6px 10px; border-radius:4px; display:inline-block; margin-top:10px;">Suit Up</a>
-  </div>
-
-  <div style="background: #222; padding: 10px; border-radius: 8px; box-shadow: 0 0 10px #000; color: #ffa500; text-align: center;">
-    <img src="images/71Qz48ByjML.__AC_SY300_SX300_QL70_FMwebp_.webp" style="width: 100%; border-radius: 4px;">
-    <p>$6.99 (4-Pack)</p>
-    <p>★★★★★ “These saved my dumb ass.”</p>
-    <p>🔥 Deal of the Day</p>
-    <a href="https://amzn.to/3TflZUJ?tag=gritgearhq-20" target="_blank" style="background:#ffa500; color:#000; text-decoration:none; padding:6px 10px; border-radius:4px; display:inline-block; margin-top:10px;">Grab ‘Em</a>
-  </div>
-
- <!-- ✅ Bivy Ad Card for RIGHT SIDEBAR -->
-<div style="background: #222; padding: 10px; border-radius: 8px; box-shadow: 0 0 10px #000; color: #ffa500; text-align: center;">
-  <img src="images/bivy.webp" alt="USGI Bivy Tent" style="width: 100%; border-radius: 4px; margin-bottom: 8px;">
-  <p style="margin: 4px 0;">$169.00</p>
-  <p style="margin: 4px 0;">★★★★★ “Built like a stealth tank. Slept dry in the rain.”</p>
-  <p style="margin: 4px 0; font-weight: bold;">🔥 Top Survival Pick</p>
-  <a href="https://amzn.to/3GccRxl?tag=gritgearhq-20" target="_blank" style="background:#ffa500; color:#000; text-decoration:none; padding:6px 10px; border-radius:4px; display:inline-block; margin-top:8px;">Own It</a>
 </div>
 
-
-</div>
+</body>
+</html>
