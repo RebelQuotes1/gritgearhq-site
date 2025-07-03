@@ -249,6 +249,15 @@
 </div>
 
 </div>
+<script>
+  let shown = false;
+  document.addEventListener("mouseout", function (e) {
+    if (!shown && e.clientY < 10) {
+      alert("WAIT! Get our free Women's Survival Checklist PDF before you go!");
+      shown = true;
+    }
+  });
+</script>
 
 </body>
 </html>
