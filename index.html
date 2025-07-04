@@ -227,20 +227,25 @@
   countdown(15); // 15-minute fake urgency timer
 </script>
 
-  <div class="gear-grid">
-    <div class="gear-card">
-      <img src="images/nnn.jpg" alt="Dragon Creek Tactical Knife">
-      <h3>Dragon Creek Tactical Knife Kydex</h3>
-      <p>D2 Steel. Full tang. Built for harsh conditions and hard hands.</p>
-      <a href="https://amzn.to/3ZW7XLC" target="_blank">View on Amazon →</a>
-    </div>
+<div class="gear-grid">
 
-    <div class="gear-card">
-      <img src="images/fff.jpg" alt="W-Catcher Fixed Blade Knife">
-      <h3>W-Catcher Fixed Blade Knife</h3>
-      <p>Massive D2 blade, non-slip grip—your new go-to wilderness blade.</p>
-      <a href="https://amzn.to/3GvGJVn" target="_blank">View on Amazon →</a>
-    </div>
+  <!-- Always visible -->
+  <div class="gear-card">
+    <img src="images/nnn.jpg" alt="Dragon Creek Tactical Knife">
+    <h3>Dragon Creek Tactical Knife Kydex</h3>
+    <p>D2 Steel. Full tang. Built for harsh conditions and hard hands.</p>
+    <a href="https://amzn.to/3ZW7XLC" target="_blank">View on Amazon →</a>
+  </div>
+
+  <div class="gear-card">
+    <img src="images/fff.jpg" alt="W-Catcher Fixed Blade Knife">
+    <h3>W-Catcher Fixed Blade Knife</h3>
+    <p>Massive D2 blade, non-slip grip—your new go-to wilderness blade.</p>
+    <a href="https://amzn.to/3GvGJVn" target="_blank">View on Amazon →</a>
+  </div>
+
+  <!-- Hidden initially -->
+  <div id="moreKnives" style="display: none;">
 
     <div class="gear-card">
       <img src="images/ttr.jpg" alt="B-ER-Tanto Point Tactical Knife">
@@ -269,16 +274,40 @@
       <p>Compact, double-edged, and designed to stay close and out of sight.</p>
       <a href="https://amzn.to/3I4cx4n" target="_blank">View on Amazon →</a>
     </div>
+
   </div>
 
-  <div style="margin:40px auto 0; text-align:center;">
-    <a href="index.html" 
-       style="padding: 12px 24px; background: #ffa500; color: #000; text-decoration: none; 
-              font-weight: bold; border-radius: 6px; box-shadow: 0 0 8px #000;">
-       ← Back to Homepage
-    </a>
+  <!-- Toggle Button -->
+  <div style="text-align:center; margin-top: 30px;">
+    <button onclick="document.getElementById('moreKnives').style.display='block'; this.style.display='none';"
+      style="padding: 12px 24px; background: #ffa500; color: #000; font-weight: bold; border: none; border-radius: 6px; box-shadow: 0 0 10px #000;">
+      🔪 Show More Knives
+    </button>
   </div>
+
 </div>
+
+<!-- Back Button -->
+<div style="margin:40px auto 0; text-align:center;">
+  <a href="index.html" 
+     style="padding: 12px 24px; background: #ffa500; color: #000; text-decoration: none; 
+            font-weight: bold; border-radius: 6px; box-shadow: 0 0 8px #000;">
+     ← Back to Homepage
+  </a>
+</div>
+
+
+</div>
+
+<!-- Back Button -->
+<div style="margin:40px auto 0; text-align:center;">
+  <a href="index.html" 
+     style="padding: 12px 24px; background: #ffa500; color: #000; text-decoration: none; 
+            font-weight: bold; border-radius: 6px; box-shadow: 0 0 8px #000;">
+     ← Back to Homepage
+  </a>
+</div>
+
 
   <p style="margin-top:30px; font-size:14px; color:#f08080;">
     ⚠️ These won’t be in stock forever. When the grid goes dark, you’ll want steel you can trust. Grab yours now — before the brave get outnumbered.
