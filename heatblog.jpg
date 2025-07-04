@@ -1,0 +1,38 @@
+<div style="background:#111; color:#f2f2f2; padding:40px 20px; font-family:monospace; max-width:1000px; margin:auto;">
+
+  <h1 style="text-align:center; color:#ffa500; font-size:32px;">📰 Grit Gear Survival Blog</h1>
+  <p style="text-align:center; color:#aaa; font-size:14px;">Real stories. Hard lessons. Gear that might save your life.</p>
+
+  <!-- Blog Post 1 -->
+  <div style="margin-top:40px; padding:20px; border:1px solid #333; border-radius:8px; background:#1a1a1a;">
+    <h2 style="color:#ffa500;">🔥 Surviving the Scorch: What Every Woman Should Keep in Her Car This Summer</h2>
+    <p style="color:#ccc;">They were just tourists. But one mistake in Death Valley sealed their fate. Learn what went wrong—and how to prep your car to avoid the same nightmare.</p>
+    <a href="summer-car-survival-blog.html" style="color:#ffa500; font-weight:bold;">→ Read Full Story</a>
+  </div>
+
+  <!-- Blog Post 2 -->
+  <div style="margin-top:30px; padding:20px; border:1px solid #333; border-radius:8px; background:#1a1a1a;">
+    <h2 style="color:#ffa500;">🌪️ What If Disaster Strikes While You’re at Work?</h2>
+    <p style="color:#ccc;">No bug-out bag. No weapon. No escape route. Here's how to survive a crisis when you're stuck in a concrete box with vending machine snacks and fluorescent lights.</p>
+    <a href="natural-disaster-blog.html" style="color:#ffa500; font-weight:bold;">→ Read Full Story</a>
+  </div>
+
+  <!-- Blog Post 3 -->
+  <div style="margin-top:30px; padding:20px; border:1px solid #333; border-radius:8px; background:#1a1a1a;">
+    <h2 style="color:#ffa500;">🧰 Bug-In vs Bug-Out: The Real Decision</h2>
+    <p style="color:#ccc;">When the power goes out and the chaos begins, do you hunker down or hit the road? This guide breaks down when to stay and when to vanish—fast.</p>
+    <a href="bug-in-vs-bug-out.html" style="color:#ffa500; font-weight:bold;">→ Read Full Story</a>
+  </div>
+
+  <!-- Blog Post 4 -->
+  <div style="margin-top:30px; padding:20px; border:1px solid #333; border-radius:8px; background:#1a1a1a;">
+    <h2 style="color:#ffa500;">🔪 Why Every Prepper Needs a Blade (Even in the Suburbs)</h2>
+    <p style="color:#ccc;">Forget Rambo fantasies. The right blade is about utility and survival. This post explains why your purse, glovebox, or nightstand should house one right now.</p>
+    <a href="why-every-woman-needs-a-blade.html" style="color:#ffa500; font-weight:bold;">→ Read Full Story</a>
+  </div>
+
+  <div style="margin-top:50px; text-align:center;">
+    <a href="index.html" style="color:#999; text-decoration:underline;">← Back to Home</a>
+  </div>
+
+</div>
