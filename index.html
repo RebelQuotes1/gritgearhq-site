@@ -170,74 +170,85 @@ startCountdown("timer2", 12);
   <!-- 🍴 Featured Meals -->
 <div style="display:flex; flex-wrap:wrap; justify-content:center; background:#111; padding:20px;">
 
-  <!-- 🍑 Peak Refuel Peach Cobbler -->
-  <div style="width:170px; margin:10px; background:#222; padding:10px; border-radius:8px; box-shadow:0 0 10px #000; color:#ffa500; text-align:center;">
-    <a href="https://amzn.to/4lh0G1w?tag=gritgearhq-20" target="_blank" style="text-decoration:none; color:inherit;">
-      <img src="images/peach-cobbler.jpg" alt="Peak Refuel Peach Cobbler" style="width:100%; height:auto; border-radius:4px;">
-      <h4 style="margin:10px 0 5px;">Peak Refuel Peach Cobbler</h4>
-    </a>
-    <p style="font-size:12px;">🔥 Fan Favorite Dessert<br>⭐⭐⭐⭐⭐ (673 reviews)<br><span style="color:red;">$10.99</span> <del>$14.49</del></p>
+<!-- 🍽 Featured Emergency Food Section -->
+<div style="background: #1a1a1a; padding: 40px 20px; font-family: sans-serif; display: flex; flex-direction: column; align-items: center;">
+  <h2 style="color: #ffa500; font-family: 'Courier New', monospace; margin-bottom: 20px;">🔥 Emergency Meals</h2>
+
+  <!-- First Row -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 20px;">
+
+    <!-- 🍑 Peach Cobbler -->
+    <div style="width: 170px; background: #222; padding: 12px; border-radius: 10px; box-shadow: 0 0 12px #000; text-align: center;">
+      <a href="https://amzn.to/4lh0G1w?tag=gritgearhq-20" target="_blank" style="color: inherit; text-decoration: none;">
+        <img src="images/peach-cobbler.jpg" alt="Peak Refuel Peach Cobbler" style="width: 100%; border-radius: 6px;">
+        <h4 style="margin: 10px 0 5px; color: #ffa500;">Peak Refuel Peach Cobbler</h4>
+        <p style="font-size: 12px; color: #ccc;">🔥 Fan Favorite Dessert<br>⭐⭐⭐⭐⭐ (673 reviews)</p>
+        <p style="font-size: 12px;"><span style="color: red;">$10.99</span> <del>$14.49</del></p>
+      </a>
+    </div>
+
+    <!-- 🍕 Pizza Bowl -->
+    <div style="width: 170px; background: #222; padding: 12px; border-radius: 10px; box-shadow: 0 0 12px #000; text-align: center;">
+      <a href="https://amzn.to/4kGNaTT?tag=gritgearhq-20" target="_blank" style="color: inherit; text-decoration: none;">
+        <img src="images/pizza-bowl.jpg" alt="Mountain House Pizza Bowl" style="width: 100%; border-radius: 6px;">
+        <h4 style="margin: 10px 0 5px; color: #ffa500;">Mountain House Pizza Bowl</h4>
+        <p style="font-size: 12px; color: #ccc;">⚠️ Limited Time Only<br>⭐⭐⭐⭐ (691 reviews)</p>
+        <p style="font-size: 12px;"><span style="color: red;">$11.99</span> <del>$17.99</del></p>
+      </a>
+    </div>
   </div>
 
-  <!-- 🍕 Mountain House Pizza Bowl -->
-  <div style="width:170px; margin:10px; background:#222; padding:10px; border-radius:8px; box-shadow:0 0 10px #000; color:#ffa500; text-align:center;">
-    <a href="https://amzn.to/4kGNaTT?tag=gritgearhq-20" target="_blank" style="text-decoration:none; color:inherit;">
-      <img src="images/pizza-bowl.jpg" alt="Mountain House Pizza Bowl" style="width:100%; height:auto; border-radius:4px;">
-      <h4 style="margin:10px 0 5px;">Mountain House Pizza Bowl</h4>
-    </a>
-    <p style="font-size:12px;">⚠️ Limited Time Only<br>⭐⭐⭐⭐ (691 reviews)<br><span style="color:red;">$11.99</span> <del>$17.99</del></p>
-  </div>
-</div>
-
-<!-- ⬇️ Expand for More -->
-<div style="text-align:center; margin-bottom:20px;">
+  <!-- Expand Button -->
   <button onclick="document.getElementById('hidden-meals').style.display='flex'; this.style.display='none';"
-    style="padding:10px 20px; font-weight:bold; border:none; border-radius:6px; background:#ffa500; color:#000; cursor:pointer; box-shadow:0 0 8px #000;">
+    style="margin-bottom: 30px; padding: 10px 20px; font-weight: bold; border: none; border-radius: 6px; background: #ffa500; color: #000; cursor: pointer; box-shadow: 0 0 8px #000;">
     ⬇️ Show More Emergency Meals
   </button>
+
+  <!-- Hidden Meals Section -->
+  <div id="hidden-meals" style="display: none; flex-wrap: wrap; justify-content: center; gap: 20px;">
+
+    <!-- 🥚 Survival Eggs -->
+    <div style="width: 170px; background: #222; padding: 12px; border-radius: 10px; box-shadow: 0 0 12px #000; text-align: center;">
+      <a href="https://amzn.to/4lEwrkT?tag=gritgearhq-20" target="_blank" style="color: inherit; text-decoration: none;">
+        <img src="images/eggs-nutrient.jpg" alt="Survival Powdered Eggs" style="width: 100%; border-radius: 6px;">
+        <h4 style="margin: 10px 0 5px; color: #ffa500;">Survival Powdered Eggs</h4>
+        <p style="font-size: 12px; color: #ccc;">🥚 33 Essential Nutrients<br>⭐⭐⭐⭐⭐ (351 reviews)</p>
+        <p style="font-size: 12px;"><span style="color: red;">$89.00</span> <del>$102.00</del></p>
+      </a>
+    </div>
+
+    <!-- 🎒 ReadyWise Grab Bag -->
+    <div style="width: 170px; background: #222; padding: 12px; border-radius: 10px; box-shadow: 0 0 12px #000; text-align: center;">
+      <a href="https://amzn.to/4kteSDp?tag=gritgearhq-20" target="_blank" style="color: inherit; text-decoration: none;">
+        <img src="images/readywise.jpg" alt="ReadyWise 60-Meal Bag" style="width: 100%; border-radius: 6px;">
+        <h4 style="margin: 10px 0 5px; color: #ffa500;">ReadyWise 60-Meal Grab Bag</h4>
+        <p style="font-size: 12px; color: #ccc;">🎒 Bug-Out Essential<br>⭐⭐⭐⭐⭐ (678 reviews)</p>
+        <p style="font-size: 12px;"><span style="color: red;">$79.99</span> <del>$99.99</del></p>
+      </a>
+    </div>
+
+    <!-- 💧 Water Packs -->
+    <div style="width: 170px; background: #222; padding: 12px; border-radius: 10px; box-shadow: 0 0 12px #000; text-align: center;">
+      <a href="https://amzn.to/4evVCDK?tag=gritgearhq-20" target="_blank" style="color: inherit; text-decoration: none;">
+        <img src="images/emergency-water.jpg" alt="Emergency Water Packets" style="width: 100%; border-radius: 6px;">
+        <h4 style="margin: 10px 0 5px; color: #ffa500;">72-Hour Water Supply</h4>
+        <p style="font-size: 12px; color: #ccc;">💧 Shelf Life: 5 Years<br>⭐⭐⭐⭐⭐ (921 reviews)</p>
+        <p style="font-size: 12px;"><span style="color: red;">$19.95</span> <del>$24.95</del></p>
+      </a>
+    </div>
+
+    <!-- 🧃 Survival Tabs -->
+    <div style="width: 170px; background: #222; padding: 12px; border-radius: 10px; box-shadow: 0 0 12px #000; text-align: center;">
+      <a href="https://amzn.to/45UT3Jb?tag=gritgearhq-20" target="_blank" style="color: inherit; text-decoration: none;">
+        <img src="images/food-tabs.jpg" alt="10-Day Food Tabs" style="width: 100%; border-radius: 6px;">
+        <h4 style="margin: 10px 0 5px; color: #ffa500;">10-Day Food Tabs (Vanilla)</h4>
+        <p style="font-size: 12px; color: #ccc;">🍬 Gluten-Free, 25 Yr Shelf<br>⭐⭐⭐⭐⭐ (512 reviews)</p>
+        <p style="font-size: 12px;"><span style="color: red;">$24.99</span> <del>$32.00</del></p>
+      </a>
+    </div>
+
+  </div>
 </div>
-
-<!-- 🍽️ Hidden Meals -->
-<div id="hidden-meals" style="display:none; flex-wrap:wrap; justify-content:center; background:#111; padding:10px 20px;">
-
-  <!-- 🥚 Nutrient Survival Eggs -->
-  <div style="width:170px; margin:10px; background:#222; padding:10px; border-radius:8px; box-shadow:0 0 10px #000; color:#ffa500; text-align:center;">
-    <a href="https://amzn.to/4lEwrkT?tag=gritgearhq-20" target="_blank">
-      <img src="images/eggs-nutrient.jpg" alt="Powdered Survival Eggs" style="width:100%; height:auto; border-radius:4px;">
-      <h4 style="margin:10px 0 5px;">Survival Powdered Eggs</h4>
-    </a>
-    <p style="font-size:12px;">🥚 33 Essential Nutrients<br>⭐⭐⭐⭐⭐ (351 reviews)<br><span style="color:red;">$89.00</span> <del>$102.00</del></p>
-  </div>
-
-  <!-- 🎒 ReadyWise Grab Bag -->
-  <div style="width:170px; margin:10px; background:#222; padding:10px; border-radius:8px; box-shadow:0 0 10px #000; color:#ffa500; text-align:center;">
-    <a href="https://amzn.to/4kteSDp?tag=gritgearhq-20" target="_blank">
-      <img src="images/readywise.jpg" alt="ReadyWise 60-Meal Bag" style="width:100%; height:auto; border-radius:4px;">
-      <h4 style="margin:10px 0 5px;">ReadyWise 60-Meal Grab Bag</h4>
-    </a>
-    <p style="font-size:12px;">🎒 Bug-Out Essential<br>⭐⭐⭐⭐⭐ (678 reviews)<br><span style="color:red;">$79.99</span> <del>$99.99</del></p>
-  </div>
-
-  <!-- 💧 Emergency Water Packs -->
-  <div style="width:170px; margin:10px; background:#222; padding:10px; border-radius:8px; box-shadow:0 0 10px #000; color:#ffa500; text-align:center;">
-    <a href="https://amzn.to/4evVCDK?tag=gritgearhq-20" target="_blank">
-      <img src="images/emergency-water.jpg" alt="Emergency Water Packets" style="width:100%; height:auto; border-radius:4px;">
-      <h4 style="margin:10px 0 5px;">72-Hour Water Supply</h4>
-    </a>
-    <p style="font-size:12px;">💧 Shelf Life: 5 Years<br>⭐⭐⭐⭐⭐ (921 reviews)<br><span style="color:red;">$19.95</span> <del>$24.95</del></p>
-  </div>
-
-  <!-- 🧃 Survival Food Tabs -->
-  <div style="width:170px; margin:10px; background:#222; padding:10px; border-radius:8px; box-shadow:0 0 10px #000; color:#ffa500; text-align:center;">
-    <a href="https://amzn.to/45UT3Jb?tag=gritgearhq-20" target="_blank">
-      <img src="images/food-tabs.jpg" alt="Survival Tabs" style="width:100%; height:auto; border-radius:4px;">
-      <h4 style="margin:10px 0 5px;">10-Day Food Tabs (Vanilla)</h4>
-    </a>
-    <p style="font-size:12px;">🍬 Gluten-Free, 25 Yr Shelf<br>⭐⭐⭐⭐⭐ (512 reviews)<br><span style="color:red;">$24.99</span> <del>$32.00</del></p>
-  </div>
-
-</div>
-
 
 
 <!-- 📝 Story Teaser -->
