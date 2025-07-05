@@ -30,14 +30,25 @@
       margin-bottom: 20px;
     }
 
-    .urgency-box {
-      background:#1a1a1a;
-      color:#ffa500;
-      text-align:center;
-      padding:12px;
-      border-radius:10px;
-      margin-bottom:30px;
-      box-shadow: 0 0 12px #000;
+    .urgency-bar {
+      background: #300;
+      border: 1px solid #f00;
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #ff6666;
+      box-shadow: 0 0 10px #f00;
+    }
+
+    .timer {
+      font-size: 1.4em;
+      color: #ffa500;
+      margin-top: 10px;
+      font-weight: bold;
     }
 
     .gear-card {
@@ -89,35 +100,31 @@
   </style>
 </head>
 <body>
-
   <h1>Prepping Like a Woman</h1>
 
-  <div class="urgency-box">
-    <p><strong>🔥 <span id="live-viewers">52</span> women are browsing this right now</strong></p>
-    <p>⏳ Deal ends in: <span id="deal-timer">06:00:00</span></p>
+  <div class="urgency-bar">
+    🚨 37 women are viewing this page right now
+    <div class="timer" id="countdown">⏳ Deal ends in: 06:00:00</div>
   </div>
 
-  <p>Let’s cut through the fantasy: when the grid fails, the shelves empty, and the streets turn mean—women don’t get a pass. If anything, they carry the heavier burden. Not just surviving for themselves, but for their children, their partners, their aging parents.</p>
+  <p>Let’s cut through the fantasy: when the grid fails, the shelves empty, and the streets turn mean—women don’t get a pass.</p>
 
-  <p>They’re the ones expected to stay calm in chaos, to heal wounds, to hide fear, to hold the line. Prepping like a woman doesn’t mean weakness. It means thinking two steps ahead. Having backup plans for your backup plans. Recognizing the biggest threat isn’t just looters or starvation—it’s being caught off guard, unprepared, and alone.</p>
+  <p>If anything, they carry the heavier burden. Not just surviving for themselves, but protecting their children, their partners, and their parents—while keeping calm under pressure and navigating dangers men rarely consider.</p>
 
-  <p>Hollywood shows men with neck tattoos swinging machetes in the woods. Reality looks more like this: a mother with a flashlight, a first-aid kit, and a plan. You don’t need to be a soldier. You don’t need to out-bench some guy in camo pants. But you do need to think like a survivor—and that starts now.</p>
-
-  <p>Gear up. Train smart. Trust your gut. Your instincts kept your ancestors alive. Now it’s your turn.</p>
+  <p>But prepping like a woman doesn’t mean weakness. It means thinking ahead, choosing the right gear, and facing worst-case scenarios with resolve. Because when things go sideways, no one’s coming to save you. You are the rescue.</p>
 
   <div class="gear-card">
     <img src="images/wtr.jpg" alt="Water Filter Straw">
     <h3>4-Pack Portable Water Filter Straws</h3>
-    <p>Clean water is non-negotiable. Whether you're bugging out or stuck in a roadside emergency, these straws make dirty water safe—fast and easy.</p>
+    <p>Clean water is non-negotiable. Whether you're bugging out or stuck with kids in a roadside emergency, these straws make dirty water safe—fast and easy.</p>
     <p style="color:#ffd700;">★★★★★ “Used these camping. They WORK. Life-saving gear.”</p>
-    <p style="color:#ff6347; font-weight:bold;">⛔ Only 3 left in stock – order before midnight!</p>
     <a href="https://amzn.to/4kghi89" target="_blank">Stay Hydrated. Stay Alive →</a>
   </div>
 
   <div class="gear-card">
     <img src="images/pnk.jpg" alt="Pink Survival Kit">
     <h3>Women’s Survival & First Aid Kit</h3>
-    <p>Not cute—competent. Tactical tools, first aid, and field-tested gear in a go-bag designed to fit your life. Light, organized, and ready.</p>
+    <p>Not cute—competent. Tactical tools, first aid, and field-tested gear in a go-bag designed to fit your life. It’s light, organized, and ready.</p>
     <p style="color:#f08080;">⚠️ Trending gift pick. Selling out fast.</p>
     <a href="https://amzn.to/4lB4b2u" target="_blank">Everything in One Place →</a>
   </div>
@@ -125,7 +132,7 @@
   <div class="gear-card">
     <img src="images/btry.jpg" alt="Portable Jump Starter">
     <h3>Jump Starter w/ Air Compressor</h3>
-    <p>Break down on a dark road, no signal, no help? This jump pack and inflator combo lets you handle it yourself—no stranger needed.</p>
+    <p>Imagine breaking down on a dark road, no cell signal, no help. This jump pack and tire inflator gets you out without relying on anyone.</p>
     <p style="color:#ffd700;">★★★★★ “Saved me during a snowstorm. Worth every penny.”</p>
     <a href="https://amzn.to/3TUKUgy" target="_blank">Don’t Get Stranded →</a>
   </div>
@@ -133,28 +140,28 @@
   <div class="gear-card">
     <img src="images/prp.jpg" alt="OXO Camp Kitchen Prep Set">
     <h3>OXO Camp Kitchen Prep Kit</h3>
-    <p>Prepping doesn’t mean starving. This compact set lets you make real meals while off-grid. Feed your people right—even in crisis.</p>
+    <p>Prepping doesn’t mean starving. This compact set helps you make actual meals while off-grid—no more canned mush. Feed your people right.</p>
     <a href="https://amzn.to/4keeXul" target="_blank">Cook Like You Mean It →</a>
   </div>
 
   <div class="gear-card">
     <img src="images/camp.jpg" alt="Portable Camping Toilet">
     <h3>Adjustable Height Camp Toilet</h3>
-    <p>No more squatting behind trees. This portable toilet seals odors and gives you comfort and privacy—anywhere.</p>
+    <p>No one talks about this stuff—but you will. 7 adjustable height settings, odor-blocking seal, and total dignity intact. Thank us later.</p>
     <a href="https://amzn.to/4lCD7jr" target="_blank">Claim Your Throne →</a>
   </div>
 
   <div class="gear-card">
     <img src="images/ooof.jpg" alt="OFF! Bug Spray">
     <h3>OFF! Deep Woods Bug Repellent</h3>
-    <p>Itchy bites are the least of it—think Lyme disease and West Nile. This heavy-duty formula keeps the bugs and disease at bay.</p>
+    <p>Forget itchy bites—think Lyme disease and West Nile. This heavy-duty formula keeps you safe from what's really crawling in the dark.</p>
     <a href="https://amzn.to/4lft18k" target="_blank">Don’t Let Them Eat You Alive →</a>
   </div>
 
   <script>
-    // Countdown Timer
+    // Simple loop countdown for urgency
     function startCountdown(duration, display) {
-      let timer = duration, hours, minutes, seconds;
+      var timer = duration, hours, minutes, seconds;
       setInterval(function () {
         hours = parseInt(timer / 3600, 10);
         minutes = parseInt((timer % 3600) / 60, 10);
@@ -164,25 +171,17 @@
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = hours + ":" + minutes + ":" + seconds;
+        display.textContent = `⏳ Deal ends in: ${hours}:${minutes}:${seconds}`;
 
-        if (--timer < 0) timer = 21600; // reset to 6 hours
+        if (--timer < 0) {
+          timer = 21600; // 6 hours
+        }
       }, 1000);
     }
 
-    // Live Viewers
     window.onload = function () {
-      const sixHours = 60 * 60 * 6;
-      const countdownDisplay = document.querySelector('#deal-timer');
-      if (countdownDisplay) startCountdown(sixHours, countdownDisplay);
-
-      const viewerCount = document.querySelector('#live-viewers');
-      if (viewerCount) {
-        let base = 50 + Math.floor(Math.random() * 10);
-        setInterval(() => {
-          viewerCount.textContent = base + Math.floor(Math.random() * 6 - 2);
-        }, 4000);
-      }
+      var countdownDisplay = document.getElementById('countdown');
+      startCountdown(21600, countdownDisplay); // 6-hour countdown
     };
   </script>
 
