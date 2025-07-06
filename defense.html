@@ -1,141 +1,61 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grit Gear – Self-Defense Arsenal</title>
-  <style>
-    body {
-      margin: 0;
-      background: url('images/metal-bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Orbitron', sans-serif;
-      color: #f2f2f2;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 42px;
-      margin-top: 30px;
-      color: #ffa500;
-      text-shadow: 1px 1px 8px #000;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 28px;
-      color: #ff4444;
-      margin: 50px 0 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 6px #000;
-    }
-
-    .gear-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px;
-    }
-
-    .gear-card {
-      background: #1a1a1a;
-      border-radius: 10px;
-      padding: 18px;
-      box-shadow: 0 0 14px #000;
-      width: 300px;
-      text-align: center;
-    }
-
-    .gear-card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .gear-card h3 {
-      color: #ffa500;
-      font-size: 18px;
-      margin: 10px 0;
-    }
-
-    .gear-card p {
-      font-size: 14px;
-      color: #ddd;
-    }
-
-    .gear-card a {
-      display: inline-block;
-      margin-top: 10px;
-      background: #ffa500;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .gear-card a:hover {
-      background: #ffcc00;
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <title>Self Defense – Grit Gear HQ</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="background"></div>
+  <header>
+    <h1>Urban Defense Loadout</h1>
+    <p>Everyday carry to give you the edge when it matters most.</p>
+  </header>
 
-  <h1>Self-Defense Gear Picks</h1>
-
-  <!-- Blades -->
-  <h2>Blades</h2>
-  <div class="gear-grid">
-    <div class="gear-card">
-      <img src="images/saberred.jpg" alt="Saber Red Knife">
-      <h3>Saber Red Tactical Blade</h3>
-      <p>Compact, lightweight, and razor-sharp. Dependable for fast action in critical moments.</p>
-      <a href="https://amzn.to/3GvXaB4" target="_blank">Buy Now</a>
+  <section class="category">
+    <h2>🔪 Blades</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/stunbrella.jpg" alt="Stunbrella">
+        <p><strong>Stunbrella</strong><br>A concealed stun umbrella with bite.<br><a href="https://amzn.to/4krYfrA" target="_blank">Buy Now</a></p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Melee -->
-  <h2>Melee</h2>
-  <div class="gear-grid">
-    <div class="gear-card">
-      <img src="images/stunbrella.jpg" alt="Stunbrella">
-      <h3>Stunbrella</h3>
-      <p>A concealed umbrella stun baton for unexpected strikes. Classy and savage.</p>
-      <a href="https://amzn.to/44W4UVt" target="_blank">Get Yours</a>
+  <section class="category">
+    <h2>⚔️ Melee</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/shotgun.jpg" alt="Melee Shotgun">
+        <p><strong>Air-Powered Shotgun</strong><br>Looks real. Hits hard.<br><a href="https://amzn.to/3GvXaB4" target="_blank">Buy Now</a></p>
+      </div>
     </div>
-    <div class="gear-card">
-      <img src="images/stuntaser.jpg" alt="Stun Gun">
-      <h3>Pink Tactical Stun Gun</h3>
-      <p>High-voltage and compact. Keep it in your purse, glovebox, or bedside drawer.</p>
-      <a href="https://amzn.to/3TrmfjI" target="_blank">Shock & Awe</a>
-    </div>
-  </div>
+  </section>
 
-  <!-- Concealed -->
-  <h2>Concealed</h2>
-  <div class="gear-grid">
-    <div class="gear-card">
-      <img src="images/pinkspray.jpg" alt="Pink Pepper Spray">
-      <h3>POM MK3 Pink Pepper Spray</h3>
-      <p>Stylish and powerful. Police-grade stream with UV marking dye. Stay ready.</p>
-      <a href="https://amzn.to/44LT29o" target="_blank">Spray Back</a>
+  <section class="category">
+    <h2>🔫 Concealed</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/pinkspray.jpg" alt="Pink Spray Set">
+        <p><strong>Diamond Defense</strong><br>Stylish stun & spray set.<br><a href="https://amzn.to/4kmYP9S" target="_blank">Buy Now</a></p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Air Guns / Arrow Launchers -->
-  <h2>Air Guns & Launchers</h2>
-  <div class="gear-grid">
-    <div class="gear-card">
-      <img src="images/shotgun.jpg" alt="Air Shotgun">
-      <h3>Tactical Air Shotgun</h3>
-      <p>Non-lethal intimidation meets real stopping power. Train for worst-case scenarios.</p>
-      <a href="https://amzn.to/4kmYP9S" target="_blank">Arm Up</a>
+  <section class="category">
+    <h2>🚨 High-Voltage Options</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/stuntaser.jpg" alt="Stun Taser Kit">
+        <p><strong>GOAEO Taser Kit</strong><br>Laser-sighted & extra packs.<br><a href="https://amzn.to/3TrmfjI" target="_blank">Buy Now</a></p>
+      </div>
     </div>
-  </div>
+  </section>
 
+  <footer>
+    <p>“Stay dangerous.” – Grit Gear HQ</p>
+  </footer>
 </body>
 </html>
