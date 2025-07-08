@@ -63,6 +63,29 @@ body {
   font-style: italic;
   text-align: center;
 }
+/* ✅ Responsive for Mobile */
+@media (max-width: 600px) {
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gear-card {
+    width: 90%;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
 
 footer {
   background: rgba(0, 0, 0, 0.7);
