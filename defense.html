@@ -1,64 +1,75 @@
-<!-- Load Orbitron Font -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Defense Categories | Grit Gear HQ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: #111 url('images/blackandwhitebackgroundimage.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
 
-<!-- Hero Header with Metal Background -->
-<div class="metal-hero">
-  <h1>Urban Defense Arsenal</h1>
-  <p>Four Ways to Hurt What’s Coming For You</p>
-</div>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
 
-<style>
-  .metal-hero {
-    background: url('images/metal.jpg') center center no-repeat;
-    background-size: cover;
-    position: relative;
-    text-align: center;
-    padding: 60px 20px;
-    border-bottom: 3px solid #ffa500;
-    overflow: hidden;
-    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.7);
-  }
+    .metal-hero {
+      background: url('images/metal.jpg') center center no-repeat;
+      background-size: cover;
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 3px solid #ffa500;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.7);
+      position: relative;
+      overflow: hidden;
+    }
 
-  .metal-hero::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 0;
-  }
+    .metal-hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
 
-  .metal-hero h1,
-  .metal-hero p {
-    position: relative;
-    z-index: 1;
-    font-family: 'Orbitron', Arial, sans-serif;
-  }
-
-  .metal-hero h1 {
-    color: #ffa500;
-    font-size: 42px;
-    margin-bottom: 12px;
-    text-shadow: 2px 2px 8px #000;
-  }
-
-  .metal-hero p {
-    color: #f2f2f2;
-    font-style: italic;
-    font-size: 18px;
-  }
-
-  @media (max-width: 600px) {
     .metal-hero h1 {
-      font-size: 30px;
+      color: #ffa500;
+      font-size: 42px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 8px #000;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .metal-hero p {
-      font-size: 16px;
+      color: #f2f2f2;
+      font-style: italic;
+      font-size: 18px;
+      position: relative;
+      z-index: 1;
     }
-  }
-</style>
+  </style>
+</head>
 
+<body>
 
+  <!-- Hero Header with Metal Background -->
+  <div class="metal-hero">
+    <h1>Urban Defense Arsenal</h1>
+    <p>Four Ways to Hurt What’s Coming For You</p>
+  </div>
+
+  <!-- Continue with rest of your content below this -->
 
   <section style="background: #121212; border-top: 3px solid #ffa500; border-bottom: 3px solid #ffa500; padding: 40px 20px;">
     <h2 style="color: #ffa500; text-align: center; font-size: 32px; margin-bottom: 30px;">
