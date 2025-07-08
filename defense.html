@@ -1,3 +1,6 @@
+<!-- Load Orbitron Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+
 <!-- Hero Header with Metal Background -->
 <div class="metal-hero">
   <h1>Urban Defense Arsenal</h1>
@@ -8,12 +11,12 @@
   .metal-hero {
     background: url('images/metal.jpg') center center no-repeat;
     background-size: cover;
+    position: relative;
     text-align: center;
     padding: 60px 20px;
     border-bottom: 3px solid #ffa500;
-    box-shadow: inset 0 0 60px rgba(0,0,0,0.7);
-    position: relative;
     overflow: hidden;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.7);
   }
 
   .metal-hero::after {
@@ -24,22 +27,34 @@
     z-index: 0;
   }
 
+  .metal-hero h1,
+  .metal-hero p {
+    position: relative;
+    z-index: 1;
+    font-family: 'Orbitron', Arial, sans-serif;
+  }
+
   .metal-hero h1 {
     color: #ffa500;
     font-size: 42px;
     margin-bottom: 12px;
-    position: relative;
-    z-index: 1;
     text-shadow: 2px 2px 8px #000;
-    font-family: 'Orbitron', sans-serif;
   }
 
   .metal-hero p {
     color: #f2f2f2;
     font-style: italic;
     font-size: 18px;
-    position: relative;
-    z-index: 1;
+  }
+
+  @media (max-width: 600px) {
+    .metal-hero h1 {
+      font-size: 30px;
+    }
+
+    .metal-hero p {
+      font-size: 16px;
+    }
   }
 </style>
 
