@@ -128,98 +128,200 @@
 <h2 class="section-title">⚔️ Blades</h2>
 <section class="product-grid">
 
-  <!-- Knife 1 -->
-  <div class="gear-card">
-    <img src="images/tanto.jpg" alt="NedFoss Tactical Knife">
-    <h3>NedFoss Tactical Survival Knife</h3>
-    <p class="urgency">🔥 Best Seller</p>
-    <p>440C steel, fire starter, G10 grip — ready for combat or the wild.</p>
-    <p class="fake-review">"Solid blade. Reliable in a pinch."</p>
-    <a href="https://amzn.to/3TVWIiz?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Defense Categories | Grit Gear HQ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #111 url('images/blackandwhitebackgroundimage.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+
+    .metal-hero {
+      background: url('images/metal.jpg') center center no-repeat;
+      background-size: cover;
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 3px solid #ffa500;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metal-hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .metal-hero h1 {
+      color: #ffa500;
+      font-size: 42px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 8px #000;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .metal-hero p {
+      color: #f2f2f2;
+      font-style: italic;
+      font-size: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gear-card {
+      background:#1a1a1a;
+      width:280px;
+      border-radius:10px;
+      padding:16px;
+      box-shadow:0 0 12px #000;
+      text-align:center;
+      margin: 20px auto;
+    }
+
+    .gear-card img {
+      width:100%;
+      aspect-ratio: 4/3;
+      object-fit: contain;
+      max-height: 300px;
+    }
+
+    .gear-card h3 {
+      color:#ffa500;
+    }
+
+    .urgency {
+      color: #ffa500;
+      font-weight: bold;
+    }
+
+    .fake-review {
+      color: #90ee90;
+      font-style: italic;
+    }
+
+    .cta-button {
+      background:#ffa500;
+      color:#000;
+      padding:10px 20px;
+      font-weight:bold;
+      border:none;
+      border-radius:6px;
+      display:inline-block;
+      margin-top:10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hero Header with Metal Background -->
+  <div class="metal-hero">
+    <h1>Urban Defense Arsenal</h1>
+    <p>Four Ways to Hurt What’s Coming For You</p>
   </div>
 
-  <!-- Knife 2 -->
-  <div class="gear-card">
-    <img src="images/curvedblade.jpg" alt="SEAL-FULL BLACK Knife">
-    <h3>SEAL-FULL BLACK EDC Knife</h3>
-    <p class="urgency">⚠️ Limited Stock</p>
-    <p>5mm thick steel and a Kydex sheath. Tactical and ready.</p>
-    <p class="fake-review">"Takes a beating. Keeps its edge."</p>
-    <a href="https://amzn.to/4nFIbp6?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+  <!-- KNIFE BLOCK START -->
+  <div class="knife-block">
+    <!-- Inserted gear-card blocks go here -->
+    <!-- Knife 1 -->
+    <div class="gear-card">
+      <img src="images/tanto.jpg" alt="NedFoss Tactical Knife">
+      <h3>NedFoss Tactical Survival Knife</h3>
+      <p class="urgency">🔥 Best Seller</p>
+      <p>440C steel, fire starter, G10 grip — ready for combat or the wild.</p>
+      <p class="fake-review">"Solid blade. Reliable in a pinch."</p>
+      <a href="https://amzn.to/3TVWIiz?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+    </div>
+    <div class="gear-card">
+      <img src="images/curvedblade.jpg" alt="SEAL-FULL BLACK Knife">
+      <h3>SEAL-FULL BLACK EDC Knife</h3>
+      <p class="urgency">⚠️ Limited Stock</p>
+      <p>5mm thick steel and a Kydex sheath. Tactical and ready.</p>
+      <p class="fake-review">"Takes a beating. Keeps its edge."</p>
+      <a href="https://amzn.to/4nFIbp6?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+    </div>
+    <div class="gear-card">
+      <img src="images/wlikin.jpg" alt="Wlikn Fixed Blade Knife">
+      <h3>Wlikn Fixed Blade Knife with Sheath</h3>
+      <p class="urgency">🗡️ Rugged EDC</p>
+      <p>Durable with a no-slip grip. Perfect for bug-out bags.</p>
+      <p class="fake-review">"Good for the price. Sturdy. Chops, slices, and smashes through just about anything imaginable."</p>
+      <a href="https://amzn.to/4exjmY2?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+    </div>
+    <div class="gear-card">
+      <img src="images/tracker.jpg" alt="KIMPE Damascus Knife">
+      <h3>KIMPE Damascus 10.5” Knife</h3>
+      <p class="urgency">🔥 Artisan Steel</p>
+      <p>Hand-forged Damascus with leather sheath. Looks killer, is killer.</p>
+      <p class="fake-review">"Showpiece and survival tool in one."</p>
+      <a href="https://amzn.to/46tZEul?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+    </div>
+    <div class="gear-card">
+      <img src="images/bone.jpg" alt="Bone Grip Knife">
+      <h3>Bone Grip Tactical Blade</h3>
+      <p class="urgency">🦴 Survival Classic</p>
+      <p>Polished bone handle. Heavy blade for serious field work.</p>
+      <p class="fake-review">"Feels primal. Performs like a beast."</p>
+      <a href="https://amzn.to/3LrU4eK?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+    </div>
+    <div class="gear-card">
+      <img src="images/holeknife.jpg" alt="Skeleton Hole Knife">
+      <h3>Skeleton Hole Combat Knife</h3>
+      <p class="urgency">💀 Combat-Ready</p>
+      <p>Finger hole grip and serrated back spine. Lightweight and lethal.</p>
+      <p class="fake-review">"Balanced. Intimidating. Deadly fast."</p>
+      <a href="https://amzn.to/3RNBzMv?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+    </div>
+    <div class="gear-card">
+      <img src="images/ryobe.jpg" alt="RYOBE Tactical Knife">
+      <h3>RYOBE Tactical Hunter Blade</h3>
+      <p class="urgency">🎯 Precision Edge</p>
+      <p>Stonewashed finish with a wide belly. Built for skinning and slashing.</p>
+      <p class="fake-review">"My go-to for backwoods work and field dressing."</p>
+      <a href="https://amzn.to/3Ln3JDW?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+    </div>
+    <div class="gear-card">
+      <img src="images/combo.jpg" alt="Survival Combo Blade">
+      <h3>3-Piece Survival Blade Combo</h3>
+      <p class="urgency">🧰 Versatile Set</p>
+      <p>Includes dagger, fixed blade, and skinner. All-in-one tactical trio.</p>
+      <p class="fake-review">"Got one in every pack now. Great value for the price."</p>
+      <a href="https://amzn.to/3xuYXuy?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+    </div>
+    <div class="gear-card">
+      <img src="images/sixknives.jpg" alt="Pocket Folding Knife Set">
+      <h3>6-Pack Pocket Folding Knives – EDC Set</h3>
+      <p class="urgency">🎁 Best Gift Idea</p>
+      <p>Tactical folder set for camping, fishing, bug-out kits, or giveaways.</p>
+      <p class="fake-review">"Everyone I gave one to loved it. Tough little blades."</p>
+      <a href="https://amzn.to/3Ilj0Yy?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+    </div>
   </div>
-
-  <!-- Knife 3 -->
-  <div class="gear-card">
-    <img src="images/wlikin.jpg" alt="Wlikn Fixed Blade Knife">
-    <h3>Wlikn Fixed Blade Knife with Sheath</h3>
-    <p class="urgency">🗡️ Rugged EDC</p>
-    <p>Durable with a no-slip grip. Perfect for bug-out bags.</p>
-    <p class="fake-review">"Good for the price. Sturdy. Chops, slices, and smashes through just about anything imaginable."</p>
-    <a href="https://amzn.to/4exjmY2?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- Knife 4 -->
-  <div class="gear-card">
-    <img src="images/tracker.jpg" alt="KIMPE Damascus Knife">
-    <h3>KIMPE Damascus 10.5” Knife</h3>
-    <p class="urgency">🔥 Artisan Steel</p>
-    <p>Hand-forged Damascus with leather sheath. Looks killer, is killer.</p>
-    <p class="fake-review">"Showpiece and survival tool in one."</p>
-    <a href="https://amzn.to/46tZEul?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- Knife 5 -->
-  <div class="gear-card">
-    <img src="images/bone.jpg" alt="Bone Grip Knife">
-    <h3>Bone Grip Tactical Blade</h3>
-    <p class="urgency">🦴 Survival Classic</p>
-    <p>Polished bone handle. Heavy blade for serious field work.</p>
-    <p class="fake-review">"Feels primal. Performs like a beast."</p>
-    <a href="https://amzn.to/3LrU4eK?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- Knife 6 -->
-  <div class="gear-card">
-    <img src="images/holeknife.jpg" alt="Skeleton Hole Knife">
-    <h3>Skeleton Hole Combat Knife</h3>
-    <p class="urgency">💀 Combat-Ready</p>
-    <p>Finger hole grip and serrated back spine. Lightweight and lethal.</p>
-    <p class="fake-review">"Balanced. Intimidating. Deadly fast."</p>
-    <a href="https://amzn.to/3RNBzMv?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- Knife 7 -->
-  <div class="gear-card">
-    <img src="images/ryobe.jpg" alt="RYOBE Tactical Knife">
-    <h3>RYOBE Tactical Hunter Blade</h3>
-    <p class="urgency">🎯 Precision Edge</p>
-    <p>Stonewashed finish with a wide belly. Built for skinning and slashing.</p>
-    <p class="fake-review">"My go-to for backwoods work and field dressing."</p>
-    <a href="https://amzn.to/3Ln3JDW?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- Knife 8 -->
-  <div class="gear-card">
-    <img src="images/combo.jpg" alt="Survival Combo Blade">
-    <h3>3-Piece Survival Blade Combo</h3>
-    <p class="urgency">🧰 Versatile Set</p>
-    <p>Includes dagger, fixed blade, and skinner. All-in-one tactical trio.</p>
-    <p class="fake-review">"Got one in every pack now. Great value for the price."</p>
-    <a href="https://amzn.to/3xuYXuy?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- Knife 9 -->
-  <div class="gear-card">
-    <img src="images/sixknives.jpg" alt="Pocket Folding Knife Set">
-    <h3>6-Pack Pocket Folding Knives – EDC Set</h3>
-    <p class="urgency">🎁 Best Gift Idea</p>
-    <p>Tactical folder set for camping, fishing, bug-out kits, or giveaways.</p>
-    <p class="fake-review">"Everyone I gave one to loved it. Tough little blades."</p>
-    <a href="https://amzn.to/3Ilj0Yy?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-  </div>
-
-</section>
-
+</body>
+</html>
+ 
 
 </section>
 
