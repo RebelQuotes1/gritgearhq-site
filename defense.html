@@ -120,8 +120,6 @@
 </body>
 </html>
 
-
-
 <!-- Category: Blades -->
 <h2 class="section-title">⚔️ Blades</h2>
 <section class="product-grid">
@@ -136,9 +134,9 @@
   </div>
 
   <!-- Hidden knives -->
-  <div id="more-knives" style="display: none;">
+  <div id="more-knives" style="display: none; flex-wrap: wrap; gap: 20px; justify-content: center;">
     <div class="gear-card">
-      <img src="images/curvedblade.jpg" alt="SEAL-FULL BLACK Knife">
+      <img src="images/curvedblade.jpg" alt="SEAL-FULL BLACK EDC Knife">
       <h3>SEAL-FULL BLACK EDC Knife</h3>
       <p class="urgency">⚠️ Limited Stock</p>
       <p>5mm thick steel and a Kydex sheath. Tactical and ready.</p>
@@ -146,83 +144,14 @@
       <a href="https://amzn.to/4nFIbp6?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
     </div>
 
-   <div class="gear-card">
-  <img src="images/wlikin.jpg" alt="Knife Name" style="width: 100%; height: auto; aspect-ratio: 4/3; object-fit: contain; max-height: 300px;">
-  <h3>Wlikn Fixed Blade Knife with Sheath</h3>
-  <p class="urgency">🗡️ Rugged EDC</p>
-  <p>Durable with a no-slip grip. Perfect for bug-out bags.</p>
-  <p class="fake-review">"Good for the price. Sturdy. Chops, slices, and smashes through just about anything imaginable."</p>
-  <a href="https://amzn.to/4exjmY2?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-</div>
-
-
     <div class="gear-card">
-      <img src="images/tracker.jpg" alt="KIMPE Damascus Knife">
-      <h3>KIMPE Damascus 10.5” Knife</h3>
-      <p class="urgency">🔥 Artisan Steel</p>
-      <p>Hand-forged Damascus with leather sheath. Looks killer, is killer.</p>
-      <p class="fake-review">"Showpiece and survival tool in one."</p>
-      <a href="https://amzn.to/46tZEul?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
+      <img src="images/wlikin.jpg" alt="Wlikn Fixed Blade Knife" style="width: 100%; height: auto; aspect-ratio: 4/3; object-fit: contain; max-height: 300px;">
+      <h3>Wlikn Fixed Blade Knife with Sheath</h3>
+      <p class="urgency">🗡️ Rugged EDC</p>
+      <p>Durable with a no-slip grip. Perfect for bug-out bags.</p>
+      <p class="fake-review">"Good for the price. Sturdy. Chops, slices, and smashes through just about anything imaginable."</p>
+      <a href="https://amzn.to/4exjmY2?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
     </div>
-  </div>
-</section>
-
-<!-- Toggle Button -->
-<div style="text-align: center; margin: 20px 0;">
-  <button onclick="toggleKnives()" id="toggleBtn" style="background:#ffa500; color:#000; padding:10px 20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
-    See More
-  </button>
-</div>
-
-<!-- Toggle Script -->
-<script>
-  function toggleKnives() {
-    const hidden = document.getElementById("more-knives");
-    const btn = document.getElementById("toggleBtn");
-
-    if (hidden.style.display === "none") {
-      hidden.style.display = "flex";
-      btn.textContent = "See Less";
-    } else {
-      hidden.style.display = "none";
-      btn.textContent = "See More";
-    }
-  }
-</script>
-# Load the user's HTML snippet
-html = """
-<!-- Category: Blades -->
-<h2 class="section-title">⚔️ Blades</h2>
-<section class="product-grid">
-  <!-- Always-visible knife -->
-  <div class="gear-card">
-    <img src="images/tanto.jpg" alt="NedFoss Tactical Knife">
-    <h3>NedFoss Tactical Survival Knife</h3>
-    <p class="urgency">🔥 Best Seller</p>
-    <p>440C steel, fire starter, G10 grip — ready for combat or the wild.</p>
-    <p class="fake-review">"Solid blade. Reliable in a pinch."</p>
-    <a href="https://amzn.to/3TVWIiz?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-  </div>
-
-  <!-- Hidden knives -->
-  <div id="more-knives" style="display: none;">
-    <div class="gear-card">
-      <img src="images/curvedblade.jpg" alt="SEAL-FULL BLACK Knife">
-      <h3>SEAL-FULL BLACK EDC Knife</h3>
-      <p class="urgency">⚠️ Limited Stock</p>
-      <p>5mm thick steel and a Kydex sheath. Tactical and ready.</p>
-      <p class="fake-review">"Takes a beating. Keeps its edge."</p>
-      <a href="https://amzn.to/4nFIbp6?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-    </div>
-
-   <div class="gear-card">
-  <img src="images/wlikin.jpg" alt="Knife Name" style="width: 100%; height: auto; aspect-ratio: 4/3; object-fit: contain; max-height: 300px;">
-  <h3>Wlikn Fixed Blade Knife with Sheath</h3>
-  <p class="urgency">🗡️ Rugged EDC</p>
-  <p>Durable with a no-slip grip. Perfect for bug-out bags.</p>
-  <p class="fake-review">"Good for the price. Sturdy. Chops, slices, and smashes through just about anything imaginable."</p>
-  <a href="https://amzn.to/4exjmY2?tag=dailygritquot-20" class="cta-button flash" target="_blank">Buy Now</a>
-</div>
 
     <div class="gear-card">
       <img src="images/tracker.jpg" alt="KIMPE Damascus Knife">
