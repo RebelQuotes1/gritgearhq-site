@@ -111,15 +111,71 @@
     <a href="https://amzn.to/4ksNQfd?tag=gritgearhq-20" class="cta-button flash" target="_blank">Buy Now</a>
   </div>
 
-  <!-- POM MK3 Police-Grade Spray -->
-  <div class="gear-card">
-    <img src="images/pom.jpg" alt="POM Police Grade Pepper Spray">
-    <h3>POM MK3 Police Strength</h3>
-    <p class="urgency">💥 Tactical Favorite</p>
-    <p>18-ft stream, 360° firing, and UV dye for ID. Trusted by law enforcement.</p>
-    <p class="fake-review">"Best I’ve carried. Small but fierce. Clips right to the belt."</p>
-    <a href="https://amzn.to/4krHgWl?tag=gritgearhq-20" class="cta-button flash" target="_blank">Buy Now</a>
+ <!-- POM MK3 Police-Grade Spray with Countdown -->
+<div class="gear-card">
+  <img src="images/pom.jpg" alt="POM Police Grade Pepper Spray">
+  <h3>POM MK3 Police Strength</h3>
+  <p class="urgency">💥 Tactical Favorite</p>
+  <p>18-ft stream, 360° firing, and UV dye for ID. Trusted by law enforcement.</p>
+  <p class="fake-review">"Best I’ve carried. Small but fierce. Clips right to the belt."</p>
+
+  <!-- Countdown Timer -->
+  <div class="countdown-box">
+    <span class="countdown-label">🔥 Deal Ends In:</span>
+    <span id="countdown-pom" class="countdown-timer">04:00:00</span>
   </div>
+
+  <a href="https://amzn.to/4krHgWl?tag=gritgearhq-20" class="cta-button flash" target="_blank">Buy Now</a>
+</div>
+
+<!-- Countdown Script -->
+<script>
+  function startCountdown(duration, display) {
+    let timer = duration, hours, minutes, seconds;
+    setInterval(() => {
+      hours = String(Math.floor(timer / 3600)).padStart(2, '0');
+      minutes = String(Math.floor((timer % 3600) / 60)).padStart(2, '0');
+      seconds = String(timer % 60).padStart(2, '0');
+
+      display.textContent = `${hours}:${minutes}:${seconds}`;
+      if (--timer < 0) timer = duration; // Reset when finished
+    }, 1000);
+  }
+
+  window.onload = () => {
+    const countdown = document.getElementById("countdown-pom");
+    const fourHours = 60 * 60 * 4;
+    if (countdown) startCountdown(fourHours, countdown);
+  };
+</script>
+
+<!-- Countdown Styling -->
+<style>
+  .countdown-box {
+    background: #1a1a1a;
+    padding: 8px 12px;
+    border: 2px solid #ffa500;
+    margin: 10px auto;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #000;
+  }
+
+  .countdown-label {
+    color: #ffa500;
+    font-size: 13px;
+    margin-right: 8px;
+    font-weight: bold;
+  }
+
+  .countdown-timer {
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: monospace;
+  }
+</style>
+
   
 <div class="gear-card" style="border: 3px solid #ff4500; box-shadow: 0 0 20px #ff4500;">
   <img src="images/krul.jpg" alt="KRUI Self Defense Bat" style="border-radius: 8px;">
