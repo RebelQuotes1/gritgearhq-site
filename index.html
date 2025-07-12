@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
-      background-image: url("images/mono.jpg"); /* ← NEW background */
+      background-image: url("images/mono.jpg");
+      background-color: #000; /* fallback */
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
@@ -15,54 +16,11 @@
       margin: 0;
       padding: 0;
       font-family: 'Orbitron', sans-serif;
-    }
-
-    .hero {
-      background-image: url("images/concrete.jpg"); /* Defense header */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding: 100px 20px;
-      text-align: center;
-      color: #ffa500;
-      font-family: 'Orbitron', sans-serif;
-      border-bottom: 2px solid #ffa500;
-      box-shadow: inset 0 0 80px #000;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px #000;
-    }
-
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
       color: #fff;
-      text-shadow: 1px 1px 3px #000;
-    }
-
-    .cta-button {
-      display: inline-block;
-      margin: 8px;
-      padding: 12px 20px;
-      background-color: #ffa500;
-      color: #111;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .cta-button:hover {
-      background-color: #ffbe44;
-      color: #000;
     }
   </style>
 </head>
 <body>
-
 
   <header class="hero">
     <h1>Grit Gear HQ</h1>
