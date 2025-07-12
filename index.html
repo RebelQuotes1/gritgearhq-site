@@ -21,6 +21,98 @@
   <section class="tagline-box">
     <p>“In a world gone soft, be the iron.”</p>
   </section>
+  <!-- ⭐ CUSTOMER REVIEWS SLIDER ⭐ -->
+<div class="review-slider-section">
+  <h2 class="section-title">💬 What Our Crew Is Saying</h2>
+  <div class="review-slider" id="reviewSlider">
+    <div class="review">
+      <p>“Bought the M48 Hammer. Feels like Thor made it himself.”</p>
+      <span>- Jake, Texas</span>
+    </div>
+    <div class="review">
+      <p>“That pepper spray? Sent a tweaker into orbit. Instant regret.”</p>
+      <span>- V, Arizona</span>
+    </div>
+    <div class="review">
+      <p>“Didn’t expect much. Got a badass vest that made me feel invincible.”</p>
+      <span>- Drew, Ohio</span>
+    </div>
+    <div class="review">
+      <p>“Every product I’ve tried from Grit Gear feels like it was made for war.”</p>
+      <span>- Kris, Florida</span>
+    </div>
+    <div class="review">
+      <p>“Finally a store that doesn’t sell tacticool crap — just gear that hits hard.”</p>
+      <span>- Sarah, Montana</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.review-slider-section {
+  background: #1a1a1a;
+  padding: 40px 20px;
+  border-top: 2px solid #ffa500;
+  border-bottom: 2px solid #ffa500;
+  text-align: center;
+}
+
+.review-slider-section .section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  color: #ffa500;
+  margin-bottom: 20px;
+}
+
+.review-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.review-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.review {
+  background: #222;
+  color: #ccc;
+  padding: 20px;
+  min-width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  flex-shrink: 0;
+  font-size: 14px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.review:hover {
+  transform: scale(1.03);
+}
+
+.review::before {
+  content: "★★★★★";
+  color: #ffa500;
+  font-size: 16px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+</style>
+
+<script>
+setInterval(() => {
+  const slider = document.getElementById("reviewSlider");
+  slider.scrollBy({ left: 280, behavior: "smooth" });
+}, 4000);
+</script>
+
 <div style="background: #1a1a1a; padding: 30px; border-bottom: 2px solid #ffa500;">
   <h2 style="color:#ffa500; font-family:Orbitron, sans-serif; text-align:center;">About Grit Gear HQ</h2>
   <p style="color:#ccc; max-width:800px; margin:auto; font-size:16px; text-align:center;">
