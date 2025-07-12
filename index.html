@@ -5,29 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Background Test</title>
   <style>
-    body {
-      background-image: url("images/mono.jpg");
-      background-color: #000;
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      background: url("images/mono.jpg") no-repeat center center fixed;
+      background-size: cover;
       font-family: 'Orbitron', sans-serif;
       color: #fff;
     }
+
     h1 {
-      padding: 100px;
       text-align: center;
+      padding: 150px 0 20px;
+      font-size: 2em;
+    }
+
+    .debug-img {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      border: 2px solid red;
     }
   </style>
 </head>
 <body>
   <h1>Test Background</h1>
-  <img src="images/mono.jpg" style="width: 200px; border: 2px solid red;">
+  <img src="images/mono.jpg" class="debug-img" alt="mono debug test">
 </body>
 </html>
+
 
     }
   </style>
