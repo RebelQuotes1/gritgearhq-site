@@ -1,134 +1,75 @@
+<!-- 🎪 Carnival-Style Gear Bait + Flashy CTA -->
+<section style="background:#111; padding:50px 20px; border-top:3px dashed #ffa500; border-bottom:3px dashed #ffa500; font-family:'Orbitron', sans-serif; box-shadow:inset 0 0 50px #000; text-align:center;">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Grit Test – Are You Built for This?</title>
-  <style>
-    body {
-      background: #000;
-      color: #ffa500;
-      font-family: monospace;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .container h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    .container p {
-      color: #ccc;
-    }
-    button {
-      background: #ffa500;
-      color: #000;
-      font-weight: bold;
-      padding: 10px 20px;
-      font-size: 1em;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-bottom: 30px;
-    }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .card {
-      width: 240px;
-      background: #1a1a1a;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #000;
-    }
-    .card img {
-      width: 100%;
-      border-radius: 6px;
-    }
-    .card h3 {
-      color: #ffa500;
-    }
-    .card p {
-      color: #ccc;
-    }
-    .card a {
-      display: inline-block;
-      background: #ffa500;
-      color: #000;
-      padding: 8px 12px;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-    .return-button {
-      margin-top: 50px;
-    }
-    .return-button a {
-      display: inline-block;
-      padding: 10px 18px;
-      background: #333;
-      color: #ffa500;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>🧠 Take the Grit Test</h2>
-    <p>Are you built for the wild—or just built different?</p>
-    <button onclick="rotateJoke()">Find Out</button>
-    <p id="gritJoke" style="font-style: italic;">Click the button and prepare to be judged.</p>
+  <h2 style="color:#ffa500; font-size:2em; text-shadow:0 0 5px #000;">🎯 Only the Essentials: Rugged. Real. Ready.</h2>
+  <p style="color:#ccc; margin-bottom:40px;">No fluff. Just the gear that could save your ass.</p>
 
-    <hr style="margin: 40px 0; border: 1px solid #333;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
 
-    <div class="products">
-      <div class="card">
-        <img src="images/ax.jpg" alt="Tactical Axe">
-        <h3>RXLLY Tactical Axe</h3>
-        <p>Break, chop, claw, survive. Comes with sheath and attitude.</p>
-        <a href="https://amzn.to/4nsmHM7" target="_blank">Grab One</a>
-      </div>
-      <div class="card">
-        <img src="images/tnt.jpg" alt="Tent with Stove Jack">
-        <h3>Fireproof Hot Tent</h3>
-        <p>Canvas and steel pipe dreams. Stay warm when hell freezes over.</p>
-        <a href="https://amzn.to/4eouJSa" target="_blank">Check It Out</a>
-      </div>
-      <div class="card">
-        <img src="images/shoe.jpg" alt="Minimalist Trail Shoes">
-        <h3>Barefoot Trail Shoes</h3>
-        <p>Tough on terrain, kind to your soles. Perfect for stealthy bug-outs.</p>
-        <a href="https://amzn.to/4kdt5nK" target="_blank">Step In</a>
-      </div>
-   
-    <div class="return-button">
-      <a href="index.html">← Return to Homepage</a>
+    <!-- Hatchet -->
+    <div style="background:#1a1a1a; width:260px; border-radius:10px; padding:20px; box-shadow:0 0 20px #000; border:2px solid #ffa500; transition:transform 0.3s;">
+      <img src="images/hatchet.jpg" alt="Survival Hatchet" style="width:100%; border-radius:8px; margin-bottom:12px;">
+      <h3 style="color:#ffa500; font-size:1.1em;">Tactical Survival Hatchet</h3>
+      <p style="color:#ccc; font-size:0.9em;">Heavy-duty, full tang, and built to break bones or branches.</p>
+      <a href="https://amzn.to/450Pn7J" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:5px; font-weight:bold; text-decoration:none;">🪓 View on Amazon</a>
     </div>
+
+    <!-- Tent -->
+    <div style="background:#1a1a1a; width:260px; border-radius:10px; padding:20px; box-shadow:0 0 20px #000; border:2px solid #ffa500; transition:transform 0.3s;">
+      <img src="images/tent.jpg" alt="4-Season Tent" style="width:100%; border-radius:8px; margin-bottom:12px;">
+      <h3 style="color:#ffa500; font-size:1.1em;">4-Season Dome Tent</h3>
+      <p style="color:#ccc; font-size:0.9em;">Windproof. Waterproof. Wife-approved. Your portable bunker.</p>
+      <a href="https://amzn.to/4nN6txo" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:5px; font-weight:bold; text-decoration:none;">⛺ See Tent</a>
+    </div>
+
+    <!-- Shoes -->
+    <div style="background:#1a1a1a; width:260px; border-radius:10px; padding:20px; box-shadow:0 0 20px #000; border:2px solid #ffa500; transition:transform 0.3s;">
+      <img src="images/shoes.jpg" alt="Rugged Trail Shoes" style="width:100%; border-radius:8px; margin-bottom:12px;">
+      <h3 style="color:#ffa500; font-size:1.1em;">Grit-Ready Trail Shoes</h3>
+      <p style="color:#ccc; font-size:0.9em;">Tear through terrain with grip, comfort, and grit.</p>
+      <a href="https://amzn.to/3TXJWAt" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:5px; font-weight:bold; text-decoration:none;">🥾 Check 'Em Out</a>
+    </div>
+
   </div>
 
-  <script>
-    const jokes = [
-      "You screamed 'Alexa, help!' — a wild boar came instead. He wasn't feeling it.",
-      "You bartered your last match for a vape cartridge.",
-      "You thought MREs were a rap group. You're done.",
-      "You asked a survivalist if they take Venmo. They took your boots instead.",
-      "You filtered swamp water through your Yeezys.",
-      "You packed gluten-free rations. For the apocalypse."
-    ];
-    function rotateJoke() {
-      const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
-      document.getElementById('gritJoke').innerText = randomJoke;
+  <!-- Flashy Carnival-Style CTA Button -->
+  <div style="margin-top:50px;">
+    <a href="https://gritgearhq.com/store.html" style="display:inline-block; font-size:1.4em; padding:16px 40px; background:radial-gradient(circle, #ffa500, #ff4500); color:#000; font-weight:bold; text-shadow:0 0 5px #000; border-radius:12px; box-shadow:0 0 25px #ff7300, inset 0 0 10px #fff; animation: pulse 1.5s infinite; text-decoration:none;">🎪 GEAR UP NOW</a>
+  </div>
+
+  <style>
+    @keyframes pulse {
+      0% { box-shadow: 0 0 25px #ff7300, inset 0 0 10px #fff; }
+      50% { box-shadow: 0 0 40px #ff7300, inset 0 0 15px #fff; }
+      100% { box-shadow: 0 0 25px #ff7300, inset 0 0 10px #fff; }
     }
-  </script>
-</body>
-</html>
+  </style>
+
+</section>
+<!-- 🦾 Grit Gear HQ Footer -->
+<footer style="background:#0d0d0d; color:#aaa; font-family:'Courier New', monospace; text-align:center; padding:30px 20px; border-top:2px solid #ffa500; box-shadow:0 -4px 20px #000; margin-top:60px;">
+
+  <p style="margin-bottom:10px; font-size:0.9em;">
+    © 2024 <strong>Grit Gear HQ</strong> · Built for the bold. Prepped for the worst. Survive in style.
+  </p>
+
+  <p style="margin-bottom:15px;">
+    <a href="/privacy.html" style="color:#ffa500; margin:0 10px; text-decoration:none;">Privacy Policy</a> |
+    <a href="/terms.html" style="color:#ffa500; margin:0 10px; text-decoration:none;">Terms of Service</a> |
+    <a href="/affiliate.html" style="color:#ffa500; margin:0 10px; text-decoration:none;">Affiliate Disclosure</a>
+  </p>
+
+  <!-- Optional Google AdSense Slot (responsive) -->
+  <div style="margin-top:30px;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"  <!-- Replace with your client ID -->
+         data-ad-slot="1234567890"                <!-- Replace with your ad slot -->
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+</footer>
