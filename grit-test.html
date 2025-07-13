@@ -1,75 +1,134 @@
-<!-- 🎪 Carnival-Style Gear Bait + Flashy CTA -->
-<section style="background:#111; padding:50px 20px; border-top:3px dashed #ffa500; border-bottom:3px dashed #ffa500; font-family:'Orbitron', sans-serif; box-shadow:inset 0 0 50px #000; text-align:center;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Take the Grit Test</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      font-family: 'Courier New', monospace;
+      color: #fff;
+    }
 
-  <h2 style="color:#ffa500; font-size:2em; text-shadow:0 0 5px #000;">🎯 Only the Essentials: Rugged. Real. Ready.</h2>
-  <p style="color:#ccc; margin-bottom:40px;">No fluff. Just the gear that could save your ass.</p>
+    h1 {
+      text-align: center;
+      color: #ffa500;
+      margin-top: 40px;
+      font-size: 2.5em;
+      text-shadow: 0 0 10px #000;
+    }
 
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+    .grit-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 20px 40px;
+      background: linear-gradient(45deg, #ff0000, #ffa500);
+      border: none;
+      border-radius: 12px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 15px #ff0000, 0 0 5px #ffa500;
+      animation: pulse 2s infinite;
+    }
 
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px #ff0000; }
+      50% { box-shadow: 0 0 30px #ffa500; }
+      100% { box-shadow: 0 0 15px #ff0000; }
+    }
+
+    .gear-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .gear-card {
+      background: #1a1a1a;
+      width: 280px;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 0 15px #000;
+      text-align: center;
+    }
+
+    .gear-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .gear-card h3 {
+      color: #ffa500;
+      margin: 10px 0;
+    }
+
+    .gear-card p {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #ffa500;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #000;
+      color: #999;
+      font-size: 12px;
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 2px solid #ffa500;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔥 Think You’ve Got Grit?</h1>
+  <a href="https://gritgearhq.com/grit-test.html" class="grit-btn">🧠 TAKE THE GRIT TEST</a>
+
+  <div class="gear-row">
     <!-- Hatchet -->
-    <div style="background:#1a1a1a; width:260px; border-radius:10px; padding:20px; box-shadow:0 0 20px #000; border:2px solid #ffa500; transition:transform 0.3s;">
-      <img src="images/hatchet.jpg" alt="Survival Hatchet" style="width:100%; border-radius:8px; margin-bottom:12px;">
-      <h3 style="color:#ffa500; font-size:1.1em;">Tactical Survival Hatchet</h3>
-      <p style="color:#ccc; font-size:0.9em;">Heavy-duty, full tang, and built to break bones or branches.</p>
-      <a href="https://amzn.to/450Pn7J" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:5px; font-weight:bold; text-decoration:none;">🪓 View on Amazon</a>
+    <div class="gear-card">
+      <img src="images/tact.jpg" alt="Tactical Hatchet">
+      <h3>Tactical Survival Hatchet</h3>
+      <p>Brutal chopping power in a compact, ready-for-anything frame. Includes sheath & belt holster.</p>
+      <a class="buy-btn" href="https://amzn.to/450Pn7J" target="_blank">🔪 Buy on Amazon</a>
     </div>
 
     <!-- Tent -->
-    <div style="background:#1a1a1a; width:260px; border-radius:10px; padding:20px; box-shadow:0 0 20px #000; border:2px solid #ffa500; transition:transform 0.3s;">
-      <img src="images/tent.jpg" alt="4-Season Tent" style="width:100%; border-radius:8px; margin-bottom:12px;">
-      <h3 style="color:#ffa500; font-size:1.1em;">4-Season Dome Tent</h3>
-      <p style="color:#ccc; font-size:0.9em;">Windproof. Waterproof. Wife-approved. Your portable bunker.</p>
-      <a href="https://amzn.to/4nN6txo" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:5px; font-weight:bold; text-decoration:none;">⛺ See Tent</a>
+    <div class="gear-card">
+      <img src="images/teee.jpg" alt="Canvas Tent">
+      <h3>Waterproof Canvas Tent</h3>
+      <p>4-Season shelter with stove jack. Storm-ready, family-sized, and built to outlast the grid.</p>
+      <a class="buy-btn" href="https://amzn.to/4nN6txo" target="_blank">🏕️ Buy on Amazon</a>
     </div>
 
-    <!-- Shoes -->
-    <div style="background:#1a1a1a; width:260px; border-radius:10px; padding:20px; box-shadow:0 0 20px #000; border:2px solid #ffa500; transition:transform 0.3s;">
-      <img src="images/shoes.jpg" alt="Rugged Trail Shoes" style="width:100%; border-radius:8px; margin-bottom:12px;">
-      <h3 style="color:#ffa500; font-size:1.1em;">Grit-Ready Trail Shoes</h3>
-      <p style="color:#ccc; font-size:0.9em;">Tear through terrain with grip, comfort, and grit.</p>
-      <a href="https://amzn.to/3TXJWAt" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:5px; font-weight:bold; text-decoration:none;">🥾 Check 'Em Out</a>
+    <!-- Trail Shoes -->
+    <div class="gear-card">
+      <img src="images/bbb.jpg" alt="Trail Shoes">
+      <h3>Minimalist Trail Shoes</h3>
+      <p>Agile and lightweight. Built for silence, grip, and speed in rough terrain. Fits like armor for your feet.</p>
+      <a class="buy-btn" href="https://amzn.to/3TXJWAt" target="_blank">🥾 Buy on Amazon</a>
     </div>
-
   </div>
 
-  <!-- Flashy Carnival-Style CTA Button -->
-  <div style="margin-top:50px;">
-    <a href="https://gritgearhq.com/store.html" style="display:inline-block; font-size:1.4em; padding:16px 40px; background:radial-gradient(circle, #ffa500, #ff4500); color:#000; font-weight:bold; text-shadow:0 0 5px #000; border-radius:12px; box-shadow:0 0 25px #ff7300, inset 0 0 10px #fff; animation: pulse 1.5s infinite; text-decoration:none;">🎪 GEAR UP NOW</a>
-  </div>
+  <footer>
+    <p>This site contains affiliate links. As an Amazon Associate, we earn from qualifying purchases. Your support helps us stay online and independent. Stay sharp out there. – Grit Gear HQ</p>
+  </footer>
 
-  <style>
-    @keyframes pulse {
-      0% { box-shadow: 0 0 25px #ff7300, inset 0 0 10px #fff; }
-      50% { box-shadow: 0 0 40px #ff7300, inset 0 0 15px #fff; }
-      100% { box-shadow: 0 0 25px #ff7300, inset 0 0 10px #fff; }
-    }
-  </style>
-
-</section>
-<!-- 🦾 Grit Gear HQ Footer -->
-<footer style="background:#0d0d0d; color:#aaa; font-family:'Courier New', monospace; text-align:center; padding:30px 20px; border-top:2px solid #ffa500; box-shadow:0 -4px 20px #000; margin-top:60px;">
-
-  <p style="margin-bottom:10px; font-size:0.9em;">
-    © 2024 <strong>Grit Gear HQ</strong> · Built for the bold. Prepped for the worst. Survive in style.
-  </p>
-
-  <p style="margin-bottom:15px;">
-    <a href="/privacy.html" style="color:#ffa500; margin:0 10px; text-decoration:none;">Privacy Policy</a> |
-    <a href="/terms.html" style="color:#ffa500; margin:0 10px; text-decoration:none;">Terms of Service</a> |
-    <a href="/affiliate.html" style="color:#ffa500; margin:0 10px; text-decoration:none;">Affiliate Disclosure</a>
-  </p>
-
-  <!-- Optional Google AdSense Slot (responsive) -->
-  <div style="margin-top:30px;">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"  <!-- Replace with your client ID -->
-         data-ad-slot="1234567890"                <!-- Replace with your ad slot -->
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
-</footer>
+</body>
+</html>
