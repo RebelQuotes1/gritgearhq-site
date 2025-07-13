@@ -629,14 +629,39 @@ setInterval(updateTimers, 1000);
     <a href="https://amzn.to/4lP3mTE" target="_blank" class="buy-btn">🔥 Spark the Flame</a>
   </div>
 
-  <!-- FOOD -->
-  <div class="flash-card">
-    <img src="images/lunchanddinner.jpg" alt="Augason Farms Emergency Food Bucket">
-    <h3>Augason Farms 92-Serving Bucket</h3>
-    <p>Just-add-water meals with a 25-year shelf life. Fuel your survival the smart way.</p>
-    <a href="https://amzn.to/44sTXvl" target="_blank" class="buy-btn">🍲 Stock Up Now</a>
+<!-- 🍲 FEATURED FOOD BUCKET - FLASHY SALE CARD -->
+<div class="flash-card" style="position:relative; overflow:hidden;">
+
+  <!-- 🔔 Promo Badge -->
+  <div style="position:absolute; top:-10px; left:-10px; background:#ff4500; color:#fff; font-weight:bold; font-size:0.85em; padding:6px 10px; transform:rotate(-10deg); box-shadow:0 0 10px #000;">
+    FLASH DEAL
   </div>
+
+  <!-- Product Image -->
+  <img src="images/lunchanddinner.jpg" alt="Augason Farms Emergency Food Bucket">
+
+  <!-- Product Info -->
+  <h3>Augason Farms 92-Serving Bucket</h3>
+  <p>Just-add-water meals with a 25-year shelf life. Fuel your survival the smart way.</p>
+  <p style="color:#90ee90; font-weight:bold;">🔥 21,000+ Calories. Long-term peace of mind.</p>
+  <p style="color:#ffa500; font-weight:bold;">⏳ Limited Stock – Don’t Wait!</p>
+
+  <!-- Countdown Timer (fake) -->
+  <p style="color:#ff4d4d; font-size:0.9em;">⚡ Deal ends in <span style="font-weight:bold;">03:42:12</span></p>
+
+  <!-- CTA Button -->
+  <a href="https://amzn.to/44sTXvl" target="_blank" class="buy-btn" style="animation: pulse 1.5s infinite; font-size:1.1em;">🍲 Stock Up Now</a>
 </div>
+
+<!-- Button Animation -->
+<style>
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #ffa500; }
+  50% { box-shadow: 0 0 25px #ff7300; }
+  100% { box-shadow: 0 0 10px #ffa500; }
+}
+</style>
+
 
        
 
