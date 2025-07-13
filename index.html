@@ -458,26 +458,96 @@ function updateTimers() {
 setInterval(updateTimers, 1000);
 </script>
 
-  </section>
-  <!-- ⭐ CUSTOMER REVIEWS SLIDER ⭐ -->
-<div class="review-slider-section">
-  <h2 class="section-title">💬 What Our Crew Is Saying</h2>
-  <div class="review-slider" id="reviewSlider">
-    <div class="review">
-      <p>“Bought the M48 Hammer. Feels like Thor made it himself.”</p>
-      <span>- Jake, Texas</span>
-    </div>
-    <div class="review">
-      <p>“That pepper spray? Sent a tweaker into orbit. Instant regret.”</p>
-      <span>- V, Arizona</span>
-    </div>
-    <div class="review">
-      <p>“Didn’t expect much. Got a badass vest that made me feel invincible.”</p>
-      <span>- Drew, Ohio</span>
-    </div>
-    <div class="review">
-      <p>“Every product I’ve tried from Grit Gear feels like it was made for war.”</p>
-      <span>- Kris, Florida</span>
+<!-- ⚡ FOOD, WATER & FIRE FLASH SALE SECTION -->
+<style>
+.flash-sale {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 50px 20px;
+  background: #111;
+  border-top: 2px solid #ffa500;
+  border-bottom: 2px solid #ffa500;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.flash-card {
+  background: #1a1a1a;
+  border: 2px solid #ffa500;
+  box-shadow: 0 0 25px #ff8c00;
+  width: 300px;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.flash-card:hover {
+  transform: scale(1.03);
+}
+
+.flash-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.flash-card h3 {
+  font-size: 1.1em;
+  color: #ffa500;
+  margin-bottom: 10px;
+}
+
+.flash-card p {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.flash-sale .buy-btn {
+  display: inline-block;
+  background: #ffa500;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 0 12px #ffa500;
+  transition: all 0.3s ease;
+}
+
+.flash-sale .buy-btn:hover {
+  background: #ff7300;
+  color: #fff;
+}
+</style>
+
+<div class="flash-sale">
+  <!-- WATER -->
+  <div class="flash-card">
+    <img src="images/matepump.jpg" alt="SurviMate Water Filter Pump">
+    <h3>SurviMate Water Purifier Pump</h3>
+    <p>0.01 Micron 5-Stage Hand Pump Filter. Clean drinking water anywhere, anytime.</p>
+    <a href="https://amzn.to/4lKBYX0" target="_blank" class="buy-btn">💧 Grab the Pump</a>
+  </div>
+
+  <!-- FIRE -->
+  <div class="flash-card">
+    <img src="images/flint.jpg" alt="bayite Ferro Rod Fire Starter">
+    <h3>bayite Ferro Rod Kit</h3>
+    <p>4" Flint Fire Starter w/ Paracord & Striker. Lights up fast in any weather.</p>
+    <a href="https://amzn.to/4lP3mTE" target="_blank" class="buy-btn">🔥 Spark the Flame</a>
+  </div>
+
+  <!-- FOOD -->
+  <div class="flash-card">
+    <img src="images/lunchanddinner.jpg" alt="Augason Farms Emergency Food Bucket">
+    <h3>Augason Farms 92-Serving Bucket</h3>
+    <p>Just-add-water meals with a 25-year shelf life. Fuel your survival the smart way.</p>
+    <a href="https://amzn.to/44sTXvl" target="_blank" class="buy-btn">🍲 Stock Up Now</a>
+  </div>
+</div>
 
        
 
