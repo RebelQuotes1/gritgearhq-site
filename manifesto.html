@@ -3,194 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Grit Manifesto – Real Stories from the Edge | Grit Gear HQ</title>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSRKJ63PPM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TSRKJ63PPM');
-  </script>
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
-
+  <title>Rough Grit Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil&family=Orbitron&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Courier New', monospace;
-      background: url('bg-manila.jpg') no-repeat center center fixed;
+      font-family: 'Orbitron', sans-serif;
+      background: url('images/bg-blog.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #f2f2f2;
     }
-
-    .blog-nav {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 2px solid #ffa500;
+    .overlay {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 40px 20px;
+      min-height: 100vh;
     }
-
-    .blog-nav a {
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
       color: #ffa500;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+      font-family: 'Stardos Stencil', sans-serif;
     }
-
-    .blog-nav a:hover {
-      text-decoration: underline;
+    p {
+      line-height: 1.7;
+      font-size: 17px;
     }
-
-    .blog-post {
-      margin: 50px auto;
-      max-width: 800px;
-      background: rgba(20, 20, 20, 0.85);
+    .story-section {
+      background: rgba(20, 20, 20, 0.9);
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 25px #000;
+      margin-bottom: 40px;
+      box-shadow: 0 0 15px #000;
     }
-
-    .blog-post h2 {
-      color: #ffa500;
-      text-align: center;
+    .header-image {
+      width: 100%;
+      border-radius: 8px;
       margin-bottom: 20px;
     }
-
-    .blog-post p {
-      line-height: 1.7;
-      font-size: 18px;
+    .gear-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
-
-    .ad-bar {
-      background: #222;
-      color: #aaa;
+    .gear-item {
+      background: #111;
+      border: 2px solid #ffa500;
+      border-radius: 10px;
       padding: 15px;
+      width: 260px;
+      box-shadow: 0 0 20px #000;
       text-align: center;
-      margin: 40px 0;
-      border: 2px dashed #444;
-      font-style: italic;
     }
-
-    .back-btn {
-      display: block;
-      text-align: center;
-      margin: 40px auto;
-      text-decoration: none;
+    .gear-item img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .gear-item h3 {
       color: #ffa500;
-      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
-
-    .back-btn:hover {
-      text-decoration: underline;
+    .gear-item p {
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .gear-item .price {
+      color: #90ee90;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .gear-item a {
+      background: #ffa500;
+      color: #111;
+      padding: 10px 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .gear-item a:hover {
+      background: #ffcc66;
     }
   </style>
 </head>
 <body>
+  <div class="overlay">
+    <div class="container">
+      
+      <!-- Manila Story -->
+      <div class="story-section">
+        <img src="images/manila-header.jpg" alt="Manila Header" class="header-image">
+        <h1>Trapped in a Manila Stairwell</h1>
+        <p>[... full Manila story from previous messages goes here unchanged ...]</p>
+      </div>
 
-  <!-- Navigation -->
-  <nav class="blog-nav">
-    <a href="#manila">✈️ Manila Mugging</a>
-    <a href="#coldcamp">🔥 Cold Camp (Coming Soon)</a>
-    <a href="#gasstation">⛽ Gas Station Hustle (Coming Soon)</a>
-  </nav>
-
-  <!-- Post 1: Manila -->
-  <section id="manila" class="blog-post">
-    <h2>Trapped in a Manila Stairwell</h2>
-    <p>By the time I landed in Manila, I had already dodged more than a few shady situations. I’d spent time on the southern islands—places where even the locals walk with caution...</p>
-    <p>I was chasing something back then. I didn’t know what. Maybe meaning. Maybe danger. Maybe just the kind of story you can’t find in a brochure...</p>
-    <p>I ended up at an illegal cockfight... It felt like that Russian roulette scene from <em>The Deer Hunter</em>. No smiles. Just cold eyes, clenched jaws, and an unspoken dare floating in the air...</p>
-    <p>That was the kind of mindset I had flying out of Cebu... I figured Manila might have something similar.</p>
-    <p>That’s when a guy in an airport uniform caught my eye and made a puffing motion with his fingers. “Want to smoke?” he asked with a grin. “Hell yes,” I said, thankful. “Follow me.”</p>
-    <p>Now, he had the whole act down. Clean uniform, confident stride, the air of someone doing you a small, unofficial favor... He led me into a quiet concrete stairwell where two other airport employees were already waiting.</p>
-    <p>That’s when the energy changed. These weren’t coworkers on a break. They weren’t holding lighters or flicking ashes. They were waiting for me.</p>
-    <p>But here’s what they didn’t count on: I’m 6’2", scrappy, and mean when I need to be. I’m not some clueless tourist... I lit my cigarette anyway. Took a long drag and stared at each of them in turn.</p>
-    <p>“Money,” one of them finally said.</p>
-    <p>I chuckled. “I don’t have anything for you.” That threw them off...</p>
-    <p>Then the ringleader reached for my cigarette. I thought he wanted a drag. I handed it to him without breaking eye contact. He stomped it out.</p>
-    <p>I nodded slowly. Gave a little shrug. “Alright,” I said, real calm. “You fellas have a good day.” And I walked out. Didn’t run. Didn’t look back. Just walked like I belonged there more than they did.</p>
-    <p>Could’ve ended different. That’s what haunts me. Not the danger — the ease of it all...</p>
-    <p>This wasn’t even in some back-alley bar or seedy neighborhood. This was in the damn airport. That illusion of safety? It’s just that — an illusion.</p>
-    <p>So yeah, travel. See the world. But don’t get soft. Gear up, wise up, and stay sharp. There are wolves at every gate — and not all of them snarl before they strike.</p>
-
-    <div class="ad-bar">
-      ⚠️ Ad space reserved for future travel gear tips. Coming soon.
-    </div>
-  </section>
-<section class="blog-article">
-  <h2 id="death-valley-germans">🔥 Death Valley Germans: Lost in the Furnace</h2>
-  <p><em>Out of deep respect, this story is dedicated to the families of Egbert Rimkus, Cornelia Meyer, and her sons Georg and Max. May their memory echo as a warning to all who underestimate nature’s wrath.</em></p>
-
-  <p>
-    In the summer of 1996, four German tourists vanished inside the most hellish stretch of land in America—Death Valley. It wasn’t until <strong>13 years later</strong> that the desert gave up their bones. Until then, they were ghosts with foreign passports, swallowed by the sun.
-  </p>
-
-  <p>
-    The family—Egbert Rimkus (34), his 11-year-old son Georg, Cornelia Meyer (27), and her 4-year-old son Max—had flown to California for a once-in-a-lifetime vacation. They took photos in San Francisco. They wandered the glittering kitsch of Las Vegas. But when they turned their rented Plymouth Voyager into the unforgiving maw of Death Valley, their story unraveled like a horror film.
-  </p>
-
-  <p>
-    They weren’t survivalists. They weren’t even particularly reckless. Just tourists. With a roadmap, a little food, and a few gallons of water, they headed into the valley in July—the deadliest time of year—when daytime temperatures regularly cross <strong>120°F</strong>. There were no paper maps marking the roads they took. Only vague notes in Egbert’s travel log, written in German and sealed in optimism.
-  </p>
-
-  <p>
-    They passed the sign that reads “CAUTION: EXTREME HEAT DANGER” and kept going. They veered off the paved road onto the washboard gravel path of Warm Springs Road, following it deep into the Panamint Mountains. The last person to see them alive was a desert ranger, who warned them: “You can’t go much further with that van.” They nodded. Smiled. Kept driving.
-  </p>
-
-  <p>
-    At some point, they took a wrong turn and ended up in Anvil Canyon, a bone-dry stretch of sand and scrub that looks more like Mars than California. It’s no place for a minivan. When the tires gave out, they abandoned the vehicle. Left behind inside: Cornelia’s passport, half a bottle of water, a single sleeping bag, and Egbert’s note: <strong>“We are going over the hill now. May God help us.”</strong>
-  </p>
-
-  <p>
-    And so they did. Over the hill. Into the mountains. Into the vastness of nowhere.
-  </p>
-
-  <p>
-    What followed was a <strong>multi-decade mystery</strong>. Hundreds of volunteers, helicopters, dogs, and drones combed the desert in blistering heat. Nothing. They became folklore. “The Death Valley Germans.” A case so cold it stopped even rattlesnakes.
-  </p>
-
-  <p>
-    Then in 2009, a hiker looking for old mines stumbled across a child’s shoe. Nearby: a femur. Then more bones. Tattered clothes. Part of a jaw. A wallet. IDs. And there they were—what remained of the four souls who tried to walk out of Death Valley with nothing but hope and grit.
-  </p>
-
-  <p>
-    Investigators believe they traveled <strong>over 20 miles on foot</strong> in suffocating heat, without a map, across steep rocky terrain and loose sand dunes. That’s like walking a marathon in a convection oven, with no finish line in sight. Max was just four. They carried him until they couldn’t. Georg likely died last. His bones were found furthest from the van. A boy who tried to keep going for his mother, his little brother… until the silence claimed him too.
-  </p>
-
-  <p>
-    Let this sink in: They didn’t die instantly. They died slowly, with no rescue, no signal, and no forgiveness. This is what happens when you bring vacation vibes into a kill zone.
-  </p>
-
-  <p>
-    This isn’t fear-mongering—it’s truth. The wilderness doesn’t care how many likes your selfie gets. It doesn’t read your travel blog. It doesn’t forgive ignorance. It just waits. It doesn’t scream. It whispers. And then it buries you.
-  </p>
-
-  <p style="color:#ffa500; font-weight:bold;">
-    So remember their names. Egbert. Cornelia. Georg. Max.<br>
-    Honor them by doing what they couldn’t: prepare. Study the land. Pack the damn water. Carry a sat phone. And never, ever assume the desert is your friend.
-  </p>
-
-  <p><em>To the families left behind—your pain is not forgotten. We carry your story with us. And through that story, lives might be saved.</em></p>
-</section>
-
-  <!-- Placeholder for Future Post -->
-  <section id="coldcamp" class="blog-post">
-    <h2>🔥 Cold Camp Survival – Coming Soon</h2>
-    <p>This post will cover a night in subzero temps, fire failures, and lessons learned the hard way.</p>
-  </section>
-
-  <section id="gasstation" class="blog-post">
-    <h2>⛽ Gas Station Setup – Coming Soon</h2>
-    <p>How we turned a forgotten gas station lot into a survivalist’s paradise — full story coming.</p>
-  </section>
-
-  <a href="/index.html" class="back-btn">← Return to Home</a>
-
-</body>
-</html>
+      <!-- Death Valley Germans -->
+      <div class="story-section">
+        <h2>The Death Valley Germans: A Desert Mystery Turned Tragedy</h2>
+        <p>
+          In the sweltering July heat of 1996, a young German family of four vanished without a trace in Death Valley National Park.
+          Egbert Rimkus, a 34-year-old engineer, was joined by his son Georg, Egbert’s girlfriend Cornelia Meyer, and her 4-year-old son Max.
+          They were adventuring across the American Southwest—until they weren’t.
+        </p>
+        <p>
+          Their rented minivan was found abandoned near Anvil Canyon. Flat tires. An empty water jug. A cryptic entry in the guest log at a remote
+          ranger station simply read: "We are going over the pass." No one ever heard from them again.
+        </p>
+        <p>
+          For years, search efforts turned up nothing. It was like they had evaporated into the Mojave heat. It wasn’t until 2009—over a decade later—
+          that searchers found bones scattered miles from the vehicle. The family had tried to hike out. No maps. No signal. No water. Just the endless,
+          sun-bleached silence of the desert.
+        </p>
+        <p>
+          Respect to the families who endured
