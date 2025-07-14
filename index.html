@@ -885,6 +885,33 @@ setInterval(updateTimers, 1000);
       font-style: italic;
     }
   </style>
+  <style>
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    scroll-padding-top: 0 !important;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: auto;
+    font-family: 'Orbitron', sans-serif;
+    background: url('images/bg-dust.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body::before {
+    content: "";
+    display: block;
+    height: 0px; /* fix for scroll-top clipping */
+  }
+</style>
+
 </head>
 <body>
   <div class="book-section">
