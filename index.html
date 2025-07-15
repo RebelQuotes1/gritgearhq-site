@@ -1,25 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grit Gear HQ – Real Stories from the Edge</title>
+
+  <!-- ✅ Canonical -->
   <link rel="canonical" href="https://gritgearhq.com/">
 
-  <!-- ✅ Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSRKJ63PPM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TSRKJ63PPM');
-    gtag('config', 'AW-1781B792361'); // Google Ads
-  </script>
-
-  <!-- ✅ Meta Tags -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- ✅ Meta SEO -->
   <meta name="description" content="Discover rugged survival gear, prepper tools, and off-grid living tips at Grit Gear HQ. Take the Grit Test and join the resistance.">
   <meta name="keywords" content="survival gear, prepping, bug out bag, self-defense, off-grid living, Grit Gear HQ">
   <meta name="author" content="Grit Gear HQ">
   <meta name="robots" content="index, follow">
 
-  <!-- ✅ Open Graph for Link Previews -->
+  <!-- ✅ Open Graph -->
   <meta property="og:title" content="Grit Gear HQ – Rough Gear for Rougher Times">
   <meta property="og:description" content="Rugged survival gear, prepper tools, and off-grid wisdom. Take the Grit Test.">
   <meta property="og:image" content="https://gritgearhq.com/images/og-image.jpg">
@@ -32,8 +27,6 @@
   <meta name="twitter:description" content="Prep like your life depends on it. Shop rugged survival gear at Grit Gear HQ.">
   <meta name="twitter:image" content="https://gritgearhq.com/images/og-image.jpg">
 
-  <title>Grit Gear HQ – Real Stories from the Edge</title>
-
   <!-- ✅ Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -41,10 +34,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- ✅ AdSense -->
+  <!-- ✅ Google Analytics + Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSRKJ63PPM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TSRKJ63PPM'); // GA
+    gtag('config', 'AW-1781B792361'); // Google Ads
+  </script>
+
+  <!-- ✅ Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
-  <!-- ✅ Styles -->
+  <!-- ✅ CSS Styles -->
   <style>
     html, body {
       margin: 0;
@@ -64,71 +67,74 @@
       box-sizing: border-box;
     }
 
-    .flash-sale {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      align-items: flex-start;
+    .cta-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #ffa500;
+      color: #000;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px #ffa500;
+      transition: all 0.3s ease-in-out;
     }
 
-    .flash-card {
-      background: #111;
-      border: 2px solid #ffa500;
-      border-radius: 12px;
-      box-shadow: 0 0 18px #ff9900;
+    .cta-button:hover {
+      background: #ff6600;
       color: #fff;
+    }
+
+    .flash-card, .reading-card {
+      background: #000;
       width: 280px;
-      padding: 20px;
-      display: block;
-      height: auto;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 0 15px #000;
+      text-align: center;
       margin-bottom: 30px;
     }
 
-    .flash-card img {
+    .flash-card img, .reading-card img {
+      width: 100%;
+      border-radius: 8px;
       max-height: 140px;
       object-fit: contain;
       margin-bottom: 12px;
     }
 
-    .flash-card h3 {
-      font-size: 18px;
-      margin: 10px 0;
+    .flash-card h3, .reading-card h3 {
       color: #ffa500;
+      margin: 10px 0;
+      font-size: 18px;
     }
 
-    .flash-card p {
+    .flash-card p, .reading-card p {
       font-size: 14px;
-      margin-bottom: 10px;
+      color: #ccc;
     }
 
-    .flash-card .buy-btn {
+    .buy-btn {
       display: inline-block;
       margin-top: 10px;
       background: #ffa500;
-      color: #111;
-      padding: 10px 18px;
-      border-radius: 6px;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 5px;
       font-weight: bold;
       text-decoration: none;
-      box-shadow: 0 0 10px #ffa500;
-      transition: all 0.2s ease-in-out;
     }
 
-    .flash-card .buy-btn:hover {
+    .buy-btn:hover {
       background: #ff6600;
       color: #fff;
-      box-shadow: 0 0 15px #ff6600;
     }
 
-    /* ✅ Cleaned-up blog-card styles */
-    .blog-card h2 {
+    .section-title {
+      text-align: center;
       color: #ffa500;
-      font-family: 'Stardos Stencil', sans-serif;
-    }
-
-    .blog-card p {
-      line-height: 1.6;
+      font-size: 2em;
+      margin: 30px 0;
     }
 
     .product-boxes {
@@ -142,71 +148,50 @@
   </style>
 </head>
 
-
 <body>
   <!-- Spacer -->
   <div style="height: 80px;"></div>
 
   <!-- CTA Section -->
-  <section class="hero">
+  <section class="hero" style="text-align:center;">
     <a href="random.html" class="cta-button">🧪 Grit Certified Picks</a>
     <a href="manifesto.html" class="cta-button">📜 Read Manifesto</a>
     <a href="grit-test.html" class="cta-button">🧠 Take the Grit Test</a>
     <a href="defense.html" class="cta-button">🛡️ Self-Defense Gear</a>
   </section>
 
-    .blog-card h2 {
-      color: #ffa500;
-      font-family: 'Stardos Stencil', sans-serif;
-    }
+  <!-- Grit-Certified Reading -->
+  <section style="background:#1a1a1a; padding:40px; border-top:2px solid #ffa500; border-bottom:2px solid #ffa500; box-shadow:0 0 20px #000;">
+    <h2 class="section-title">📚 Grit-Certified Reading</h2>
+    <div class="product-boxes">
 
-</div>
-    .blog-card p {
-      line-height: 1.6;
-    }
+      <!-- How to Unf*ck Your Life -->
+      <div class="reading-card">
+        <img src="images/unfuck.jpg" alt="How to Unf*ck Your Life">
+        <h3>How to Unf*ck Your Life</h3>
+        <p>Straight talk for the broken, bitter, and battle-tested. Rebuild from rock bottom.</p>
+        <a href="https://www.amazon.com/dp/B0CZ4ZZFXM?tag=gritgearhq-20" target="_blank" class="buy-btn">Buy on Amazon</a>
+      </div>
 
-    .product-boxes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin: 50px auto;
-      max-width: 1000px;
-    }
+      <!-- Pocket Prayers -->
+      <div class="reading-card">
+        <img src="images/prayers.jpg" alt="Pocket Prayers for Military Life">
+        <h3>Pocket Prayers for Military Life</h3>
+        <p>40 quick prayers for clarity, courage, and protection in the thick of it.</p>
+        <a href="https://amzn.to/4kGFgK6" target="_blank" class="buy-btn">Buy on Amazon</a>
+      </div>
 
+      <!-- Thought Crimes -->
+      <div class="reading-card">
+        <img src="images/thoughtcrimes.jpg" alt="Thought Crimes Notebook">
+        <h3>Thought Crimes Notebook</h3>
+        <p>For dangerous ideas, unfiltered thoughts, and rebellious creativity.</p>
+        <a href="https://amzn.to/3UgoA0Z" target="_blank" class="buy-btn">Buy on Amazon</a>
+      </div>
 
-<!-- Grit-Certified Reading -->
-<section style="background:#1a1a1a; padding:40px; border-top:2px solid #ffa500; border-bottom:2px solid #ffa500; box-shadow:0 0 20px #000; font-family:'Orbitron', sans-serif;">
-  <h2 style="text-align:center; color:#ffa500; font-size:2em; margin-bottom:30px;">📚 Grit-Certified Reading</h2>
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
-    
-
-    <!-- How to Unf*ck Your Life -->
-    <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #000; text-align:center;">
-      <img src="images/unfuck.jpg" alt="How to Unf*ck Your Life" style="width:100%; border-radius:8px;">
-      <h3 style="color:#ffa500; margin:10px 0;">How to Unf*ck Your Life</h3>
-      <p style="color:#ccc; font-size:14px;">Straight talk for the broken, bitter, and battle-tested. Rebuild from rock bottom.</p>
-      <a href="https://www.amazon.com/dp/B0CZ4ZZFXM?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; padding:8px 16px; border-radius:5px; font-weight:bold; text-decoration:none;">Buy on Amazon</a>
     </div>
+  </section>
 
-    <!-- Pocket Prayers for Military Life -->
-    <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #000; text-align:center;">
-      <img src="images/prayers.jpg" alt="Pocket Prayers for Military Life" style="width:100%; border-radius:8px;">
-      <h3 style="color:#ffa500; margin:10px 0;">Pocket Prayers for Military Life</h3>
-      <p style="color:#ccc; font-size:14px;">40 quick prayers for clarity, courage, and protection in the thick of it.</p>
-      <a href="https://amzn.to/4kGFgK6" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; padding:8px 16px; border-radius:5px; font-weight:bold; text-decoration:none;">Buy on Amazon</a>
-    </div>
-
-    <!-- Thought Crimes Notebook -->
-    <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #000; text-align:center;">
-      <img src="images/thoughtcrimes.jpg" alt="Thought Crimes Notebook" style="width:100%; border-radius:8px;">
-      <h3 style="color:#ffa500; margin:10px 0;">Thought Crimes Notebook</h3>
-      <p style="color:#ccc; font-size:14px;">For dangerous ideas, unfiltered thoughts, and rebellious creativity.</p>
-      <a href="https://amzn.to/3UgoA0Z" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; padding:8px 16px; border-radius:5px; font-weight:bold; text-decoration:none;">Buy on Amazon</a>
-    </div>
-
-  </div>
-</section>
 
 
   </div>
