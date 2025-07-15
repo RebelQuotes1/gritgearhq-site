@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSRKJ63PPM"></script>
@@ -5,13 +7,12 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // Google Analytics
-    gtag('config', 'G-TSRKJ63PPM');
-
-    // Google Ads Conversion Tracking
-    gtag('config', 'AW-1781B792361');
+    gtag('config', 'G-TSRKJ63PPM');  // Google Analytics
+    gtag('config', 'AW-1781B792361');  // Google Ads
   </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -20,14 +21,13 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <style>
     html, body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      scroll-behavior: smooth;
       font-family: 'Orbitron', sans-serif;
       background: url('images/bg-dust.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -41,12 +41,28 @@
       box-sizing: border-box;
     }
 
-    .flash-sale {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      align-items: flex-start;
+    .cta-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 22px;
+      background-color: #ffa500;
+      color: #111;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px #ffa500;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .cta-button:hover {
+      background: #ff6600;
+      color: #fff;
+      box-shadow: 0 0 15px #ff6600;
+    }
+
+    .hero {
+      text-align: center;
+      margin-top: 50px;
     }
 
     .flash-card {
@@ -57,15 +73,15 @@
       color: #fff;
       width: 280px;
       padding: 20px;
-      display: block;
-      height: auto;
-      margin-bottom: 30px;
+      margin: 10px;
     }
 
     .flash-card img {
       max-height: 140px;
       object-fit: contain;
       margin-bottom: 12px;
+      width: 100%;
+      border-radius: 8px;
     }
 
     .flash-card h3 {
@@ -79,7 +95,7 @@
       margin-bottom: 10px;
     }
 
-    .flash-card .buy-btn {
+    .buy-btn {
       display: inline-block;
       margin-top: 10px;
       background: #ffa500;
@@ -92,75 +108,62 @@
       transition: all 0.2s ease-in-out;
     }
 
-    .flash-card .buy-btn:hover {
+    .buy-btn:hover {
       background: #ff6600;
       color: #fff;
       box-shadow: 0 0 15px #ff6600;
+    }
+
+    .flash-sale {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
     }
   </style>
 </head>
 
 <body>
-  <!-- Spacer to prevent fixed nav from blocking top of page -->
+  <!-- Spacer -->
   <div style="height: 80px;"></div>
 
+  <!-- CTA Section -->
+  <section class="hero">
+    <a href="random.html" class="cta-button">🧪 Grit Certified Picks</a>
+    <a href="manifesto.html" class="cta-button">📜 Read Manifesto</a>
+    <a href="grit-test.html" class="cta-button">🧠 Take the Grit Test</a>
+    <a href="defense.html" class="cta-button">🛡️ Self-Defense Gear</a>
+  </section>
 
-  <!-- ✅ Hero CTA Section (Not a header tag) -->
-<section class="hero">
-  <a href="random.html" class="cta-button">🧪 Grit Certified Picks</a>
-  <a href="manifesto.html" class="cta-button">📜 Read Manifesto</a>
-  <a href="grit-test.html" class="cta-button">🧠 Take the Grit Test</a>
-  <a href="defense.html" class="cta-button">🛡️ Self-Defense Gear</a>
-</section>
+  <!-- Featured Gear of the Week -->
+  <section style="background:#1a1a1a; color:#ffa500; padding:40px 20px; text-align:center; border-top: 2px solid #ffa500; border-bottom: 2px solid #ffa500; box-shadow: inset 0 0 60px #000;">
+    <h2 style="font-size:36px; font-family:'Orbitron', sans-serif; margin-bottom:10px; text-shadow:2px 2px 5px #000;">🔥 Featured Gear of the Week</h2>
+    <p style="color:#fff; font-size:18px; margin-bottom:30px;">Support our defenders. Shop with purpose. <strong>Limited stock – act fast!</strong></p>
 
-</body>
-</html>
+    <div class="flash-sale">
+      <!-- Product 1 -->
+      <div class="flash-card">
+        <img src="images/prayers.jpg" alt="Pocket Prayers for Military Life">
+        <h3>📖 Pocket Prayers for Military Life</h3>
+        <p>40 battlefield-ready prayers for clarity, courage, and divine backup in combat and chaos.</p>
+        <p style="color:#90ee90;">🪖 10% donated to fallen soldier families</p>
+        <p style="color:#ffd700;">⭐️⭐️⭐️⭐️⭐️ Over 1,200 five-star reviews from active and retired military</p>
+        <p style="color:#ff4444;">🔥 Bestseller – Limited copies available</p>
+        <a href="https://amzn.to/44srt50?tag=gritgearhq-20" class="buy-btn" target="_blank">⚡ Order Now on Amazon</a>
+      </div>
 
-
-  <!-- ✅ Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-<style>
-  html, body {
-    background: #111;
-    color: #eee;
-    font-family: 'Special Elite', monospace;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-</body>
-</html>
-<section style="background:#1a1a1a; color:#ffa500; padding:40px 20px; text-align:center; border-top: 2px solid #ffa500; border-bottom: 2px solid #ffa500; box-shadow: inset 0 0 60px #000;">
-  <h2 style="font-size:36px; font-family:'Orbitron', sans-serif; margin-bottom:10px; text-shadow:2px 2px 5px #000;">🔥 Featured Gear of the Week</h2>
-  <p style="color:#fff; font-size:18px; margin-bottom:30px; font-family:sans-serif;">Support our defenders. Shop with purpose. <strong>Limited stock – act fast!</strong></p>
-
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px;">
-<div style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; background-color: #000; padding: 40px; box-shadow: 0 0 30px #ff8c00; border-top: 2px solid #ffa500; border-bottom: 2px solid #ffa500;">
-    .header-image {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-<!-- Pocket Prayers for Military Life -->
-<div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 20px #ffa500; text-align:center; margin:10px;">
-  <img src="images/prayers.jpg" alt="Pocket Prayers for Military Life" style="width:100%; border-radius:8px;">
-  <h3 style="color:#ffa500; margin:10px 0;">📖 Pocket Prayers for Military Life</h3>
-  <p style="color:#ccc; font-size:14px;">40 battlefield-ready prayers for clarity, courage, and divine backup in combat and chaos.</p>
-  <p style="color:#90ee90; font-weight:bold; margin:6px 0;">🪖 10% donated to fallen soldier families</p>
-  <p style="color:#ffd700; font-size:13px;">⭐️⭐️⭐️⭐️⭐️ Over 1,200 five-star reviews from active and retired military</p>
-  <p style="color:#ff4444; font-size:13px;">🔥 Bestseller – Limited copies available</p>
-  <a href="https://amzn.to/44srt50?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 18px; border-radius:6px; font-weight:bold; text-decoration:none;">⚡ Order Now on Amazon</a>
-</div>
-
-<!-- Thought Crimes Notebook -->
-<div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 20px #ff8c00; text-align:center; margin:10px;">
-  <img src="images/thoughtcrimes.jpg" alt="Thought Crimes Notebook" style="width:100%; border-radius:8px;">
-  <h3 style="color:#ffa500; margin:10px 0;">🧠 Thought Crimes Notebook</h3>
-  <p style="color:#ccc; font-size:14px;">A journal for rebels, freethinkers, and dangerous minds. Say what you're not allowed to.</p>
-  <p style="color:#ff6666; font-size:13px;">⚠️ CENSORED IN 3 COUNTRIES – Use at your own risk</p>
-  <p style="color:#ffd700; font-size:13px;">⭐️⭐️⭐️⭐️⭐️ 1,000+ truth-seekers can’t be wrong</p>
-  <a href="https://amzn.to/3TEmvvS?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 18px; border-radius:6px; font-weight:bold; text-decoration:none;">✍️ Start a Thought Crime</a>
-</div>
+      <!-- Product 2 -->
+      <div class="flash-card">
+        <img src="images/thoughtcrimes.jpg" alt="Thought Crimes Notebook">
+        <h3>🧠 Thought Crimes Notebook</h3>
+        <p>A journal for rebels, freethinkers, and dangerous minds. Say what you're not allowed to.</p>
+        <p style="color:#ff6666;">⚠️ CENSORED IN 3 COUNTRIES – Use at your own risk</p>
+        <p style="color:#ffd700;">⭐️⭐️⭐️⭐️⭐️ 1,000+ truth-seekers can’t be wrong</p>
+        <a href="https://amzn.to/3TEmvvS?tag=gritgearhq-20" class="buy-btn" target="_blank">✍️ Start a Thought Crime</a>
+      </div>
+    </div>
+  </section>
 
   
     .blog-card h2 {
