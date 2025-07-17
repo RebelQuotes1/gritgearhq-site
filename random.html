@@ -1,30 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ✅ Google Analytics + Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSRKJ63PPM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TSRKJ63PPM'); // GA
-  gtag('config', 'AW-17181792361'); // Google Ads ✅
-</script>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSRKJ63PPM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TSRKJ63PPM');
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grit Certified Random Picks</title>
-  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       background: url("images/mono.jpg") center center no-repeat fixed;
@@ -36,9 +15,9 @@
     }
 
     .container {
-      max-width: 1000px;
-      margin: 80px auto;
-      padding: 40px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
       background: rgba(0, 0, 0, 0.85);
       border: 2px solid #ffa500;
       border-radius: 12px;
@@ -58,8 +37,8 @@
     }
 
     .back-link {
-      margin-top: 40px;
       display: inline-block;
+      margin: 40px auto 0;
       padding: 12px 24px;
       background: #ffa500;
       color: #000;
@@ -73,133 +52,122 @@
       background: #ff7300;
       color: #fff;
     }
+
+    .gear-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 40px 10px;
+      background: #111;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .gear-card {
+      background: #000;
+      width: 280px;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 0 15px #ffa500;
+      text-align: center;
+    }
+
+    .gear-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .gear-card h3 {
+      color: #ffa500;
+      margin-bottom: 10px;
+    }
+
+    .gear-card p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 0 0 8px 0;
+    }
+
+    .gear-card .highlight {
+      color: #90ee90;
+    }
+
+    .gear-card a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #ffa500;
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .gear-card a:hover {
+      background: #ff7300;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
-<!-- FEATURED GEAR: T-Shirt & Tactical Flashlight -->
-<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; padding:40px 10px; background:#111; font-family:'Orbitron', sans-serif;">
-
-  <!-- We The People T-Shirt -->
-  <div style="background:#0d0d0d; width:280px; border-radius:10px; padding:18px; box-shadow:0 0 20px #000; text-align:center;">
-    <img src="images/wepeep.jpg" alt="We The People Shirt" style="width:100%; border-radius:6px; margin-bottom:12px;">
-    <h3 style="color:#ffa500;">🇺🇸 We The People T-Shirt</h3>
-    <p style="color:#ccc; font-size:14px;">Proudly wear the Preamble to the Constitution. Perfect for July 4th, rallies, or everyday patriotism.</p>
-    <p style="color:#ff5555; font-size:13px;">🚨 LIMITED STOCK – Going Fast!</p>
-    <a href="https://amzn.to/4nNBAZy?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; padding:10px 18px; border-radius:6px; font-weight:bold; text-decoration:none; box-shadow:0 0 10px #ffa500;">💥 Grab Yours Now</a>
-  </div>
-
-  <!-- Solar Tactical Flashlight -->
-  <div style="background:#0d0d0d; width:280px; border-radius:10px; padding:18px; box-shadow:0 0 20px #000; text-align:center;">
-    <img src="images/light.jpg" alt="Tactical Solar Flashlight" style="width:100%; border-radius:6px; margin-bottom:12px;">
-    <h3 style="color:#ffa500;">🔦 Tactical Solar Flashlight</h3>
-    <p style="color:#ccc; font-size:14px;">Blinding 1000 lumen beam, solar + USB recharge, strobe mode for self-defense. Doubles as a power bank.</p>
-    <p style="color:#ff5555; font-size:13px;">⚠️ Don’t Get Left in the Dark</p>
-    <a href="https://amzn.to/4lrrRqf?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; padding:10px 18px; border-radius:6px; font-weight:bold; text-decoration:none; box-shadow:0 0 10px #ffa500;">⚡ Add to Your Kit</a>
-  </div>
-
-</div>
-
-  <!-- Hunting Knife -->
-  <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #ff0000; text-align:center;">
-    <img src="images/otf.jpg" alt="Hunting Knife" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500;">🔥 Tactical Hunting Knife</h3>
-    <p style="color:#ccc; font-size:14px;">Pocket-sized, glass breaker, and ready to draw. 3–5 day delivery. No games.</p>
-    <p style="color:#ff6666;">⚠️ Not for the faint of heart</p>
-    <a href="https://amzn.to/46b0Dja?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:6px; font-weight:bold; text-decoration:none;">🗡️ Get the Blade</a>
-  </div>
-
-  <!-- Permanent Match -->
-  <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #ffaa00; text-align:center;">
-    <img src="images/perm.jpg" alt="Permanent Match" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500;">🔥 Infinity Survival Match</h3>
-    <p style="color:#ccc; font-size:14px;">Reusable, waterproof, multitool matchstick. Light fire, crack beer, survive.</p>
-    <p style="color:#90ee90;">🎁 Makes a killer gift</p>
-    <a href="https://amzn.to/40KECE8?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:6px; font-weight:bold; text-decoration:none;">⚡ Strike Anywhere</a>
-  </div>
-
-  <!-- Ferro Fire Starter -->
-  <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #f60; text-align:center;">
-    <img src="images/orangestrike.jpg" alt="Ferro Rod" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500;">🔥 Ferro Fire Kit</h3>
-    <p style="color:#ccc; font-size:14px;">4" rod with lanyard, striker, tinder & tube. Ignites in any weather. No excuses.</p>
-    <p style="color:#ffcc00;">⭐️ Best seller among real outdoorsmen</p>
-    <a href="https://amzn.to/4lUfcMx?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:6px; font-weight:bold; text-decoration:none;">🔥 Light It Up</a>
-  </div>
-
-  <!-- Survival Card Kit -->
-  <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #0ff; text-align:center;">
-    <img src="images/card.jpg" alt="Survival Multitool Card" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500;">🛠️ Survival Card Kit</h3>
-    <p style="color:#ccc; font-size:14px;">12-in-1 EDC multitool you carry in your wallet. If MacGyver had a wallet, this’d be in it.</p>
-    <p style="color:#90ee90;">💳 Fits in any wallet. Unfolds into grit.</p>
-    <a href="https://amzn.to/3TH7vx8?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:6px; font-weight:bold; text-decoration:none;">🔧 Carry Quiet Power</a>
-  </div>
-
-  <!-- Republican Male Shirt -->
-  <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #f00; text-align:center;">
-    <img src="images/wtmn.jpg" alt="Non-Woke T-Shirt" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500;">🗽 Offensive Republican Tee</h3>
-    <p style="color:#ccc; font-size:14px;">White. Straight. Republican. Trigger warning built in. Wear it proud.</p>
-    <p style="color:#ff4444;">⚠️ Banned by 3 coffee shops already</p>
-    <a href="https://amzn.to/450hh3H?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:6px; font-weight:bold; text-decoration:none;">👕 Wear the Truth</a>
-  </div>
-
-  <!-- Raven T-Shirt -->
-  <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #9933ff; text-align:center;">
-    <img src="images/nvm.jpg" alt="Raven Shirt" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500;">🦅 Never Mind Raven Tee</h3>
-    <p style="color:#ccc; font-size:14px;">Passive-aggressive literary sass meets bold outsider wit. The Raven has spoken.</p>
-    <p style="color:#90ee90;">🖤 Great gift for readers with attitude</p>
-    <a href="https://amzn.to/40QNKXK?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#111; padding:10px 16px; border-radius:6px; font-weight:bold; text-decoration:none;">🦅 Never Mind, Buy It</a>
-  </div>
-
-  <!-- Grit Picks: Tactical Gear Block -->
-<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; background: #111; padding: 40px; border-top: 2px solid #ffa500;">
-
-  <!-- USMC Blackout Combat Tanto Sword -->
-  <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #000; text-align:center;">
-    <img src="images/tanto1.jpg" alt="USMC Combat Tanto Sword" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500; margin:10px 0;">USMC Blackout Tanto Sword</h3>
-    <p style="color:#ccc; font-size:14px;">27.5" battle-ready blade forged in AUS-6 steel. Textured grip, tactical sheath, and serious presence.</p>
-    <p style="color:#90ee90; font-size:13px;">✅ Built for combat. Feared in the field.</p>
-    <a href="https://amzn.to/3Twpk1S" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; padding:10px 18px; border-radius:6px; font-weight:bold; text-decoration:none;">💥 Grab the Sword</a>
-  </div>
-
-  <!-- DOOM BLADE 3-Piece Survival Set -->
-  <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #000; text-align:center;">
-    <img src="images/3combo.jpg" alt="DOOM BLADE 3-Piece Survival Set" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500; margin:10px 0;">DOOM BLADE 3-Piece Survival Set</h3>
-    <p style="color:#ccc; font-size:14px;">Tomahawk. Hatchet. Knife. One killer combo for off-grid survival and camp defense.</p>
-    <p style="color:#ff6666; font-size:13px;">⚔️ All-in-One. 440C Steel. Hunt, chop, defend.</p>
-    <a href="https://amzn.to/46vReCM" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; padding:10px 18px; border-radius:6px; font-weight:bold; text-decoration:none;">⚔️ Get the Full Set</a>
-  </div>
-
-  <!-- BLAVOR Solar Power Bank -->
-  <div style="background:#000; width:280px; border-radius:10px; padding:16px; box-shadow:0 0 15px #000; text-align:center;">
-    <img src="images/charger.jpg" alt="BLAVOR Solar Charger Power Bank" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500; margin:10px 0;">BLAVOR Solar Charger</h3>
-    <p style="color:#ccc; font-size:14px;">10,000mAh. Fast-charge. Solar backup. Dual flashlight. It's like having your own grid in your pocket.</p>
-    <p style="color:#90ee90; font-size:13px;">🔋 Survive the blackout. Charge on the move.</p>
-    <a href="https://amzn.to/469HeyV" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; padding:10px 18px; border-radius:6px; font-weight:bold; text-decoration:none;">🔋 Power Up Now</a>
-  </div>
-
-</div>
-
-</div>
-
-
   <div class="container">
     <h1>🧨 Grit Certified Random Picks</h1>
     <p>Hand-selected oddballs, underdogs, and gear we swear by.</p>
-    <p>More items coming soon...</p>
-<div style="text-align:center; margin:40px 0;">
-  <a href="index.html" style="display:inline-block; padding:12px 24px; background-color:#ffa500; color:#111; font-weight:bold; border-radius:6px; text-decoration:none; font-family:'Orbitron', sans-serif; box-shadow: 0 0 10px #000;">
-    ⬅️ Back to Homepage
-  </a>
-</div>
-  
-    <a href="index.html" class="back-link">← Back to Main Page</a>
   </div>
 
-</body>
-</html>
+  <div class="gear-grid">
+    <!-- GEAR ITEM BLOCKS START -->
+    <div class="gear-card">
+      <img src="images/tarp.jpg" alt="GOLDCAMP Waterproof Tarp">
+      <h3>⛺ GOLDCAMP Waterproof Tarp</h3>
+      <p>10x10FT nylon rain fly with UV 50+ and PU15000mm protection. Your go-to tarp for sun or storm.</p>
+      <p class="highlight">🌧️ Heavy-duty. Lightweight. Battle-tested.</p>
+      <a href="https://amzn.to/40q5tVT?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
+    </div>
+
+    <div class="gear-card">
+      <img src="images/neck.jpg" alt="Wearable Neck Fan">
+      <h3>❄️ 360° Wearable Neck Fan</h3>
+      <p>Hands-free cooling with a 4000mAh battery. Perfect for hiking, work, or hellish summers.</p>
+      <p class="highlight">💨 Bladeless. Quiet. Stays chill.</p>
+      <a href="https://amzn.to/4nR6kJ9?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
+    </div>
+
+    <div class="gear-card">
+      <img src="images/silver.jpg" alt="Vintage Flashlight">
+      <h3>🔦 Vintage LED Flashlight</h3>
+      <p>Old-school charm with modern LED power. Compact, tough, includes 5 bulbs.</p>
+      <p class="highlight">🕯️ Retro + Reliable</p>
+      <a href="https://amzn.to/44T8RKw?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
+    </div>
+
+    <div class="gear-card">
+      <img src="images/trench.jpg" alt="Trench Lighter">
+      <h3>🪔 Vintage Trench Lighter</h3>
+      <p>Classic rope-style windproof lighter. Bring trench warfare aesthetics to your EDC.</p>
+      <p class="highlight">🧨 Flint, spark, survival.</p>
+      <a href="https://amzn.to/44QUczn?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
+    </div>
+
+    <div class="gear-card">
+      <img src="images/cump.jpg" alt="Survival Compass">
+      <h3>🧭 Survival Compass</h3>
+      <p>Waterproof, durable, and pocket-sized. A no-BS compass for serious explorers.</p>
+      <p class="highlight">📍 Always know where North is.</p>
+      <a href="https://amzn.to/4ePQyds?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
+    </div>
+
+    <div class="gear-card">
+      <img src="images/ok.jpg" alt="Arc Lighter">
+      <h3>⚡ Arc Plasma Lighter</h3>
+      <p>USB rechargeable. LED display. Waterproof. Built-in flashlight & whistle. No fuel, no drama.</p>
+      <p class="highlight">🎯 For real bug-out bags only.</p>
+      <a href="https://amzn.to/3TFWgoN?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
+    </div>
+
+    <div class="gear-card">
+      <img src="images/goo.jpg" alt="Bug Zapper">
+      <h3>🪰 Bug Zapper 4200V</h3>
+      <p>Indoor/outdoor fly & mosquito killer. 90–130V range. ABS plastic shell. Instant bug death.</p>
+      <p class="highlight">⚡ Bugs bewa
