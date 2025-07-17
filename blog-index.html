@@ -2,49 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blog Index – Grit Gear HQ</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifesto Blog Index</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
     body {
-      background-color: #111;
-      color: #ccc;
+      margin: 0;
       font-family: 'Orbitron', sans-serif;
-      padding: 40px 20px;
+      background: #111;
+      color: #ccc;
+    }
+    header {
       text-align: center;
+      padding: 40px 20px;
+      background: #1a1a1a;
+      border-bottom: 2px solid #ffa500;
+      box-shadow: 0 0 20px #000 inset;
     }
     h1 {
       color: #ffa500;
-      margin-bottom: 40px;
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
-    .blog-link {
-      display: block;
-      background: #1a1a1a;
-      color: #ffa500;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 16px 30px;
-      margin: 15px auto;
-      max-width: 500px;
+    .subtext {
+      color: #aaa;
+      font-size: 1.1em;
+    }
+    .blog-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .blog-buttons a {
+      background: #ffa500;
+      color: #111;
+      padding: 14px 28px;
       border-radius: 8px;
-      box-shadow: 0 0 10px #000;
-      transition: background 0.3s;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+      box-shadow: 0 0 12px #000;
+      transition: all 0.2s ease;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
     }
-    .blog-link:hover {
-      background: #2a2a2a;
+    .blog-buttons a:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.02);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
 
-  <h1>🧠 The Manifesto – Blog Archive</h1>
+  <header>
+    <h1>📜 The Manifesto Index</h1>
+    <p class="subtext">Hard truths, lost knowledge, and gritty realities.</p>
+  </header>
 
-  <a class="blog-link" href="manifesto.html#masculinity-blog">💪 Where Have All the Men Gone?</a>
-  <a class="blog-link" href="manifesto.html#ufo-distraction">🛸 UFOs & Government Deception</a>
-  <a class="blog-link" href="manifesto.html#bugout-essentials">🎒 Bug Out Bag Essentials by Need</a>
-  <a class="blog-link" href="manifesto.html#lost-skills">🧓 20 Lost Skills Every Adult Should Relearn</a>
+  <div class="blog-buttons">
+    <a href="manifesto.html#masculinity-blog">💥 The Masculinity Manifesto</a>
+    <a href="manifesto.html#ufo-distraction">🛸 UFOs & Government Distraction</a>
+    <a href="manifesto.html#bugout-essentials">🧠 Lost Skills of Our Grandparents</a>
+    <!-- Add more as you publish -->
+  </div>
 
-  <a class="blog-link" href="index.html" style="margin-top:40px;">⬅️ Back to Home</a>
+  <footer>
+    &copy; 2025 Grit Gear HQ – Stay sharp.
+  </footer>
 
 </body>
 </html>
