@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,14 +23,16 @@
       text-shadow: 0 0 10px #000;
       margin-bottom: 10px;
     }
-    .affiliate-items {
+    .section {
+      padding: 40px 20px;
+    }
+    .gear-grid {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
-      flex-wrap: wrap;
-      margin: 40px auto;
-      padding: 0 20px;
       max-width: 1200px;
+      margin: auto;
     }
     .item-box {
       background: #1a1a1a;
@@ -62,116 +63,84 @@
       font-weight: bold;
       border-radius: 6px;
       text-decoration: none;
+      box-shadow: 0 0 12px #ffa500;
+    }
+    .grit-button {
+      font-size: 18px;
+      margin: 50px auto;
+      padding: 16px 32px;
+      background: linear-gradient(45deg, #ff0000, #ffa500, #ff0000);
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ffa500;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .result-box {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ffa500;
+    }
+    footer {
+      background: #000;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+      margin-top: 60px;
+    }
+    footer p {
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
   <h1>💀 Take the Grit Test 💀</h1>
 
-  <section id="longterm-essentials">
-    <h2>🧭 LONG-TERM SURVIVAL ESSENTIALS</h2>
-    <p style="color:#ccc; margin-bottom: 30px;">
-      When weeks turn to months, the smart ones live on. These aren’t snacks—they’re survival fuel.
-    </p>
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
-    
- <!-- Nutrient Survival Eggs -->
-<div style="background:#111; border:2px solid #ffaa00; border-radius:10px; width:300px; padding:20px; text-align:center; box-shadow:0 0 25px #ffaa00;">
-  <img src="images/nute.jpg" alt="Nutrient Survival Powdered Eggs" style="width:100%; border-radius:8px; margin-bottom:15px;">
-  <h3 style="color:#ffaa00; margin-bottom:10px;">70 Egg Equivalent – Powdered Survival Eggs</h3>
-  <p style="color:#ccc; font-size:14px;">Freeze-dried, nutrient-packed, and shelf-stable up to 25 years. Stay alive without the chickens.</p>
-  <p style="color:#90ee90; font-size:13px;">🥚 33 essential nutrients | Gluten-Free</p>
-  <p style="color:#ffd700; font-size:13px;">⭐️⭐️⭐️⭐️⭐️ Loved by hardcore preppers</p>
-  <a href="https://amzn.to/40OqlGs?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:15px; background:#ffaa00; color:#111; font-weight:bold; padding:10px 20px; border-radius:6px; text-decoration:none; box-shadow:0 0 12px #ffaa00;">🥄 Fuel Up</a>
-</div>
+  <div class="section">
+    <h2>🧭 Long-Term Survival Essentials</h2>
+    <p style="color:#ccc; margin-bottom: 30px;">When weeks turn to months, the smart ones live on. These aren’t snacks—they’re survival fuel.</p>
 
-<!-- 10 Day Survival Tabs -->
-<div style="background:#111; border:2px solid #ff69b4; border-radius:10px; width:300px; padding:20px; text-align:center; box-shadow:0 0 25px #ff69b4;">
-  <img src="images/tabs.jpg" alt="Survival Tabs 10-Day MRE" style="width:100%; border-radius:8px; margin-bottom:15px;">
-  <h3 style="color:#ff69b4; margin-bottom:10px;">10 Day Survival Food Tabs – Vanilla Malt</h3>
-  <p style="color:#ccc; font-size:14px;">Tiny but mighty. Just 120 tabs = 10 days of calories. Non-GMO, gluten-free, ready to stash.</p>
-  <p style="color:#ffb6c1; font-size:13px;">🍬 MRE alternative | 25-year shelf life</p>
-  <p style="color:#ffd700; font-size:13px;">⭐️⭐️⭐️⭐️ “Surprisingly tasty” - Review</p>
-  <a href="https://amzn.to/44IYRTU?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:15px; background:#ff69b4; color:#111; font-weight:bold; padding:10px 20px; border-radius:6px; text-decoration:none; box-shadow:0 0 12px #ff69b4;">📦 Grab Tabs</a>
-</div>
+    <div class="gear-grid">
+      <!-- Gear blocks (repeatable format) -->
+      <div class="item-box">
+        <img src="images/nute.jpg" alt="Nutrient Survival Powdered Eggs">
+        <h3>70 Egg Equivalent – Powdered Survival Eggs</h3>
+        <p>Freeze-dried, shelf-stable up to 25 years. Stay alive without the chickens.</p>
+        <p style="color:#90ee90;">🥚 33 essential nutrients | Gluten-Free</p>
+        <p style="color:#ffd700;">⭐️⭐️⭐️⭐️⭐️ Loved by hardcore preppers</p>
+        <a href="https://amzn.to/40OqlGs?tag=gritgearhq-20" target="_blank">🥄 Fuel Up</a>
+      </div>
 
-<!-- Cobra Walkie Talkies -->
-<div style="background:#111; border:2px solid #00ffcc; border-radius:10px; width:300px; padding:20px; text-align:center; box-shadow:0 0 25px #00ffcc;">
-  <img src="images/cobra.jpg" alt="Cobra Walkie Talkies RX380" style="width:100%; border-radius:8px; margin-bottom:15px;">
-  <h3 style="color:#00ffcc; margin-bottom:10px;">Cobra RX380 Walkie Talkies (2-Pack)</h3>
-  <p style="color:#ccc; font-size:14px;">Stay connected when cell towers fail. 40 channels, weather alerts, flashlight built-in. Solid.</p>
-  <p style="color:#90ee90; font-size:13px;">🔊 Long-range + rechargeable</p>
-  <p style="color:#ffd700; font-size:13px;">⭐️⭐️⭐️⭐️⭐️ “Clear signal even in storms”</p>
-  <a href="https://amzn.to/44L3RY1?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:15px; background:#00ffcc; color:#111; font-weight:bold; padding:10px 20px; border-radius:6px; text-decoration:none; box-shadow:0 0 12px #00ffcc;">📡 Stay Loud</a>
-</div>
+      <div class="item-box">
+        <img src="images/tabs.jpg" alt="Survival Tabs 10-Day MRE">
+        <h3>10 Day Survival Tabs – Vanilla Malt</h3>
+        <p>Just 120 tabs = 10 days of calories. Non-GMO, gluten-free, ready to stash.</p>
+        <p style="color:#ffb6c1;">🍬 MRE alternative | 25-year shelf life</p>
+        <p style="color:#ffd700;">⭐️⭐️⭐️⭐️ “Surprisingly tasty” - Review</p>
+        <a href="https://amzn.to/44IYRTU?tag=gritgearhq-20" target="_blank">📦 Grab Tabs</a>
+      </div>
 
-    <div class="flash-sale">
-  <!-- WATER -->
-  <div class="flash-card">
-    <img src="images/matepump.jpg" alt="SurviMate Water Filter Pump">
-    <h3>SurviMate Water Purifier Pump</h3>
-    <p>0.01 Micron 5-Stage Hand Pump Filter. Clean drinking water anywhere, anytime.</p>
-    <a href="https://amzn.to/4nNUa3K" target="_blank" class="buy-btn">💧 Grab the Pump</a>
-  </div>
+      <div class="item-box">
+        <img src="images/cobra.jpg" alt="Cobra Walkie Talkies RX380">
+        <h3>Cobra RX380 Walkie Talkies (2-Pack)</h3>
+        <p>40 channels, weather alerts, flashlight built-in. Solid signal even in storms.</p>
+        <p style="color:#90ee90;">🔊 Long-range + rechargeable</p>
+        <p style="color:#ffd700;">⭐️⭐️⭐️⭐️⭐️ “Clear signal even in storms”</p>
+        <a href="https://amzn.to/44L3RY1?tag=gritgearhq-20" target="_blank">📡 Stay Loud</a>
+      </div>
 
-  <!-- FIRE -->
-  <div class="flash-card">
-    <img src="images/flint.jpg" alt="bayite Ferro Rod Fire Starter">
-    <h3>bayite Ferro Rod Kit</h3>
-    <p>4" Flint Fire Starter w/ Paracord & Striker. Lights up fast in any weather.</p>
-    <a href="https://amzn.to/40FbIp9" target="_blank" class="buy-btn">🔥 Spark the Flame</a>
-  </div>
-</div>
+      <!-- Add more item-boxes below as needed -->
+      <!-- Example: Hatchet, Tent, Shoes, Water Pump, Fire Starter, Power Station, Amish Book -->
 
-    
-  <!-- Book: Amish Manual -->
-  <div style="background: #1a1a1a; padding: 20px; width: 280px; border-radius: 10px; text-align: center; box-shadow: 0 0 20px #000; border: 2px solid #ffa500;">
-    <img src="images/amish.jpg" alt="The Complete Amish Survival Manual" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
-    <h3 style="color: #ffa500;">The Complete Amish Survival Manual</h3>
-    <p style="color: #ccc;">Break the chains of modern slavery. Herbal cures, canning, old-world grit, and total self-reliance.</p>
-    <p style="color:#90ee90; font-size:13px;">⭐️⭐️⭐️⭐️⭐️ 1,497 reviews</p>
-    <p style="color:#ff4444; font-size:13px;">⚠️ Trending now – low stock!</p>
-    <a href="https://amzn.to/3GOWyXu?tag=gritgearhq-20" target="_blank" class="buy-btn" style="margin-top:10px;">📘 Get the Manual</a>
-  </div>
-
-    <!-- Tactical Hatchet -->
-    <div style="background:#1a1a1a; border:2px solid #ffa500; border-radius:10px; box-shadow:0 0 15px #000; width:280px; padding:16px; text-align:center;">
-      <img src="images/tact.jpg" alt="Tactical Hatchet" style="width:100%; border-radius:6px; margin-bottom:10px;">
-      <h3 style="color:#ffa500;">Survival Hatchet</h3>
-      <p style="color:#ccc; font-size:14px;">Compact, fierce, and ready for chaos. Add to your kit.</p>
-      <a href="https://amzn.to/450Pn7J?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; background:#ffa500; color:#111; font-weight:bold; text-decoration:none; border-radius:5px;">Buy on Amazon</a>
     </div>
-
-    <!-- Waterproof Tent -->
-    <div style="background:#1a1a1a; border:2px solid #ffa500; border-radius:10px; box-shadow:0 0 15px #000; width:280px; padding:16px; text-align:center;">
-      <img src="images/teee.jpg" alt="Tent" style="width:100%; border-radius:6px; margin-bottom:10px;">
-      <h3 style="color:#ffa500;">Waterproof Tent</h3>
-      <p style="color:#ccc; font-size:14px;">Quick setup, all-season defense. Shelter is survival.</p>
-      <a href="https://amzn.to/4nN6txo?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; background:#ffa500; color:#111; font-weight:bold; text-decoration:none; border-radius:5px;">Get It Now</a>
-    </div>
-
-    <!-- Tactical Shoes -->
-    <div style="background:#1a1a1a; border:2px solid #ffa500; border-radius:10px; box-shadow:0 0 15px #000; width:280px; padding:16px; text-align:center;">
-      <img src="images/bbb.jpg" alt="Tactical Shoes" style="width:100%; border-radius:6px; margin-bottom:10px;">
-      <h3 style="color:#ffa500;">Tactical Shoes</h3>
-      <p style="color:#ccc; font-size:14px;">Step light, move fast, stay alive. For urban and wild terrain.</p>
-      <a href="https://amzn.to/3TXJWAt?tag=gritgearhq-20" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; background:#ffa500; color:#111; font-weight:bold; text-decoration:none; border-radius:5px;">Lace Up</a>
-    </div>
-
-      <div class="gear-card" style="background:#000; width:280px; padding:16px; border-radius:10px; text-align:center; box-shadow:0 0 20px #000;">
-      <img src="images/marb.jpg" alt="MARBERO 100W Power Station" style="width:100%; max-width:200px; height:200px; object-fit:cover; margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;">
-      <h3 style="color:#ffa500;">🔋 MARBERO 100W Power Station</h3>
-      <p style="color:#ccc;">Compact 167Wh solar generator with LED flashlight. Power your CPAP, phone, or emergency kit.</p>
-      <p style="color:#ff5555;">🔥 Don’t get caught powerless. Grab it now.</p>
-      <p style="color:#aaa; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Ran my essentials all night.'</p>
-      <a href="https://amzn.to/4lRDJ4E?tag=gritgearhq-20" target="_blank" style="color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px; display:inline-block; margin-top:10px; text-decoration:none;">🛒 Shop Now</a>
-    </div>
-    
   </div>
-</section>
-
-</div>
-
 
   <button class="grit-button" onclick="showJoke()">🧠 Click to Reveal Your Grit Test Result</button>
 
@@ -194,7 +163,8 @@
   </script>
 
   <footer>
-    <p>This site contains affiliate links. As an Amazon Associate, we earn from qualifying purchases. Content is for entertainment and informational purposes only.</p>
+    <p>This site contains affiliate links. As an Amazon Associate, we earn from qualifying purchases.</p>
+    <p>Content is for entertainment and informational purposes only. Not professional advice.</p>
     <p>&copy; 2025 Grit Gear HQ – All Rights Reserved.</p>
   </footer>
 </body>
