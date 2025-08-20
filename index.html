@@ -390,88 +390,40 @@
   </a>
 </section>
 
-<!-- VIEW MORE: Water Filters -->
-<section style="background:#0f0f10; padding:60px 20px; border-top:3px solid #ffa500; box-shadow:0 0 30px #000 inset;">
-  <div style="max-width:1100px; margin:0 auto;">
+<!-- VIEW MORE: Water Filters (conflict-proof) -->
+<section style="background:#0f0f10;padding:56px 20px;border-top:3px solid #ffa500;box-shadow:0 0 30px #000 inset;">
+  <a href="top-5-home-water-filters.html#filters"
+     style="position:relative;display:block;width:100%;max-width:1100px;margin:0 auto;border-radius:18px;overflow:hidden;
+            min-height:340px;border:1px solid #2b2b2b;box-shadow:0 12px 35px rgba(0,0,0,.6);text-decoration:none;color:#eee;background:#1a1a1a;">
     
-    <a href="top-5-home-water-filters.html#filters" class="water-preview">
-      <div class="overlay"></div>
-      <div class="content">
-        <span class="tag">💧 Water Safety</span>
-        <h3>Top 5 Home Water Filters</h3>
-        <p>From LifeStraw to Berkey — the best gear for stripping out lead, PFAS, and the tap-water junk no one told you about.</p>
-        <span class="btn">👉 View More</span>
-      </div>
-    </a>
-
-  </div>
+    <!-- Cover image (reliable, even if background fails) -->
+    <img src="/images/wf.jpg" alt="Top 5 Home Water Filters preview"
+         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+                filter:saturate(.95) contrast(1.05);transform:scale(1.02);">
+    
+    <!-- Readability overlay -->
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.85));"></div>
+    
+    <!-- Content -->
+    <div style="position:absolute;left:22px;right:22px;bottom:22px;display:flex;flex-direction:column;align-items:flex-start;">
+      <span style="display:inline-block;background:#ffa500;color:#111;font-weight:800;padding:6px 12px;border-radius:999px;
+                   font-size:12px;letter-spacing:.4px;margin-bottom:12px;box-shadow:0 0 0 3px rgba(255,165,0,.2);">
+        💧 Water Safety
+      </span>
+      <h3 style="margin:0 0 8px;color:#ffa500;font-size:1.6rem;line-height:1.2;text-shadow:2px 2px 8px #000;">
+        Top 5 Home Water Filters
+      </h3>
+      <p style="margin:0 0 18px;color:#e6e6e6;font-size:1rem;max-width:780px;">
+        From LifeStraw to Berkey — the gear that strips out lead, PFAS, and other tap-water junk.
+      </p>
+      <span style="background:#ffa500;color:#111;font-weight:900;padding:12px 20px;border-radius:12px;font-size:.98rem;
+                   box-shadow:0 0 14px #ffa500;">
+        👉 View More
+      </span>
+    </div>
+  </a>
 </section>
 
-<style>
-.water-preview {
-  position:relative;
-  display:block;
-  width:100%;
-  min-height:320px;
-  text-decoration:none;
-  color:#eee;
-  background:#1a1a1a url('images/wf.jpg') center/cover no-repeat; /* ✅ updated */
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 12px 35px rgba(0,0,0,.6);
-  transition:transform .3s ease, box-shadow .3s ease;
-}
-.water-preview .overlay {
-  position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.85) 100%);
-}
-.water-preview .content {
-  position:absolute; bottom:22px; left:22px; right:22px;
-  display:flex; flex-direction:column; align-items:flex-start;
-}
-.water-preview .tag {
-  display:inline-block;
-  background:#ffa500; color:#111;
-  font-weight:800; padding:6px 12px;
-  border-radius:999px; font-size:13px;
-  margin-bottom:12px;
-}
-.water-preview h3 {
-  margin:0 0 8px;
-  color:#ffa500; font-size:1.7rem;
-  text-shadow:2px 2px 8px #000;
-}
-.water-preview p {
-  margin:0 0 18px;
-  color:#ddd; font-size:1rem; max-width:80%;
-}
-.water-preview .btn {
-  background:#ffa500;
-  color:#111; font-weight:900;
-  padding:12px 20px;
-  border-radius:12px;
-  box-shadow:0 0 14px #ffa500;
-  font-size:1rem;
-  animation:pulseGlow 2.8s infinite;
-  transition:transform .2s;
-}
-
-/* Hover */
-.water-preview:hover {
-  transform:translateY(-6px) scale(1.02);
-  box-shadow:0 22px 45px rgba(0,0,0,.75);
-}
-.water-preview:hover .btn {
-  transform:translateY(-2px) scale(1.05);
-}
-
-/* Glow animation */
-@keyframes pulseGlow {
-  0%   { box-shadow:0 0 10px #ffa500, 0 0 20px #ffa500; }
-  50%  { box-shadow:0 0 20px #ff8c00, 0 0 30px #ff8c00; }
-  100% { box-shadow:0 0 10px #ffa500, 0 0 20px #ffa500; }
-}
-</style>
 
 <!-- Side-by-Side Section -->
 <section style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; align-items:stretch; margin:60px auto; max-width:1100px;">
