@@ -102,51 +102,6 @@
 
 </div>
 
-<!-- VIEW MORE: Water Filters -->
-<section style="background:#0f0f10; padding:38px 20px; border-top:3px solid #ffa500; box-shadow:0 0 20px #000 inset;">
-  <div style="
-    max-width:1000px; margin:0 auto; display:grid; gap:18px;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  ">
-    <!-- Water Filters Preview Card -->
-    <a href="top-5-home-water-filters.html#filters" style="
-      position:relative; display:block; text-decoration:none; color:#eee;
-      background:#1a1a1a url('images/waterfilter-cover.jpg') center/cover no-repeat;
-      border:1px solid #333; border-radius:14px; overflow:hidden; min-height:220px;
-      box-shadow:0 12px 30px rgba(0,0,0,.5); transition:transform .2s, box-shadow .2s;
-    ">
-      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.75) 100%);"></div>
-      <div style="position:absolute; inset:16px; display:flex; flex-direction:column; justify-content:flex-end;">
-        <span style="display:inline-block; background:#ffa500; color:#111; font-weight:800; padding:6px 10px; border-radius:999px; font-size:12px; letter-spacing:.4px; margin-bottom:10px;">
-          💧 Water Safety
-        </span>
-        <h3 style="margin:0 0 6px; color:#ffa500; font-size:1.25rem; text-shadow:2px 2px 6px #000;">
-          Top 5 Home Water Filters
-        </h3>
-        <p style="margin:0 0 14px; color:#ddd; font-size:.95rem;">
-          From LifeStraw to Berkey—gear that strips out lead, PFAS, and other tap-water junk.
-        </p>
-        <span style="
-          align-self:flex-start; background:#ffa500; color:#111; font-weight:900;
-          padding:10px 16px; border-radius:10px; box-shadow:0 0 14px #ffa500;
-          transition:transform .2s; font-size:.95rem;
-        ">View More →</span>
-      </div>
-    </a>
-  </div>
-</section>
-
-<style>
-/* Hover pop */
-section a[href*="top-5-home-water-filters.html"]:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 38px rgba(0,0,0,.65);
-}
-section a[href*="top-5-home-water-filters.html"]:hover span:last-child {
-  transform: translateY(-1px);
-}
-</style>
-
 
 <!-- PREVIEW SECTION -->
 <section style="max-width: 800px; margin: 40px auto; font-family: Arial, sans-serif; color: #eee; background: #1a1a1a; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px #000;">
@@ -434,6 +389,79 @@ section a[href*="top-5-home-water-filters.html"]:hover span:last-child {
     </div>
   </a>
 </section>
+
+<!-- VIEW MORE: Water Filters -->
+<section style="background:#0f0f10; padding:38px 20px; border-top:3px solid #ffa500; box-shadow:0 0 20px #000 inset;">
+  <div style="
+    max-width:1000px; margin:0 auto; display:grid; gap:18px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  ">
+    <!-- Water Filters Preview Card -->
+    <a href="top-5-home-water-filters.html#filters" class="water-preview">
+      <div class="overlay"></div>
+      <div class="content">
+        <span class="tag">💧 Water Safety</span>
+        <h3>Top 5 Home Water Filters</h3>
+        <p>From LifeStraw to Berkey—gear that strips out lead, PFAS, and other tap-water junk.</p>
+        <span class="btn">View More →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<style>
+.water-preview {
+  position:relative; display:block; text-decoration:none; color:#eee;
+  background:#1a1a1a url('images/waterfilter-cover.jpg') center/cover no-repeat;
+  border:1px solid #333; border-radius:14px; overflow:hidden; min-height:220px;
+  box-shadow:0 12px 30px rgba(0,0,0,.5);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.water-preview .overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.75) 100%);
+}
+.water-preview .content {
+  position:absolute; inset:16px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+}
+.water-preview .tag {
+  display:inline-block; background:#ffa500; color:#111; font-weight:800;
+  padding:6px 10px; border-radius:999px; font-size:12px; letter-spacing:.4px;
+  margin-bottom:10px;
+}
+.water-preview h3 {
+  margin:0 0 6px; color:#ffa500; font-size:1.35rem;
+  text-shadow:2px 2px 8px #000;
+}
+.water-preview p {
+  margin:0 0 14px; color:#ddd; font-size:.95rem;
+}
+.water-preview .btn {
+  align-self:flex-start; background:#ffa500; color:#111; font-weight:900;
+  padding:10px 16px; border-radius:10px;
+  box-shadow:0 0 14px #ffa500;
+  font-size:.95rem;
+  animation:pulseGlow 2.8s infinite;
+  transition:transform .2s;
+}
+
+/* Hover */
+.water-preview:hover {
+  transform:translateY(-5px) scale(1.02);
+  box-shadow:0 20px 40px rgba(0,0,0,.7);
+}
+.water-preview:hover .btn {
+  transform:translateY(-1px);
+}
+
+/* Glow animation */
+@keyframes pulseGlow {
+  0%   { box-shadow:0 0 10px #ffa500, 0 0 20px #ffa500; }
+  50%  { box-shadow:0 0 18px #ff8c00, 0 0 30px #ff8c00; }
+  100% { box-shadow:0 0 10px #ffa500, 0 0 20px #ffa500; }
+}
+</style>
 
 
 <!-- Side-by-Side Section -->
