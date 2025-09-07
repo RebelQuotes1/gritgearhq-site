@@ -357,6 +357,54 @@
     max-width: 1020px;
   }
 </style>
+<!-- Amish blog preview card (dark, responsive). Drop on your home page. -->
+<style>
+  .preview-wrap{max-width:1100px; margin-inline:auto; padding:clamp(12px,3vw,24px)}
+  .preview-card{
+    display:grid; grid-template-columns:1fr; gap:0;
+    background:var(--panel,#121821); color:var(--ink,#e8edf2);
+    border:1px solid var(--line,#1f2a35); border-radius:16px; overflow:hidden;
+    text-decoration:none; box-shadow:0 0 0 1px rgba(255,122,0,.12), 0 10px 35px rgba(0,0,0,.55);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .preview-card:hover{ transform:translateY(-2px); box-shadow:0 0 0 1px rgba(255,122,0,.18), 0 18px 45px rgba(0,0,0,.6); }
+  .preview-media{position:relative; overflow:hidden}
+  .preview-media img{width:100%; aspect-ratio:16/9; object-fit:cover; display:block; transition:transform .6s ease}
+  .preview-card:hover .preview-media img{ transform:scale(1.03) }
+  .preview-badge{
+    position:absolute; top:12px; left:12px; padding:6px 10px; font-size:.8rem; font-weight:800;
+    border-radius:999px; background:linear-gradient(180deg,#ff7a00,#e06100); color:#0b0f12
+  }
+  .preview-body{padding:16px 18px 18px}
+  .preview-tag{color:#9aa3ad; font-size:.9rem; letter-spacing:.4px; text-transform:uppercase}
+  .preview-title{margin:.25rem 0 .35rem; font-size:clamp(1.15rem,2.4vw,1.6rem); font-weight:800}
+  .preview-deck{color:#c9d2da; margin:0 0 .8rem}
+  .preview-cta{
+    display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; font-weight:900; letter-spacing:.3px;
+    background:linear-gradient(180deg,#ff7a00,#e06100); color:#101318; box-shadow:0 8px 30px rgba(255,122,0,.28)
+  }
+  @media(min-width:860px){ .preview-card{ grid-template-columns:48% 52% } }
+</style>
+
+<div class="preview-wrap">
+  <a class="preview-card"
+     href="https://github.com/RebelQuotes1/gritgearhq-site/blob/main/amish-winter-heat.html"
+     target="_blank" rel="noopener"
+     aria-label="Read: How the Amish Stay Warm in Winter (opens in new tab)">
+    <div class="preview-media">
+      <img src="berne.jpg" alt="Amish buggy rolling a snowy road—winter heat the old-world way" loading="lazy" decoding="async">
+      <span class="preview-badge">New</span>
+    </div>
+    <div class="preview-body">
+      <div class="preview-tag">Field Guide</div>
+      <h3 class="preview-title">How the Amish Stay Warm in Winter</h3>
+      <p class="preview-deck">Old-world heat without the grid — wood &amp; coal stoves, window quilts, humidity, and daily rhythms you can copy at home.</p>
+      <span class="preview-cta">Read the guide →</span>
+    </div>
+  </a>
+</div>
+
+
 <!-- ⚡ OFF-GRID POWER PICKS -->
 <section style="background:#111; border-top:2px solid #ffa500; border-bottom:2px solid #ffa500; padding:40px 20px; font-family:'Orbitron', sans-serif;">
   <h2 style="color:#ffa500; text-align:center; font-size:2em; margin-bottom:30px;">⚡ Off-Grid Power Picks</h2>
