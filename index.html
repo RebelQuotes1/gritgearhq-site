@@ -356,15 +356,44 @@
     margin: 52px auto;
     max-width: 1020px;
   }
-<!-- Amish blog preview card (links to your subpage, not GitHub) -->
+<!-- Amish blog preview card (SELF-CONTAINED) -->
 <link rel="prefetch" href="/amish-winter-heat.html">
+
+<style>
+  .preview-wrap{max-width:1100px;margin:18px auto;padding:clamp(12px,3vw,24px)}
+  .preview-card{
+    display:grid;grid-template-columns:1fr;gap:0;text-decoration:none;
+    background:var(--panel,#121821);color:var(--ink,#e8edf2);
+    border:1px solid var(--line,#1f2a35);border-radius:16px;overflow:hidden;
+    box-shadow:0 0 0 1px rgba(255,122,0,.12),0 10px 35px rgba(0,0,0,.55);
+    transition:transform .12s ease,box-shadow .12s ease;
+  }
+  .preview-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,122,0,.18),0 18px 45px rgba(0,0,0,.6)}
+  .preview-media{position:relative;min-height:220px;background:linear-gradient(180deg,#1a222c,#0f141a)}
+  .preview-media img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9}
+  .preview-badge{
+    position:absolute;top:12px;left:12px;padding:6px 10px;border-radius:999px;
+    background:linear-gradient(180deg,#ff7a00,#e06100);color:#0b0f12;font-weight:800;font-size:.8rem
+  }
+  .preview-body{padding:16px 18px 18px}
+  .preview-tag{color:#9aa3ad;font-size:.9rem;letter-spacing:.4px;text-transform:uppercase}
+  .preview-title{margin:.25rem 0 .35rem;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:800}
+  .preview-deck{color:#c9d2da;margin:0 0 .8rem}
+  .preview-cta{
+    display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:900;letter-spacing:.3px;
+    background:linear-gradient(180deg,#ff7a00,#e06100);color:#101318;box-shadow:0 8px 30px rgba(255,122,0,.28)
+  }
+  @media(min-width:860px){.preview-card{grid-template-columns:48% 52%}}
+</style>
+
 <div class="preview-wrap">
-  <!-- If your blog lives at /blog/amish-winter-heat/, change the href accordingly -->
+  <!-- Change href if you move to a pretty URL like /blog/amish-winter-heat/ -->
   <a class="preview-card"
      href="/amish-winter-heat.html#amish-winter-heat"
      aria-label="Read: How the Amish Stay Warm in Winter">
     <div class="preview-media">
-      <img src="berne.jpg" alt="Amish buggy on a snowy road — winter heat the old-world way" loading="lazy" decoding="async">
+      <!-- Update src if your image lives elsewhere, e.g. /assets/img/berne.jpg -->
+      <img src="/berne.jpg" alt="Amish buggy on a snowy road — winter heat the old-world way" onerror="this.src='conewango.jpg'">
       <span class="preview-badge">New</span>
     </div>
     <div class="preview-body">
