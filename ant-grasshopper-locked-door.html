@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Ant, the Grasshopper, and the Locked Door (Darker Cut)</title>
+  <meta name="description" content="A modern, darker fable for adults who prepare—and the friends who joke, 'When SHTF, I'm coming to your house.' Boundaries, math, and mercy done early." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap">
+  <style>
+    :root{
+      --bg:#0b0f12;
+      --ink:#e7eef5;
+      --muted:#9aa3ad;
+      --panel:#121821;
+      --line:#1f2a35;
+      --accent:#ff7a00;
+      --glow:0 0 0 1px rgba(255,122,0,.15), 0 16px 46px rgba(0,0,0,.65);
+    }
+    html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(1200px 800px at 10% -10%, #111a23 0%, #0b0f12 45%, #070b0f 100%);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65}
+    a{color:var(--accent);text-decoration:none}
+    img{max-width:100%;display:block}
+    .max{max-width:1080px;margin-inline:auto;padding:clamp(16px,3vw,28px)}
+    .hero{
+      position:relative;border-radius:18px;overflow:hidden;margin:18px auto 22px;
+      background:
+        radial-gradient(1600px 700px at -20% -50%, rgba(255,122,0,.06), transparent 60%),
+        linear-gradient(180deg, rgba(7,10,14,.5), rgba(7,10,14,.92)),
+        url('conewango.jpg') center/cover no-repeat;
+      min-height:46vh; box-shadow:var(--glow); border:1px solid var(--line);
+    }
+    .hero-inner{position:relative;z-index:2;padding:clamp(22px,5vw,56px)}
+    .kicker{font:600 .8rem/1 Inter,system-ui;letter-spacing:.24em;color:#c3cbd4;text-transform:uppercase}
+    h1{font-family:Orbitron,Inter,sans-serif;margin:.4rem 0 .2rem;font-size:clamp(28px,4.6vw,52px);letter-spacing:.4px}
+    .deck{max-width:820px;color:#c9d2da;margin:.4rem 0 0.8rem}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .badge{background:linear-gradient(180deg,#ff7a00,#e06100);color:#0b0f12;font-weight:800;border-radius:999px;padding:8px 12px;font-size:.82rem;box-shadow:0 8px 28px rgba(255,122,0,.28)}
+    /* Article */
+    article{background:linear-gradient(180deg,#0f141a,#0b0f12);border:1px solid var(--line);border-radius:16px;box-shadow:var(--glow);padding:clamp(18px,3vw,30px)}
+    article h2{font-family:Orbitron,Inter,sans-serif;color:#f3f6fa;margin:26px 0 10px;letter-spacing:.3px}
+    article p, article li{color:var(--ink)}
+    hr{border:none;border-top:1px solid var(--line);margin:24px 0}
+    blockquote{border-left:4px solid #3a4756;margin:12px 0;padding:8px 12px;color:#aab3bc;font-style:italic;background:rgba(18,24,33,.4);border-radius:8px}
+    /* Figures / cards */
+    .figure, .card{
+      background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--glow);overflow:hidden
+    }
+    .figure{margin:14px 0 20px}
+    .figure figcaption{padding:10px 12px;color:var(--muted);font-size:.95rem}
+    .card{padding:14px;margin:14px 0}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:880px){.grid-2{grid-template-columns:1.1fr .9fr}}
+    .policy{background:linear-gradient(180deg,#121b25,#0f161f);border:1px solid #223043}
+    .scripts{display:grid;gap:12px}
+    .script{background:#121821;border:1px solid var(--line);border-radius:10px;padding:12px}
+    .footnote{color:#9aa3ad;font-size:.92rem}
+    .toc{display:grid;gap:8px;padding:12px;border-left:3px solid #2a3747;background:#121827;border-radius:10px}
+    /* Inline SVG Illustration styling */
+    .illus{width:100%;height:auto;background:#0e141b}
+    .illus-wrap{display:grid;gap:12px;grid-template-columns:1fr;align-items:center}
+    @media(min-width:960px){.illus-wrap{grid-template-columns:520px 1fr}}
+    .caption{color:#b5bec7;font-size:.95rem}
+    /* CTA */
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:900;letter-spacing:.3px;background:linear-gradient(180deg,#ff7a00,#e06100);color:#101318;box-shadow:0 8px 30px rgba(255,122,0,.28)}
+    .ghost{background:#1a232e;color:#e6edf4;border:1px solid #2a3543}
+    .backtop{display:block;text-align:center;margin:26px 0 6px;color:#a7b1bc}
+    /* Code-like lines */
+    .rule{color:#d7dee6}
+
+    /* ===== LEGAL FOOTER ===== */
+    footer.site-legal{
+      background:linear-gradient(180deg,#0d1218,#0a0f14);
+      border-top:1px solid var(--line);
+      margin-top:24px;
+    }
+    .legal-grid{
+      display:grid; gap:16px; align-items:start;
+      grid-template-columns:1fr; padding:clamp(16px,3vw,26px) 0;
+    }
+    .legal-grid .box{background:#111823;border:1px solid #1e2a35;border-radius:12px;padding:14px;box-shadow:var(--glow)}
+    .legal-grid h4{margin:.1rem 0 .35rem; font-size:1rem; color:#f0f4f8}
+    .legal-grid p, .legal-grid li{color:#c3ccd5; font-size:.95rem}
+    .legal-meta{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-top:8px;color:#97a1aa;font-size:.92rem}
+    .legal-links{display:flex;gap:14px;flex-wrap:wrap}
+    .legal-links a{color:#c1c9d2}
+    @media(min-width:900px){
+      .legal-grid{grid-template-columns:2fr 1.2fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero max" id="top">
+    <div class="hero-inner">
+      <div class="kicker">Modern Fable · Boundaries & Preparedness</div>
+      <h1>The Ant, the Grasshopper, and the Locked Door</h1>
+      <p class="deck"><em>Darker cut.</em> For adults who prepare—and for the friends who joke, “When SHTF, I’m coming to your house.” This isn’t cruelty. It’s math, mercy done early, and a door that stays locked when it has to.</p>
+      <div class="badges">
+        <span class="badge">No Hard Feelings</span>
+        <span class="badge">Clear Boundaries</span>
+      </div>
+      <!-- CTA added near the top -->
+      <div class="cta-row" style="margin:14px 0 4px">
+        <a class="cta" href="#seven-day-kit">Build Your 7-Day Kit →</a>
+        <a class="cta ghost" href="#boundary-scripts">Get the Boundary Scripts</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max">
+    <article>
+      <blockquote>“When food gets scarce, I have no friends.” — the Ant, stating policy, not hate.</blockquote>
+
+      <!-- Hero Illustration -->
+      <figure class="figure">
+        <svg class="illus" role="img" aria-label="Stylized ant and grasshopper silhouettes facing a locked door" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0f1922"/>
+              <stop offset="1" stop-color="#0b0f12"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#ff7a00"/>
+              <stop offset="1" stop-color="#e06100"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="1200" height="420" fill="url(#g1)"/>
+          <rect x="520" y="60" width="180" height="300" rx="12" fill="#141d27" stroke="#2a3849" stroke-width="2"/>
+          <circle cx="670" cy="210" r="10" fill="url(#g2)"/>
+          <g transform="translate(210,260) scale(1.1)">
+            <ellipse cx="0" cy="0" rx="34" ry="22" fill="#1e2b39"/>
+            <ellipse cx="-40" cy="0" rx="26" ry="18" fill="#1e2b39"/>
+            <ellipse cx="40" cy="0" rx="26" ry="18" fill="#1e2b39"/>
+            <circle cx="-68" cy="-28" r="6" fill="#1e2b39"/>
+            <circle cx="-78" cy="-46" r="4" fill="#1e2b39"/>
+            <path d="M-78,-46 C-100,-70 -110,-90 -118,-96" stroke="#1e2b39" stroke-width="3" fill="none"/>
+            <path d="M-78,-46 C-95,-50 -108,-60 -120,-70" stroke="#1e2b39" stroke-width="3" fill="none"/>
+            <path d="M-30,15 L-60,40 M0,18 L0,46 M30,15 L60,40" stroke="#223247" stroke-width="6" stroke-linecap="round"/>
+          </g>
+          <g transform="translate(980,280) scale(1.1)">
+            <ellipse cx="0" cy="0" rx="46" ry="22" fill="#213246"/>
+            <ellipse cx="-46" cy="0" rx="30" ry="16" fill="#213246"/>
+            <polygon points="-70,-8 -30,-8 -50,-28" fill="#213246"/>
+            <path d="M20,10 L56,42 M-12,12 L-40,40" stroke="#2a3d52" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="-62" cy="-18" r="4" fill="#213246"/>
+            <path d="M-62,-18 C-80,-32 -92,-46 -100,-58" stroke="#213246" stroke-width="3" fill="none"/>
+          </g>
+          <ellipse cx="610" cy="340" rx="540" ry="36" fill="rgba(255,122,0,.06)"/>
+        </svg>
+        <figcaption class="caption">Two choices, one door. Compassion planned in October; policy enforced in January.</figcaption>
+      </figure>
+
+      <h2>Summer</h2>
+      <p>The Ant spent long heatwaves stacking wood, vacuum-sealing rice, labeling buckets, counting heads, counting calories, counting days. A quiet arithmetic of survival. The Grasshopper posted sunsets, collected festival bracelets, and swore he’d “figure it out” if he ever had to.</p>
+      <p>Autumn sold cheap pumpkins and expensive everything else. One night the Grasshopper texted the line every Ant hears: <strong>“If things go bad, I’m coming to your house.”</strong> The Ant replied without heat or apology: <strong>“Love you. No—the fuck—you’re not.”</strong></p>
+
+      <h2>Winter</h2>
+      <p>Winter didn’t arrive; it bled in under doors. Shelves thinned. Prices climbed. The power flickered like a liar. Then the knock—hopeful, not frantic. The kind that wants your planning to erase their planning.</p>
+
+      <div class="illus-wrap figure">
+        <svg class="illus" role="img" aria-label="Locked door with boundary text" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice">
+          <rect width="1200" height="360" fill="#0f141a"/>
+          <rect x="420" y="40" width="360" height="280" rx="14" fill="#141d27" stroke="#2a3849" stroke-width="2"/>
+          <circle cx="740" cy="180" r="10" fill="#ff7a00"/>
+          <text x="600" y="320" fill="#9aa3ad" font-family="Inter, sans-serif" font-size="18" text-anchor="middle">“I can’t help you at my door. Please leave. No hard feelings.”</text>
+        </svg>
+        <figcaption class="caption">Boundary is a sentence, not a debate.</figcaption>
+      </div>
+
+      <p>Behind a locked door, the Ant used the line that matters in a lean year: <strong>“I can’t help you at my door.”</strong> Low voice. Light off. Boundary set. “No hard feelings,” the Ant added. “But no entry.”</p>
+
+      <h2>Cruel? No. Necessary.</h2>
+      <p>Compassion without logistics is a poem. Survival is logistics. The pantry was built for a fixed number of mouths, plus a small reserve <em>pre-promised</em> to two people: an elderly neighbor and a single mom down the lane—commitments made in October, not begged for in February. To feed beyond that list is to ration failure evenly.</p>
+
+      <h2>What “I’m coming to your house” really says</h2>
+      <ul>
+        <li><strong>What they mean:</strong> “I’ve chosen not to prepare; I’ve chosen you to pay the bill.”</li>
+        <li><strong>What you hear:</strong> “Please convert your family’s safety margin into my safety net.”</li>
+        <li><strong>What you answer (calm, final):</strong> “I care about you. I’m not your contingency plan.”</li>
+      </ul>
+
+      <div class="card policy">
+        <h3 style="margin:.2rem 0 .4rem">My Door Policy (write it; own it)</h3>
+        <p class="rule">I am responsible for the people under my roof. I’ll help you build your plan now—lists, links, where to buy while it’s cheap—but if things get tight, I will not open my door. No hard feelings. Clear expectations.</p>
+      </div>
+
+      <hr>
+
+      <h2>The ledger (the Ant’s quiet rules)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <ol>
+            <li><strong>The List:</strong> Write the names you are responsible for. Add only those you pre-commit to <em>before</em> scarcity. No additions at the door.</li>
+            <li><strong>The Count:</strong> Water and calories for those names—on paper, not vibes.</li>
+            <li><strong>The Shell:</strong> Seal drafts, zone rooms, run hot/clean burns. Comfort conserves fuel.</li>
+            <li><strong>The Rhythm:</strong> Morning fire. Midday air-out. Evening seal. Night coals.</li>
+            <li><strong>The Door:</strong> “I can’t help you at my door. Please leave.” Repeat once. Lights out.</li>
+            <li><strong>The Conscience:</strong> Help early when help is cheap. When it isn’t—hold the line.</li>
+          </ol>
+        </div>
+        <figure class="figure">
+          <svg class="illus" role="img" aria-label="Simple pantry shelves illustration" viewBox="0 0 1200 360">
+            <rect width="1200" height="360" fill="#0e141b"/>
+            <g stroke="#2a3849" stroke-width="3" fill="#141d27">
+              <rect x="140" y="70" width="920" height="28"/>
+              <rect x="140" y="166" width="920" height="28"/>
+              <rect x="140" y="262" width="920" height="28"/>
+            </g>
+            <g fill="#213246">
+              <rect x="170" y="108" width="50" height="44" rx="6"/>
+              <rect x="230" y="108" width="50" height="44" rx="6"/>
+              <rect x="290" y="108" width="90" height="44" rx="6"/>
+              <rect x="390" y="108" width="70" height="44" rx="6"/>
+              <rect x="480" y="108" width="110" height="44" rx="6"/>
+              <rect x="610" y="108" width="60" height="44" rx="6"/>
+              <rect x="680" y="108" width="80" height="44" rx="6"/>
+              <rect x="770" y="108" width="60" height="44" rx="6"/>
+              <rect x="840" y="108" width="120" height="44" rx="6"/>
+            </g>
+            <g fill="#223247">
+              <rect x="170" y="204" width="120" height="44" rx="6"/>
+              <rect x="300" y="204" width="60" height="44" rx="6"/>
+              <rect x="370" y="204" width="80" height="44" rx="6"/>
+              <rect x="460" y="204" width="50" height="44" rx="6"/>
+              <rect x="520" y="204" width="110" height="44" rx="6"/>
+              <rect x="640" y="204" width="90" height="44" rx="6"/>
+              <rect x="740" y="204" width="70" height="44" rx="6"/>
+              <rect x="820" y="204" width="120" height="44" rx="6"/>
+              <rect x="950" y="204" width="70" height="44" rx="6"/>
+            </g>
+          </svg>
+          <figcaption class="caption">Pantry math is headcount math. Numbers, not vibes.</figcaption>
+        </figure>
+      </div>
+
+      <h2 id="seven-day-kit">If you’re the Grasshopper (read this like rent is due)</h2>
+      <p>No lectures. Just a seven-day baseline so you don’t have to knock. Start tonight.</p>
+      <ul>
+        <li><strong>Water:</strong> 1 gal per person per day × 7.</li>
+        <li><strong>Calories:</strong> ~2,000 per adult per day (rice, oats, beans, tuna, peanut butter, canned fruit/veg, shelf-stable milk).</li>
+        <li><strong>Heat & light:</strong> extra blankets; lantern/headlamp; fresh batteries.</li>
+        <li><strong>Cook:</strong> butane/propane camp stove (vented) or grill outside. Practice once.</li>
+        <li><strong>Medicine:</strong> your prescriptions + basic first-aid.</li>
+        <li><strong>Hygiene:</strong> TP, trash bags, baby wipes, soap, water treatment.</li>
+        <li><strong>Info:</strong> battery/hand-crank radio; printed contacts; a written plan.</li>
+      </ul>
+
+      <h2>If you’re the Ant (steady, not savage)</h2>
+      <ul>
+        <li><strong>Broadcast before winter:</strong> “I’m not a last-minute shelter. I’ll help you prep now.”</li>
+        <li><strong>Hand up early:</strong> starter lists while shelves are full.</li>
+        <li><strong>Pick your exceptions in peace:</strong> decide who you’ll help; stock for it.</li>
+        <li><strong>Practice the line:</strong> “I can’t help you at my door. Please leave.” No speeches; end the conversation.</li>
+      </ul>
+
+      <div class="card">
+        <h3 style="margin:.2rem 0 .5rem">Humor, cut to the bone</h3>
+        <ul style="margin:.2rem 0 .2rem">
+          <li>“I’ll pay you back after the collapse.” — With what, loyalty points?</li>
+          <li>“I bring vibes.” — Vibes don’t boil pasta.</li>
+          <li>“I’m great at security.” — Be great at beans.</li>
+        </ul>
+      </div>
+
+      <h2>Mutual aid ≠ magical thinking</h2>
+      <p>Real community is built with redundancies, not fantasies. “You store water; I store tools; both of us keep three weeks of food.” That’s a pact. “I’ll show up empty-handed at your door” is trespass dressed as friendship.</p>
+
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+
+      <div class="cta-row" style="margin:10px 0 18px">
+        <a class="cta" href="#seven-day-kit">Build Your 7-Day Kit →</a>
+        <a class="cta ghost" href="#boundary-scripts">Get the Boundary Scripts</a>
+      </div>
+
+      <h2 id="boundary-scripts">Boundary scripts you can copy/paste</h2>
+      <div class="scripts">
+        <div class="script">
+          <strong>Friend text (before):</strong>
+          <p style="margin:.3rem 0 0">“I love you, and I need to be clear: if things wobble, I won’t open my door. I’ll help you build a week of supplies this month so you won’t need me.”</p>
+        </div>
+        <div class="script">
+          <strong>Door script (during):</strong>
+          <p style="margin:.3rem 0 0">“I can’t help you at my door. Please leave. No hard feelings.” <em>(Repeat once. End the talk.)</em></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>The moral (2025)</h2>
+      <p>The Ant didn’t stop being a friend. The Ant stopped being a plan. Be kind in September so you can be firm in January. Build your week, then your month. Help people early, on purpose, within your math. When the knock comes—and it will—you won’t need volume or threats. The locked door and the prepared pantry will speak for you.</p>
+
+      <p class="footnote"><strong>Safety & legal note:</strong> Protecting your household starts with planning, communication, and de-escalation. Know your local laws. Avoid confrontation. This story is about boundaries and preparedness, not bravado.</p>
+
+      <div class="toc" aria-label="On this page">
+        <strong>On this page</strong>
+        <a href="#top">Top</a>
+        <a href="#top">Summer & Winter</a>
+        <a href="#top">Policy & Ledger</a>
+        <a href="#seven-day-kit">If you’re the Grasshopper</a>
+        <a href="#boundary-scripts">Boundary Scripts</a>
+        <a href="#top">Moral</a>
+      </div>
+
+      <div class="cta-row">
+        <a class="cta" href="/blog/amish-winter-heat/">
+          Read next: How the Amish Stay Warm in Winter →
+        </a>
+        <a class="cta ghost" href="#top">↑ Back to top</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== LEGAL FOOTER (add any time, before </body>) ===== -->
+  <footer class="site-legal">
+    <div class="max">
+      <div class="legal-grid">
+        <div class="box">
+          <h4>Information Only</h4>
+          <p>This article is for informational and entertainment purposes only. It is not legal, security, medical, or professional advice. Always follow local laws and regulations.</p>
+          <h4 style="margin-top:.8rem">Safety First</h4>
+          <p>Prioritize de-escalation and avoidance. Use heating equipment per manufacturer instructions. Vent all combustion appliances outdoors and maintain working CO/smoke alarms.</p>
+        </div>
+        <div class="box">
+          <h4>Affiliate Disclosure</h4>
+          <p>Some pages on this site may contain affiliate links. As an Amazon Associate, we may earn from qualifying purchases at no extra cost to you.</p>
+          <h4 style="margin-top:.8rem">Contact & Policies</h4>
+          <ul style="margin:.3rem 0 0; padding-left:18px">
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Use</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal-meta">
+        <span>© 2025 Grit Gear HQ. All rights reserved.</span>
+        <div class="legal-links">
+          <a href="#top">↑ Back to top</a>
+          <a href="#boundary-scripts">Boundary Scripts</a>
+          <a href="#seven-day-kit">7-Day Kit</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
