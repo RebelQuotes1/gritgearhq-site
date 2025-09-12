@@ -288,53 +288,144 @@
           </ol>
         </div>
 
-        <!-- Pantry shelves illustration -->
-        <figure class="figure">
-          <svg class="illus" role="img" aria-label="Simple pantry shelves illustration" viewBox="0 0 1200 360">
-            <rect width="1200" height="360" fill="#0e141b"/>
-            <g stroke="#2a3849" stroke-width="3" fill="#141d27">
-              <rect x="140" y="70" width="920" height="28"/>
-              <rect x="140" y="166" width="920" height="28"/>
-              <rect x="140" y="262" width="920" height="28"/>
-            </g>
-            <g fill="#213246">
-              <rect x="170" y="108" width="50" height="44" rx="6"/>
-              <rect x="230" y="108" width="50" height="44" rx="6"/>
-              <rect x="290" y="108" width="90" height="44" rx="6"/>
-              <rect x="390" y="108" width="70" height="44" rx="6"/>
-              <rect x="480" y="108" width="110" height="44" rx="6"/>
-              <rect x="610" y="108" width="60" height="44" rx="6"/>
-              <rect x="680" y="108" width="80" height="44" rx="6"/>
-              <rect x="770" y="108" width="60" height="44" rx="6"/>
-              <rect x="840" y="108" width="120" height="44" rx="6"/>
-            </g>
-            <g fill="#223247">
-              <rect x="170" y="204" width="120" height="44" rx="6"/>
-              <rect x="300" y="204" width="60" height="44" rx="6"/>
-              <rect x="370" y="204" width="80" height="44" rx="6"/>
-              <rect x="460" y="204" width="50" height="44" rx="6"/>
-              <rect x="520" y="204" width="110" height="44" rx="6"/>
-              <rect x="640" y="204" width="90" height="44" rx="6"/>
-              <rect x="740" y="204" width="70" height="44" rx="6"/>
-              <rect x="820" y="204" width="120" height="44" rx="6"/>
-              <rect x="950" y="204" width="70" height="44" rx="6"/>
-            </g>
-          </svg>
-          <figcaption class="caption">Pantry math is headcount math. Numbers, not vibes.</figcaption>
-        </figure>
-      </div>
+   <!-- Pantry shelves illustration (hand-drawn feel) -->
+<figure class="figure">
+  <svg class="illus" role="img" aria-labelledby="pantryTitle pantryDesc" viewBox="0 0 1200 360">
+    <title id="pantryTitle">Pantry shelves: simple, hand-drawn style</title>
+    <desc id="pantryDesc">Three shelves with cans, jars, a rice bag, pasta box, beans, and two water jugs.</desc>
 
-      <h2 id="boundary-scripts">Boundary scripts you can copy/paste</h2>
-      <div class="scripts">
-        <div class="script">
-          <strong>Friend text (before):</strong>
-          <p style="margin:.3rem 0 0">“I love you, and I need to be clear: if things wobble, I won’t open my door. I’ll help you build a week of supplies this month so you won’t need me.”</p>
-        </div>
-        <div class="script">
-          <strong>Door script (during):</strong>
-          <p style="margin:.3rem 0 0">“I can’t help you at my door. Please leave. No hard feelings.” <em>(Repeat once. End the talk.)</em></p>
-        </div>
-      </div>
+    <defs>
+      <!-- soft board gradient + subtle shadow -->
+      <linearGradient id="board" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#17212b"/>
+        <stop offset="1" stop-color="#0f1620"/>
+      </linearGradient>
+      <filter id="softShadow" x="-20%" y="-40%" width="140%" height="180%">
+        <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".35"/>
+      </filter>
+      <style>
+        .bg{fill:#0e141b}
+        .post{fill:#111a24;stroke:#2a3849;stroke-width:4}
+        .shelf{fill:url(#board);stroke:#2a3849;stroke-width:3;rx:6}
+        .line{stroke:#2a3849;stroke-width:2;stroke-linecap:round}
+        .label{fill:#8aa5bf;font:600 12px/1 ui-sans-serif,system-ui,Segoe UI,Roboto}
+        /* item palette */
+        .can{fill:#2e5a84;stroke:#7fb0e7;stroke-width:2}
+        .jar{fill:#2b5f4f;stroke:#7fd7b3;stroke-width:2}
+        .box{fill:#5a3d2e;stroke:#e6b88a;stroke-width:2}
+        .bag{fill:#5a6b2e;stroke:#c6e17a;stroke-width:2}
+        .jug{fill:#2c4766;stroke:#86bdf6;stroke-width:2}
+        .cap{fill:#86bdf6}
+        .glass{fill:#214259}
+        .window{fill:#203243;stroke:#9cc4ff;stroke-width:1.6}
+      </style>
+    </defs>
+
+    <!-- background -->
+    <rect class="bg" width="1200" height="360"/>
+
+    <!-- vertical posts -->
+    <rect class="post" x="120" y="48" width="14" height="264" rx="4"/>
+    <rect class="post" x="1066" y="48" width="14" height="264" rx="4"/>
+
+    <!-- shelves -->
+    <rect class="shelf" x="140" y="76"  width="920" height="28" filter="url(#softShadow)"/>
+    <rect class="shelf" x="140" y="172" width="920" height="28" filter="url(#softShadow)"/>
+    <rect class="shelf" x="140" y="268" width="920" height="28" filter="url(#softShadow)"/>
+
+    <!-- ===== TOP SHELF: CANS + JARS ===== -->
+    <!-- three cans -->
+    <g transform="translate(170,92)">
+      <g class="can">
+        <ellipse cx="22" cy="8" rx="22" ry="8"/>
+        <rect x="0" y="8" width="44" height="50" class="glass"/>
+        <ellipse cx="22" cy="58" rx="22" ry="8"/>
+        <line class="line" x1="6" y1="22" x2="38" y2="22"/>
+        <line class="line" x1="6" y1="36" x2="38" y2="36"/>
+        <line class="line" x1="6" y1="50" x2="38" y2="50"/>
+      </g>
+      <g class="can" transform="translate(58,0)">
+        <ellipse cx="22" cy="8" rx="22" ry="8"/>
+        <rect x="0" y="8" width="44" height="50" class="glass"/>
+        <ellipse cx="22" cy="58" rx="22" ry="8"/>
+      </g>
+      <g class="can" transform="translate(116,0)">
+        <ellipse cx="22" cy="8" rx="22" ry="8"/>
+        <rect x="0" y="8" width="44" height="50" class="glass"/>
+        <ellipse cx="22" cy="58" rx="22" ry="8"/>
+      </g>
+      <text class="label" x="40" y="84">CANS</text>
+    </g>
+
+    <!-- tall jar -->
+    <g transform="translate(360,86)">
+      <path class="jar" d="M30,10 q20,0 28,8 v10 q0,6-6,6 h-44 q-6,0-6-6 v-10 q8-8 28-8z"/>
+      <rect class="jar" x="6" y="30" width="48" height="62" rx="8"/>
+      <rect class="cap" x="12" y="0" width="36" height="10" rx="4"/>
+      <text class="label" x="4" y="110">BEANS</text>
+    </g>
+
+    <!-- short jar -->
+    <g transform="translate(440,94)">
+      <rect class="jar" x="6" y="18" width="48" height="52" rx="10"/>
+      <rect class="cap" x="14" y="8" width="32" height="10" rx="4"/>
+    </g>
+
+    <!-- ===== MIDDLE SHELF: RICE BAG + PASTA BOX + SMALL JAR ===== -->
+    <!-- rice bag (sack shape) -->
+    <g transform="translate(170,186)">
+      <path class="bag" d="M18,8 q36,-10 72,0 l-6,10 q6,8 6,20 v26 q0,10-10,16 q-40,12-58,0 q-10,-6-10,-16 v-26 q0,-10 6,-20z"/>
+      <line class="line" x1="28" y1="22" x2="80" y2="22"/>
+      <text class="label" x="28" y="78">RICE</text>
+    </g>
+
+    <!-- pasta box with window -->
+    <g transform="translate(340,188)">
+      <rect class="box" x="0" y="0" width="70" height="70" rx="6"/>
+      <rect class="window" x="16" y="30" width="38" height="18" rx="9"/>
+      <text class="label" x="6" y="16">PASTA</text>
+    </g>
+
+    <!-- small jar (peanut butter / sauce) -->
+    <g transform="translate(440,194)">
+      <rect class="jar" x="4" y="8" width="50" height="50" rx="10"/>
+      <rect class="cap" x="10" y="0" width="38" height="10" rx="4"/>
+      <text class="label" x="0" y="76">SAUCE</text>
+    </g>
+
+    <!-- extra cans cluster -->
+    <g transform="translate(540,192)">
+      <g class="can">
+        <ellipse cx="18" cy="6" rx="18" ry="6"/>
+        <rect x="0" y="6" width="36" height="42" class="glass"/>
+        <ellipse cx="18" cy="48" rx="18" ry="6"/>
+      </g>
+      <g class="can" transform="translate(48,0)">
+        <ellipse cx="18" cy="6" rx="18" ry="6"/>
+        <rect x="0" y="6" width="36" height="42" class="glass"/>
+        <ellipse cx="18" cy="48" rx="18" ry="6"/>
+      </g>
+    </g>
+
+    <!-- ===== BOTTOM SHELF: WATER JUGS ===== -->
+    <g transform="translate(170,288)">
+      <!-- jug 1 -->
+      <g class="jug">
+        <path d="M26,10 h24 q10,0 14,8 l6,10 v38 q0,10-10,16 q-8,6-26,6 q-18,0-26-6 q-10-6-10-16 v-38 l6-10 q4-8 14-8 h8z"/>
+        <rect class="cap" x="42" y="0" width="18" height="10" rx="3"/>
+        <path d="M38,24 q10,-2 14,8 q4,10-8,12" fill="none" class="line"/>
+      </g>
+      <!-- jug 2 -->
+      <g class="jug" transform="translate(90,0)">
+        <path d="M26,10 h24 q10,0 14,8 l6,10 v38 q0,10-10,16 q-8,6-26,6 q-18,0-26-6 q-10-6-10-16 v-38 l6-10 q4-8 14-8 h8z"/>
+        <rect class="cap" x="42" y="0" width="18" height="10" rx="3"/>
+        <path d="M38,24 q10,-2 14,8 q4,10-8,12" fill="none" class="line"/>
+      </g>
+      <text class="label" x="18" y="86">WATER</text>
+    </g>
+  </svg>
+  <figcaption class="caption">Pantry math is headcount math. Numbers, not vibes.</figcaption>
+</figure>
 
       <hr>
 
