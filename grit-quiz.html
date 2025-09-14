@@ -1,11 +1,12 @@
-<!-- ✅ PAGE BACKGROUND (add once per page; <head> preferred) -->
+<!-- GLOBAL PAGE BACKGROUND (put this once, anywhere above the quiz – ideally in <head>) -->
 <style>
-  html,body{height:100%}
+  html, body { height:100%; }
   body{
     margin:0;
     color:#e8edf2;
-    background:#0b0f12 url('images/s-l1600.webp') center/cover fixed no-repeat; /* update path if needed */
+    background:#0b0f12 url('images/s-l1600.webp') center / cover fixed no-repeat; /* change path if needed */
   }
+  /* soft dark overlay so text pops on the image */
   body::before{
     content:""; position:fixed; inset:0;
     background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.7));
@@ -15,14 +16,15 @@
 
 <!-- ============= GRIT QUIZ (fixed) ============= -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+
 <section id="grit-quiz" class="mcq-wrap" tabindex="-1" aria-labelledby="grit-quiz-title">
   <style>
     .mcq-wrap{
       --panel:#121821;--line:#1f2a35;--ink:#e8edf2;--accent:#ff7a00;
-      color:var(--ink);max-width:980px;margin:28px auto;
-      border:1px solid var(--line);border-radius:16px;
-      box-shadow:0 0 0 1px rgba(255,122,0,.12),0 16px 46px rgba(0,0,0,.6);
-      background:rgba(18,24,33,.92);              /* solid panel (no image) */
+      color:var(--ink); max-width:980px; margin:28px auto;
+      border:1px solid var(--line); border-radius:16px;
+      box-shadow:0 0 0 1px rgba(255,122,0,.12), 0 16px 46px rgba(0,0,0,.6);
+      background:rgba(18,24,33,.92);                /* solid panel, NO image */
       backdrop-filter:saturate(110%) blur(1px);
       padding:clamp(18px,3.2vw,28px);
     }
@@ -69,7 +71,6 @@
     <div class="mcq-meta"><span id="mcq-score">Score: 0</span> · <span id="mcq-count">Q 1/12</span></div>
   </header>
 
-  <!-- Question card -->
   <div class="mcq-card" aria-live="polite">
     <div class="mcq-q" id="mcq-qtext">Loading…</div>
     <div class="mcq-choices" id="mcq-choices"></div>
@@ -79,7 +80,6 @@
     </div>
   </div>
 
-  <!-- Results -->
   <section class="mcq-result hidden" id="mcq-result" tabindex="-1" aria-labelledby="mcq-result-title">
     <h3 id="mcq-result-title">Your Results</h3>
     <div class="score-big"><span id="mcq-final">0/12 (0%)</span></div>
@@ -91,7 +91,6 @@
 
   <script>
   (function(){
-    // ---------- Quiz Data (varied) ----------
     const qs = [
       { q:"Cold house, limited fuel. What’s your FIRST move?",
         choices:[
@@ -124,7 +123,7 @@
       { q:"Walking at night; someone mirrors your turns. First move:",
         choices:[
           {t:"Confront them",correct:false},
-          {t:"Change route to a bright, busy place; create distance",correct:true},
+          {t:"Head to a bright, busy place; create distance",correct:true},
           {t:"Ignore it",correct:false},
           {t:"Flash a weapon",correct:false}
         ], tag:"awareness" },
@@ -184,7 +183,7 @@
       water:"Store 1 gal/person/day for 7 days. Rotate.",
       boil:"Rolling boil 1 minute improves clear water when you lack a filter.",
       boundary:"Practice: “I can’t help you at my door. Please leave.”",
-      awareness:"Create distance; head to lights/people; call for help.",
+      awareness:"Create distance; go to lights/people; call for help.",
       home:"Keep the barrier; talk through the door; call 911 if needed.",
       eq:"Drop, Cover, Hold On under a sturdy table away from glass.",
       tornado:"Lowest level interior room/basement; helmets/blankets help.",
@@ -194,7 +193,6 @@
       comms:"NOAA weather radio works when the grid and data don’t."
     };
 
-    // ---------- State & elements ----------
     let i = 0, score = 0, selected = -1;
     const wrongTags = [];
 
@@ -258,8 +256,8 @@
       const pct = Math.round((s/total)*100);
       if (s <= 4)  return { pct, title:'Grasshopper Energy', badge:'🦗', line:'Start with water, food, and one warm room.' };
       if (s <= 7)  return { pct, title:'Apprentice Ant',     badge:'🔧', line:'Good start—shore up the misses.' };
-      if (s <= 10) return { pct, title:'Ant',               badge:'🐜', line:'Solid baseline. Keep practicing.' };
-      return              { pct, title:'Ant with a Plan',   badge:'🛠️', line:'Top tier. Help someone else prep early.' };
+      if (s <= 10) return { pct, title:'Ant',                badge:'🐜', line:'Solid baseline. Keep practicing.' };
+      return              { pct, title:'Ant with a Plan',    badge:'🛠️', line:'Top tier. Help someone else prep early.' };
     }
 
     function finish(){
@@ -298,9 +296,12 @@
       gradeCurrent();
       setTimeout(() => { if (i === qs.length - 1) finish(); else { i++; renderQuestion(i); } }, 260);
     });
-    prevBtnEl.addEventListener('click', () => { if (i === 0) return; i--; renderQuestion(i); });
 
-    // Init
+    prevBtnEl.addEventListener('click', () => {
+      if (i === 0) return;
+      i--; renderQuestion(i);
+    });
+
     renderQuestion(i);
     document.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' && !nextBtnEl.disabled){ nextBtnEl.click(); }});
   })();
