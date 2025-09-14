@@ -1,13 +1,10 @@
-<!-- ============= GRIT QUIZ (fixed) ============= -->
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-<section id="grit-quiz" class="mcq-wrap" tabindex="-1" aria-labelledby="grit-quiz-title">
-  <style>
-   <style>
+<!-- ✅ PAGE BACKGROUND (add once per page; <head> preferred) -->
+<style>
   html,body{height:100%}
   body{
     margin:0;
     color:#e8edf2;
-    background:#0b0f12 url('s-l1600.webp') center/cover fixed no-repeat; /* change path if needed */
+    background:#0b0f12 url('images/s-l1600.webp') center/cover fixed no-repeat; /* update path if needed */
   }
   body::before{
     content:""; position:fixed; inset:0;
@@ -16,19 +13,17 @@
   }
 </style>
 
+<!-- ============= GRIT QUIZ (fixed) ============= -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+<section id="grit-quiz" class="mcq-wrap" tabindex="-1" aria-labelledby="grit-quiz-title">
+  <style>
     .mcq-wrap{
       --panel:#121821;--line:#1f2a35;--ink:#e8edf2;--accent:#ff7a00;
       color:var(--ink);max-width:980px;margin:28px auto;
       border:1px solid var(--line);border-radius:16px;
       box-shadow:0 0 0 1px rgba(255,122,0,.12),0 16px 46px rgba(0,0,0,.6);
-      /* BG IMAGE — update path if needed */
-      background-image:
-        linear-gradient(180deg, rgba(11,15,18,.65), rgba(11,15,18,.85)),
-        url('/images/s-l1600.webp');
-      background-position:center;
-      background-size:cover;
-      background-repeat:no-repeat;
-      background-attachment:fixed;
+      background:rgba(18,24,33,.92);              /* solid panel (no image) */
+      backdrop-filter:saturate(110%) blur(1px);
       padding:clamp(18px,3.2vw,28px);
     }
     .mcq-head h2{margin:0 0 8px;font:800 clamp(20px,3.2vw,28px)/1.2 system-ui,Segoe UI,Inter,sans-serif}
@@ -199,7 +194,7 @@
       comms:"NOAA weather radio works when the grid and data don’t."
     };
 
-    // ---------- State & elements (no duplicate consts) ----------
+    // ---------- State & elements ----------
     let i = 0, score = 0, selected = -1;
     const wrongTags = [];
 
@@ -261,10 +256,10 @@
 
     function tierFor(s, total){
       const pct = Math.round((s/total)*100);
-      if (s <= 4) return { pct, title:'Grasshopper Energy', badge:'🦗', line:'Start with water, food, and one warm room.' };
-      if (s <= 7) return { pct, title:'Apprentice Ant',     badge:'🔧', line:'Good start—shore up the misses.' };
+      if (s <= 4)  return { pct, title:'Grasshopper Energy', badge:'🦗', line:'Start with water, food, and one warm room.' };
+      if (s <= 7)  return { pct, title:'Apprentice Ant',     badge:'🔧', line:'Good start—shore up the misses.' };
       if (s <= 10) return { pct, title:'Ant',               badge:'🐜', line:'Solid baseline. Keep practicing.' };
-      return            { pct, title:'Ant with a Plan',     badge:'🛠️', line:'Top tier. Help someone else prep early.' };
+      return              { pct, title:'Ant with a Plan',   badge:'🛠️', line:'Top tier. Help someone else prep early.' };
     }
 
     function finish(){
@@ -282,9 +277,9 @@
         .join('');
 
       const ctas = document.querySelector('#grit-quiz .mcq-ctas');
-      const needHeat = uniq.includes('heat');
-      const needWater = uniq.some(t=>['water','boil'].includes(t));
-      const needDefense = uniq.some(t=>['awareness','home','boundary'].includes(t));
+      const needHeat     = uniq.includes('heat');
+      const needWater    = uniq.some(t=>['water','boil'].includes(t));
+      const needDefense  = uniq.some(t=>['awareness','home','boundary'].includes(t));
       const needDisaster = uniq.some(t=>['eq','tornado','flood','wildfire','comms'].includes(t));
 
       ctas.innerHTML = `
@@ -298,7 +293,6 @@
       resultWrap.focus();
     }
 
-    // Nav (no duplicate consts)
     nextBtnEl.addEventListener('click', () => {
       if (selected === -1) return;
       gradeCurrent();
