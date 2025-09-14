@@ -1,14 +1,13 @@
 <!-- =======================
-     GRIT QUIZ (with bg image + clearer water Q)
+     GRIT QUIZ (varied topics + bg image)
      ======================= -->
 <section id="grit-quiz" class="mcq-wrap" tabindex="-1" aria-labelledby="grit-quiz-title">
   <style>
     .mcq-wrap{
-      --bg:#0b0f12;--panel:#121821;--line:#1f2a35;--ink:#e8edf2;--muted:#9aa3ad;--accent:#ff7a00;
-      /* Background image + overlay (update path if needed) */
+      --panel:#121821;--line:#1f2a35;--ink:#e8edf2;--accent:#ff7a00;
       background:
         linear-gradient(180deg, rgba(11,15,18,.92), rgba(11,15,18,.92)),
-        url('s-l1600.webp') center/cover fixed no-repeat;
+        url('s-l1600.webp') center/cover fixed no-repeat; /* update path if needed */
       border:1px solid var(--line);border-radius:16px;
       box-shadow:0 0 0 1px rgba(255,122,0,.12),0 16px 46px rgba(0,0,0,.6);
       padding:clamp(18px,3.2vw,28px);color:var(--ink);max-width:980px;margin:28px auto
@@ -47,15 +46,13 @@
     .mcq-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:900;letter-spacing:.3px;background:linear-gradient(180deg,#ff7a00,#e06100);color:#101318;text-decoration:none}
     .mcq-cta.ghost{background:#1a232e;color:#e6edf4;border:1px solid #2a3543}
     .hidden{display:none}
-
-    .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
   </style>
 
   <header class="mcq-head">
     <h2 id="grit-quiz-title">Grit Check: Are You Ant or Grasshopper?</h2>
-    <p class="mcq-sub">10 quick questions. Score live. Tailored next steps at the end.</p>
+    <p class="mcq-sub">12 quick questions. Score live. Tailored next steps at the end.</p>
     <div class="mcq-progress" aria-hidden="true"><div class="bar" id="mcq-bar"></div></div>
-    <div class="mcq-meta"><span id="mcq-score">Score: 0</span> · <span id="mcq-count">Q 1/10</span></div>
+    <div class="mcq-meta"><span id="mcq-score">Score: 0</span> · <span id="mcq-count">Q 1/12</span></div>
   </header>
 
   <!-- Question card -->
@@ -71,20 +68,18 @@
   <!-- Results -->
   <section class="mcq-result hidden" id="mcq-result" tabindex="-1" aria-labelledby="mcq-result-title">
     <h3 id="mcq-result-title">Your Results</h3>
-    <div class="score-big"><span id="mcq-final">0/10 (0%)</span></div>
+    <div class="score-big"><span id="mcq-final">0/12 (0%)</span></div>
     <div class="tier-line" id="mcq-tier">🦗 Grasshopper Energy — Start with water, food, and one warm room.</div>
-
     <h4 style="margin:.6rem 0 .3rem">Quick fixes for what you missed</h4>
     <ul class="fixes" id="mcq-fixes"></ul>
-
     <div class="mcq-ctas"><!-- injected by JS --></div>
   </section>
 
   <script>
   (function(){
-    // ---------- Quiz Data ----------
+    // ---------- Quiz Data (VARIED) ----------
     const qs = [
-      {
+      { // 1 Heat priority
         q: "Cold house, limited fuel. What’s your FIRST move?",
         choices: [
           {t:"Crank heat for the whole house", correct:false},
@@ -94,47 +89,7 @@
         ],
         tag: "heat"
       },
-      {
-        q: "Window quilts do what best?",
-        choices: [
-          {t:"Look cozy but don’t change much", correct:false},
-          {t:"Trap a still-air layer and cut heat loss", correct:true},
-          {t:"Block drafts by adding a third pane of glass", correct:false},
-          {t:"Only help in summer", correct:false}
-        ],
-        tag: "amish"
-      },
-      {
-        q: "Overnight wood burn done right:",
-        choices: [
-          {t:"Close everything down so it smolders all night", correct:false},
-          {t:"Rake coals forward, add 1–2 dense splits, set a CLEAN draft", correct:true},
-          {t:"Pile wet wood on so it lasts longer", correct:false},
-          {t:"Leave the door cracked", correct:false}
-        ],
-        tag: "overnight"
-      },
-      {
-        q: "Best winter humidity target for comfort (no window drip)?",
-        choices: [
-          {t:"10–20%", correct:false},
-          {t:"35–40%", correct:true},
-          {t:"60–70%", correct:false},
-          {t:"Whatever feels right", correct:false}
-        ],
-        tag: "humidity"
-      },
-      {
-        q: "Boundary line at the door (calm, final):",
-        choices: [
-          {t:"“I’m out, go away!”", correct:false},
-          {t:"“I can’t help you at my door. Please leave.”", correct:true},
-          {t:"“Maybe come in for a minute and we’ll talk.”", correct:false},
-          {t:"Silence and lights off only", correct:false}
-        ],
-        tag: "boundary"
-      },
-      {
+      { // 2 Water baseline
         q: "Emergency water for one week:",
         choices: [
           {t:"1 gallon per person per day × 7", correct:true},
@@ -144,66 +99,126 @@
         ],
         tag: "water"
       },
-      {
-        q: "Firewood that burns hot and clean is usually…",
+      { // 3 Water disinfect
+        q: "No filter but you have a pot. Safest simple way to make clear water safer?",
         choices: [
-          {t:"Under 20% moisture (properly seasoned)", correct:true},
-          {t:"Fresh-cut and heavy", correct:false},
-          {t:"Painted for protection", correct:false},
-          {t:"Stored in a sealed plastic bag", correct:false}
+          {t:"Bring it to a rolling boil for 1 full minute", correct:true},
+          {t:"Add a splash of any household chemical", correct:false},
+          {t:"Let it sit overnight", correct:false},
+          {t:"Run it through a T-shirt and drink", correct:false}
         ],
-        tag: "wood"
+        tag: "boil"
       },
-      {
-        q: "Midday air-out means:",
+      { // 4 Boundary at the door
+        q: "A friend shows up empty-handed during a shortage. Best boundary line:",
         choices: [
-          {t:"Open all windows for 30–60 minutes", correct:false},
-          {t:"A fast 3–5 minute cross-breeze, then reseal", correct:true},
-          {t:"Run fans to push warm air out", correct:false},
-          {t:"Skip it—stale air is warm air", correct:false}
+          {t:"“I’m out—go away.”", correct:false},
+          {t:"“I can’t help you at my door. Please leave.”", correct:true},
+          {t:"“Maybe come in and we’ll talk.”", correct:false},
+          {t:"Say nothing, lights off.", correct:false}
         ],
-        tag: "vent"
+        tag: "boundary"
       },
-      {
-        q: "Stove thermometer goal during normal burns:",
+      { // 5 Situational awareness
+        q: "Walking at night, someone gives you bad vibes and mirrors your turns. First move?",
         choices: [
-          {t:"Stay in the labeled 'Best/Optimal' zone", correct:true},
-          {t:"Always be as cool as possible", correct:false},
-          {t:"Always be pegged at max", correct:false},
-          {t:"Doesn’t matter", correct:false}
+          {t:"Confront them and demand they stop", correct:false},
+          {t:"Change route, get to a bright/occupied place, create distance", correct:true},
+          {t:"Ignore it and keep your normal path", correct:false},
+          {t:"Flash a weapon to warn them off", correct:false}
         ],
-        tag: "stove"
+        tag: "awareness"
       },
-      {
-        q: "Smart way to heat a home on limited fuel:",
+      { // 6 Home defense (non-escalatory)
+        q: "3 AM knock at your door. Smart play:",
         choices: [
-          {t:"Keep every room warm for comfort", correct:false},
-          {t:"Pick ONE warm room; shut other doors", correct:true},
-          {t:"Heat hallways first—they connect everything", correct:false},
-          {t:"Open-plan means heat everywhere", correct:false}
+          {t:"Open the door with chain on and talk", correct:false},
+          {t:"Keep the barrier closed; speak through the door; call 911 if needed", correct:true},
+          {t:"Go outside to check it out", correct:false},
+          {t:"Shout threats through an open window", correct:false}
         ],
-        tag: "zoning"
+        tag: "home"
+      },
+      { // 7 Earthquake
+        q: "Inside during an earthquake. Best action:",
+        choices: [
+          {t:"Stand in a doorway", correct:false},
+          {t:"Run outside immediately", correct:false},
+          {t:"Drop, Cover, Hold On under a sturdy table", correct:true},
+          {t:"Get in an elevator", correct:false}
+        ],
+        tag: "eq"
+      },
+      { // 8 Tornado
+        q: "Tornado warning. Where do you shelter?",
+        choices: [
+          {t:"Top floor near a window to watch", correct:false},
+          {t:"Small interior room on the lowest level/basement", correct:true},
+          {t:"Under a highway overpass", correct:false},
+          {t:"Garage with the door open", correct:false}
+        ],
+        tag: "tornado"
+      },
+      { // 9 Flood
+        q: "Road ahead is flooded. What’s the rule?",
+        choices: [
+          {t:"Drive through slowly with hazards", correct:false},
+          {t:"Turn around, don’t drown—find another route", correct:true},
+          {t:"Follow the biggest truck", correct:false},
+          {t:"Wait for the water to push your car a bit, then gun it", correct:false}
+        ],
+        tag: "flood"
+      },
+      { // 10 Wildfire
+        q: "Wildfire approaching your area. Smart prep move:",
+        choices: [
+          {t:"Wait until you see flames to pack", correct:false},
+          {t:"Leave early with a go-bag and two exit routes planned", correct:true},
+          {t:"Soak the roof and stay to defend", correct:false},
+          {t:"Assume it will miss you", correct:false}
+        ],
+        tag: "wildfire"
+      },
+      { // 11 First aid bleeding
+        q: "Someone has severe bleeding from the arm. First priority:",
+        choices: [
+          {t:"Apply firm, direct pressure and call emergency services", correct:true},
+          {t:"Give them water and wait", correct:false},
+          {t:"Remove any embedded object", correct:false},
+          {t:"Put on ice to numb it", correct:false}
+        ],
+        tag: "bleed"
+      },
+      { // 12 Comms
+        q: "Cell/data are down across your region. Best tool for official alerts:",
+        choices: [
+          {t:"Battery/hand-crank NOAA weather radio", correct:true},
+          {t:"Refreshing social media", correct:false},
+          {t:"Asking neighbors door-to-door", correct:false},
+          {t:"Waiting for TV to come back", correct:false}
+        ],
+        tag: "comms"
       }
     ];
 
-    // Quick tips for results
+    // Tips shown in results
     const tips = {
-      heat: "Warm the person first (hat, socks, layers), then the room, then the structure.",
-      amish: "Night window quilts = DIY second pane; drop at dusk, lift with sun.",
-      overnight: "Rake coals forward, add 1–2 dense hardwood splits, keep a clean draft.",
-      humidity: "Aim ~35–40% RH. Use a kettle/steamer; avoid window condensation.",
-      boundary: "Practice the line: “I can’t help you at my door. Please leave.”",
-      water: "Store 1 gal/person/day for 7 days. It prevents panic and begging trips.",
-      wood: "Season to <20% moisture. Split/stack off the ground; cover the top only.",
-      vent: "Do a fast 3–5 min air exchange at midday; then reseal the house.",
-      stove: "Use a stove thermometer; burn in the 'best/optimal' zone to avoid creosote.",
-      zoning: "Choose one warm room; close doors and hang heavy curtains."
+      heat: "Warm the person first (hat, socks, layers) before you try to heat space.",
+      water: "Store 1 gal/person/day for 7 days. Refill/rotate on a schedule.",
+      boil: "Rolling boil 1 minute makes clear water safer when you lack a filter.",
+      boundary: "Practice: “I can’t help you at my door. Please leave.” Calm and final.",
+      awareness: "Create distance, change direction, get to people/lights, call for help.",
+      home: "Keep the barrier. Communicate through the door. Call 911 if needed.",
+      eq: "Drop, Cover, Hold On under a sturdy table away from windows.",
+      tornado: "Lowest floor interior room/basement. Helmets/blankets help.",
+      flood: "Turn around; cars lose traction fast. Seek higher ground.",
+      wildfire: "Leave early. Go-bag ready, two routes, full tank.",
+      bleed: "Direct pressure first; tourniquet only if trained and pressure fails.",
+      comms: "NOAA weather radio (battery/hand-crank) gets alerts when the grid doesn’t."
     };
 
     // ---------- State ----------
-    let i = 0;
-    let score = 0;
-    let selected = -1;
+    let i = 0, score = 0, selected = -1;
     const wrongTags = [];
 
     // ---------- Els ----------
@@ -246,9 +261,7 @@
         `;
         w.addEventListener('click', () => {
           choicesEl.querySelectorAll('.mcq-choice').forEach(el=>el.classList.remove('selected'));
-          w.classList.add('selected');
-          selected = j;
-          nextBtn.disabled = false;
+          w.classList.add('selected'); selected = j; nextBtn.disabled = false;
         }, {passive:true});
         choicesEl.appendChild(w);
       });
@@ -264,17 +277,15 @@
       if (selected !== correctIdx && selected >= 0){
         nodes[selected]?.classList.add('wrong');
         wrongTags.push(item.tag);
-      } else {
-        score++;
-      }
+      } else { score++; }
     }
 
     // ---------- Results ----------
     function tierFor(s, total){
       const pct = Math.round((s/total)*100);
-      if (s <= 3) return { pct, title:'Grasshopper Energy', badge:'🦗', line:'Start with water, food, and one warm room.' };
-      if (s <= 6) return { pct, title:'Apprentice Ant',     badge:'🔧', line:'Good start—shore up the misses.' };
-      if (s <= 8) return { pct, title:'Ant',                badge:'🐜', line:'Solid baseline. Keep practicing.' };
+      if (s <= 4) return { pct, title:'Grasshopper Energy', badge:'🦗', line:'Start with water, food, and one warm room.' };
+      if (s <= 7) return { pct, title:'Apprentice Ant',     badge:'🔧', line:'Good start—shore up the misses.' };
+      if (s <= 10) return { pct, title:'Ant',               badge:'🐜', line:'Solid baseline. Keep practicing.' };
       return            { pct, title:'Ant with a Plan',     badge:'🛠️', line:'Top tier. Help someone else prep early.' };
     }
 
@@ -287,21 +298,23 @@
       tierEl.innerHTML = `${badge} <strong>${title}</strong> — ${line}`;
 
       const uniq = [...new Set(wrongTags)];
-      fixList.innerHTML = (uniq.length ? uniq : ['heat','water','boundary'])
-        .slice(0,3)
+      fixList.innerHTML = (uniq.length ? uniq : ['water','awareness','home'])
+        .slice(0,4)
         .map(tag=>`<li><strong>${tag[0].toUpperCase()+tag.slice(1)}:</strong> ${tips[tag]}</li>`)
         .join('');
 
       const ctas = document.querySelector('#grit-quiz .mcq-ctas');
-      const needHeat = uniq.some(t=>['heat','amish','humidity','stove','wood','overnight','zoning'].includes(t));
-      const needWater = uniq.includes('water');
-      const needBoundary = uniq.includes('boundary');
+      const needHeat = uniq.includes('heat');
+      const needWater = uniq.some(t=>['water','boil'].includes(t));
+      const needDefense = uniq.some(t=>['awareness','home','boundary'].includes(t));
+      const needDisaster = uniq.some(t=>['eq','tornado','flood','wildfire','comms'].includes(t));
 
       ctas.innerHTML = `
-        ${needHeat ? `<a class="mcq-cta" href="amish-winter-heat.html#amish-winter-heat">🔥 Warmth That Works</a>` : ``}
-        ${needWater ? `<a class="mcq-cta" href="top-5-home-water-filters.html#filters">💧 Dial in Water & Filters</a>` : ``}
-        ${needBoundary ? `<a class="mcq-cta ghost" href="ant-grasshopper-locked-door.html#fable-start">🐜 Read the Door Policy Fable</a>` : ``}
-        ${(!needHeat && !needWater && !needBoundary) ? `<a class="mcq-cta" href="best-survival-gear-amazon-2025.html#best-survival-gear">🎒 Level Up Your Kit</a>` : ``}
+        ${needDefense ? `<a class="mcq-cta" href="manifesto.html#violence-answer">⚔️ Read: When Violence Is the Answer</a>` : ``}
+        ${needWater   ? `<a class="mcq-cta" href="top-5-home-water-filters.html#filters">💧 Dial in Water & Filters</a>` : ``}
+        ${needHeat    ? `<a class="mcq-cta" href="amish-winter-heat.html#amish-winter-heat">🔥 Warmth That Works</a>` : ``}
+        ${needDisaster? `<a class="mcq-cta ghost" href="pale-horse-prepping.html#apocalypse-guide">🌀 Disaster Playbook</a>` : ``}
+        ${(!needHeat && !needWater && !needDefense && !needDisaster) ? `<a class="mcq-cta" href="best-survival-gear-amazon-2025.html#best-survival-gear">🎒 Level Up Your Kit</a>` : ``}
       `;
 
       resultWrap.scrollIntoView({ behavior:'smooth', block:'start' });
@@ -309,19 +322,16 @@
     }
 
     // ---------- Nav ----------
+    const nextBtn = document.getElementById('mcq-next');
+    const prevBtn = document.getElementById('mcq-prev');
+
     nextBtn.addEventListener('click', () => {
       if (selected === -1) return;
       gradeCurrent();
-      setTimeout(() => {
-        if (i === qs.length - 1) { finish(); return; }
-        i++; renderQuestion(i);
-      }, 260);
+      setTimeout(() => { if (i === qs.length - 1) { finish(); } else { i++; renderQuestion(i); } }, 260);
     });
 
-    prevBtn.addEventListener('click', () => {
-      if (i === 0) return;
-      i--; renderQuestion(i);
-    });
+    prevBtn.addEventListener('click', () => { if (i === 0) return; i--; renderQuestion(i); });
 
     // ---------- Init ----------
     renderQuestion(i);
