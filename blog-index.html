@@ -1,265 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583"
-     crossorigin="anonymous"></script>
-  <a href="5affirmations.html" style="background:#ffa500; color:#111; padding:12px 25px; border-radius:5px; font-weight:bold; display:inline-block; text-decoration:none; font-family:sans-serif; font-size:1em; margin:20px auto;">
-  💭 5 Affirmations That Are Actually Terrible Advice
-</a>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grit Gear HQ – Blog Directory</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap">
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('wudz.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #eee;
-      font-family: monospace;
+    :root{
+      --accent:#ffa500;
+      --ink:#e9eef4;
+      --muted:#b9c2cc;
+      --panel:rgba(10,14,18,.82);
+      --line:rgba(255,165,0,.28);
     }
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: -1;
+
+    /* ===== Base / Background ===== */
+    html,body{margin:0;padding:0;min-height:100%}
+    body{
+      color:var(--ink);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:url('s-l1600.webp') center/cover fixed no-repeat;
     }
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      color: #ffa500;
-      padding: 30px 20px 10px;
-      font-size: 2.4em;
-      letter-spacing: 1px;
+    /* cinematic overlay + subtle glow */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(255,165,0,.12), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.58), rgba(0,0,0,.86));
+      z-index:-1;
+      backdrop-filter:saturate(115%) contrast(95%);
     }
-    .button-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      padding: 20px;
+
+    /* ===== Header ===== */
+    .topbar{
+      display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+      padding:16px 12px 6px;
     }
-    .cta-button {
-      background: #111;
-      border: 2px solid #ffa500;
-      border-radius: 10px;
-      text-align: left;
-      padding: 15px;
-      color: #fff;
-      font-size: 1em;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 0 10px #000;
-      font-family: 'Orbitron', sans-serif;
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 16px; border-radius:999px;
+      background:linear-gradient(180deg,#222a33,#141b22);
+      border:1px solid var(--line); color:var(--ink);
+      text-decoration:none; font-weight:700; box-shadow:0 6px 24px rgba(0,0,0,.4)
     }
-    .cta-button:hover {
-      background: #ffa500;
-      color: #000;
-      transform: scale(1.03);
+    .chip.accent{background:linear-gradient(180deg,var(--accent),#e68112); color:#0b0f12}
+
+    h1{
+      margin:4px 0 2px; text-align:center; letter-spacing:.6px;
+      color:var(--accent); font-family:Orbitron,Inter,sans-serif;
+      font-size:clamp(28px,4.2vw,44px);
+      text-shadow:0 8px 30px rgba(0,0,0,.8);
     }
-    .desc {
-      font-size: 0.9em;
-      margin-top: 8px;
-      color: #ccc;
-      line-height: 1.4;
+    .deck{margin:2px auto 16px; text-align:center; color:#cdd6df; max-width:800px}
+
+    /* ===== Grid of links ===== */
+    .wrap{max-width:1180px;margin:16px auto 26px;padding:0 16px}
+    .button-grid{
+      display:grid; gap:16px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     }
-    .return-button {
-      display: block;
-      margin: 40px auto 10px;
-      background: #ffa500;
-      color: #000;
-      padding: 12px 24px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #000;
-      width: fit-content;
-      font-family: 'Orbitron', sans-serif;
+    .cta-button{
+      display:block; text-decoration:none; color:var(--ink);
+      background:var(--panel); border:1px solid var(--line);
+      border-radius:14px; padding:14px 16px;
+      box-shadow:0 0 0 1px rgba(255,165,0,.12), 0 14px 42px rgba(0,0,0,.65);
+      transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+      font-weight:800; letter-spacing:.2px;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.8);
-      font-size: 0.85em;
-      color: #888;
+    .cta-button:hover, .cta-button:focus-visible{
+      transform:translateY(-2px);
+      box-shadow:0 0 0 1px rgba(255,165,0,.22), 0 22px 60px rgba(0,0,0,.7);
+      outline:none;
     }
-    footer a {
-      color: #ffa500;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Orbitron', sans-serif;
+    .cta-button .desc{
+      font-weight:600; color:var(--muted); margin-top:6px; line-height:1.45
+    }
+
+    /* ===== Featured box ===== */
+    .feature{
+      background:var(--panel); border:1px solid var(--line); border-radius:16px;
+      box-shadow:0 0 0 1px rgba(255,165,0,.12),0 16px 46px rgba(0,0,0,.65);
+      max-width:980px; margin:34px auto; padding:18px;
+    }
+    .feature h3{margin:0 0 10px; color:var(--accent); font-family:Orbitron,Inter,sans-serif}
+    .feature a{color:inherit; text-decoration:none}
+    .feature .row{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+    .feature img{width:260px;border-radius:10px;box-shadow:0 0 12px #000}
+    .feature .cta{
+      display:inline-block; margin-top:12px; padding:10px 14px; border-radius:10px;
+      background:linear-gradient(180deg,var(--accent),#e68112); color:#0b0f12; font-weight:900
+    }
+
+    /* ===== Footer ===== */
+    footer{
+      text-align:center; padding:18px; color:#aeb6bf;
+      background:linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.55));
+      border-top:1px solid rgba(255,165,0,.18);
+    }
+    footer a{color:var(--accent); text-decoration:none; font-weight:800}
+
+    /* a11y */
+    .cta-button:focus-visible, .chip:focus-visible, .feature .cta:focus-visible{
+      outline:2px solid var(--accent); outline-offset:2px
     }
   </style>
 </head>
 <body>
-<h1>🪓 Grit Gear Blog Directory</h1>
 
-<div class="button-grid">
+  <div class="topbar">
+    <a class="chip" href="index.html">⬅️ Home</a>
+    <a class="chip accent" href="5affirmations.html">💭 5 Affirmations That Are Actually Terrible Advice</a>
+  </div>
 
-<a href="/grit-quiz.html#grit-quiz" class="cta-button">
-  🧪 Take the Grit Quiz
-  <div class="desc">10 fast questions. Get your score + tailored next steps.</div>
-</a>
-     
-<!-- Ant & Grasshopper fable CTA (matches your .cta-button cards) -->
-<a href="ant-grasshopper-locked-door.html#fable-start" class="cta-button">
-  🐜 The Ant, the Grasshopper & the Locked Door
-  <div class="desc">Darker modern fable—boundaries, math, and no hard feelings.</div>
-</a>
+  <header class="wrap">
+    <h1>🪓 Grit Gear Blog Directory</h1>
+    <p class="deck">Field guides, rants, and real-world how-tos. Pick a card and dive in.</p>
+  </header>
 
-<a href="#seven-day-kit" class="cta-button">
-  🧰 Build Your 7-Day Kit
-  <div class="desc">Water, calories, heat & light, hygiene, info — a baseline so you never have to knock.</div>
-</a>
+  <main class="wrap">
+    <div class="button-grid">
+      <a href="/grit-quiz.html#grit-quiz" class="cta-button">
+        🧪 Take the Grit Quiz
+        <div class="desc">10 fast questions. Get your score + tailored next steps.</div>
+      </a>
 
- <a href="amish-winter-heat.html#amish-winter-heat" class="cta-button">
-  🔥 How the Amish Stay Warm in Winter
-  <div class="desc">Old-world heat without the grid—stoves, window quilts, humidity, and daily rhythm you can copy today.</div>
-</a>
+      <a href="ant-grasshopper-locked-door.html#fable-start" class="cta-button">
+        🐜 The Ant, the Grasshopper &amp; the Locked Door
+        <div class="desc">Darker modern fable—boundaries, math, and no hard feelings.</div>
+      </a>
 
-<a href="hugh-glass.html#hugh-glass" class="cta-button">
-  🐻 Hugh Glass: The Man Who Wouldn’t Die
-  <div class="desc">From pirates and Pawnee to a grizzly bear and a 200-mile crawl — the true story of America’s toughest survivor.</div>
-</a>
+      <a href="#seven-day-kit" class="cta-button">
+        🧰 Build Your 7-Day Kit
+        <div class="desc">Water, calories, heat &amp; light, hygiene, info — your don’t-knock baseline.</div>
+      </a>
 
-   <a href="5survival-recipes.html#survival-recipes" class="cta-button">
-  🍲 5 Survival & Camp Recipes (No Fridge)
-  <div class="desc">Pantry-only meals that actually taste good — protein-packed, trail-tested, zero refrigeration.</div>
-</a>
-  
-  <a href="skinny-to-strong.html#skinny-to-strong" class="cta-button">
-  💪 From Skinny to Strong
-  <div class="desc">How I went from frail and sick to capable and confident — and how you can too.</div>
-</a>
-   
- <a href="pale-horse-prepping.html#apocalypse-guide" class="cta-button">
-  🐎 Preparing for the Pale Horse
-  <div class="desc">Revelation, collapse, and how to face the end with grit and preparation.</div>
-</a>
+      <a href="amish-winter-heat.html#amish-winter-heat" class="cta-button">
+        🔥 How the Amish Stay Warm in Winter
+        <div class="desc">Stoves, window quilts, humidity, and a daily rhythm you can steal.</div>
+      </a>
 
-<a href="top-5-home-water-filters.html#filters" class="cta-button">
-  💧 Top 5 Home Water Filters
-  <div class="desc">From LifeStraw to Berkey—5 filters that strip out lead, PFAS, and other toxins hiding in your tap.</div>
-</a>
-     
-  <a href="chicken-shortage-2025.html#chicken-shortage-blog" class="cta-button">
-  🐔 The Chicken Shortage of 2025
-  <div class="desc">Toilet paper was just the beginning—now it’s chickens. Our backyard flock journey, survival insights, and the gear we used.</div>
-</a>
-  
-<a href="solar-fan-hat-review.html#solar-fan-hat-review" class="cta-button">
-  🌞 Solar Fan Hat Review (Yes, Seriously)
-  <div class="desc">Laugh all you want—this goofy fan-powered hat kept me alive while mowing in 100° heat. Here's why I won't take it off.</div>
-</a>
+      <a href="hugh-glass.html#hugh-glass" class="cta-button">
+        🐻 Hugh Glass: The Man Who Wouldn’t Die
+        <div class="desc">Pirates, Pawnee, a grizzly, and a 200-mile crawl.</div>
+      </a>
 
-<a href="collapse.html#collapse-blog" class="cta-button">
-  🔥 Read: 5 Things I No Longer Buy
-  <div class="desc">From fashion to bottled water—5 things I quit cold turkey after realizing Western society is circling the drain.</div>
-</a>
+      <a href="5survival-recipes.html#survival-recipes" class="cta-button">
+        🍲 5 Survival &amp; Camp Recipes (No Fridge)
+        <div class="desc">Pantry-only meals that don’t taste like cardboard.</div>
+      </a>
 
-  <a href="surviving-county-jail.html#jail-survival-blog" class="cta-button">
-  🚔 Surviving County Jail
-  <div class="desc">Fear, boredom, and twisted humor—here's what jail's really like, and how to keep your soul intact.</div>
-</a>
- 
-  <a href="bear-vs-man.html#bear-vs-man" class="cta-button">
-    🐻 Man vs Bear
-    <div class="desc">Women were asked: who would survive longer in the wild, a man or a bear? The internet answered with memes. We answered with grit.</div>
-  </a>
+      <a href="skinny-to-strong.html#skinny-to-strong" class="cta-button">
+        💪 From Skinny to Strong
+        <div class="desc">How I went from frail and sick to capable and confident.</div>
+      </a>
 
-  <a href="kamp-king.html#kamp-king-review" class="cta-button">
-    🗡️ Kamp King Knife Review
-    <div class="desc">Classic look. Rugged build. Multi-use. Less gear to carry. Makes a perfect gift for any man who still knows how to be one.</div>
-  </a>
+      <a href="pale-horse-prepping.html#apocalypse-guide" class="cta-button">
+        🐎 Preparing for the Pale Horse
+        <div class="desc">Revelation, collapse, and how to face the end with grit.</div>
+      </a>
 
-  <a href="manifesto.html#violence-answer" class="cta-button">
-    ⚔️ When Violence Is the Answer
-    <div class="desc">Sometimes peace is earned with broken noses. Here's when—and how—to act decisively.</div>
-  </a>
+      <a href="top-5-home-water-filters.html#filters" class="cta-button">
+        💧 Top 5 Home Water Filters
+        <div class="desc">From LifeStraw to Berkey—strip the bad stuff out.</div>
+      </a>
 
-  <a href="manifesto.html#masculinity-blog" class="cta-button">
-    💥 The Masculinity Manifesto
-    <div class="desc">They tried to kill masculinity. We dug it up and handed it an axe.</div>
-  </a>
+      <a href="chicken-shortage-2025.html#chicken-shortage-blog" class="cta-button">
+        🐔 The Chicken Shortage of 2025
+        <div class="desc">Backyard birds, quiet panic, and lessons learned.</div>
+      </a>
 
-  <a href="manifesto.html#ufo-distraction" class="cta-button">
-    🛸 UFOs & Government Deception
-    <div class="desc">What’s flying overhead might be less important than what’s collapsing below.</div>
-  </a>
+      <a href="solar-fan-hat-review.html#solar-fan-hat-review" class="cta-button">
+        🌞 Solar Fan Hat Review (Yes, Seriously)
+        <div class="desc">Looks goofy. Works amazing. Kept me alive at 100°F.</div>
+      </a>
 
-  <a href="manifesto.html#stockpile-tested" class="cta-button">
-    🎒 Survival Items That Earned Their Place
-    <div class="desc">Battle-tested gear that proved itself during real-world failures.</div>
-  </a>
+      <a href="collapse.html#collapse-blog" class="cta-button">
+        🔥 5 Things I No Longer Buy
+        <div class="desc">Quit the waste. Keep the grit.</div>
+      </a>
 
-  <a href="manifesto.html#stay-cool" class="cta-button">
-    🧊 How to Keep Cool During a Blackout
-    <div class="desc">No power. 100°F. Here’s how we stayed alive and sane.</div>
-  </a>
+      <a href="surviving-county-jail.html#jail-survival-blog" class="cta-button">
+        🚔 Surviving County Jail
+        <div class="desc">Fear, boredom, and twisted humor—keeping your soul intact.</div>
+      </a>
 
-  <a href="i-should-be-dead.html" class="cta-button">
-    🩸 I Should Be Dead: The Grit Story
-    <div class="desc">From liver failure to leadership. How Grit Gear HQ was born out of pain, panic, and purpose.</div>
-  </a>
+      <a href="bear-vs-man.html#bear-vs-man" class="cta-button">
+        🐻 Man vs Bear
+        <div class="desc">The internet picked the bear. We picked reality.</div>
+      </a>
 
-  <a href="goout_stove_review_FINAL_WITH_ANCHOR.html#goout-stove-review" class="cta-button">
-  🔥 GoOut Stove Review
-  <div class="desc">Boil water, cook meals, or warm your hands—this compact beast saved us during a blackout.</div>
-</a>
+      <a href="kamp-king.html#kamp-king-review" class="cta-button">
+        🗡️ Kamp King Knife Review
+        <div class="desc">Classic look. Rugged build. Less gear to carry.</div>
+      </a>
 
-</div>
+      <a href="manifesto.html#violence-answer" class="cta-button">
+        ⚔️ When Violence Is the Answer
+        <div class="desc">Hard lines, clear rules. No bravado.</div>
+      </a>
 
-<!-- 🔋 Featured Gear of the Day -->
-<div style="background:#1a1a1a; border:2px solid #ffa500; border-radius:12px; padding:20px; max-width:700px; margin:50px auto; box-shadow:0 0 15px #000; font-family:'Orbitron', sans-serif; color:#ddd;">
-  <h3 style="color:#ffa500; margin-bottom:15px;">🔥 Featured Gear: Portable Power Kit</h3>
-  <a href="https://www.amazon.com/dp/B0BMWDGJLB?tag=gritgearhq-20" target="_blank" style="display:flex; flex-wrap:wrap; gap:20px; align-items:center; text-decoration:none; color:inherit;">
-    <img src="images/solarkit.jpg" alt="Solar Generator Kit" style="width:260px; border-radius:8px; box-shadow:0 0 10px #000;">
-    <div style="flex:1;">
-      <p style="color:#ccc; font-size:0.95em;">We used this exact solar generator on a trip to a rustic Ozark cabin with no power. It ran our fan, charged our gear, and kept the cooler cold. Built tough. Reliable as hell. Great gift, and less weight in your pack thanks to its multi-purpose design.</p>
-      <span style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; font-weight:bold; padding:12px 20px; border-radius:6px; text-align:center; box-shadow:0 0 10px #000;">
-        🛒 Buy Now on Amazon
-      </span>
+      <a href="manifesto.html#masculinity-blog" class="cta-button">
+        💥 The Masculinity Manifesto
+      </a>
+
+      <a href="manifesto.html#ufo-distraction" class="cta-button">
+        🛸 UFOs &amp; Government Deception
+      </a>
+
+      <a href="manifesto.html#stockpile-tested" class="cta-button">
+        🎒 Survival Items That Earned Their Place
+      </a>
+
+      <a href="manifesto.html#stay-cool" class="cta-button">
+        🧊 How to Keep Cool During a Blackout
+      </a>
+
+      <a href="i-should-be-dead.html" class="cta-button">
+        🩸 I Should Be Dead: The Grit Story
+      </a>
+
+      <a href="goout_stove_review_FINAL_WITH_ANCHOR.html#goout-stove-review" class="cta-button">
+        🔥 GoOut Stove Review
+        <div class="desc">Boil water, cook meals, warm your hands.</div>
+      </a>
     </div>
-  </a>
-</div>
 
-<a href="index.html" class="return-button">← Return to Homepage</a>
+    <!-- Featured Gear -->
+    <section class="feature">
+      <h3>🔥 Featured Gear: Portable Power Kit</h3>
+      <a href="https://www.amazon.com/dp/B0BMWDGJLB?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">
+        <div class="row">
+          <img src="images/solarkit.jpg" alt="Portable solar generator kit">
+          <div style="flex:1;min-width:260px">
+            <p>We ran this on a no-power Ozark cabin trip: fan, lights, phones, cooler. Built tough. Quiet. Reliable.</p>
+            <span class="cta">🛒 Buy Now on Amazon</span>
+          </div>
+        </div>
+      </a>
+    </section>
 
-<footer>
-  &copy; 2024 Grit Gear HQ · 
-  <a href="privacy.html">Privacy Policy</a> · 
-  <a href="terms.html">Terms of Service</a> · 
-  <a href="affiliate.html">Affiliate Disclosure</a>
-</footer>
+    <div class="topbar">
+      <a class="chip" href="index.html">← Return to Homepage</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Grit Gear HQ ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="terms.html">Terms</a> ·
+    <a href="affiliate.html">Affiliate Disclosure</a>
+  </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
