@@ -1,462 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583"
-     crossorigin="anonymous"></script>
-  <!-- Optional Button to Homepage -->
-<div style="text-align:center; margin:40px 0;">
-  <a href="index.html" style="display:inline-block; padding:12px 24px; background-color:#ffa500; color:#111; font-weight:bold; border-radius:6px; text-decoration:none; font-family:'Orbitron', sans-serif; box-shadow: 0 0 10px #000;">
-    ⬅️ Back to Homepage
-  </a>
-  <!-- MailerLite Universal -->
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1678205');
-</script>
-<!-- End MailerLite Universal -->
-  
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grit Certified Random Picks</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AdSense (OK in head) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+
+  <!-- MailerLite -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
+    l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n)})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account','1678205');
+  </script>
+
   <style>
-    body {
-      background: url("images/mono.jpg") center center no-repeat fixed;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      font-family: 'Courier New', monospace;
-      color: #ffa500;
+    :root{
+      --ink:#ffa500;
+      --bg-dark:#000;
+      --panel:#1a1a1a;
+      --line:#ffa500;
     }
+    html,body{margin:0;padding:0;min-height:100%}
+    body{
+      background:url("images/mono.jpg") center/cover fixed no-repeat;
+      color:var(--ink);
+      font-family:'Courier Prime', monospace;
+    }
+    a{color:#111}
+    .wrap{max-width:1200px;margin:40px auto;padding:20px;background:rgba(0,0,0,.85);border:2px solid var(--line);border-radius:12px;box-shadow:0 0 30px #000}
+    .top-btns{display:flex;justify-content:center;gap:12px;margin:18px 0 28px}
+    .btn{
+      display:inline-block;padding:12px 24px;background:#ffa500;color:#111;font-weight:700;
+      border-radius:6px;text-decoration:none;box-shadow:0 0 10px #000;font-family:'Orbitron',sans-serif
+    }
+    .btn:hover{background:#ff7300;color:#fff}
 
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.85);
-      border: 2px solid #ffa500;
-      border-radius: 12px;
-      box-shadow: 0 0 30px #000;
-      text-align: center;
-    }
+    h1,h2,h3{font-family:'Orbitron',sans-serif}
+    h1{font-size:2.3rem;margin:0 0 6px;text-shadow:2px 2px #000}
+    p.lead{color:#ccc;margin:0 0 18px}
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px #000;
+    /* Cards / grids */
+    .grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+    .card{
+      background:#000;width:280px;border-radius:10px;padding:16px;text-align:center;
+      box-shadow:0 0 15px #111;border:1px solid #222
     }
+    .card img{width:100%;border-radius:8px;margin-bottom:12px}
+    .card h3{color:#ffa500;margin:8px 0}
+    .card p{color:#ccc;font-size:14px;margin:0 0 8px}
+    .highlight{color:#90ee90}
+    .buy-btn{
+      display:inline-block;margin-top:10px;background:#ffa500;color:#000;padding:10px 16px;
+      border-radius:6px;font-weight:700;text-decoration:none
+    }
+    .buy-btn:hover{background:#ff7300;color:#fff}
 
-    p {
-      font-size: 1.2em;
-      color: #ccc;
+    /* Feature strip */
+    .feature{
+      background:#111;color:#ccc;padding:30px 20px;border:2px solid #ffa500;border-radius:12px;
+      box-shadow:0 0 25px #ff8c00;margin:40px 0
     }
+    .feature .inner{max-width:900px;margin:0 auto;text-align:center}
+    .feature img{width:100%;max-width:450px;border-radius:10px;box-shadow:0 0 15px #000}
 
-    .back-link {
-      display: inline-block;
-      margin: 40px auto 0;
-      padding: 12px 24px;
-      background: #ffa500;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s ease;
+    /* Inline promo box */
+    .promo{
+      background:#1a1a1a;border:2px solid #ffa500;border-radius:12px;padding:20px;
+      max-width:700px;margin:40px auto;box-shadow:0 0 15px #000;color:#ddd
     }
+    .promo a{color:inherit;text-decoration:none}
+    .promo .cta{display:inline-block;margin-top:10px;background:#ffa500;color:#000;font-weight:700;padding:12px 20px;border-radius:6px;box-shadow:0 0 10px #000}
 
-    .back-link:hover {
-      background: #ff7300;
-      color: #fff;
-    }
-
-    .gear-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 40px 10px;
-      background: #111;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    .gear-card {
-      background: #000;
-      width: 280px;
-      border-radius: 10px;
-      padding: 16px;
-      box-shadow: 0 0 15px #ffa500;
-      text-align: center;
-    }
-
-    .gear-card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 12px;
-    }
-
-    .gear-card h3 {
-      color: #ffa500;
-      margin-bottom: 10px;
-    }
-
-    .gear-card p {
-      font-size: 14px;
-      color: #ccc;
-      margin: 0 0 8px 0;
-    }
-
-    .gear-card .highlight {
-      color: #90ee90;
-    }
-
-    .gear-card a {
-      display: inline-block;
-      margin-top: 10px;
-      background: #ffa500;
-      color: #000;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .gear-card a:hover {
-      background: #ff7300;
-      color: #fff;
-    }
+    footer{margin:32px 0 10px;text-align:center;color:#bbb;font-size:.95rem}
+    footer a{color:#cfe7ff}
   </style>
 </head>
 <body>
 
-    <div class="gear-card" style="background:#000; width:280px; padding:16px; border-radius:10px; text-align:center; box-shadow:0 0 20px #000;">
-      <img src="images/ace.jpg" alt="Aceup 1,200W Gas Generator" style="width:100%; max-width:200px; height:200px; object-fit:cover; margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;">
-      <h3 style="color:#ffa500;">🛠️ Aceup 1200W Gas Generator</h3>
-      <p style="color:#ccc;">Ultralight, EPA-compliant beast. Bring backup power wherever you roam.</p>
-      <p style="color:#ff5555;">💣 Small frame, serious punch.</p>
-      <p style="color:#aaa; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Started first pull. Love it.'</p>
-      <a href="https://amzn.to/44Opabk?tag=gritgearhq-20" target="_blank" style="color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px; display:inline-block; margin-top:10px; text-decoration:none;">🛒 Shop Now</a>
+  <div class="wrap">
+    <!-- Top buttons -->
+    <div class="top-btns">
+      <a class="btn" href="index.html">⬅️ Back to Homepage</a>
     </div>
 
-    <!-- CARD 2 -->
-  <div style="background:#000; width:280px; padding:16px; border-radius:10px; box-shadow:0 0 15px #111; text-align:center; font-family:'Orbitron', sans-serif;">
-    <img src="images/bulk.jpg" alt="Mini Emergency Fishing Kits" style="width:100%; border-radius:8px;">
-    <h3 style="color:#ffa500; margin:10px 0;">🎣 Mini Fishing Kits (Bulk)</h3>
-    <p style="color:#ccc; font-size:14px;">Perfect for bug-out bags, shoebox missions, or bribing your nephew into learning self-reliance.</p>
-    <p style="color:#90ee90; font-size:13px;">⭐️⭐️⭐️⭐️⭐️ (1,038 reviews)</p>
-    <p style="color:#ffa500; font-size:13px;"><em>“Bought these for my kid’s birthday. Ended up keeping two for myself. Sorry, son.” – Kyle R.</em></p>
-    <a href="https://amzn.to/3GDxpyZ?tag=gritgearhq-20" target="_blank" class="buy-btn">🐟 Grab a Kit</a>
-  </div>
-  
-  <div class="flash-sale">
-  <!-- WATER -->
-  <div class="flash-card">
-    <img src="images/matepump.jpg" alt="SurviMate Water Filter Pump">
-    <h3>SurviMate Water Purifier Pump</h3>
-    <p>0.01 Micron 5-Stage Hand Pump Filter. Clean drinking water anywhere, anytime.</p>
-    <a href="https://amzn.to/4nNUa3K" target="_blank" class="buy-btn">💧 Grab the Pump</a>
-  </div>
+    <header>
+      <h1>Grit Certified Random Picks</h1>
+      <p class="lead">Rugged books and gear I actually like. If it’s junk, it’s not here.</p>
+    </header>
 
-  <!-- FIRE -->
-  <div class="flash-card">
-    <img src="images/flint.jpg" alt="bayite Ferro Rod Fire Starter">
-    <h3>bayite Ferro Rod Kit</h3>
-    <p>4" Flint Fire Starter w/ Paracord & Striker. Lights up fast in any weather.</p>
-    <a href="https://amzn.to/40FbIp9" target="_blank" class="buy-btn">🔥 Spark the Flame</a>
-  </div>
-</div>
+    <!-- 📚 Reading bundle -->
+    <section class="feature">
+      <div class="inner">
+        <h2>📚 Ultimate Survival Wisdom Bundle</h2>
+        <p>Grit-tested guides to surviving the collapse, living off-grid, and thriving in the wild.</p>
+        <div class="grid" style="margin-top:20px">
+          <!-- Book 1 -->
+          <div class="card" style="border:2px solid #ffa500">
+            <img src="images/hell.jpg" alt="When All Hell Breaks Loose book">
+            <h3>When All Hell Breaks Loose</h3>
+            <p>Disaster-tested advice for when the world flips upside down.</p>
+            <p class="highlight">⭐️⭐️⭐️⭐️⭐️ 2,842 reviews</p>
+            <p style="color:#ff6666;font-size:13px">⚠️ Urban panic edition — moving fast</p>
+            <a class="buy-btn" href="https://amzn.to/40qH6r9?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🔥 Be Ready for Chaos</a>
+          </div>
+          <!-- Book 2 -->
+          <div class="card" style="border:2px solid #ffa500">
+            <img src="images/wilderness.jpg" alt="Wilderness Survival Guide book">
+            <h3>Wilderness Survival Guide</h3>
+            <p>Forgotten frontier skills for long-term survival and adaptation.</p>
+            <p class="highlight">⭐️⭐️⭐️⭐️⭐️ 2,034 reviews</p>
+            <p style="color:#ffa500;font-size:13px">🕒 Only a few left — don’t wait</p>
+            <a class="buy-btn" href="https://amzn.to/4eU96cN?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🏕️ Learn to Outlast</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:40px;">
-    <!-- Portable Solar Generator -->
-    <div style="background:#1a1a1a;...">
-      <img src="images/gen.jpg" alt="Solar Generator" style="width:100%;border-radius:8px;">
-      <h3 style="color:#ffa500;">Portable Solar Generator</h3>
-      <p style="color:#ccc;">Reliable power when the grid fails. Keep phones, radios, and lights going.</p>
-      <a href="https://amzn.to/4lVsF6U?tag=gritgearhq-20" target="_blank" style="...">View Details</a>
+    <!-- 🛠️ First row -->
+    <section class="grid">
+      <div class="card">
+        <img src="images/ace.jpg" alt="Aceup 1200W Gas Generator">
+        <h3>🛠️ Aceup 1200W Gas Generator</h3>
+        <p>Ultralight, EPA-compliant backup power.</p>
+        <p style="color:#ff5555">💣 Small frame, serious punch.</p>
+        <p style="color:#aaa;font-size:13px;font-style:italic">⭐⭐⭐⭐⭐ “Started first pull.”</p>
+        <a class="buy-btn" href="https://amzn.to/44Opabk?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/bulk.jpg" alt="Mini Emergency Fishing Kits">
+        <h3>🎣 Mini Fishing Kits (Bulk)</h3>
+        <p>Perfect for BOBs and teaching skills.</p>
+        <p class="highlight">⭐️⭐️⭐️⭐️⭐️ (1,038 reviews)</p>
+        <a class="buy-btn" href="https://amzn.to/3GDxpyZ?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🐟 Grab a Kit</a>
+      </div>
+
+      <div class="card">
+        <img src="images/matepump.jpg" alt="SurviMate Water Purifier Pump">
+        <h3>💧 SurviMate Pump</h3>
+        <p>0.01 micron, 5-stage hand pump. Water anywhere.</p>
+        <a class="buy-btn" href="https://amzn.to/4nNUa3K?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">💧 Grab the Pump</a>
+      </div>
+
+      <div class="card">
+        <img src="images/flint.jpg" alt="bayite Ferro Rod Kit">
+        <h3>🔥 bayite Ferro Rod Kit</h3>
+        <p>Lights fast in any weather.</p>
+        <a class="buy-btn" href="https://amzn.to/40FbIp9?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🔥 Spark the Flame</a>
+      </div>
+    </section>
+
+    <!-- 🔋 Solar generator promo -->
+    <section class="promo" id="solar-buy-box">
+      <h3 style="color:#ffa500;margin-bottom:15px;">🔋 Power Anywhere, Anytime</h3>
+      <a href="https://amzn.to/3ILgvz8?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+          <img src="images/marbi.jpg" alt="Solar Generator Preview" style="width:260px;border-radius:8px;box-shadow:0 0 10px #000">
+          <div style="flex:1">
+            <p style="color:#ccc;font-size:.95em;margin:0 0 10px">Foldable panels, multiple ports, silent operation. Perfect for cabins, cars, outages.</p>
+            <span class="cta">🛒 Buy Now on Amazon</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <!-- 🧰 More cards -->
+    <section class="grid">
+      <div class="card">
+        <img src="images/marb.jpg" alt="MARBERO 100W Power Station">
+        <h3>🔋 MARBERO 100W Station</h3>
+        <p>167Wh, compact, LED flashlight.</p>
+        <a class="buy-btn" href="https://amzn.to/4lRDJ4E?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/reddect.jpg" alt="Hidden Camera Detector">
+        <h3>🕵️ Hidden Camera Detector</h3>
+        <p>Bug/GPS finder for hotels, cars, Airbnbs.</p>
+        <a class="buy-btn" href="https://www.amazon.com/dp/B0CQT96HMC?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛑 Buy on Amazon</a>
+      </div>
+
+      <div class="card">
+        <img src="images/amish.jpg" alt="The Complete Amish Survival Manual">
+        <h3>📘 Amish Survival Manual</h3>
+        <p>Herbal cures, canning, old-world grit.</p>
+        <a class="buy-btn" href="https://amzn.to/3GOWyXu?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">📘 Get the Manual</a>
+      </div>
+
+      <div class="card">
+        <img src="images/tarp.jpg" alt="Goldcamp Waterproof Tarp">
+        <h3>⛺ GOLDCAMP 10×10 Tarp</h3>
+        <p class="highlight">PU15000, UV 50+, battle-tested.</p>
+        <a class="buy-btn" href="https://amzn.to/40q5tVT?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/neck.jpg" alt="Wearable Neck Fan">
+        <h3>❄️ 360° Wearable Neck Fan</h3>
+        <p>Hands-free cooling, 4000mAh.</p>
+        <a class="buy-btn" href="https://amzn.to/4nR6kJ9?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/silver.jpg" alt="Vintage LED Flashlight">
+        <h3>🔦 Vintage LED Flashlight</h3>
+        <p>Old-school charm, modern LED power.</p>
+        <a class="buy-btn" href="https://amzn.to/44T8RKw?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/trench.jpg" alt="Vintage Trench Lighter">
+        <h3>🪔 Vintage Trench Lighter</h3>
+        <p>Rope-style, windproof classic.</p>
+        <a class="buy-btn" href="https://amzn.to/44QUczn?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/cump.jpg" alt="Survival Compass">
+        <h3>🧭 Survival Compass</h3>
+        <p>Waterproof, durable, pocket-size.</p>
+        <a class="buy-btn" href="https://amzn.to/4ePQyds?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/ok.jpg" alt="Arc Plasma Lighter">
+        <h3>⚡ Arc Plasma Lighter</h3>
+        <p>USB rechargeable, waterproof, whistle.</p>
+        <a class="buy-btn" href="https://amzn.to/3TFWgoN?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/goo.jpg" alt="Bug Zapper">
+        <h3>🪰 Bug Zapper 4200V</h3>
+        <p>Indoor/outdoor. 90–130V range.</p>
+        <a class="buy-btn" href="#" target="_blank" rel="nofollow noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/grns.jpg" alt="Tapirus Tactical Spork">
+        <h3>🥄 Tapirus Tactical Spork</h3>
+        <p>Firestarter + knife edge + spork. BPA-free.</p>
+        <a class="buy-btn" href="https://amzn.to/4ls3TeF?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/starcup.jpg" alt="Enamel Camp Mugs">
+        <h3>☕ Enamel Camp Mugs (2-Pack)</h3>
+        <p>Retro black enamel. Fireside proof.</p>
+        <a class="buy-btn" href="https://amzn.to/4m1Ra2g?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/blklight.jpg" alt="SUPRUS Arc Lighter + Flashlight">
+        <h3>💥 SUPRUS Arc + Light</h3>
+        <p>Waterproof dual arc, 3-mode light.</p>
+        <a class="buy-btn" href="https://amzn.to/4599jW0?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/lightfan.jpg" alt="Lantern Fan Combo">
+        <h3>🌀 Lantern + Fan Combo</h3>
+        <p>Rechargeable comfort during outages.</p>
+        <a class="buy-btn" href="https://amzn.to/3TJM92g?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/lant.jpg" alt="2000LM Compact Lantern">
+        <h3>🔋 2000LM Compact Lantern</h3>
+        <p>Red mode, waterproof, 20h runtime.</p>
+        <a class="buy-btn" href="https://amzn.to/40lCjY1?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/blueshrink.jpg" alt="Kizen Solar Lantern">
+        <h3>🌞 Kizen Solar Lantern</h3>
+        <p>Collapsible, solar or USB.</p>
+        <a class="buy-btn" href="https://amzn.to/4eTI8Sk?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/gennn.jpg" alt="MARBERO 111Wh Solar Kit">
+        <h3>🔌 MARBERO 111Wh Kit</h3>
+        <p>Portable generator + panel bundle.</p>
+        <a class="buy-btn" href="https://amzn.to/3GstmFK?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <!-- ⚠️ Firearms accessories (keep descriptions neutral) -->
+      <div class="card">
+        <img src="images/glock.jpg" alt="Ludex Magazine Speed Loader">
+        <h3>🔧 Ludex Speed Loader</h3>
+        <p>9mm/.40 loader for Glock mags.</p>
+        <a class="buy-btn" href="https://amzn.to/4oaY0ED?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/target.jpg" alt="KNINE Paper Targets">
+        <h3>🎯 KNINE Paper Targets</h3>
+        <p>12×18 bulk pack for range practice.</p>
+        <a class="buy-btn" href="https://amzn.to/4eTVhuE?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/dot.jpg" alt="Bushnell TRS-26 Red Dot">
+        <h3>🔴 Bushnell TRS-26</h3>
+        <p>3 MOA reflex optic, long battery.</p>
+        <a class="buy-btn" href="https://amzn.to/3TKo1wj?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/uuq.jpg" alt="UUQ Shake Awake Red Dot">
+        <h3>👁️‍🗨️ UUQ Shake-Awake Optic</h3>
+        <p>2 MOA, 10 brightness levels.</p>
+        <a class="buy-btn" href="https://amzn.to/4lsn7kl?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+      </div>
+
+      <div class="card">
+        <img src="images/griz.jpg" alt="FRIZCOL Camping Fan">
+        <h3>🌀 FRIZCOL 3-in-1 Fan</h3>
+        <p>Up to 140 hours with light + remote.</p>
+        <a class="buy-btn" href="https://amzn.to/4lKpvmy?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 View on Amazon</a>
+      </div>
+    </section>
+
+    <!-- Bottom buttons -->
+    <div class="top-btns">
+      <a class="btn" href="index.html">⬅️ Back to Homepage</a>
     </div>
 
-
-    <div class="gear-card" style="background:#000; width:280px; padding:16px; border-radius:10px; text-align:center; box-shadow:0 0 20px #000;">
-      <img src="images/marb.jpg" alt="MARBERO 100W Power Station" style="width:100%; max-width:200px; height:200px; object-fit:cover; margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;">
-      <h3 style="color:#ffa500;">🔋 MARBERO 100W Power Station</h3>
-      <p style="color:#ccc;">Compact 167Wh solar generator with LED flashlight. Power your CPAP, phone, or emergency kit.</p>
-      <p style="color:#ff5555;">🔥 Don’t get caught powerless. Grab it now.</p>
-      <p style="color:#aaa; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Ran my essentials all night.'</p>
-      <a href="https://amzn.to/4lRDJ4E?tag=gritgearhq-20" target="_blank" style="color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px; display:inline-block; margin-top:10px; text-decoration:none;">🛒 Shop Now</a>
-    </div>
-  
-<!-- Hidden Camera Detector -->
-<div class="product-box" style="background:#1a1a1a; padding:15px; border-radius:10px; width:300px; box-shadow:0 0 20px #000;">
-  <img src="images/reddect.jpg" alt="Hidden Camera Detector" style="width:100%; border-radius:6px;">
-  <div class="product-info" style="margin-top:10px;">
-    <h3 style="color:#ffa500;">Hidden Camera Detector</h3>
-    <p class="desc" style="color:#ddd;">Bug & GPS Finder for Hotels, Airbnbs, Cars & Public Restrooms.</p>
-    <p class="stars" style="color:#90ee90;">★★★★★ <span class="counter" style="color:#ccc;">9,728 reviews</span></p>
-    <p style="color: #ffa500; font-weight: bold;">⚠️ Only 4 left in stock – act fast!</p>
-   <a href="https://www.amazon.com/dp/B0CQT96HMC?tag=gritgearhq-20" target="_blank" class="buy-btn" style="display:inline-block; margin-top:10px; padding:10px 15px; background:#ffa500; color:#111; font-weight:bold; text-decoration:none; border-radius:5px;">🛑 Buy on Amazon</a>
-
-  
-  <!-- Book: Amish Manual -->
-  <div style="background: #1a1a1a; padding: 20px; width: 280px; border-radius: 10px; text-align: center; box-shadow: 0 0 20px #000; border: 2px solid #ffa500;">
-    <img src="images/amish.jpg" alt="The Complete Amish Survival Manual" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
-    <h3 style="color: #ffa500;">The Complete Amish Survival Manual</h3>
-    <p style="color: #ccc;">Break the chains of modern slavery. Herbal cures, canning, old-world grit, and total self-reliance.</p>
-    <p style="color:#90ee90; font-size:13px;">⭐️⭐️⭐️⭐️⭐️ 1,497 reviews</p>
-    <p style="color:#ff4444; font-size:13px;">⚠️ Trending now – low stock!</p>
-    <a href="https://amzn.to/3GOWyXu?tag=gritgearhq-20" target="_blank" class="buy-btn" style="margin-top:10px;">📘 Get the Manual</a>
-  </div>
-  
- <div class="gear-grid">
-  <!-- GEAR ITEM BLOCKS START -->
-  <!-- 🔥 Featured Gear of the Day -->
-<section style="background:#111; color:#ccc; padding:30px 20px; font-family:'Orbitron', sans-serif; text-align:center; border-top:2px solid #ffa500; border-bottom:2px solid #ffa500;">
-  <h2 style="color:#ffa500;">🔥 Featured Gear of the Day</h2>
-  <div style="max-width:600px; margin:20px auto;">
-    <img src="images/srazor.jpg" alt="Straight Razor Set" style="width:100%; max-width:450px; border-radius:10px; box-shadow:0 0 15px #000;">
-    <h3 style="margin-top:20px; color:#fff;">Vintage Straight Razor Set</h3>
-    <p style="font-size:1.1em; color:#aaa;">Professional straight-edge razor with wooden handle, steel blade, leather strop, and iron box. Look sharp. Stay dangerous.</p>
-    <a href="https://amzn.to/4luiCWo" target="_blank" style="display:inline-block; margin-top:15px; padding:10px 20px; background:#ffa500; color:#000; font-weight:bold; text-decoration:none; border-radius:5px;">🛒 Check It Out</a>
-  </div>
-</section>
-
-   <!-- 🛒 Solar Generator Buy Preview -->
-<div id="solar-buy-box" style="background:#1a1a1a; border:2px solid #ffa500; border-radius:12px; padding:20px; max-width:700px; margin:50px auto; box-shadow:0 0 15px #000; font-family:'Orbitron', sans-serif; color:#ddd;">
-  <h3 style="color:#ffa500; margin-bottom:15px;">🔋 Power Anywhere, Anytime</h3>
-
-  <a href="https://amzn.to/3ILgvz8?tag=gritgearhq-20" target="_blank" style="display:flex; flex-wrap:wrap; gap:20px; align-items:center; text-decoration:none; color:inherit;">
-    <img src="images/marbi.jpg" alt="Solar Generator Preview" style="width:260px; border-radius:8px; box-shadow:0 0 10px #000;">
-    
-    <div style="flex:1;">
-      <p style="color:#ccc; font-size:0.95em; margin-bottom:10px;">Stay off-grid, stay connected. This portable solar generator comes with foldable panels, multiple ports, and silent operation. Perfect for cabins, cars, outages, and survival kits.</p>
-      
-      <span style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; font-weight:bold; padding:12px 20px; border-radius:6px; text-align:center; box-shadow:0 0 10px #000;">
-        🛒 Buy Now on Amazon
-      </span>
-    </div>
-  </a>
-</div>
-
-  <div class="gear-card">
-    <img src="images/tarp.jpg" alt="GOLDCAMP Waterproof Tarp">
-    <h3>⛺ GOLDCAMP Waterproof Tarp</h3>
-    <p>10x10FT nylon rain fly with UV 50+ and PU15000mm protection. Your go-to tarp for sun or storm.</p>
-    <p class="highlight">🌧️ Heavy-duty. Lightweight. Battle-tested.</p>
-    <a href="https://amzn.to/40q5tVT?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
+    <footer>
+      <p><strong>Affiliate disclosure:</strong> Some links are affiliate links. As an Amazon Associate, we may earn from qualifying purchases at no extra cost to you.</p>
+    </footer>
   </div>
 
-  <div class="gear-card">
-    <img src="images/neck.jpg" alt="Wearable Neck Fan">
-    <h3>❄️ 360° Wearable Neck Fan</h3>
-    <p>Hands-free cooling with a 4000mAh battery. Perfect for hiking, work, or hellish summers.</p>
-    <p class="highlight">💨 Bladeless. Quiet. Stays chill.</p>
-    <a href="https://amzn.to/4nR6kJ9?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/silver.jpg" alt="Vintage Flashlight">
-    <h3>🔦 Vintage LED Flashlight</h3>
-    <p>Old-school charm with modern LED power. Compact, tough, includes 5 bulbs.</p>
-    <p class="highlight">🕯️ Retro + Reliable</p>
-    <a href="https://amzn.to/44T8RKw?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/trench.jpg" alt="Trench Lighter">
-    <h3>🪔 Vintage Trench Lighter</h3>
-    <p>Classic rope-style windproof lighter. Bring trench warfare aesthetics to your EDC.</p>
-    <p class="highlight">🧨 Flint, spark, survival.</p>
-    <a href="https://amzn.to/44QUczn?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/cump.jpg" alt="Survival Compass">
-    <h3>🧭 Survival Compass</h3>
-    <p>Waterproof, durable, and pocket-sized. A no-BS compass for serious explorers.</p>
-    <p class="highlight">📍 Always know where North is.</p>
-    <a href="https://amzn.to/4ePQyds?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/ok.jpg" alt="Arc Lighter">
-    <h3>⚡ Arc Plasma Lighter</h3>
-    <p>USB rechargeable. LED display. Waterproof. Built-in flashlight & whistle. No fuel, no drama.</p>
-    <p class="highlight">🎯 For real bug-out bags only.</p>
-    <a href="https://amzn.to/3TFWgoN?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/goo.jpg" alt="Bug Zapper">
-    <h3>🪰 Bug Zapper 4200V</h3>
-    <p>Indoor/outdoor fly & mosquito killer. 90–130V range. ABS plastic shell. Instant bug death.</p>
-    <p class="highlight">⚡ Bugs beware.</p>
-    <a href="#" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <!-- 🔥 NEW RANDOM PICKS BLOCK -->
-
-  <div class="gear-card">
-    <img src="images/grns.jpg" alt="Tapirus Tactical Spork">
-    <h3>🥄 Tapirus Tactical Spork</h3>
-    <p>3-in-1 spork with firestarter, knife edge, and durable BPA-free design. Built for the bush, fits in MREs.</p>
-    <p class="highlight">🔥 Fire + Food + Fork in one.</p>
-    <p style="color:#ff5555;">🚨 Wilderness-tested. 1 left in stock!</p>
-    <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Perfect EDC camping tool. Even sparked a fire first try!'</p>
-    <a href="https://amzn.to/4ls3TeF?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/starcup.jpg" alt="Toughty Campfire Mugs">
-    <h3>☕ Toughty Enamel Camp Mugs (2-Pack)</h3>
-    <p>Retro black enamel mugs with vintage vibes. Sip coffee fireside like your granddad did.</p>
-    <p class="highlight">🔥 Two rugged mugs, one badass set.</p>
-    <p style="color:#ff5555;">⚠️ Bestseller – Rustic vibe, modern quality.</p>
-    <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐ 'Feels like an old western. Love these.'</p>
-    <a href="https://amzn.to/4m1Ra2g?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/blklight.jpg" alt="SUPRUS Arc Lighter">
-    <h3>💥 SUPRUS Arc Lighter + Flashlight</h3>
-    <p>Waterproof dual arc lighter, 3-mode flashlight, emergency whistle. Rechargeable. Tactical AF.</p>
-    <p class="highlight">⚡ Dual threat. Light + fire = survival.</p>
-    <p style="color:#ff5555;">🔥 Extreme reliability. Grab it before blackout season.</p>
-    <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Windproof, waterproof, damn near indestructible.'</p>
-    <a href="https://amzn.to/4599jW0?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/lightfan.jpg" alt="Lantern Fan Combo">
-    <h3>🌀 Lantern + Fan Combo</h3>
-    <p>Bright LED lantern with built-in ceiling fan. Stay cool, stay lit. Rechargeable for emergencies.</p>
-    <p class="highlight">🌬️ Comfort & light when it matters.</p>
-    <p style="color:#ff5555;">🛑 Hurricane prep essential – restock alert!</p>
-    <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Slept like a baby during the storm blackout.'</p>
-    <a href="https://amzn.to/3TJM92g?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/lant.jpg" alt="Portable Emergency Lantern">
-    <h3>🔋 2000LM Compact Lantern</h3>
-    <p>Rechargeable 4" LED lantern with redlight mode, waterproof shell, stepless dimming, and 20hr runtime.</p>
-    <p class="highlight">🪔 Light in the darkest moments.</p>
-    <p style="color:#ff5555;">⏳ Only a few left. Power outages don't wait.</p>
-    <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Compact, powerful, lasted all night.'</p>
-    <a href="https://amzn.to/40lCjY1?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/blueshrink.jpg" alt="Kizen Solar Lantern">
-    <h3>🌞 Kizen Solar Lantern</h3>
-    <p>Rechargeable & collapsible with dual power. Solar or USB – lights up tents and tough times.</p>
-    <p class="highlight">⚡ The off-grid lighting solution.</p>
-    <p style="color:#ff5555;">☀️ Must-have for hikers & blackout kits.</p>
-    <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐ 'Folds small. Packs a punch. Solar win.'</p>
-    <a href="https://amzn.to/4eTI8Sk?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-  <div class="gear-card">
-    <img src="images/gennn.jpg" alt="MARBERO Solar Generator">
-    <h3>🔌 MARBERO 111Wh Solar Generator Kit</h3>
-    <p>Portable generator + solar panel for serious off-grid power. Charge phones, lights, radios & more.</p>
-    <p class="highlight">🪫 Grid down? You’re still online.</p>
-    <p style="color:#ff5555;">⚠️ Limited kit bundles left. Ships fast.</p>
-    <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Powered my fan, lights, and phone off-grid.'</p>
-    <a href="https://amzn.to/3GstmFK?tag=gritgearhq-20" target="_blank">🛒 Shop Now</a>
-  </div>
-
-   <!-- 🧨 Tactical Shooting Gear Picks -->
-<div class="gear-card">
-  <img src="images/glock.jpg" alt="Ludex Magazine Speed Loader">
-  <h3>🔫 Ludex Glock Speed Loader</h3>
-  <p>Load mags in seconds. Works with Glock 9mm/.40 – models 17 thru 47. Tough, fast, no sore thumbs.</p>
-  <p class="highlight">⚡ Speed = Survival.</p>
-  <p style="color:#ff5555;">🧨 Amazon bestseller – restock often!</p>
-  <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Saves your thumbs. Feeds mags flawlessly.'</p>
-  <a href="https://amzn.to/4oaY0ED" target="_blank">🛒 Shop Now</a>
-</div>
-
-<div class="gear-card">
-  <img src="images/target.jpg" alt="KNINE Outdoors Shooting Targets">
-  <h3>🎯 KNINE Tactical Paper Targets (12x18")</h3>
-  <p>Axis-design bulk pack for serious range work. Compatible with handguns, rifles, and scoped weapons.</p>
-  <p class="highlight">📦 Bulk targets = more practice, less cost.</p>
-  <p style="color:#ff5555;">⚠️ Great for zeroing optics or drills.</p>
-  <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐ 'Crisp, durable, great contrast.'</p>
-  <a href="https://amzn.to/4eTVhuE" target="_blank">🛒 Shop Now</a>
-</div>
-
-<div class="gear-card">
-  <img src="images/dot.jpg" alt="Bushnell TRS-26 Red Dot Sight">
-  <h3>🔴 Bushnell TRS-26 Red Dot Sight</h3>
-  <p>3 MOA reflex sight with 50,000 hr battery life. Rock-solid performance with auto-off power save.</p>
-  <p class="highlight">🎯 Built like a tank. Zero holds true.</p>
-  <p style="color:#ff5555;">💀 Combat-tested reliability.</p>
-  <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐⭐ 'Takes recoil like a champ.'</p>
-  <a href="https://amzn.to/3TKo1wj" target="_blank">🛒 Shop Now</a>
-</div>
-
-<div class="gear-card">
-  <img src="images/uuq.jpg" alt="UUQ EagleC28 Shake Awake Red Dot">
-  <h3>👁️‍🗨️ UUQ Shake Awake Red Dot</h3>
-  <p>2 MOA precision optic. RMR/Picatinny compatible. 10 brightness settings. Fits pistols, rifles, and shotguns.</p>
-  <p class="highlight">👁️ Instant on = instant action.</p>
-  <p style="color:#ff5555;">⚡ Modern optic for the serious shooter.</p>
-  <p style="color:#ccc; font-size:13px; font-style:italic;">⭐⭐⭐⭐ 'Bright, clear, and auto-wake works great.'</p>
-  <a href="https://amzn.to/4lsn7kl" target="_blank">🛒 Shop Now</a>
-
-<!-- 🛒 Solar Generator Buy Preview -->
-<div id="solar-buy-box" style="background:#1a1a1a; border:2px solid #ffa500; border-radius:12px; padding:20px; max-width:700px; margin:50px auto; box-shadow:0 0 15px #000; font-family:'Orbitron', sans-serif; color:#ddd;">
-  <h3 style="color:#ffa500; margin-bottom:15px;">🔋 Power Anywhere, Anytime</h3>
-
-  <a href="https://amzn.to/3ILgvz8?tag=gritgearhq-20" target="_blank" style="display:flex; flex-wrap:wrap; gap:20px; align-items:center; text-decoration:none; color:inherit;">
-    <img src="images/marbi.jpg" alt="Solar Generator Preview" style="width:260px; border-radius:8px; box-shadow:0 0 10px #000;">
-    
-    <div style="flex:1;">
-      <p style="color:#ccc; font-size:0.95em; margin-bottom:10px;">Stay off-grid, stay connected. This portable solar generator comes with foldable panels, multiple ports, and silent operation. Perfect for cabins, cars, outages, and survival kits.</p>
-      
-      <span style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; font-weight:bold; padding:12px 20px; border-radius:6px; text-align:center; box-shadow:0 0 10px #000;">
-        🛒 Buy Now on Amazon
-      </span>
-    </div>
-  </a>
-</div>
-
-<div style="background:#111; border:2px solid #ffa500; padding:16px; border-radius:12px; width:280px; text-align:center; font-family:'Orbitron', sans-serif; color:#ccc; box-shadow:0 0 12px #000;">
-
-  <img src="images/griz.jpg" alt="FRIZCOL Camping Fan" style="width:100%; border-radius:8px; margin-bottom:12px;">
-  
-  <h3 style="color:#ffa500; font-size:1.1em;">FRIZCOL 3-in-1 Rechargeable Camping Fan</h3>
-  
-  <p style="font-size:0.9em; line-height:1.5;">
-    140 hours of breeze, built-in light, and remote control. A must-have for grid-down heat waves.
-  </p>
-
-  <p style="font-size:0.85em; color:#00ff00;">
-    ⭐️⭐️⭐️⭐️⭐️ “We survived a heatwave in a blackout with this fan. Lifesaver.” – Mike S.
-  </p>
-
-  <p style="color:#ff3333; font-weight:bold; font-size:0.85em;">🔥 Only a few left in stock</p>
-
-  <a href="https://amzn.to/4lKpvmy" target="_blank" style="display:inline-block; margin-top:10px; background:#ffa500; color:#000; font-weight:bold; padding:10px 16px; border-radius:6px; text-decoration:none;">
-    🛒 View on Amazon
-  </a>
-</div>
-
-   
-<!-- Optional Button to Homepage -->
-<div style="text-align:center; margin:40px 0;">
-  <a href="index.html" style="display:inline-block; padding:12px 24px; background-color:#ffa500; color:#111; font-weight:bold; border-radius:6px; text-decoration:none; font-family:'Orbitron', sans-serif; box-shadow: 0 0 10px #000;">
-    ⬅️ Back to Homepage
-  </a>
-</div>
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
