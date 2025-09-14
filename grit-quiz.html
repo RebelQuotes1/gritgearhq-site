@@ -1,16 +1,20 @@
-<!-- =======================
-     GRIT QUIZ (varied topics + bg image)
-     ======================= -->
+<!-- ============= GRIT QUIZ (fixed) ============= -->
 <section id="grit-quiz" class="mcq-wrap" tabindex="-1" aria-labelledby="grit-quiz-title">
   <style>
     .mcq-wrap{
       --panel:#121821;--line:#1f2a35;--ink:#e8edf2;--accent:#ff7a00;
-      background:
-        linear-gradient(180deg, rgba(11,15,18,.92), rgba(11,15,18,.92)),
-        url('s-l1600.webp') center/cover fixed no-repeat; /* update path if needed */
+      color:var(--ink);max-width:980px;margin:28px auto;
       border:1px solid var(--line);border-radius:16px;
       box-shadow:0 0 0 1px rgba(255,122,0,.12),0 16px 46px rgba(0,0,0,.6);
-      padding:clamp(18px,3.2vw,28px);color:var(--ink);max-width:980px;margin:28px auto
+      /* BG IMAGE — update path if needed */
+      background-image:
+        linear-gradient(180deg, rgba(11,15,18,.65), rgba(11,15,18,.85)),
+        url('/images/s-l1600.webp');
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      padding:clamp(18px,3.2vw,28px);
     }
     .mcq-head h2{margin:0 0 8px;font:800 clamp(20px,3.2vw,28px)/1.2 system-ui,Segoe UI,Inter,sans-serif}
     .mcq-sub{color:#c9d2da;margin:0 0 14px}
@@ -21,7 +25,7 @@
     .mcq-card{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
     .mcq-q{padding:16px 16px 8px;border-bottom:1px solid var(--line);font-weight:700}
     .mcq-choices{display:grid;gap:10px;padding:14px}
-    .mcq-choice{position:relative;border:1px solid #273446;background:#0f141a;border-radius:10px;padding:12px 14px;cursor:pointer;transition:transform .08s ease,box-shadow .08s ease}
+    .mcq-choice{position:relative;border:1px solid #273446;background:#0f141a;border-radius:10px;padding:12px 14px;cursor:pointer;transition:transform .08s,box-shadow .08s}
     .mcq-choice:focus-within{outline:2px solid #2a3b50}
     .mcq-choice input{position:absolute;opacity:0;pointer-events:none}
     .mcq-choice .txt{display:flex;gap:10px;align-items:flex-start}
@@ -57,7 +61,7 @@
 
   <!-- Question card -->
   <div class="mcq-card" aria-live="polite">
-    <div class="mcq-q" id="mcq-qtext">Question text…</div>
+    <div class="mcq-q" id="mcq-qtext">Loading…</div>
     <div class="mcq-choices" id="mcq-choices"></div>
     <div class="mcq-actions">
       <button class="btn btn-ghost" id="mcq-prev" type="button" disabled>← Back</button>
@@ -72,178 +76,138 @@
     <div class="tier-line" id="mcq-tier">🦗 Grasshopper Energy — Start with water, food, and one warm room.</div>
     <h4 style="margin:.6rem 0 .3rem">Quick fixes for what you missed</h4>
     <ul class="fixes" id="mcq-fixes"></ul>
-    <div class="mcq-ctas"><!-- injected by JS --></div>
+    <div class="mcq-ctas"></div>
   </section>
 
   <script>
   (function(){
-    // ---------- Quiz Data (VARIED) ----------
+    // ---------- Quiz Data (varied) ----------
     const qs = [
-      { // 1 Heat priority
-        q: "Cold house, limited fuel. What’s your FIRST move?",
-        choices: [
-          {t:"Crank heat for the whole house", correct:false},
-          {t:"Warm the PERSON: hat, socks, layers", correct:true},
-          {t:"Open windows to 'air it out' for an hour", correct:false},
-          {t:"Heat the biggest room because it feels right", correct:false}
-        ],
-        tag: "heat"
-      },
-      { // 2 Water baseline
-        q: "Emergency water for one week:",
-        choices: [
-          {t:"1 gallon per person per day × 7", correct:true},
-          {t:"A couple bottles per person", correct:false},
-          {t:"Only if the tap stops working", correct:false},
-          {t:"Water isn’t a priority in winter", correct:false}
-        ],
-        tag: "water"
-      },
-      { // 3 Water disinfect
-        q: "No filter but you have a pot. Safest simple way to make clear water safer?",
-        choices: [
-          {t:"Bring it to a rolling boil for 1 full minute", correct:true},
-          {t:"Add a splash of any household chemical", correct:false},
-          {t:"Let it sit overnight", correct:false},
-          {t:"Run it through a T-shirt and drink", correct:false}
-        ],
-        tag: "boil"
-      },
-      { // 4 Boundary at the door
-        q: "A friend shows up empty-handed during a shortage. Best boundary line:",
-        choices: [
-          {t:"“I’m out—go away.”", correct:false},
-          {t:"“I can’t help you at my door. Please leave.”", correct:true},
-          {t:"“Maybe come in and we’ll talk.”", correct:false},
-          {t:"Say nothing, lights off.", correct:false}
-        ],
-        tag: "boundary"
-      },
-      { // 5 Situational awareness
-        q: "Walking at night, someone gives you bad vibes and mirrors your turns. First move?",
-        choices: [
-          {t:"Confront them and demand they stop", correct:false},
-          {t:"Change route, get to a bright/occupied place, create distance", correct:true},
-          {t:"Ignore it and keep your normal path", correct:false},
-          {t:"Flash a weapon to warn them off", correct:false}
-        ],
-        tag: "awareness"
-      },
-      { // 6 Home defense (non-escalatory)
-        q: "3 AM knock at your door. Smart play:",
-        choices: [
-          {t:"Open the door with chain on and talk", correct:false},
-          {t:"Keep the barrier closed; speak through the door; call 911 if needed", correct:true},
-          {t:"Go outside to check it out", correct:false},
-          {t:"Shout threats through an open window", correct:false}
-        ],
-        tag: "home"
-      },
-      { // 7 Earthquake
-        q: "Inside during an earthquake. Best action:",
-        choices: [
-          {t:"Stand in a doorway", correct:false},
-          {t:"Run outside immediately", correct:false},
-          {t:"Drop, Cover, Hold On under a sturdy table", correct:true},
-          {t:"Get in an elevator", correct:false}
-        ],
-        tag: "eq"
-      },
-      { // 8 Tornado
-        q: "Tornado warning. Where do you shelter?",
-        choices: [
-          {t:"Top floor near a window to watch", correct:false},
-          {t:"Small interior room on the lowest level/basement", correct:true},
-          {t:"Under a highway overpass", correct:false},
-          {t:"Garage with the door open", correct:false}
-        ],
-        tag: "tornado"
-      },
-      { // 9 Flood
-        q: "Road ahead is flooded. What’s the rule?",
-        choices: [
-          {t:"Drive through slowly with hazards", correct:false},
-          {t:"Turn around, don’t drown—find another route", correct:true},
-          {t:"Follow the biggest truck", correct:false},
-          {t:"Wait for the water to push your car a bit, then gun it", correct:false}
-        ],
-        tag: "flood"
-      },
-      { // 10 Wildfire
-        q: "Wildfire approaching your area. Smart prep move:",
-        choices: [
-          {t:"Wait until you see flames to pack", correct:false},
-          {t:"Leave early with a go-bag and two exit routes planned", correct:true},
-          {t:"Soak the roof and stay to defend", correct:false},
-          {t:"Assume it will miss you", correct:false}
-        ],
-        tag: "wildfire"
-      },
-      { // 11 First aid bleeding
-        q: "Someone has severe bleeding from the arm. First priority:",
-        choices: [
-          {t:"Apply firm, direct pressure and call emergency services", correct:true},
-          {t:"Give them water and wait", correct:false},
-          {t:"Remove any embedded object", correct:false},
-          {t:"Put on ice to numb it", correct:false}
-        ],
-        tag: "bleed"
-      },
-      { // 12 Comms
-        q: "Cell/data are down across your region. Best tool for official alerts:",
-        choices: [
-          {t:"Battery/hand-crank NOAA weather radio", correct:true},
-          {t:"Refreshing social media", correct:false},
-          {t:"Asking neighbors door-to-door", correct:false},
-          {t:"Waiting for TV to come back", correct:false}
-        ],
-        tag: "comms"
-      }
+      { q:"Cold house, limited fuel. What’s your FIRST move?",
+        choices:[
+          {t:"Crank heat for the whole house",correct:false},
+          {t:"Warm the PERSON: hat, socks, layers",correct:true},
+          {t:"Open windows for an hour",correct:false},
+          {t:"Heat the biggest room",correct:false}
+        ], tag:"heat" },
+      { q:"Emergency water for one week:",
+        choices:[
+          {t:"1 gallon per person per day × 7",correct:true},
+          {t:"A couple bottles per person",correct:false},
+          {t:"Only if the tap stops",correct:false},
+          {t:"Water isn’t a winter priority",correct:false}
+        ], tag:"water" },
+      { q:"No filter but you have a pot. Safer water is made by:",
+        choices:[
+          {t:"Rolling boil 1 minute",correct:true},
+          {t:"Add random household chemical",correct:false},
+          {t:"Let it sit overnight",correct:false},
+          {t:"T-shirt strain only",correct:false}
+        ], tag:"boil" },
+      { q:"A friend shows up empty-handed during a shortage. Best line:",
+        choices:[
+          {t:"“I’m out—go away.”",correct:false},
+          {t:"“I can’t help you at my door. Please leave.”",correct:true},
+          {t:"“Come in and we’ll talk.”",correct:false},
+          {t:"Silence and lights off",correct:false}
+        ], tag:"boundary" },
+      { q:"Walking at night; someone mirrors your turns. First move:",
+        choices:[
+          {t:"Confront them",correct:false},
+          {t:"Change route to a bright, busy place; create distance",correct:true},
+          {t:"Ignore it",correct:false},
+          {t:"Flash a weapon",correct:false}
+        ], tag:"awareness" },
+      { q:"3 AM knock at your door. Smart play:",
+        choices:[
+          {t:"Open with chain on",correct:false},
+          {t:"Keep barrier closed; speak through door; call 911 if needed",correct:true},
+          {t:"Go outside to check",correct:false},
+          {t:"Shout threats outside",correct:false}
+        ], tag:"home" },
+      { q:"Inside during an earthquake:",
+        choices:[
+          {t:"Stand in a doorway",correct:false},
+          {t:"Drop, Cover, Hold On under a sturdy table",correct:true},
+          {t:"Run outside",correct:false},
+          {t:"Use the elevator",correct:false}
+        ], tag:"eq" },
+      { q:"Tornado warning—where do you shelter?",
+        choices:[
+          {t:"Top floor near a window",correct:false},
+          {t:"Small interior room on lowest level/basement",correct:true},
+          {t:"Under a highway overpass",correct:false},
+          {t:"Open garage",correct:false}
+        ], tag:"tornado" },
+      { q:"Road ahead is flooded. Rule:",
+        choices:[
+          {t:"Drive through slowly",correct:false},
+          {t:"Turn around, don’t drown",correct:true},
+          {t:"Follow the biggest truck",correct:false},
+          {t:"Gun it",correct:false}
+        ], tag:"flood" },
+      { q:"Wildfire approaching your area. Smart move:",
+        choices:[
+          {t:"Wait until you see flames",correct:false},
+          {t:"Leave early with go-bag and two routes",correct:true},
+          {t:"Soak roof and stay",correct:false},
+          {t:"Assume it’ll miss you",correct:false}
+        ], tag:"wildfire" },
+      { q:"Severe arm bleeding. First priority:",
+        choices:[
+          {t:"Direct pressure; call emergency services",correct:true},
+          {t:"Give water and wait",correct:false},
+          {t:"Remove embedded object",correct:false},
+          {t:"Ice it",correct:false}
+        ], tag:"bleed" },
+      { q:"Cell/data are down region-wide. Best tool for alerts:",
+        choices:[
+          {t:"Battery/hand-crank NOAA weather radio",correct:true},
+          {t:"Refresh social media",correct:false},
+          {t:"Ask door-to-door",correct:false},
+          {t:"Wait for TV",correct:false}
+        ], tag:"comms" }
     ];
 
-    // Tips shown in results
     const tips = {
-      heat: "Warm the person first (hat, socks, layers) before you try to heat space.",
-      water: "Store 1 gal/person/day for 7 days. Refill/rotate on a schedule.",
-      boil: "Rolling boil 1 minute makes clear water safer when you lack a filter.",
-      boundary: "Practice: “I can’t help you at my door. Please leave.” Calm and final.",
-      awareness: "Create distance, change direction, get to people/lights, call for help.",
-      home: "Keep the barrier. Communicate through the door. Call 911 if needed.",
-      eq: "Drop, Cover, Hold On under a sturdy table away from windows.",
-      tornado: "Lowest floor interior room/basement. Helmets/blankets help.",
-      flood: "Turn around; cars lose traction fast. Seek higher ground.",
-      wildfire: "Leave early. Go-bag ready, two routes, full tank.",
-      bleed: "Direct pressure first; tourniquet only if trained and pressure fails.",
-      comms: "NOAA weather radio (battery/hand-crank) gets alerts when the grid doesn’t."
+      heat:"Warm the person first (layers) before heating space.",
+      water:"Store 1 gal/person/day for 7 days. Rotate.",
+      boil:"Rolling boil 1 minute improves clear water when you lack a filter.",
+      boundary:"Practice: “I can’t help you at my door. Please leave.”",
+      awareness:"Create distance; head to lights/people; call for help.",
+      home:"Keep the barrier; talk through the door; call 911 if needed.",
+      eq:"Drop, Cover, Hold On under a sturdy table away from glass.",
+      tornado:"Lowest level interior room/basement; helmets/blankets help.",
+      flood:"Turn around—find higher ground.",
+      wildfire:"Leave early; go-bag ready; two routes; full tank.",
+      bleed:"Direct pressure first; tourniquet if trained and needed.",
+      comms:"NOAA weather radio works when the grid and data don’t."
     };
 
-    // ---------- State ----------
+    // ---------- State & elements (no duplicate consts) ----------
     let i = 0, score = 0, selected = -1;
     const wrongTags = [];
 
-    // ---------- Els ----------
-    const bar = document.getElementById('mcq-bar');
+    const barEl = document.getElementById('mcq-bar');
     const scoreEl = document.getElementById('mcq-score');
     const countEl = document.getElementById('mcq-count');
     const qEl = document.getElementById('mcq-qtext');
     const choicesEl = document.getElementById('mcq-choices');
-    const prevBtn = document.getElementById('mcq-prev');
-    const nextBtn = document.getElementById('mcq-next');
-
+    const prevBtnEl = document.getElementById('mcq-prev');
+    const nextBtnEl = document.getElementById('mcq-next');
     const resultWrap = document.getElementById('mcq-result');
     const finalEl = document.getElementById('mcq-final');
     const tierEl = document.getElementById('mcq-tier');
     const fixList = document.getElementById('mcq-fixes');
 
-    // ---------- Helpers ----------
     function updateMeta(){
       const pct = Math.round((i/qs.length)*100);
-      bar.style.width = pct + '%';
+      barEl.style.width = pct + '%';
       scoreEl.textContent = `Score: ${score}`;
       countEl.textContent = `Q ${Math.min(i+1, qs.length)}/${qs.length}`;
-      prevBtn.disabled = (i === 0);
-      nextBtn.disabled = (selected === -1);
-      nextBtn.textContent = (i === qs.length - 1) ? 'Finish →' : 'Next →';
+      prevBtnEl.disabled = (i === 0);
+      nextBtnEl.disabled = (selected === -1);
+      nextBtnEl.textContent = (i === qs.length - 1) ? 'Finish →' : 'Next →';
     }
 
     function renderQuestion(idx){
@@ -261,7 +225,7 @@
         `;
         w.addEventListener('click', () => {
           choicesEl.querySelectorAll('.mcq-choice').forEach(el=>el.classList.remove('selected'));
-          w.classList.add('selected'); selected = j; nextBtn.disabled = false;
+          w.classList.add('selected'); selected = j; nextBtnEl.disabled = false;
         }, {passive:true});
         choicesEl.appendChild(w);
       });
@@ -280,7 +244,6 @@
       } else { score++; }
     }
 
-    // ---------- Results ----------
     function tierFor(s, total){
       const pct = Math.round((s/total)*100);
       if (s <= 4) return { pct, title:'Grasshopper Energy', badge:'🦗', line:'Start with water, food, and one warm room.' };
@@ -310,32 +273,27 @@
       const needDisaster = uniq.some(t=>['eq','tornado','flood','wildfire','comms'].includes(t));
 
       ctas.innerHTML = `
-        ${needDefense ? `<a class="mcq-cta" href="manifesto.html#violence-answer">⚔️ Read: When Violence Is the Answer</a>` : ``}
-        ${needWater   ? `<a class="mcq-cta" href="top-5-home-water-filters.html#filters">💧 Dial in Water & Filters</a>` : ``}
+        ${needDefense ? `<a class="mcq-cta" href="manifesto.html#violence-answer">⚔️ Self-Defense Basics</a>` : ``}
+        ${needWater   ? `<a class="mcq-cta" href="top-5-home-water-filters.html#filters">💧 Water & Filters</a>` : ``}
         ${needHeat    ? `<a class="mcq-cta" href="amish-winter-heat.html#amish-winter-heat">🔥 Warmth That Works</a>` : ``}
         ${needDisaster? `<a class="mcq-cta ghost" href="pale-horse-prepping.html#apocalypse-guide">🌀 Disaster Playbook</a>` : ``}
-        ${(!needHeat && !needWater && !needDefense && !needDisaster) ? `<a class="mcq-cta" href="best-survival-gear-amazon-2025.html#best-survival-gear">🎒 Level Up Your Kit</a>` : ``}
       `;
 
       resultWrap.scrollIntoView({ behavior:'smooth', block:'start' });
       resultWrap.focus();
     }
 
-    // ---------- Nav ----------
-    const nextBtn = document.getElementById('mcq-next');
-    const prevBtn = document.getElementById('mcq-prev');
-
-    nextBtn.addEventListener('click', () => {
+    // Nav (no duplicate consts)
+    nextBtnEl.addEventListener('click', () => {
       if (selected === -1) return;
       gradeCurrent();
-      setTimeout(() => { if (i === qs.length - 1) { finish(); } else { i++; renderQuestion(i); } }, 260);
+      setTimeout(() => { if (i === qs.length - 1) finish(); else { i++; renderQuestion(i); } }, 260);
     });
+    prevBtnEl.addEventListener('click', () => { if (i === 0) return; i--; renderQuestion(i); });
 
-    prevBtn.addEventListener('click', () => { if (i === 0) return; i--; renderQuestion(i); });
-
-    // ---------- Init ----------
+    // Init
     renderQuestion(i);
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' && !nextBtn.disabled){ nextBtn.click(); }});
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' && !nextBtnEl.disabled){ nextBtnEl.click(); }});
   })();
   </script>
 </section>
