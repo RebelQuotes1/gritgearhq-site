@@ -1,26 +1,89 @@
-<!-- 🗡️ When Violence Is the Answer – Free PDF + Giveaway -->
-<section style="background:#111; border:2px solid #ffa500; padding:30px; border-radius:12px; box-shadow:0 0 20px #000; text-align:center; font-family:'Orbitron', sans-serif; margin:40px auto; max-width:900px;">
+<!-- 🗡️ When Violence Is the Answer – Free PDF + Knife Giveaway -->
+<section class="violence-cta" aria-labelledby="violence-cta-title">
+  <style>
+    .violence-cta{
+      --accent:#ffa500; --ink:#eee; --muted:#bbb; --bg:#111;
+      font-family: 'Orbitron', system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg); border:2px solid var(--accent); border-radius:12px;
+      box-shadow:0 0 20px #000; padding:28px; margin:40px auto; max-width:900px; text-align:center;
+    }
+    .violence-cta h2{color:var(--accent); font-size:clamp(1.4rem,2.4vw,2rem); margin:0 0 12px}
+    .violence-cta p{color:var(--muted); font-size:1.05rem; margin:10px auto; max-width:760px}
+    .violence-cta .knife-img{
+      width:220px; border-radius:10px; border:3px solid var(--accent); box-shadow:0 0 10px #000;
+      display:block; margin:16px auto 6px; background:#000;
+    }
+    .violence-cta .btn{
+      display:inline-block; margin:10px 8px 0; padding:12px 20px; border-radius:8px;
+      font-weight:900; letter-spacing:.2px; text-decoration:none; cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+      box-shadow:0 0 10px var(--accent);
+    }
+    .violence-cta .btn-primary{background:var(--accent); color:#111}
+    .violence-cta .btn-primary:hover{background:#ff7a00; color:#111; transform:translateY(-1px)}
+    .violence-cta .btn-ghost{background:transparent; color:#00ffff; border:1px dashed #00ffff}
+    .violence-cta .btn-ghost:hover{background:#072a2a; color:#cfffff; transform:translateY(-1px)}
+    .violence-cta .ok{color:#00ff00}
+    .violence-cta .disclosure{
+      color:#9aa3ad; font-size:.9rem; margin-top:12px
+    }
+    @keyframes pulseGlow {0%{box-shadow:0 0 10px var(--accent)}50%{box-shadow:0 0 20px #ff8c00}100%{box-shadow:0 0 10px var(--accent)}}
+    .violence-cta .pulse{animation:pulseGlow 3s infinite}
+  </style>
 
-  <h2 style="color:#ffa500; font-size:2em;">⚔️ When Violence Is the Answer: Free PDF + Knife Giveaway</h2>
+  <h2 id="violence-cta-title">⚔️ When Violence Is the Answer: Free PDF + Knife Giveaway</h2>
 
-  <p style="color:#ccc; font-size:1.1em; max-width:750px; margin:10px auto 25px;">
-    Download our brutally honest guide: <strong>"When Violence Is the Answer"</strong> - a gritty, real-world breakdown of when force is necessary. Click below to get the free PDF instantly. No email required.
-  </p>
+  <p>Grab our blunt, no-nonsense mini-guide <strong>“When Violence Is the Answer”</strong>. Instant PDF—<em>no email needed</em>. And if you like steel, check the giveaway knife below.</p>
 
-  <a href="https://amzn.to/44N0RMk" target="_blank">
-    <img src="images/case.jpg" alt="Case Folding Knife" style="width:220px; border-radius:8px; border:3px solid #ffa500; box-shadow:0 0 10px #000;">
+  <!-- Knife (affiliate) -->
+  <a href="https://amzn.to/44N0RMk?tag=gritgearhq-20"
+     target="_blank" rel="nofollow sponsored noopener"
+     aria-label="View the knife on Amazon (affiliate link)">
+    <img src="images/case.jpg" alt="Case folding knife—classic EDC pocket knife"
+         class="knife-img" loading="lazy" decoding="async">
   </a>
 
-  <p style="color:#00ff00; margin-top:10px;">💥 Or <a href="https://amzn.to/44N0RMk" target="_blank" style="color:#00ffff; text-decoration:underline;">buy the knife now</a> if you’re impatient.</p>
+  <p class="ok">💥 Or <a href="https://amzn.to/44N0RMk?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">buy the knife now</a> if you’re impatient.</p>
 
-<!-- Instant PDF Download Button (Fixed Link) -->
-<div style="margin-top:30px;">
-  <a href="https://gritgearhq.com/When_Violence_Is_the_Answer_FixedCentered.pdf" download style="padding:12px 24px; font-size:1.1em; background:#ffa500; color:#000; font-weight:bold; border:none; border-radius:6px; text-decoration:none; display:inline-block;">
-    📥 Download the Free PDF
-  </a>
-</div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583"
-     crossorigin="anonymous"></script>
+  <!-- Buttons -->
+  <div style="margin-top:14px">
+    <a class="btn btn-primary pulse"
+       href="https://gritgearhq.com/When_Violence_Is_the_Answer_FixedCentered.pdf"
+       download
+       data-gg-event="download_pdf"
+       aria-label="Download the free PDF When Violence Is the Answer">
+      📥 Download the Free PDF
+    </a>
+
+    <a class="btn btn-ghost"
+       href="https://amzn.to/44N0RMk?tag=gritgearhq-20"
+       target="_blank" rel="nofollow sponsored noopener"
+       data-gg-event="knife_affiliate_click"
+       aria-label="Buy the knife on Amazon (affiliate)">
+      🗡️ See Knife on Amazon
+    </a>
+  </div>
+
+  <p class="disclosure">Disclosure: As an Amazon Associate, we may earn from qualifying purchases at no extra cost to you.</p>
+
+  <!-- Optional: lightweight GA events (uses your existing gtag setup if present) -->
+  <script>
+    (function(){
+      function send(label){
+        if(typeof gtag === 'function'){
+          gtag('event','cta_click',{event_category:'violence_pdf_block',event_label:label});
+        }
+      }
+      document.addEventListener('click', function(e){
+        var a = e.target.closest('a[data-gg-event]');
+        if(!a) return;
+        send(a.getAttribute('data-gg-event'));
+      }, {passive:true});
+    })();
+  </script>
+
+  <!-- Ads (as you had it) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 </section>
 
 <!-- 🔥 Manifesto Button Grid (cleaned) -->
