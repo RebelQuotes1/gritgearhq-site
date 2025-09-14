@@ -1,16 +1,23 @@
 <!-- =======================
-     GRIT QUIZ (Self-contained)
+     GRIT QUIZ (with bg image + clearer water Q)
      ======================= -->
 <section id="grit-quiz" class="mcq-wrap" tabindex="-1" aria-labelledby="grit-quiz-title">
   <style>
-    .mcq-wrap{--bg:#0b0f12;--panel:#121821;--line:#1f2a35;--ink:#e8edf2;--muted:#9aa3ad;--accent:#ff7a00}
-    .mcq-wrap{background:linear-gradient(180deg,#0f141a,#0b0f12);border:1px solid var(--line);border-radius:16px;box-shadow:0 0 0 1px rgba(255,122,0,.12),0 16px 46px rgba(0,0,0,.6);padding:clamp(18px,3.2vw,28px);color:var(--ink);max-width:980px;margin:28px auto}
+    .mcq-wrap{
+      --bg:#0b0f12;--panel:#121821;--line:#1f2a35;--ink:#e8edf2;--muted:#9aa3ad;--accent:#ff7a00;
+      /* Background image + overlay (update path if needed) */
+      background:
+        linear-gradient(180deg, rgba(11,15,18,.92), rgba(11,15,18,.92)),
+        url('s-l1600.webp') center/cover fixed no-repeat;
+      border:1px solid var(--line);border-radius:16px;
+      box-shadow:0 0 0 1px rgba(255,122,0,.12),0 16px 46px rgba(0,0,0,.6);
+      padding:clamp(18px,3.2vw,28px);color:var(--ink);max-width:980px;margin:28px auto
+    }
     .mcq-head h2{margin:0 0 8px;font:800 clamp(20px,3.2vw,28px)/1.2 system-ui,Segoe UI,Inter,sans-serif}
     .mcq-sub{color:#c9d2da;margin:0 0 14px}
     .mcq-progress{height:10px;background:#0f141a;border:1px solid var(--line);border-radius:999px;overflow:hidden}
     .mcq-progress .bar{height:100%;width:0;background:linear-gradient(180deg,#ff7a00,#e06100)}
     .mcq-meta{display:flex;gap:14px;align-items:center;color:#b6c0ca;font-size:.95rem;margin-top:8px}
-<a id="grit-quiz"></a>
 
     .mcq-card{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
     .mcq-q{padding:16px 16px 8px;border-bottom:1px solid var(--line);font-weight:700}
@@ -41,7 +48,6 @@
     .mcq-cta.ghost{background:#1a232e;color:#e6edf4;border:1px solid #2a3543}
     .hidden{display:none}
 
-    /* a11y helpers */
     .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
   </style>
 
@@ -71,9 +77,7 @@
     <h4 style="margin:.6rem 0 .3rem">Quick fixes for what you missed</h4>
     <ul class="fixes" id="mcq-fixes"></ul>
 
-    <div class="mcq-ctas">
-      <!-- tailored CTAs get injected here -->
-    </div>
+    <div class="mcq-ctas"><!-- injected by JS --></div>
   </section>
 
   <script>
@@ -131,7 +135,7 @@
         tag: "boundary"
       },
       {
-        q: "Water baseline to avoid knocking:",
+        q: "Emergency water for one week:",
         choices: [
           {t:"1 gallon per person per day × 7", correct:true},
           {t:"A couple bottles per person", correct:false},
@@ -182,18 +186,18 @@
       }
     ];
 
-    // Quick tips mapped to tags (shown in results)
+    // Quick tips for results
     const tips = {
       heat: "Warm the person first (hat, socks, layers), then the room, then the structure.",
       amish: "Night window quilts = DIY second pane; drop at dusk, lift with sun.",
       overnight: "Rake coals forward, add 1–2 dense hardwood splits, keep a clean draft.",
       humidity: "Aim ~35–40% RH. Use a kettle/steamer; avoid window condensation.",
       boundary: "Practice the line: “I can’t help you at my door. Please leave.”",
-      water: "Store 1 gal/person/day × 7. It solves half your panic.",
+      water: "Store 1 gal/person/day for 7 days. It prevents panic and begging trips.",
       wood: "Season to <20% moisture. Split/stack off the ground; cover the top only.",
-      vent: "Do a fast 3–5 min air exchange mid-day; then reseal the house.",
+      vent: "Do a fast 3–5 min air exchange at midday; then reseal the house.",
       stove: "Use a stove thermometer; burn in the 'best/optimal' zone to avoid creosote.",
-      zoning: "Choose one warm room and commit; close doors and hang heavy curtains."
+      zoning: "Choose one warm room; close doors and hang heavy curtains."
     };
 
     // ---------- State ----------
@@ -241,7 +245,6 @@
           <div class="txt"><span class="bullet" aria-hidden="true"></span> <span>${c.t}</span></div>
         `;
         w.addEventListener('click', () => {
-          // clear prior selection styles
           choicesEl.querySelectorAll('.mcq-choice').forEach(el=>el.classList.remove('selected'));
           w.classList.add('selected');
           selected = j;
@@ -257,8 +260,6 @@
       const item = qs[i];
       const correctIdx = item.choices.findIndex(c=>c.correct);
       const nodes = [...choicesEl.querySelectorAll('.mcq-choice')];
-
-      // style the answers
       nodes[correctIdx]?.classList.add('correct');
       if (selected !== correctIdx && selected >= 0){
         nodes[selected]?.classList.add('wrong');
@@ -278,10 +279,7 @@
     }
 
     function finish(){
-      document.querySelector('#mc-quiz .mcq-card')?.classList.add('hidden'); // noop if not present
-      // Hide the active card in THIS widget
       document.querySelector('#grit-quiz .mcq-card')?.classList.add('hidden');
-
       resultWrap.classList.remove('hidden');
 
       const { pct, title, badge, line } = tierFor(score, qs.length);
@@ -314,31 +312,20 @@
     nextBtn.addEventListener('click', () => {
       if (selected === -1) return;
       gradeCurrent();
-
-      // small delay to show green/red
       setTimeout(() => {
-        if (i === qs.length - 1) {
-          finish();
-          return;
-        }
-        i++;
-        renderQuestion(i);
+        if (i === qs.length - 1) { finish(); return; }
+        i++; renderQuestion(i);
       }, 260);
     });
 
     prevBtn.addEventListener('click', () => {
       if (i === 0) return;
-      // Go back one question (simple: re-render without changing score; for hardcore back-nav you’d store per-Q answers)
-      i--;
-      renderQuestion(i);
+      i--; renderQuestion(i);
     });
 
     // ---------- Init ----------
     renderQuestion(i);
-    // Make it keyboard friendly
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter' && !nextBtn.disabled){ nextBtn.click(); }
-    });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' && !nextBtn.disabled){ nextBtn.click(); }});
   })();
   </script>
 </section>
