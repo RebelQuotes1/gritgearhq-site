@@ -1,68 +1,124 @@
-<!-- 🗡️ When Violence Is the Answer – Free PDF + Knife Giveaway -->
-<section class="violence-cta" aria-labelledby="violence-cta-title">
+<!-- Top Header: Split CTAs (Quiz + Violence PDF) -->
+<section class="hero-split" aria-label="Featured actions">
   <style>
-    .violence-cta{
+    .hero-split{
       --accent:#ffa500; --ink:#eee; --muted:#bbb; --bg:#111;
-      font-family: 'Orbitron', system-ui, Segoe UI, Roboto, Arial, sans-serif;
-      background:var(--bg); border:2px solid var(--accent); border-radius:12px;
-      box-shadow:0 0 20px #000; padding:28px; margin:40px auto; max-width:900px; text-align:center;
+      font-family:'Orbitron', system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      padding:18px clamp(14px, 3vw, 24px);
+      border-bottom:2px solid var(--accent);
     }
-    .violence-cta h2{color:var(--accent); font-size:clamp(1.4rem,2.4vw,2rem); margin:0 0 12px}
-    .violence-cta p{color:var(--muted); font-size:1.05rem; margin:10px auto; max-width:760px}
-    .violence-cta .knife-img{
-      width:220px; border-radius:10px; border:3px solid var(--accent); box-shadow:0 0 10px #000;
-      display:block; margin:16px auto 6px; background:#000;
+    .hero-split .grid{
+      display:grid;
+      gap:16px;
+      grid-template-columns: 1fr;
+      max-width:1200px; margin:0 auto;
     }
-    .violence-cta .btn{
-      display:inline-block; margin:10px 8px 0; padding:12px 20px; border-radius:8px;
+    @media (min-width: 880px){
+      .hero-split .grid{ grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Card base */
+    .cta-card{
+      background:#0b0b0b;
+      border:2px solid var(--accent);
+      border-radius:12px;
+      box-shadow:0 0 20px #000;
+      padding:20px;
+    }
+    .cta-card h2{
+      color:var(--accent);
+      font-size:clamp(1.1rem, 2.2vw, 1.6rem);
+      margin:0 0 8px;
+    }
+    .cta-card p{
+      color:var(--muted);
+      font-size:1rem; line-height:1.5;
+      margin:8px 0 14px;
+    }
+    .cta-card .btn{
+      display:inline-block; margin:8px 8px 0 0; padding:12px 18px; border-radius:8px;
       font-weight:900; letter-spacing:.2px; text-decoration:none; cursor:pointer;
       transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
       box-shadow:0 0 10px var(--accent);
     }
-    .violence-cta .btn-primary{background:var(--accent); color:#111}
-    .violence-cta .btn-primary:hover{background:#ff7a00; color:#111; transform:translateY(-1px)}
-    .violence-cta .btn-ghost{background:transparent; color:#00ffff; border:1px dashed #00ffff}
-    .violence-cta .btn-ghost:hover{background:#072a2a; color:#cfffff; transform:translateY(-1px)}
-    .violence-cta .ok{color:#00ff00}
-    .violence-cta .disclosure{
-      color:#9aa3ad; font-size:.9rem; margin-top:12px
-    }
+    .cta-card .btn-primary{ background:var(--accent); color:#111; }
+    .cta-card .btn-primary:hover{ background:#ff7a00; transform:translateY(-1px); }
+    .cta-card .btn-ghost{ background:transparent; color:#00ffff; border:1px dashed #00ffff; }
+    .cta-card .btn-ghost:hover{ background:#072a2a; color:#cfffff; transform:translateY(-1px); }
+
+    /* Small pulse for primary */
     @keyframes pulseGlow {0%{box-shadow:0 0 10px var(--accent)}50%{box-shadow:0 0 20px #ff8c00}100%{box-shadow:0 0 10px var(--accent)}}
-    .violence-cta .pulse{animation:pulseGlow 3s infinite}
+    .pulse{ animation:pulseGlow 3s infinite; }
+
+    /* Knife image */
+    .knife-img{
+      width:220px; max-width:100%;
+      border-radius:10px; border:3px solid var(--accent);
+      box-shadow:0 0 10px #000; display:block; margin:12px 0 6px; background:#000;
+    }
+
+    /* Tiny notes */
+    .ok{ color:#00ff00 }
+    .disclosure{ color:#9aa3ad; font-size:.9rem; margin-top:10px }
   </style>
 
-  <h2 id="violence-cta-title">⚔️ When Violence Is the Answer: Free PDF + Knife Giveaway</h2>
+  <div class="grid">
+    <!-- LEFT: Grit Quiz (clickbait but nice) -->
+    <article class="cta-card" aria-labelledby="grit-quiz-title">
+      <h2 id="grit-quiz-title">🧪 Can You Survive the Grind?</h2>
+      <p>10 rapid-fire questions. Instant grit score + the first thing to fix. Most people guess wrong—see where you actually land.</p>
+      <a class="btn btn-primary pulse"
+         href="/grit-quiz.html#grit-quiz"
+         aria-label="Start the Grit Quiz now">
+        🚀 Start the Quiz
+      </a>
+      <a class="btn btn-ghost"
+         href="/grit-quiz.html#how-it-works"
+         aria-label="Learn how the Grit Quiz works">
+        ℹ️ How it Works
+      </a>
+    </article>
 
-  <p>Grab our blunt, no-nonsense mini-guide <strong>“When Violence Is the Answer”</strong>. Instant PDF—<em>no email needed</em>. And if you like steel, check the giveaway knife below.</p>
+    <!-- RIGHT: Violence PDF + Knife Giveaway (your existing content, adapted) -->
+    <article class="cta-card violence-cta" aria-labelledby="violence-cta-title">
+      <h2 id="violence-cta-title">⚔️ When Violence Is the Answer: Free PDF + Knife Giveaway</h2>
 
-  <!-- Knife (affiliate) -->
-  <a href="https://amzn.to/44N0RMk?tag=gritgearhq-20"
-     target="_blank" rel="nofollow sponsored noopener"
-     aria-label="View the knife on Amazon (affiliate link)">
-    <img src="images/case.jpg" alt="Case folding knife—classic EDC pocket knife"
-         class="knife-img" loading="lazy" decoding="async">
-  </a>
+      <p>Grab our blunt, no-nonsense mini-guide <strong>“When Violence Is the Answer”</strong>. Instant PDF—<em>no email needed</em>. And if you like steel, check the giveaway knife below.</p>
 
-  <p class="ok">💥 Or <a href="https://amzn.to/44N0RMk?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">buy the knife now</a> if you’re impatient.</p>
+      <!-- Knife (affiliate) -->
+      <a href="https://amzn.to/44N0RMk?tag=gritgearhq-20"
+         target="_blank" rel="nofollow sponsored noopener"
+         aria-label="View the knife on Amazon (affiliate link)">
+        <img src="images/case.jpg" alt="Case folding knife—classic EDC pocket knife"
+             class="knife-img" loading="lazy" decoding="async">
+      </a>
 
-  <!-- Buttons -->
-  <div style="margin-top:14px">
-    <a class="btn btn-primary pulse"
-       href="https://gritgearhq.com/When_Violence_Is_the_Answer_FixedCentered.pdf"
-       download
-       data-gg-event="download_pdf"
-       aria-label="Download the free PDF When Violence Is the Answer">
-      📥 Download the Free PDF
-    </a>
+      <p class="ok">💥 Or <a href="https://amzn.to/44N0RMk?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">buy the knife now</a> if you’re impatient.</p>
 
-    <a class="btn btn-ghost"
-       href="https://amzn.to/44N0RMk?tag=gritgearhq-20"
-       target="_blank" rel="nofollow sponsored noopener"
-       data-gg-event="knife_affiliate_click"
-       aria-label="Buy the knife on Amazon (affiliate)">
-      🗡️ See Knife on Amazon
-    </a>
+      <!-- Buttons -->
+      <div style="margin-top:6px">
+        <a class="btn btn-primary pulse"
+           href="https://gritgearhq.com/When_Violence_Is_the_Answer_FixedCentered.pdf"
+           download
+           data-gg-event="download_pdf"
+           aria-label="Download the free PDF When Violence Is the Answer">
+          📥 Download the Free PDF
+        </a>
+
+        <a class="btn btn-ghost"
+           href="https://amzn.to/44N0RMk?tag=gritgearhq-20"
+           target="_blank" rel="nofollow sponsored noopener"
+           data-gg-event="knife_affiliate_click"
+           aria-label="Buy the knife on Amazon (affiliate)">
+          🗡️ See Knife on Amazon
+        </a>
+      </div>
+
+      <p class="disclosure">As an Amazon Associate, we earn from qualifying purchases.</p>
+    </article>
   </div>
+</section>
 
   <p class="disclosure">Disclosure: As an Amazon Associate, we may earn from qualifying purchases at no extra cost to you.</p>
 
