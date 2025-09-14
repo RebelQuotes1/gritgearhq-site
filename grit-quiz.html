@@ -1,0 +1,344 @@
+<!-- =======================
+     GRIT QUIZ (Self-contained)
+     ======================= -->
+<section id="grit-quiz" class="mcq-wrap" tabindex="-1" aria-labelledby="grit-quiz-title">
+  <style>
+    .mcq-wrap{--bg:#0b0f12;--panel:#121821;--line:#1f2a35;--ink:#e8edf2;--muted:#9aa3ad;--accent:#ff7a00}
+    .mcq-wrap{background:linear-gradient(180deg,#0f141a,#0b0f12);border:1px solid var(--line);border-radius:16px;box-shadow:0 0 0 1px rgba(255,122,0,.12),0 16px 46px rgba(0,0,0,.6);padding:clamp(18px,3.2vw,28px);color:var(--ink);max-width:980px;margin:28px auto}
+    .mcq-head h2{margin:0 0 8px;font:800 clamp(20px,3.2vw,28px)/1.2 system-ui,Segoe UI,Inter,sans-serif}
+    .mcq-sub{color:#c9d2da;margin:0 0 14px}
+    .mcq-progress{height:10px;background:#0f141a;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+    .mcq-progress .bar{height:100%;width:0;background:linear-gradient(180deg,#ff7a00,#e06100)}
+    .mcq-meta{display:flex;gap:14px;align-items:center;color:#b6c0ca;font-size:.95rem;margin-top:8px}
+<a id="grit-quiz"></a>
+
+    .mcq-card{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    .mcq-q{padding:16px 16px 8px;border-bottom:1px solid var(--line);font-weight:700}
+    .mcq-choices{display:grid;gap:10px;padding:14px}
+    .mcq-choice{position:relative;border:1px solid #273446;background:#0f141a;border-radius:10px;padding:12px 14px;cursor:pointer;transition:transform .08s ease,box-shadow .08s ease}
+    .mcq-choice:focus-within{outline:2px solid #2a3b50}
+    .mcq-choice input{position:absolute;opacity:0;pointer-events:none}
+    .mcq-choice .txt{display:flex;gap:10px;align-items:flex-start}
+    .mcq-choice .bullet{width:20px;height:20px;border-radius:50%;border:2px solid #314357;margin-top:1px;flex-shrink:0}
+    .mcq-choice.selected .bullet{background:linear-gradient(180deg,#ff7a00,#e06100);border-color:#e06100}
+    .mcq-choice.correct{border-color:#1f6d3f;background:#0e1a14}
+    .mcq-choice.wrong{border-color:#7a2c2c;background:#1a0f0f}
+
+    .mcq-actions{display:flex;justify-content:space-between;gap:10px;padding:12px;border-top:1px solid var(--line);background:#0f141a}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:900;letter-spacing:.3px;border:0;cursor:pointer}
+    .btn:disabled{opacity:.55;cursor:not-allowed}
+    .btn-primary{background:linear-gradient(180deg,#ff7a00,#e06100);color:#101318;box-shadow:0 8px 30px rgba(255,122,0,.28)}
+    .btn-ghost{background:#1a232e;color:#e6edf4;border:1px solid #2a3543}
+
+    .mcq-result{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+    .mcq-result h3{margin:0 0 8px;font-size:1.25rem}
+    .score-big{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+    .tier-line{color:#c9d2da;margin-bottom:10px}
+    .fixes{margin:12px 0 6px;padding-left:18px}
+    .fixes li{color:#d9e0e7;margin:.25rem 0}
+    .mcq-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .mcq-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:900;letter-spacing:.3px;background:linear-gradient(180deg,#ff7a00,#e06100);color:#101318;text-decoration:none}
+    .mcq-cta.ghost{background:#1a232e;color:#e6edf4;border:1px solid #2a3543}
+    .hidden{display:none}
+
+    /* a11y helpers */
+    .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  </style>
+
+  <header class="mcq-head">
+    <h2 id="grit-quiz-title">Grit Check: Are You Ant or Grasshopper?</h2>
+    <p class="mcq-sub">10 quick questions. Score live. Tailored next steps at the end.</p>
+    <div class="mcq-progress" aria-hidden="true"><div class="bar" id="mcq-bar"></div></div>
+    <div class="mcq-meta"><span id="mcq-score">Score: 0</span> · <span id="mcq-count">Q 1/10</span></div>
+  </header>
+
+  <!-- Question card -->
+  <div class="mcq-card" aria-live="polite">
+    <div class="mcq-q" id="mcq-qtext">Question text…</div>
+    <div class="mcq-choices" id="mcq-choices"></div>
+    <div class="mcq-actions">
+      <button class="btn btn-ghost" id="mcq-prev" type="button" disabled>← Back</button>
+      <button class="btn btn-primary" id="mcq-next" type="button" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <section class="mcq-result hidden" id="mcq-result" tabindex="-1" aria-labelledby="mcq-result-title">
+    <h3 id="mcq-result-title">Your Results</h3>
+    <div class="score-big"><span id="mcq-final">0/10 (0%)</span></div>
+    <div class="tier-line" id="mcq-tier">🦗 Grasshopper Energy — Start with water, food, and one warm room.</div>
+
+    <h4 style="margin:.6rem 0 .3rem">Quick fixes for what you missed</h4>
+    <ul class="fixes" id="mcq-fixes"></ul>
+
+    <div class="mcq-ctas">
+      <!-- tailored CTAs get injected here -->
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    // ---------- Quiz Data ----------
+    const qs = [
+      {
+        q: "Cold house, limited fuel. What’s your FIRST move?",
+        choices: [
+          {t:"Crank heat for the whole house", correct:false},
+          {t:"Warm the PERSON: hat, socks, layers", correct:true},
+          {t:"Open windows to 'air it out' for an hour", correct:false},
+          {t:"Heat the biggest room because it feels right", correct:false}
+        ],
+        tag: "heat"
+      },
+      {
+        q: "Window quilts do what best?",
+        choices: [
+          {t:"Look cozy but don’t change much", correct:false},
+          {t:"Trap a still-air layer and cut heat loss", correct:true},
+          {t:"Block drafts by adding a third pane of glass", correct:false},
+          {t:"Only help in summer", correct:false}
+        ],
+        tag: "amish"
+      },
+      {
+        q: "Overnight wood burn done right:",
+        choices: [
+          {t:"Close everything down so it smolders all night", correct:false},
+          {t:"Rake coals forward, add 1–2 dense splits, set a CLEAN draft", correct:true},
+          {t:"Pile wet wood on so it lasts longer", correct:false},
+          {t:"Leave the door cracked", correct:false}
+        ],
+        tag: "overnight"
+      },
+      {
+        q: "Best winter humidity target for comfort (no window drip)?",
+        choices: [
+          {t:"10–20%", correct:false},
+          {t:"35–40%", correct:true},
+          {t:"60–70%", correct:false},
+          {t:"Whatever feels right", correct:false}
+        ],
+        tag: "humidity"
+      },
+      {
+        q: "Boundary line at the door (calm, final):",
+        choices: [
+          {t:"“I’m out, go away!”", correct:false},
+          {t:"“I can’t help you at my door. Please leave.”", correct:true},
+          {t:"“Maybe come in for a minute and we’ll talk.”", correct:false},
+          {t:"Silence and lights off only", correct:false}
+        ],
+        tag: "boundary"
+      },
+      {
+        q: "Water baseline to avoid knocking:",
+        choices: [
+          {t:"1 gallon per person per day × 7", correct:true},
+          {t:"A couple bottles per person", correct:false},
+          {t:"Only if the tap stops working", correct:false},
+          {t:"Water isn’t a priority in winter", correct:false}
+        ],
+        tag: "water"
+      },
+      {
+        q: "Firewood that burns hot and clean is usually…",
+        choices: [
+          {t:"Under 20% moisture (properly seasoned)", correct:true},
+          {t:"Fresh-cut and heavy", correct:false},
+          {t:"Painted for protection", correct:false},
+          {t:"Stored in a sealed plastic bag", correct:false}
+        ],
+        tag: "wood"
+      },
+      {
+        q: "Midday air-out means:",
+        choices: [
+          {t:"Open all windows for 30–60 minutes", correct:false},
+          {t:"A fast 3–5 minute cross-breeze, then reseal", correct:true},
+          {t:"Run fans to push warm air out", correct:false},
+          {t:"Skip it—stale air is warm air", correct:false}
+        ],
+        tag: "vent"
+      },
+      {
+        q: "Stove thermometer goal during normal burns:",
+        choices: [
+          {t:"Stay in the labeled 'Best/Optimal' zone", correct:true},
+          {t:"Always be as cool as possible", correct:false},
+          {t:"Always be pegged at max", correct:false},
+          {t:"Doesn’t matter", correct:false}
+        ],
+        tag: "stove"
+      },
+      {
+        q: "Smart way to heat a home on limited fuel:",
+        choices: [
+          {t:"Keep every room warm for comfort", correct:false},
+          {t:"Pick ONE warm room; shut other doors", correct:true},
+          {t:"Heat hallways first—they connect everything", correct:false},
+          {t:"Open-plan means heat everywhere", correct:false}
+        ],
+        tag: "zoning"
+      }
+    ];
+
+    // Quick tips mapped to tags (shown in results)
+    const tips = {
+      heat: "Warm the person first (hat, socks, layers), then the room, then the structure.",
+      amish: "Night window quilts = DIY second pane; drop at dusk, lift with sun.",
+      overnight: "Rake coals forward, add 1–2 dense hardwood splits, keep a clean draft.",
+      humidity: "Aim ~35–40% RH. Use a kettle/steamer; avoid window condensation.",
+      boundary: "Practice the line: “I can’t help you at my door. Please leave.”",
+      water: "Store 1 gal/person/day × 7. It solves half your panic.",
+      wood: "Season to <20% moisture. Split/stack off the ground; cover the top only.",
+      vent: "Do a fast 3–5 min air exchange mid-day; then reseal the house.",
+      stove: "Use a stove thermometer; burn in the 'best/optimal' zone to avoid creosote.",
+      zoning: "Choose one warm room and commit; close doors and hang heavy curtains."
+    };
+
+    // ---------- State ----------
+    let i = 0;
+    let score = 0;
+    let selected = -1;
+    const wrongTags = [];
+
+    // ---------- Els ----------
+    const bar = document.getElementById('mcq-bar');
+    const scoreEl = document.getElementById('mcq-score');
+    const countEl = document.getElementById('mcq-count');
+    const qEl = document.getElementById('mcq-qtext');
+    const choicesEl = document.getElementById('mcq-choices');
+    const prevBtn = document.getElementById('mcq-prev');
+    const nextBtn = document.getElementById('mcq-next');
+
+    const resultWrap = document.getElementById('mcq-result');
+    const finalEl = document.getElementById('mcq-final');
+    const tierEl = document.getElementById('mcq-tier');
+    const fixList = document.getElementById('mcq-fixes');
+
+    // ---------- Helpers ----------
+    function updateMeta(){
+      const pct = Math.round((i/qs.length)*100);
+      bar.style.width = pct + '%';
+      scoreEl.textContent = `Score: ${score}`;
+      countEl.textContent = `Q ${Math.min(i+1, qs.length)}/${qs.length}`;
+      prevBtn.disabled = (i === 0);
+      nextBtn.disabled = (selected === -1);
+      nextBtn.textContent = (i === qs.length - 1) ? 'Finish →' : 'Next →';
+    }
+
+    function renderQuestion(idx){
+      const item = qs[idx];
+      qEl.textContent = item.q;
+      choicesEl.innerHTML = '';
+      selected = -1;
+
+      item.choices.forEach((c, j) => {
+        const w = document.createElement('label');
+        w.className = 'mcq-choice';
+        w.innerHTML = `
+          <input type="radio" name="mcq" value="${j}" aria-label="${c.t}">
+          <div class="txt"><span class="bullet" aria-hidden="true"></span> <span>${c.t}</span></div>
+        `;
+        w.addEventListener('click', () => {
+          // clear prior selection styles
+          choicesEl.querySelectorAll('.mcq-choice').forEach(el=>el.classList.remove('selected'));
+          w.classList.add('selected');
+          selected = j;
+          nextBtn.disabled = false;
+        }, {passive:true});
+        choicesEl.appendChild(w);
+      });
+
+      updateMeta();
+    }
+
+    function gradeCurrent(){
+      const item = qs[i];
+      const correctIdx = item.choices.findIndex(c=>c.correct);
+      const nodes = [...choicesEl.querySelectorAll('.mcq-choice')];
+
+      // style the answers
+      nodes[correctIdx]?.classList.add('correct');
+      if (selected !== correctIdx && selected >= 0){
+        nodes[selected]?.classList.add('wrong');
+        wrongTags.push(item.tag);
+      } else {
+        score++;
+      }
+    }
+
+    // ---------- Results ----------
+    function tierFor(s, total){
+      const pct = Math.round((s/total)*100);
+      if (s <= 3) return { pct, title:'Grasshopper Energy', badge:'🦗', line:'Start with water, food, and one warm room.' };
+      if (s <= 6) return { pct, title:'Apprentice Ant',     badge:'🔧', line:'Good start—shore up the misses.' };
+      if (s <= 8) return { pct, title:'Ant',                badge:'🐜', line:'Solid baseline. Keep practicing.' };
+      return            { pct, title:'Ant with a Plan',     badge:'🛠️', line:'Top tier. Help someone else prep early.' };
+    }
+
+    function finish(){
+      document.querySelector('#mc-quiz .mcq-card')?.classList.add('hidden'); // noop if not present
+      // Hide the active card in THIS widget
+      document.querySelector('#grit-quiz .mcq-card')?.classList.add('hidden');
+
+      resultWrap.classList.remove('hidden');
+
+      const { pct, title, badge, line } = tierFor(score, qs.length);
+      finalEl.textContent = `${score}/${qs.length} (${pct}%)`;
+      tierEl.innerHTML = `${badge} <strong>${title}</strong> — ${line}`;
+
+      const uniq = [...new Set(wrongTags)];
+      fixList.innerHTML = (uniq.length ? uniq : ['heat','water','boundary'])
+        .slice(0,3)
+        .map(tag=>`<li><strong>${tag[0].toUpperCase()+tag.slice(1)}:</strong> ${tips[tag]}</li>`)
+        .join('');
+
+      const ctas = document.querySelector('#grit-quiz .mcq-ctas');
+      const needHeat = uniq.some(t=>['heat','amish','humidity','stove','wood','overnight','zoning'].includes(t));
+      const needWater = uniq.includes('water');
+      const needBoundary = uniq.includes('boundary');
+
+      ctas.innerHTML = `
+        ${needHeat ? `<a class="mcq-cta" href="amish-winter-heat.html#amish-winter-heat">🔥 Warmth That Works</a>` : ``}
+        ${needWater ? `<a class="mcq-cta" href="top-5-home-water-filters.html#filters">💧 Dial in Water & Filters</a>` : ``}
+        ${needBoundary ? `<a class="mcq-cta ghost" href="ant-grasshopper-locked-door.html#fable-start">🐜 Read the Door Policy Fable</a>` : ``}
+        ${(!needHeat && !needWater && !needBoundary) ? `<a class="mcq-cta" href="best-survival-gear-amazon-2025.html#best-survival-gear">🎒 Level Up Your Kit</a>` : ``}
+      `;
+
+      resultWrap.scrollIntoView({ behavior:'smooth', block:'start' });
+      resultWrap.focus();
+    }
+
+    // ---------- Nav ----------
+    nextBtn.addEventListener('click', () => {
+      if (selected === -1) return;
+      gradeCurrent();
+
+      // small delay to show green/red
+      setTimeout(() => {
+        if (i === qs.length - 1) {
+          finish();
+          return;
+        }
+        i++;
+        renderQuestion(i);
+      }, 260);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (i === 0) return;
+      // Go back one question (simple: re-render without changing score; for hardcore back-nav you’d store per-Q answers)
+      i--;
+      renderQuestion(i);
+    });
+
+    // ---------- Init ----------
+    renderQuestion(i);
+    // Make it keyboard friendly
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' && !nextBtn.disabled){ nextBtn.click(); }
+    });
+  })();
+  </script>
+</section>
