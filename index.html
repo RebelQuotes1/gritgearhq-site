@@ -137,7 +137,7 @@
     })();
   </script>
 
-<!-- ===== Featured Product + 10% TPUSA Promo ===== -->
+<!-- ==== Featured Product + 10% TPUSA (Self-healing links & images) ==== -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 <section class="tpusa-feature" aria-label="Turning Point shirt with 10% donation">
   <style>
@@ -150,11 +150,14 @@
     .tpusa-grid{max-width:1200px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1fr}
     @media(min-width:960px){.tpusa-grid{grid-template-columns:1.1fr 1fr;align-items:center}}
 
-    /* Product gallery */
     .gallery{display:grid;gap:12px}
-    .gallery img{width:100%;border-radius:14px;border:2px solid #222;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+    .imgbox{position:relative;border-radius:14px;border:2px solid #222;overflow:hidden;
+            background:linear-gradient(145deg,#0d0d0d,#151515);min-height:260px;
+            box-shadow:0 6px 20px rgba(0,0,0,.4)}
+    .imgbox img{width:100%;height:auto;display:block}
+    .imgbox .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      color:#bbb;font-weight:700;letter-spacing:.03em}
 
-    /* Promo content */
     .promo h2{font-size:clamp(1.8rem,3vw,2.3rem);color:var(--accent);margin:0 0 14px;text-shadow:0 2px 8px #000}
     .promo p{line-height:1.65;margin-bottom:18px}
     .badge{display:inline-block;background:var(--danger);color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
@@ -162,7 +165,6 @@
     .cta:active{transform:translateY(1px)}
     .fine{margin-top:12px;color:var(--muted);font-size:.85rem}
 
-    /* Reviews */
     .reviews{margin-top:28px;display:grid;gap:16px}
     .rev{background:#0e0e0e;border:1px solid #202020;border-radius:14px;padding:12px 14px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
     .rev .name{font-weight:700;margin-bottom:4px}
@@ -171,11 +173,17 @@
   </style>
 
   <div class="tpusa-grid">
-    <!-- Product gallery -->
+    <!-- Product gallery (put your images in the SAME folder as this page or update paths) -->
     <div class="gallery">
-      <img src="front2.jpg.png" alt="Front of Turning Point shirt">
-      <img src="back2.jpg.png" alt="Back of Turning Point shirt">
-      <img src="mens-fitted-t-shirt-white-back-68c761e84cf1d.png" alt="Lifestyle view of Turning Point shirt">
+      <div class="imgbox">
+        <img src="front2.jpg.png" alt="Front of Turning Point shirt" onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Front image coming soon</div>')">
+      </div>
+      <div class="imgbox">
+        <img src="back2.jpg.png" alt="Back of Turning Point shirt" onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Back image coming soon</div>')">
+      </div>
+      <div class="imgbox">
+        <img src="mens-fitted-t-shirt-white-back-68c761e84cf1d.png" alt="Lifestyle view of Turning Point shirt" onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Lifestyle image coming soon</div>')">
+      </div>
     </div>
 
     <!-- Promo text -->
@@ -186,9 +194,10 @@
         This shirt isn’t just bold style — it’s a statement.  
         <strong>10% of profits go directly to Turning Point USA</strong>, fueling the fight for free speech, faith, and American values.
       </p>
-      <a class="cta" href="/store.html?utm_source=gritgearhq&utm_medium=feature&utm_campaign=tpusa_10">
-        Buy Now → Support TPUSA
-      </a>
+
+      <!-- CTA: auto-resolves to a real product URL (never 404s) -->
+      <a class="cta" id="tpusa-cta" href="/" rel="nofollow noopener">Buy Now → Support TPUSA</a>
+
       <div class="fine">Not affiliated with TPUSA. We post monthly donation receipts for transparency.</div>
 
       <!-- Reviews -->
@@ -212,6 +221,71 @@
     </div>
   </div>
 </section>
+
+<script>
+(async function(){
+  // 1) Prefer a hard-coded data attribute if you add it later:
+  // <section class="tpusa-feature" data-product-url="https://YOUR-EXACT-PRODUCT"></section>
+  const root = document.querySelector('.tpusa-feature');
+  let target = root?.dataset?.productUrl || null;
+
+  // 2) If none, try to harvest an existing product link already on the page.
+  if(!target){
+    const selectors = [
+      '[data-product-link]',
+      '.product-card a[href*="/products/"]',
+      'a.product-link[href*="/products/"]',
+      '.buy-button a[href]',
+      'a[href*="etsy.com/listing"]',
+      'a[href*="/product/"]',
+      'a[href*="/shop/"]'
+    ];
+    for(const s of selectors){
+      const a = document.querySelector(s);
+      if(a && a.href){ target = a.href; break; }
+    }
+  }
+
+  // 3) If still none, probe common paths on your domain and take the first that exists.
+  // Edit/extend this list anytime.
+  const probes = [
+    '/products/turning-point-tee',
+    '/shop/turning-point-tee',
+    '/product/turning-point-tee',
+    '/store/turning-point-tee',
+    '/store.html',
+    '/shop.html'
+  ];
+  async function first200(urls){
+    for(const u of urls){
+      try{
+        const res = await fetch(u, {method:'HEAD'});
+        if(res.ok) return u;
+      }catch(e){}
+    }
+    return null;
+  }
+  if(!target){
+    const ok = await first200(probes);
+    if(ok) target = ok;
+  }
+
+  // 4) Last resort: homepage (prevents 404).
+  if(!target) target = '/';
+
+  // Add UTM and set the CTA.
+  try{
+    const url = new URL(target, location.origin);
+    url.searchParams.set('utm_source','gritgearhq');
+    url.searchParams.set('utm_medium','feature');
+    url.searchParams.set('utm_campaign','tpusa_10');
+    document.getElementById('tpusa-cta').href = url.toString();
+  }catch(e){
+    document.getElementById('tpusa-cta').href = target;
+  }
+})();
+</script>
+
 
 
   <!-- Ads (as you had it) -->
