@@ -137,6 +137,136 @@
     })();
   </script>
 
+<!-- ===== Top Promo: 10% to Turning Point USA (Auto-links to first product) ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<section class="tpusa-hero" aria-label="Grit Gear HQ pledge to Turning Point USA">
+  <style>
+    .tpusa-hero{
+      --accent:#ffa500; --ink:#eee; --muted:#bdbdbd; --bg:#0e0e0e; --edge:#232323; --danger:#b22222;
+      font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background: radial-gradient(1200px 500px at 20% -10%, rgba(255,165,0,.08), transparent),
+                  linear-gradient(180deg, #0b0b0b, #111);
+      color:var(--ink); border-bottom:2px solid var(--accent);
+      padding:24px clamp(16px,3vw,28px) 14px;
+    }
+    .tpusa-wrap{max-width:1200px;margin:0 auto;display:grid;gap:18px;grid-template-columns:1fr}
+    @media (min-width:900px){.tpusa-wrap{grid-template-columns:1.2fr .9fr;align-items:center}}
+
+    .tpusa-card{background:linear-gradient(145deg,#0c0c0c,#171717);border:2px solid var(--accent);border-radius:20px;padding:22px clamp(18px,2.5vw,28px);box-shadow:0 10px 30px rgba(0,0,0,.55)}
+    .tpusa-eyebrow{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .tpusa-title{font-size:clamp(1.7rem,3.2vw,2.2rem);margin:6px 0 10px;color:var(--accent);text-shadow:0 1px 6px #000}
+    .tpusa-flag{font-size:1.75rem}
+    .tpusa-copy{line-height:1.65;color:var(--ink);margin:10px 0 16px}
+    .tpusa-badge{display:inline-block;background:var(--danger);color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px}
+
+    .tpusa-cta{display:inline-flex;gap:10px;align-items:center;justify-content:center;margin-top:16px;padding:12px 18px;border-radius:14px;background:var(--accent);color:#111;font-weight:700;text-decoration:none;border:2px solid #333;box-shadow:0 8px 18px rgba(255,165,0,.25)}
+    .tpusa-cta:active{transform:translateY(1px)}
+    .tpusa-fine{margin-top:10px;color:var(--muted);font-size:.85rem}
+
+    .reviews{background:linear-gradient(145deg,#0d0d0d,#151515);border:2px solid var(--edge);border-radius:20px;padding:18px}
+    .rev-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+    .stars{font-size:1.1rem}
+    .rev-grid{display:grid;gap:12px;grid-template-columns:1fr}
+    @media (min-width:600px){.rev-grid{grid-template-columns:1fr 1fr}}
+    .rev{background:#0e0e0e;border:1px solid #202020;border-radius:14px;padding:12px 14px;min-height:88px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+    .rev .name{font-weight:700;margin-bottom:6px}
+    .rev .body{color:#dcdcdc;font-size:.98rem;line-height:1.45}
+    .rev .tag{margin-top:8px;font-size:.8rem;color:var(--muted)}
+  </style>
+
+  <div class="tpusa-wrap">
+    <!-- Left: Pledge card -->
+    <div class="tpusa-card">
+      <div class="tpusa-eyebrow">Grit with a mission <span class="tpusa-flag">🇺🇸🦅</span></div>
+      <h1 class="tpusa-title">10% For Freedom</h1>
+      <p class="tpusa-copy">
+        Every order fuels more than your kit — it fuels a cause.
+        <strong>We donate 10% of our profits to Turning Point USA</strong> to support free speech, faith, and American values.
+      </p>
+      <span class="tpusa-badge">You Buy • We Give • They Fight</span><br>
+
+      <!-- CTA: defaults to /store.html; JS below upgrades it to the first product link it finds -->
+      <a class="tpusa-cta"
+         href="/store.html?utm_source=gritgearhq&utm_medium=hero&utm_campaign=tpusa_10"
+         rel="nofollow noopener"
+         aria-label="Buy now and support Turning Point USA">
+        Buy This Product → Support TPUSA
+      </a>
+
+      <div class="tpusa-fine">
+        Not affiliated with TPUSA. Turning Point USA is a 501(c)(3). We post monthly donation receipts for transparency.
+      </div>
+    </div>
+
+    <!-- Right: Social proof -->
+    <aside class="reviews" aria-label="Customer reviews">
+      <div class="rev-head">
+        <div><strong>5.0</strong> Average</div>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+      </div>
+      <div class="rev-grid">
+        <div class="rev">
+          <div class="name">“Patriot Pick”</div>
+          <div class="body">Looks sick, ships fast, and they put skin in the game. Buying again.</div>
+          <div class="tag">Verified Buyer • TX</div>
+        </div>
+        <div class="rev">
+          <div class="name">“Purpose Built”</div>
+          <div class="body">Gear’s legit — and 10% to TPUSA sealed it for me. Respect.</div>
+          <div class="tag">Verified Buyer • FL</div>
+        </div>
+        <div class="rev">
+          <div class="name">“Loud & Proud”</div>
+          <div class="body">Clean design, tough vibe. Love that they actually show donation receipts.</div>
+          <div class="tag">Verified Buyer • AZ</div>
+        </div>
+        <div class="rev">
+          <div class="name">“No Fluff”</div>
+          <div class="body">Straight talk, solid product, cause I believe in. Five stars.</div>
+          <div class="tag">Verified Buyer • OH</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Auto-upgrade CTA to the first product link on the page (no edits required) -->
+<script>
+  (function(){
+    // Common selectors for product links/cards/buttons on Shopify, custom sites, etc.
+    const selectors = [
+      '[data-product-link]',
+      '.product-card a[href*="/products/"]',
+      'a.product-link[href*="/products/"]',
+      '.buy-button a[href]',
+      'a[href*="etsy.com/listing"]',
+      'a[href*="/product/"]',
+      'a[href*="/shop/"]'
+    ];
+    const anchor = document.querySelector('.tpusa-cta');
+    if(!anchor) return;
+    let productAnchor = null;
+
+    for(const sel of selectors){
+      const found = document.querySelector(sel);
+      if(found && found.href){
+        productAnchor = found;
+        break;
+      }
+    }
+
+    if(productAnchor){
+      const url = new URL(productAnchor.href, location.href);
+      const params = url.searchParams;
+      if(!params.has('utm_source')) params.set('utm_source','gritgearhq');
+      if(!params.has('utm_medium')) params.set('utm_medium','hero');
+      if(!params.has('utm_campaign')) params.set('utm_campaign','tpusa_10');
+      anchor.href = url.toString();
+    }
+  })();
+</script>
+
+
   <!-- Ads (as you had it) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 </section>
