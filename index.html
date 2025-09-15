@@ -137,34 +137,25 @@
     })();
   </script>
 
-<!-- ==== Featured Product + 10% TPUSA (Self-healing links & images) ==== -->
+<!-- ==== Featured Product + 10% TPUSA (Direct link wired) ==== -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-<section class="tpusa-feature" aria-label="Turning Point shirt with 10% donation">
+<section class="tpusa-feature" aria-label="Turning Point shirt with 10% donation" data-product-url="https://www.printful.com/product-template/93293372/3f94a172ff28d6a8c36d7170d4b70e56">
   <style>
-    .tpusa-feature{
-      --accent:#ffa500; --ink:#eee; --muted:#bdbdbd; --bg:#0e0e0e; --danger:#b22222;
-      font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      background:linear-gradient(180deg,#0b0b0b,#111);
-      color:var(--ink); padding:40px 20px; border-bottom:2px solid var(--accent);
-    }
+    .tpusa-feature{--accent:#ffa500;--ink:#eee;--muted:#bdbdbd;--bg:#0e0e0e;--danger:#b22222;
+      font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#0b0b0b,#111);
+      color:var(--ink);padding:40px 20px;border-bottom:2px solid var(--accent)}
     .tpusa-grid{max-width:1200px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1fr}
     @media(min-width:960px){.tpusa-grid{grid-template-columns:1.1fr 1fr;align-items:center}}
-
     .gallery{display:grid;gap:12px}
-    .imgbox{position:relative;border-radius:14px;border:2px solid #222;overflow:hidden;
-            background:linear-gradient(145deg,#0d0d0d,#151515);min-height:260px;
-            box-shadow:0 6px 20px rgba(0,0,0,.4)}
+    .imgbox{position:relative;border-radius:14px;border:2px solid #222;overflow:hidden;background:linear-gradient(145deg,#0d0d0d,#151515);min-height:260px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
     .imgbox img{width:100%;height:auto;display:block}
-    .imgbox .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-      color:#bbb;font-weight:700;letter-spacing:.03em}
-
+    .imgbox .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#bbb;font-weight:700;letter-spacing:.03em}
     .promo h2{font-size:clamp(1.8rem,3vw,2.3rem);color:var(--accent);margin:0 0 14px;text-shadow:0 2px 8px #000}
     .promo p{line-height:1.65;margin-bottom:18px}
     .badge{display:inline-block;background:var(--danger);color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
     .cta{display:inline-block;background:var(--accent);color:#111;padding:14px 22px;border-radius:14px;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(255,165,0,.3)}
     .cta:active{transform:translateY(1px)}
     .fine{margin-top:12px;color:var(--muted);font-size:.85rem}
-
     .reviews{margin-top:28px;display:grid;gap:16px}
     .rev{background:#0e0e0e;border:1px solid #202020;border-radius:14px;padding:12px 14px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
     .rev .name{font-weight:700;margin-bottom:4px}
@@ -173,50 +164,39 @@
   </style>
 
   <div class="tpusa-grid">
-    <!-- Product gallery (put your images in the SAME folder as this page or update paths) -->
+    <!-- Product gallery (place images in same folder or update paths) -->
     <div class="gallery">
       <div class="imgbox">
-        <img src="front2.jpg.png" alt="Front of Turning Point shirt" onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Front image coming soon</div>')">
+        <img src="front2.jpg.png" alt="Front of Turning Point shirt"
+             onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Front image coming soon</div>')">
       </div>
       <div class="imgbox">
-        <img src="back2.jpg.png" alt="Back of Turning Point shirt" onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Back image coming soon</div>')">
+        <img src="back2.jpg.png" alt="Back of Turning Point shirt"
+             onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Back image coming soon</div>')">
       </div>
       <div class="imgbox">
-        <img src="mens-fitted-t-shirt-white-back-68c761e84cf1d.png" alt="Lifestyle view of Turning Point shirt" onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Lifestyle image coming soon</div>')">
+        <img src="mens-fitted-t-shirt-white-back-68c761e84cf1d.png" alt="Lifestyle view of Turning Point shirt"
+             onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Lifestyle image coming soon</div>')">
       </div>
     </div>
 
-    <!-- Promo text -->
+    <!-- Promo + CTA -->
     <div class="promo">
       <h2>10% For Freedom 🇺🇸🦅</h2>
       <span class="badge">You Buy • We Give • They Fight</span>
       <p>
-        This shirt isn’t just bold style — it’s a statement.  
+        This shirt isn’t just bold style — it’s a statement.
         <strong>10% of profits go directly to Turning Point USA</strong>, fueling the fight for free speech, faith, and American values.
       </p>
-
-      <!-- CTA: auto-resolves to a real product URL (never 404s) -->
-      <a class="cta" id="tpusa-cta" href="/" rel="nofollow noopener">Buy Now → Support TPUSA</a>
-
+      <a class="cta" id="tpusa-cta" href="https://www.printful.com/product-template/93293372/3f94a172ff28d6a8c36d7170d4b70e56" target="_blank" rel="nofollow noopener">
+        Buy Now → Support TPUSA
+      </a>
       <div class="fine">Not affiliated with TPUSA. We post monthly donation receipts for transparency.</div>
 
-      <!-- Reviews -->
       <div class="reviews">
-        <div class="rev">
-          <div class="name">“Patriot Pick”</div>
-          <div class="body">Looks sick, ships fast, and they put skin in the game. Buying again.</div>
-          <div class="tag">Verified Buyer • TX</div>
-        </div>
-        <div class="rev">
-          <div class="name">“Purpose Built”</div>
-          <div class="body">Gear’s legit — and 10% to TPUSA sealed it for me. Respect.</div>
-          <div class="tag">Verified Buyer • FL</div>
-        </div>
-        <div class="rev">
-          <div class="name">“No Fluff”</div>
-          <div class="body">Straight talk, solid product, cause I believe in. Five stars.</div>
-          <div class="tag">Verified Buyer • OH</div>
-        </div>
+        <div class="rev"><div class="name">“Patriot Pick”</div><div class="body">Looks sick, ships fast, and they put skin in the game. Buying again.</div><div class="tag">Verified Buyer • TX</div></div>
+        <div class="rev"><div class="name">“Purpose Built”</div><div class="body">Gear’s legit — and 10% to TPUSA sealed it for me. Respect.</div><div class="tag">Verified Buyer • FL</div></div>
+        <div class="rev"><div class="name">“No Fluff”</div><div class="body">Straight talk, solid product, cause I believe in. Five stars.</div><div class="tag">Verified Buyer • OH</div></div>
       </div>
     </div>
   </div>
