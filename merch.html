@@ -1,0 +1,62 @@
+<!-- ===== MERCH CARD (drop-in) ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#ffa500;--ink:#eee;--bg:#111;}
+  .shop-wrap{font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);padding:24px}
+  .grid{display:grid;gap:18px;grid-template-columns:1fr;max-width:1100px;margin:0 auto}
+  @media(min-width:800px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .card{background:#0c0c0c;border:2px solid #222;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.35);display:flex;flex-direction:column}
+  .card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#000}
+  .pad{padding:14px 16px}
+  .title{font-weight:700;font-size:1.05rem;letter-spacing:.5px;margin:0 0 6px}
+  .price{color:var(--accent);font-weight:700;margin:0 0 10px}
+  .row{display:flex;gap:10px;align-items:center;margin:6px 0}
+  select,.qty{flex:1;background:#111;border:2px solid #222;border-radius:10px;color:var(--ink);padding:10px}
+  .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;background:var(--accent);color:#111;
+       font-weight:800;border:none;border-radius:12px;padding:12px 14px;width:100%;cursor:pointer;text-decoration:none}
+  .btn:hover{filter:brightness(1.05)}
+  .meta{opacity:.8;font-size:.8rem;margin-top:8px}
+</style>
+
+<section class="shop-wrap">
+  <div class="grid">
+
+    <!-- PRODUCT -->
+    <article class="card" data-buy="BUY_URL_FROM_PRINTFUL_OR_STRIPE">
+      <img src="PRINTFUL_MOCKUP_IMAGE_URL.jpg" alt="TITLE_GOES_HERE mockup">
+      <div class="pad">
+        <h3 class="title">TITLE_GOES_HERE</h3>
+        <p class="price">$26.00</p>
+
+        <div class="row">
+          <select class="size">
+            <option value="S">S</option><option value="M">M</option><option value="L">L</option>
+            <option value="XL">XL</option><option value="2XL">2XL</option>
+          </select>
+          <input class="qty" type="number" min="1" value="1" aria-label="Quantity">
+        </div>
+
+        <a class="btn buy">🛒 Buy Now</a>
+        <div class="meta">Bella + Canvas 3001 • 100% combed ringspun cotton • Printed on demand</div>
+      </div>
+    </article>
+
+    <!-- DUPLICATE <article class="card">…</article> FOR MORE PRODUCTS -->
+
+  </div>
+</section>
+
+<script>
+  // Make the Buy button go to your checkout link (Printful product link, Stripe Payment Link, etc.)
+  document.querySelectorAll('.card').forEach(card=>{
+    const btn = card.querySelector('.buy');
+    btn.addEventListener('click', ()=>{
+      const base = card.dataset.buy || '#';
+      const size = card.querySelector('.size').value;
+      const qty  = card.querySelector('.qty').value;
+      // If your checkout link supports query params, pass them; otherwise it just opens the product.
+      const url = base.includes('?') ? `${base}&size=${size}&qty=${qty}` : `${base}?size=${size}&qty=${qty}`;
+      window.open(url, '_blank');
+    });
+  });
+</script>
