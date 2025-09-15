@@ -137,74 +137,62 @@
     })();
   </script>
 
-<!-- ===== Top Promo: 10% to Turning Point USA (Auto-links to first product) ===== -->
+<!-- ===== Featured Product + 10% TPUSA Promo ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-<section class="tpusa-hero" aria-label="Grit Gear HQ pledge to Turning Point USA">
+<section class="tpusa-feature" aria-label="Turning Point shirt with 10% donation">
   <style>
-    .tpusa-hero{
-      --accent:#ffa500; --ink:#eee; --muted:#bdbdbd; --bg:#0e0e0e; --edge:#232323; --danger:#b22222;
+    .tpusa-feature{
+      --accent:#ffa500; --ink:#eee; --muted:#bdbdbd; --bg:#0e0e0e; --danger:#b22222;
       font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      background: radial-gradient(1200px 500px at 20% -10%, rgba(255,165,0,.08), transparent),
-                  linear-gradient(180deg, #0b0b0b, #111);
-      color:var(--ink); border-bottom:2px solid var(--accent);
-      padding:24px clamp(16px,3vw,28px) 14px;
+      background:linear-gradient(180deg,#0b0b0b,#111);
+      color:var(--ink); padding:40px 20px; border-bottom:2px solid var(--accent);
     }
-    .tpusa-wrap{max-width:1200px;margin:0 auto;display:grid;gap:18px;grid-template-columns:1fr}
-    @media (min-width:900px){.tpusa-wrap{grid-template-columns:1.2fr .9fr;align-items:center}}
+    .tpusa-grid{max-width:1200px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1fr}
+    @media(min-width:960px){.tpusa-grid{grid-template-columns:1.1fr 1fr;align-items:center}}
 
-    .tpusa-card{background:linear-gradient(145deg,#0c0c0c,#171717);border:2px solid var(--accent);border-radius:20px;padding:22px clamp(18px,2.5vw,28px);box-shadow:0 10px 30px rgba(0,0,0,.55)}
-    .tpusa-eyebrow{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-    .tpusa-title{font-size:clamp(1.7rem,3.2vw,2.2rem);margin:6px 0 10px;color:var(--accent);text-shadow:0 1px 6px #000}
-    .tpusa-flag{font-size:1.75rem}
-    .tpusa-copy{line-height:1.65;color:var(--ink);margin:10px 0 16px}
-    .tpusa-badge{display:inline-block;background:var(--danger);color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px}
+    /* Product gallery */
+    .gallery{display:grid;gap:12px}
+    .gallery img{width:100%;border-radius:14px;border:2px solid #222;box-shadow:0 6px 20px rgba(0,0,0,.4)}
 
-    .tpusa-cta{display:inline-flex;gap:10px;align-items:center;justify-content:center;margin-top:16px;padding:12px 18px;border-radius:14px;background:var(--accent);color:#111;font-weight:700;text-decoration:none;border:2px solid #333;box-shadow:0 8px 18px rgba(255,165,0,.25)}
-    .tpusa-cta:active{transform:translateY(1px)}
-    .tpusa-fine{margin-top:10px;color:var(--muted);font-size:.85rem}
+    /* Promo content */
+    .promo h2{font-size:clamp(1.8rem,3vw,2.3rem);color:var(--accent);margin:0 0 14px;text-shadow:0 2px 8px #000}
+    .promo p{line-height:1.65;margin-bottom:18px}
+    .badge{display:inline-block;background:var(--danger);color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+    .cta{display:inline-block;background:var(--accent);color:#111;padding:14px 22px;border-radius:14px;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(255,165,0,.3)}
+    .cta:active{transform:translateY(1px)}
+    .fine{margin-top:12px;color:var(--muted);font-size:.85rem}
 
-    .reviews{background:linear-gradient(145deg,#0d0d0d,#151515);border:2px solid var(--edge);border-radius:20px;padding:18px}
-    .rev-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-    .stars{font-size:1.1rem}
-    .rev-grid{display:grid;gap:12px;grid-template-columns:1fr}
-    @media (min-width:600px){.rev-grid{grid-template-columns:1fr 1fr}}
-    .rev{background:#0e0e0e;border:1px solid #202020;border-radius:14px;padding:12px 14px;min-height:88px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
-    .rev .name{font-weight:700;margin-bottom:6px}
-    .rev .body{color:#dcdcdc;font-size:.98rem;line-height:1.45}
-    .rev .tag{margin-top:8px;font-size:.8rem;color:var(--muted)}
+    /* Reviews */
+    .reviews{margin-top:28px;display:grid;gap:16px}
+    .rev{background:#0e0e0e;border:1px solid #202020;border-radius:14px;padding:12px 14px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+    .rev .name{font-weight:700;margin-bottom:4px}
+    .rev .body{font-size:.95rem;color:#ddd}
+    .rev .tag{margin-top:6px;font-size:.8rem;color:var(--muted)}
   </style>
 
-  <div class="tpusa-wrap">
-    <!-- Left: Pledge card -->
-    <div class="tpusa-card">
-      <div class="tpusa-eyebrow">Grit with a mission <span class="tpusa-flag">🇺🇸🦅</span></div>
-      <h1 class="tpusa-title">10% For Freedom</h1>
-      <p class="tpusa-copy">
-        Every order fuels more than your kit — it fuels a cause.
-        <strong>We donate 10% of our profits to Turning Point USA</strong> to support free speech, faith, and American values.
-      </p>
-      <span class="tpusa-badge">You Buy • We Give • They Fight</span><br>
-
-      <!-- CTA: defaults to /store.html; JS below upgrades it to the first product link it finds -->
-      <a class="tpusa-cta"
-         href="/store.html?utm_source=gritgearhq&utm_medium=hero&utm_campaign=tpusa_10"
-         rel="nofollow noopener"
-         aria-label="Buy now and support Turning Point USA">
-        Buy This Product → Support TPUSA
-      </a>
-
-      <div class="tpusa-fine">
-        Not affiliated with TPUSA. Turning Point USA is a 501(c)(3). We post monthly donation receipts for transparency.
-      </div>
+  <div class="tpusa-grid">
+    <!-- Product gallery -->
+    <div class="gallery">
+      <img src="front2.jpg.png" alt="Front of Turning Point shirt">
+      <img src="back2.jpg.png" alt="Back of Turning Point shirt">
+      <img src="mens-fitted-t-shirt-white-back-68c761e84cf1d.png" alt="Lifestyle view of Turning Point shirt">
     </div>
 
-    <!-- Right: Social proof -->
-    <aside class="reviews" aria-label="Customer reviews">
-      <div class="rev-head">
-        <div><strong>5.0</strong> Average</div>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-      </div>
-      <div class="rev-grid">
+    <!-- Promo text -->
+    <div class="promo">
+      <h2>10% For Freedom 🇺🇸🦅</h2>
+      <span class="badge">You Buy • We Give • They Fight</span>
+      <p>
+        This shirt isn’t just bold style — it’s a statement.  
+        <strong>10% of profits go directly to Turning Point USA</strong>, fueling the fight for free speech, faith, and American values.
+      </p>
+      <a class="cta" href="/store.html?utm_source=gritgearhq&utm_medium=feature&utm_campaign=tpusa_10">
+        Buy Now → Support TPUSA
+      </a>
+      <div class="fine">Not affiliated with TPUSA. We post monthly donation receipts for transparency.</div>
+
+      <!-- Reviews -->
+      <div class="reviews">
         <div class="rev">
           <div class="name">“Patriot Pick”</div>
           <div class="body">Looks sick, ships fast, and they put skin in the game. Buying again.</div>
@@ -216,55 +204,14 @@
           <div class="tag">Verified Buyer • FL</div>
         </div>
         <div class="rev">
-          <div class="name">“Loud & Proud”</div>
-          <div class="body">Clean design, tough vibe. Love that they actually show donation receipts.</div>
-          <div class="tag">Verified Buyer • AZ</div>
-        </div>
-        <div class="rev">
           <div class="name">“No Fluff”</div>
           <div class="body">Straight talk, solid product, cause I believe in. Five stars.</div>
           <div class="tag">Verified Buyer • OH</div>
         </div>
       </div>
-    </aside>
+    </div>
   </div>
 </section>
-
-<!-- Auto-upgrade CTA to the first product link on the page (no edits required) -->
-<script>
-  (function(){
-    // Common selectors for product links/cards/buttons on Shopify, custom sites, etc.
-    const selectors = [
-      '[data-product-link]',
-      '.product-card a[href*="/products/"]',
-      'a.product-link[href*="/products/"]',
-      '.buy-button a[href]',
-      'a[href*="etsy.com/listing"]',
-      'a[href*="/product/"]',
-      'a[href*="/shop/"]'
-    ];
-    const anchor = document.querySelector('.tpusa-cta');
-    if(!anchor) return;
-    let productAnchor = null;
-
-    for(const sel of selectors){
-      const found = document.querySelector(sel);
-      if(found && found.href){
-        productAnchor = found;
-        break;
-      }
-    }
-
-    if(productAnchor){
-      const url = new URL(productAnchor.href, location.href);
-      const params = url.searchParams;
-      if(!params.has('utm_source')) params.set('utm_source','gritgearhq');
-      if(!params.has('utm_medium')) params.set('utm_medium','hero');
-      if(!params.has('utm_campaign')) params.set('utm_campaign','tpusa_10');
-      anchor.href = url.toString();
-    }
-  })();
-</script>
 
 
   <!-- Ads (as you had it) -->
