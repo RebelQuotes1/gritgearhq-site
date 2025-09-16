@@ -60,6 +60,10 @@
     @media(min-width:900px){.buybox{grid-template-columns:1fr .9fr;align-items:center}}
     .price{font-size:1.2rem}
 
+    /* Urgency strip */
+    .urgency{margin-top:10px;font-size:.95rem;color:#ffd27b}
+    .urgency strong{color:#fff}
+
     /* Reviews */
     .reviews{display:grid;gap:14px;margin-top:6px}
     .rev{background:#0e0e0e;border:1px solid #202020;border-radius:14px;padding:12px 14px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
@@ -84,19 +88,13 @@
       <nav class="breadcrumbs"><a href="/">Home</a> › This Is The Turning Point Tee</nav>
 
       <div class="hero-grid">
-        <!-- GALLERY (make sure these 4 files sit next to this HTML) -->
+        <!-- GALLERY (JPGs only so nothing breaks) -->
         <div class="gallery" aria-label="Product images">
           <figure class="shot">
-            <picture>
-              <source type="image/webp" srcset="turning-front-800.webp">
-              <img src="fffr.jpg" alt="Turning Point tee — front (model)" loading="eager" fetchpriority="high" decoding="async">
-            </picture>
+            <img src="fffr.jpg" alt="Turning Point tee — front (model)" loading="eager" fetchpriority="high" decoding="async">
           </figure>
           <figure class="shot">
-            <picture>
-              <source type="image/webp" srcset="turning-back-model-1600.webp">
-              <img src="thisis.jpg" alt="Turning Point tee — back (model)" loading="lazy" decoding="async">
-            </picture>
+            <img src="thisis.jpg" alt="Turning Point tee — back (model)" loading="lazy" decoding="async">
           </figure>
           <figure class="shot">
             <img src="thisis.jpg" alt="Turning Point tee — flat lay (black tee)" loading="lazy" decoding="async">
@@ -111,6 +109,8 @@
             Stand for something. Clean lines, tough vibe, all-day comfort.
             <strong>10% of profits go to Turning Point USA.</strong>
           </p>
+          <div class="price"><strong>Price:</strong> <span class="price-val">$24.95</span></div>
+          <div class="urgency">🔥 <strong>Launch special</strong> ends in <span id="timer">48:00:00</span>. Don’t miss this run.</div>
           <span class="badge">Limited Run • When they’re gone, they’re gone</span><br>
           <a class="cta" href="#buy" aria-label="Scroll to buy options">See Options &amp; Buy ↓</a>
           <a class="cta alt" href="#impact" aria-label="Scroll to donation info">Where the 10% Goes</a>
@@ -151,23 +151,23 @@
   <section class="sect">
     <div class="wrap">
       <h2 class="sect-title">Colors &amp; fit</h2>
-      <div class="cols">
-        <div class="card copy">
-          <p>Available in classic <strong>Black</strong> and <strong>Navy</strong>. Works with jeans, range gear, or layered under a hoodie. True-to-size unisex cut — size up if you like it roomy.</p>
-          <p><a class="cta" href="#buy">Choose Size &amp; Color</a></p>
-        </div>
-        <div class="card copy">
-          <h3 style="margin-top:0">Quick size guide</h3>
-          <ul class="checks">
-            <li>S: 34–36" chest</li>
-            <li>M: 38–40"</li>
-            <li>L: 42–44"</li>
-            <li>XL: 46–48"</li>
-            <li>2XL+: size up for extra room</li>
-          </ul>
-          <div class="fine">Tip: If you're between sizes, go one up for a relaxed drape.</div>
-        </div>
+    <div class="cols">
+      <div class="card copy">
+        <p>Available in classic <strong>Black</strong> and <strong>Navy</strong>. Works with jeans, range gear, or layered under a hoodie. True-to-size unisex cut — size up if you like it roomy.</p>
+        <p><a class="cta" href="#buy">Choose Size &amp; Color</a></p>
       </div>
+      <div class="card copy">
+        <h3 style="margin-top:0">Quick size guide</h3>
+        <ul class="checks">
+          <li>S: 34–36" chest</li>
+          <li>M: 38–40"</li>
+          <li>L: 42–44"</li>
+          <li>XL: 46–48"</li>
+          <li>2XL+: size up for extra room</li>
+        </ul>
+        <div class="fine">Tip: If you're between sizes, go one up for a relaxed drape.</div>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -216,8 +216,9 @@
       <a id="cta"></a>
       <div class="buybox">
         <div class="card">
-          <p class="price"><strong>Price:</strong> See current options on Etsy (sizes &amp; colors available).</p>
+          <p class="price"><strong>Price:</strong> <span class="price-val">$24.95</span> (sizes &amp; colors on Etsy)</p>
           <p class="copy">Fast shipping. Secure checkout. <strong>10% of profits donated to TPUSA.</strong></p>
+          <div class="urgency">⚡ Current run moving fast — next batch queues monthly.</div>
           <p>
             <a class="cta js-buy" href="#" target="_blank" rel="noopener nofollow" aria-label="Buy the Turning Point tee on Etsy">Buy on Etsy → Ships Fast</a>
             <a class="cta alt" href="#impact" style="margin-left:8px">See Donation Info</a>
@@ -262,7 +263,7 @@
 
   <!-- STICKY BAR -->
   <div class="sticky">
-    <div class="mini">This Is The Turning Point Tee — 10% to TPUSA</div>
+    <div class="mini">This Is The Turning Point — <strong><span class="price-val">$24.95</span></strong></div>
     <a class="go js-buy" href="#" target="_blank" rel="noopener nofollow">Buy Now</a>
   </div>
 
@@ -282,14 +283,25 @@
     "brand":{"@type":"Brand","name":"Grit Gear HQ"},
     "description":"Premium unisex tee with bold 'This Is The Turning Point' graphic. 10% of profits donated to Turning Point USA.",
     "category":"Apparel & Accessories > Clothing > Shirts & Tops > T-Shirts",
-    "url":"https://gritgearhq.com/turning-point-shirt.html",
-    "image":["fffr.jpg","turning-front-800.webp","turning-back-model-1600.webp","thisis.jpg"]
+    "image":["fffr.jpg","thisis.jpg"],
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "24.95",
+      "availability": "https://schema.org/InStock",
+      "url": "https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point"
+    }
   }
   </script>
 
   <script>
-    // 1) Set current year
+    // SETTINGS — update these two lines anytime
+    const PRICE = 24.95;
+    const BUY_URL = "https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=page&utm_campaign=turning_point";
+
+    // 1) Year + price sync
     document.getElementById('yr').textContent = new Date().getFullYear();
+    document.querySelectorAll('.price-val').forEach(el => el.textContent = `$${PRICE.toFixed(2)}`);
 
     // 2) Share links
     (function(){
@@ -301,12 +313,23 @@
       if (f) f.href = `https://www.facebook.com/sharer/sharer.php?u=${page}`;
     })();
 
-    // 3) Make ALL buy buttons work from one place
+    // 3) Wire ALL Buy buttons to one URL
+    document.querySelectorAll('a.js-buy').forEach(a => a.href = BUY_URL);
+
+    // 4) Urgency countdown — 48 hours rolling
     (function(){
-      const BUY_URL = "https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=page&utm_campaign=turning_point";
-      document.querySelectorAll('a.js-buy').forEach(a=>{
-        a.setAttribute('href', BUY_URL);
-      });
+      const el = document.getElementById('timer');
+      if(!el) return;
+      const end = Date.now() + 48*60*60*1000; // 48 hours from page open
+      function tick(){
+        const diff = Math.max(0, end - Date.now());
+        const s = Math.floor(diff/1000)%60;
+        const m = Math.floor(diff/1000/60)%60;
+        const h = Math.floor(diff/1000/60/60);
+        el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+        if(diff>0) requestAnimationFrame(tick);
+      }
+      tick();
     })();
   </script>
 </body>
