@@ -54,4 +54,83 @@
     summary{cursor:pointer;font-weight:700}
     .sticky{position:sticky;bottom:0;z-index:5;background:linear-gradient(180deg,rgba(17,17,17,.6),#111);border-top:1px solid var(--edge);backdrop-filter:blur(8px);padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
     .sticky .mini{font-size:.9rem;color:var(--muted)}
-    .sticky .go{background:var(--accent);color:#111;padding:10px
+    .sticky .go{background:var(--accent);color:#111;padding:10px 14px;border-radius:12px;font-weight:800;border:2px solid #333}
+    footer{padding:20px 18px;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="breadcrumbs"><a href="/index.html">Home</a> › <a href="/blog.html">Blog</a> › This Is The Turning Point Tee</nav>
+
+      <div class="hero-grid">
+        <!-- UPDATED GALLERY (uses the files you sent; place them next to this HTML file) -->
+        <div class="gallery">
+          <figure class="shot">
+            <picture>
+              <source type="image/webp" srcset="turning-front-800.webp">
+              <img src="fffr.jpg" alt="Turning Point tee — front (model)">
+            </picture>
+          </figure>
+
+          <figure class="shot">
+            <picture>
+              <source type="image/webp" srcset="turning-back-model-1600.webp">
+              <img src="thisis.jpg" alt="Turning Point tee — back (model)">
+            </picture>
+          </figure>
+
+          <figure class="shot">
+            <img src="thisis.jpg" alt="Turning Point tee — flat lay (black)">
+          </figure>
+        </div>
+
+        <!-- PITCH -->
+        <div>
+          <div class="eyebrow">Grit Gear HQ Exclusive</div>
+          <h1 class="title">This Is The Turning Point — Premium Unisex Tee</h1>
+          <p class="kicker copy">Stand for something. Clean lines, tough vibe, all-day comfort. And <strong>10% of profits go to Turning Point USA</strong>.</p>
+          <span class="badge">You Buy • We Give • They Fight</span><br>
+          <a class="cta" href="https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=blog&utm_campaign=turning_point_page" target="_blank" rel="noopener nofollow">Buy on Etsy → Ships Fast</a>
+          <div class="trust">
+            <div>★ ★ ★ ★ ★ Trusted by patriots</div>
+            <div>🧵 Premium cotton blend</div>
+            <div>🧼 Easy-care print</div>
+            <div>🇺🇸 10% to TPUSA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- rest of your page (unchanged) ... -->
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"This Is The Turning Point – Premium Tee",
+    "brand":{"@type":"Brand","name":"Grit Gear HQ"},
+    "description":"Premium unisex tee with bold 'This Is The Turning Point' graphic. 10% of profits donated to Turning Point USA.",
+    "category":"Apparel & Accessories > Clothing > Shirts & Tops > T-Shirts",
+    "url":"https://gritgearhq.com/turning-point-shirt.html",
+    "image":[
+      "fffr.jpg",
+      "turning-front-800.webp",
+      "turning-back-model-1600.webp",
+      "thisis.jpg"
+    ]
+  }
+  </script>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    (function(){
+      const page = encodeURIComponent(location.href);
+      const text = encodeURIComponent("This Is The Turning Point – premium tee. 10% to TPUSA. Grab yours:");
+      document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${text}&url=${page}`;
+      document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${page}`;
+    })();
+  </script>
+</body>
+</html>
