@@ -1,1142 +1,194 @@
-<!-- Top Header: Split CTAs (Quiz + Violence PDF) -->
-<section class="hero-split" aria-label="Featured actions">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>This Is The Turning Point – Premium Tee | Grit Gear HQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bold message. Clean fit. 10% of profits donated to Turning Point USA. Grab the 'This Is The Turning Point' tee today. Fast shipping.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://gritgearhq.com/turning-point-shirt.html">
+  <meta property="og:title" content="This Is The Turning Point – Premium Tee">
+  <meta property="og:description" content="Stand for something. 10% of profits to TPUSA. Limited stock.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://gritgearhq.com/turning-point-shirt.html">
+  <meta property="og:image" content="images/og-turning-point.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
-    .hero-split{
-      --accent:#ffa500; --ink:#eee; --muted:#bbb; --bg:#111;
-      font-family:'Orbitron', system-ui, Segoe UI, Roboto, Arial, sans-serif;
-      background:var(--bg);
-      padding:18px clamp(14px, 3vw, 24px);
-      border-bottom:2px solid var(--accent);
-    }
-    .hero-split .grid{
-      display:grid;
-      gap:16px;
-      grid-template-columns:1fr;
-      max-width:1200px; margin:0 auto;
-      align-items:stretch;
-    }
-    @media (min-width:880px){
-      .hero-split .grid{
-        grid-template-columns:1fr 1fr;
-        grid-auto-rows:1fr; /* equal-height row on desktop */
-      }
-    }
-
-    /* Card base (equal height via flex) */
-    .cta-card{
-      background:#0b0b0b;
-      border:2px solid var(--accent);
-      border-radius:12px;
-      box-shadow:0 0 20px #000;
-      padding:20px;
-
-      height:100%;
-      display:flex;
-      flex-direction:column;
-    }
-    .cta-card h2{
-      color:var(--accent);
-      font-size:clamp(1.1rem, 2.2vw, 1.6rem);
-      margin:0 0 8px;
-    }
-    .cta-card p{
-      color:var(--muted);
-      font-size:1rem; line-height:1.5;
-      margin:8px 0 14px;
-    }
-    .cta-card .btn{
-      display:inline-block; margin:8px 8px 0 0; padding:12px 18px; border-radius:8px;
-      font-weight:900; letter-spacing:.2px; text-decoration:none; cursor:pointer;
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
-      box-shadow:0 0 10px var(--accent);
-    }
-    .cta-card .btn-primary{ background:var(--accent); color:#111; }
-    .cta-card .btn-primary:hover{ background:#ff7a00; transform:translateY(-1px); }
-    .cta-card .btn-ghost{ background:transparent; color:#00ffff; border:1px dashed #00ffff; }
-    .cta-card .btn-ghost:hover{ background:#072a2a; color:#cfffff; transform:translateY(-1px); }
-
-    /* Pulse */
-    @keyframes pulseGlow {0%{box-shadow:0 0 10px var(--accent)}50%{box-shadow:0 0 20px #ff8c00}100%{box-shadow:0 0 10px var(--accent)}}
-    .pulse{ animation:pulseGlow 3s infinite; }
-
-    /* Optional product/illustration image — kept modest so heights match nicely */
-    .prod-img{
-      width:100%; max-width:220px; aspect-ratio:16/9; object-fit:cover;
-      border-radius:10px; border:3px solid var(--accent);
-      box-shadow:0 0 10px #000; display:block; margin:12px 0 6px; background:#000;
-      align-self:flex-start;
-    }
-
-    .ok{ color:#00ff00 }
-    .disclosure{ color:#9aa3ad; font-size:.9rem; margin-top:auto } /* sticks to bottom */
-  </style>
-
-  <div class="grid">
-    <!-- LEFT: Grit Quiz -->
-    <article class="cta-card" aria-labelledby="grit-quiz-title">
-      <h2 id="grit-quiz-title">🧪 Can You Survive the Grind?</h2>
-      <p>10 rapid-fire questions. Instant grit score + the first thing to fix. Most people guess wrong—see where you actually land.</p>
-      <div>
-        <a class="btn btn-primary pulse"
-           href="/grit-quiz.html#grit-quiz"
-           aria-label="Start the Grit Quiz now">
-          🚀 Start the Quiz
-        </a>
-        <a class="btn btn-ghost"
-           href="/grit-quiz.html#how-it-works"
-           aria-label="Learn how the Grit Quiz works">
-          ℹ️ How it Works
-        </a>
-      </div>
-    </article>
-
-    <!-- RIGHT: Violence PDF -->
-    <article class="cta-card" aria-labelledby="violence-cta-title">
-      <h2 id="violence-cta-title">⚔️ When Violence Is the Answer: Free PDF + Knife Giveaway</h2>
-      <p>Grab our blunt, no-nonsense mini-guide <strong>“When Violence Is the Answer”</strong>. Instant PDF—<em>no email needed</em>.</p>
-
-      <!-- Optional small image; remove if you want the tightest layout -->
-      <img src="/images/case.jpg" alt="Case folding knife—classic EDC pocket knife"
-           class="prod-img" loading="lazy" decoding="async">
-
-      <p class="ok">💥 Or <a href="https://amzn.to/44N0RMk?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">buy the knife now</a> if you’re impatient.</p>
-
-      <div>
-        <a class="btn btn-primary pulse"
-           href="https://gritgearhq.com/When_Violence_Is_the_Answer_FixedCentered.pdf"
-           download
-           aria-label="Download the free PDF When Violence Is the Answer">
-          📥 Download the Free PDF
-        </a>
-        <a class="btn btn-ghost"
-           href="https://amzn.to/44N0RMk?tag=gritgearhq-20"
-           target="_blank" rel="nofollow sponsored noopener"
-           aria-label="Buy the knife on Amazon (affiliate)">
-          🗡️ See Knife on Amazon
-        </a>
-      </div>
-
-      <p class="disclosure">As an Amazon Associate, we earn from qualifying purchases.</p>
-    </article>
-  </div>
-</section>
-
-  <!-- Optional: lightweight GA events (uses your existing gtag setup if present) -->
-  <script>
-    (function(){
-      function send(label){
-        if(typeof gtag === 'function'){
-          gtag('event','cta_click',{event_category:'violence_pdf_block',event_label:label});
-        }
-      }
-      document.addEventListener('click', function(e){
-        var a = e.target.closest('a[data-gg-event]');
-        if(!a) return;
-        send(a.getAttribute('data-gg-event'));
-      }, {passive:true});
-    })();
-  </script>
-
-<!-- ==== Featured Product + 10% TPUSA (Correct product link) ==== -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-<section class="tpusa-feature" aria-label="Turning Point shirt with 10% donation" data-product-url="https://grit-gear-hq.printful.me/product/short-sleeve-t-shirt">
-  <style>
-    .tpusa-feature{--accent:#ffa500;--ink:#eee;--muted:#bdbdbd;--bg:#0e0e0e;--danger:#b22222;
-      font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#0b0b0b,#111);
-      color:var(--ink);padding:40px 20px;border-bottom:2px solid var(--accent)}
-    .tpusa-grid{max-width:1200px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1fr}
-    @media(min-width:960px){.tpusa-grid{grid-template-columns:1.1fr 1fr;align-items:center}}
+    :root{--accent:#ffa500;--ink:#eee;--muted:#bdbdbd;--bg:#0f0f0f;--panel:#141414;--edge:#262626;--danger:#b22222;}
+    html,body{background:var(--bg);color:var(--ink);margin:0;font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:20px}
+    header.hero{border-bottom:2px solid var(--accent);
+      background:radial-gradient(1300px 500px at 12% -10%, rgba(255,165,0,.08), transparent),linear-gradient(180deg,#0b0b0b,#111);
+      padding:28px 18px;}
+    .breadcrumbs{font-size:.85rem;color:var(--muted)}
+    .breadcrumbs a{color:var(--muted)}
+    .hero-grid{display:grid;gap:22px;grid-template-columns:1fr}
+    @media(min-width:950px){.hero-grid{grid-template-columns:1.1fr .9fr;align-items:center}}
     .gallery{display:grid;gap:12px}
-    .imgbox{position:relative;border-radius:14px;border:2px solid #222;overflow:hidden;background:linear-gradient(145deg,#0d0d0d,#151515);min-height:260px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
-    .imgbox img{width:100%;height:auto;display:block}
-    .imgbox .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#bbb;font-weight:700;letter-spacing:.03em}
-    .promo h2{font-size:clamp(1.8rem,3vw,2.3rem);color:var(--accent);margin:0 0 14px;text-shadow:0 2px 8px #000}
-    .promo p{line-height:1.65;margin-bottom:18px}
-    .badge{display:inline-block;background:var(--danger);color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
-    .cta{display:inline-block;background:var(--accent);color:#111;padding:14px 22px;border-radius:14px;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(255,165,0,.3)}
+    .shot{background:linear-gradient(145deg,#0d0d0d,#161616);border:2px solid var(--edge);border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.45)}
+    .shot img{display:block;width:100%;height:auto}
+    .title{font-size:clamp(1.8rem,3.2vw,2.4rem);color:var(--accent);margin:6px 0 8px;text-shadow:0 1px 6px #000}
+    .eyebrow{letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-size:.85rem}
+    .copy{line-height:1.7;color:var(--ink)}
+    .badge{display:inline-block;background:var(--danger);color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;margin:8px 0 14px}
+    .cta{display:inline-flex;gap:10px;align-items:center;justify-content:center;margin-top:10px;padding:14px 20px;border-radius:14px;background:var(--accent);color:#111;font-weight:700;border:2px solid #333;box-shadow:0 10px 22px rgba(255,165,0,.25)}
     .cta:active{transform:translateY(1px)}
-    .fine{margin-top:12px;color:var(--muted);font-size:.85rem}
-    .reviews{margin-top:28px;display:grid;gap:16px}
+    .trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;font-size:.9rem;color:var(--muted)}
+    .sect{padding:28px 18px;border-bottom:1px solid var(--edge);background:linear-gradient(180deg,#0d0d0d,#101010)}
+    h2.sect-title{font-size:1.4rem;color:var(--accent);margin:0 0 10px}
+    .cols{display:grid;gap:18px;grid-template-columns:1fr}
+    @media(min-width:900px){.cols{grid-template-columns:1fr 1fr}}
+    .card{background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+    ul{margin:0 0 0 18px;line-height:1.7}
+    .kicker{font-size:1.05rem}
+    .checks li{list-style:"✔  "}
+    .reviews{display:grid;gap:14px;margin-top:6px}
     .rev{background:#0e0e0e;border:1px solid #202020;border-radius:14px;padding:12px 14px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
     .rev .name{font-weight:700;margin-bottom:4px}
-    .rev .body{font-size:.95rem;color:#ddd}
+    .rev .body{font-size:.97rem;color:#ddd}
     .rev .tag{margin-top:6px;font-size:.8rem;color:var(--muted)}
+    details{background:#0e0e0e;border:1px solid #202020;border-radius:12px;padding:12px 14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
+    .sticky{position:sticky;bottom:0;z-index:5;background:linear-gradient(180deg,rgba(17,17,17,.6),#111);border-top:1px solid var(--edge);backdrop-filter:blur(8px);padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+    .sticky .mini{font-size:.9rem;color:var(--muted)}
+    .sticky .go{background:var(--accent);color:#111;padding:10px 14px;border-radius:12px;font-weight:800;border:2px solid #333}
+    footer{padding:20px 18px;color:var(--muted);font-size:.9rem}
   </style>
-
-  <div class="tpusa-grid">
-    <!-- Product gallery (ensure these files exist or update paths) -->
-    <div class="gallery">
-      <div class="imgbox">
-        <img src="front2.jpg.png" alt="Front view — Short Sleeve T-shirt"
-             onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Front image coming soon</div>')">
-      </div>
-      <div class="imgbox">
-        <img src="back2.jpg.png" alt="Back view — Short Sleeve T-shirt"
-             onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Back image coming soon</div>')">
-      </div>
-      <div class="imgbox">
-        <img src="mens-fitted-t-shirt-white-back-68c761e84cf1d.png" alt="Lifestyle view — Short Sleeve T-shirt"
-             onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;ph&quot;>Lifestyle image coming soon</div>')">
-      </div>
-    </div>
-
-    <!-- Promo + CTA -->
-    <div class="promo">
-      <h2>10% For Freedom 🇺🇸🦅</h2>
-      <span class="badge">You Buy • We Give • They Fight</span>
-      <p>
-        This shirt isn’t just bold style — it’s a statement.
-        <strong>10% of profits go directly to Turning Point USA</strong>, fueling the fight for free speech, faith, and American values.
-      </p>
-      <a class="cta" id="tpusa-cta"
-         href="https://grit-gear-hq.printful.me/product/short-sleeve-t-shirt?utm_source=gritgearhq&utm_medium=feature&utm_campaign=tpusa_10"
-         target="_blank" rel="noopener nofollow">
-        Buy Now → Support TPUSA
-      </a>
-      <div class="fine">Not affiliated with TPUSA. We post monthly donation receipts for transparency.</div>
-
-      <div class="reviews">
-        <div class="rev"><div class="name">“Patriot Pick”</div><div class="body">Looks sick, ships fast, and they put skin in the game. Buying again.</div><div class="tag">Verified Buyer • TX</div></div>
-        <div class="rev"><div class="name">“Purpose Built”</div><div class="body">Gear’s legit — and 10% to TPUSA sealed it for me. Respect.</div><div class="tag">Verified Buyer • FL</div></div>
-        <div class="rev"><div class="name">“No Fluff”</div><div class="body">Straight talk, solid product, cause I believe in. Five stars.</div><div class="tag">Verified Buyer • OH</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-(async function(){
-  // 1) Prefer a hard-coded data attribute if you add it later:
-  // <section class="tpusa-feature" data-product-url="https://YOUR-EXACT-PRODUCT"></section>
-  const root = document.querySelector('.tpusa-feature');
-  let target = root?.dataset?.productUrl || null;
-
-  // 2) If none, try to harvest an existing product link already on the page.
-  if(!target){
-    const selectors = [
-      '[data-product-link]',
-      '.product-card a[href*="/products/"]',
-      'a.product-link[href*="/products/"]',
-      '.buy-button a[href]',
-      'a[href*="etsy.com/listing"]',
-      'a[href*="/product/"]',
-      'a[href*="/shop/"]'
-    ];
-    for(const s of selectors){
-      const a = document.querySelector(s);
-      if(a && a.href){ target = a.href; break; }
-    }
-  }
-
-  // 3) If still none, probe common paths on your domain and take the first that exists.
-  // Edit/extend this list anytime.
-  const probes = [
-    '/products/turning-point-tee',
-    '/shop/turning-point-tee',
-    '/product/turning-point-tee',
-    '/store/turning-point-tee',
-    '/store.html',
-    '/shop.html'
-  ];
-  async function first200(urls){
-    for(const u of urls){
-      try{
-        const res = await fetch(u, {method:'HEAD'});
-        if(res.ok) return u;
-      }catch(e){}
-    }
-    return null;
-  }
-  if(!target){
-    const ok = await first200(probes);
-    if(ok) target = ok;
-  }
-
-  // 4) Last resort: homepage (prevents 404).
-  if(!target) target = '/';
-
-  // Add UTM and set the CTA.
-  try{
-    const url = new URL(target, location.origin);
-    url.searchParams.set('utm_source','gritgearhq');
-    url.searchParams.set('utm_medium','feature');
-    url.searchParams.set('utm_campaign','tpusa_10');
-    document.getElementById('tpusa-cta').href = url.toString();
-  }catch(e){
-    document.getElementById('tpusa-cta').href = target;
-  }
-})();
-</script>
-
-
-
-  <!-- Ads (as you had it) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-</section>
-
-<!-- 🔥 Manifesto Button Grid (cleaned) -->
-<style>
-  .manifesto-bar{
-    display:grid; gap:12px; justify-items:center; align-items:stretch;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    padding:40px 20px; background:#000;
-    border-top:2px solid #ffa500; border-bottom:2px solid #ffa500;
-    box-shadow:0 0 15px #000; font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;
-  }
-  /* Base card link (works with existing .cta-button if you already have it) */
-  .cta-card{display:block; text-decoration:none; border-radius:8px; padding:16px 20px; box-shadow:0 0 10px #000; text-align:center; font-weight:bold}
-  .cta-card .desc{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; font-weight:500; font-size:.9em; margin-top:8px}
-  /* Variants */
-  .cta-dark{background:#1a1a1a; color:#ffa500}
-  .cta-orange{background:#ffa500; color:#111}
-  .cta-plain{background:transparent; color:inherit; box-shadow:none; padding:0} /* for links that rely on your site’s .cta-button */
-  /* Width helper for the previously fixed-width cards */
-  .w-300{width:300px; max-width:100%}
-  /* Hidden block */
-  #more-cta-buttons{display:none}
-</style>
-
-<div class="manifesto-bar" aria-label="Manifesto button grid">
-  <!-- Ant & Grasshopper fable CTA (matches your .cta-button cards) -->
-  <a href="ant-grasshopper-locked-door.html#fable-start" class="cta-button cta-plain">
-    🐜 The Ant, the Grasshopper &amp; the Locked Door
-    <div class="desc">Darker modern fable—boundaries, math, and no hard feelings.</div>
-  </a>
-
-  <a href="amish-winter-heat.html#amish-winter-heat" class="cta-button cta-plain">
-    🔥 How the Amish Stay Warm in Winter
-    <div class="desc">Old-world heat without the grid—stoves, window quilts, humidity, and daily rhythm you can copy today.</div>
-  </a>
-
-  <a href="hugh-glass.html#hugh-glass" class="cta-button cta-plain">
-    🐻 Hugh Glass: The Man Who Wouldn’t Die
-    <div class="desc">From pirates and Pawnee to a grizzly bear and a 200-mile crawl — the true story of America’s toughest survivor.</div>
-  </a>
-
-  <a href="skinny-to-strong.html#skinny-to-strong" class="cta-button cta-plain">
-    💪 From Skinny to Strong
-    <div class="desc">How I went from frail and sick to capable and confident — and how you can too.</div>
-  </a>
-
-  <a href="pale-horse-prepping.html#apocalypse-guide" class="cta-button cta-plain">
-    🐎 Preparing for the Pale Horse
-    <div class="desc">Revelation, collapse, and how to face the end with grit and preparation.</div>
-  </a>
-
-  <a href="top-5-home-water-filters.html#filters" class="cta-button cta-plain">
-    💧 Top 5 Home Water Filters
-    <div class="desc">From LifeStraw to Berkey—5 filters that strip out lead, PFAS, and other toxins hiding in your tap.</div>
-  </a>
-
-  <a href="/best-survival-gear-amazon-2025.html#best-survival-gear" class="cta-button cta-plain">
-    20 Best Survival &amp; Self-Reliance Items You Can Buy on Amazon in 2025
-    <div class="desc">Forget overpriced tacti-cool junk — this is the gear I actually use, trust, and recommend for real-world prepping.</div>
-  </a>
-
-  <a href="chicken-shortage-2025.html#chicken-shortage-blog" class="cta-button cta-plain">
-    🐔 The Chicken Shortage of 2025
-    <div class="desc">Toilet paper was just the beginning—now it’s chickens. Our backyard flock journey, survival insights, and the gear we used.</div>
-  </a>
-
-  <a href="solar-fan-hat-review.html#solar-fan-hat-review" class="cta-button cta-plain">
-    🌞 Solar Fan Hat Review (Yes, Seriously)
-    <div class="desc">Laugh all you want—this goofy fan-powered hat kept me alive while mowing in 100° heat. Here's why I won't take it off.</div>
-  </a>
-
-  <a href="5affirmations.html" class="cta-card cta-orange w-300">
-    💭 5 Affirmations That Are Actually Terrible Advice
-  </a>
-
-  <a href="kamp-king.html#kamp-king-review" class="cta-card cta-orange w-300">
-    🗡️ NEW! Kamp King Knife Review
-    <div class="desc" style="color:#111">Classic look, rugged build. Great gift. Less gear to carry. Built for every man.</div>
-  </a>
-
-  <a href="collapse.html#collapse-blog" class="cta-card cta-dark w-300">
-    🔥 Western Society Is Doomed
-    <div class="desc">5 things I stopped buying after realizing the collapse is already happening.</div>
-  </a>
-
-  <a href="surviving-county-jail.html#jail-survival-blog" class="cta-card cta-dark w-300">
-    🚔 Surviving County Jail
-    <div class="desc">Fear, boredom, and twisted humor—here's what jail's really like, and how to keep your soul intact.</div>
-  </a>
-
-  <a href="bear-vs-man.html#bear-vs-man" class="cta-card cta-dark w-300">
-    🐻 Would You Rather: Man vs Bear
-    <div class="desc">Women said the bear. Memes exploded. We answered with grit.</div>
-  </a>
-
-  <a href="manifesto.html#violence-answer" class="cta-card cta-orange w-300">
-    ⚔️ When Violence Is the Answer
-    <div class="desc" style="color:#111">The ugly truth about self-defense, force, and what it really means to survive.</div>
-  </a>
-
-  <a href="manifesto.html#masculinity-blog" class="cta-card cta-dark w-300">
-    💥 The Masculinity Manifesto
-  </a>
-
-  <a href="manifesto.html#ufo-distraction" class="cta-card cta-orange w-300">
-    🛸 UFOs &amp; Government Deception
-  </a>
-
-  <!-- Hidden CTA Buttons Toggleable with JS -->
-  <div id="more-cta-buttons">
-    <a href="manifesto.html#bugout-essentials" class="cta-button cta-plain">🧠 Lost Skills of Our Grandparents</a>
-    <a href="manifesto.html#manila-story" class="cta-button cta-plain">🚪 Trapped in a Manila Stairwell</a>
-    <a href="manifesto.html#death-valley-germans" class="cta-button cta-plain">🏜️ Death Valley’s Forgotten Tourists</a>
-    <a href="i-should-be-dead.html" class="cta-button cta-plain">🩸 I Should Be Dead: The Grit Story</a>
-    <a href="manifesto.html#stockpile-tested" class="cta-button cta-plain">🎒 Survival Items That Earned Their Place</a>
-    <a href="manifesto.html#stay-cool" class="cta-button cta-plain">🧊 How to Keep Your Family Cool in a Blackout</a>
-    <a href="manifesto.html#delta-outage" class="cta-button cta-plain">🌪️ 2 Weeks Without Power in the Delta</a>
-    <a href="manifesto.html#unfuck-your-life" class="cta-button cta-plain">🧼 How to Unf*ck Your Life</a>
-    <a href="manifesto.html#survivorman-vs-bear" class="cta-button cta-plain">🐾 Survivorman vs Bear Grylls</a>
-    <a href="manifesto.html#collapse-fitness" class="cta-button cta-plain">💀 You Won’t Make It 10 Miles</a>
-    <a href="manifesto.html#best-meals" class="cta-button cta-plain">🍲 10 Best Dehydrated Meals</a>
-    <a href="manifesto.html#nobody-cares-blog" class="cta-button cta-plain">🕶️ Nobody Gives a Sh*t… And That’s Okay</a>
-    <a href="manifesto.html#stay-cool-blackout" class="cta-button cta-plain">🥵 How to Keep Cool During a Blackout</a>
-  </div>
-</div>
-
-  <!-- Hidden CTA Buttons Toggleable with JS -->
-  <div id="more-cta-buttons" style="display:none;">
-    <a href="manifesto.html#bugout-essentials" class="cta-button">🧠 Lost Skills of Our Grandparents</a>
-    <a href="manifesto.html#manila-story" class="cta-button">🚪 Trapped in a Manila Stairwell</a>
-    <a href="manifesto.html#death-valley-germans" class="cta-button">🏜️ Death Valley’s Forgotten Tourists</a>
-    <a href="i-should-be-dead.html" class="cta-button">🩸 I Should Be Dead: The Grit Story</a>
-    <a href="manifesto.html#stockpile-tested" class="cta-button">🎒 Survival Items That Earned Their Place</a>
-    <a href="manifesto.html#stay-cool" class="cta-button">🧊 How to Keep Your Family Cool in a Blackout</a>
-    <a href="manifesto.html#delta-outage" class="cta-button">🌪️ 2 Weeks Without Power in the Delta</a>
-    <a href="manifesto.html#unfuck-your-life" class="cta-button">🧼 How to Unf*ck Your Life</a>
-    <a href="manifesto.html#survivorman-vs-bear" class="cta-button">🐾 Survivorman vs Bear Grylls</a>
-    <a href="manifesto.html#collapse-fitness" class="cta-button">💀 You Won’t Make It 10 Miles</a>
-    <a href="manifesto.html#best-meals" class="cta-button">🍲 10 Best Dehydrated Meals</a>
-    <a href="manifesto.html#nobody-cares-blog" class="cta-button">🕶️ Nobody Gives a Sh*t… And That’s Okay</a>
-    <a href="manifesto.html#stay-cool-blackout" class="cta-button">🥵 How to Keep Cool During a Blackout</a>
-  </div>
-
-</div>
-
-
-<!-- SIDE-BY-SIDE PREVIEWS -->
-<section style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin: 50px auto; max-width: 1200px;">
-
-  <!-- CHICKEN SHORTAGE PREVIEW -->
-  <div style="flex: 1 1 500px; background: #1a1a1a; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px #000; color: #eee; font-family: Arial, sans-serif;">
-    <h1 style="color: #ffa500; font-size: 1.8em; margin-bottom: 10px;">
-      🐔 The Chicken Shortage of 2025 Is Real — And It’s Just Getting Started
-    </h1>
-
-    <img src="images/chicken-farm.jpg" alt="Factory Farmed Chickens" style="width: 100%; border-radius: 8px; margin: 20px 0; box-shadow: 0 0 10px #000;">
-
-    <p style="font-size: 1.05em; line-height: 1.6;">
-      <strong>Remember when people fought over toilet paper?</strong><br>
-      Now it's chickens.
-    </p>
-
-    <p style="font-size: 1.05em; line-height: 1.6;">
-      In towns across America, folks are paying top dollar just to get their hands on a few hens.
-      We paid <strong>$70 for 5 birds in a Tractor Supply parking lot</strong>, and we were lucky.
-      Some people are shelling out <strong>$35 per chicken</strong> — and that’s if they can even find any nearby.
-    </p>
-
-    <p style="font-size: 1.05em; line-height: 1.6;">
-      This isn’t a hobby anymore. It’s a quiet panic.<br>
-      People sense what no one wants to say out loud: <em><strong>The system is cracking</strong></em>, and eggs might be the new currency.
-    </p>
-
-    <a href="https://gritgearhq.com/chicken-shortage-2025.html#chicken-shortage-blog" style="
-      display: inline-block;
-      background: #ffa500;
-      color: #000;
-      font-weight: bold;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 20px;
-      animation: pulseGlow 3s infinite;
-      transition: transform 0.2s ease;
-    ">
-      🐓 Read Full Blog Post
-    </a>
-  </div>
-
- <!-- PALE HORSE PREPPING PREVIEW -->
-  <div style="flex: 1 1 500px; position: relative; background:#1a1a1a url('meteor.jpg') center/cover no-repeat; border-radius: 10px; overflow: hidden; min-height: 400px; box-shadow: 0 0 20px #000;">
-    <!-- overlay -->
-    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.85));"></div>
-
-  <!-- content -->
-<div style="position: absolute; bottom: 24px; left: 24px; right: 24px; color: #eee; font-family: Arial, sans-serif;">
-  <span style="display:inline-block; background:#ffa500; color:#111; font-weight:800; padding:6px 14px; border-radius:999px; font-size:13px; margin-bottom:12px;">
-    🐎 Preparing for the Pale Horse
-  </span>
-  <h3 style="margin:0 0 10px; color:#ffa500; font-size:1.8rem; text-shadow:2px 2px 8px #000;">
-    Revelation, Collapse &amp; Survival
-  </h3>
-  <p style="margin:0 0 20px; font-size:1.05em; line-height:1.6; color:#ddd;">
-    Exhibit A: war headlines that won’t leave the crawl. Exhibit B: shakey and unstable supply chains and prices with a drummer’s heartbeat. Exhibit C: a grid with a two-pack cough—wheezing in heat, freezing on contact. Exhibit D: earthquakes crashing ZIP codes they don't belong in. Exhibit E: pestilence with a PR team. Exhibit F: deception at scale—deepfakes, velvet tongues, and “peace” deals that read like pawn slips. Cross-check with the old brief—wars and rumors, famine and plague, quakes in “various places,” many led astray—and the pattern stops whispering and starts underlining. This isn’t coincidence; it’s choreography. Revelation shifts from poetry to procedure: seals, scarcity, counterfeit saviors, a world trading truth for permission. The full case pins verses to this week’s clippings, runs red string across the board, and turns doomscroll static into coordinates—then closes with field notes for grown-ups: tighten the house, steady the mind, keep vows, keep watch. Call it pattern recognition with a spine.
-  </p>
-  <a href="pale-horse-prepping.html#apocalypse-guide" style="
-    display:inline-block;
-    background:#ffa500;
-    color:#111;
-    font-weight:bold;
-    padding:12px 22px;
-    border-radius:6px;
-    text-decoration:none;
-    box-shadow:0 0 14px #ffa500;
-    transition:transform .2s;
-  ">
-    Read More →
-  </a>
-</div>
-
-</section>
-
-<!-- Glow Animation (reuse for both buttons) -->
-<style>
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500; }
-  50% { box-shadow: 0 0 20px #ff8c00, 0 0 30px #ff8c00; }
-  100% { box-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500; }
-}
-</style>
-
-
-
-</div>
-
-  <!-- ✅ Canonical -->
-  <link rel="canonical" href="https://gritgearhq.com/">
-
-  <!-- ✅ Meta SEO -->
-  <meta name="description" content="Discover rugged survival gear, prepper tools, and off-grid living tips at Grit Gear HQ. Take the Grit Test and join the resistance.">
-  <meta name="keywords" content="survival gear, prepping, bug out bag, self-defense, off-grid living, Grit Gear HQ">
-  <meta name="author" content="Grit Gear HQ">
-  <meta name="robots" content="index, follow">
-
-  <!-- ✅ Open Graph -->
-  <meta property="og:title" content="Grit Gear HQ – Rough Gear for Rougher Times">
-  <meta property="og:description" content="Rugged survival gear, prepper tools, and off-grid wisdom. Take the Grit Test.">
-  <meta property="og:image" content="https://gritgearhq.com/images/og-image.jpg">
-  <meta property="og:url" content="https://gritgearhq.com/">
-  <meta property="og:type" content="website">
-
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Grit Gear HQ">
-  <meta name="twitter:description" content="Prep like your life depends on it. Shop rugged survival gear at Grit Gear HQ.">
-  <meta name="twitter:image" content="https://gritgearhq.com/images/og-image.jpg">
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- ✅ Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- ✅ Google Analytics + Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSRKJ63PPM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TSRKJ63PPM'); // GA
-    gtag('config', 'AW-1781B792361'); // Google Ads
-  </script>
-
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    font-family: 'Orbitron', sans-serif;
-    background: url('images/bg-dust.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    overflow-x: hidden;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .cta-button {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 24px;
-    background-color: #ffa500;
-    color: #000;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 0 10px #ffa500;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .cta-button:hover {
-    background: #ff6600;
-    color: #fff;
-  }
-
-  .flash-card, .reading-card {
-    background: #000;
-    width: 280px;
-    min-height: 460px;
-    border-radius: 10px;
-    padding: 16px;
-    box-shadow: 0 0 15px #000;
-    text-align: center;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .flash-card img, .reading-card img {
-    width: 100%;
-    border-radius: 8px;
-    max-height: 140px;
-    object-fit: contain;
-    margin-bottom: 12px;
-  }
-
-  .flash-card h3, .reading-card h3 {
-    color: #ffa500;
-    margin: 10px 0;
-    font-size: 18px;
-  }
-
-  .flash-card p, .reading-card p {
-    font-size: 14px;
-    color: #ccc;
-    margin-bottom: 10px;
-  }
-
-  .buy-btn {
-    display: inline-block;
-    margin-top: 10px;
-    background: #ffa500;
-    color: #000;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 0 10px #ffa500;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .buy-btn:hover {
-    background: #ff6600;
-    color: #fff;
-  }
-
-  .section-title {
-    text-align: center;
-    color: #ffa500;
-    font-size: 2em;
-    margin: 30px 0;
-  }
-
-  .product-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 52px auto;
-    max-width: 1020px;
-  }
-<!-- Amish blog preview card (SELF-CONTAINED) -->
-<link rel="prefetch" href="/amish-winter-heat.html">
-
-<style>
-  .preview-wrap{max-width:1100px;margin:18px auto;padding:clamp(12px,3vw,24px)}
-  .preview-card{
-    display:grid;grid-template-columns:1fr;gap:0;text-decoration:none;
-    background:var(--panel,#121821);color:var(--ink,#e8edf2);
-    border:1px solid var(--line,#1f2a35);border-radius:16px;overflow:hidden;
-    box-shadow:0 0 0 1px rgba(255,122,0,.12),0 10px 35px rgba(0,0,0,.55);
-    transition:transform .12s ease,box-shadow .12s ease;
-  }
-  .preview-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,122,0,.18),0 18px 45px rgba(0,0,0,.6)}
-  .preview-media{position:relative;min-height:220px;background:linear-gradient(180deg,#1a222c,#0f141a)}
-  .preview-media img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9}
-  .preview-badge{
-    position:absolute;top:12px;left:12px;padding:6px 10px;border-radius:999px;
-    background:linear-gradient(180deg,#ff7a00,#e06100);color:#0b0f12;font-weight:800;font-size:.8rem
-  }
-  .preview-body{padding:16px 18px 18px}
-  .preview-tag{color:#9aa3ad;font-size:.9rem;letter-spacing:.4px;text-transform:uppercase}
-  .preview-title{margin:.25rem 0 .35rem;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:800}
-  .preview-deck{color:#c9d2da;margin:0 0 .8rem}
-  .preview-cta{
-    display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:900;letter-spacing:.3px;
-    background:linear-gradient(180deg,#ff7a00,#e06100);color:#101318;box-shadow:0 8px 30px rgba(255,122,0,.28)
-  }
-  @media(min-width:860px){.preview-card{grid-template-columns:48% 52%}}
-</style>
-
-<div class="preview-wrap">
-  <!-- Change href if you move to a pretty URL like /blog/amish-winter-heat/ -->
-  <a class="preview-card"
-     href="/amish-winter-heat.html#amish-winter-heat"
-     aria-label="Read: How the Amish Stay Warm in Winter">
-    <div class="preview-media">
-      <!-- Update src if your image lives elsewhere, e.g. /assets/img/berne.jpg -->
-      <img src="/berne.jpg" alt="Amish buggy on a snowy road — winter heat the old-world way" onerror="this.src='conewango.jpg'">
-      <span class="preview-badge">New</span>
-    </div>
-    <div class="preview-body">
-      <div class="preview-tag">Field Guide</div>
-      <h3 class="preview-title">How the Amish Stay Warm in Winter</h3>
-      <p class="preview-deck">Old-world heat without the grid — wood &amp; coal stoves, window quilts, humidity, and daily rhythms you can copy at home.</p>
-      <span class="preview-cta">Read the guide →</span>
-    </div>
-  </a>
-</div>
-
-<!-- ⚡ OFF-GRID POWER PICKS -->
-<section style="background:#111; border-top:2px solid #ffa500; border-bottom:2px solid #ffa500; padding:40px 20px; font-family:'Orbitron', sans-serif;">
-  <h2 style="color:#ffa500; text-align:center; font-size:2em; margin-bottom:30px;">⚡ Off-Grid Power Picks</h2>
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
-
-
-    <div class="gear-card" style="background:#000; width:280px; padding:16px; border-radius:10px; text-align:center; box-shadow:0 0 20px #000;">
-      <img src="images/handgen.jpg" alt="EnginStar 155Wh Solar Gen" style="width:100%; max-width:200px; height:200px; object-fit:cover; margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;">
-      <h3 style="color:#ffa500;">🔌 EnginStar 155Wh + Panel</h3>
-      <p style="color:#ccc;">42000mAh power bank with 30W solar panel. AC outlet + 6 ports = ready for anything.</p>
-      <p style="color:#ff5555;">⏳ Hot seller – camp-ready combo kit!</p>
-      <p style="color:#aaa; font-size:13px; font-style:italic;">⭐⭐⭐⭐ 'Easy setup, great for blackouts.'</p>
-      <a href="https://amzn.to/44Qtmap?tag=gritgearhq-20" target="_blank" style="color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px; display:inline-block; margin-top:10px; text-decoration:none;">🛒 Shop Now</a>
-    </div>
-
-    <div class="gear-card" style="background:#000; width:280px; padding:16px; border-radius:10px; text-align:center; box-shadow:0 0 20px #000;">
-      <img src="images/watt.jpg" alt="4000W Gas Generator" style="width:100%; max-width:200px; height:200px; object-fit:cover; margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;">
-      <h3 style="color:#ffa500;">⚙️ 4000W Gas Generator</h3>
-      <p style="color:#ccc;">Emergency-ready powerhouse for RVs, blackouts, or basecamp. Handles the load.</p>
-      <p style="color:#ff5555;">🚨 Last few in stock – serious buyers only.</p>
-      <p style="color:#aaa; font-size:13px; font-style:italic;">⭐⭐⭐⭐ 'Quiet for the size. Zero regrets.'</p>
-      <a href="https://amzn.to/4luZbg7?tag=gritgearhq-20" target="_blank" style="color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px; display:inline-block; margin-top:10px; text-decoration:none;">🛒 Shop Now</a>
-    </div>
-
-   <!-- 🥵 Stay Cool Blog Teaser -->
-<section style="background: url('images/hotsun.jpg') center center / cover no-repeat; position: relative; padding: 60px 20px; text-align: center; font-family:'Orbitron', sans-serif; box-shadow: inset 0 0 0 9999px rgba(0,0,0,0.4);">
-  <div style="max-width:800px; margin:0 auto; color:#fff;">
-    <h2 style="font-size:2em; color:#00e1ff;">🥵 How We Beat the Blackout Heat</h2>
-    <p style="font-size:1.1em; line-height:1.6; color:#eee;">
-      After a rogue tornado knocked out power for two sweltering weeks in the Mississippi Delta, our small town got left behind. But while others wilted, we kept our cool — literally. With clever tricks, essential gear, and a little old-school grit, we stayed calm, clean, and comfortable. Here’s exactly how we did it.
-    </p>
-    <a href="manifesto.html#stay-cool-blackout" class="cta-button" style="margin-top:20px;">🧊 Read More</a>
-  </div>
-</section>
-
-    <a href="solar-fan-hat-review.html#solar-fan-hat-review" class="cta-button">
-  🌞 Solar Fan Hat Review (Yes, Seriously)
-  <div class="desc">
-    Looks like a gag gift… but this solar-powered fan hat saved my sanity while mowing in 100° heat. Dual fans. Solar panel. USB backup. <strong>Read more ➜</strong>
-  </div>
-</a>
-
-  </div>
-</section>
-
-<!-- 🔥 Blog Preview Card: Goout Stove Review -->
-<section style="background:#1a1a1a; border:2px solid #ffa500; border-radius:10px; box-shadow:0 0 20px #000; margin:40px auto; padding:20px; max-width:1000px; font-family:'Orbitron', sans-serif;">
-  <a href="goout_stove_review_FINAL_WITH_ANCHOR.html#goout-stove-review" style="text-decoration:none; color:inherit; display:flex; flex-wrap:wrap; gap:20px;">
-    
-    <!-- Image Column -->
-    <div style="flex:1 1 300px; max-width:300px;">
-      <img src="images/springhill21.jpg" alt="Goout Stove Review" style="width:100%; border-radius:10px; box-shadow:0 0 10px #000;">
-    </div>
-    
-    <!-- Text Column -->
-    <div style="flex:2 1 500px;">
-      <h2 style="color:#ffa500; font-size:1.8em; margin-top:0;">🔥 Goout Stove: The Bug-Out Cook King</h2>
-      <p style="color:#ccc; font-size:1.05em; line-height:1.6;">
-        A rugged emergency stove that came through for me during a brutal blackout and deadly heatwave. 
-        I used it to boil water and cook gooey grilled cheese sandwiches outside without heating the house up. 
-        This no-gimmick gear belongs in every survival kit. Also featuring powdered cheddar and a few war stories.
-      </p>
-      <div style="margin-top:15px; text-align:right;">
-        <span style="background:#ffa500; color:#000; padding:8px 16px; border-radius:6px; font-weight:bold; display:inline-block;">
-          🔗 Read the Full Post
-        </span>
-      </div>
-    </div>
-
-  </a>
-</section>
-
-  </a>
-</section>
-
-<!-- 🔥 Blog Preview Card: Nobody Gives a Sh*t -->
-<section style="background:#1a1a1a; border:2px solid #ffa500; border-radius:10px; box-shadow:0 0 20px #000; margin:40px auto; padding:20px; max-width:1000px; font-family:'Orbitron', sans-serif;">
-  <a href="manifesto.html#nobody-cares-blog" style="text-decoration:none; color:inherit;">
-    <img src="images/lonely.jpg" alt="Grind in Silence" style="width:100%; border-radius:10px; margin-bottom:20px; box-shadow:0 0 10px #000;">
-    <h2 style="color:#ffa500; font-size:1.8em; margin-bottom:10px;">Nobody Gives a Sh*t... And That's Okay</h2>
-    <p style="color:#ccc; font-size:1.05em; line-height:1.6;">
-      Take a break from the noise. Grind alone. Get better in silence. Nobody needs to cheer you on — and that’s the whole point. 
-      This is how you come back stronger, smarter, and unrecognizable. Includes stoic wisdom, Goggins fire, and a truth bomb or two.
-    </p>
-    <div style="margin-top:15px; text-align:right;">
-      <span style="background:#ffa500; color:#000; padding:8px 16px; border-radius:6px; font-weight:bold; display:inline-block;">
-        🔗 Read the Full Post
-      </span>
-    </div>
-  </a>
-</section>
-
-
-<!-- Side-by-Side Section -->
-<section style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; align-items:stretch; margin:60px auto; max-width:1100px;">
-
-  <!-- 🐻 Man vs Bear Blog Teaser -->
-  <div style="flex:1; min-width:300px; background:#111 url('images/manbear1.jpg') center/cover no-repeat; border:2px solid #ffa500; border-radius:14px; box-shadow:0 0 30px #000; display:flex; align-items:center; justify-content:center;">
-    <div style="background:rgba(0,0,0,0.6); padding:30px; border-radius:12px; text-align:center; font-family:'Orbitron', sans-serif;">
-      <h2 style="color:#ffa500; font-size:1.8em; margin-bottom:15px;">🐻 Man vs Bear: Who Would You Trust?</h2>
-      <p style="color:#ddd; font-size:1em; line-height:1.6; margin-bottom:20px;">
-        Would you feel safer stranded in the deep woods with a random man or a wild bear? It’s not just a meme — it’s a look at how we see danger, trust, and survival in today’s world. This one's spicy. 
-      </p>
-      <a href="bear-vs-man.html#bear-vs-man" class="cta-button">🐾 Read More</a>
-    </div>
-  </div>
-
- 
-</section>
-
-
-<!-- 🧠 Masculinity Blog Teaser with Image -->
-<section style="background:#111; border-top:2px solid #ffa500; border-bottom:2px solid #ffa500; padding:40px 20px; font-family:'Orbitron', sans-serif; text-align:center; box-shadow:0 0 25px #000;">
-
-  <a href="manifesto.html" style="text-decoration:none;">
-    <img src="images/manly.jpg" alt="The War on Masculinity" style="width:100%; max-width:800px; border-radius:12px; box-shadow:0 0 20px #000; margin-bottom:25px;">
-  </a>
-
-  <h2 style="color:#ffa500; font-size:2em; margin-bottom:15px;">💥 Where Have All the Men Gone?</h2>
-
-  <p style="color:#ccc; max-width:800px; margin:0 auto 20px; font-size:1.1em; line-height:1.6;">
-    There's a war being waged — not with bullets, but with shame, censorship, and weakness disguised as virtue.
-    Men are being erased from culture, family, and purpose.
-    <br><br>
-    If you've felt it... you're not crazy. You're awake.
-  </p>
-
-  <a href="manifesto.html" style="display:inline-block; margin-top:15px; padding:14px 28px; background:#ffa500; color:#000; font-weight:bold; border-radius:8px; text-decoration:none; box-shadow:0 0 12px #ffa500; font-size:1.1em;">
-    📜 Read the Full Manifesto
-  </a>
-</section>
-
-
-  </div>
-</section>
-
-</section>
-   
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Sometimes The Fear Won't Go Away So We'll Have To Do It Afraid.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Goout Stove Review | Grit Gear HQ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #000;
-      margin: 0;
-      padding: 0;
-      font-family: 'Courier New', Courier, monospace;
-    .stars {
-      color: gold;
-      font-size: 14px;
-      margin-top: 8px;
-    }
-
-    .tagline-box {
-      background: url('images/concrete.jpg') no-repeat center center;
-      background-size: cover;
-      padding: 60px 20px;
-      text-align: center;
-      color: #fff;
-      font-size: 2em;
-    .buy-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 14px;
-      background-color: #ffa500;
-      color: black;
-      font-weight: bold;
-      border-radius: 8px;
-      box-shadow: 0 0 25px #000;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-      max-width: 800px;
-      margin: 80px auto;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-<!-- Orwell Quote Banner -->
-<section class="orwell-banner">
-  <img src="images/orwell.jpg" alt="George Orwell Quote American Flag">
-</section>
-
-<style>
-/* Tagline Section with Concrete Background */
-.tagline-box {
-  background: url('images/bnb.png') no-repeat center center;
-  background-size: cover;
-  padding: 60px 20px;
-  text-align: center;
-  font-size: 2em;
-  font-weight: bold;
-  color: #ffa500;
-  text-shadow: 1px 1px 5px #000;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-  border-top: 2px solid #ffa500;
-  border-bottom: 2px solid #ffa500;
-  font-family: 'Courier New', monospace;
-  margin: 40px auto;
-  max-width: 1000px;
-  border-radius: 8px;
-}
-  <!-- Header Image -->
-  <img src="images/tg-manila.jpg" alt="Manila Header" class="header-image">
-
-/* Orwell Banner Styling (unchanged) */
-.orwell-banner {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  text-align: center;
-  border-top: 2px solid #ffa500;
-  border-bottom: 2px solid #ffa500;
-}
-
-.orwell-banner img {
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  display: block;
-  margin: auto;
-  box-shadow: 0 0 20px #000;
-}
-</style>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grit Gear HQ – Rough Gear for Rougher Times</title>
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!-- CTA Section -->
-<section class="hero" style="text-align:center;">
-  <a href="random.html" class="cta-button">🧪 Grit Certified Picks</a>
-  <a href="blog-index.html" class="cta-button">📜 Read Manifesto</a>
-  <a href="grit-test.html" class="cta-button">🧠 Take the Grit Test</a>
-</section>
-
-<!-- ✅ MOBILE-FIRST REBUILD (ALL SECTIONS) -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<section class="gg-wrap">
-
-  <!-- 🔥 Featured Gear Reviews -->
-  <section class="gg-gear" aria-labelledby="gg-gear-title">
-    <div class="gg-container">
-      <header class="gg-header">
-        <h2 id="gg-gear-title">Trusted in the Shadows</h2>
-        <p>Used by thousands of travelers, security pros, and gritty survivors.</p>
-      </header>
-
-      <!-- Product Grid -->
-      <div class="gg-grid gg-grid--cards">
-        <!-- Sustain Supply Kit -->
-        <article class="gg-card">
-          <img src="images/4person.jpg" alt="Sustain Supply 4-Person Survival Kit" class="gg-img" />
-          <h3 class="gg-card-title">
-            Sustain Supply Comfort Kit<br />4-Person, 72-Hour Survival System
-          </h3>
-          <p class="gg-card-copy">
-            Packed with food, water, light, first aid, and warmth—this kit covers the basics when you're off-grid or out of luck.
-          </p>
-          <p class="gg-stars">⭐️⭐️⭐️⭐️⭐️ <span>1,000+ ratings</span></p>
-          <a href="https://amzn.to/462aVlw" target="_blank" rel="nofollow sponsored noopener" class="gg-btn">🛒 Gear Up Now</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🏜️ Death Valley Germans Blog Feature -->
-  <section class="gg-feature" aria-labelledby="gg-dvg-title">
-    <div class="gg-container">
-      <article class="gg-feature-card">
-        <img src="images/germans.jpg" alt="Death Valley Germans Missing" class="gg-feature-img" />
-        <div class="gg-feature-body">
-          <h2 id="gg-dvg-title">The Death Valley Germans: A Desert Mystery Turned Tragedy</h2>
-          <p>
-            In the sweltering July heat of 1996, a young German family of four vanished without a trace in Death Valley National Park. Egbert Rimkus, a 34-year-old engineer, his son Georg, girlfriend Cornelia Meyer, and her 4-year-old son Max were adventuring across the Southwest—until they weren’t.
-          </p>
-          <p>
-            Their minivan was later found abandoned deep in the desert, far off any safe path. It would be years before searchers uncovered the remains. No one knows why they veered so far off course.
-          </p>
-          <p><em>Respect to the families who endured. May their memory echo as a warning.</em></p>
-          <a href="manifesto.html" class="gg-btn">🔗 Read the Full Story In The Manifesto</a>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="breadcrumbs"><a href="/index.html">Home</a> › <a href="/blog.html">Blog</a> › This Is The Turning Point Tee</nav>
+      <div class="hero-grid">
+        <div class="gallery">
+          <figure class="shot">
+            <picture>
+              <source type="image/webp" srcset="images/turning-front-800.webp 800w, images/turning-front-1200.webp 1200w, images/turning-front-1600.webp 1600w" sizes="(max-width:640px) 92vw, 520px">
+              <img src="images/turning-front.png" alt="This Is The Turning Point tee — front (model)">
+            </picture>
+          </figure>
+          <figure class="shot">
+            <picture>
+              <source type="image/webp" srcset="images/turning-back-flat-800.webp 800w, images/turning-back-flat-1200.webp 1200w, images/turning-back-flat-1600.webp 1600w" sizes="(max-width:640px) 92vw, 520px">
+              <img src="images/turning-back-flat.png" alt="This Is The Turning Point tee — back flat lay">
+            </picture>
+          </figure>
+          <figure class="shot">
+            <picture>
+              <source type="image/webp" srcset="images/turning-back-model-800.webp 800w, images/turning-back-model-1200.webp 1200w, images/turning-back-model-1600.webp 1600w" sizes="(max-width:640px) 92vw, 520px">
+              <img src="images/turning-back-model.png" alt="This Is The Turning Point tee — back (model)">
+            </picture>
+          </figure>
         </div>
-      </article>
+        <div>
+          <div class="eyebrow">Grit Gear HQ Exclusive</div>
+          <h1 class="title">This Is The Turning Point — Premium Unisex Tee</h1>
+          <p class="kicker copy">Stand for something. Clean lines, tough vibe, all-day comfort. And <strong>10% of profits go to Turning Point USA</strong>.</p>
+          <span class="badge">You Buy • We Give • They Fight</span><br>
+          <a class="cta" href="https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=blog&utm_campaign=turning_point_page" target="_blank" rel="noopener nofollow">Buy on Etsy → Ships Fast</a>
+          <div class="trust">
+            <div>★ ★ ★ ★ ★ Trusted by patriots</div>
+            <div>🧵 Premium cotton blend</div>
+            <div>🧼 Easy-care print</div>
+            <div>🇺🇸 10% to TPUSA</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <!-- 🐾 Survivorman vs Bear Grylls -->
-  <section class="gg-compare" aria-labelledby="gg-compare-title">
-    <div class="gg-container gg-flex">
-      <a href="manifesto.html#survivorman-vs-bear" class="gg-media">
-        <img src="images/les-vs-bear.jpg" alt="Survivorman vs Bear Grylls" class="gg-img--shadow" />
-      </a>
-      <div class="gg-copy">
-        <h2 id="gg-compare-title">🐾 Survivorman vs Bear Grylls</h2>
-        <p>
-          One man fakes the wild with a safety crew and stunt doubles. The other hauls 50 lbs of camera gear and actually <i>survives</i>. If your life depended on it... who would you trust?
-        </p>
-        <p class="gg-muted">Spoiler: It ain’t the guy drinking his own pee for ratings.</p>
-        <a href="manifesto.html#survivorman-vs-bear" class="gg-btn gg-btn--lg">🔥 Read the Full Breakdown</a>
+  <section class="sect">
+    <div class="wrap">
+      <h2 class="sect-title">Why this shirt hits different</h2>
+      <div class="cols">
+        <div class="card copy">
+          <p>Some shirts are just fabric. This one’s a flag you can wear. The message is simple and sharp: <em>This is the turning point.</em> A line in the sand for people who show up, speak up, and don’t flinch.</p>
+          <p>We dialed the design to look clean on‑body — crisp edges, rich color, and a print that holds after wash. The unisex cut frames the chest and shoulders without that boxy, cheap feel.</p>
+          <p><strong>10% of profits go to Turning Point USA.</strong> You’re not just buying a tee — you’re fueling the fight for free speech, faith, and American values.</p>
+          <p><a class="cta" href="https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=blog&utm_campaign=turning_point_page" target="_blank" rel="noopener nofollow">Grab Yours on Etsy</a></p>
+        </div>
+        <div class="card copy">
+          <h3 style="margin-top:0">Specs that matter</h3>
+          <ul class="checks">
+            <li>Premium feel: soft mid‑weight cotton blend</li>
+            <li>Fit: true‑to‑size unisex; size up for a looser drape</li>
+            <li>Print: sharp, durable inks designed for longevity</li>
+            <li>Care: cold wash inside‑out; low heat or hang dry</li>
+            <li>Mission: <strong>10% of profits donated to TPUSA</strong> (receipts posted monthly)</li>
+          </ul>
+          <p style="margin-top:14px"><a class="cta" href="https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=blog&utm_campaign=turning_point_page" target="_blank" rel="noopener nofollow">Buy Now → Limited Stock</a></p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 🔧 Grit-Tested Gear (3 cards) -->
-  <section class="gg-gear" aria-labelledby="grit-gear">
-    <div class="gg-container">
-      <header class="gg-header">
-        <h2 id="grit-gear">🔥 Grit-Tested Gear</h2>
-        <p>Products our readers actually use and rave about. No fluff. Just grit.</p>
-      </header>
-
-      <div class="gg-grid gg-grid--cards">
-        <!-- CARD 1 -->
-        <article class="gg-card">
-          <img src="images/scout.jpg" alt="Military Scout Survival Tin 2024" class="gg-img" />
-          <h3 class="gg-card-title">🪙 Military Scout Survival Tin 2024</h3>
-          <p class="gg-card-copy">Micro-sized survival box stuffed with old-school grit: wire saw, fire starter, fish hooks—basically MacGyver in a tin.</p>
-          <p class="gg-stars">⭐️⭐️⭐️⭐️⭐️ <span>(642 reviews)</span></p>
-          <p class="gg-quote"><em>“Everything I need to outlive my ex-wife’s next husband.” – Carl J.</em></p>
-          <a href="https://amzn.to/4kT5ERa?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener" class="gg-btn">🧲 Add to Kit</a>
-        </article>
-
-        <!-- CARD 2 -->
-        <article class="gg-card">
-          <img src="images/shoe.jpg" alt="SHULOOK Tactical Hiking Boots" class="gg-img" />
-          <h3 class="gg-card-title">🥾 SHULOOK Tactical Hiking Boots</h3>
-          <p class="gg-card-copy">Comfort of sneakers, grip of a mountain goat. These boots laughed at black ice and bad decisions.</p>
-          <p class="gg-stars">⭐️⭐️⭐️⭐️⭐️ <span>(2,451 reviews)</span></p>
-          <p class="gg-quote"><em>“Hiked 12 miles and still felt good enough to outrun my problems.” – Darren M.</em></p>
-          <a href="https://amzn.to/44SMe91?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener" class="gg-btn">👣 Lace Up Now</a>
-        </article>
-
-        <!-- CARD 3 -->
-        <article class="gg-card">
-          <img src="images/coat.jpg" alt="TACVASEN Winter Military Jacket" class="gg-img" />
-          <h3 class="gg-card-title">🧥 TACVASEN Winter Military Jacket</h3>
-          <p class="gg-card-copy">Fleece-lined and rugged. Cold won’t touch you—but the compliments will.</p>
-          <p class="gg-stars">⭐️⭐️⭐️⭐️⭐️ <span>(3,178 reviews)</span></p>
-          <p class="gg-quote"><em>“Survived a blizzard and two divorces in this.” – Hank D.</em></p>
-          <a href="https://amzn.to/4lUYUCX?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener" class="gg-btn">🧥 Gear Up Warm</a>
-        </article>
+  <section class="sect">
+    <div class="wrap">
+      <h2 class="sect-title">What buyers are saying</h2>
+      <div class="reviews">
+        <div class="rev"><div class="name">“Patriot Pick” ★★★★★</div><div class="body">Clean print, fits right, shipped quick. Compliments at the range already.</div><div class="tag">Verified Buyer • TX</div></div>
+        <div class="rev"><div class="name">“Sharp & Comfortable” ★★★★★</div><div class="body">Statement tee without the boxy feel. Getting another color.</div><div class="tag">Verified Buyer • FL</div></div>
+        <div class="rev"><div class="name">“Purpose Built” ★★★★★</div><div class="body">The message hits — and 10% to TPUSA makes it a no‑brainer.</div><div class="tag">Verified Buyer • AZ</div></div>
       </div>
-
-      <p class="gg-disclaimer">As an Amazon Associate, we earn from qualifying purchases. It helps keep this site running.</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="gg-footer">
-    <div class="gg-container gg-center">
-      <p>&copy; 2024 Grit Gear HQ · All Rights Reserved</p>
-      <p class="gg-small">
-        Affiliate disclosure: As an Amazon Associate, we earn from qualifying purchases.
-        Proceeds help keep this site alive and full of free survival content.
-        Stay prepared. Stay gritty. – Serpico
-      </p>
-      <p class="gg-tribute">Dedicated To Christopher Ballard. Until Valhalla, SEMPER FIDELIS.</p>
+  <section class="sect">
+    <div class="wrap">
+      <h2 class="sect-title">FAQ</h2>
+      <details><summary>How does sizing run?</summary><div class="copy">True‑to‑size unisex. Between sizes or prefer a relaxed fit? Order one up.</div></details>
+      <details><summary>How do I wash it?</summary><div class="copy">Cold wash, inside‑out. Tumble low or hang dry. Don’t iron directly on the print.</div></details>
+      <details><summary>Where does my donation go?</summary><div class="copy">We donate 10% of profits from this tee to Turning Point USA and post monthly receipts for transparency.</div></details>
+      <details><summary>How fast do you ship?</summary><div class="copy">Orders process quickly and ship with tracking. Exact timelines show during Etsy checkout.</div></details>
     </div>
+  </section>
+
+  <section class="sect">
+    <div class="wrap">
+      <h2 class="sect-title">Share it</h2>
+      <div class="copy">Know someone who needs this? Send it their way.</div>
+      <p><a id="share-x" href="#" target="_blank" rel="noopener">Share on X</a> &nbsp;|&nbsp; <a id="share-fb" href="#" target="_blank" rel="noopener">Share on Facebook</a></p>
+      <p><a class="cta" href="https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=blog&utm_campaign=turning_point_page" target="_blank" rel="noopener nofollow">Buy on Etsy → Support TPUSA</a></p>
+    </div>
+  </section>
+
+  <div class="sticky">
+    <div class="mini">This Is The Turning Point Tee — 10% to TPUSA</div>
+    <a class="go" href="https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=blog&utm_campaign=turning_point_page" target="_blank" rel="noopener nofollow">Buy on Etsy</a>
+  </div>
+
+  <footer class="wrap">
+    <div>© <span id="yr"></span> Grit Gear HQ • “Rough Gear for Rougher Times.”</div>
+    <div style="margin-top:6px;color:var(--muted);font-size:.85rem">Not affiliated with Turning Point USA. Donations are made by Grit Gear HQ and reported monthly.</div>
   </footer>
 
-</section>
-
-<!-- 🎨 SCOPED, MOBILE-FIRST CSS -->
-<style>
-  /* Base */
-  .gg-wrap{--ink:#e7e7e7;--muted:#bdbdbd;--bg:#0e0e10;--card:#141418;--line:#2b2b2b;--brand:#ffa500;--brand-d:#ff8c00}
-  .gg-wrap{background:#111;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-  .gg-container{max-width:1100px;margin:0 auto;padding:0 16px}
-  img{max-width:100%;height:auto;display:block}
-
-  /* Buttons */
-  .gg-btn{
-    display:inline-block;background:var(--brand);color:#111;font-weight:800;
-    padding:10px 16px;border-radius:10px;text-decoration:none;
-    box-shadow:0 0 12px rgba(255,165,0,.6);transition:transform .15s ease, background .2s ease
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"This Is The Turning Point – Premium Tee",
+    "brand":{"@type":"Brand","name":"Grit Gear HQ"},
+    "description":"Premium unisex tee with bold 'This Is The Turning Point' graphic. 10% of profits donated to Turning Point USA.",
+    "category":"Apparel & Accessories > Clothing > Shirts & Tops > T-Shirts",
+    "url":"https://gritgearhq.com/turning-point-shirt.html",
+    "image":[
+      "images/turning-front.png",
+      "images/turning-back-flat.png",
+      "images/turning-back-model.png"
+    ]
   }
-  .gg-btn:hover{background:var(--brand-d);transform:translateY(-1px)}
-  .gg-btn--lg{padding:14px 22px}
+  </script>
 
-  /* Headings/utility */
-  .gg-header{ text-align:center; margin:0 auto 20px; }
-  .gg-header h2{color:var(--brand);margin:0 0 6px;font-size:clamp(22px,3.2vw,32px)}
-  .gg-header p{color:var(--muted);margin:0}
-  .gg-muted{color:#9a9a9a}
-  .gg-center{text-align:center}
-  .gg-small{font-size:.9rem;color:#bbb}
-
-  /* Featured Gear (top) */
-  .gg-gear{background:#1a1a1a;border-top:2px solid var(--brand);border-bottom:2px solid var(--brand);padding:40px 0;box-shadow:inset 0 0 30px #000}
-  .gg-grid{display:grid;gap:20px}
-  .gg-grid--cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:24px}
-
-  .gg-card{
-    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center;
-    box-shadow:0 10px 26px rgba(0,0,0,.45);transition:transform .15s ease, box-shadow .2s ease
-  }
-  .gg-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(0,0,0,.6)}
-  .gg-img{border-radius:10px;margin-bottom:12px}
-  .gg-card-title{color:var(--brand);margin:8px 0 6px;font-size:1.05rem}
-  .gg-card-copy{color:#d2d2d2;margin:0 0 10px}
-  .gg-stars{color:#90ee90;margin:0 0 8px}
-  .gg-quote{color:#ffa9a9;margin:0 0 10px}
-
-  /* Blog Feature */
-  .gg-feature{background:#111;border-top:2px solid var(--brand);border-bottom:2px solid var(--brand);padding:40px 0}
-  .gg-feature-card{background:#1a1a1a;border:2px solid var(--brand);border-radius:12px;overflow:hidden;box-shadow:0 0 25px var(--brand-d)}
-  .gg-feature-img{width:100%;border-bottom:2px solid var(--brand)}
-  .gg-feature-body{padding:18px}
-  .gg-feature-body h2{color:var(--brand);margin:0 0 10px;font-size:clamp(22px,3vw,30px)}
-  .gg-feature-body p{color:#ddd;margin:0 0 12px;line-height:1.6}
-
-  /* Survivorman vs Bear */
-  .gg-compare{background:#111;border-top:2px solid var(--brand);border-bottom:2px solid var(--brand);box-shadow:inset 0 0 30px #000;padding:50px 0}
-  .gg-flex{display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:center}
-  .gg-media{flex:1 1 320px;min-width:260px;text-align:center}
-  .gg-img--shadow{border-radius:12px;box-shadow:0 0 20px #000;transition:transform .25s ease}
-  .gg-media:hover .gg-img--shadow{transform:scale(1.02)}
-  .gg-copy{flex:1 1 320px;min-width:260px}
-  .gg-copy h2{color:var(--brand);font-size:clamp(22px,3.2vw,36px);margin:0 0 12px}
-  .gg-copy p{color:#ddd;margin:0 0 16px;font-size:1.02rem;line-height:1.6}
-
-  /* Footer */
-  .gg-footer{background:#0d0d0d;border-top:2px solid var(--brand);padding:36px 0;color:#aaa}
-  .gg-tribute{color:#ff6666;font-weight:700;margin-top:10px;text-shadow:0 0 6px #000}
-
-  /* Mobile-friendly tweaks */
-  @media (max-width:640px){
-    .gg-feature-body{padding:16px}
-    .gg-copy p{font-size:1rem}
-  }
-</style>
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    (function(){
+      const page = encodeURIComponent(location.href);
+      const text = encodeURIComponent("This Is The Turning Point – premium tee. 10% to TPUSA. Grab yours:");
+      document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${text}&url=${page}`;
+      document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${page}`;
+    })();
+  </script>
+</body>
+</html>
