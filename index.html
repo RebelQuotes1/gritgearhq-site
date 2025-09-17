@@ -1,4 +1,4 @@
-<!-- Clickable Etsy Preview Card (paste this where you want the preview to appear) -->
+<!-- Clickable Etsy Preview Card (BACK as main image + small front thumbnail) -->
 <style>
   /* Preview card styles */
   .preview-card{
@@ -8,7 +8,19 @@
     text-decoration:none; transition:transform .15s ease, box-shadow .15s ease
   }
   .preview-card:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.45) }
-  .preview-card img{ width:100%; height:auto; border-radius:12px; display:block }
+
+  /* Image stack: back = main, front = thumb */
+  .pc-img{ position:relative; }
+  .pc-img .main{ width:100%; height:auto; border-radius:12px; display:block }
+  .pc-img .thumb{
+    position:absolute; right:6px; bottom:6px; width:56px; height:auto;
+    border-radius:8px; border:2px solid #222; box-shadow:0 6px 14px rgba(0,0,0,.45); display:block
+  }
+  .pc-badge{
+    position:absolute; left:6px; top:6px; font-size:.72rem; color:#eee; 
+    background:rgba(0,0,0,.7); border:1px solid #333; border-radius:8px; padding:3px 6px
+  }
+
   .pc-meta h3{ margin:0 0 6px; font-size:1.05rem; color:var(--ink, #eee) }
   .pc-sub{ margin:0 0 8px; color:var(--muted, #bdbdbd); line-height:1.4 }
   .pc-cta{
@@ -22,15 +34,20 @@
    href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=site&utm_campaign=turning_point"
    target="_blank" rel="noopener nofollow"
    aria-label="Open This Is The Turning Point tee on Etsy">
-  <img src="front3.jpg.png" alt="This Is The Turning Point tee — product preview">
+  <div class="pc-img">
+    <!-- MAIN = BACK VIEW -->
+    <img class="main" src="back1.jpg.png" alt="This Is The Turning Point tee — back graphic (main)">
+    <span class="pc-badge">Back graphic</span>
+    <!-- THUMB = FRONT VIEW -->
+    <img class="thumb" src="front3.jpg.png" alt="Front chest print thumbnail">
+  </div>
+
   <div class="pc-meta">
     <h3>This Is The Turning Point — Premium Tee</h3>
     <p class="pc-sub">From $25.02 – $32.02 • <strong>10% to TPUSA</strong></p>
     <span class="pc-cta">Buy on Etsy →</span>
   </div>
 </a>
-
-
 
   <!-- Ads (as you had it) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
