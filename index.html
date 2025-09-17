@@ -1,95 +1,96 @@
-<!-- Pro Etsy Preview Card (BACK = main image, FRONT on hover + thumbnail) -->
-<a class="gg-preview-card"
-   href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=site&utm_campaign=turning_point"
-   target="_blank" rel="noopener nofollow"
-   aria-label="Open This Is The Turning Point — Premium Tee on Etsy">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>This Is The Turning Point — Preview Card | Grit Gear HQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Clickable Etsy preview for the Turning Point tee. Back view is the hero; front view fades in on hover." />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
 
-  <figure class="pc-img">
-    <!-- Back view is primary -->
-    <img class="pc-main" src="back1.jpg.png"
-         alt="Back graphic: ‘THIS IS THE TURNING POINT’ on white tee" loading="eager" fetchpriority="high">
+  <style>
+    :root{
+      --accent:#ffa500; --ink:#eee; --muted:#bdbdbd; --bg:#0f0f0f; --panel:#141414; --edge:#262626;
+    }
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px 18px}
 
-    <!-- Front view fades in on hover/focus -->
-    <img class="pc-front" src="front3.jpg.png"
-         alt="Front chest mark ‘GRITGEARHQ’" loading="lazy">
+    /* ===== Etsy Hero Preview (Back = main, Front on hover) ===== */
+    .gg-etsy-hero{
+      display:grid; grid-template-columns:minmax(260px,420px) 1fr; gap:20px; align-items:center;
+      background:linear-gradient(120deg,#151515,#0f0f0f 55%); color:var(--ink);
+      border:1px solid var(--edge); border-radius:18px; padding:16px;
+      text-decoration:none; box-shadow:0 10px 28px rgba(0,0,0,.45);
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .gg-etsy-hero:hover{ transform:translateY(-2px); box-shadow:0 16px 40px rgba(0,0,0,.55); border-color:#333; }
+    .gg-etsy-hero:focus-visible{ outline:3px solid var(--accent); outline-offset:4px; }
 
-    <figcaption class="pc-badge">Back view</figcaption>
-    <img class="pc-thumb" src="front3.jpg.png" alt="" aria-hidden="true">
-  </figure>
+    /* Image stack */
+    .gg-img{ position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:14px; margin:0; background:#0c0c0c; }
+    .gg-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .gg-front{ position:absolute; inset:0; opacity:0; transition:opacity .25s ease; }
+    .gg-etsy-hero:hover .gg-front,
+    .gg-etsy-hero:focus-visible .gg-front{ opacity:1; }
 
-  <div class="pc-meta">
-    <h3 class="pc-title">This Is The Turning Point — Premium Tee</h3>
-    <p class="pc-sub">From <strong>$25.02</strong> – <strong>$32.02</strong> • <strong>10% to TPUSA</strong></p>
+    .gg-badge{
+      position:absolute; left:8px; top:8px; font-size:.72rem; color:#eee;
+      background:rgba(0,0,0,.65); border:1px solid #2a2a2a; padding:4px 6px; border-radius:8px;
+    }
 
-    <div class="pc-features">
-      <span class="pc-chip">Unisex fit</span>
-      <span class="pc-chip">Fast shipping</span>
-      <span class="pc-chip">Easy returns</span>
-      <span class="pc-spacer" aria-hidden="true"></span>
-      <span class="pc-cta">Buy on Etsy →</span>
-    </div>
+    /* Meta */
+    .gg-title{ margin:0 0 6px; font-size:clamp(1.1rem,1.2vw + 1rem,1.6rem); color:var(--ink); }
+    .gg-sub{ margin:0 0 10px; color:var(--muted); line-height:1.5; }
+    .gg-chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 12px; }
+    .gg-chips span{
+      font-size:.82rem; color:#ddd; padding:6px 10px; border-radius:999px;
+      border:1px solid #2b2b2b; background:#1a1a1a;
+    }
+    .gg-cta{
+      display:inline-block; background:var(--accent); color:#111; font-weight:800;
+      padding:10px 14px; border-radius:12px; border:2px solid #333;
+      box-shadow:0 12px 26px rgba(255,165,0,.25);
+    }
+
+    /* Responsive */
+    @media (max-width:760px){
+      .gg-etsy-hero{ grid-template-columns:1fr; }
+      .gg-img{ aspect-ratio:4/5; }
+    }
+    @media (prefers-reduced-motion:reduce){
+      .gg-etsy-hero, .gg-front{ transition:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Full clickable card -->
+    <a class="gg-etsy-hero"
+       href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=site&utm_campaign=turning_point"
+       target="_blank" rel="noopener nofollow"
+       aria-label="Open This Is The Turning Point — Premium Tee on Etsy">
+
+      <figure class="gg-img">
+        <!-- Primary/back view -->
+        <img class="gg-back" src="back1.jpg.png"
+             alt="Back graphic: ‘THIS IS THE TURNING POINT’ on white tee" loading="eager" fetchpriority="high">
+        <!-- Front view fades in on hover/focus -->
+        <img class="gg-front" src="front3.jpg.png" alt="" aria-hidden="true" loading="lazy">
+        <figcaption class="gg-badge">Back view</figcaption>
+      </figure>
+
+      <div class="gg-meta">
+        <h3 class="gg-title">This Is The Turning Point — Premium Tee</h3>
+        <p class="gg-sub">From <strong>$25.02</strong> – <strong>$32.02</strong> • <strong>10% to TPUSA</strong></p>
+        <div class="gg-chips">
+          <span>Unisex fit</span><span>Fast shipping</span><span>Easy returns</span>
+        </div>
+        <span class="gg-cta">Buy on Etsy →</span>
+      </div>
+    </a>
   </div>
-</a>
-
-<style>
-  /* Card shell */
-  .gg-preview-card{
-    --accent: #ffa500; --ink:#eee; --muted:#bdbdbd; --panel:#141414; --edge:#262626;
-    display:grid; grid-template-columns:220px 1fr; gap:16px; align-items:center;
-    background:var(--panel); border:1px solid var(--edge); border-radius:16px;
-    padding:14px; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,.35);
-    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-    color:var(--ink);
-  }
-  .gg-preview-card:hover{ transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.5); border-color:#333; }
-  .gg-preview-card:focus-visible{ outline:3px solid var(--accent); outline-offset:4px; }
-
-  /* Image stack */
-  .pc-img{ position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:12px; background:#0f0f0f; }
-  .pc-img img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .pc-main{ filter:contrast(1.02); }
-  .pc-front{
-    position:absolute; inset:0; opacity:0; transition:opacity .25s ease;
-    box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);
-  }
-  .gg-preview-card:hover .pc-front,
-  .gg-preview-card:focus-visible .pc-front{ opacity:1; }
-
-  /* Overlays */
-  .pc-badge{
-    position:absolute; left:8px; top:8px; font-size:.72rem; letter-spacing:.02em;
-    color:#eee; background:rgba(0,0,0,.65); border:1px solid #2e2e2e;
-    padding:4px 6px; border-radius:8px;
-  }
-  .pc-thumb{
-    position:absolute; right:8px; bottom:8px; width:60px; height:auto;
-    border-radius:10px; border:2px solid #1e1e1e; box-shadow:0 8px 18px rgba(0,0,0,.45);
-  }
-
-  /* Meta */
-  .pc-title{ margin:0 0 6px; font-size:clamp(1rem, 1.2vw + .8rem, 1.25rem); color:var(--ink); }
-  .pc-sub{ margin:0 0 10px; color:var(--muted); line-height:1.5; }
-
-  .pc-features{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
-  .pc-chip{
-    font-size:.82rem; color:#ddd; border:1px solid #2d2d2d; border-radius:999px;
-    padding:6px 10px; background:#1a1a1a;
-  }
-  .pc-spacer{ flex:1 1 auto; }
-
-  .pc-cta{
-    display:inline-block; background:var(--accent); color:#111; font-weight:800;
-    padding:9px 12px; border-radius:12px; border:2px solid #333;
-    box-shadow:0 10px 24px rgba(255,165,0,.25);
-  }
-
-  /* Responsive */
-  @media (max-width:720px){ .gg-preview-card{ grid-template-columns:160px 1fr; } }
-  @media (max-width:520px){ .gg-preview-card{ grid-template-columns:1fr; } .pc-thumb{ width:56px; } }
-  @media (prefers-reduced-motion:reduce){
-    .gg-preview-card, .pc-front{ transition:none; }
-  }
-</style>
+</body>
+</html>
 
 
   <!-- Ads (as you had it) -->
