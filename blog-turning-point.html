@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Slaying of Charlie Kirk — Why Bullshit Labels Turn People Into Targets | Grit Gear HQ</title>
@@ -33,6 +32,32 @@
     .hero{background:radial-gradient(1200px 500px at 50% -100px, rgba(255,165,0,.18), transparent 60%)}
     .hero .box{border:1px solid var(--edge); background:linear-gradient(180deg,#121212,#0d0d0d);
       border-radius:20px; padding:28px; margin-top:18px; box-shadow:var(--shadow); position:relative; overflow:hidden}
+
+    /* NEW — header image */
+    .hero .hero-image{
+      position:relative;
+      margin:0 0 16px 0;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--edge);
+      box-shadow:var(--shadow);
+      aspect-ratio:21/9;
+      background:#0f0f0f;
+    }
+    .hero .hero-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:contrast(1.03) saturate(1.03);
+    }
+    .hero .hero-image::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.45) 85%);
+      pointer-events:none;
+    }
+
     .hero .box:before{content:""; position:absolute; inset:-2px; background:
       radial-gradient(500px 120px at 10% 0%, rgba(255,165,0,.12), transparent 60%), radial-gradient(500px 120px at 90% 0%, rgba(255,165,0,.12), transparent 60%); pointer-events:none}
     .title{font-family:'Orbitron',sans-serif; font-size:clamp(28px,4vw,44px); line-height:1.15; margin:0 0 8px; color:var(--ink)}
@@ -46,7 +71,6 @@
     article.post p{margin:14px 0}
     .pull{border-left:4px solid var(--accent); padding:10px 14px; background:#141414; color:#ddd; border-radius:8px; margin:18px 0}
     .callout{background:#121212; border:1px dashed var(--edge); border-radius:12px; padding:14px; color:#d6d6d6}
-    /* removed .ad / adsbygoogle styles */
     .side{position:relative}
     .side .card{background:var(--panel); border:1px solid var(--edge); border-radius:14px; padding:16px; box-shadow:var(--shadow); margin-bottom:18px}
     .side h4{font-family:'Orbitron',sans-serif; color:var(--accent); margin:0 0 10px}
@@ -78,31 +102,7 @@
     <a class="btn" href="https://gritgearhq.com" target="_blank" rel="noopener">GritGearHQ.com</a>
   </div>
 </header>
-
-<main class="hero">
-  <div class="wrap">
-    <div class="box">
-      <h1 id="top" class="title">The Slaying of Charlie Kirk — Why Labels Turn People Into Targets</h1>
-      <p class="subtitle">They didn’t just kill a man. They sparked a movement. Here’s the line in the sand—and how we keep our heads while the crowd reaches for stones.</p>
-      <div class="meta">By Grit Gear HQ · Read time: 7–9 min</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:10px">
-        <a href="#top" class="btn">Read From the Top</a>
-        <a href="#gear" class="btn" style="background:#222; color:#eee; border:1px solid #2a2a2a">Skip to Gear</a>
-        <a href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1"
-           target="_blank" rel="noopener" class="btn" style="background:#ffa500; color:#111">Get the Tee</a>
-      </div>
-      <!-- removed: top banner ad -->
-    </div>
-
-    <nav class="anchor-nav wrap" style="margin-top:10px">
-      <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a href="#movement" class="pill">Line in the Sand</a>
-        <a href="#free-speech-now" class="pill">Free Speech Now</a>
-        <a href="#gear" class="pill">Skip to Gear</a>
-        <a href="#final" class="pill">Final Word</a>
-      </div>
-    </nav>
-
+   
     <div class="grid">
       <article class="post">
         <p>Charlie Kirk was shot and killed while speaking at a university event. However you felt about the man, that’s a husband, a father, a son, a child of God—gone. Overnight, the timeline turned into a demolition derby: rumor piles, rage-bait edits, demonic victory laps, and crocodile tears. It didn’t look like justice; it looked like a culture that’s forgotten what empathy is.</p>
