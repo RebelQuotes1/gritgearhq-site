@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-   <!-- Google Ads -->
+  <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
   <meta charset="utf-8" />
@@ -10,20 +10,14 @@
   <meta name="description" content="Bold message. Clean fit. 10% of profits donated to Turning Point USA. Grab the 'This Is The Turning Point' tee today." />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --accent:#ffa500; --ink:#eee; --muted:#bdbdbd; --bg:#0f0f0f; --panel:#141414; --edge:#262626; --danger:#b22222;
-    }
+    :root{ --accent:#ffa500; --ink:#eee; --muted:#bdbdbd; --bg:#0f0f0f; --panel:#141414; --edge:#262626; --danger:#b22222; }
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
     a{color:var(--accent);text-decoration:none}
     .wrap{max-width:1100px;margin:0 auto;padding:20px}
     /* HERO */
-    header.hero{
-      border-bottom:2px solid var(--accent);
-      background:
-        radial-gradient(1300px 500px at 12% -10%, rgba(255,165,0,.08), transparent),
-        linear-gradient(180deg,#0b0b0b,#111);
-      padding:28px 18px;
-    }
+    header.hero{border-bottom:2px solid var(--accent);
+      background:radial-gradient(1300px 500px at 12% -10%, rgba(255,165,0,.08), transparent),linear-gradient(180deg,#0b0b0b,#111);
+      padding:28px 18px;}
     .breadcrumbs{font-size:.85rem;color:var(--muted)}
     .breadcrumbs a{color:var(--muted)}
     .hero-grid{display:grid;gap:22px;grid-template-columns:1fr}
@@ -35,11 +29,7 @@
     .title{font-size:clamp(1.8rem,3.2vw,2.4rem);color:var(--accent);margin:6px 0 8px;text-shadow:0 1px 6px #000}
     .copy{line-height:1.7}
     .badge{display:inline-block;background:var(--danger);color:#fff;font-weight:700;padding:8px 14px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;margin:10px 0 16px}
-    .cta{
-      display:inline-flex;gap:10px;align-items:center;justify-content:center;
-      padding:14px 20px;border-radius:14px;background:var(--accent);color:#111;
-      font-weight:700;border:2px solid #333;box-shadow:0 10px 22px rgba(255,165,0,.25)
-    }
+    .cta{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:14px 20px;border-radius:14px;background:var(--accent);color:#111;font-weight:700;border:2px solid #333;box-shadow:0 10px 22px rgba(255,165,0,.25)}
     .cta:active{transform:translateY(1px)}
     /* SECTIONS */
     .sect{padding:28px 18px;border-bottom:1px solid var(--edge);background:linear-gradient(180deg,#0d0d0d,#101010)}
@@ -62,11 +52,7 @@
     .price{font-size:1.2rem;color:#fff}
     .fine{margin-top:12px;color:var(--muted);font-size:.9rem}
     /* Sticky mobile nudge */
-    .sticky{
-      position:sticky;bottom:0;z-index:5;background:linear-gradient(180deg,rgba(17,17,17,.6),#111);
-      border-top:1px solid var(--edge);backdrop-filter:blur(8px);padding:10px 14px;
-      display:flex;justify-content:space-between;align-items:center
-    }
+    .sticky{position:sticky;bottom:0;z-index:5;background:linear-gradient(180deg,rgba(17,17,17,.6),#111);border-top:1px solid var(--edge);backdrop-filter:blur(8px);padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
     .sticky .mini{font-size:.9rem;color:var(--muted)}
     .sticky .go{background:var(--accent);color:#111;padding:10px 14px;border-radius:12px;font-weight:800;border:2px solid #333}
     footer{padding:20px 18px;color:var(--muted);font-size:.9rem}
@@ -102,7 +88,7 @@
           </p>
           <span class="badge">You Buy • We Give • They Fight</span><br>
           <!-- HERO CTA → scrolls to the BUY SECTION via anchor -->
-          <a href="#buy" class="cta" aria-label="Scroll to buy options">See Details & Buy ↓</a>
+          <a href="#buy" class="cta" aria-label="Scroll to buy options">See Details &amp; Buy ↓</a>
           <div class="fine" style="margin-top:10px">Not affiliated with TPUSA. We post monthly donation receipts for transparency.</div>
         </div>
       </div>
@@ -148,15 +134,14 @@
   <section class="sect" id="buy">
     <div class="wrap">
       <h2 class="sect-title">Buy it now</h2>
-      <!-- extra anchor name for external links like /turning-point-shirt.html#cta -->
       <a id="cta"></a>
       <div class="buybox">
         <div class="card">
-          <p class="price"><strong>Price:</strong> See current options on Etsy (sizes & colors available)</p>
+          <p class="price"><strong>Price:</strong> See current options on Etsy (sizes &amp; colors available)</p>
           <p class="copy">Fast shipping. Secure checkout. 10% of profits donated to TPUSA.</p>
           <p>
-            <a class="cta" href="https://gritgearhq.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=subpage&utm_campaign=turning_point"
-               target="_blank" rel="noopener nofollow" aria-label="Buy the Turning Point tee on Etsy">
+            <!-- All Buy buttons share the js-buy class and are wired by the script below -->
+            <a class="cta js-buy" href="#" target="_blank" rel="noopener nofollow" aria-label="Buy the Turning Point tee on Etsy">
               Buy on Etsy → Ships Fast
             </a>
           </p>
@@ -170,6 +155,7 @@
             <li>Tracked shipping</li>
             <li>Hassle-free returns</li>
           </ul>
+          <p><a class="cta js-buy" href="#" target="_blank" rel="noopener nofollow">Get Mine →</a></p>
         </div>
       </div>
     </div>
@@ -189,7 +175,13 @@
   </footer>
 
   <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
+    // Year
+    const yr = document.getElementById('yr');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // One URL to rule them all (clean + tracked)
+    const BUY_URL = "https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=site&utm_campaign=turning_point";
+    document.querySelectorAll('a.js-buy').forEach(a => a.href = BUY_URL);
   </script>
 </body>
 </html>
