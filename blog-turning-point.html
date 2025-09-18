@@ -61,6 +61,7 @@
     /* Sidebar */
     .side .card{background:var(--panel); border:1px solid var(--edge); border-radius:14px; padding:16px; box-shadow:var(--shadow); margin-bottom:18px}
     .side h4{font-family:Orbitron,sans-serif; color:var(--accent); margin:0 0 10px}
+    .side .card img{display:block; width:100%; height:auto; border-radius:10px}
 
     /* Affiliate cards */
     #gg-affiliate-cards .gg-grid{display:grid; gap:16px; grid-template-columns:1fr}
@@ -74,6 +75,11 @@
     #gg-affiliate-cards .gg-card h3{font-size:1rem; margin:0 0 6px; font-family:Orbitron,sans-serif}
     #gg-affiliate-cards .gg-card p{margin:0 0 6px; color:#bbb; font-size:.98rem}
     #gg-affiliate-cards .stars{display:flex; align-items:center; gap:8px; margin-top:6px}
+
+    /* Small helper button style for sidebar single products */
+    .buy-btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:700;
+      padding:10px 14px; border-radius:999px; background:var(--accent); color:#111; text-decoration:none}
+    .buy-btn:hover{background:#ffc466; color:#111}
 
     footer.site{margin-top:28px; border-top:1px solid var(--edge); padding:18px 0; color:#a8a8a8; font-size:.95rem}
   </style>
@@ -95,6 +101,7 @@
 
 <main class="hero">
   <div class="wrap">
+
     <!-- HERO -->
     <div class="box">
       <figure class="hero-image">
@@ -116,221 +123,202 @@
       </div>
     </div>
 
-   <article class="post">
-  <p>There are moments when a country looks in the mirror and doesn’t quite recognize what it sees. The night Charlie Kirk was taken from us was one of those moments. A husband. A father. A son. A friend. A builder. A man who believed that the way you beat a bad idea is by dragging it into the light and beating it <em>with a better one</em>—not with a bullet. That was his creed, and he lived it in auditoriums and gymnasiums, on campuses that often didn’t want him there, under banners that sometimes hung by a thread. He showed up anyway, because he believed people deserved to be asked what they thought and challenged to defend it.</p>
+    <div class="grid">
+      <article class="post">
+        <p>There are moments when a country looks in the mirror and doesn’t quite recognize what it sees. The night Charlie Kirk was taken from us was one of those moments. A husband. A father. A son. A friend. A builder. A man who believed that the way you beat a bad idea is by dragging it into the light and beating it <em>with a better one</em>—not with a bullet. That was his creed, and he lived it in auditoriums and gymnasiums, on campuses that often didn’t want him there, under banners that sometimes hung by a thread. He showed up anyway, because he believed people deserved to be asked what they thought and challenged to defend it.</p>
 
-  <p>He didn’t come with riot shields or hired outrage. He came with a mic, a whiteboard brain, and a willingness to take questions for hours. He knew what that required: thick skin, steady breath, a calm voice when a room was spoiling for a spectacle. That discipline didn’t make him soft; it made him strong. And it made him dangerous to people whose power depends on fear and silence.</p>
+        <p>He didn’t come with riot shields or hired outrage. He came with a mic, a whiteboard brain, and a willingness to take questions for hours. He knew what that required: thick skin, steady breath, a calm voice when a room was spoiling for a spectacle. That discipline didn’t make him soft; it made him strong. And it made him dangerous to people whose power depends on fear and silence.</p>
 
-  <div class="pull">“If your politics needs a body count, it isn’t politics—it’s a confession.”</div>
+        <div class="pull">“If your politics needs a body count, it isn’t politics—it’s a confession.”</div>
 
-  <h2 id="what-he-stood-for">What Charlie Stood For</h2>
-  <p>Charlie believed America is still worth saving because Americans are still worth trusting. He trusted college kids to think for themselves if they were given a chance to hear the argument straight, not chopped up into meme-bite slander. He trusted parents to know what their children need more than a bureaucrat behind a door. He trusted that freedom of speech isn’t a trophy for the popular; it’s the safety valve for the unpopular. He trusted us—<em>you</em> and me—to hold the line the right way: peacefully, persistently, publicly, and without apology.</p>
+        <h2 id="what-he-stood-for">What Charlie Stood For</h2>
+        <p>Charlie believed America is still worth saving because Americans are still worth trusting. He trusted college kids to think for themselves if they were given a chance to hear the argument straight, not chopped up into meme-bite slander. He trusted parents to know what their children need more than a bureaucrat behind a door. He trusted that freedom of speech isn’t a trophy for the popular; it’s the safety valve for the unpopular. He trusted us—<em>you</em> and me—to hold the line the right way: peacefully, persistently, publicly, and without apology.</p>
 
-  <p>He had flaws like the rest of us. He could be blunt. He could be relentless. He could make you mad, and he could make you think. That was the point. He wasn’t selling comfort; he was selling responsibility. Show up. Read the bill. Learn the numbers. Do the work. Use your voice. He asked more of people than a retweet and a slogan, and he gave more than that himself.</p>
+        <p>He had flaws like the rest of us. He could be blunt. He could be relentless. He could make you mad, and he could make you think. That was the point. He wasn’t selling comfort; he was selling responsibility. Show up. Read the bill. Learn the numbers. Do the work. Use your voice. He asked more of people than a retweet and a slogan, and he gave more than that himself.</p>
 
-  <h2 id="license-words">When a Word Becomes a Weapon</h2>
-  <p>We live in a time where the laziest kind of politics has become the most dangerous: label-first, evidence-later—if ever. “Fascist.” “Nazi.” “Subhuman.” These aren’t arguments; they’re permission slips. Paste one on a person and the mob’s conscience goes weightless. The label becomes a hazmat suit for the soul. You don’t have to ask if the clip was edited. You don’t have to consider the debate he offered. You don’t even have to keep him human in your mind. You just have to nod along while someone else pulls the pin.</p>
+        <h2 id="license-words">When a Word Becomes a Weapon</h2>
+        <p>We live in a time where the laziest kind of politics has become the most dangerous: label-first, evidence-later—if ever. “Fascist.” “Nazi.” “Subhuman.” These aren’t arguments; they’re permission slips. Paste one on a person and the mob’s conscience goes weightless. The label becomes a hazmat suit for the soul. You don’t have to ask if the clip was edited. You don’t have to consider the debate he offered. You don’t even have to keep him human in your mind. You just have to nod along while someone else pulls the pin.</p>
 
-  <p>I’ll say this plainly: calling people you don’t like “Nazis” to shut down conversation is intellectual cowardice. It’s also gasoline. If you can convince yourself that a man is a monster, then anything you do to him becomes “self-defense” in your head. That’s how a culture slides from “cancel him” to “hurt him” without noticing it crossed a line. We’re there. And anyone still pretending we aren’t needs to look at what just happened.</p>
+        <p>I’ll say this plainly: calling people you don’t like “Nazis” to shut down conversation is intellectual cowardice. It’s also gasoline. If you can convince yourself that a man is a monster, then anything you do to him becomes “self-defense” in your head. That’s how a culture slides from “cancel him” to “hurt him” without noticing it crossed a line. We’re there. And anyone still pretending we aren’t needs to look at what just happened.</p>
 
-  <blockquote class="pull">“Disagree hard with ideas; don’t erase people. Debate is oxygen. Labels are lighter fluid.”</blockquote>
+        <blockquote class="pull">“Disagree hard with ideas; don’t erase people. Debate is oxygen. Labels are lighter fluid.”</blockquote>
 
-  <h2 id="algorithm-mirror">The Algorithm’s Funhouse Mirror</h2>
-  <p>Here’s the sick joke: most of the people who celebrated Charlie’s death never watched him for more than ten seconds at a time. They saw clipped, dunk-ready edits—captioned by strangers, cropped by activists, juiced by an algorithm trained to serve your anger right back to you. That feed does not deliver truth; it delivers a caricature you can hate without guilt.</p>
+        <h2 id="algorithm-mirror">The Algorithm’s Funhouse Mirror</h2>
+        <p>Here’s the sick joke: most of the people who celebrated Charlie’s death never watched him for more than ten seconds at a time. They saw clipped, dunk-ready edits—captioned by strangers, cropped by activists, juiced by an algorithm trained to serve your anger right back to you. That feed does not deliver truth; it delivers a caricature you can hate without guilt.</p>
 
-  <p>So let’s break that habit. Stop outsourcing your opinions. Watch the full exchange, uncut. Read the transcript. Sit through a debate where nobody storms off and the moderator doesn’t chase clout. If you still disagree, fine—disagree loudly and publicly. But don’t let your mind be babysat by a machine that serves you rage until you feel righteous enough to cheer for a coffin.</p>
+        <p>So let’s break that habit. Stop outsourcing your opinions. Watch the full exchange, uncut. Read the transcript. Sit through a debate where nobody storms off and the moderator doesn’t chase clout. If you still disagree, fine—disagree loudly and publicly. But don’t let your mind be babysat by a machine that serves you rage until you feel righteous enough to cheer for a coffin.</p>
 
-  <h2 id="dialogue-vs-bullets">Dialogue vs. Bullets</h2>
-  <p>Charlie’s <em>method</em> was an argument. His weapon was a question. He would tell a heckler, “Come to the mic.” He would say, “Make your best case.” He would stay an extra hour to take three more. That’s not authoritarianism. That’s free speech in the wild—messy, tense, inconvenient, and essential. If your side needs violence to win, your side has already lost the plot. And if you find yourself clapping for violence because it happened to the “right” enemy, you’ve traded in citizenship for something darker.</p>
+        <h2 id="dialogue-vs-bullets">Dialogue vs. Bullets</h2>
+        <p>Charlie’s <em>method</em> was an argument. His weapon was a question. He would tell a heckler, “Come to the mic.” He would say, “Make your best case.” He would stay an extra hour to take three more. That’s not authoritarianism. That’s free speech in the wild—messy, tense, inconvenient, and essential. If your side needs violence to win, your side has already lost the plot. And if you find yourself clapping for violence because it happened to the “right” enemy, you’ve traded in citizenship for something darker.</p>
 
-  <p>Do not let anyone sell you the lie that silencing opponents is protecting democracy. That’s just tyranny with PR.</p>
+        <p>Do not let anyone sell you the lie that silencing opponents is protecting democracy. That’s just tyranny with PR.</p>
 
-  <h2 id="movement">They Didn’t Just Kill a Man</h2>
-  <p>They thought they ended a conversation. They kicked off a movement. You can feel it in the messages, the vigils, the sudden clarity in people who were quiet yesterday and unshakable today. We’re drawing a line in the sand—not for revenge, but for remembrance and resolve. The line is simple and non-negotiable:</p>
-  <ul>
-    <li>No more dehumanizing labels as a pretext for punishment.</li>
-    <li>No more “acceptable targets.” Violence isn’t a policy tool.</li>
-    <li>No more cheering death because someone holds views you hate.</li>
-    <li>We win our future with evidence, discipline, and courage—not intimidation.</li>
-  </ul>
+        <h2 id="movement">They Didn’t Just Kill a Man</h2>
+        <p>They thought they ended a conversation. They kicked off a movement. You can feel it in the messages, the vigils, the sudden clarity in people who were quiet yesterday and unshakable today. We’re drawing a line in the sand—not for revenge, but for remembrance and resolve. The line is simple and non-negotiable:</p>
+        <ul>
+          <li>No more dehumanizing labels as a pretext for punishment.</li>
+          <li>No more “acceptable targets.” Violence isn’t a policy tool.</li>
+          <li>No more cheering death because someone holds views you hate.</li>
+          <li>We win our future with evidence, discipline, and courage—not intimidation.</li>
+        </ul>
 
-  <p>Charlie didn’t teach us to swing harder; he taught us to stand taller. The country needs that posture now—shoulders back, eyes clear, voice steady.</p>
+        <p>Charlie didn’t teach us to swing harder; he taught us to stand taller. The country needs that posture now—shoulders back, eyes clear, voice steady.</p>
 
-  <h2 id="free-speech-now">What “Free Speech” Feels Like Now</h2>
-  <p>After an assassination, “free speech” stops sounding like a bumper sticker and starts feeling like a fragile, breathing thing. A lot of people on the right took a hard look at their next post and hesitated. They wondered whether wearing a shirt or asking a question painted a target on their back. That’s not paranoia; that’s the chilling effect in real time—lawful speech shrinking under the threat of punishment, social or physical.</p>
+        <h2 id="free-speech-now">What “Free Speech” Feels Like Now</h2>
+        <p>After an assassination, “free speech” stops sounding like a bumper sticker and starts feeling like a fragile, breathing thing. A lot of people on the right took a hard look at their next post and hesitated. They wondered whether wearing a shirt or asking a question painted a target on their back. That’s not paranoia; that’s the chilling effect in real time—lawful speech shrinking under the threat of punishment, social or physical.</p>
 
-  <p>We refuse that future. We will not whisper our convictions while the loudest bullies write the rules. We will show up, speak clearly, and build communities that are stronger than the timeline. We’ll teach our kids how to argue without hatred and how to lose without becoming bitter. We’ll model that for them under pressure, because freedom is not inherited automatically; it’s practiced or it dies.</p>
+        <p>We refuse that future. We will not whisper our convictions while the loudest bullies write the rules. We will show up, speak clearly, and build communities that are stronger than the timeline. We’ll teach our kids how to argue without hatred and how to lose without becoming bitter. We’ll model that for them under pressure, because freedom is not inherited automatically; it’s practiced or it dies.</p>
 
-  <h2 id="stories-and-impact">The Impact He Had</h2>
-  <p>Ask the students who stood up at the mic trembling and sat down laughing because he treated them like neighbors, not enemies. Ask the young staffers who learned to read budgets and laws line by line because he told them, “Competence is a form of courage.” Ask the parents who finally showed up at school board meetings because he made the boring stuff feel like battlefield work. Ask the small-town kids who figured out they weren’t crazy, they were just early—and decided they’d rather be early than silent.</p>
+        <h2 id="stories-and-impact">The Impact He Had</h2>
+        <p>Ask the students who stood up at the mic trembling and sat down laughing because he treated them like neighbors, not enemies. Ask the young staffers who learned to read budgets and laws line by line because he told them, “Competence is a form of courage.” Ask the parents who finally showed up at school board meetings because he made the boring stuff feel like battlefield work. Ask the small-town kids who figured out they weren’t crazy, they were just early—and decided they’d rather be early than silent.</p>
 
-  <p>He turned spectators into citizens. That doesn’t vanish when a life is taken; it multiplies.</p>
+        <p>He turned spectators into citizens. That doesn’t vanish when a life is taken; it multiplies.</p>
 
-  <h2 id="you-are-what-you-do">You Are What You <em>Do</em></h2>
-  <p>Charlie used to say—over and over—that you are not what you announce; you are what you do. That’s the standard for us, too. We can’t call for a better country and then behave like the worst version of it when we’re angry or grieving. We can’t pretend we love the Constitution while we secretly wish it would muzzle our enemies for us. The test is simple: do we argue better, organize better, vote better, and love our families better than the forces trying to atomize us? If not, get to work.</p>
+        <h2 id="you-are-what-you-do">You Are What You <em>Do</em></h2>
+        <p>Charlie used to say—over and over—that you are not what you announce; you are what you do. That’s the standard for us, too. We can’t call for a better country and then behave like the worst version of it when we’re angry or grieving. We can’t pretend we love the Constitution while we secretly wish it would muzzle our enemies for us. The test is simple: do we argue better, organize better, vote better, and love our families better than the forces trying to atomize us? If not, get to work.</p>
 
-  <div class="pull">“Courage isn’t a posture. It’s a practice. It looks like preparation, patience, receipts—and showing up again tomorrow.”</div>
+        <div class="pull">“Courage isn’t a posture. It’s a practice. It looks like preparation, patience, receipts—and showing up again tomorrow.”</div>
 
-  <h2 id="line">Where We Draw the Line</h2>
-  <p>Speech—even the kind that makes your blood pressure spike—gets wide protection in a free nation. Threats and violence don’t. We keep that line bright because once violence is rewarded, everyone becomes somebody’s “acceptable target.” Keep the line and you keep the Republic. Blur it and you get the rule of the fiercest, not the rule of law.</p>
+        <h2 id="line">Where We Draw the Line</h2>
+        <p>Speech—even the kind that makes your blood pressure spike—gets wide protection in a free nation. Threats and violence don’t. We keep that line bright because once violence is rewarded, everyone becomes somebody’s “acceptable target.” Keep the line and you keep the Republic. Blur it and you get the rule of the fiercest, not the rule of law.</p>
 
-  <p>So we are going to defend speech by practicing it. We’re going to criticize bad ideas without hating the people who still cling to them. We’re going to push for truth even when it costs us friends and opportunities. We’re going to reject the narcotic pleasure of a label that turns a person into a caricature we can hurt without guilt. And we are going to do it with a calm that drives censors crazy—because calm is the one thing outrage can’t fake.</p>
+        <p>So we are going to defend speech by practicing it. We’re going to criticize bad ideas without hating the people who still cling to them. We’re going to push for truth even when it costs us friends and opportunities. We’re going to reject the narcotic pleasure of a label that turns a person into a caricature we can hurt without guilt. And we are going to do it with a calm that drives censors crazy—because calm is the one thing outrage can’t fake.</p>
 
-  <h2 id="do-this">What Regular People Can Do (Today)</h2>
-  <ul>
-    <li><strong>Starve the outrage machine.</strong> Don’t share a clip without hunting down the full context. Don't say things you know not to be true. If it’s worth your anger, it’s worth your homework.</li>
-    <li><strong>Refuse dehumanization.</strong> Disagree with ideas like a hammer; treat people like they’re made in the image of God.</li>
-    <li><strong>Be your own editor.</strong> Read across divides. Check dates. Follow sources back to the origin.</li>
-    <li><strong>Record, don’t rage.</strong> When chaos breaks out, pull out your phone and get the facts. Receipts beat rumors.</li>
-    <li><strong>Build in person.</strong> Join a local group, gym, church, or club. Algorithms can’t poison conversations you actually have and rot your mind.</li>
-    <li><strong>Show up peacefully.</strong> Vote, volunteer, testify, organize. Put skin in the game you say you love.</li>
-    <li><strong>Raise sturdy kids.</strong> Teach them to argue, forgive, and work. Steal back their attention from screens that teach resentment. Teach them to lose with humility.</li>
-     <li><strong>Or best of all, just don't be a crazy leftist. That's honestly going to be your best bet, pal. To lead with logic, love and reason, and not with feelings and a victimhood mentality.  
-  </ul>
+        <h2 id="do-this">What Regular People Can Do (Today)</h2>
+        <ul>
+          <li><strong>Starve the outrage machine.</strong> Don’t share a clip without hunting down the full context. Don't say things you know not to be true. If it’s worth your anger, it’s worth your homework.</li>
+          <li><strong>Refuse dehumanization.</strong> Disagree with ideas like a hammer; treat people like they’re made in the image of God.</li>
+          <li><strong>Be your own editor.</strong> Read across divides. Check dates. Follow sources back to the origin.</li>
+          <li><strong>Record, don’t rage.</strong> When chaos breaks out, pull out your phone and get the facts. Receipts beat rumors.</li>
+          <li><strong>Build in person.</strong> Join a local group, gym, church, or club. Algorithms can’t poison conversations you actually have and rot your mind.</li>
+          <li><strong>Show up peacefully.</strong> Vote, volunteer, testify, organize. Put skin in the game you say you love.</li>
+          <li><strong>Raise sturdy kids.</strong> Teach them to argue, forgive, and work. Steal back their attention from screens that teach resentment. Teach them to lose with humility.</li>
+          <li><strong>Or best of all, don’t be a crazy leftist.</strong> Lead with logic, love, and reason—not feelings and a victimhood mentality.</li>
+        </ul>
 
-     <!-- ✅ DROP-IN REPLACEMENT: fixed tribute image (robust paths + fallback)
-     and closes your GEAR section properly so nothing breaks layout. -->
+        <h2 id="a-tribute">A Tribute Worth Keeping</h2>
 
-<h2 id="a-tribute">A Tribute Worth Keeping</h2>
+        <!-- Tribute photo with multiple safe paths -->
+        <figure style="margin:16px 0 12px; border:1px solid var(--edge); border-radius:14px; overflow:hidden; box-shadow:var(--shadow)">
+          <picture>
+            <source srcset="/assets/charlie-kirk-memorial.webp" type="image/webp">
+            <source srcset="/assets/428c8f98-charlie-kirk-memorial.webp" type="image/webp">
+            <img id="ck-memorial"
+                 src="/images/charlie-kirk-memorial.jpg"
+                 alt="Memorial for Charlie Kirk with flowers, notes, and American flags"
+                 width="1200" height="675"
+                 loading="lazy" decoding="async"
+                 style="display:block; width:100%; height:auto; object-fit:cover;">
+          </picture>
+        </figure>
+        <script>
+          // final fallback for tribute image
+          (function () {
+            const img = document.getElementById('ck-memorial');
+            function swap() {
+              img.removeEventListener('error', swap);
+              img.src = '/assets/charlie-kirk-memorial.jpg';
+            }
+            img.addEventListener('error', swap, { once: true });
+          })();
+        </script>
 
-<!-- Tribute photo (responsive, styled, with multiple safe paths) -->
-<figure class="figure-hero" style="margin:16px 0 12px; border:1px solid var(--edge); border-radius:14px; overflow:hidden; box-shadow:var(--shadow)">
-  <picture>
-    <!-- Prefer WebP in /assets; try alternate filename; then JPG fallback in /images -->
-    <source srcset="/assets/charlie-kirk-memorial.webp" type="image/webp">
-    <source srcset="/assets/428c8f98-charlie-kirk-memorial.webp" type="image/webp">
-    <img id="ck-memorial"
-         src="/images/charlie-kirk-memorial.jpg"
-         alt="Memorial for Charlie Kirk with flowers, notes, and American flags"
-         width="1200" height="675"
-         loading="lazy" decoding="async"
-         style="display:block; width:100%; height:auto; object-fit:cover;">
-  </picture>
-</figure>
-<script>
-  // One more safety net: if the JPG also fails, try an alt in /assets as last resort.
-  (function () {
-    const img = document.getElementById('ck-memorial');
-    function swap() {
-      img.removeEventListener('error', swap);
-      img.src = '/assets/charlie-kirk-memorial.jpg';
-    }
-    img.addEventListener('error', swap, { once: true });
-  })();
-</script>
+        <p>If you want to honor Charlie, don’t just share this post—<em>copy the way he lived</em>. Take the question that scares you and ask it in public. Invite somebody who disagrees with you to coffee and go line by line through the issue. Stay until both of you have said everything and neither of you is a villain anymore—just neighbors with different fears, trying to build a country that won’t eat its children.</p>
 
-<p>If you want to honor Charlie, don’t just share this post—<em>copy the way he lived</em>. Take the question that scares you and ask it in public. Invite somebody who disagrees with you to coffee and go line by line through the issue. Stay until both of you have said everything and neither of you is a villain anymore—just neighbors with different fears, trying to build a country that won’t eat its children.</p>
+        <p>Hold your ground without becoming hard. Tell the truth without becoming cruel. Cheer when your opponent makes a good point, then answer it without flinching. That’s adult citizenship. That’s what Charlie modeled, right up to the end.</p>
 
-<p>Hold your ground without becoming hard. Tell the truth without becoming cruel. Cheer when your opponent makes a good point, then answer it without flinching. That’s adult citizenship. That’s what Charlie modeled, right up to the end.</p>
+        <h2 id="final">Final Word</h2>
+        <p>The people who did this wanted a headline. They wanted a warning shot. They imagined a future where the rest of us would go quiet because silence felt safer. They misread the room. What happened instead was a hundred thousand candles lit from one life, carried into meetings and classrooms and living rooms, into voting booths and school boards and kitchen tables where children watch how their parents talk about the world.</p>
 
-<h2 id="final">Final Word</h2>
-<p>The people who did this wanted a headline. They wanted a warning shot. They imagined a future where the rest of us would go quiet because silence felt safer. They misread the room. What happened instead was a hundred thousand candles lit from one life, carried into meetings and classrooms and living rooms, into voting booths and school boards and kitchen tables where children watch how their parents talk about the world.</p>
+        <p>Charlie Kirk won’t take another stage. But his challenge stands: <em>argue well, live brave, love your country loudly and your neighbor even louder.</em> For him, and for the country that made men like him possible, we’re going to do exactly that. We’re going to keep our heads when the crowd reaches for stones. We’re going to make room for debate and close the door on dehumanization. We’re going to remember that courage without discipline is just noise—and that the quiet strength of a free people, practiced every day, is how the Republic survives.</p>
 
-<p>Charlie Kirk won’t take another stage. But his challenge stands: <em>argue well, live brave, love your country loudly and your neighbor even louder.</em> For him, and for the country that made men like him possible, we’re going to do exactly that. We’re going to keep our heads when the crowd reaches for stones. We’re going to make room for debate and close the door on dehumanization. We’re going to remember that courage without discipline is just noise—and that the quiet strength of a free people, practiced every day, is how the Republic survives.</p>
+        <p>May God comfort his family. May He steady our hands. And may He grant us the grace to fight for the good without becoming what we oppose.</p>
 
-<p>May God comfort his family. May He steady our hands. And may He grant us the grace to fight for the good without becoming what we oppose.</p>
+        <!-- ===== GEAR ===== -->
+        <h2 id="gear">Featured Gear From This Post</h2>
+        <section id="gg-affiliate-cards">
+          <div class="gg-grid">
 
-<!-- ===== GEAR (your cards go here) ===== -->
-<h2 id="gear">Featured Gear From This Post</h2>
-<section id="gg-affiliate-cards">
-  <div class="gg-grid">
-    <!-- …your <a class="gg-card"> items… -->
-  </div>
-  <p style="margin-top:10px; color:#9a9a9a; font-size:.9rem;">
-    Disclosure: As an Amazon Associate, we may earn commissions from qualifying purchases.
-  </p>
-</section>
+            <!-- Charlie Kirk Tribute Flag — DO NOT CHANGE LINK -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F46vvgOF"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/true_patriot_kirk_flag.jpg"
+                   data-fallback="images/true_patriot_kirk_flag.jpg"
+                   alt="Charlie Kirk True Patriot Flag 3x5"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>Charlie Kirk Tribute Flag 3×5</h3>
+                <p>Display where you stand. Weather-ready banner for yard, garage, or shop wall.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
 
-                <div class="card">
-        <img src="images/trench.jpg" alt="Vintage Trench Lighter">
-        <h3>🪔 Vintage Trench Lighter</h3>
-        <p>Rope-style, windproof classic.</p>
-        <a class="buy-btn" href="https://amzn.to/44QUczn?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
-      </div>
+            <!-- We The People Flag — DO NOT CHANGE LINK -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F4puIF29"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/we_the_people_flag.jpg"
+                   data-fallback="images/we_the_people_flag.jpg"
+                   alt="We The People 1776 Double-Sided Flag 3x5"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>We The People 1776 Flag (Double-Sided)</h3>
+                <p>Bold 3-ply banner with brass grommets. Reads right on both sides.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
 
-       <!-- Charlie Kirk Tribute Flag — updated to your link + visible tag -->
-<a class="gg-card"
-   href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F46vvgOF"
-   target="_blank" rel="nofollow sponsored noopener">
-  <img src="assets_aff_cards/true_patriot_kirk_flag.jpg"
-       data-fallback="images/true_patriot_kirk_flag.jpg"
-       alt="Charlie Kirk True Patriot Flag 3x5"
-       width="1600" height="1000" loading="lazy" decoding="async">
-  <div class="body">
-    <h3>Charlie Kirk Tribute Flag 3×5</h3>
-    <p>Display where you stand. Weather-ready banner for yard, garage, or shop wall.</p>
-    <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
-  </div>
-</a>
+            <!-- TRUTH Tee — DO NOT CHANGE LINK -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F4neduGQ"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/truth_new_hate_speech_shirt.jpg"
+                   data-fallback="images/truth_new_hate_speech_shirt.jpg"
+                   alt="TRUTH: The New Hate Speech T-Shirt"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>“TRUTH: The New Hate Speech” Tee</h3>
+                <p>Soft tee with vintage flag print. Wear your stance without shouting.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
 
-       <!-- We The People Flag — updated to your link + visible tag -->
-<a class="gg-card"
-   href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F4puIF29"
-   target="_blank" rel="nofollow sponsored noopener">
-  <img src="assets_aff_cards/we_the_people_flag.jpg"
-       data-fallback="images/we_the_people_flag.jpg"
-       alt="We The People 1776 Double-Sided Flag 3x5"
-       width="1600" height="1000" loading="lazy" decoding="async">
-  <div class="body">
-    <h3>We The People 1776 Flag (Double-Sided)</h3>
-    <p>Bold 3-ply banner with brass grommets. Reads right on both sides.</p>
-    <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
-  </div>
-</a>
+            <!-- Grunt Style 1776 Tee — DO NOT CHANGE LINK -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F3VWyAxi"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/grunt_style_1776_shirt.jpg"
+                   data-fallback="images/grunt_style_1776_shirt.jpg"
+                   alt="Grunt Style 1776 Flag Shirt"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>Grunt Style 1776 Flag Tee</h3>
+                <p>Classic black with distressed flag. Daily wear that pairs with anything.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
 
-<!-- TRUTH Tee — updated to your link + visible tag -->
-<a class="gg-card"
-   href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F4neduGQ"
-   target="_blank" rel="nofollow sponsored noopener">
-  <img src="assets_aff_cards/truth_new_hate_speech_shirt.jpg"
-       data-fallback="images/truth_new_hate_speech_shirt.jpg"
-       alt="TRUTH: The New Hate Speech T-Shirt"
-       width="1600" height="1000" loading="lazy" decoding="async">
-  <div class="body">
-    <h3>“TRUTH: The New Hate Speech” Tee</h3>
-    <p>Soft tee with vintage flag print. Wear your stance without shouting.</p>
-    <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
-  </div>
-</a>
+            <!-- Thought Crimes Notebook — DO NOT CHANGE LINK -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F4n5uPBD"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/thought_crimes_notebook.jpg"
+                   data-fallback="images/thought_crimes_notebook.jpg"
+                   alt="Thought Crimes: A Notebook for Dangerous Ideas"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>Thought Crimes: A Notebook for Dangerous Ideas</h3>
+                <p>Hardcover look, rugged pages. Capture unfiltered thoughts, plans, and debates—off the algorithm.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
 
-          <!-- Grunt Style 1776 Tee — updated to your link + visible tag -->
-<a class="gg-card"
-   href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F3VWyAxi"
-   target="_blank" rel="nofollow sponsored noopener">
-  <img src="assets_aff_cards/grunt_style_1776_shirt.jpg"
-       data-fallback="images/grunt_style_1776_shirt.jpg"
-       alt="Grunt Style 1776 Flag Shirt"
-       width="1600" height="1000" loading="lazy" decoding="async">
-  <div class="body">
-    <h3>Grunt Style 1776 Flag Tee</h3>
-    <p>Classic black with distressed flag. Daily wear that pairs with anything.</p>
-    <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
-  </div>
-</a>
-
-            
-<!-- Thought Crimes Notebook — updated to your link + visible tag -->
-<a class="gg-card"
-   href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F4n5uPBD"
-   target="_blank" rel="nofollow sponsored noopener">
-  <img src="assets_aff_cards/thought_crimes_notebook.jpg"
-       data-fallback="images/thought_crimes_notebook.jpg"
-       alt="Thought Crimes: A Notebook for Dangerous Ideas"
-       width="1600" height="1000" loading="lazy" decoding="async">
-  <div class="body">
-    <h3>Thought Crimes: A Notebook for Dangerous Ideas</h3>
-    <p>Hardcover look, rugged pages. Capture unfiltered thoughts, plans, and debates—off the algorithm.</p>
-    <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
-  </div>
-</a>
-
-            
           </div>
           <p style="margin-top:10px; color:#9a9a9a; font-size:.9rem;">
             Disclosure: As an Amazon Associate, we may earn commissions from qualifying purchases.
           </p>
         </section>
-
       </article>
 
       <aside class="side">
@@ -343,56 +331,88 @@
           </ul>
         </div>
 
-<!-- Sidebar card with product image (drop-in replacement) -->
-<div class="card">
-  <h4>Grab the Shirt</h4>
-<!-- Clickable product image (auto-fallback across paths/extensions) -->
-<a href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1"
-   target="_blank" rel="noopener"
-   style="display:block; margin:-6px -6px 10px; border-radius:12px; overflow:hidden; border:1px solid var(--edge); box-shadow:var(--shadow)">
-  <img
-    id="turning-tee-img"
-    src="/assets/back1.jpg.png"  <!-- your current path -->
-    alt="This Is The Turning Point tee — back view"
-    width="768" height="768"
-    loading="lazy" decoding="async"
-    style="display:block; width:100%; height:auto; object-fit:cover;"
-    data-candidates='[
-      "/assets/back1.jpg.png",
-      "/assets/back1.png",
-      "/assets/back1.jpg",
-      "/images/back1.jpg.png",
-      "/images/back1.png",
-      "/images/back1.jpg",
-      "/assets_aff_cards/back1.png",
-      "/assets_aff_cards/back1.jpg"
-    ]'>
-</a>
+        <!-- Sidebar card with product image -->
+        <div class="card">
+          <h4>Grab the Shirt</h4>
+          <a href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1"
+             target="_blank" rel="noopener"
+             style="display:block; margin:-6px -6px 10px; border-radius:12px; overflow:hidden; border:1px solid var(--edge); box-shadow:var(--shadow)">
+            <img
+              id="turning-tee-img"
+              src="/assets/back1.jpg.png"
+              alt="This Is The Turning Point tee — back view"
+              width="768" height="768"
+              loading="lazy" decoding="async"
+              style="display:block; width:100%; height:auto; object-fit:cover;"
+              data-candidates='[
+                "/assets/back1.jpg.png",
+                "/assets/back1.png",
+                "/assets/back1.jpg",
+                "/images/back1.jpg.png",
+                "/images/back1.png",
+                "/images/back1.jpg",
+                "/assets_aff_cards/back1.png",
+                "/assets_aff_cards/back1.jpg"
+              ]'>
+          </a>
 
-<img id="turning-tee-img"
-     src="assets/back1.jpg"
-     data-candidates='["assets/back1.jpg","assets/back1.png","images/back1.jpg","/images/back1.png"]'
-     alt="This Is The Turning Point tee — back view">
+          <p>“This Is The Turning Point” — support the message, not the mob.</p>
+          <a class="buy-btn" href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1" target="_blank" rel="noopener">
+            🛒 Shop on Etsy
+          </a>
+        </div>
+
+        <!-- Optional extra single product -->
+        <div class="card">
+          <img src="images/trench.jpg" alt="Vintage Trench Lighter" width="640" height="480">
+          <h3>🪔 Vintage Trench Lighter</h3>
+          <p>Rope-style, windproof classic.</p>
+          <a class="buy-btn" href="https://amzn.to/44QUczn?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+        </div>
+      </aside>
+    </div><!-- /.grid -->
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© <span id="y"></span> Grit Gear HQ · <span style="color:var(--accent)">Rough Gear for Rougher Times</span></div>
+  </div>
+</footer>
 
 <script>
-(() => {
-  const img = document.getElementById('turning-tee-img');
-  if (!img) return;
+  // year stamp
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-  let list = [];
-  try { list = JSON.parse(img.dataset.candidates || "[]"); } catch (e) { list = []; }
+  // robust fallback walker for the sidebar shirt image
+  (() => {
+    const img = document.getElementById('turning-tee-img');
+    if (!img) return;
+    let list = [];
+    try { list = JSON.parse(img.dataset.candidates || "[]"); } catch(e) { list = []; }
+    let i = 0;
+    function tryNext() {
+      if (i >= list.length) return; // out of options
+      const u = list[i++];
+      img.src = u + (u.includes('?') ? '&' : '?') + 'v=' + Date.now(); // cache-bust each attempt
+    }
+    img.addEventListener('error', tryNext);
+    // kick off probe immediately so we don't wait for scroll
+    const probe = new Image();
+    probe.onerror = tryNext;
+    probe.src = img.currentSrc || img.src;
+  })();
 
-  let i = 0;
-  function tryNext() {
-    if (i >= list.length) return;
-    const u = list[i++];
-    img.src = u + (u.includes('?') ? '&' : '?') + 'v=' + Date.now();
-  }
-
-  img.addEventListener('error', tryNext);
-
-  const probe = new Image();
-  probe.onerror = tryNext;
-  probe.src = img.currentSrc || img.src;
-})();
+  // tiny fallback for affiliate card thumbnails (if you use data-fallback)
+  document.querySelectorAll('#gg-affiliate-cards img[data-fallback]').forEach(el=>{
+    el.addEventListener('error', function () {
+      if (this.dataset.fallback) {
+        this.src = this.dataset.fallback;
+        this.removeAttribute('data-fallback');
+      }
+    }, { once: true });
+  });
 </script>
+</body>
+</html>
