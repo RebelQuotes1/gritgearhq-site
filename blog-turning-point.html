@@ -369,55 +369,30 @@
     ]'>
 </a>
 
+<img id="turning-tee-img"
+     src="assets/back1.jpg"
+     data-candidates='["assets/back1.jpg","assets/back1.png","images/back1.jpg","/images/back1.png"]'
+     alt="This Is The Turning Point tee — back view">
+
 <script>
 (() => {
   const img = document.getElementById('turning-tee-img');
-  const list = JSON.parse(img.dataset.candidates || "[]");
-  let i = 0;
+  if (!img) return;
 
+  let list = [];
+  try { list = JSON.parse(img.dataset.candidates || "[]"); } catch (e) { list = []; }
+
+  let i = 0;
   function tryNext() {
-    i++;
-    if (i >= list.length) return; // gave it our best shot
-    // cache-bust each attempt in case a CDN is holding a 404
-    img.src = list[i] + "?v=" + Date.now();
+    if (i >= list.length) return;
+    const u = list[i++];
+    img.src = u + (u.includes('?') ? '&' : '?') + 'v=' + Date.now();
   }
 
-  // If the first src fails, walk the list.
   img.addEventListener('error', tryNext);
 
-  // Kick off an immediate check so we don't wait for user scroll.
   const probe = new Image();
-  probe.onerror = () => tryNext();
-  probe.src = img.src;
+  probe.onerror = tryNext;
+  probe.src = img.currentSrc || img.src;
 })();
 </script>
-
-
-  <p>“This Is The Turning Point” — support the message, not the mob.</p>
-  <a class="btn" href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1" target="_blank" rel="noopener">
-    Shop on Etsy
-  </a>
-</div>
-
-      
-<footer class="site">
-  <div class="wrap">
-    <div>© <span id="y"></span> Grit Gear HQ · <span style="color:var(--accent)">Rough Gear for Rougher Times</span></div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-
-  // Image fallback: swap to data-fallback path once if the primary 404s
-  document.querySelectorAll('#gg-affiliate-cards img[data-fallback]').forEach(img=>{
-    img.addEventListener('error', function () {
-      if (this.dataset.fallback) {
-        this.src = this.dataset.fallback;
-        this.removeAttribute('data-fallback');
-      }
-    }, { once:true });
-  });
-</script>
-</body>
-</html>
