@@ -323,19 +323,52 @@
 <!-- Sidebar card with product image (drop-in replacement) -->
 <div class="card">
   <h4>Grab the Shirt</h4>
+<!-- Clickable product image (auto-fallback across paths/extensions) -->
+<a href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1"
+   target="_blank" rel="noopener"
+   style="display:block; margin:-6px -6px 10px; border-radius:12px; overflow:hidden; border:1px solid var(--edge); box-shadow:var(--shadow)">
+  <img
+    id="turning-tee-img"
+    src="/assets/back1.jpg.png"  <!-- your current path -->
+    alt="This Is The Turning Point tee — back view"
+    width="768" height="768"
+    loading="lazy" decoding="async"
+    style="display:block; width:100%; height:auto; object-fit:cover;"
+    data-candidates='[
+      "/assets/back1.jpg.png",
+      "/assets/back1.png",
+      "/assets/back1.jpg",
+      "/images/back1.jpg.png",
+      "/images/back1.png",
+      "/images/back1.jpg",
+      "/assets_aff_cards/back1.png",
+      "/assets_aff_cards/back1.jpg"
+    ]'>
+</a>
 
-  <!-- Clickable product image -->
-  <a href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1"
-     target="_blank" rel="noopener"
-     style="display:block; margin:-6px -6px 10px; border-radius:12px; overflow:hidden; border:1px solid var(--edge); box-shadow:var(--shadow)">
-    <img
-      src="assets/back1.jpg.png"
-      onerror="this.onerror=null;this.src='images/back1.jpg.png';"
-      alt="This Is The Turning Point tee — back view"
-      width="768" height="768"
-      loading="lazy" decoding="async"
-      style="display:block; width:100%; height:auto; object-fit:cover;">
-  </a>
+<script>
+(() => {
+  const img = document.getElementById('turning-tee-img');
+  const list = JSON.parse(img.dataset.candidates || "[]");
+  let i = 0;
+
+  function tryNext() {
+    i++;
+    if (i >= list.length) return; // gave it our best shot
+    // cache-bust each attempt in case a CDN is holding a 404
+    img.src = list[i] + "?v=" + Date.now();
+  }
+
+  // If the first src fails, walk the list.
+  img.addEventListener('error', tryNext);
+
+  // Kick off an immediate check so we don't wait for user scroll.
+  const probe = new Image();
+  probe.onerror = () => tryNext();
+  probe.src = img.src;
+})();
+</script>
+
 
   <p>“This Is The Turning Point” — support the message, not the mob.</p>
   <a class="btn" href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1" target="_blank" rel="noopener">
