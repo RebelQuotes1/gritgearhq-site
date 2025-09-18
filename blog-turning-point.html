@@ -188,18 +188,36 @@
      <li><strong>Or best of all, just don't be a crazy leftist. That's honestly going to be your best bet, pal. To lead with logic, love and reason, and not with feelings and a victimhood mentality.  
   </ul>
 
- <h2 id="a-tribute">A Tribute Worth Keeping</h2>
+     <!-- ✅ DROP-IN REPLACEMENT: fixed tribute image (robust paths + fallback)
+     and closes your GEAR section properly so nothing breaks layout. -->
 
-<!-- Tribute photo (responsive, styled, with fallback path) -->
-<figure style="margin:16px 0 12px; border:1px solid var(--edge); border-radius:14px; overflow:hidden; box-shadow:var(--shadow)">
-  <img
-    src="assets/charlie-kirk-memorial.webp"
-    onerror="this.onerror=null;this.src='images/charlie-kirk-memorial.webp';"
-    alt="Memorial for Charlie Kirk with flowers, notes, and American flags"
-    width="1200" height="675"
-    loading="lazy" decoding="async"
-    style="display:block; width:100%; height:auto; object-fit:cover;">
+<h2 id="a-tribute">A Tribute Worth Keeping</h2>
+
+<!-- Tribute photo (responsive, styled, with multiple safe paths) -->
+<figure class="figure-hero" style="margin:16px 0 12px; border:1px solid var(--edge); border-radius:14px; overflow:hidden; box-shadow:var(--shadow)">
+  <picture>
+    <!-- Prefer WebP in /assets; try alternate filename; then JPG fallback in /images -->
+    <source srcset="/assets/charlie-kirk-memorial.webp" type="image/webp">
+    <source srcset="/assets/428c8f98-charlie-kirk-memorial.webp" type="image/webp">
+    <img id="ck-memorial"
+         src="/images/charlie-kirk-memorial.jpg"
+         alt="Memorial for Charlie Kirk with flowers, notes, and American flags"
+         width="1200" height="675"
+         loading="lazy" decoding="async"
+         style="display:block; width:100%; height:auto; object-fit:cover;">
+  </picture>
 </figure>
+<script>
+  // One more safety net: if the JPG also fails, try an alt in /assets as last resort.
+  (function () {
+    const img = document.getElementById('ck-memorial');
+    function swap() {
+      img.removeEventListener('error', swap);
+      img.src = '/assets/charlie-kirk-memorial.jpg';
+    }
+    img.addEventListener('error', swap, { once: true });
+  })();
+</script>
 
 <p>If you want to honor Charlie, don’t just share this post—<em>copy the way he lived</em>. Take the question that scares you and ask it in public. Invite somebody who disagrees with you to coffee and go line by line through the issue. Stay until both of you have said everything and neither of you is a villain anymore—just neighbors with different fears, trying to build a country that won’t eat its children.</p>
 
@@ -212,11 +230,16 @@
 
 <p>May God comfort his family. May He steady our hands. And may He grant us the grace to fight for the good without becoming what we oppose.</p>
 
-
-        <!-- GEAR (single, correct instance) -->
-        <h2 id="gear">Featured Gear From This Post</h2>
-        <section id="gg-affiliate-cards">
-          <div class="gg-grid">
+<!-- ===== GEAR (your cards go here) ===== -->
+<h2 id="gear">Featured Gear From This Post</h2>
+<section id="gg-affiliate-cards">
+  <div class="gg-grid">
+    <!-- …your <a class="gg-card"> items… -->
+  </div>
+  <p style="margin-top:10px; color:#9a9a9a; font-size:.9rem;">
+    Disclosure: As an Amazon Associate, we may earn commissions from qualifying purchases.
+  </p>
+</section>
 
                 <div class="card">
         <img src="images/trench.jpg" alt="Vintage Trench Lighter">
