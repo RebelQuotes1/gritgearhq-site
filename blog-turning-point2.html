@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Slaying of Charlie Kirk — Why Bullshit Labels Turn People Into Targets | Grit Gear HQ</title>
+  <meta name="description" content="They didn’t just kill a man—they sparked a movement. A line in the sand. Why dehumanizing labels and algorithm-fed outrage are killing free speech, and what to do about it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap">
+
+  <style>
+    :root{
+      --bg:#0e0e0e; --panel:#111; --edge:#2a2a2a; --ink:#eaeaea; --muted:#bcbcbc;
+      --accent:#ffa500; --accent-d:#b36b00; --shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:var(--bg); color:var(--ink); font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{color:#ffd28a}
+    .wrap{max-width:1100px; margin:0 auto; padding:20px}
+
+    /* Header */
+    header.site{position:sticky; top:0; z-index:5; backdrop-filter:saturate(1.2) blur(8px);
+      background:linear-gradient(180deg, rgba(14,14,14,.92), rgba(14,14,14,.78)); border-bottom:1px solid var(--edge)}
+    header .bar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 20px}
+    .logo{display:flex; align-items:center; gap:10px; font-family:Orbitron,sans-serif; letter-spacing:.5px}
+    .logo .mark{width:30px; height:30px; border:2px solid var(--accent); border-radius:8px; display:grid; place-items:center; font-weight:700}
+    .btn{display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#111; padding:10px 14px; border-radius:999px; font-weight:700}
+    .btn:hover{background:#ffc466; color:#111}
+
+    /* Top video banner */
+    .promo-banner.video{
+      position:relative; isolation:isolate;
+      border-bottom:1px solid var(--edge);
+      background:#0b0b0b; overflow:hidden;
+      min-height:clamp(220px, 40vw, 460px);
+    }
+    .promo-video-wrap{position:absolute; inset:0; z-index:0; overflow:hidden;}
+    .promo-video{position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; object-position:center 50%; filter:contrast(1.05) saturate(1.06)}
+    .promo-banner.video::after{
+      content:""; position:absolute; inset:0; z-index:1;
+      background:linear-gradient(180deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.75) 100%);
+      pointer-events:none;
+    }
+    .promo-content{
+      position:relative; z-index:2;
+      display:flex; flex-direction:column; justify-content:flex-end;
+      min-height:clamp(220px, 40vw, 460px);
+      padding:clamp(14px, 4vw, 28px) 20px;
+      gap:10px;
+    }
+    .promo-eyebrow{display:inline-block; font-family:Orbitron,sans-serif; letter-spacing:.4px;
+      color:#111; background:var(--accent); padding:6px 10px; border-radius:999px; font-weight:700; width:max-content}
+    .promo-title{margin:6px 0 0; color:var(--ink); font-family:Orbitron,sans-serif; font-size:clamp(22px, 4.2vw, 36px); line-height:1.15}
+    .promo-sub{ margin:4px 0 0; color:#d2d2d2; font-size:clamp(14px, 2.4vw, 18px); }
+    .promo-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+
+    /* Hero */
+    .hero{background:radial-gradient(1200px 500px at 50% -100px, rgba(255,165,0,.18), transparent 60%)}
+    .hero .box{border:1px solid var(--edge); background:linear-gradient(180deg,#121212,#0d0d0d);
+      border-radius:20px; padding:28px; margin-top:18px; box-shadow:var(--shadow); position:relative; overflow:hidden}
+    .hero .box:before{content:""; position:absolute; inset:-2px; background:
+      radial-gradient(500px 120px at 10% 0%, rgba(255,165,0,.12), transparent 60%),
+      radial-gradient(500px 120px at 90% 0%, rgba(255,165,0,.12), transparent 60%); pointer-events:none}
+
+    /* Header image inside hero */
+    .hero .hero-image{position:relative; margin:0 0 16px 0; border-radius:18px; overflow:hidden;
+      border:1px solid var(--edge); box-shadow:var(--shadow); aspect-ratio:21/9; background:#0f0f0f}
+    .hero .hero-image img{width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.03) saturate(1.03)}
+    .hero .hero-image::after{content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.45) 85%); pointer-events:none}
+
+    .title{font-family:Orbitron,sans-serif; font-size:clamp(28px,4vw,44px); line-height:1.15; margin:0 0 8px}
+    .subtitle{color:var(--muted); margin:0 0 8px}
+    .meta{color:#9a9a9a; font-size:.9rem}
+
+    /* Layout */
+    .grid{display:grid; grid-template-columns:1fr; gap:22px; margin-top:22px}
+    @media(min-width:900px){ .grid{ grid-template-columns: minmax(0,1fr) 320px; } }
+
+    article.post{background:var(--panel); border:1px solid var(--edge); border-radius:18px; padding:24px; box-shadow:var(--shadow)}
+    article.post h2{font-family:Orbitron,sans-serif; letter-spacing:.4px; color:var(--accent); margin-top:28px}
+    article.post h3{font-family:Orbitron,sans-serif; color:#f1f1f1; margin-top:24px}
+    article.post p{margin:14px 0}
+    .pull{border-left:4px solid var(--accent); padding:10px 14px; background:#141414; color:#ddd; border-radius:8px; margin:18px 0}
+    .callout{background:#121212; border:1px dashed var(--edge); border-radius:12px; padding:14px; color:#d6d6d6}
+
+    /* Sidebar */
+    .side .card{background:var(--panel); border:1px solid var(--edge); border-radius:14px; padding:16px; box-shadow:var(--shadow); margin-bottom:18px}
+    .side h4{font-family:Orbitron,sans-serif; color:var(--accent); margin:0 0 10px}
+
+    /* Affiliate cards */
+    #gg-affiliate-cards .gg-grid{display:grid; gap:16px; grid-template-columns:1fr}
+    @media(min-width:720px){ #gg-affiliate-cards .gg-grid{ grid-template-columns:repeat(2,1fr);} }
+    @media(min-width:1080px){ #gg-affiliate-cards .gg-grid{ grid-template-columns:repeat(3,1fr);} }
+    #gg-affiliate-cards a.gg-card{display:flex; flex-direction:column; text-decoration:none; color:var(--ink); background:#0b0b0b;
+      border:2px solid #222; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .15s ease}
+    #gg-affiliate-cards a.gg-card:hover{transform:translateY(-3px); box-shadow:0 14px 34px rgba(0,0,0,.6)}
+    #gg-affiliate-cards .gg-card img{width:100%; height:auto; display:block; aspect-ratio:16/10; object-fit:cover}
+    #gg-affiliate-cards .gg-card .body{padding:12px 14px}
+    #gg-affiliate-cards .gg-card h3{font-size:1rem; margin:0 0 6px; font-family:Orbitron,sans-serif}
+    #gg-affiliate-cards .gg-card p{margin:0 0 6px; color:#bbb; font-size:.98rem}
+    #gg-affiliate-cards .stars{display:flex; align-items:center; gap:8px; margin-top:6px}
+
+    footer.site{margin-top:28px; border-top:1px solid var(--edge); padding:18px 0; color:#a8a8a8; font-size:.95rem}
+  </style>
+</head>
+<body>
+
+<header class="site">
+  <div class="bar wrap">
+    <div class="logo">
+      <div class="mark">GG</div>
+      <div>
+        <div style="font-weight:700;">Grit Gear HQ</div>
+        <div style="font-size:.8rem; color:var(--muted)">Rough gear for rougher times</div>
+      </div>
+    </div>
+    <a class="btn" href="https://gritgearhq.com" target="_blank" rel="noopener">GritGearHQ.com</a>
+  </div>
+</header>
+
+<!-- ====== TOP VIDEO BANNER (USE YOUR FILE PATHS) ====== -->
+<section class="promo-banner video" aria-label="Site promotion">
+  <div class="promo-video-wrap">
+    <video class="promo-video" playsinline autoplay muted loop preload="metadata" poster="assets/arshotgun-poster.jpg">
+      <source src="assets/arshotgun.mp4" type="video/mp4">
+      <img src="assets/arshotgun-poster.jpg" alt="Grit Gear promo">
+    </video>
+  </div>
+  <div class="promo-content wrap">
+    <div class="promo-eyebrow">New</div>
+    <h2 class="promo-title">This Is The Turning Point</h2>
+    <p class="promo-sub">Stand tall. Speak freely. Build stronger.</p>
+    <div class="promo-actions">
+      <a class="btn" href="#movement">Why it matters</a>
+      <a class="btn" style="background:#222;color:#eee;border:1px solid var(--edge)" href="#gear">Shop the gear</a>
+    </div>
+  </div>
+</section>
+
+<main class="hero">
+  <div class="wrap">
+    <!-- HERO -->
+    <div class="box">
+      <figure class="hero-image">
+        <img src="assets/ck1.jpg"
+             onerror="this.onerror=null;this.src='images/ck1.jpg';"
+             alt="Charlie Kirk raising his fist on stage"
+             width="1600" height="685" loading="eager" fetchpriority="high" decoding="async">
+      </figure>
+
+      <h1 id="top" class="title">The Slaying of Charlie Kirk — Why Labels Turn People Into Targets</h1>
+      <p class="subtitle">They didn’t just kill a man. They sparked a movement. Here’s the line in the sand—and how we keep our heads while the crowd reaches for stones.</p>
+      <div class="meta">By Grit Gear HQ · Read time: 7–9 min</div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:10px">
+        <a href="#top" class="btn">Read From the Top</a>
+        <a href="#gear" class="btn" style="background:#222; color:#eee; border:1px solid var(--edge)">Skip to Gear</a>
+        <a href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1"
+           target="_blank" rel="noopener" class="btn" style="background:#ffa500; color:#111">Get the Tee</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="post">
+        <!-- ====== CONTENT (abbrev for space – keep your full text here) ====== -->
+        <p>There are moments when a country looks in the mirror and doesn’t quite recognize what it sees. The night Charlie Kirk was taken from us was one of those moments. A husband. A father. A son. A friend…</p>
+
+        <div class="pull">“If your politics needs a body count, it isn’t politics—it’s a confession.”</div>
+
+        <h2 id="license-words">When a Word Becomes a Weapon</h2>
+        <p>We live in a time where the laziest kind of politics has become the most dangerous: label-first, evidence-later—if ever…</p>
+
+        <blockquote class="pull">“Disagree hard with ideas; don’t erase people. Debate is oxygen. Labels are lighter fluid.”</blockquote>
+
+        <h2 id="movement">They Didn’t Just Kill a Man</h2>
+        <p>They thought they ended a conversation. They kicked off a movement…</p>
+
+        <h2 id="a-tribute">A Tribute Worth Keeping</h2>
+        <figure style="margin:16px 0 12px; border:1px solid var(--edge); border-radius:14px; overflow:hidden; box-shadow:var(--shadow)">
+          <picture>
+            <source srcset="assets/charlie-kirk-memorial.webp" type="image/webp">
+            <source srcset="assets/428c8f98-charlie-kirk-memorial.webp" type="image/webp">
+            <img id="ck-memorial"
+                 src="images/charlie-kirk-memorial.jpg"
+                 alt="Memorial for Charlie Kirk with flowers, notes, and American flags"
+                 width="1200" height="675"
+                 loading="lazy" decoding="async"
+                 style="display:block; width:100%; height:auto; object-fit:cover;">
+          </picture>
+        </figure>
+
+        <h2 id="gear">Featured Gear From This Post</h2>
+        <section id="gg-affiliate-cards">
+          <div class="gg-grid">
+
+            <!-- Charlie Kirk Tribute Flag — tag visible -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F46vvgOF"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/true_patriot_kirk_flag.jpg"
+                   data-fallback="images/true_patriot_kirk_flag.jpg"
+                   alt="Charlie Kirk True Patriot Flag 3x5"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>Charlie Kirk Tribute Flag 3×5</h3>
+                <p>Display where you stand. Weather-ready banner for yard, garage, or shop wall.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
+
+            <!-- We The People Flag — tag visible -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F4puIF29"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/we_the_people_flag.jpg"
+                   data-fallback="images/we_the_people_flag.jpg"
+                   alt="We The People 1776 Double-Sided Flag 3x5"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>We The People 1776 Flag (Double-Sided)</h3>
+                <p>Bold 3-ply banner with brass grommets. Reads right on both sides.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
+
+            <!-- TRUTH Tee — tag visible -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F4neduGQ"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/truth_new_hate_speech_shirt.jpg"
+                   data-fallback="images/truth_new_hate_speech_shirt.jpg"
+                   alt="TRUTH: The New Hate Speech T-Shirt"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>“TRUTH: The New Hate Speech” Tee</h3>
+                <p>Soft tee with vintage flag print. Wear your stance without shouting.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
+
+            <!-- Grunt Style 1776 Tee — tag visible -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F3VWyAxi"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/grunt_style_1776_shirt.jpg"
+                   data-fallback="images/grunt_style_1776_shirt.jpg"
+                   alt="Grunt Style 1776 Flag Shirt"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>Grunt Style 1776 Flag Tee</h3>
+                <p>Classic black with distressed flag. Daily wear that pairs with anything.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
+
+            <!-- Thought Crimes Notebook — tag visible -->
+            <a class="gg-card"
+               href="https://www.amazon.com/gp/redirect.html?tag=gritgearhq-20&linkCode=ur2&camp=1789&creative=9325&location=https%3A%2F%2Famzn.to%2F4n5uPBD"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="assets_aff_cards/thought_crimes_notebook.jpg"
+                   data-fallback="images/thought_crimes_notebook.jpg"
+                   alt="Thought Crimes: A Notebook for Dangerous Ideas"
+                   width="1600" height="1000" loading="lazy" decoding="async">
+              <div class="body">
+                <h3>Thought Crimes: A Notebook for Dangerous Ideas</h3>
+                <p>Hardcover look, rugged pages. Capture unfiltered thoughts, plans, and debates—off the algorithm.</p>
+                <div class="stars"><span>★★★★★</span><span style="color:#aaa; font-size:.9rem;">Click to check price</span></div>
+              </div>
+            </a>
+
+          </div>
+          <p style="margin-top:10px; color:#9a9a9a; font-size:.9rem;">
+            Disclosure: As an Amazon Associate, we may earn commissions from qualifying purchases.
+          </p>
+        </section>
+
+        <h2 id="final">Final Word</h2>
+        <p>Charlie Kirk won’t take another stage. But his challenge stands: <em>argue well, live brave, love your country loudly and your neighbor even louder.</em> We’ll keep our heads when the crowd reaches for stones—and keep the door shut on dehumanization.</p>
+      </article>
+
+      <aside class="side">
+        <div class="card">
+          <h4>Verify Before You Share</h4>
+          <ul style="margin:0; padding-left:18px;">
+            <li>Find full video before reposting a clip.</li>
+            <li>Check the date and original uploader.</li>
+            <li>Read at least two sources that disagree.</li>
+          </ul>
+        </div>
+
+        <!-- Sidebar product card with robust image fallback -->
+        <div class="card">
+          <h4>Grab the Shirt</h4>
+
+          <a href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1"
+             target="_blank" rel="noopener"
+             style="display:block; margin:-6px -6px 10px; border-radius:12px; overflow:hidden; border:1px solid var(--edge); box-shadow:var(--shadow)">
+            <img
+              id="turning-tee-img"
+              src="assets/back1.jpg.png"
+              alt="This Is The Turning Point tee — back view"
+              width="768" height="768"
+              loading="lazy" decoding="async"
+              style="display:block; width:100%; height:auto; object-fit:cover;"
+              data-candidates='[
+                "assets/back1.jpg.png",
+                "assets/back1.png",
+                "assets/back1.jpg",
+                "images/back1.jpg.png",
+                "images/back1.png",
+                "images/back1.jpg",
+                "assets_aff_cards/back1.png",
+                "assets_aff_cards/back1.jpg"
+              ]'>
+          </a>
+
+          <p>“This Is The Turning Point” — support the message, not the mob.</p>
+          <a class="btn" href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?ref=shop_home_active_1" target="_blank" rel="noopener">
+            Shop on Etsy
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© <span id="y"></span> Grit Gear HQ · <span style="color:var(--accent)">Rough Gear for Rougher Times</span></div>
+  </div>
+</footer>
+
+<script>
+  // Footer year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Tribute image ultimate fallback (if JPG fails)
+  (function () {
+    const img = document.getElementById('ck-memorial');
+    if (!img) return;
+    function swap() {
+      img.removeEventListener('error', swap);
+      img.src = 'assets/charlie-kirk-memorial.jpg';
+    }
+    img.addEventListener('error', swap, { once: true });
+  })();
+
+  // Generic affiliate image fallback: swap to data-fallback path once if primary 404s
+  document.querySelectorAll('#gg-affiliate-cards img[data-fallback]').forEach(img=>{
+    img.addEventListener('error', function () {
+      if (this.dataset.fallback) {
+        this.src = this.dataset.fallback;
+        this.removeAttribute('data-fallback');
+      }
+    }, { once:true });
+  });
+
+  // Sidebar shirt image: walk candidate list until one loads (cache-bust each attempt)
+  (function () {
+    const img = document.getElementById('turning-tee-img');
+    if (!img) return;
+    let list = [];
+    try { list = JSON.parse(img.dataset.candidates || "[]"); } catch (e) { list = []; }
+    let i = 1; // 0 is already set as initial src
+    function tryNext() {
+      if (i >= list.length) return; // best effort done
+      const next = list[i++];
+      img.src = next + (next.includes('?') ? '&' : '?') + 'v=' + Date.now();
+    }
+    img.addEventListener('error', tryNext);
+    // Probe immediately so we don't wait for scroll
+    const probe = new Image();
+    probe.onerror = tryNext;
+    probe.src = img.currentSrc || img.src;
+  })();
+</script>
+</body>
+</html>
