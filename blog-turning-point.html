@@ -197,31 +197,51 @@
         </ul>
 
         <h2 id="a-tribute">A Tribute Worth Keeping</h2>
+<!-- Tribute photo — robust paths (NO leading slash so it works in /blog/ too) -->
+<figure style="margin:16px 0 12px; border:1px solid var(--edge); border-radius:14px; overflow:hidden; box-shadow:var(--shadow)">
+  <img
+    id="ck-memorial"
+    src="assets/charlie-kirk-memorial.jpg"
+    alt="Memorial for Charlie Kirk with flowers, notes, and American flags"
+    width="1200" height="675"
+    loading="lazy" decoding="async"
+    style="display:block;width:100%;height:auto;object-fit:cover;"
+    data-candidates='[
+      "assets/charlie-kirk-memorial.webp",
+      "assets/charlie-kirk-memorial.jpg",
+      "images/charlie-kirk-memorial.webp",
+      "images/charlie-kirk-memorial.jpg",
+      "charlie-kirk-memorial.jpg"
+    ]'>
+</figure>
 
-        <!-- Tribute photo with multiple safe paths -->
-        <figure style="margin:16px 0 12px; border:1px solid var(--edge); border-radius:14px; overflow:hidden; box-shadow:var(--shadow)">
-          <picture>
-            <source srcset="/assets/charlie-kirk-memorial.webp" type="image/webp">
-            <source srcset="/assets/428c8f98-charlie-kirk-memorial.webp" type="image/webp">
-            <img id="ck-memorial"
-                 src="/images/charlie-kirk-memorial.jpg"
-                 alt="Memorial for Charlie Kirk with flowers, notes, and American flags"
-                 width="1200" height="675"
-                 loading="lazy" decoding="async"
-                 style="display:block; width:100%; height:auto; object-fit:cover;">
-          </picture>
-        </figure>
-        <script>
-          // final fallback for tribute image
-          (function () {
-            const img = document.getElementById('ck-memorial');
-            function swap() {
-              img.removeEventListener('error', swap);
-              img.src = '/assets/charlie-kirk-memorial.jpg';
-            }
-            img.addEventListener('error', swap, { once: true });
-          })();
-        </script>
+<script>
+/* Walk through likely locations/filenames until one loads.
+   Put the file at /assets/charlie-kirk-memorial.jpg (preferred),
+   or /images/charlie-kirk-memorial.jpg as a fallback. */
+(() => {
+  const img = document.getElementById('ck-memorial');
+  if (!img) return;
+  let list = [];
+  try { list = JSON.parse(img.dataset.candidates || "[]"); } catch(e) {}
+
+  let i = 0, triedFirst = false;
+
+  function tryNext() {
+    if (!triedFirst) { triedFirst = true; return; } // first error belongs to initial src
+    if (i >= list.length) return;
+    const next = list[i++];
+    img.src = next + (next.includes('?') ? '&' : '?') + 'v=' + Date.now();
+  }
+
+  img.addEventListener('error', tryNext);
+
+  // Proactively probe so we don't wait for user scroll
+  const probe = new Image();
+  probe.onerror = tryNext;
+  probe.src = img.currentSrc || img.src;
+})();
+</script>
 
         <p>If you want to honor Charlie, don’t just share this post—<em>copy the way he lived</em>. Take the question that scares you and ask it in public. Invite somebody who disagrees with you to coffee and go line by line through the issue. Stay until both of you have said everything and neither of you is a villain anymore—just neighbors with different fears, trying to build a country that won’t eat its children.</p>
 
