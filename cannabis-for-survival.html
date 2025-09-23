@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <a href="#shop-now">Shop Now</a>
+<!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <title>Bud Over Booze: A Survivalist’s Manifesto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Alcohol almost ended me. Cannabis helped me live, lead, and love. A survivalist’s case for choosing a plant that sharpens your edge instead of dulling it." />
+  <meta property="og:title" content="Bud Over Booze: A Survivalist’s Manifesto" />
+  <meta property="og:description" content="Alcohol almost ended me. Cannabis helped me live, lead, and love." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="sick.jpg" />
+  <meta name="theme-color" content="#3fae5a" />
+  <link rel="preconnect" href="https://getbudonline.com" crossorigin>
+  <style>
+    :root{
+      --ink:#e9ecef; --muted:#9aa3ab; --bg:#0d0f12; --card:#101319;
+      --accent:#3fae5a; --edge:#1a1f28; --lead: clamp(1.9rem, 2.5vw, 2.6rem);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.7}
+
+    /* Progress bar */
+    #progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);
+      width:0;z-index:10001;transform-origin:left center}
+
+    /* Promo banner */
+    .banner{
+      position:sticky; top:0; z-index:10000;
+      display:flex; gap:10px; align-items:center; justify-content:center;
+      padding:10px 14px; background:#0f1a12; border-bottom:1px solid var(--edge);
+    }
+    .banner .pill{
+      display:inline-block; padding:6px 10px; border-radius:999px;
+      background:#143821; color:#bfe6c8; font-size:.82rem; border:1px solid #235f37;
+    }
+    .banner a.cta{
+      text-decoration:none; background:var(--accent); color:#07110a; font-weight:800;
+      padding:8px 12px; border-radius:10px; white-space:nowrap;
+    }
+    .banner button{
+      background:transparent; border:none; color:#b5c1c7; cursor:pointer; font-size:1rem;
+      padding:4px 8px; border-radius:8px;
+    }
+    .banner button:hover{background:#132018; color:#e6f2ea}
+
+    header{
+      padding:28px 18px 18px; border-bottom:2px solid var(--edge);
+      background: radial-gradient(1200px 400px at 50% -20%, #17301f 0%, transparent 70%) #0d0f12;
+      text-align:center;
+    }
+    header h1{margin:0;font-size:var(--lead);letter-spacing:.3px}
+    header p.kicker{margin:.6rem auto 0;max-width:900px;color:#b9c3ca}
+    .wrap{max-width:980px;margin:0 auto;padding:24px 18px 120px}
+    h2{margin:2.2rem 0 .8rem;color:var(--accent)}
+    p{margin:.9rem 0}
+    .lead{font-size:1.12rem;color:#dfe6eb}
+    .card{
+      background:var(--card); border:1px solid var(--edge); border-radius:18px; padding:18px;
+      box-shadow:0 14px 44px rgba(0,0,0,.35);
+    }
+    figure{margin:1.4rem 0;text-align:center}
+    figure img{
+      max-width:100%; height:auto; border-radius:14px;
+      border:1px solid var(--edge); box-shadow:0 10px 28px rgba(0,0,0,.35)
+    }
+    figcaption{color:var(--muted);font-size:.95rem;margin-top:.5rem}
+    .grid{display:grid;gap:18px}
+    @media(min-width:860px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    .pull{
+      border-left:4px solid var(--accent); padding:10px 14px; background:#0f1418; border-radius:8px; color:#d8e2e7;
+      font-weight:700; margin:1.2rem 0
+    }
+    .bullets li{margin:.4rem 0}
+    .cta{text-align:center;margin:28px auto 16px}
+    .cta a.button{
+      display:inline-block; background:var(--accent); color:#07110a; text-decoration:none;
+      padding:14px 22px; font-weight:800; border-radius:12px; letter-spacing:.3px;
+      box-shadow:0 10px 22px rgba(63,174,90,.25); transition:.2s transform,.2s box-shadow
+    }
+    .cta a.button:hover{transform:translateY(-1px); box-shadow:0 16px 26px rgba(63,174,90,.35)}
+    .qr{display:flex; justify-content:center; gap:16px; align-items:center; margin-top:10px}
+    .qr img{width:150px;height:150px;border-radius:10px;border:3px solid var(--accent)}
+    .footnote{color:var(--muted); font-size:.9rem}
+    footer{border-top:1px solid var(--edge); padding:22px 18px; text-align:center; color:#9aa3ab}
+    .tag{display:inline-block; font-size:.78rem; color:#a7b2b9; border:1px solid var(--edge); padding:4px 8px; border-radius:999px; margin-right:6px}
+
+    /* Sticky mobile CTA */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#101319;border-top:1px solid #1a1f28;
+      padding:10px;display:flex;gap:10px;align-items:center;justify-content:center;z-index:9999}
+    .sticky-cta a{background:#3fae5a;color:#07110a;text-decoration:none;padding:10px 16px;
+      font-weight:800;border-radius:10px}
+    .sticky-cta .mini{color:#9aa3ab;font-size:.85rem}
+    @media (min-width:900px){.sticky-cta{display:none}}
+
+    /* Table of Contents */
+    .toc{max-width:980px;margin:14px auto 0;padding:8px 18px 18px}
+    .toc .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .toc a{color:#cfe7d6;text-decoration:none;border:1px solid var(--edge);padding:8px 12px;border-radius:999px}
+    .toc a:hover{background:#132018}
+
+    /* Corner CTA (desktop only) */
+    #cornerCTA{position:fixed;right:18px;bottom:18px;z-index:9998;display:none}
+    #cornerCTA a{background:#2c8646;color:#07110a;text-decoration:none;padding:12px 16px;border-radius:12px;font-weight:800;box-shadow:0 12px 24px rgba(44,134,70,.35)}
+
+    /* Mid-CTA pulse (first 10s) */
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+    .pulse{animation:pulse 1.2s ease-in-out infinite}
+  </style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+
+<!-- PROMO BANNER (rotating copy + countdown + dismiss memory) -->
+<div class="banner" id="promoBanner" role="region" aria-label="Limited-time promo" hidden>
+  <span class="pill" id="promoPill">Live Deal</span>
+  <span id="promoLine">Discount ounces often under $70 — grab it while it’s hot.</span>
+  <span id="promoTimer" aria-live="polite" style="font-weight:700; margin-left:8px;"></span>
+  <a class="cta" href="https://getbudonline.com/affiliate/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">Shop GetBudOnline</a>
+  <button type="button" aria-label="Close promo" id="promoClose">✕</button>
+  <noscript><style>.banner{display:flex !important}</style></noscript>
+</div>
+
+<header>
+  <div class="tag">Grit Gear HQ · Survival Mindset</div>
+  <h1>Bud Over Booze: A Survivalist’s Manifesto</h1>
+  <p class="kicker">Alcohol almost ended me. Cannabis helped me live, lead, and love. This is the story—and the case—for choosing a plant that sharpens your edge instead of dulling it.</p>
+
+  <!-- Top CTA (hero) -->
+  <p style="text-align:center;margin:14px 0 6px;">
+    <a id="heroBtn" class="button" href="https://getbudonline.com/affiliate/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">Choose Bud Over Booze</a>
+  </p>
+</header>
+
+<!-- Table of Contents -->
+<nav class="toc" aria-label="Table of contents">
+  <div class="row">
+    <a href="#last-rites">My Near-Death Story</a>
+    <a href="#why-bud">Why Bud Beats Booze</a>
+    <a href="#daily-battle">Daily Wins (Sleep, Pain, Appetite)</a>
+    <a href="#social-lie">The Social Lie</a>
+    <a href="#my-source">My Trusted Source</a>
+    <a href="#scan">Scan & Go</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="card lead">
+    <p>Survival isn’t only ferro rods, water filters, and tidy checklists. Survival is also the quiet covenant you make with your body: <em>What will I put inside you when life gets hard?</em> For years, my answer was alcohol. It cost me almost everything.</p>
+  </section>
+
+  <h2 id="last-rites">The Night They Read Me My Last Rites</h2>
+  <p>I shouldn’t be here. Years of hard drinking finally hit the wall. <strong>Stage 4 cirrhosis.</strong> A priest by my bed. Last rites. The kind of goodbye that leaves a mark you can feel for the rest of your life.</p>
+
+  <figure>
+    <img src="sick.jpg" alt="Hospitalized with cirrhosis—surviving last rites" loading="eager" decoding="async">
+    <figcaption><em>This was me.</em> I was supposed to die. Somehow, I didn’t.</figcaption>
+  </figure>
+
+  <p>Walking out wasn’t triumph. It was hell with a pulse. <strong>Insomnia</strong> that stretched for days—sometimes a week. Pain everywhere. And an itch so deep it felt like being eaten from the inside. You can’t scratch it. You endure it.</p>
+
+  <div class="pull">Weed didn’t erase the pain. It changed it—from fire to a low electric hum. Still there, but survivable.</div>
+
+  <p>I wasn’t a smoker. Didn’t even have a plug. But something in me knew: <em>try cannabis.</em> That whisper saved my life. I could eat again. Sleep again. Be a husband, a father, a man again.</p>
+
+  <h2>Alcohol: The Poison We’re Sold</h2>
+  <p>Alcohol is marketed as normal, harmless—even patriotic. But in survival, it’s a liability dressed up like tradition.</p>
+  <ul class="bullets">
+    <li><strong>Dehydrates</strong> when water is gold.</li>
+    <li><strong>Clouds judgment</strong> when one bad call can cost lives.</li>
+    <li><strong>Dead weight</strong> in bottles you can’t afford to carry.</li>
+    <li><strong>Hangovers</strong> that steal tomorrow’s edge.</li>
+    <li><strong>Long-term wreckage</strong> that eats your liver and your life. I’m the proof.</li>
+  </ul>
+
+  <figure>
+    <img src="WhatsApp%20Image%202025-09-22%20at%2020.38.27_18cbebfa.jpg" alt="Desk scene with hat, joint and lighter" loading="lazy" decoding="async">
+    <figcaption>What I left behind—and what I reached for to rebuild.</figcaption>
+  </figure>
+
+  <h2 id="why-bud">Cannabis: The Survival Plant</h2>
+  <p>Cannabis isn’t “the lesser evil.” It’s a tool. A resource. A plant that serves body and tribe when it matters.</p>
+  <ul class="bullets">
+    <li><strong>Barter value:</strong> compact, in-demand, trades like silver when shelves go empty.</li>
+    <li><strong>Light & packable:</strong> a jar of flower vs. a case of beer—no contest.</li>
+    <li><strong>Pain relief:</strong> takes the edge off arthritis, injuries, and old scars without poisoning you.</li>
+    <li><strong>Keeps you cautious:</strong> less impulse, more awareness. That’s survival.</li>
+    <li><strong>Builds bonds:</strong> a joint around the fire makes brothers; a bottle makes fights.</li>
+  </ul>
+
+  <!-- Mid-article CTA (pulses 10s for attention) -->
+  <div class="cta" id="mid-cta">
+    <a class="button" id="midBtn"
+       href="https://getbudonline.com/affiliate/christopher.serpico/"
+       target="_blank" rel="nofollow sponsored noopener">Relief, Not Regret</a>
+  </div>
+
+  <div class="grid cols-2">
+    <figure>
+      <img src="WhatsApp%20Image%202025-09-22%20at%2020.38.27_e771abdb.jpg" alt="Teas beside bagged flower on counter" loading="lazy" decoding="async">
+      <figcaption>Medicine, not mayhem. Part of a calm daily ritual.</figcaption>
+    </figure>
+    <figure>
+      <img src="cannabis-friendly-1-1024x683.jpg" alt="Woman exhaling vapor in the woods" loading="lazy" decoding="async">
+      <figcaption>Quiet clarity beats loud chaos.</figcaption>
+    </figure>
+  </div>
+
+  <h2 id="daily-battle">My Daily Battle (and Why I Win It)</h2>
+  <p><strong>Appetite:</strong> Cirrhosis killed it. Cannabis brought it back, meal by meal.</p>
+  <p><strong>Sleep:</strong> Inverted nights straightened out. The mind finally lets go.</p>
+  <p><strong>Pain:</strong> Between herniated discs and arthritis, the dial turns down enough to move, lift, live.</p>
+  <p><strong>Bipolar swings:</strong> Sometimes cannabis stops mania in its tracks—gives me the steering wheel back.</p>
+  <p><strong>Connection:</strong> Booze made me cruel. Weed makes me present—husband, father, friend.</p>
+
+  <div class="grid cols-2">
+    <figure>
+      <img src="GettyImages-1052087182.jpg" alt="Two people sharing a joint beside a campfire" loading="lazy" decoding="async">
+      <figcaption>Community is a survival skill. Weed builds it.</figcaption>
+    </figure>
+    <figure>
+      <img src="green-camp-1-cannabis-camp-oregon-coast-tent-people-campfire.jpg" alt="Tent and campfire at night" loading="lazy" decoding="async">
+      <figcaption>What we pass around the fire shapes who we are in the morning.</figcaption>
+    </figure>
+  </div>
+
+  <h2 id="social-lie">The Social Lie</h2>
+  <p>Culture pushes alcohol at every turn and shames cannabis. If weed had been legal and accepted when I was younger, I would’ve chosen it from the start. Fewer scars. A different road. That’s why I speak up—so the next man doesn’t have to learn the way I did.</p>
+
+  <h2 id="my-source">The Source I Trust</h2>
+  <p>Six years without a single issue: discreet, punctual, professional. Odor-proof packaging, plus a letter citing the 2018 Farm Bill so there’s no mailbox anxiety. Deals on discount ounces under $70, true top-shelf when you want it, pre-rolls, concentrates, edibles—<em>even shrooms</em>. Real people on support who actually care.</p>
+
+  <div class="pull">And let me be crystal clear: <strong>this isn’t some shady setup</strong>. The company is legit, the weed is legit, and you don’t have to worry about police kicking in your door. Packages are shipped discreetly and professionally every single time.</div>
+
+  <div class="cta">
+    <a id="go-bud" class="button"
+       href="https://getbudonline.com/affiliate/christopher.serpico/"
+       target="_blank" rel="nofollow sponsored noopener">Choose Bud Over Booze</a>
+  </div>
+
+  <section id="scan" class="cta" aria-labelledby="scan-title">
+    <h2 id="scan-title" style="margin-top:0;">Scan & Go</h2>
+    <img src="qr.jpg" alt="Scan for GetBudOnline" width="150" height="150"
+         style="border:3px solid #3fae5a;border-radius:10px" loading="lazy" decoding="async" />
+    <div class="footnote">Same link, faster on mobile.</div>
+    <p><a class="button"
+          href="https://getbudonline.com/affiliate/christopher.serpico/"
+          target="_blank" rel="nofollow sponsored noopener">Your Trusted Source →</a></p>
+  </section>
+
+  <h2>Around the Fire</h2>
+  <p>I’ve watched bottles turn friends into enemies. I’ve watched a single joint turn strangers into brothers. One way steals tomorrow; the other gives it back. In the quiet after the stories, when the embers turn to stars, you can feel the difference in your bones.</p>
+
+  <div class="pull">This isn’t about getting high. It’s about staying alive—and staying the kind of man your family can count on.</div>
+
+  <h2>Choose Your Edge</h2>
+  <p>Survival is a stack of choices. Knife or no knife. Water or none. Bottle or bud. Choose the thing that sharpens you. Choose the thing that helps you love your people better and wake up clear enough to protect them.</p>
+
+  <p><strong>Bud over booze.</strong> Every time.</p>
+
+  <!-- Bottom CTA -->
+  <div class="cta">
+    <a class="button" href="https://getbudonline.com/affiliate/christopher.serpico/"
+       target="_blank" rel="nofollow sponsored noopener">Get Steady. Not Sloppy.</a>
+  </div>
+
+  <!-- FAQ (trust + SEO) -->
+  <h2 id="faq">FAQ</h2>
+  <details>
+    <summary><strong>Is this legit? Am I going to have cops at my door?</strong></summary>
+    <p>It’s legit. Packages are shipped discreetly with odor-proof packaging and include a letter referencing the 2018 Farm Bill. I’ve used the same source for six years without a single issue.</p>
+  </details>
+  <details>
+    <summary><strong>What about quality?</strong></summary>
+    <p>Discount ounces are often under $70, and top-shelf is worth every dime. Flower, pre-rolls, concentrates, edibles—consistent quality and service.</p>
+  </details>
+  <details>
+    <summary><strong>Why choose cannabis over alcohol for survival?</strong></summary>
+    <p>Weed is lighter, trades better, doesn’t cause hangovers, and keeps you cautious instead of reckless. It helps with pain, sleep, and appetite—key to staying sharp.</p>
+  </details>
+</main>
+
+<!-- Desktop corner CTA -->
+<div id="cornerCTA" aria-hidden="true">
+  <a href="https://getbudonline.com/affiliate/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">Shop GetBudOnline</a>
+</div>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta" id="sticky">
+  <span class="mini">Ready when you are.</span>
+  <a href="https://getbudonline.com/affiliate/christopher.serpico/"
+     target="_blank" rel="nofollow sponsored noopener">Relief, Not Regret</a>
+</div>
+
+<footer>
+  © 2025 Grit Gear HQ · Survival isn’t just gear—it’s what you put in your body.
+</footer>
+
+<!-- CRO + retention scripts -->
+<script>
+(function(){
+  // Lazy attributes safeguard
+  document.querySelectorAll('img:not([loading])').forEach(img=>{
+    img.setAttribute('loading','lazy'); img.setAttribute('decoding','async');
+  });
+
+  // Reading progress
+  const bar=document.getElementById('progress');
+  function prog(){
+    const h=document.documentElement, sc=h.scrollTop, max=h.scrollHeight - h.clientHeight;
+    const p=Math.max(0, Math.min(1, sc/max));
+    bar.style.width=(p*100)+'%';
+  }
+  addEventListener('scroll', prog, {passive:true}); prog();
+
+  // Promo banner logic (48h countdown + rotating copy + dismiss memory + hero sync)
+  const BANNER_ID='promoBanner', CLOSE_ID='promoClose', LINE_ID='promoLine', TIMER_ID='promoTimer';
+  const STORE_END='gg_promo_ends_at', STORE_HIDE='gg_promo_hidden_until';
+  const banner=document.getElementById(BANNER_ID), closeBtn=document.getElementById(CLOSE_ID);
+  const lineEl=document.getElementById(LINE_ID), timerEl=document.getElementById(TIMER_ID);
+  const heroBtn=document.getElementById('heroBtn'), midBtn=document.getElementById('midBtn');
+
+  const hiddenUntil=parseInt(localStorage.getItem(STORE_HIDE)||'0',10);
+  const now=Date.now(); if(hiddenUntil && now<hiddenUntil){ /* keep hidden */ } else { banner.hidden=false; }
+
+  let endsAt=parseInt(localStorage.getItem(STORE_END)||'0',10);
+  if(!endsAt || endsAt<now){ endsAt = now + 48*60*60*1000; localStorage.setItem(STORE_END, String(endsAt)); }
+
+  const lines=[
+    "Discount ounces often under $70 — grab it while it’s hot.",
+    "Top-shelf that won’t wreck your wallet. See what’s live now.",
+    "Legit, discreet, and fast. Stock your survival plant today."
+  ];
+  let i=Math.floor(Math.random()*lines.length);
+  function setLine(idx){
+    lineEl.textContent=lines[idx];
+    // Sync hero CTA text for coherence
+    if (heroBtn){
+      const opts=["Choose Bud Over Booze","Relief, Not Regret","Your Trusted Source →"];
+      heroBtn.textContent = opts[idx % opts.length];
+    }
+  }
+  setLine(i);
+  let rot=setInterval(()=>{ i=(i+1)%lines.length; setLine(i); }, 12000);
+
+  function tick(){
+    const t=endsAt - Date.now();
+    if(t<=0){ timerEl.textContent=" · ends soon"; clearInterval(intv); return; }
+    const s=Math.floor(t/1000)%60, m=Math.floor(t/60000)%60, h=Math.floor(t/3600000);
+    timerEl.textContent=` · ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  }
+  const intv=setInterval(tick,1000); tick();
+
+  if(closeBtn){
+    closeBtn.addEventListener('click', ()=>{
+      banner.style.display='none'; clearInterval(rot); clearInterval(intv);
+      localStorage.setItem(STORE_HIDE, String(Date.now()+7*24*60*60*1000));
+    });
+  }
+
+  // Mid CTA pulse for 10 seconds
+  if(midBtn){
+    midBtn.classList.add('pulse');
+    setTimeout(()=>midBtn.classList.remove('pulse'), 10000);
+  }
+
+  // Corner CTA appears after ~35% scroll on desktop
+  const corner=document.getElementById('cornerCTA');
+  function toggleCorner(){
+    const sc=document.documentElement.scrollTop, max=document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const pct = max>0 ? sc/max : 0;
+    if (window.innerWidth >= 900 && pct > 0.35) corner.style.display='block';
+    else corner.style.display='none';
+  }
+  addEventListener('scroll', toggleCorner, {passive:true}); addEventListener('resize', toggleCorner); toggleCorner();
+})();
+</script>
+
+<!-- FAQ schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Is this legit? Am I going to have cops at my door?",
+      "acceptedAnswer":{"@type":"Answer","text":"It’s legit. Packages are shipped discreetly with odor-proof packaging and include a letter referencing the 2018 Farm Bill. I’ve used the same source for six years without a single issue."}
+    },
+    {
+      "@type":"Question",
+      "name":"What about quality?",
+      "acceptedAnswer":{"@type":"Answer","text":"Discount ounces are often under $70, and top-shelf is worth every dime. Flower, pre-rolls, concentrates, edibles—consistent quality and service."}
+    },
+    {
+      "@type":"Question",
+      "name":"Why choose cannabis over alcohol for survival?",
+      "acceptedAnswer":{"@type":"Answer","text":"Weed is lighter, trades better, doesn’t cause hangovers, and keeps you cautious instead of reckless. It helps with pain, sleep, and appetite—key to staying sharp."}
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
