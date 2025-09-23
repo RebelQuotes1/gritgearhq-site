@@ -517,11 +517,19 @@
     margin: 52px auto;
     max-width: 1020px;
   }
-<!-- Amish blog preview card (SELF-CONTAINED) -->
+<!-- SIDE-BY-SIDE FRONT PREVIEWS: Amish Guide + Bug-Out Pharmacy (Legal) -->
 <link rel="prefetch" href="/amish-winter-heat.html">
+<link rel="prefetch" href="https://www.binoidbakery.com/discount/gritbud?ref=wavhqyvz">
 
 <style>
-  .preview-wrap{max-width:1100px;margin:18px auto;padding:clamp(12px,3vw,24px)}
+  /* ===== 2-up container ===== */
+  .front-pair{
+    max-width:1100px;margin:18px auto;padding:clamp(12px,3vw,24px);
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;
+  }
+  @media (max-width:900px){ .front-pair{grid-template-columns:1fr} }
+
+  /* ===== Amish blog preview card (kept self-contained) ===== */
   .preview-card{
     display:grid;grid-template-columns:1fr;gap:0;text-decoration:none;
     background:var(--panel,#121821);color:var(--ink,#e8edf2);
@@ -545,15 +553,53 @@
     background:linear-gradient(180deg,#ff7a00,#e06100);color:#101318;box-shadow:0 8px 30px rgba(255,122,0,.28)
   }
   @media(min-width:860px){.preview-card{grid-template-columns:48% 52%}}
+
+  /* ===== Bug-Out Pharmacy (Legal) clickbait card (self-contained) ===== */
+  .bugout-wrap{--ink:var(--ink,#e9ecef);--muted:var(--muted,#9aa3ab);
+    --edge:var(--edge,#1a1f28);--green:var(--accent,#3fae5a);--orange:#ffa500;}
+  .bugout-card{
+    display:grid;grid-template-columns:1fr;gap:0;text-decoration:none;
+    color:var(--ink);background:linear-gradient(135deg,#121618 0%,#0c0e11 55%);
+    border:1px solid var(--edge);border-radius:16px;overflow:hidden;
+    box-shadow:0 0 0 1px rgba(63,174,90,.14),0 10px 35px rgba(0,0,0,.55);
+    transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;
+  }
+  .bugout-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(63,174,90,.2),0 18px 45px rgba(0,0,0,.6);border-color:#2a3a30}
+  .bugout-media{position:relative;min-height:220px;background:linear-gradient(180deg,#132018,#0c0f11)}
+  .bugout-media::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(70% 60% at 20% 10%,rgba(63,174,90,.35),transparent);
+    pointer-events:none;
+  }
+  .bugout-thumb{
+    width:100%;height:100%;display:block;aspect-ratio:16/9;object-fit:cover;opacity:.12;mix-blend:screen
+  }
+  .bugout-badge{
+    position:absolute;top:12px;left:12px;padding:6px 10px;border-radius:999px;
+    background:rgba(0,0,0,.55);border:1px solid #2a2a2a;font-weight:800;font-size:.8rem
+  }
+  .bugout-off{position:absolute;top:12px;right:12px;background:var(--orange);color:#111;border:1px solid #c47a00;font-weight:900}
+  .bugout-body{padding:16px 18px 18px}
+  .bugout-tag{color:#a6cdb6;font-size:.9rem;letter-spacing:.4px;text-transform:uppercase}
+  .bugout-title{margin:.25rem 0 .35rem;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:900}
+  .bugout-dek{color:var(--muted);margin:0 0 .8rem}
+  .bugout-chips{display:flex;gap:8px;flex-wrap:wrap}
+  .bugout-chips span{font-size:.82rem;color:#d7e4dc;border:1px solid #28342d;background:#152019;padding:6px 10px;border-radius:999px}
+  .bugout-cta{
+    display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:900;letter-spacing:.3px;
+    background:linear-gradient(180deg,#41c06a,#2ea553);color:#0b1510;border:2px solid #2f9a55;
+    box-shadow:0 8px 30px rgba(63,174,90,.28)
+  }
+  @media(min-width:860px){.bugout-card{grid-template-columns:48% 52%}}
+  .bugout-note{margin:.4rem 2px 0;color:#9aa3ab;font-size:.85rem}
 </style>
 
-<div class="preview-wrap">
-  <!-- Change href if you move to a pretty URL like /blog/amish-winter-heat/ -->
+<div class="front-pair">
+  <!-- Amish Guide (left) -->
   <a class="preview-card"
      href="/amish-winter-heat.html#amish-winter-heat"
      aria-label="Read: How the Amish Stay Warm in Winter">
     <div class="preview-media">
-      <!-- Update src if your image lives elsewhere, e.g. /assets/img/berne.jpg -->
       <img src="/berne.jpg" alt="Amish buggy on a snowy road — winter heat the old-world way" onerror="this.src='conewango.jpg'">
       <span class="preview-badge">New</span>
     </div>
@@ -564,6 +610,33 @@
       <span class="preview-cta">Read the guide →</span>
     </div>
   </a>
+
+  <!-- Bug-Out Pharmacy (right) -->
+  <a class="bugout-card bugout-wrap"
+     href="https://www.binoidbakery.com/discount/gritbud?ref=wavhqyvz"
+     target="_blank" rel="nofollow sponsored noopener"
+     aria-label="Bug-Out Pharmacy (Legal) — discreet, shelf-friendly picks. GRITBUD saves 10%">
+    <div class="bugout-media">
+      <!-- Optional: background image for texture; can omit -->
+      <img class="bugout-thumb" src="/book3.jpg" alt="" aria-hidden="true">
+      <span class="bugout-badge">LEGAL</span>
+      <span class="bugout-badge bugout-off">10% OFF</span>
+    </div>
+    <div class="bugout-body">
+      <div class="bugout-tag">Quiet Morale Kit</div>
+      <h3 class="bugout-title">Bug-Out Pharmacy (Legal)</h3>
+      <p class="bugout-dek">Discreet, shelf-friendly picks. <strong>GRITBUD</strong> saves 10%.</p>
+      <div class="bugout-chips">
+        <span>Discreet shipping</span><span>Shelf-friendly</span><span>Adults only</span>
+      </div>
+      <span class="bugout-cta">Stock the kit →</span>
+    </div>
+  </a>
+</div>
+
+<!-- tiny disclosure (optional) -->
+<div class="bugout-note" style="max-width:1100px;margin:0 auto;padding:0 24px;">
+  Adults 21+. Know your local laws. Not medical advice.
 </div>
 
 <!-- ⚡ OFF-GRID POWER PICKS -->
