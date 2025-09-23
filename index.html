@@ -603,36 +603,100 @@
     </div>
   </a>
 
-  <!-- RIGHT: Bug-Out Pharmacy (Legal) -->
-  <a class="card-click bugout"
-     href="https://www.binoidbakery.com/?ref=gritbud"
-     target="_blank" rel="nofollow sponsored noopener"
-     aria-label="Bug-Out Pharmacy (Legal) — Discreet, shelf-friendly picks. Use code GRITBUD for 10% off">
-    <div class="media">
-      <!-- Optional background texture image; safe to remove -->
-      <img src="/book3.jpg" alt="" aria-hidden="true" style="opacity:.12;mix-blend:screen">
-      <span class="badge">Legal</span>
-      <span class="off">10% OFF</span>
+<!-- SIDE-BY-SIDE: Amish blog preview (left) + Bloomz Snow Caps ad (right) -->
+<link rel="prefetch" href="/amish-winter-heat.html">
+<link rel="prefetch" href="https://bloomzhemp.com/collections/snow-caps-thca-flower/products/thca-snow-caps?ref=gritbud">
+
+<style>
+  /* 2-up container (kept lightweight & self-contained) */
+  .front-pair{
+    max-width:1100px;margin:18px auto;padding:clamp(12px,3vw,24px);
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;
+  }
+  @media (max-width:900px){ .front-pair{grid-template-columns:1fr} }
+
+  /* Reuse your existing preview styles; only add Bloomz accent variants */
+  .preview-card{display:grid;grid-template-columns:1fr;gap:0;text-decoration:none;
+    background:var(--panel,#121821);color:var(--ink,#e8edf2);
+    border:1px solid var(--line,#1f2a35);border-radius:16px;overflow:hidden;
+    box-shadow:0 0 0 1px rgba(255,122,0,.12),0 10px 35px rgba(0,0,0,.55);
+    transition:transform .12s ease,box-shadow .12s ease}
+  .preview-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,122,0,.18),0 18px 45px rgba(0,0,0,.6)}
+  .preview-media{position:relative;min-height:220px;background:linear-gradient(180deg,#1a222c,#0f141a)}
+  .preview-media img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9}
+  .preview-badge{position:absolute;top:12px;left:12px;padding:6px 10px;border-radius:999px;
+    background:linear-gradient(180deg,#ff7a00,#e06100);color:#0b0f12;font-weight:800;font-size:.8rem}
+  .preview-body{padding:16px 18px 18px}
+  .preview-tag{color:#9aa3ad;font-size:.9rem;letter-spacing:.4px;text-transform:uppercase}
+  .preview-title{margin:.25rem 0 .35rem;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:800}
+  .preview-deck{color:#c9d2da;margin:0 0 .8rem}
+  .preview-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;
+    font-weight:900;letter-spacing:.3px;background:linear-gradient(180deg,#ff7a00,#e06100);
+    color:#101318;box-shadow:0 8px 30px rgba(255,122,0,.28)}
+
+  /* Bloomz variant (blue accent & subtle product look) */
+  .preview-card.bloomz{
+    box-shadow:0 0 0 1px rgba(96,165,250,.18),0 10px 35px rgba(0,0,0,.55);
+    border-color:#1d2a3b;
+  }
+  .preview-card.bloomz:hover{
+    box-shadow:0 0 0 1px rgba(37,99,235,.25),0 18px 45px rgba(0,0,0,.65);
+  }
+  .preview-card.bloomz .preview-badge{
+    background:linear-gradient(180deg,#60a5fa,#2563eb);color:#071019;border:0
+  }
+  .preview-card.bloomz .preview-cta{
+    background:linear-gradient(180deg,#60a5fa,#2563eb);color:#0b1220;
+    border:0;box-shadow:0 8px 30px rgba(37,99,235,.28)
+  }
+  .preview-chips{display:flex;flex-wrap:wrap;gap:8px;margin:.2rem 0 .2rem}
+  .preview-chips span{font-size:.82rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:6px 10px;border-radius:999px}
+  .tiny-note{color:#9aa3ad;font-size:.86rem;margin-top:.4rem}
+</style>
+
+<div class="front-pair">
+  <!-- Amish Guide (left) -->
+  <a class="preview-card"
+     href="/amish-winter-heat.html#amish-winter-heat"
+     aria-label="Read: How the Amish Stay Warm in Winter">
+    <div class="preview-media">
+      <img src="/berne.jpg" alt="Amish buggy on a snowy road — winter heat the old-world way" onerror="this.src='conewango.jpg'">
+      <span class="preview-badge">New</span>
     </div>
-    <div class="body">
-      <div class="tag">Quiet Morale Kit</div>
-      <h3 class="title">Bug-Out Pharmacy (Legal)</h3>
-      <p class="deck">Discreet, shelf-friendly picks. Use code <strong>GRITBUD</strong> at checkout for 10% off.</p>
-      <div class="chips">
-        <span>Discreet shipping</span><span>Shelf-friendly</span><span>Adults only</span>
+    <div class="preview-body">
+      <div class="preview-tag">Field Guide</div>
+      <h3 class="preview-title">How the Amish Stay Warm in Winter</h3>
+      <p class="preview-deck">Old-world heat without the grid — wood &amp; coal stoves, window quilts, humidity, and daily rhythms you can copy at home.</p>
+      <span class="preview-cta">Read the guide →</span>
+    </div>
+  </a>
+
+  <!-- Bloomz Snow Caps THCA (right) -->
+  <a class="preview-card bloomz"
+     href="https://bloomzhemp.com/collections/snow-caps-thca-flower/products/thca-snow-caps?ref=gritbud"
+     target="_blank" rel="nofollow sponsored noopener"
+     aria-label="Shop Bloomz THCA Snow Caps — discreet shipping">
+    <div class="preview-media" style="background:linear-gradient(180deg,#0f1520,#0c1018)">
+      <!-- Use your hosted image path; this is a placeholder filename -->
+      <img src="/bloom.jpg" alt="Bloomz THCA Snow Caps jars with coated flower" loading="lazy">
+      <span class="preview-badge">Featured</span>
+    </div>
+    <div class="preview-body">
+      <div class="preview-tag">Shop • Bloomz Hemp</div>
+      <h3 class="preview-title">THCA Snow Caps — Premium Flower</h3>
+      <p class="preview-deck">Top-tier “Snow Caps” presentation with multiple strain options. Discreet shipping direct from Bloomz.</p>
+      <div class="preview-chips">
+        <span>THCA Flower</span><span>Snow Caps</span><span>Discreet shipping</span>
       </div>
-      <span class="cta">Stock the kit →</span>
+      <span class="preview-cta">Shop Snow Caps →</span>
+      <div class="tiny-note">Adults 21+. Check your local laws.</div>
     </div>
   </a>
 </div>
 
-<!-- tiny disclosure -->
-<div class="note">Adults 21+. Know your local laws. Not medical advice.</div>
-
-
-<!-- ⚡ OFF-GRID POWER PICKS -->
-<section style="background:#111; border-top:2px solid #ffa500; border-bottom:2px solid #ffa500; padding:40px 20px; font-family:'Orbitron', sans-serif;">
-  <h2 style="color:#ffa500; text-align:center; font-size:2em; margin-bottom:30px;">⚡ Off-Grid Power Picks</h2>
+      <!-- Optional background texture image; safe to remove -->
+      <img src="/book3.jpg" alt="" aria-hidden="true" style="opacity:.12;mix-blend:screen">
+  style="color:#ffa500; text-align:center; font-size:2em; margin-bottom:30px;">⚡ Off-Grid Power Picks</h2>
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
 
 
