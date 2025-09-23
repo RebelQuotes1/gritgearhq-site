@@ -386,30 +386,35 @@
 })();
 </script>
 
-<!-- FAQ schema for SEO -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {
-      "@type":"Question",
-      "name":"Is this legit? Am I going to have cops at my door?",
-      "acceptedAnswer":{"@type":"Answer","text":"It’s legit. Packages are shipped discreetly with odor-proof packaging and include a letter referencing the 2018 Farm Bill. I’ve used the same source for six years without a single issue."}
-    },
-    {
-      "@type":"Question",
-      "name":"What about quality?",
-      "acceptedAnswer":{"@type":"Answer","text":"Discount ounces are often under $70, and top-shelf is worth every dime. Flower, pre-rolls, concentrates, edibles—consistent quality and service."}
-    },
-    {
-      "@type":"Question",
-      "name":"Why choose cannabis over alcohol for survival?",
-      "acceptedAnswer":{"@type":"Answer","text":"Weed is lighter, trades better, doesn’t cause hangovers, and keeps you cautious instead of reckless. It helps with pain, sleep, and appetite—key to staying sharp."}
-    }
-  ]
-}
-</script>
+<!-- FAQ (short answers, not clickable) -->
+<section id="faq" class="faq">
+  <h2>FAQ</h2>
+
+  <div class="qa">
+    <h3>Is this legit? Am I going to have cops at my door?</h3>
+    <p>It’s legit. Packages are shipped discreetly with odor-proof packaging and include a letter referencing the 2018 Farm Bill. I’ve used the same source for six years without a single issue.</p>
+  </div>
+
+  <div class="qa">
+    <h3>What about quality?</h3>
+    <p>Discount ounces are often under $70, and top-shelf is worth every dime. Flower, pre-rolls, concentrates, edibles—consistent quality and service.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Why choose cannabis over alcohol for survival?</h3>
+    <p>Weed is lighter, trades better, doesn’t cause hangovers, and keeps you cautious instead of reckless. It helps with pain, sleep, and appetite—key to staying sharp.</p>
+  </div>
+</section>
+
+<!-- minimal styling to match your theme -->
+<style>
+  .faq .qa{
+    background:#101319;border:1px solid #1a1f28;border-radius:12px;
+    padding:14px;margin:10px 0;box-shadow:0 10px 22px rgba(0,0,0,.25)
+  }
+  .faq h3{margin:.2rem 0;color:#e9ecef;font-size:1.02rem}
+  .faq p{margin:.4rem 0;color:#cdd6dc}
+</style>
 
 </body>
 </html>
