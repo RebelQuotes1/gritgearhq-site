@@ -517,57 +517,63 @@
     margin: 52px auto;
     max-width: 1020px;
   }
-<!-- SIDE-BY-SIDE (compact): Amish blog + Bloomz Snow Caps -->
+<!-- SIDE-BY-SIDE (forced on desktop): Amish blog + Bloomz Snow Caps -->
 <link rel="prefetch" href="/amish-winter-heat.html">
 <link rel="prefetch" href="https://bloomzhemp.com/collections/snow-caps-thca-flower/products/thca-snow-caps?ref=gritbud">
 
 <style>
-  /* ===== 2-up container ===== */
+  /* ===== 2-up container (flex so it *stays* side-by-side on desktop) ===== */
   .front-pair{
     max-width:1100px;margin:18px auto;padding:clamp(12px,3vw,24px);
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;
+    display:flex; flex-wrap:wrap; gap:16px; align-items:stretch;
   }
-  @media (max-width:900px){ .front-pair{grid-template-columns:1fr} }
+  /* Two columns on desktop */
+  @media (min-width:901px){
+    .front-pair .preview-card{ flex:1 1 520px; max-width:calc(50% - 8px); }
+  }
+  /* Stack only on small screens */
+  @media (max-width:900px){
+    .front-pair .preview-card{ flex:1 1 100%; max-width:100%; }
+  }
 
   /* ===== Base card ===== */
   .preview-card{
-    display:grid;grid-template-columns:42% 58%; /* smaller image column */
-    gap:0;text-decoration:none;background:var(--panel,#121821);color:var(--ink,#e8edf2);
-    border:1px solid var(--line,#1f2a35);border-radius:16px;overflow:hidden;
-    box-shadow:0 0 0 1px rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.5);
-    transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;
+    display:grid; grid-template-columns:42% 58%; gap:0; text-decoration:none;
+    background:var(--panel,#121821); color:var(--ink,#e8edf2);
+    border:1px solid var(--line,#1f2a35); border-radius:16px; overflow:hidden;
+    box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.5);
+    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   }
-  .preview-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.1),0 16px 42px rgba(0,0,0,.6)}
-  @media (max-width:760px){ .preview-card{grid-template-columns:1fr} }
+  .preview-card:hover{ transform:translateY(-2px); box-shadow:0 0 0 1px rgba(255,255,255,.1), 0 16px 42px rgba(0,0,0,.6); }
+  @media (max-width:760px){ .preview-card{ grid-template-columns:1fr; } }
 
-  /* ===== Compact media (fixed, small) ===== */
-  .preview-media{position:relative;height:150px;min-height:150px;background:#0f141a}
-  .preview-media img{width:100%;height:100%;object-fit:cover;display:block}
-  @media (max-width:760px){ .preview-media{height:170px;min-height:170px} }
+  /* Compact media */
+  .preview-media{ position:relative; height:150px; min-height:150px; background:#0f141a; }
+  .preview-media img{ width:100%; height:100%; object-fit:cover; display:block; }
 
   /* Amish badge + body */
   .preview-badge{
-    position:absolute;top:10px;left:10px;padding:6px 10px;border-radius:999px;
-    background:linear-gradient(180deg,#ff7a00,#e06100);color:#0b0f12;font-weight:800;font-size:.75rem
+    position:absolute; top:10px; left:10px; padding:6px 10px; border-radius:999px;
+    background:linear-gradient(180deg,#ff7a00,#e06100); color:#0b0f12; font-weight:800; font-size:.75rem;
   }
-  .preview-body{padding:12px 14px 14px}
-  .preview-tag{color:#9aa3ad;font-size:.85rem;letter-spacing:.35px;text-transform:uppercase}
-  .preview-title{margin:.2rem 0 .3rem;font-size:clamp(1.05rem,2vw,1.35rem);font-weight:800}
-  .preview-deck{color:#c9d2da;margin:0 0 .6rem;font-size:.96rem;line-height:1.45}
+  .preview-body{ padding:12px 14px 14px; }
+  .preview-tag{ color:#9aa3ad; font-size:.85rem; letter-spacing:.35px; text-transform:uppercase; }
+  .preview-title{ margin:.2rem 0 .3rem; font-size:clamp(1.05rem,2vw,1.35rem); font-weight:800; }
+  .preview-deck{ color:#c9d2da; margin:0 0 .6rem; font-size:.96rem; line-height:1.45; }
   .preview-cta{
-    display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;font-weight:900;letter-spacing:.3px;
-    background:linear-gradient(180deg,#ff7a00,#e06100);color:#101318;box-shadow:0 8px 24px rgba(255,122,0,.25)
+    display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px;
+    font-weight:900; letter-spacing:.3px; background:linear-gradient(180deg,#ff7a00,#e06100);
+    color:#101318; box-shadow:0 8px 24px rgba(255,122,0,.25);
   }
 
-  /* ===== Bloomz variant (blue accent) ===== */
-  .preview-card.bloomz{border-color:#1d2a3b;box-shadow:0 0 0 1px rgba(96,165,250,.16),0 10px 30px rgba(0,0,0,.5)}
-  .preview-card.bloomz:hover{box-shadow:0 0 0 1px rgba(37,99,235,.22),0 16px 42px rgba(0,0,0,.62)}
-  .preview-card.bloomz .preview-badge{background:linear-gradient(180deg,#60a5fa,#2563eb);color:#071019}
-  .preview-card.bloomz .preview-cta{background:linear-gradient(180deg,#60a5fa,#2563eb);color:#0b1220;box-shadow:0 8px 24px rgba(37,99,235,.25)}
-  .preview-chips{display:flex;flex-wrap:wrap;gap:6px;margin:.15rem 0}
-  .preview-chips span{font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px}
-
-  .tiny-note{color:#9aa3ad;font-size:.84rem;margin-top:.35rem}
+  /* Bloomz variant (blue accent) */
+  .preview-card.bloomz{ border-color:#1d2a3b; box-shadow:0 0 0 1px rgba(96,165,250,.16), 0 10px 30px rgba(0,0,0,.5); }
+  .preview-card.bloomz:hover{ box-shadow:0 0 0 1px rgba(37,99,235,.22), 0 16px 42px rgba(0,0,0,.62); }
+  .preview-card.bloomz .preview-badge{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#071019; }
+  .preview-card.bloomz .preview-cta{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#0b1220; box-shadow:0 8px 24px rgba(37,99,235,.25); }
+  .preview-chips{ display:flex; flex-wrap:wrap; gap:6px; margin:.15rem 0; }
+  .preview-chips span{ font-size:.78rem; color:#e6eef7; background:#16202b; border:1px solid #243243; padding:5px 9px; border-radius:999px; }
+  .tiny-note{ color:#9aa3ad; font-size:.84rem; margin-top:.35rem; }
 </style>
 
 <div class="front-pair">
@@ -593,7 +599,7 @@
      target="_blank" rel="nofollow sponsored noopener"
      aria-label="Shop Bloomz THCA Snow Caps — discreet shipping">
     <div class="preview-media" style="background:#0f1520">
-      <!-- host your image at /bloom.jpg or update the src -->
+      <!-- Replace with your hosted image path -->
       <img src="/bloom.jpg" alt="Bloomz THCA Snow Caps jars with coated flower" loading="lazy">
       <span class="preview-badge">Featured</span>
     </div>
