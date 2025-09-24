@@ -1,6 +1,110 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- ===== ABOUT US (Landing Hero) ===== -->
+<section id="about" aria-labelledby="about-title" class="gg-about">
+  <div class="gg-about__wrap">
+
+    <!-- Media collage (left) -->
+    <div class="gg-about__media">
+      <!-- BIG portrait -->
+      <figure class="gg-about__shot gg-about__shot--a">
+        <img src="./images/profileIcon_ch1vcvx0bl1f1.jpg"
+             alt="Portrait seated on brick steps"
+             loading="eager" fetchpriority="high">
+      </figure>
+
+      <!-- Smaller bench photo -->
+      <figure class="gg-about__shot gg-about__shot--b">
+        <img src="./images/images.jfif"
+             alt="Two people on a park bench"
+             loading="lazy" decoding="async">
+      </figure>
+
+      <!-- Round logo in the upper-left corner -->
+      <div class="gg-about__logo">
+        <img src="./images/gritgearlogo.jpg" alt="Grit Gear HQ logo">
+      </div>
+    </div>
+
+    <!-- Copy (right) -->
+    <div class="gg-about__copy">
+      <h1 id="about-title" class="gg-about__title">Grit Gear HQ</h1>
+      <p class="gg-about__tag">Built for the rough stuff.</p>
+
+      <p class="gg-about__text">
+        We’re fieldcraft nerds who break cheap gear so you don’t have to.
+        Grit Gear HQ exists to cut the guesswork for daypackers, truck-campers,
+        and anyone who still chooses the hard way on purpose. Expect honest
+        write-ups, small-format skills, and kits that survive wind, grit,
+        and the occasional dumb mistake.
+      </p>
+
+      <ul class="gg-about__bullets" role="list">
+        <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
+        <li><strong>Smart loadouts:</strong> only the pieces that pull their weight.</li>
+        <li><strong>Legal & transparent:</strong> hemp features are 21+ and COA-verified.</li>
+        <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
+      </ul>
+
+      <div class="gg-about__ctas" role="group" aria-label="Primary actions">
+        <a class="gg-btn gg-btn--primary" href="/titan-survival-collab.html">Read the SurvivorCord® guide →</a>
+        <a class="gg-btn gg-btn--ghost" href="/about.html">Our story</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  :root{
+    --bg:#0f0f0f; --ink:#e9ecef; --muted:#9aa3ab; --edge:#262626;
+    --accent:#ffa500; --shadow:0 12px 28px rgba(0,0,0,.35); --shadow-lg:0 18px 44px rgba(0,0,0,.55);
+  }
+  .gg-about{ background:linear-gradient(180deg,#111,#0d0d0d); border-bottom:1px solid var(--edge) }
+  .gg-about__wrap{
+    max-width:1100px; margin:0 auto; padding:clamp(18px,3vw,28px) 18px;
+    display:grid; grid-template-columns:520px 1fr; gap:22px; align-items:center;
+  }
+  @media (max-width:980px){ .gg-about__wrap{ grid-template-columns:1fr } }
+
+  /* Media collage */
+  .gg-about__media{
+    position:relative; aspect-ratio:5/4; border:1px solid var(--edge);
+    border-radius:18px; overflow:hidden; background:#121212; box-shadow:var(--shadow-lg);
+  }
+  .gg-about__shot{ position:absolute; margin:0; border-radius:12px; overflow:hidden;
+    border:1px solid #2b2b2b; box-shadow:var(--shadow); }
+  .gg-about__shot img{ width:100%; height:100%; object-fit:cover; display:block }
+  .gg-about__shot--a{ left:2.5%; top:5%; width:58%; height:90%; }  /* main portrait */
+  .gg-about__shot--b{ right:3%; bottom:5%; width:44%; height:50%; } /* bench overlay */
+
+  /* Round logo upper-left */
+  .gg-about__logo{
+    position:absolute; left:10px; top:10px; width:88px; height:88px;
+    border-radius:50%; background:#0e0e0e; border:2px solid #2f2f2f; overflow:hidden;
+    display:grid; place-items:center; box-shadow:0 10px 24px rgba(0,0,0,.45);
+  }
+  .gg-about__logo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* Copy */
+  .gg-about__copy{ color:var(--ink) }
+  .gg-about__title{ margin:0 0 6px; font-size:clamp(1.4rem,1.4vw + 1rem,2rem); line-height:1.15 }
+  .gg-about__tag{ margin:0 0 12px; color:var(--accent); font-weight:900; letter-spacing:.3px }
+  .gg-about__text{ margin:0 0 10px; color:var(--muted); max-width:60ch }
+  .gg-about__bullets{ margin:10px 0 12px; padding-left:1.1rem; color:#c9d2da }
+  .gg-about__bullets li{ margin:.4rem 0 }
+
+  .gg-about__ctas{ display:flex; flex-wrap:wrap; gap:10px; margin-top:12px }
+  .gg-btn{ display:inline-block; font-weight:900; padding:10px 14px; border-radius:12px; text-decoration:none }
+  .gg-btn--primary{
+    background:linear-gradient(180deg,var(--accent),#e06100); color:#111;
+    border:1px solid #a86f00; box-shadow:0 12px 26px rgba(224,97,0,.28);
+  }
+  .gg-btn--ghost{ color:#d9e3ea; border:1px solid #2f2f2f; background:#151515; box-shadow:0 12px 26px rgba(0,0,0,.25) }
+</style>
+<!-- ===== /ABOUT US ===== -->
+
   <meta charset="utf-8" />
   <title>Front Cards — Blog + Turning Point Tee + TITAN Collab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
