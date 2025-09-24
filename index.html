@@ -5,19 +5,16 @@
   <title>Front Cards — Blog + Turning Point Tee + TITAN Collab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* ------ Theme tokens (self-contained) ------ */
+    /* ------ Theme tokens ------ */
     :root{
       --ink:#e9ecef; --muted:#9aa3ab; --bg:#0f0f0f; --panel:#141414; --edge:#262626;
-      --accent:#3fae5a;       /* green for blog CTA */
-      --accent-tee:#ffa500;   /* orange for tee CTA */
-      --accent-titan:#34d399; /* fresh green for TITAN CTA */
-      --shadow:0 12px 28px rgba(0,0,0,.35);
-      --shadow-lg:0 18px 44px rgba(0,0,0,.55);
+      --accent:#3fae5a; --accent-tee:#ffa500; --accent-titan:#34d399;
+      --shadow:0 12px 28px rgba(0,0,0,.35); --shadow-lg:0 18px 44px rgba(0,0,0,.55);
     }
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     .wrap{max-width:1100px;margin:0 auto;padding:24px 18px}
 
-    /* ------ Grid container (3 cards: wraps nicely) ------ */
+    /* ------ Grid container (neat alignment) ------ */
     .pair-grid{
       display:grid; gap:18px; align-items:stretch;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -31,6 +28,7 @@
       border:1px solid var(--edge); border-radius:18px; padding:16px;
       color:var(--ink); text-decoration:none; box-shadow:var(--shadow);
       transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .25s ease;
+      align-items:center; /* centers media & text vertically so rows look tidy */
     }
     .gg-card:hover{ transform:translateY(-2px); box-shadow:var(--shadow-lg); border-color:#333 }
     .gg-card:focus-visible{ outline:3px solid #2f9a55; outline-offset:4px }
@@ -39,20 +37,13 @@
     .gg-etsy-hero{ background:linear-gradient(120deg,#151515,#0f0f0f 55%) }
     .gg-titan-hero{ background:linear-gradient(120deg,#131a17,#0f1316 55%) }
 
-    /* ------ Media blocks (consistent 4:5 portrait) ------ */
+    /* ------ Media blocks (locked 4:5) ------ */
     .gg-media{ position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:14px; margin:0; background:#0c0c0c; }
     .gg-media img{ width:100%; height:100%; display:block; object-fit:cover; object-position:center; }
-
-    /* TITAN logo box: contain, padded so it never crops */
+    /* TITAN logo box: padded contain so logos never crop */
     .gg-titan-img{ background:radial-gradient(110% 110% at 15% 10%, #0f161a 0%, #0b0f13 65%, #0a0d10 100%) }
-    .gg-titan-img .logo-box{
-      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-      padding:10%; /* breathing room for any logo aspect */
-    }
-    .gg-titan-img .logo-box img{
-      width:100%; height:100%; object-fit:contain; /* critical: no warp/crop */
-      image-rendering:auto;
-    }
+    .gg-titan-img .logo-box{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:10% }
+    .gg-titan-img .logo-box img{ width:100%; height:100%; object-fit:contain; image-rendering:auto }
 
     /* Tee “front” overlay fades in on hover/focus */
     .gg-front{ position:absolute; inset:0; opacity:0; transition:opacity .25s ease; pointer-events:none }
@@ -63,11 +54,21 @@
       background:rgba(0,0,0,.6); border:1px solid #2a2a2a; padding:4px 6px; border-radius:8px;
     }
 
-    /* ------ Meta area ------ */
-    .gg-meta{ display:flex; flex-direction:column; justify-content:center }
-    .gg-title{ margin:0 0 6px; font-size:clamp(1.1rem,1.05vw + 1rem,1.55rem) }
-    .gg-sub{ margin:0 0 12px; color:var(--muted); line-height:1.55 }
-    .gg-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:auto }
+    /* ------ Meta area (uniform heights) ------ */
+    .gg-meta{
+      display:grid; grid-template-rows:auto auto 1fr auto; /* title, sub, chips (fill), CTA */
+      align-content:stretch; min-height:100%;
+    }
+    .gg-title{
+      margin:0 0 6px; font-size:clamp(1.1rem,1.05vw + 1rem,1.55rem); line-height:1.25;
+      display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+    }
+    .gg-sub{
+      margin:0 0 12px; color:var(--muted); line-height:1.55;
+      display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+      min-height:3.6em; /* stability if clamp unsupported */
+    }
+    .gg-chips{ display:flex; flex-wrap:wrap; gap:8px; align-self:end; }
     .gg-chips span{
       font-size:.82rem; color:#ddd; padding:6px 10px; border-radius:999px;
       border:1px solid #2b2b2b; background:#1a1a1a;
@@ -77,6 +78,7 @@
       display:inline-block; font-weight:800; padding:10px 14px; border-radius:12px; border:2px solid #333;
       box-shadow:0 12px 26px rgba(0,0,0,.25); width:max-content; letter-spacing:.2px;
       transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease, filter .2s ease;
+      align-self:end; /* CTAs align across the row */
     }
     .gg-cta:hover{ transform:translateY(-1px); filter:brightness(1.05) }
 
@@ -86,7 +88,7 @@
 
     /* ------ Responsive stack ------ */
     @media (max-width:820px){
-      .gg-card{ grid-template-columns:1fr; min-height:unset }
+      .gg-card{ grid-template-columns:1fr; min-height:unset; align-items:stretch }
     }
     @media (prefers-reduced-motion:reduce){
       .gg-card, .gg-front, .gg-cta{ transition:none }
@@ -102,7 +104,6 @@
          href="/cannabis-for-survival.html#top"
          aria-label="Read: Bud Over Booze — A Survivalist’s Manifesto">
         <figure class="gg-media">
-          <!-- Landscape source will crop center; adjust object-position if needed -->
           <img src="cannabis-friendly-1-1024x683.jpg"
                alt="Forest camp scene—calm, green, and clear-headed"
                loading="lazy" decoding="async" style="object-position:center 40%">
@@ -124,10 +125,8 @@
          target="_blank" rel="noopener nofollow"
          aria-label="Open This Is The Turning Point — Premium Tee on Etsy">
         <figure class="gg-media">
-          <!-- Back (default) -->
           <img class="gg-back" src="back1.jpg.png"
                alt="Back graphic: ‘THIS IS THE TURNING POINT’ on white tee" loading="eager" fetchpriority="high">
-          <!-- Front fades in on hover/focus -->
           <img class="gg-front" src="front3.jpg.png" alt="" aria-hidden="true" loading="lazy">
           <figcaption class="gg-badge">Back view</figcaption>
         </figure>
@@ -141,13 +140,12 @@
         </div>
       </a>
 
-      <!-- TITAN CARD (logos render perfectly; link fixed) -->
+      <!-- TITAN CARD -->
       <a class="gg-card gg-titan-hero"
          href="/gritgearhq-site/titan-survival-collab.html"
          aria-label="Read: TITAN Survival × Grit Gear HQ — Built for the Rough Stuff">
         <figure class="gg-media gg-titan-img">
           <div class="logo-box">
-            <!-- Make sure this path matches your asset. PNG with transparent BG looks best. -->
             <img src="titanlogo.jpg" alt="TITAN Survival logo for the Grit Gear HQ collaboration" loading="lazy" decoding="async">
           </div>
           <figcaption class="gg-badge">Collab + Discount</figcaption>
