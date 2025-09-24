@@ -694,115 +694,75 @@
   </div>
 </section>
 
-    <!-- ===== ABOUT US (Hero) ===== -->
+    <!-- ===== ABOUT US (uses your exact filenames) ===== -->
 <section id="about" aria-labelledby="about-title" class="gg-about">
   <div class="gg-about__wrap">
 
-    <!-- Left: Media collage -->
     <div class="gg-about__media">
       <!-- Portrait -->
       <figure class="gg-about__shot gg-about__shot--a">
-        <picture>
-          <source type="image/webp" srcset="/images/about-portrait.webp">
-          <img src="/images/about-portrait.jpg"
-               alt="Outdoor portrait—red shirt, seated on brick steps" loading="eager" fetchpriority="high">
-        </picture>
+        <img src="/images/profileIcon_ch1vcvx0bl1f1.jpg"
+             alt="Outdoor portrait—red shirt, seated on brick steps"
+             loading="eager" fetchpriority="high">
       </figure>
 
       <!-- Bench -->
       <figure class="gg-about__shot gg-about__shot--b">
-        <picture>
-          <source type="image/webp" srcset="/images/about-bench.webp">
-          <img src="/images/about-bench.jpg"
-               alt="Two people on a park bench, reflective moment by a small flag" loading="lazy" decoding="async">
-        </picture>
+        <img src="/images/images.jfif"
+             alt="Two people on a park bench near a small American flag"
+             loading="lazy" decoding="async">
       </figure>
 
       <!-- Logo chip -->
       <div class="gg-about__logo">
-        <img src="/images/gritgear-logo.png" alt="Grit Gear HQ logo" loading="lazy" decoding="async">
+        <img src="/images/gritgearlogo.jpg" alt="Grit Gear HQ logo" loading="lazy" decoding="async">
       </div>
     </div>
 
-    <!-- Right: Copy -->
     <div class="gg-about__copy">
       <h1 id="about-title" class="gg-about__title">Grit Gear HQ</h1>
       <p class="gg-about__tag">Built for the rough stuff.</p>
-
       <p class="gg-about__text">
-        We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for
-        daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups,
-        small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.
+        We break cheap gear so you don’t have to. Expect honest write-ups, small-format skills,
+        and kits that survive wind, grit, and the occasional dumb mistake.
       </p>
-
       <ul class="gg-about__bullets" role="list">
-        <li><strong>Real testing, not hype:</strong> shelter, cordage, power, and carry that actually hold up.</li>
-        <li><strong>Smart loadouts:</strong> the few pieces that make the rest of the day easier.</li>
-        <li><strong>Legal + transparent:</strong> hemp features are 21+ and COA-verified; no sketchy sourcing.</li>
-        <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills you can teach a friend.</li>
+        <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
+        <li><strong>Smart loadouts:</strong> the few pieces that make the day easier.</li>
+        <li><strong>Legal + transparent:</strong> hemp features are 21+ and COA-verified.</li>
+        <li><strong>Community first:</strong> veteran-owned brands & practical skills.</li>
       </ul>
-
-      <div class="gg-about__ctas" role="group" aria-label="Primary actions">
+      <div class="gg-about__ctas" role="group">
         <a class="gg-btn gg-btn--primary" href="/titan-survival-collab.html">Read the SurvivorCord® guide →</a>
         <a class="gg-btn gg-btn--ghost" href="/about.html">Our story</a>
       </div>
-
-      <div class="gg-about__meta">
-        <span>Since 2024</span>
-        <span>Field-tested kits</span>
-        <span>No-nonsense reviews</span>
-      </div>
     </div>
+
   </div>
 </section>
 
 <style>
-  :root{
-    --ink:#e9ecef; --muted:#9aa3ab; --bg:#0f0f0f; --edge:#262626;
-    --accent:#ffa500; --accent2:#34d399;
-  }
+  :root{ --ink:#e9ecef; --muted:#9aa3ab; --bg:#0f0f0f; --edge:#262626; --accent:#ffa500; }
   .gg-about{ background:linear-gradient(180deg,#111,#0d0d0d); border-bottom:1px solid var(--edge) }
-  .gg-about__wrap{
-    max-width:1100px; margin:0 auto; padding:clamp(18px,3vw,28px) 18px;
-    display:grid; grid-template-columns: 520px 1fr; gap:22px; align-items:center;
-  }
-  @media (max-width:980px){ .gg-about__wrap{ grid-template-columns:1fr; gap:16px } }
-
-  /* Media collage */
-  .gg-about__media{ position:relative; aspect-ratio:5/4; border:1px solid var(--edge);
-    border-radius:18px; overflow:hidden; background:#121212; box-shadow:0 18px 44px rgba(0,0,0,.55) }
-  .gg-about__shot{ position:absolute; inset:auto; margin:0; border-radius:12px; overflow:hidden;
-    box-shadow:0 12px 28px rgba(0,0,0,.45); border:1px solid #2b2b2b }
+  .gg-about__wrap{ max-width:1100px; margin:0 auto; padding:clamp(18px,3vw,28px) 18px; display:grid; grid-template-columns:520px 1fr; gap:22px; align-items:center }
+  @media (max-width:980px){ .gg-about__wrap{ grid-template-columns:1fr } }
+  .gg-about__media{ position:relative; aspect-ratio:5/4; border:1px solid var(--edge); border-radius:18px; overflow:hidden; background:#121212; box-shadow:0 18px 44px rgba(0,0,0,.55) }
+  .gg-about__shot{ position:absolute; margin:0; border-radius:12px; overflow:hidden; box-shadow:0 12px 28px rgba(0,0,0,.45); border:1px solid #2b2b2b }
   .gg-about__shot img{ width:100%; height:100%; object-fit:cover; display:block }
-  /* big left image */
-  .gg-about__shot--a{ left:2.5%; top:5%; width:58%; height:90%; }
-  /* small overlay image */
-  .gg-about__shot--b{ right:3%; bottom:5%; width:44%; height:50%; }
-  /* logo chip */
-  .gg-about__logo{ position:absolute; left:10px; top:10px; width:84px; height:84px;
-    border-radius:50%; background:rgba(0,0,0,.6); border:1px solid #2b2b2b;
-    display:grid; place-items:center; backdrop-filter:blur(2px) }
-  .gg-about__logo img{ width:72%; height:72%; object-fit:contain; display:block; filter:grayscale(10%) }
-
-  /* Copy */
-  .gg-about__copy{ color:var(--ink) }
-  .gg-about__title{ margin:0 0 6px; font-size:clamp(1.4rem,1.4vw + 1rem,2rem); line-height:1.15 }
-  .gg-about__tag{ margin:0 0 12px; color:var(--accent); font-weight:800; letter-spacing:.3px }
+  .gg-about__shot--a{ left:2.5%; top:5%; width:58%; height:90% }
+  .gg-about__shot--b{ right:3%; bottom:5%; width:44%; height:50% }
+  .gg-about__logo{ position:absolute; left:10px; top:10px; width:84px; height:84px; border-radius:50%; background:rgba(0,0,0,.6); border:1px solid #2b2b2b; display:grid; place-items:center }
+  .gg-about__logo img{ width:72%; height:72%; object-fit:contain }
+  .gg-about__title{ margin:0 0 6px; font-size:clamp(1.4rem,1.4vw + 1rem,2rem) }
+  .gg-about__tag{ margin:0 0 12px; color:var(--accent); font-weight:800 }
   .gg-about__text{ margin:0 0 10px; color:var(--muted); max-width:60ch }
-  .gg-about__bullets{ margin:10px 0 12px; padding-left:1.1rem; color:#c9d2da; max-width:62ch }
+  .gg-about__bullets{ margin:10px 0 12px; padding-left:1.1rem; color:#c9d2da }
   .gg-about__bullets li{ margin:.4rem 0 }
-
-  .gg-about__ctas{ display:flex; flex-wrap:wrap; gap:10px; margin-top:12px }
+  .gg-about__ctas{ display:flex; gap:10px; margin-top:12px }
   .gg-btn{ display:inline-block; font-weight:900; padding:10px 14px; border-radius:12px; text-decoration:none }
   .gg-btn--primary{ background:linear-gradient(180deg,var(--accent),#e06100); color:#111; border:1px solid #a86f00; box-shadow:0 12px 26px rgba(224,97,0,.28) }
-  .gg-btn--ghost{ color:#d9e3ea; border:1px solid #2f2f2f; background:#151515; box-shadow:0 12px 26px rgba(0,0,0,.25) }
-
-  .gg-about__meta{
-    margin-top:10px; display:flex; flex-wrap:wrap; gap:10px; color:#b6c2cc; font-size:.9rem
-  }
-  .gg-about__meta span{ border:1px solid #2d2d2d; border-radius:999px; padding:6px 10px; background:#151515 }
+  .gg-btn--ghost{ color:#d9e3ea; border:1px solid #2f2f2f; background:#151515 }
 </style>
-<!-- ===== /ABOUT US ===== -->
 
     
     <a href="solar-fan-hat-review.html#solar-fan-hat-review" class="cta-button">
