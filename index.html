@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Front Cards — Blog + Turning Point Tee</title>
+  <title>Front Cards — Blog + Turning Point Tee + TITAN Collab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     /* ------ Theme tokens (self-contained) ------ */
     :root{
       --ink:#e9ecef; --muted:#9aa3ab; --bg:#0f0f0f; --panel:#141414; --edge:#262626;
-      --accent:#3fae5a; /* green for blog CTA */
-      --accent-tee:#ffa500; /* orange for tee CTA */
+      --accent:#3fae5a;       /* green for blog CTA */
+      --accent-tee:#ffa500;   /* orange for tee CTA */
+      --accent-titan:#34d399; /* fresh green for TITAN CTA */
     }
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     .wrap{max-width:1100px;margin:0 auto;padding:24px 18px}
 
-    /* ------ 2-up container ------ */
+    /* ------ 2-up container (third card wraps to next row) ------ */
     .pair-grid{
       display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
       gap:16px; align-items:stretch;
@@ -22,25 +23,26 @@
     @media (max-width:900px){ .pair-grid{grid-template-columns:1fr} }
 
     /* ------ Card shells (same layout + rhythm) ------ */
-    .gg-blog-hero, .gg-etsy-hero{
+    .gg-blog-hero, .gg-etsy-hero, .gg-titan-hero{
       display:grid; grid-template-columns:320px 1fr; gap:16px; min-height:320px;
       border:1px solid var(--edge); border-radius:18px; padding:16px;
       text-decoration:none; color:var(--ink);
       box-shadow:0 10px 28px rgba(0,0,0,.45);
       transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      background:linear-gradient(120deg,#151515,#0f0f0f 55%);
     }
     .gg-blog-hero{ background:linear-gradient(120deg,#151a16,#0f1311 55%); }
-    .gg-etsy-hero{ background:linear-gradient(120deg,#151515,#0f0f0f 55%); }
-    .gg-blog-hero:hover, .gg-etsy-hero:hover{
+    .gg-titan-hero{ background:linear-gradient(120deg,#151a19,#0f1316 55%); }
+    .gg-blog-hero:hover, .gg-etsy-hero:hover, .gg-titan-hero:hover{
       transform:translateY(-2px); box-shadow:0 16px 40px rgba(0,0,0,.55); border-color:#333;
     }
-    .gg-blog-hero:focus-visible, .gg-etsy-hero:focus-visible{ outline:3px solid var(--accent); outline-offset:4px; }
+    .gg-blog-hero:focus-visible, .gg-etsy-hero:focus-visible, .gg-titan-hero:focus-visible{ outline:3px solid var(--accent); outline-offset:4px; }
 
     /* ------ Image blocks (same aspect) ------ */
-    .gg-blog-img, .gg-img{
+    .gg-blog-img, .gg-img, .gg-titan-img{
       position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:14px; margin:0; background:#0c0c0c;
     }
-    .gg-blog-img img, .gg-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .gg-blog-img img, .gg-img img, .gg-titan-img img{ width:100%; height:100%; object-fit:cover; display:block; }
     /* Tee: front image fades in on hover */
     .gg-front{ position:absolute; inset:0; opacity:0; transition:opacity .25s ease; pointer-events:none; }
     .gg-etsy-hero:hover .gg-front, .gg-etsy-hero:focus-visible .gg-front{ opacity:1; }
@@ -67,14 +69,15 @@
     /* Distinct CTA colors for each card */
     .gg-blog-hero .gg-cta{ background:var(--accent); color:#0b1510; border-color:#2f9a55; box-shadow:0 12px 26px rgba(63,174,90,.25); }
     .gg-etsy-hero .gg-cta{ background:var(--accent-tee); color:#111; border-color:#a86f00; box-shadow:0 12px 26px rgba(255,165,0,.25); }
+    .gg-titan-hero .gg-cta{ background:var(--accent-titan); color:#0b1510; border-color:#1e7f61; box-shadow:0 12px 26px rgba(52,211,153,.25); }
     .gg-cta:hover{ transform:translateY(-1px); filter:brightness(1.05); }
 
     /* ------ Responsive ------ */
     @media (max-width:760px){
-      .gg-blog-hero, .gg-etsy-hero{ grid-template-columns:1fr; min-height:unset; }
+      .gg-blog-hero, .gg-etsy-hero, .gg-titan-hero{ grid-template-columns:1fr; min-height:unset; }
     }
     @media (prefers-reduced-motion:reduce){
-      .gg-blog-hero, .gg-etsy-hero, .gg-front, .gg-cta{ transition:none; }
+      .gg-blog-hero, .gg-etsy-hero, .gg-titan-hero, .gg-front, .gg-cta{ transition:none; }
     }
   </style>
 </head>
@@ -125,110 +128,32 @@
         </div>
       </a>
 
+      <!-- TITAN CARD (new) -->
+      <a class="gg-titan-hero"
+         href="/titan-collab.html"
+         aria-label="Read: TITAN Survival × Grit Gear HQ — Built for the Rough Stuff">
+        <figure class="gg-titan-img">
+          <!-- Use your local TITAN logo path; you used titanlogo.jpg in the collab page -->
+          <img src="titanlogo.jpg"
+               alt="TITAN Survival logo for the Grit Gear HQ collaboration"
+               loading="lazy" decoding="async">
+          <figcaption class="gg-badge">Collab + Discount</figcaption>
+        </figure>
+        <div class="gg-meta">
+          <h3 class="gg-title">TITAN Survival × Grit Gear HQ</h3>
+          <p class="gg-sub">Why we chose SurvivorCord®, shock cord, and sane stitching—and how to save with code <strong>GRITGEARHQ</strong>.</p>
+          <div class="gg-chips">
+            <span>SurvivorCord®</span><span>Shock Cord</span><span>IFAK & Packs</span>
+          </div>
+          <span class="gg-cta">Read the collab page →</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </body>
 </html>
 
-<!-- ===== TITAN × Grit Gear HQ: Wide Hero Banner ===== -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --gg-bg:#0d1015; --gg-ink:#e8edf2; --gg-muted:#a8b2bc;
-    --gg-panel:#0f151c; --gg-line:#1f2a35;
-    --gg-accent:#ffa500; --gg-accent2:#34d399;
-  }
-  .gg-titan-hero {
-    font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;
-    background: linear-gradient(180deg,#0f151c,#0b1015);
-    color:var(--gg-ink);
-    border:1px solid var(--gg-line);
-    border-radius:18px;
-    overflow:hidden;
-    position:relative;
-    box-shadow:0 18px 40px rgba(0,0,0,.45);
-    isolation:isolate;
-  }
-  /* animated border glow */
-  .gg-titan-hero::before {
-    content:"";
-    position:absolute; inset:-2px;
-    background: conic-gradient(from 0deg, #ffa50033, #34d39933, #ffa50033);
-    filter: blur(18px); opacity:.4;
-    z-index:0; pointer-events:none;
-  }
-  .gg-titan-hero a.gg-link {
-    position:relative; z-index:1; display:grid;
-    grid-template-columns:110px 1fr 160px;
-    gap:16px; align-items:center; text-decoration:none; color:inherit;
-    padding:16px;
-  }
-  @media (max-width:880px){
-    .gg-titan-hero a.gg-link {
-      grid-template-columns:70px 1fr;
-      grid-template-rows:auto auto;
-      grid-auto-flow:row;
-    }
-    .gg-titan-hero .gg-cta { grid-column:1 / -1; }
-  }
-  .gg-titan-hero .gg-logo {
-    background:#0b1218; border:1px solid var(--gg-line);
-    border-radius:14px; padding:10px; display:flex; align-items:center; justify-content:center;
-  }
-  .gg-titan-hero .gg-logo img{max-width:100%; height:auto; display:block; border-radius:10px}
-  .gg-titan-hero h3 {
-    margin:0 0 6px 0; font-size:clamp(1.05rem,2.2vw,1.5rem); line-height:1.2;
-  }
-  .gg-titan-hero p { margin:0; color:var(--gg-muted); font-size:.98rem }
-  .gg-titan-hero .gg-badges {
-    display:flex; flex-wrap:wrap; gap:8px; margin-top:10px
-  }
-  .gg-titan-hero .gg-badge {
-    background:#101a22; border:1px solid #243242; color:#d7e9f5;
-    padding:6px 10px; border-radius:10px; font-size:.8rem; font-weight:700;
-  }
-  .gg-titan-hero .gg-cta {
-    display:flex; flex-direction:column; gap:10px; align-items:stretch;
-  }
-  .gg-titan-hero .gg-btn {
-    text-align:center; padding:12px 12px; border-radius:12px; font-weight:800; letter-spacing:.3px;
-    color:#0b1216; background:linear-gradient(180deg,var(--gg-accent),#e06100);
-    box-shadow:0 12px 28px rgba(224,97,0,.35);
-  }
-  .gg-titan-hero .gg-btn:hover { filter:brightness(1.05) }
-  .gg-titan-hero .gg-btn.secondary {
-    background:linear-gradient(180deg,var(--gg-accent2),#059669); color:#081014;
-    box-shadow:0 12px 28px rgba(5,150,105,.35);
-  }
-  /* subtle hover lift */
-  .gg-titan-hero:hover { transform:translateY(-2px); transition:transform .2s ease }
-</style>
-
-<section class="gg-titan-hero" aria-label="TITAN Survival collaboration card">
-  <a class="gg-link" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
-    <div class="gg-logo">
-      <!-- Use your local asset path if different -->
-      <img src="/titanlogo.jpg" width="300" height="300" alt="TITAN Survival logo">
-    </div>
-
-    <div class="gg-copy">
-      <h3>TITAN Survival × Grit Gear HQ — Built for the Rough Stuff</h3>
-      <p>Real cordage. Real stitching. Field-tested by people who actually use it. Click to shop our collab page.</p>
-      <div class="gg-badges">
-        <span class="gg-badge">Use Code: <strong>GRITGEARHQ</strong></span>
-        <span class="gg-badge">Veteran-Owned</span>
-        <span class="gg-badge">SurvivorCord® • Shock Cord • Packs</span>
-      </div>
-    </div>
-
-    <div class="gg-cta" aria-hidden="true">
-      <div class="gg-btn">Shop TITAN via Our Link →</div>
-      <div class="gg-btn secondary">Apply Code: GRITGEARHQ</div>
-    </div>
-  </a>
-</section>
-<!-- /TITAN × GGHQ hero -->
 
   <!-- Ads (as you had it) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
@@ -347,23 +272,6 @@
     🛸 UFOs &amp; Government Deception
   </a>
 
-  <!-- Hidden CTA Buttons Toggleable with JS -->
-  <div id="more-cta-buttons">
-    <a href="manifesto.html#bugout-essentials" class="cta-button cta-plain">🧠 Lost Skills of Our Grandparents</a>
-    <a href="manifesto.html#manila-story" class="cta-button cta-plain">🚪 Trapped in a Manila Stairwell</a>
-    <a href="manifesto.html#death-valley-germans" class="cta-button cta-plain">🏜️ Death Valley’s Forgotten Tourists</a>
-    <a href="i-should-be-dead.html" class="cta-button cta-plain">🩸 I Should Be Dead: The Grit Story</a>
-    <a href="manifesto.html#stockpile-tested" class="cta-button cta-plain">🎒 Survival Items That Earned Their Place</a>
-    <a href="manifesto.html#stay-cool" class="cta-button cta-plain">🧊 How to Keep Your Family Cool in a Blackout</a>
-    <a href="manifesto.html#delta-outage" class="cta-button cta-plain">🌪️ 2 Weeks Without Power in the Delta</a>
-    <a href="manifesto.html#unfuck-your-life" class="cta-button cta-plain">🧼 How to Unf*ck Your Life</a>
-    <a href="manifesto.html#survivorman-vs-bear" class="cta-button cta-plain">🐾 Survivorman vs Bear Grylls</a>
-    <a href="manifesto.html#collapse-fitness" class="cta-button cta-plain">💀 You Won’t Make It 10 Miles</a>
-    <a href="manifesto.html#best-meals" class="cta-button cta-plain">🍲 10 Best Dehydrated Meals</a>
-    <a href="manifesto.html#nobody-cares-blog" class="cta-button cta-plain">🕶️ Nobody Gives a Sh*t… And That’s Okay</a>
-    <a href="manifesto.html#stay-cool-blackout" class="cta-button cta-plain">🥵 How to Keep Cool During a Blackout</a>
-  </div>
-</div>
 
   <!-- Hidden CTA Buttons Toggleable with JS -->
   <div id="more-cta-buttons" style="display:none;">
