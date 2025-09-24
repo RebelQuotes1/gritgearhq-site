@@ -130,6 +130,106 @@
 </body>
 </html>
 
+<!-- ===== TITAN × Grit Gear HQ: Wide Hero Banner ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gg-bg:#0d1015; --gg-ink:#e8edf2; --gg-muted:#a8b2bc;
+    --gg-panel:#0f151c; --gg-line:#1f2a35;
+    --gg-accent:#ffa500; --gg-accent2:#34d399;
+  }
+  .gg-titan-hero {
+    font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    background: linear-gradient(180deg,#0f151c,#0b1015);
+    color:var(--gg-ink);
+    border:1px solid var(--gg-line);
+    border-radius:18px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+    isolation:isolate;
+  }
+  /* animated border glow */
+  .gg-titan-hero::before {
+    content:"";
+    position:absolute; inset:-2px;
+    background: conic-gradient(from 0deg, #ffa50033, #34d39933, #ffa50033);
+    filter: blur(18px); opacity:.4;
+    z-index:0; pointer-events:none;
+  }
+  .gg-titan-hero a.gg-link {
+    position:relative; z-index:1; display:grid;
+    grid-template-columns:110px 1fr 160px;
+    gap:16px; align-items:center; text-decoration:none; color:inherit;
+    padding:16px;
+  }
+  @media (max-width:880px){
+    .gg-titan-hero a.gg-link {
+      grid-template-columns:70px 1fr;
+      grid-template-rows:auto auto;
+      grid-auto-flow:row;
+    }
+    .gg-titan-hero .gg-cta { grid-column:1 / -1; }
+  }
+  .gg-titan-hero .gg-logo {
+    background:#0b1218; border:1px solid var(--gg-line);
+    border-radius:14px; padding:10px; display:flex; align-items:center; justify-content:center;
+  }
+  .gg-titan-hero .gg-logo img{max-width:100%; height:auto; display:block; border-radius:10px}
+  .gg-titan-hero h3 {
+    margin:0 0 6px 0; font-size:clamp(1.05rem,2.2vw,1.5rem); line-height:1.2;
+  }
+  .gg-titan-hero p { margin:0; color:var(--gg-muted); font-size:.98rem }
+  .gg-titan-hero .gg-badges {
+    display:flex; flex-wrap:wrap; gap:8px; margin-top:10px
+  }
+  .gg-titan-hero .gg-badge {
+    background:#101a22; border:1px solid #243242; color:#d7e9f5;
+    padding:6px 10px; border-radius:10px; font-size:.8rem; font-weight:700;
+  }
+  .gg-titan-hero .gg-cta {
+    display:flex; flex-direction:column; gap:10px; align-items:stretch;
+  }
+  .gg-titan-hero .gg-btn {
+    text-align:center; padding:12px 12px; border-radius:12px; font-weight:800; letter-spacing:.3px;
+    color:#0b1216; background:linear-gradient(180deg,var(--gg-accent),#e06100);
+    box-shadow:0 12px 28px rgba(224,97,0,.35);
+  }
+  .gg-titan-hero .gg-btn:hover { filter:brightness(1.05) }
+  .gg-titan-hero .gg-btn.secondary {
+    background:linear-gradient(180deg,var(--gg-accent2),#059669); color:#081014;
+    box-shadow:0 12px 28px rgba(5,150,105,.35);
+  }
+  /* subtle hover lift */
+  .gg-titan-hero:hover { transform:translateY(-2px); transition:transform .2s ease }
+</style>
+
+<section class="gg-titan-hero" aria-label="TITAN Survival collaboration card">
+  <a class="gg-link" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+    <div class="gg-logo">
+      <!-- Use your local asset path if different -->
+      <img src="/titanlogo.jpg" width="300" height="300" alt="TITAN Survival logo">
+    </div>
+
+    <div class="gg-copy">
+      <h3>TITAN Survival × Grit Gear HQ — Built for the Rough Stuff</h3>
+      <p>Real cordage. Real stitching. Field-tested by people who actually use it. Click to shop our collab page.</p>
+      <div class="gg-badges">
+        <span class="gg-badge">Use Code: <strong>GRITGEARHQ</strong></span>
+        <span class="gg-badge">Veteran-Owned</span>
+        <span class="gg-badge">SurvivorCord® • Shock Cord • Packs</span>
+      </div>
+    </div>
+
+    <div class="gg-cta" aria-hidden="true">
+      <div class="gg-btn">Shop TITAN via Our Link →</div>
+      <div class="gg-btn secondary">Apply Code: GRITGEARHQ</div>
+    </div>
+  </a>
+</section>
+<!-- /TITAN × GGHQ hero -->
+
   <!-- Ads (as you had it) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 </section>
