@@ -413,132 +413,65 @@
     gtag('config', 'AW-1781B792361'); // Google Ads
   </script>
 
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    font-family: 'Orbitron', sans-serif;
-    background: url('images/bg-dust.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    overflow-x: hidden;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .cta-button {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 24px;
-    background-color: #ffa500;
-    color: #000;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 0 10px #ffa500;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .cta-button:hover {
-    background: #ff6600;
-    color: #fff;
-  }
-
-  .flash-card, .reading-card {
-    background: #000;
-    width: 280px;
-    min-height: 460px;
-    border-radius: 10px;
-    padding: 16px;
-    box-shadow: 0 0 15px #000;
-    text-align: center;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .flash-card img, .reading-card img {
-    width: 100%;
-    border-radius: 8px;
-    max-height: 140px;
-    object-fit: contain;
-    margin-bottom: 12px;
-  }
-
-  .flash-card h3, .reading-card h3 {
-    color: #ffa500;
-    margin: 10px 0;
-    font-size: 18px;
-  }
-
-  .flash-card p, .reading-card p {
-    font-size: 14px;
-    color: #ccc;
-    margin-bottom: 10px;
-  }
-
-  .buy-btn {
-    display: inline-block;
-    margin-top: 10px;
-    background: #ffa500;
-    color: #000;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 0 10px #ffa500;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .buy-btn:hover {
-    background: #ff6600;
-    color: #fff;
-  }
-
-  .section-title {
-    text-align: center;
-    color: #ffa500;
-    font-size: 2em;
-    margin: 30px 0;
-  }
-
-  .product-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 52px auto;
-    max-width: 1020px;
-  }
-<!-- SIDE-BY-SIDE (centered on desktop): Amish blog + Bloomz Snow Caps -->
+<!-- ================== FIXED & CENTERED: FRONT PAIR + GEAR CARDS ================== -->
+<!-- Prefetch (keep these OUTSIDE <style>) -->
 <link rel="prefetch" href="/amish-winter-heat.html">
 <link rel="prefetch" href="https://bloomzhemp.com/collections/snow-caps-thca-flower/products/thca-snow-caps?ref=gritbud">
 
 <style>
-  /* ===== 2-up container (CENTERED) ===== */
-  .front-pair{
-    max-width:1100px;margin:18px auto;padding:clamp(12px,3vw,24px);
-    display:flex; gap:16px; align-items:stretch; justify-content:center;
-    flex-wrap:wrap; /* default: can stack on mobile */
+  /* ===== Global (kept from your snippet) ===== */
+  html, body {
+    margin: 0; padding: 0; min-height: 100vh; scroll-behavior: smooth;
+    font-family: 'Orbitron', sans-serif;
+    background: url('images/bg-dust.jpg') no-repeat center center fixed;
+    background-size: cover; color: #fff; overflow-x: hidden;
   }
-  /* Force two columns + center on desktop */
-  @media (min-width:901px){
-    .front-pair{ flex-wrap:nowrap; }                  /* keep side-by-side */
-    .front-pair .preview-card{ flex:0 1 520px; max-width:520px; } /* equal widths */
+  *{ margin:0; padding:0; box-sizing:border-box }
+
+  .cta-button{
+    display:inline-block; margin:10px; padding:12px 24px;
+    background:#ffa500; color:#000; border-radius:6px; font-weight:bold; text-decoration:none;
+    box-shadow:0 0 10px #ffa500; transition:all .3s ease-in-out;
   }
-  /* Stack only on small screens */
-  @media (max-width:900px){
-    .front-pair .preview-card{ flex:1 1 100%; max-width:100%; }
+  .cta-button:hover{ background:#ff6600; color:#fff }
+
+  .flash-card,.reading-card{
+    background:#000; width:280px; min-height:460px; border-radius:10px; padding:16px;
+    box-shadow:0 0 15px #000; text-align:center; margin-bottom:30px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .flash-card img,.reading-card img{
+    width:100%; border-radius:8px; max-height:140px; object-fit:contain; margin-bottom:12px;
+  }
+  .flash-card h3,.reading-card h3{ color:#ffa500; margin:10px 0; font-size:18px }
+  .flash-card p,.reading-card p{ font-size:14px; color:#ccc; margin-bottom:10px }
+
+  .buy-btn{
+    display:inline-block; margin-top:10px; background:#ffa500; color:#000;
+    padding:8px 16px; border-radius:5px; font-weight:bold; text-decoration:none;
+    box-shadow:0 0 10px #ffa500; transition:all .2s ease-in-out;
+  }
+  .buy-btn:hover{ background:#ff6600; color:#fff }
+
+  .section-title{ text-align:center; color:#ffa500; font-size:2em; margin:30px 0 }
+
+  /* ===== Utility row to center card grids ===== */
+  .product-boxes, .center-row{
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:stretch;
+    gap:30px; margin:52px auto; max-width:1100px; padding:0 12px;
   }
 
-  /* ===== Base card ===== */
+  /* ===== FRONT PAIR: always 2-up & centered on desktop ===== */
+  .front-pair{
+    display:grid; gap:16px; align-items:stretch; justify-content:center;
+    grid-template-columns:repeat(2, minmax(320px, 520px));
+    max-width:1100px; margin:18px auto; padding:clamp(12px,3vw,24px);
+  }
+  @media (max-width:900px){
+    .front-pair{ grid-template-columns:1fr; }
+  }
+
+  /* ===== Preview cards (shared) ===== */
   .preview-card{
     display:grid; grid-template-columns:42% 58%; gap:0; text-decoration:none;
     background:var(--panel,#121821); color:var(--ink,#e8edf2);
@@ -546,38 +479,53 @@
     box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.5);
     transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   }
-  .preview-card:hover{ transform:translateY(-2px); box-shadow:0 0 0 1px rgba(255,255,255,.1), 0 16px 42px rgba(0,0,0,.6); }
-  @media (max-width:760px){ .preview-card{ grid-template-columns:1fr; } }
+  .preview-card:hover{ transform:translateY(-2px); box-shadow:0 0 0 1px rgba(255,255,255,.1), 0 16px 42px rgba(0,0,0,.6) }
+  @media (max-width:760px){ .preview-card{ grid-template-columns:1fr } }
 
-  /* Compact media */
-  .preview-media{ position:relative; height:150px; min-height:150px; background:#0f141a; }
-  .preview-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .preview-media{ position:relative; height:150px; min-height:150px; background:#0f141a }
+  .preview-media img{ width:100%; height:100%; object-fit:cover; display:block }
 
-  /* Amish badge + body */
   .preview-badge{
     position:absolute; top:10px; left:10px; padding:6px 10px; border-radius:999px;
     background:linear-gradient(180deg,#ff7a00,#e06100); color:#0b0f12; font-weight:800; font-size:.75rem;
   }
-  .preview-body{ padding:12px 14px 14px; }
-  .preview-tag{ color:#9aa3ad; font-size:.85rem; letter-spacing:.35px; text-transform:uppercase; }
-  .preview-title{ margin:.2rem 0 .3rem; font-size:clamp(1.05rem,2vw,1.35rem); font-weight:800; }
-  .preview-deck{ color:#c9d2da; margin:0 0 .6rem; font-size:.96rem; line-height:1.45; }
+  .preview-body{ padding:12px 14px 14px }
+  .preview-tag{ color:#9aa3ad; font-size:.85rem; letter-spacing:.35px; text-transform:uppercase }
+  .preview-title{ margin:.2rem 0 .3rem; font-size:clamp(1.05rem,2vw,1.35rem); font-weight:800 }
+  .preview-deck{ color:#c9d2da; margin:0 0 .6rem; font-size:.96rem; line-height:1.45 }
   .preview-cta{
     display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px;
     font-weight:900; letter-spacing:.3px; background:linear-gradient(180deg,#ff7a00,#e06100);
     color:#101318; box-shadow:0 8px 24px rgba(255,122,0,.25);
   }
 
-  /* Bloomz variant (blue accent) */
-  .preview-card.bloomz{ border-color:#1d2a3b; box-shadow:0 0 0 1px rgba(96,165,250,.16), 0 10px 30px rgba(0,0,0,.5); }
-  .preview-card.bloomz:hover{ box-shadow:0 0 0 1px rgba(37,99,235,.22), 0 16px 42px rgba(0,0,0,.62); }
-  .preview-card.bloomz .preview-badge{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#071019; }
-  .preview-card.bloomz .preview-cta{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#0b1220; box-shadow:0 8px 24px rgba(37,99,235,.25); }
-  .preview-chips{ display:flex; flex-wrap:wrap; gap:6px; margin:.15rem 0; }
-  .preview-chips span{ font-size:.78rem; color:#e6eef7; background:#16202b; border:1px solid #243243; padding:5px 9px; border-radius:999px; }
-  .tiny-note{ color:#9aa3ad; font-size:.84rem; margin-top:.35rem; }
+  /* ===== Bloomz accent (blue) ===== */
+  .preview-card.bloomz{ border-color:#1d2a3b; box-shadow:0 0 0 1px rgba(96,165,250,.16), 0 10px 30px rgba(0,0,0,.5) }
+  .preview-card.bloomz:hover{ box-shadow:0 0 0 1px rgba(37,99,235,.22), 0 16px 42px rgba(0,0,0,.62) }
+  .preview-card.bloomz .preview-badge{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#071019 }
+  .preview-card.bloomz .preview-cta{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#0b1220; box-shadow:0 8px 24px rgba(37,99,235,.25) }
+
+  /* ===== Gear cards container (centered) ===== */
+  .gear-card{
+    background:#000; width:280px; padding:16px; border-radius:10px; text-align:center;
+    box-shadow:0 0 20px #000;
+  }
+  .gear-card img{
+    width:100%; max-width:200px; height:200px; object-fit:cover;
+    margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;
+  }
+  .gear-card h3{ color:#ffa500 }
+  .gear-card p{ color:#ccc }
+  .gear-card p.hot{ color:#ff5555 }
+  .gear-card p.note{ color:#aaa; font-size:13px; font-style:italic }
+  .gear-card a{
+    color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px;
+    display:inline-block; margin-top:10px; text-decoration:none;
+  }
+  .gear-card a:hover{ background:#ff6600 }
 </style>
 
+<!-- ===== FRONT PAIR (centered, side-by-side on desktop) ===== -->
 <div class="front-pair">
   <!-- LEFT: Amish Guide (compact) -->
   <a class="preview-card"
@@ -608,32 +556,37 @@
       <div class="preview-tag">Shop • Bloomz Hemp</div>
       <h3 class="preview-title">THCA Snow Caps — Premium Flower</h3>
       <p class="preview-deck">Top-tier “Snow Caps” with discreet shipping direct from Bloomz.</p>
-      <div class="preview-chips">
-        <span>THCA Flower</span><span>Snow Caps</span><span>Fast shipping</span>
+      <div class="preview-chips" style="display:flex;flex-wrap:wrap;gap:6px;margin:.15rem 0">
+        <span style="font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px">THCA Flower</span>
+        <span style="font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px">Snow Caps</span>
+        <span style="font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px">Fast shipping</span>
       </div>
       <span class="preview-cta">Shop Snow Caps →</span>
-      <div class="tiny-note">Adults 21+. Check your local laws.</div>
+      <div class="tiny-note" style="color:#9aa3ad;font-size:.84rem;margin-top:.35rem">Adults 21+. Check your local laws.</div>
     </div>
   </a>
 </div>
 
-    <div class="gear-card" style="background:#000; width:280px; padding:16px; border-radius:10px; text-align:center; box-shadow:0 0 20px #000;">
-      <img src="images/handgen.jpg" alt="EnginStar 155Wh Solar Gen" style="width:100%; max-width:200px; height:200px; object-fit:cover; margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;">
-      <h3 style="color:#ffa500;">🔌 EnginStar 155Wh + Panel</h3>
-      <p style="color:#ccc;">42000mAh power bank with 30W solar panel. AC outlet + 6 ports = ready for anything.</p>
-      <p style="color:#ff5555;">⏳ Hot seller – camp-ready combo kit!</p>
-      <p style="color:#aaa; font-size:13px; font-style:italic;">⭐⭐⭐⭐ 'Easy setup, great for blackouts.'</p>
-      <a href="https://amzn.to/44Qtmap?tag=gritgearhq-20" target="_blank" style="color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px; display:inline-block; margin-top:10px; text-decoration:none;">🛒 Shop Now</a>
-    </div>
+<!-- ===== GEAR CARDS ROW (centered; side-by-side where space allows) ===== -->
+<div class="center-row">
+  <div class="gear-card">
+    <img src="images/handgen.jpg" alt="EnginStar 155Wh Solar Gen">
+    <h3>🔌 EnginStar 155Wh + Panel</h3>
+    <p>42000mAh power bank with 30W solar panel. AC outlet + 6 ports = ready for anything.</p>
+    <p class="hot">⏳ Hot seller – camp-ready combo kit!</p>
+    <p class="note">⭐⭐⭐⭐ 'Easy setup, great for blackouts.'</p>
+    <a href="https://amzn.to/44Qtmap?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+  </div>
 
-    <div class="gear-card" style="background:#000; width:280px; padding:16px; border-radius:10px; text-align:center; box-shadow:0 0 20px #000;">
-      <img src="images/watt.jpg" alt="4000W Gas Generator" style="width:100%; max-width:200px; height:200px; object-fit:cover; margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;">
-      <h3 style="color:#ffa500;">⚙️ 4000W Gas Generator</h3>
-      <p style="color:#ccc;">Emergency-ready powerhouse for RVs, blackouts, or basecamp. Handles the load.</p>
-      <p style="color:#ff5555;">🚨 Last few in stock – serious buyers only.</p>
-      <p style="color:#aaa; font-size:13px; font-style:italic;">⭐⭐⭐⭐ 'Quiet for the size. Zero regrets.'</p>
-      <a href="https://amzn.to/4luZbg7?tag=gritgearhq-20" target="_blank" style="color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px; display:inline-block; margin-top:10px; text-decoration:none;">🛒 Shop Now</a>
-    </div>
+  <div class="gear-card">
+    <img src="images/watt.jpg" alt="4000W Gas Generator">
+    <h3>⚙️ 4000W Gas Generator</h3>
+    <p>Emergency-ready powerhouse for RVs, blackouts, or basecamp. Handles the load.</p>
+    <p class="hot">🚨 Last few in stock – serious buyers only.</p>
+    <p class="note">⭐⭐⭐⭐ 'Quiet for the size. Zero regrets.'</p>
+    <a href="https://amzn.to/4luZbg7?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+  </div>
+</div>
 
    <!-- 🥵 Stay Cool Blog Teaser -->
 <section style="background: url('images/hotsun.jpg') center center / cover no-repeat; position: relative; padding: 60px 20px; text-align: center; font-family:'Orbitron', sans-serif; box-shadow: inset 0 0 0 9999px rgba(0,0,0,0.4);">
