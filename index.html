@@ -738,170 +738,94 @@
 </section>
 
 
-<!-- 🧠 Masculinity Blog Teaser with Image -->
-<section style="background:#111; border-top:2px solid #ffa500; border-bottom:2px solid #ffa500; padding:40px 20px; font-family:'Orbitron', sans-serif; text-align:center; box-shadow:0 0 25px #000;">
-
-  <a href="manifesto.html" style="text-decoration:none;">
-    <img src="images/manly.jpg" alt="The War on Masculinity" style="width:100%; max-width:800px; border-radius:12px; box-shadow:0 0 20px #000; margin-bottom:25px;">
-  </a>
-
-  <h2 style="color:#ffa500; font-size:2em; margin-bottom:15px;">💥 Where Have All the Men Gone?</h2>
-
-  <p style="color:#ccc; max-width:800px; margin:0 auto 20px; font-size:1.1em; line-height:1.6;">
-    There's a war being waged — not with bullets, but with shame, censorship, and weakness disguised as virtue.
-    Men are being erased from culture, family, and purpose.
-    <br><br>
-    If you've felt it... you're not crazy. You're awake.
-  </p>
-
-  <a href="manifesto.html" style="display:inline-block; margin-top:15px; padding:14px 28px; background:#ffa500; color:#000; font-weight:bold; border-radius:8px; text-decoration:none; box-shadow:0 0 12px #ffa500; font-size:1.1em;">
-    📜 Read the Full Manifesto
-  </a>
-</section>
-
-
-  </div>
-</section>
-
-</section>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Sometimes The Fear Won't Go Away So We'll Have To Do It Afraid.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Goout Stove Review | Grit Gear HQ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #000;
-      margin: 0;
-      padding: 0;
-      font-family: 'Courier New', Courier, monospace;
-    .stars {
-      color: gold;
-      font-size: 14px;
-      margin-top: 8px;
-    }
-
-    .tagline-box {
-      background: url('images/concrete.jpg') no-repeat center center;
-      background-size: cover;
-      padding: 60px 20px;
-      text-align: center;
-      color: #fff;
-      font-size: 2em;
-    .buy-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 14px;
-      background-color: #ffa500;
-      color: black;
-      font-weight: bold;
-      border-radius: 8px;
-      box-shadow: 0 0 25px #000;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-      max-width: 800px;
-      margin: 80px auto;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-<!-- Orwell Quote Banner -->
-<section class="orwell-banner">
-  <img src="images/orwell.jpg" alt="George Orwell Quote American Flag">
-</section>
+<!-- SIDE-BY-SIDE PREVIEWS: Survival Blog + Masculinity Manifesto (drop anywhere) -->
+<link rel="prefetch" href="/cannabis-for-survival.html">
+<link rel="prefetch" href="/manifesto.html">
 
 <style>
-/* Tagline Section with Concrete Background */
-.tagline-box {
-  background: url('images/bnb.png') no-repeat center center;
-  background-size: cover;
-  padding: 60px 20px;
-  text-align: center;
-  font-size: 2em;
-  font-weight: bold;
-  color: #ffa500;
-  text-shadow: 1px 1px 5px #000;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-  border-top: 2px solid #ffa500;
-  border-bottom: 2px solid #ffa500;
-  font-family: 'Courier New', monospace;
-  margin: 40px auto;
-  max-width: 1000px;
-  border-radius: 8px;
-}
-  <!-- Header Image -->
-  <img src="images/tg-manila.jpg" alt="Manila Header" class="header-image">
+  :root{
+    --ink:#e8edf2; --muted:#b8c2cc; --panel:#121821; --edge:#1f2a35; --accent:#ffa500;
+  }
+  .pair-wrap{max-width:1100px;margin:22px auto;padding:clamp(12px,3vw,24px)}
+  .pair-grid{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;
+    align-items:stretch;justify-items:center;
+  }
+  @media (max-width:900px){ .pair-grid{grid-template-columns:1fr} }
 
-/* Orwell Banner Styling (unchanged) */
-.orwell-banner {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  text-align: center;
-  border-top: 2px solid #ffa500;
-  border-bottom: 2px solid #ffa500;
-}
+  .pair-card{
+    display:grid;grid-template-columns:42% 58%;
+    width:100%;max-width:540px;text-decoration:none;color:var(--ink);
+    background:var(--panel);border:1px solid var(--edge);border-radius:16px;overflow:hidden;
+    box-shadow:0 0 0 1px rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.5);
+    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    font-family: 'Orbitron', system-ui, sans-serif;
+  }
+  .pair-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.1),0 16px 42px rgba(0,0,0,.6)}
+  @media (max-width:760px){ .pair-card{grid-template-columns:1fr} }
 
-.orwell-banner img {
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  display: block;
-  margin: auto;
-  box-shadow: 0 0 20px #000;
-}
+  .pair-media{position:relative;height:160px;min-height:160px;background:#0f141a}
+  .pair-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .pair-badge{
+    position:absolute;top:10px;left:10px;padding:6px 10px;border-radius:999px;
+    background:linear-gradient(180deg,var(--accent),#e06100);color:#0b0f12;font-weight:800;font-size:.75rem
+  }
+
+  .pair-body{padding:14px 16px 16px}
+  .pair-tag{color:var(--muted);font-size:.85rem;letter-spacing:.35px;text-transform:uppercase}
+  .pair-title{margin:.25rem 0 .4rem;font-size:clamp(1.06rem,2vw,1.38rem);font-weight:800;color:#fff}
+  .pair-deck{color:#c9d2da;margin:0 0 .7rem;line-height:1.45}
+  .pair-cta{
+    display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:10px;font-weight:900;letter-spacing:.3px;
+    background:linear-gradient(180deg,var(--accent),#e06100);color:#101318;box-shadow:0 8px 24px rgba(255,122,0,.25)
+  }
+
+  /* Optional: thin accent line above/below the whole block */
+  .pair-wrap .accent-top{height:2px;background:var(--accent);opacity:.9;margin-bottom:10px;border-radius:2px}
+  .pair-wrap .accent-bot{height:2px;background:var(--accent);opacity:.9;margin-top:10px;border-radius:2px}
 </style>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grit Gear HQ – Rough Gear for Rougher Times</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<!-- CTA Section -->
-<section class="hero" style="text-align:center;">
-  <a href="random.html" class="cta-button">🧪 Grit Certified Picks</a>
-  <a href="blog-index.html" class="cta-button">📜 Read Manifesto</a>
-  <a href="grit-test.html" class="cta-button">🧠 Take the Grit Test</a>
-</section>
+<div class="pair-wrap">
+  <div class="accent-top" aria-hidden="true"></div>
 
-<!-- ✅ MOBILE-FIRST REBUILD (ALL SECTIONS) -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<section class="gg-wrap">
-
-  <!-- 🔥 Featured Gear Reviews -->
-  <section class="gg-gear" aria-labelledby="gg-gear-title">
-    <div class="gg-container">
-      <header class="gg-header">
-        <h2 id="gg-gear-title">Trusted in the Shadows</h2>
-        <p>Used by thousands of travelers, security pros, and gritty survivors.</p>
-      </header>
-
-      <!-- Product Grid -->
-      <div class="gg-grid gg-grid--cards">
-        <!-- Sustain Supply Kit -->
-        <article class="gg-card">
-          <img src="images/4person.jpg" alt="Sustain Supply 4-Person Survival Kit" class="gg-img" />
-          <h3 class="gg-card-title">
-            Sustain Supply Comfort Kit<br />4-Person, 72-Hour Survival System
-          </h3>
-          <p class="gg-card-copy">
-            Packed with food, water, light, first aid, and warmth—this kit covers the basics when you're off-grid or out of luck.
-          </p>
-          <p class="gg-stars">⭐️⭐️⭐️⭐️⭐️ <span>1,000+ ratings</span></p>
-          <a href="https://amzn.to/462aVlw" target="_blank" rel="nofollow sponsored noopener" class="gg-btn">🛒 Gear Up Now</a>
-        </article>
+  <div class="pair-grid">
+    <!-- LEFT: Survival Blog -->
+    <a class="pair-card"
+       href="/cannabis-for-survival.html#top"
+       aria-label="Read: Bud Over Booze — A Survivalist’s Manifesto">
+      <div class="pair-media">
+        <img src="/cannabis-friendly-1-1024x683.jpg"
+             alt="Calm camp in the forest — clear-headed survival vibes" loading="lazy" decoding="async">
+        <span class="pair-badge">New</span>
       </div>
-    </div>
-  </section>
+      <div class="pair-body">
+        <div class="pair-tag">Survival Mindset</div>
+        <h3 class="pair-title">Bud Over Booze — A Survivalist’s Manifesto</h3>
+        <p class="pair-deck">How a simple plant outperforms alcohol for pain, sleep, appetite, and group calm — plus my vetted, discreet source.</p>
+        <span class="pair-cta">Read the survival blog →</span>
+      </div>
+    </a>
+
+    <!-- RIGHT: Masculinity Manifesto -->
+    <a class="pair-card"
+       href="/manifesto.html#top"
+       aria-label="Read: Where Have All the Men Gone? — The Manifesto">
+      <div class="pair-media">
+        <img src="images/manly.jpg"
+             alt="Masculinity manifesto cover — bold type and grit" loading="lazy" decoding="async">
+        <span class="pair-badge">Featured</span>
+      </div>
+      <div class="pair-body">
+        <div class="pair-tag">Culture &amp; Duty</div>
+        <h3 class="pair-title">Where Have All the Men Gone?</h3>
+        <p class="pair-deck">Not bullets — shame, censorship, and softness. If you’ve felt it, you’re not crazy — you’re awake. Plant your flag.</p>
+        <span class="pair-cta">Read the manifesto →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="accent-bot" aria-hidden="true"></div>
+</div>
 
   <!-- 🏜️ Death Valley Germans Blog Feature -->
   <section class="gg-feature" aria-labelledby="gg-dvg-title">
