@@ -700,29 +700,84 @@
   </div>
 </section>
 
-<!-- 🔥 Blog Preview Card: Goout Stove Review -->
-<section style="background:#1a1a1a; border:2px solid #ffa500; border-radius:10px; box-shadow:0 0 20px #000; margin:40px auto; padding:20px; max-width:1000px; font-family:'Orbitron', sans-serif;">
-  <a href="goout_stove_review_FINAL_WITH_ANCHOR.html#goout-stove-review" style="text-decoration:none; color:inherit; display:flex; flex-wrap:wrap; gap:20px;">
+<!-- ===== Two-Up Preview Grid: Stove + Paracord ===== -->
+<style>
+  :root{
+    --ink:#e9ecef; --muted:#b3bdc6; --edge:#2a2a2a; --bg:#111;
+    --card:#1a1a1a; --accent:#ffa500; --accent2:#34d399;
+  }
+  .previews-wrap{max-width:1100px;margin:32px auto;padding:0 16px}
+  .preview-grid{
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;
+  }
+  @media (max-width:900px){ .preview-grid{grid-template-columns:1fr} }
 
-    <!-- Image Column -->
-    <div style="flex:1 1 300px; max-width:300px;">
-      <img src="images/springhill21.jpg" alt="Goout Stove Review" style="width:100%; border-radius:10px; box-shadow:0 0 10px #000;">
-    </div>
+  .preview-card{
+    display:grid; grid-template-columns:260px 1fr; gap:16px;
+    background:linear-gradient(120deg,#1b1b1b,#141414 60%);
+    color:var(--ink); text-decoration:none; border:1px solid var(--edge);
+    border-radius:14px; padding:14px; box-shadow:0 10px 26px rgba(0,0,0,.35);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .preview-card:hover{ transform:translateY(-2px); box-shadow:0 16px 38px rgba(0,0,0,.5); border-color:#333 }
+  .media{position:relative; aspect-ratio:4/3; overflow:hidden; border-radius:10px; background:#0c0c0c}
+  .media img{width:100%;height:100%;object-fit:cover;display:block}
+  .badge{
+    position:absolute; left:8px; top:8px; font-size:.78rem; font-weight:800;
+    background:rgba(0,0,0,.55); border:1px solid #2d2d2d; color:#e9eef4;
+    padding:6px 10px; border-radius:999px
+  }
+  .content{display:grid; grid-template-rows:auto auto 1fr auto}
+  .title{margin:0 0 6px; font-size:clamp(1.05rem,1vw + .9rem,1.55rem); line-height:1.2; color:var(--ink)}
+  .desc{margin:0; color:var(--muted); line-height:1.55; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden}
+  .cta{
+    margin-top:10px; width:max-content; font-weight:900; letter-spacing:.2px;
+    background:linear-gradient(180deg,var(--accent),#e06100); color:#111;
+    padding:9px 12px; border-radius:10px; border:1px solid #a86f00; box-shadow:0 10px 22px rgba(224,97,0,.28)
+  }
+  .cta.green{background:linear-gradient(180deg,var(--accent2),#0aa57f); border-color:#127a62; color:#081013}
+  @media (max-width:760px){ .preview-card{grid-template-columns:1fr} }
+</style>
 
-    <!-- Text Column -->
-    <div style="flex:2 1 500px;">
-      <h2 style="color:#ffa500; font-size:1.8em; margin-top:0;">🔥 Goout Stove: The Bug-Out Cook King</h2>
-      <p style="color:#ccc; font-size:1.05em; line-height:1.6;">
-        A rugged emergency stove that came through for me during a brutal blackout and deadly heatwave. 
-        I used it to boil water and cook gooey grilled cheese sandwiches outside without heating the house up. 
-        This no-gimmick gear belongs in every survival kit. Also featuring powdered cheddar and a few war stories.
-      </p>
-      <div style="margin-top:15px; text-align:right;">
-        <span style="background:#ffa500; color:#000; padding:8px 16px; border-radius:6px; font-weight:bold; display:inline-block;">
-          🔗 Read the Full Post
-        </span>
+<div class="previews-wrap">
+  <div class="preview-grid">
+
+    <!-- Goout Stove Review -->
+    <a class="preview-card" href="goout_stove_review_FINAL_WITH_ANCHOR.html#goout-stove-review" aria-label="Read: Goout Stove — The Bug-Out Cook King">
+      <figure class="media">
+        <img src="images/springhill21.jpg" alt="Compact stove boiling water during a blackout drill" loading="lazy" decoding="async">
+        <span class="badge">🔥 Stove Review</span>
+      </figure>
+      <div class="content">
+        <h3 class="title">Goout Stove: The Bug-Out Cook King</h3>
+        <p class="desc">
+          Rugged, fast to light, and blackout-proof. I boiled water and grilled gooey sandwiches outside without heating the house—no gimmicks, just performance.
+        </p>
+        <span class="cta">Read the full post →</span>
       </div>
-    </div>
+    </a>
+
+    <!-- Paracord / TITAN Preview (uses your SurvivorCord image) -->
+    <a class="preview-card" href="https://gritgearhq.com/titan-survival-collab.html#why-550" aria-label="Read: Why real 550 paracord beats cheap cordage">
+      <figure class="media">
+        <!-- Update the src to where you host the image -->
+        <img src="/assets/SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp"
+             alt="Bundles of SurvivorCord 550 paracord—orange and OD green—on a workbench"
+             loading="lazy" decoding="async" style="object-position:center 55%">
+        <span class="badge">🪢 Paracord Guide</span>
+      </figure>
+      <div class="content">
+        <h3 class="title">Why 550 Paracord Beats Cheap Cordage</h3>
+        <p class="desc">
+          Real 550 ties cleaner, lasts longer, and TITAN’s SurvivorCord® adds fishing line, wire, and tinder right in the core. Wrap it on your kit and wonder how you lived without it.
+        </p>
+        <span class="cta green">Read the SurvivorCord® guide →</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+<!-- /Two-Up Preview Grid -->
 
   </a>
 </section>
