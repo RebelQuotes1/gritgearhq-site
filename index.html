@@ -566,25 +566,88 @@
     </div>
   </a>
 </div>
+<!-- ===== GEAR CARDS ROW (centered; **4-up on desktop**) ===== -->
+<style>
+  /* Upgrade: force 4 columns on desktop, center the row, keep responsive */
+  .center-row{
+    display:grid; gap:22px; align-items:stretch; justify-items:center;
+    grid-template-columns:1fr;                       /* phones */
+    max-width:1320px; margin:52px auto; padding:0 12px;
+  }
+  @media (min-width:700px){ .center-row{ grid-template-columns:repeat(2, minmax(260px, 1fr)); } }
+  @media (min-width:1100px){ .center-row{ grid-template-columns:repeat(4, minmax(260px, 1fr)); } }
 
-<!-- ===== GEAR CARDS ROW (centered; side-by-side where space allows) ===== -->
+  .gear-card{
+    background:#000; width:100%; max-width:300px; padding:16px; border-radius:12px; text-align:center;
+    box-shadow:0 0 20px #000, 0 0 0 1px rgba(255,255,255,.06);
+    display:flex; flex-direction:column; gap:8px; position:relative; overflow:hidden;
+  }
+  .gear-card img{
+    width:100%; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 0 10px #000;
+  }
+  .gear-card h3{ color:#ffa500; font-size:1rem; margin:.25rem 0 }
+  .gear-card p{ color:#cfcfcf; font-size:.93rem; margin:0 }
+  .gear-card p.hot{ color:#ff6b6b; font-weight:700 }
+  .gear-card p.note{ color:#a9a9a9; font-size:.83rem; font-style:italic }
+  .gear-card a{
+    color:#101318; background:#ffa500; padding:10px 14px; border-radius:8px; font-weight:900;
+    text-decoration:none; display:inline-block; margin-top:6px;
+    box-shadow:0 10px 26px rgba(255,165,0,.25);
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .gear-card a:hover{ background:#ff7a00; transform:translateY(-1px); box-shadow:0 16px 34px rgba(255,165,0,.35) }
+
+  /* Small corner badge for urgency */
+  .gear-badge{
+    position:absolute; top:10px; left:-8px; padding:6px 12px; font-size:.78rem; font-weight:900;
+    background:linear-gradient(180deg,#ff7a00,#e06100); color:#0b0f12;
+    border-top-right-radius:8px; border-bottom-right-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,.35);
+  }
+</style>
+
 <div class="center-row">
+  <!-- EnginStar -->
   <div class="gear-card">
-    <img src="images/handgen.jpg" alt="EnginStar 155Wh Solar Gen">
+    <span class="gear-badge">Hot Pick</span>
+    <img src="images/handgen.jpg" alt="EnginStar 155Wh portable power station with 30W solar panel">
     <h3>🔌 EnginStar 155Wh + Panel</h3>
-    <p>42000mAh power bank with 30W solar panel. AC outlet + 6 ports = ready for anything.</p>
-    <p class="hot">⏳ Hot seller – camp-ready combo kit!</p>
-    <p class="note">⭐⭐⭐⭐ 'Easy setup, great for blackouts.'</p>
+    <p>42,000mAh backup with AC outlet &amp; 6 ports. Toss in the truck and go.</p>
+    <p class="hot">⏳ Camp-ready bundle—moving fast.</p>
+    <p class="note">“Easy setup, great for blackouts.”</p>
     <a href="https://amzn.to/44Qtmap?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
   </div>
 
+  <!-- 4000W Gas -->
   <div class="gear-card">
-    <img src="images/watt.jpg" alt="4000W Gas Generator">
+    <span class="gear-badge">Powerhouse</span>
+    <img src="images/watt.jpg" alt="4000W gas generator for emergency home and RV power">
     <h3>⚙️ 4000W Gas Generator</h3>
-    <p>Emergency-ready powerhouse for RVs, blackouts, or basecamp. Handles the load.</p>
-    <p class="hot">🚨 Last few in stock – serious buyers only.</p>
-    <p class="note">⭐⭐⭐⭐ 'Quiet for the size. Zero regrets.'</p>
+    <p>Serious wattage for RVs, outages, or basecamp—built to carry the load.</p>
+    <p class="hot">🚨 Low stock—don’t wait.</p>
+    <p class="note">“Quiet for the size. Zero regrets.”</p>
     <a href="https://amzn.to/4luZbg7?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Shop Now</a>
+  </div>
+
+  <!-- Jackery 300 + 100W panel -->
+  <div class="gear-card">
+    <span class="gear-badge">Weekend Deal</span>
+    <img src="images/jackso.jpg" alt="Jackery Solar Generator 300 with SolarSaga 100W panel">
+    <h3>🧡 Jackery Solar Gen 300</h3>
+    <p>293Wh + 100W panel. 300W pure-sine AC for laptops, lights, comms.</p>
+    <p class="hot">⚡ Lightweight, road-trip ready.</p>
+    <p class="note">Trusted brand, fast shipping.</p>
+    <a href="https://amzn.to/4gz3Qfi?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Get the Jackery →</a>
+  </div>
+
+  <!-- Anker SOLIX F3000 + 400W panel -->
+  <div class="gear-card">
+    <span class="gear-badge">Pro Grade</span>
+    <img src="images/bigguy.jpg" alt="Anker SOLIX F3000 portable power station with 400W solar panel">
+    <h3>🔋 Anker SOLIX F3000 (3kWh)</h3>
+    <p>3,072Wh + 400W panel, 6,000W recharging. Expandable to 24kWh.</p>
+    <p class="hot">🏠 Home backup beast—rolls on wheels.</p>
+    <p class="note">Great for outages, RVs &amp; long trips.</p>
+    <a href="https://amzn.to/4mwSLgo?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">🛒 Get the Anker →</a>
   </div>
 </div>
 
