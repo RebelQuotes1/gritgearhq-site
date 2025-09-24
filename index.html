@@ -757,27 +757,27 @@
       </div>
     </a>
 
-   <!-- Paracord / TITAN Preview (fixed wrapping) -->
+  <!-- Paracord / TITAN Preview (robust image + fallback) -->
 <a class="preview-card" href="https://gritgearhq.com/titan-survival-collab.html#why-550"
-   aria-label="Read: Why real 550 paracord beats cheap cordage"
-   style="display:grid;grid-template-columns:260px 1fr;gap:16px;background:linear-gradient(120deg,#1b1b1b,#141414 60%);color:#e9ecef;text-decoration:none;border:1px solid #2a2a2a;border-radius:14px;padding:14px;box-shadow:0 10px 26px rgba(0,0,0,.35);width:100%;">
-  <figure class="media" style="position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:10px;background:#0c0c0c;min-width:0;">
-    <img src="/assets/SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp"
-         alt="Bundles of SurvivorCord 550 paracord—orange and OD green—on a workbench"
-         loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;">
-    <span class="badge" style="position:absolute;left:8px;top:8px;font-size:.78rem;font-weight:800;background:rgba(0,0,0,.55);border:1px solid #2d2d2d;color:#e9eef4;padding:6px 10px;border-radius:999px;">🪢 Paracord Guide</span>
+   aria-label="Read: Why real 550 paracord beats cheap cordage">
+  <figure class="media" style="min-width:0">
+    <picture>
+      <!-- WebP first -->
+      <source type="image/webp" srcset="/images/survivorcord-hero-2000.webp">
+      <!-- Fallback (served if WebP not supported or MIME misconfigured) -->
+      <img src="/images/survivorcord-hero-2000.jpg"
+           alt="Bundles of SurvivorCord 550 paracord—orange and OD green—on a workbench"
+           loading="lazy" decoding="async"
+           style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block">
+    </picture>
+    <span class="badge">🪢 Paracord Guide</span>
   </figure>
-
-  <div class="content" style="display:grid;grid-template-rows:auto auto 1fr auto;min-width:0;">
-    <h3 class="title" style="margin:0 0 6px;font-size:clamp(1.05rem,1vw + .9rem,1.55rem);line-height:1.2;overflow-wrap:anywhere;">
-      Why 550 Paracord Beats Cheap Cordage
-    </h3>
-    <p class="desc" style="margin:0;color:#b3bdc6;line-height:1.55;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">
+  <div class="content" style="min-width:0">
+    <h3 class="title" style="overflow-wrap:anywhere">Why 550 Paracord Beats Cheap Cordage</h3>
+    <p class="desc" style="-webkit-line-clamp:3;-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden;overflow-wrap:anywhere">
       Real 550 ties cleaner, lasts longer, and TITAN’s SurvivorCord® adds fishing line, wire, and tinder in the core. Wrap it on your kit and wonder how you lived without it.
     </p>
-    <span class="cta green" style="margin-top:10px;width:max-content;font-weight:900;letter-spacing:.2px;background:linear-gradient(180deg,#34d399,#0aa57f);color:#081013;padding:9px 12px;border-radius:10px;border:1px solid #127a62;box-shadow:0 10px 22px rgba(16,122,96,.28);">
-      Read the SurvivorCord® guide →
-    </span>
+    <span class="cta green">Read the SurvivorCord® guide →</span>
   </div>
 </a>
 
