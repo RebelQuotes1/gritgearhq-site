@@ -1,205 +1,321 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Ads (if you use them) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-
   <meta charset="utf-8" />
-  <title>TITAN Survival × Grit Gear HQ — Field-Tested Gear, Exclusive Code</title>
+  <title>TITAN Survival × Grit Gear HQ — Why We Teamed Up (and How to Save)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="We teamed up with TITAN Survival to bring you bombproof paracord, emergency blankets, tinder, and more. Use code GRITGEARHQ at checkout for a sitewide discount." />
-  <meta name="theme-color" content="#ff7a00" />
-
-  <!-- Open Graph / Twitter for rich shares -->
-  <meta property="og:title" content="TITAN Survival × Grit Gear HQ — Field-Tested Gear, Exclusive Code" />
-  <meta property="og:description" content="Our official collaboration with TITAN Survival is live. Stock up on field-tested cordage, fire, and shelter. Code: GRITGEARHQ." />
+  <meta name="description" content="We partnered with TITAN Survival because their cordage, packs, and field gear actually hold up when it matters. Learn how SurvivorCord® is built, why it beats cheap paracord, and how to kit your ruck the smart way. Use code GRITGEARHQ at checkout." />
+  <link rel="canonical" href="https://gritgearhq.com/titan-collab.html" />
+  <meta property="og:title" content="TITAN Survival × Grit Gear HQ — Built for the Rough Stuff" />
+  <meta property="og:description" content="Real cordage, real stitching, real fieldcraft. Learn why we chose TITAN Survival and save with code GRITGEARHQ." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://gritgearhq.com/titan-survival-collab.html" />
-  <!-- Replace this image path with your final banner if you like -->
-  <meta property="og:image" content="images/titan-collab-hero.jpg" />
+  <meta property="og:image" content="titanlogo.jpg" />
+  <meta property="og:url" content="https://gritgearhq.com/titan-collab.html" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet" />
-
+  <meta name="twitter:title" content="TITAN Survival × Grit Gear HQ — Built for the Rough Stuff" />
+  <meta name="twitter:description" content="Why we trust TITAN Survival cordage and kit. Field notes inside. Use code GRITGEARHQ." />
+  <meta name="twitter:image" content="titanlogo.jpg" />
+  <link rel="preload" as="image" href="titanlogo.jpg">
   <style>
     :root{
-      --bg:#0d0f12; --ink:#e8edf2; --muted:#9aa6b2; --edge:#1a2230; --panel:#111722;
-      --accent:#ff7a00; --accent-2:#3fae5a;
+      --bg:#0d1015; --panel:#0f151c; --ink:#e8edf2; --muted:#a8b2bc;
+      --line:#1f2a35; --accent:#ffa500; --accent2:#1ea672; --ink2:#0b1216;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7}
-    a{color:#ffd2a8;text-decoration:none}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    a{color:#cfe8ff;text-decoration:none}
     img{max-width:100%;height:auto;display:block}
+    .wrap{max-width:1100px;margin:0 auto;padding:clamp(14px,3vw,24px)}
+
+    /* Top bar */
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 0}
+    .home-btn,.cta-btn{
+      display:inline-block;padding:10px 14px;border-radius:12px;font-weight:800;letter-spacing:.3px
+    }
+    .home-btn{background:#1a2028;color:#d9e3ea;border:1px solid var(--line)}
+    .home-btn:hover{background:#232b35}
+    .cta-btn{background:linear-gradient(180deg,var(--accent),#e06100);color:#101318;box-shadow:0 10px 26px rgba(255,122,0,.25)}
+    .cta-btn.green{background:linear-gradient(180deg,#34d399,#059669);color:var(--ink2);box-shadow:0 10px 26px rgba(5,150,105,.25)}
 
     /* Hero */
     .hero{
-      background:
-        radial-gradient(1200px 420px at 50% -10%, #3c2500 0%, transparent 70%),
-        linear-gradient(180deg,#111722,#0d0f12);
-      border-bottom:2px solid var(--edge);
-      text-align:center; padding:30px 18px 22px;
+      background:linear-gradient(180deg,#0f151c,#0b1015);
+      border:1px solid var(--line); border-radius:16px; padding:18px; margin-top:12px;
+      box-shadow:0 12px 30px rgba(0,0,0,.45); display:grid; grid-template-columns:110px 1fr; gap:16px; align-items:center;
     }
-    .brand{display:inline-flex;gap:10px;align-items:center;color:#b9c2cb;font-size:.95rem}
-    .brand b{font-family:Orbitron,Inter,sans-serif;letter-spacing:.4px;color:#ffe1c7}
-    h1{margin:12px auto 8px;max-width:980px;font-size:clamp(1.6rem,2.8vw,2.4rem);letter-spacing:.3px}
-    .kicker{max-width:960px;margin:0 auto;color:#cdd6de}
-    .cta{margin:16px auto 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-    .btn{
-      display:inline-block;background:var(--accent);color:#0b0d10;font-weight:800;letter-spacing:.35px;
-      padding:12px 16px;border-radius:12px;box-shadow:0 12px 28px rgba(255,122,0,.25);
-      transition:.18s transform,.18s box-shadow
+    .hero h1{margin:0; font-size:clamp(1.35rem,2.6vw,2rem)}
+    .hero .sub{color:var(--muted); margin:.35rem 0 0}
+    .hero .code{margin-top:10px;font-weight:900}
+    .badge{
+      margin-top:10px; background:#101a22; border:1px solid #203041; color:#e6f0f4; border-radius:12px; padding:10px;
+      font-size:.96rem; line-height:1.5;
     }
-    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 36px rgba(255,122,0,.35)}
-    .btn.hollow{background:transparent;border:1px solid #323e51;color:#e8edf2}
-    .chiprow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 0}
-    .chip{border:1px solid #293243;color:#d7dde4;background:#121a27;border-radius:999px;padding:4px 10px;font-size:.82rem}
 
-    /* Body */
-    .wrap{max-width:980px;margin:0 auto;padding:22px 18px 90px}
-    .prose h2{margin:2rem 0 .6rem;color:var(--accent)}
-    .card{background:var(--panel);border:1px solid var(--edge);border-radius:16px;padding:16px}
-    .pull{border-left:4px solid var(--accent);background:#141c29;padding:10px 14px;border-radius:8px;margin:1rem 0;font-weight:700;color:#f3f3f3}
-    .grid{display:grid;gap:16px}
-    @media(min-width:860px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    /* Prose */
+    article.prose h2{margin:2rem 0 .6rem;color:#34d399}
+    article.prose p{margin:.8rem 0}
+    .pull{border-left:4px solid var(--accent2); background:#0f171e; padding:12px 14px; border-radius:8px; font-weight:700; margin:1rem 0}
+    .card{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px}
+    ul,ol{padding-left:1.25rem}
+    .faq details{background:#0f151c;border:1px solid #1f2a35;border-radius:10px;padding:10px 12px;margin:.6rem 0}
+    .faq summary{cursor:pointer;font-weight:700}
 
-    /* Product list blocks */
-    .prod{display:flex;gap:12px;align-items:flex-start}
-    .prod img{width:64px;height:64px;object-fit:cover;border-radius:10px;border:1px solid #263246;background:#0f141c}
+    /* Image grid (all click to collab page) */
+    .grid{display:grid;gap:14px;margin:10px 0}
+    .grid.cols-5{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media(min-width:860px){ .grid.cols-5{grid-template-columns:repeat(5,minmax(0,1fr))} }
+    .tile{position:relative;background:#0d1319;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    .tile img{height:150px;object-fit:cover}
+    .cap{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.58);border:1px solid #263442;color:#e8edf2;border-radius:8px;padding:4px 8px;font-size:.78rem}
 
-    /* Footer CTA */
-    .center{ text-align:center }
-    .fine{color:var(--muted);font-size:.93rem}
+    /* Bottom CTA + footer */
+    .bottom-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:20px 0}
+    footer{margin-top:24px;color:#9fb0be;font-size:.92rem;border-top:1px solid var(--line);padding:14px 0 28px}
+    footer a{color:#b6e3c6}
   </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="brand"><span>Grit Gear HQ</span> <b>×</b> <span>TITAN Survival</span></div>
-  <h1>We Collab’d with TITAN Survival — Here’s Why That Matters</h1>
-  <p class="kicker">Bombproof cordage. Real fire. No-nonsense shelter. The gear you actually use when the weather turns and the trail gets ugly. Use code <strong>GRITGEARHQ</strong> at checkout for a discount.</p>
-  <div class="chiprow">
-    <span class="chip">Exclusive Code: GRITGEARHQ</span><span class="chip">Field-tested</span><span class="chip">Built in small batches</span><span class="chip">No fluff</span>
-  </div>
-  <div class="cta">
-    <a class="btn" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">Shop the TITAN × GGHQ Page</a>
-    <a class="btn hollow" href="#our-picks">Jump to Our Picks</a>
-  </div>
-</header>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="home-btn" href="/">← Back to Grit Gear HQ</a>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="cta-btn" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">Shop TITAN via Our Link →</a>
+        <a class="cta-btn green" href="#how-to-redeem">Use Code: GRITGEARHQ</a>
+      </div>
+    </div>
 
-<main class="wrap">
-  <article class="prose">
-    <section class="card">
-      <h2>Why TITAN?</h2>
-      <p>Because some brands chase trends, and some build tools you’ll still trust after a winter of abuse. TITAN Survival falls in the second camp. Their stuff is simple, overbuilt, and made by people who clearly carry their own gear. We were already customers; the collaboration came after months of use on range days, river trips, and cold camps.</p>
-      <div class="pull">Short version: if it’s on your body when it all goes sideways, it should be TITAN-tough. That’s why we partnered—and why we asked for a code you can actually use.</div>
-      <p><strong>How it works:</strong> hit the collection page below, toss what you need in the cart, and enter <strong>GRITGEARHQ</strong> at checkout. Clean and simple.</p>
-      <p class="center">
-        <a class="btn" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">Open the Collab Page →</a>
-      </p>
-    </section>
-
-    <section id="our-picks">
-      <h2>Our Field Picks (and How We Use Them)</h2>
-
-      <div class="grid cols-2">
-        <div class="card">
-          <div class="prod">
-            <img src="images/titan-cord.jpg" alt="TITAN SurvivorCord">
-            <div>
-              <h3 style="margin:.1rem 0 .3rem">SurvivorCord / Paracord, Upgraded</h3>
-              <p>Classic 550-style cordage with <em>extras</em> tucked inside the sheath (think: tinder line, fishing line, utility wire). It’s cordage that actually solves more than one problem without taking more space in your kit. Lash a tarp, repair a strap, light a fire, catch dinner—one hank, many jobs.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="prod">
-            <img src="images/titan-blanket.jpg" alt="TITAN Emergency Blankets">
-            <div>
-              <h3 style="margin:.1rem 0 .3rem">Emergency Blankets & Shelter</h3>
-              <p>Not the crinkly gas-station novelty—their blankets and bivy kits are stout enough for real weather. They reflect body heat, block wind, and double as ground cloths or signal panels. A couple live in every vehicle, another rides in the top lid of my pack.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="prod">
-            <img src="images/titan-tinder.jpg" alt="TITAN Tinder & Fire">
-            <div>
-              <h3 style="margin:.1rem 0 .3rem">Tinder & Ferro Rod Kits</h3>
-              <p>Water-resistant tinder cords and robust rods that throw real sparks. Pair with a small blade and you have fire in rain or snow. If you’ve ever wasted 30 minutes babying damp sticks, you’ll appreciate how quickly this stuff goes from spark to flame.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="prod">
-            <img src="images/titan-cards.jpg" alt="TITAN Cards & Small Goods">
-            <div>
-              <h3 style="margin:.1rem 0 .3rem">Small Goods that Earn Their Space</h3>
-              <p>From repair cordage to compact organizers, TITAN’s little things solve daily annoyances—tangles, lost ends, ripped loops—so the big things stay easy. We’re picky about pocket clutter; these pieces earned their ride-along.</p>
-            </div>
-          </div>
+    <!-- HERO -->
+    <section class="hero">
+      <img src="titanlogo.jpg" alt="TITAN Survival logo">
+      <div>
+        <h1>TITAN Survival × Grit Gear HQ — Built for the Rough Stuff</h1>
+        <p class="sub">We only put our name behind gear that survives heat, grit, and dumb mistakes. TITAN’s cordage and kits earned that trust the hard way.</p>
+        <p class="code">Direct link: <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">www.titansurvival.com/GRITGEARHQ</a> — use <strong>GRITGEARHQ</strong> at checkout.</p>
+        <div class="badge">
+          <strong>Your Purchase Supports National Veteran’s Charities.</strong><br>
+          TITAN Survival™ is a certified <em>Service-Disabled Combat Veteran-Owned Small Business</em>, and a portion of all sales has supported Veteran’s charities since 2014.
         </div>
       </div>
-
-      <p class="center" style="margin:16px 0 0">
-        <a class="btn" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">See everything on our collab page →</a>
-      </p>
     </section>
 
-    <section class="card">
-      <h2>Loadouts We Recommend</h2>
-      <ul>
-        <li><strong>Vehicle kit:</strong> 1× heavy emergency blanket, 50–100 ft SurvivorCord, tinder + ferro rod, nitrile gloves, duct tape flat-pack.</li>
-        <li><strong>Day hike:</strong> 25–50 ft cordage on a winder, micro-tinder, mini rod, compact blanket. Adds ounces, buys options.</li>
-        <li><strong>Home drawer:</strong> cordage, blanket, lighter, headlamp batteries, and a small first-aid pouch. Simple wins.</li>
-      </ul>
-    </section>
+    <!-- ARTICLE -->
+    <main class="wrap" style="padding:0">
+      <article class="prose" id="titan-collab-article">
 
-    <section class="card">
-      <h2>FAQ</h2>
-      <h3>Where do I use the discount?</h3>
-      <p>Shop through our link — <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">titansurvival.com/GRITGEARHQ</a> — then enter <strong>GRITGEARHQ</strong> at checkout.</p>
+        <section class="card">
+          <h2>Why We Teamed Up</h2>
+          <p>
+            Grit Gear HQ exists for one reason: to cut the guesswork. We test cheap, we test fancy, and we keep what still works
+            when the weather or the world stops cooperating. For cordage and small-format field gear, we kept running into the same
+            reality—there’s “paracord,” and then there’s cord you can bet a shelter, splint, or tow line on. TITAN Survival lives
+            in the second category. Their lines tie clean, resist rot and UV, and they don’t turn into fuzzy yarn after an afternoon
+            scraping over bark and rock. When we started swapping notes with their team (combat-veteran owned and operated), a
+            partnership made sense.
+          </p>
+          <div class="pull">Short version: if you like gear that fails interestingly, buy cheap cord. If you like gear that just works, buy TITAN.</div>
+        </section>
 
-      <h3>Does the code apply to everything?</h3>
-      <p>It applies to eligible items on TITAN Survival. Some bundles or clearance items may be excluded at their discretion.</p>
+        <section>
+          <h2>What Makes SurvivorCord® Different</h2>
+          <p>
+            A lot of “550” paracord on the market is wishful thinking. Weak inner yarns, uneven sheath, mystery fibers—fine for crafts,
+            not for fieldcraft. <strong>SurvivorCord®</strong> starts with true seven-strand paracord, then integrates survival threads:
+            functional tinder, fishing line, and multi-use metallic wire or monofilament depending on variant. That means one hank of
+            cord can lash your tarp <em>and</em> give you ignition material and line without digging for another pouch.
+          </p>
+          <p>
+            The sheath is tight and consistent enough that knots dress properly and actually <em>hold</em>. Trucker’s hitch, evenk,
+            taut-line, alpine butterfly—pick your poison. When you’re cold and wearing gloves, consistency matters more than specs on a label.
+          </p>
+          <ul>
+            <li><strong>Strength you can plan around:</strong> real 550-class working strength and better abrasion resistance than the craft-store stuff.</li>
+            <li><strong>Multi-role core:</strong> pull a strand to improvise gear repairs, snares, trip lines, or fire starting.</li>
+            <li><strong>Weather tolerance:</strong> less water uptake, better UV resistance, and smoother handling in the cold.</li>
+          </ul>
+        </section>
 
-      <h3>Is this sponsored?</h3>
-      <p>We’re collaborators and may earn a commission if you buy through our link/code. We only attach Grit Gear HQ to brands we already trust and carry in our own kits.</p>
-    </section>
+        <section class="card">
+          <h2>Field Notes: Where Good Cord Saves the Day</h2>
+          <p>
+            On a three-day lake loop last fall, the forecast lied. Winds kicked to 30+, temps dropped, and the pines started throwing pinecones
+            like rocks. Cheap cord on another crew’s ridge line started glazing and slipping. Ours—TITAN—didn’t. We tightened the ridgeline
+            once, added two prusiks to tension a windward flap, and went to work boiling water. That’s the whole review: no drama, just shelter.
+          </p>
+          <p>
+            A month later we repurposed the same line to drag a log off a two-track after a storm. Two timber hitches and a slow pull got it done.
+            Good cordage isn’t sexy, which is why it’s perfect. It lets the rest of the day be about the mission, not the micro-failures.
+          </p>
+        </section>
 
-    <section class="center">
-      <p class="pull" style="display:inline-block">Gear should do work, not just take space. That’s why we teamed up with TITAN.</p>
-      <p><a class="btn" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">Gear up with code <b>GRITGEARHQ</b> →</a></p>
-      <p class="fine">Affiliate disclosure: If you purchase through our link or use our code, we may earn a commission at no extra cost to you.</p>
-    </section>
-  </article>
-</main>
+        <section>
+          <h2>Boot Laces That Pull Double Duty</h2>
+          <p>
+            We’ve all had laces pop at the worst moment: wet, cold, late. TITAN’s boot-lace kits wrap the same “buy once” logic into a small package:
+            abrasion-resistant lace, plus a <em>micro ferro rod and striker</em> that live on your footwear. Fire follows you around. Your feet are already
+            weight you carry; make that weight work. If your EDC ever gets stripped down to the bare minimum, a spark on your boots plus a tinder
+            thread in your cord can still get a flame going.
+          </p>
 
-<!-- FAQ Schema for SEO -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {
-      "@type":"Question",
-      "name":"Where do I use the discount?",
-      "acceptedAnswer":{"@type":"Answer","text":"Go to https://www.titansurvival.com/GRITGEARHQ and enter code GRITGEARHQ at checkout."}
-    },
-    {
-      "@type":"Question",
-      "name":"Does the code apply to everything?",
-      "acceptedAnswer":{"@type":"Answer","text":"The code applies to eligible items on TITAN Survival. Some bundles or clearance items may be excluded at TITAN's discretion."}
-    },
-    {
-      "@type":"Question",
-      "name":"Is this sponsored?",
-      "acceptedAnswer":{"@type":"Answer","text":"We’re collaborators and may earn a commission if you buy through our link or code. We only recommend gear we use and trust."}
-    }
-  ]
-}
-</script>
+          <!-- visual row -->
+          <div class="grid cols-5">
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="survivorcord-survival-boot-laces-accessories-titan-survival-black-54-6x-eyelets-698805_400x.webp" alt="SurvivorCord boot-lace kit with ferro rod">
+              <span class="cap">Boot-lace kit + ferro</span>
+            </a>
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="survivorcord-spool-black-spool-titan-survival-646385_400x.webp" alt="500 ft spool of SurvivorCord">
+              <span class="cap">SurvivorCord® spool</span>
+            </a>
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="survivorcord-keychain-3-pack-3-colors-survival-essentials-titan-survival-955560_400x.webp" alt="Paracord keychains">
+              <span class="cap">EDC cord keychains</span>
+            </a>
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="titan-survival-first-aid-kit-ifak-care-titan-survival-coyote-brown-205949_400x.webp" alt="TITAN IFAK first-aid kit">
+              <span class="cap">IFAK built right</span>
+            </a>
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="gh35-35l-24-hour-tactical-backpack-container-tacamo-995825_400x.webp" alt="24-hour tactical backpack">
+              <span class="cap">24-hour pack</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Shock Cord: The Silent MVP</h2>
+          <p>
+            If paracord is your knife, shock cord is your spring clamp. Lash wet clothes to a pack, secure a radio to a chest rig,
+            tame cable spaghetti, anchor a tarp that needs to breath in gusts—elastic buys you forgiveness and speed. TITAN’s shock
+            cord is consistent in stretch and recovery. It bites knots better than bargain rubber, and it doesn’t crumble to dust
+            after a summer in the sun.
+          </p>
+          <p>
+            Pro tip: cut two 30-inch lengths, tie loops in the ends, and keep them on your shoulder straps. They anchor trekking poles,
+            paddles, or a jacket in seconds. It’s the small, repeatable time saves that stack into a better day.
+          </p>
+          <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener" style="max-width:520px;margin-top:10px">
+            <img src="elastic-shock-cord-18-olive-drab-1000-ft-spool-shock-cord-titan-survival-343433_400x.webp" alt="Olive drab shock cord spool">
+            <span class="cap">Shock cord that lasts</span>
+          </a>
+        </section>
+
+        <section>
+          <h2>Packs, Pouches, and the Stitching That Matters</h2>
+          <p>
+            There’s a reason the internet is full of “ruck fail” threads: seams take the load, and cheap thread plus long, loose stitches
+            will let you down. TITAN’s bags and IFAK pouches use sane patterns, bar-tacks at stress points, and zippers we haven’t blown
+            up yet (which is saying something). The <em>GH35 24-hour pack</em> hits the sweet spot for day missions and “truck to trailhead”
+            work: enough capacity for water, layers, chow, and med, without feeling like you’re wearing a couch.
+          </p>
+          <div class="grid cols-5">
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="canvas-bushcraft-bag-for-paracord-container-tacamo-882585_400x.webp" alt="Canvas bushcraft paracord bag">
+              <span class="cap">Canvas cord bag</span>
+            </a>
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="titan-survival-first-aid-kit-ifak-care-titan-survival-coyote-brown-205949_400x.webp" alt="IFAK pouch">
+              <span class="cap">IFAK access</span>
+            </a>
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="gh35-35l-24-hour-tactical-backpack-container-tacamo-995825_400x.webp" alt="Tactical backpack front">
+              <span class="cap">GH35 layout</span>
+            </a>
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="solar-power-bank-usb-rechargeable-electronics-tacamo-355059_400x.webp" alt="TACAMO solar power bank">
+              <span class="cap">Solar bank</span>
+            </a>
+            <a class="tile" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">
+              <img src="tactical-shemagh-scarf-clothing-tacamo-camo-173005_400x.webp" alt="Tactical shemagh">
+              <span class="cap">Shemagh, multi-use</span>
+            </a>
+          </div>
+          <p>
+            On the soft-goods side, we also appreciate the sensible patterns in apparel and accessories. A shemagh isn’t fashion in the field;
+            it’s shade, filtration, a towel, an arm sling, a modesty panel, and a backup coffee filter. Make it once, make it right, use it for a decade.
+          </p>
+        </section>
+
+        <section class="card" id="how-to-redeem">
+          <h2>How to Save (and Support Veterans While You Do)</h2>
+          <ol>
+            <li>Open the collab page in a new tab: <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">www.titansurvival.com/GRITGEARHQ</a>.</li>
+            <li>Add your cordage or kit to cart like normal.</li>
+            <li>At checkout, enter code <strong>GRITGEARHQ</strong> in the discount field and apply.</li>
+          </ol>
+          <p>
+            You get reliable gear and a break on the price. A portion of your purchase helps fund national Veteran’s charities
+            through TITAN’s long-standing commitment. That’s a trade we’re proud to stand behind.
+          </p>
+        </section>
+
+        <section>
+          <h2>What to Carry: A Simple Cordage Loadout</h2>
+          <p>
+            You don’t need to carry a moving truck. You do need strong, versatile lines. Here’s our baseline kit for a daypack or overnighter:
+          </p>
+          <ul>
+            <li><strong>50–100 ft SurvivorCord®:</strong> ridgeline, shelter, repairs, and all the little jobs you didn’t plan.</li>
+            <li><strong>20–30 ft shock cord:</strong> lashing with forgiveness; tarp anchors that flex instead of shred grommets.</li>
+            <li><strong>Two pre-tied prusik loops + two carabiners:</strong> instant tarp adjustments, clothesline tensioning, and quick fix tie-offs.</li>
+            <li><strong>Boot-lace kit with ferro rod:</strong> fire stays attached to you even when pockets change.</li>
+            <li><strong>Canvas cord bag:</strong> keeps the spaghetti under control and ready for one-hand deployment.</li>
+          </ul>
+          <p>
+            Add a few of your favorite knots—trucker’s hitch for mechanical advantage, taut-line for adjustable guy lines, and
+            alpine butterfly for mid-line loops—and you can build almost anything you need with a handful of parts.
+          </p>
+        </section>
+
+        <section class="card faq">
+          <h2>Quick FAQ</h2>
+          <details>
+            <summary>Is SurvivorCord® overkill for casual camping?</summary>
+            <p>No. It behaves like great paracord on easy trips and quietly saves the day on hard ones. “Overkill” is just reserve capacity you didn’t need this time.</p>
+          </details>
+          <details>
+            <summary>Why not buy bargain 550 and replace it when it fails?</summary>
+            <p>Because it often fails when you’re cold, wet, and out of time. Re-buying junk is also the expensive path. Buy once, sigh less.</p>
+          </details>
+          <details>
+            <summary>Will the discount code work on everything?</summary>
+            <p>Use <strong>GRITGEARHQ</strong> at checkout. Site-wide promos can change, but the link and code route you through the correct offer stack when available.</p>
+          </details>
+        </section>
+
+        <section>
+          <h2>Our Bottom Line</h2>
+          <p>
+            Grit is more than attitude; it’s <em>systems</em>. Systems are built from parts that do their job without constant babysitting.
+            Good cordage, good stitching, good elastic—these aren’t glamorous purchases, they’re the quiet backbone that lets you focus on the people,
+            the land, and the objective. That’s why we’re comfortable flying our flag next to TITAN’s. If you see Grit Gear HQ attached to a brand,
+            it means we’d hand that item to a friend and sleep fine.
+          </p>
+          <div class="bottom-cta">
+            <a class="cta-btn" href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="nofollow sponsored noopener">Shop TITAN with Our Link →</a>
+            <a class="cta-btn green" href="#how-to-redeem">Use Code: GRITGEARHQ</a>
+          </div>
+        </section>
+
+      </article>
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <div class="bottom-cta">
+      <a class="home-btn" href="/">← Back to Grit Gear HQ</a>
+    </div>
+
+    <!-- LEGAL FOOTER -->
+    <footer>
+      <p><strong>Disclosure.</strong> Some links on this page are affiliate links. If you purchase through them, Grit Gear HQ may earn a commission at no extra cost to you. We only partner with companies whose gear we use and trust in the field.</p>
+      <p><strong>Veteran Support.</strong> TITAN Survival™ is a certified Service-Disabled Combat Veteran-Owned Small Business. A portion of all sales has supported national Veteran’s charities since 2014.</p>
+      <p><strong>Trademarks.</strong> TITAN Survival™, SurvivorCord®, TACAMO®, and associated logos are trademarks of their respective owners and used here for identification purposes only.</p>
+      <p>© <span id="yr"></span> Grit Gear HQ. All rights reserved. <a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
