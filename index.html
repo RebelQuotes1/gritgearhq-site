@@ -48,7 +48,7 @@
 
   .about h1{margin:0 0 6px;font-size:clamp(1.4rem,1.2vw + 1rem,2rem)}
   .tag{color:var(--accent);font-weight:900;margin:0 0 10px}
-  .about p{margin:0 0 10px;color:var(--muted)}
+  .about p{margin:0 0 10px;color:#bfc7cf}
   .about ul{margin:8px 0 0 18px;color:#cfd7df}
   .about li{margin:.45rem 0}
 
@@ -65,13 +65,17 @@
   .cta{display:inline-flex;gap:10px;margin-top:12px;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;font-weight:800;padding:12px 16px;border-radius:12px}
   .kicker{font-size:.9rem;color:#9aa0a6;border-left:3px solid #2e2e36;padding-left:10px;margin-top:12px}
 
-  /* ===== RIGHT: sidebar (creator ONLY; speaker promo removed) ===== */
+  /* ===== RIGHT: sidebar (CREATOR card with full brand info) ===== */
   .col-right{display:grid;gap:14px}
-  .creator{background:var(--panel);border:1px solid #23232b;border-radius:12px;padding:12px}
+  .creator{background:var(--panel);border:1px solid #23232b;border-radius:12px;padding:14px}
   .creator h4{margin:0 0 6px;color:#ffd166}
-  .creator .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .creator .row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
   .creator .face{width:26px;height:26px;border-radius:50%;border:1px solid #2a2e37}
-  .creator p{margin:0;color:#cfd3da;line-height:1.5}
+  .creator__brand{margin:4px 0 2px;font-size:1.05rem;font-weight:900;color:#e9ecef}
+  .creator__tag{margin:0 0 10px;color:#ffa500;font-weight:800}
+  .creator p{margin:0 0 10px;color:#cfd3da;line-height:1.55}
+  .creator ul{margin:6px 0 0 18px;color:#d9e3ea}
+  .creator li{margin:.4rem 0}
 
   /* ===== BELOW: tidy card grid + image caps ===== */
   .cards-wrap{max-width:1200px;margin:0 auto;padding:8px 18px 40px}
@@ -90,92 +94,12 @@
   .gg-sub{
     margin:0 0 10px;color:var(--muted);line-height:1.55;
     display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
-    max-width:60ch; /* prevents long lines from running wide */
+    max-width:60ch;
   }
   .gg-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
   .gg-chips span{font-size:.82rem;color:#ddd;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#1a1a1a}
   .gg-cta{display:inline-block;margin-top:8px;font-weight:800;padding:10px 14px;border-radius:12px;border:2px solid #333;background:#3fae5a;color:#0b1510}
-  @media (max-width:840px){.gg-card{grid-template-columns:1fr;min-height:unset}}
-</style>
-</head>
-<body>
-
-  <div class="wrap">
-    <div class="masthead">
-
-      <!-- LEFT: About -->
-      <section class="about" aria-labelledby="about-title">
-        <div class="about__wrap">
-
-          <!-- two-up strip -->
-          <div class="about__strip">
-            <img src="./images/WhatsApp%20Image%202025-09-26%20at%2012.58.28%20AM.jpeg" alt="Creekside at sunset during a fieldcraft walk" loading="lazy" decoding="async">
-            <img src="./images/WhatsApp%20Image%202025-09-26%20at%2012.58.28%20AM%20(2).jpeg" alt="Amber and me resting inside a cave" loading="lazy" decoding="async">
-          </div>
-
-          <!-- single background image (bench) + badges -->
-          <div class="about__media">
-            <img class="bg" src="./images/images.jfif" alt="You & Amber on a park bench">
-            <div class="badge"><img src="./images/gritgearlogo.jpg" alt="Grit Gear badge"></div>
-            <div class="logo-over"><img src="./images/grit_gear_hq_logo_500.png" alt="Grit Gear HQ logo"></div>
-          </div>
-
-          <div class="about__copy">
-            <h1 id="about-title">Grit Gear HQ</h1>
-            <p class="tag">Built for the rough stuff.</p>
-            <p>We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups, small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.</p>
-            <ul>
-              <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
-              <li><strong>Smart loadouts:</strong> only the pieces that pull their weight.</li>
-              <li><strong>Legal & transparent:</strong> hemp features are 21+ and COA-verified.</li>
-              <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- CENTER: JBL (one poster) -->
-      <section class="deal" aria-label="Grit Crew JBL Exclusive">
-        <a class="tile" target="_blank" rel="nofollow sponsored noopener"
-           href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">
-          <img src="./images/ChatGPT%20Image%20Sep%2025%2C%202025%2C%2008_46_18%20PM.png"
-               alt="Exclusive deal for the Grit Crew — up to 50% off JBL speakers" loading="eager" fetchpriority="high">
-        </a>
-
-        <h2>🔥 Grit Crew Exclusive: JBL Built for the Outdoors</h2>
-        <p class="muted">
-          I keep a <strong>JBL Clip</strong> clipped to my pack—it’s waterproof, tough, and still kicks after rain, dust, and long weekends off-grid.
-          Unlock <strong>up to 50% off</strong> at the official JBL Brand Outlet on eBay:
-        </p>
-        <p><span class="mono">https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670</span></p>
-
-        <ul class="bullets">
-          <li><strong>Rugged:</strong> waterproof, dust-resistant, drop-forgiving.</li>
-          <li><strong>Portable:</strong> clip to your bag, toss in a bugout kit, or park by the campfire.</li>
-          <li><strong>Reliable:</strong> solid battery life; loud enough for wind and river noise.</li>
-        </ul>
-
-        <a class="cta" target="_blank" rel="nofollow sponsored noopener"
-           href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">✅ Grab the Grit Crew JBL Deal</a>
-
-        <p class="kicker"><strong>GritGearHQ</strong> — Thanks for the support. More Grit Crew exclusives are coming. We’re just getting started.</p>
-      </section>
-
-      <!-- RIGHT: Sidebar (speaker promo removed) -->
-      <aside class="col-right">
-        <div class="creator" aria-label="About the Creator">
-          <div class="row"><img class="face" src="./images/grit_gear_hq_logo_500.png" alt=""><h4>About the Creator</h4></div>
-          <p>
-            Fieldcraft tinkerer, chronic over-packer, and occasional <em>campfire finger-burner</em>.
-            I run Grit Gear HQ with Amber — <strong>part gear reviews, part survival blog</strong>.
-            If a tool can’t handle mud, wind, and smoke, it doesn’t make this site.
-            Deals fund the mission; honesty sets the bar.
-          </p>
-        </div>
-      </aside>
-
-    </div>
-  </div>
+  @media (max-width:840px){.gg-card{grid-template-columns:1fr;m
 
   <!-- ===== BELOW: cards (images/text capped & tidy) ===== -->
   <section class="cards-wrap" aria-label="Featured content">
