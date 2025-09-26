@@ -92,6 +92,18 @@
     }
     .gg-btn--ghost{ color:#d9e3ea; border:1px solid #2f2f2f; background:#151515; box-shadow:0 12px 26px rgba(0,0,0,.25) }
 
+    /* New: second round logo positioned above the small bench photo */
+    .gg-about__logo2{
+      position:absolute; right:3%; bottom:58%;
+      width:90px; height:90px; border-radius:50%;
+      background:#0e0e0e; border:2px solid #2f2f2f; overflow:hidden;
+      display:grid; place-items:center; box-shadow:0 10px 24px rgba(0,0,0,.45);
+    }
+    .gg-about__logo2 img{ width:100%; height:100%; object-fit:contain; display:block; }
+    @media (max-width:980px){
+      .gg-about__logo2{ right:10px; bottom:62%; width:76px; height:76px; }
+    }
+
     /* ===== JBL FEATURE (new) ===== */
     .ggx-card{background:#141418;border:1px solid #23232b;border-radius:16px;padding:18px;color:#eaeaea;display:block;overflow:hidden}
     .ggx-head{margin:0 0 10px;font-size:1.3rem}
@@ -113,19 +125,14 @@
 
     /* ===== KEY FIXES when About lives inside the two-column row ===== */
     .pair-grid > section{ min-width:0; position:relative; z-index:auto; }
-
-    /* Remove About's hero container styling inside the column */
     .pair-grid #about.gg-about{ background:transparent; border-bottom:0; padding:0; margin:0; }
-
-    /* MOST IMPORTANT: make About stack (1 column) inside the left column
-       so 520px/1fr doesn't squeeze it. Also tighten spacing a bit. */
     .pair-grid #about .gg-about__wrap{
       max-width:none; padding:0; gap:16px;
-      grid-template-columns:1fr;            /* <-- stack media and copy */
+      grid-template-columns:1fr;            /* stack media and copy in the left column */
     }
     .pair-grid #about .gg-about__media{ width:100%; max-width:100%; aspect-ratio:4/3; }
 
-    /* Stack both sections and JBL inner split on small screens */
+    /* stack both sections and JBL inner split on small screens */
     @media (max-width:980px){
       .pair-grid{ grid-template-columns:1fr; }
       .ggx-split{ grid-template-columns:1fr; }
@@ -153,6 +160,12 @@
               <img src="./images/images.jfif" alt="Two people on a park bench" loading="lazy" decoding="async">
             </figure>
 
+            <!-- NEW: Grit Gear logo placed above the little photo -->
+            <div class="gg-about__logo2">
+              <img src="./images/grit_gear_hq_logo_500.png" alt="Grit Gear HQ logo">
+            </div>
+
+            <!-- Keep original top-left badge (remove if you don't want it) -->
             <div class="gg-about__logo">
               <img src="./images/gritgearlogo.jpg" alt="Grit Gear HQ logo">
             </div>
@@ -187,8 +200,11 @@
           <!-- LEFT of JBL card -->
           <div>
             <div class="ggx-imgs">
-              <img src="/assets/images/jbl-grit-hero-1.jpg" alt="JBL speaker clipped to a rucksack at a campfire">
-              <img src="/assets/images/jbl-grit-hero-2.jpg" alt="Waterproof JBL speaker on moss near a river">
+              <!-- SWAPPED IN: your two JBL images for the left side -->
+              <img src="./images/jbl-exclusive-deal-50off.png"
+                   alt="Exclusive deal for the Grit Crew — up to 50% off JBL speakers">
+              <img src="./images/jbl-hey-grit-crew.png"
+                   alt="Hey Grit Crew — up to 50% off JBL speakers via eBay’s Brand Outlet">
             </div>
 
             <h2 class="ggx-head">🔥 Grit Crew Exclusive: JBL Built for the Outdoors</h2>
