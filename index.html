@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Grit Gear HQ — Refined Layout</title>
+<title>Grit Gear HQ — Clean Layout</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
   /* Base */
@@ -16,31 +16,34 @@
   }
   .wrap{max-width:1200px;margin:0 auto;padding:26px 18px}
 
-  /* ===== TOP: 3-col masthead (tighter center) ===== */
+  /* ===== TOP: 3-col masthead (center column narrower) ===== */
   .masthead{
     display:grid;
-    grid-template-columns: 520px minmax(280px,340px) 300px; /* LEFT / CENTER / RIGHT */
+    grid-template-columns: 520px minmax(280px,330px) 300px; /* LEFT / CENTER / RIGHT */
     gap:22px; align-items:start;
   }
-  @media (max-width:1160px){ .masthead{grid-template-columns:520px minmax(280px,1fr)} .col-right{grid-column:2} }
+  @media (max-width:1160px){ .masthead{grid-template-columns:520px minmax(260px,1fr)} .col-right{grid-column:2} }
   @media (max-width:980px){ .masthead{grid-template-columns:1fr} .col-right{grid-column:auto} }
 
   /* ===== LEFT: ABOUT ===== */
   .about{background:linear-gradient(180deg,#111,#0d0d0d);border:1px solid var(--edge);border-radius:18px;padding:16px}
   .about__wrap{display:grid;gap:14px}
 
-  /* small two-up photo strip above the collage (optional) */
+  /* two-up strip of your new photos */
   .about__strip{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
   .about__strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid #2b2b2b;background:#0c0c0c}
   @media (max-width:560px){ .about__strip{grid-template-columns:1fr} }
 
-  .about__media{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#121212;border:1px solid #2b2b2b;max-height:360px}
-  .shot{position:absolute;margin:0;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b}
-  .shot--a{left:2.5%;top:5%;width:58%;height:90%}
-  .shot--b{right:3%;bottom:5%;width:44%;height:50%}
+  /* collage simplified to ONE background photo (bench) + logos */
+  .about__media{
+    position:relative; aspect-ratio:4/3; max-height:360px;
+    border-radius:14px; overflow:hidden; background:#121212; border:1px solid #2b2b2b;
+  }
+  .about__media img.bg{width:100%;height:100%;object-fit:cover}
+
   .badge{position:absolute;left:10px;top:10px;width:72px;height:72px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
   .badge img{width:100%;height:100%;object-fit:cover}
-  .logo-over{position:absolute;right:3%;bottom:58%;width:80px;height:80px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
+  .logo-over{position:absolute;right:10px;top:10px;width:80px;height:80px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
   .logo-over img{width:100%;height:100%;object-fit:contain}
 
   .about h1{margin:0 0 6px;font-size:clamp(1.4rem,1.2vw + 1rem,2rem)}
@@ -49,27 +52,26 @@
   .about ul{margin:8px 0 0 18px;color:#cfd7df}
   .about li{margin:.45rem 0}
 
-  /* ===== CENTER: JBL deal (ONE tile, capped) ===== */
+  /* ===== CENTER: JBL deal (ONE poster, height-capped) ===== */
   .deal{background:var(--panel);border:1px solid #23232b;border-radius:18px;padding:16px}
-  .tile{display:block;border:1px solid #262a33;border-radius:12px;overflow:hidden;background:#0c0c0c;box-shadow:var(--shadow);transition:transform .15s ease, filter .15s ease;max-height:460px}
+  .tile{display:block;border:1px solid #262a33;border-radius:12px;overflow:hidden;background:#0c0c0c;box-shadow:var(--shadow);transition:transform .15s ease, filter .15s ease;max-height:440px}
   .tile img{width:100%;height:100%;object-fit:cover}
   .tile:hover{transform:translateY(-1px);filter:brightness(1.02)}
-  .deal h2{margin:10px 0 8px;font-size:1.18rem}
+  .deal h2{margin:10px 0 8px;font-size:1.12rem}
   .muted{color:#b7bcc5}
-  .mono{background:#1b1e25;border:1px solid #2a2e37;color:#ffe08a;padding:4px 6px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .mono{background:#1b1e25;border:1px solid #2a2e37;color:#ffe08a;padding:4px 6px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
   .bullets{margin:10px 0 0 18px}
   .bullets li{margin:6px 0}
   .cta{display:inline-flex;gap:10px;margin-top:12px;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;font-weight:800;padding:12px 16px;border-radius:12px}
   .kicker{font-size:.9rem;color:#9aa0a6;border-left:3px solid #2e2e36;padding-left:10px;margin-top:12px}
 
-  /* ===== RIGHT: sidebar ===== */
+  /* ===== RIGHT: sidebar (creator ONLY; speaker promo removed) ===== */
   .col-right{display:grid;gap:14px}
-  .creator,.blog{background:var(--panel);border:1px solid #23232b;border-radius:12px;padding:12px}
+  .creator{background:var(--panel);border:1px solid #23232b;border-radius:12px;padding:12px}
   .creator h4{margin:0 0 6px;color:#ffd166}
   .creator .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
   .creator .face{width:26px;height:26px;border-radius:50%;border:1px solid #2a2e37}
-  .blog h3{margin:0 0 8px}
-  .thumb{border:1px solid #262a33;border-radius:10px;margin:6px 0 10px;max-height:200px;object-fit:cover}
+  .creator p{margin:0;color:#cfd3da;line-height:1.5}
 
   /* ===== BELOW: tidy card grid + image caps ===== */
   .cards-wrap{max-width:1200px;margin:0 auto;padding:8px 18px 40px}
@@ -82,14 +84,17 @@
     min-height:240px; background:linear-gradient(120deg,#151515,#0f0f0f 55%);
     border:1px solid var(--edge); border-radius:16px; padding:14px; box-shadow:var(--shadow);
   }
-  .gg-media{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:12px;margin:0;background:#0c0c0c;max-height:320px}
+  .gg-media{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:12px;margin:0;background:#0c0c0c;max-height:300px}
   .gg-media img{width:100%;height:100%;object-fit:cover}
   .gg-title{margin:0 0 6px;font-size:clamp(1.06rem,1.05vw + 1rem,1.45rem)}
-  .gg-sub{margin:0 0 10px;color:var(--muted);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .gg-sub{
+    margin:0 0 10px;color:var(--muted);line-height:1.55;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+    max-width:60ch; /* prevents long lines from running wide */
+  }
   .gg-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
   .gg-chips span{font-size:.82rem;color:#ddd;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#1a1a1a}
   .gg-cta{display:inline-block;margin-top:8px;font-weight:800;padding:10px 14px;border-radius:12px;border:2px solid #333;background:#3fae5a;color:#0b1510}
-
   @media (max-width:840px){.gg-card{grid-template-columns:1fr;min-height:unset}}
 </style>
 </head>
@@ -102,21 +107,17 @@
       <section class="about" aria-labelledby="about-title">
         <div class="about__wrap">
 
-          <!-- OPTIONAL: two-up strip -->
+          <!-- two-up strip -->
           <div class="about__strip">
             <img src="./images/WhatsApp%20Image%202025-09-26%20at%2012.58.28%20AM.jpeg" alt="Creekside at sunset during a fieldcraft walk" loading="lazy" decoding="async">
             <img src="./images/WhatsApp%20Image%202025-09-26%20at%2012.58.28%20AM%20(2).jpeg" alt="Amber and me resting inside a cave" loading="lazy" decoding="async">
           </div>
 
+          <!-- single background image (bench) + badges -->
           <div class="about__media">
-            <figure class="shot shot--a">
-              <img src="./images/profileIcon_ch1vcvx0bl1f1.jpg" alt="Portrait seated on brick steps" loading="eager" fetchpriority="high">
-            </figure>
-            <figure class="shot shot--b">
-              <img src="./images/images.jfif" alt="You & Amber on a park bench" loading="lazy" decoding="async">
-            </figure>
-            <div class="logo-over"><img src="./images/grit_gear_hq_logo_500.png" alt="Grit Gear HQ logo"></div>
+            <img class="bg" src="./images/images.jfif" alt="You & Amber on a park bench">
             <div class="badge"><img src="./images/gritgearlogo.jpg" alt="Grit Gear badge"></div>
+            <div class="logo-over"><img src="./images/grit_gear_hq_logo_500.png" alt="Grit Gear HQ logo"></div>
           </div>
 
           <div class="about__copy">
@@ -133,7 +134,7 @@
         </div>
       </section>
 
-      <!-- CENTER: JBL (one ad, capped) -->
+      <!-- CENTER: JBL (one poster) -->
       <section class="deal" aria-label="Grit Crew JBL Exclusive">
         <a class="tile" target="_blank" rel="nofollow sponsored noopener"
            href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">
@@ -155,29 +156,28 @@
         </ul>
 
         <a class="cta" target="_blank" rel="nofollow sponsored noopener"
-           href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">
-          ✅ Grab the Grit Crew JBL Deal
-        </a>
+           href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">✅ Grab the Grit Crew JBL Deal</a>
 
         <p class="kicker"><strong>GritGearHQ</strong> — Thanks for the support. More Grit Crew exclusives are coming. We’re just getting started.</p>
       </section>
 
-      <!-- RIGHT: Sidebar -->
+      <!-- RIGHT: Sidebar (speaker promo removed) -->
       <aside class="col-right">
         <div class="creator" aria-label="About the Creator">
           <div class="row"><img class="face" src="./images/grit_gear_hq_logo_500.png" alt=""><h4>About the Creator</h4></div>
-          <p style="margin:0;color:#cfd3da">
+          <p>
             Fieldcraft tinkerer, chronic over-packer, and occasional <em>campfire finger-burner</em>.
             I run Grit Gear HQ with Amber — <strong>part gear reviews, part survival blog</strong>.
             If a tool can’t handle mud, wind, and smoke, it doesn’t make this site.
             Deals fund the mission; honesty sets the bar.
           </p>
         </div>
+      </aside>
 
     </div>
   </div>
 
-  <!-- ===== BELOW: cards (images capped) ===== -->
+  <!-- ===== BELOW: cards (images/text capped & tidy) ===== -->
   <section class="cards-wrap" aria-label="Featured content">
     <div class="cards-grid">
 
@@ -185,7 +185,6 @@
       <a class="gg-card gg-blog-hero" href="/cannabis-for-survival.html#top">
         <figure class="gg-media">
           <img src="cannabis-friendly-1-1024x683.jpg" alt="Forest camp scene" loading="lazy" decoding="async" style="object-position:center 40%">
-          <figcaption class="gg-badge">New</figcaption>
         </figure>
         <div class="gg-meta">
           <h3 class="gg-title">Bud Over Booze — A Survivalist’s Manifesto</h3>
@@ -195,7 +194,7 @@
         </div>
       </a>
 
-      <!-- ETSY CARD (image size capped by .gg-media max-height) -->
+      <!-- ETSY CARD -->
       <a class="gg-card gg-etsy-hero"
          href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=site&utm_campaign=turning_point"
          target="_blank" rel="noopener nofollow">
@@ -213,8 +212,7 @@
       <!-- TITAN CARD -->
       <a class="gg-card gg-titan-hero" href="https://gritgearhq.com/titan-survival-collab.html">
         <figure class="gg-media gg-titan-img">
-          <div class="logo-box"><img src="titanlogo.jpg" alt="TITAN Survival logo" loading="lazy" decoding="async"></div>
-          <figcaption class="gg-badge">Collab + Discount</figcaption>
+          <img src="titanlogo.jpg" alt="TITAN Survival logo" loading="lazy" decoding="async" style="object-fit:contain;background:#0c0c0c">
         </figure>
         <div class="gg-meta">
           <h3 class="gg-title">TITAN Survival × Grit Gear HQ</h3>
@@ -229,100 +227,6 @@
 
 </body>
 </html>
-
-
-</body>
-</html>
-
-  <!-- Ads (as you had it) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-</section>
-
-<!-- 🔥 Manifesto Button Grid (cleaned) -->
-<style>
-  .manifesto-bar{
-    display:grid; gap:12px; justify-items:center; align-items:stretch;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    padding:40px 20px; background:#000;
-    border-top:2px solid #ffa500; border-bottom:2px solid #ffa500;
-    box-shadow:0 0 15px #000; font-family:'Orbitron',system-ui,Segoe UI,Roboto,Arial,sans-serif;
-  }
-  /* Base card link (works with existing .cta-button if you already have it) */
-  .cta-card{display:block; text-decoration:none; border-radius:8px; padding:16px 20px; box-shadow:0 0 10px #000; text-align:center; font-weight:bold}
-  .cta-card .desc{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; font-weight:500; font-size:.9em; margin-top:8px}
-  /* Variants */
-  .cta-dark{background:#1a1a1a; color:#ffa500}
-  .cta-orange{background:#ffa500; color:#111}
-  .cta-plain{background:transparent; color:inherit; box-shadow:none; padding:0} /* for links that rely on your site’s .cta-button */
-  /* Width helper for the previously fixed-width cards */
-  .w-300{width:300px; max-width:100%}
-  /* Hidden block */
-  #more-cta-buttons{display:none}
-</style>
-
- <!-- ===== Blog Preview Card: The Slaying of Charlie Kirk ===== -->
-<style>
-  .gg-post-card {
-    position: relative; display:block; text-decoration:none; color:#e9ecef;
-    border:1px solid #262626; border-radius:18px; overflow:hidden;
-    background:#0f0f0f; box-shadow:0 12px 28px rgba(0,0,0,.35);
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  }
-  .gg-post-card:hover { transform:translateY(-2px); box-shadow:0 18px 44px rgba(0,0,0,.55); border-color:#333 }
-  .gg-post-media { position:relative; aspect-ratio:16/9; background:#0c0c0c; }
-  .gg-post-media img {
-    width:100%; height:100%; object-fit:cover; object-position:center 40%; display:block;
-  }
-  .gg-post-overlay {
-    position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.75) 100%);
-    pointer-events:none;
-  }
-  .gg-post-content {
-    position:absolute; left:16px; right:16px; bottom:14px; z-index:2;
-    display:grid; gap:6px;
-  }
-  .gg-chip {
-    width:max-content; font-size:.78rem; font-weight:800; letter-spacing:.2px;
-    background:rgba(0,0,0,.6); border:1px solid #2b2b2b; color:#d7e9f5;
-    padding:6px 10px; border-radius:999px;
-  }
-  .gg-title {
-    margin:0; font-size:clamp(1.05rem,1.2vw + .8rem,1.6rem); line-height:1.2; font-weight:900;
-    text-shadow:0 2px 12px rgba(0,0,0,.6);
-    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
-  }
-  .gg-desc {
-    margin:0; color:#b4bec7; line-height:1.5;
-    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
-  }
-  .gg-cta {
-    margin-top:6px; width:max-content; font-weight:800; letter-spacing:.25px;
-    background:linear-gradient(180deg,#ffa500,#e06100); color:#101318;
-    padding:8px 12px; border-radius:10px; border:1px solid #a86f00;
-    box-shadow:0 10px 24px rgba(224,97,0,.28);
-  }
-  @media (prefers-reduced-motion:reduce){
-    .gg-post-card{transition:none}
-  }
-</style>
-
-<a href="/blog-turning-point.html#top" class="gg-post-card" aria-label="Read blog post: The Slaying of Charlie Kirk">
-  <figure class="gg-post-media">
-    <!-- Use your hosted image path; this is the file you shared -->
-    <img src="images/turning-point-preview.jpg"
-         alt="Speaker addressing a crowd with a microphone at an outdoor event"
-         loading="lazy" decoding="async">
-    <div class="gg-post-overlay"></div>
-  </figure>
-  <div class="gg-post-content">
-    <span class="gg-chip">📰 Blog</span>
-    <h3 class="gg-title">The Slaying of Charlie Kirk — Read the Post</h3>
-    <p class="gg-desc">They didn’t just kill a man — they sparked a movement. Draw the line in the sand.</p>
-    <span class="gg-cta">Read now →</span>
-  </div>
-</a>
-<!-- /Blog Preview Card -->
 
 <div class="manifesto-bar" aria-label="Manifesto button grid">
   <!-- Ant & Grasshopper fable CTA (matches your .cta-button cards) -->
