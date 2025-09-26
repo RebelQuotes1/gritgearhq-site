@@ -1,194 +1,190 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Grit Gear HQ — Top</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<title>Grit Gear HQ — Clean Top Layout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  /* ----- Base + tokens ----- */
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0f0f0f;color:#e9ecef;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  img{max-width:100%;height:auto;display:block}
+  a{text-decoration:none;color:inherit}
+  :root{
+    --ink:#e9ecef; --muted:#aab3bb; --edge:#262626; --panel:#141418;
+    --accent:#ffa500; --accent2:#34d399; --shadow:0 14px 34px rgba(0,0,0,.45);
+  }
+  .wrap{max-width:1200px;margin:0 auto;padding:26px 18px}
 
-  <style>
-    /* Base */
-    *{box-sizing:border-box}
-    html,body{margin:0;background:#0f0f0f;color:#e9ecef;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    img{max-width:100%;height:auto;display:block}
-    .wrap{max-width:1100px;margin:0 auto;padding:24px 18px}
+  /* ===== Masthead grid ===== */
+  .masthead{
+    display:grid;
+    grid-template-columns: 560px minmax(0,1fr) 340px; /* L / C / R */
+    gap:22px; align-items:start;
+  }
+  @media (max-width:1160px){ .masthead{grid-template-columns:520px minmax(0,1fr)} .col-right{grid-column:2} }
+  @media (max-width:980px){ .masthead{grid-template-columns:1fr} .col-right{grid-column:auto} }
 
-    /* Two-up row */
-    .pair-grid{display:grid;gap:22px;align-items:start;grid-template-columns:1fr 1fr}
-    @media (max-width:980px){ .pair-grid{grid-template-columns:1fr} }
+  /* ===== Left: ABOUT (kept familiar, tightened) ===== */
+  .about{background:linear-gradient(180deg,#111,#0d0d0d);border:1px solid var(--edge);border-radius:18px;padding:16px}
+  .about__wrap{display:grid;gap:14px}
+  .about__media{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#121212;border:1px solid #2b2b2b}
+  .shot{position:absolute;margin:0;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b}
+  .shot--a{left:2.5%;top:5%;width:58%;height:90%}
+  .shot--b{right:3%;bottom:5%;width:44%;height:50%}
+  .badge{position:absolute;left:10px;top:10px;width:88px;height:88px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
+  .badge img{width:100%;height:100%;object-fit:cover}
+  /* New: logo above the small bench photo (you requested) */
+  .logo-over{position:absolute;right:3%;bottom:58%;width:90px;height:90px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
+  .logo-over img{width:100%;height:100%;object-fit:contain}
 
-    /* ===== ABOUT (LEFT) — unchanged visuals ===== */
-    .gg-about{ background:linear-gradient(180deg,#111,#0d0d0d); border-bottom:1px solid #262626 }
-    .gg-about__wrap{
-      max-width:1100px; margin:0 auto; padding:clamp(18px,3vw,28px) 18px;
-      display:grid; grid-template-columns:1fr; gap:16px; align-items:center;
-    }
-    .gg-about__media{ position:relative; aspect-ratio:4/3; border:1px solid #2b2b2b;
-      border-radius:18px; overflow:hidden; background:#121212; }
-    .gg-about__shot{ position:absolute; margin:0; border-radius:12px; overflow:hidden; border:1px solid #2b2b2b; }
-    .gg-about__shot--a{ left:2.5%; top:5%; width:58%; height:90%; }
-    .gg-about__shot--b{ right:3%; bottom:5%; width:44%; height:50%; }
-    .gg-about__logo{ position:absolute; left:10px; top:10px; width:88px; height:88px; border-radius:50%; overflow:hidden; border:2px solid #2f2f2f; background:#0e0e0e }
-    .gg-about__logo img{ width:100%; height:100%; object-fit:cover }
-    /* extra logo above small photo */
-    .gg-about__logo2{ position:absolute; right:3%; bottom:58%; width:90px; height:90px; border-radius:50%; overflow:hidden; border:2px solid #2f2f2f; background:#0e0e0e }
-    .gg-about__logo2 img{ width:100%; height:100%; object-fit:contain }
-    .gg-about__copy{ color:#e9ecef }
-    .gg-about__title{ margin:0 0 6px; font-size:clamp(1.4rem,1.2vw + 1rem,2rem); line-height:1.15 }
-    .gg-about__tag{ margin:0 0 12px; color:#ffa500; font-weight:900 }
-    .gg-about__text{ margin:0 0 10px; color:#9aa3ab; max-width:60ch }
-    .gg-about__bullets{ margin:10px 0 12px; padding-left:1.1rem; color:#c9d2da }
-    .gg-about__bullets li{ margin:.45rem 0 }
+  .about h1{margin:0 0 6px;font-size:clamp(1.4rem,1.2vw + 1rem,2rem)}
+  .tag{color:var(--accent);font-weight:900;margin:0 0 10px}
+  .about p{margin:0 0 10px;color:var(--muted)}
+  .about ul{margin:8px 0 0 18px;color:#cfd7df}
+  .about li{margin:.45rem 0}
 
-    /* ===== JBL FEATURE (RIGHT) ===== */
-    .ggx-card{background:#141418;border:1px solid #23232b;border-radius:16px;padding:18px;color:#eaeaea}
-    .ggx-split{display:grid;gap:14px;grid-template-columns:1fr 1fr}
-    @media (max-width:720px){ .ggx-split{grid-template-columns:1fr} }
-    .ggx-imgs{display:grid;gap:10px;margin-bottom:10px}
-    .ggx-imgs img{border:1px solid #262a33;border-radius:12px}
-    .ggx-head{margin:0 0 10px;font-size:1.28rem}
-    .ggx-muted{color:#b7bcc5}
-    .ggx-link{background:#1b1e25;border:1px solid #2a2e37;color:#ffe08a;padding:4px 6px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-    .ggx-list{margin:10px 0 0 18px}
-    .ggx-list li{margin:6px 0}
-    .ggx-cta{display:inline-flex;align-items:center;gap:10px;margin-top:12px;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;font-weight:800;text-decoration:none;padding:12px 16px;border-radius:12px}
-    .ggx-cta small{font-weight:700;color:#2b2100}
-    .ggx-kicker{font-size:.9rem;color:#9aa0a6;border-left:3px solid #2e2e36;padding-left:10px;margin-top:12px}
-    .ggx-brand{font-weight:900;color:#ffa500;letter-spacing:.4px}
+  /* ===== Center: JBL Deal ===== */
+  .deal{background:var(--panel);border:1px solid #23232b;border-radius:18px;padding:18px}
+  .tiles{display:grid;gap:12px;margin-bottom:12px}
+  .tile{display:block;border:1px solid #262a33;border-radius:12px;overflow:hidden;background:#0c0c0c;box-shadow:var(--shadow);transition:transform .15s ease, filter .15s ease}
+  .tile:hover{transform:translateY(-1px);filter:brightness(1.02)}
+  .deal h2{margin:0 0 8px;font-size:1.28rem}
+  .muted{color:#b7bcc5}
+  .mono{background:#1b1e25;border:1px solid #2a2e37;color:#ffe08a;padding:4px 6px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .bullets{margin:10px 0 0 18px}
+  .bullets li{margin:6px 0}
+  .cta{display:inline-flex;gap:10px;margin-top:12px;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;font-weight:800;padding:12px 16px;border-radius:12px}
+  .kicker{font-size:.9rem;color:#9aa0a6;border-left:3px solid #2e2e36;padding-left:10px;margin-top:12px}
 
-    /* About the Creator (STATIC box at the very top of the RIGHT column) */
-    .creator-note{
-      background:#0f0f13;border:1px solid #2b2f37;border-radius:12px;padding:10px 12px;
-      color:#cfd3da;font-size:.92rem;line-height:1.35;box-shadow:0 12px 28px rgba(0,0,0,.35);margin:0 0 10px 0;
-    }
-    .creator-note h4{margin:0 0 6px;font-size:.95rem;color:#ffd166;letter-spacing:.3px}
-    .creator-note .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-    .creator-note .face{width:28px;height:28px;border-radius:50%;border:1px solid #2a2e37}
-  </style>
+  /* ===== Right: Sidebar ===== */
+  .col-right{display:grid;gap:14px}
+  .creator,.blog{background:var(--panel);border:1px solid #23232b;border-radius:12px;padding:12px}
+  .creator h4{margin:0 0 6px;color:#ffd166}
+  .creator .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .creator .face{width:28px;height:28px;border-radius:50%;border:1px solid #2a2e37}
+  .blog h3{margin:0 0 8px}
+  .thumb{border:1px solid #262a33;border-radius:10px;margin:6px 0 10px}
+
+  /* a little breathing room on mobile */
+  @media (max-width:980px){
+    .about,.deal,.creator,.blog{border-radius:14px}
+  }
+</style>
 </head>
 <body>
   <div class="wrap">
-    <div class="pair-grid">
+    <div class="masthead">
 
-      <!-- ===== LEFT: ABOUT (unchanged) ===== -->
-      <section id="about" aria-labelledby="about-title" class="gg-about">
-        <div class="gg-about__wrap">
+      <!-- ===== LEFT: ABOUT ===== -->
+      <section class="about" aria-labelledby="about-title">
+        <div class="about__wrap">
 
-          <div class="gg-about__media">
-            <figure class="gg-about__shot gg-about__shot--a">
+          <div class="about__media">
+            <figure class="shot shot--a">
               <img src="./images/profileIcon_ch1vcvx0bl1f1.jpg" alt="Portrait seated on brick steps" loading="eager" fetchpriority="high">
             </figure>
-
-            <figure class="gg-about__shot gg-about__shot--b">
-              <img src="./images/images.jfif" alt="Two people on a park bench" loading="lazy" decoding="async">
+            <figure class="shot shot--b">
+              <img src="./images/images.jfif" alt="You & Amber on a park bench" loading="lazy" decoding="async">
             </figure>
-
-            <!-- extra logo above the small photo -->
-            <div class="gg-about__logo2">
+            <div class="logo-over">
               <img src="./images/grit_gear_hq_logo_500.png" alt="Grit Gear HQ logo">
             </div>
-
-            <!-- original upper-left badge -->
-            <div class="gg-about__logo">
-              <img src="./images/gritgearlogo.jpg" alt="Grit Gear HQ logo">
+            <div class="badge">
+              <img src="./images/gritgearlogo.jpg" alt="Grit Gear badge">
             </div>
           </div>
 
-          <div class="gg-about__copy">
-            <h1 id="about-title" class="gg-about__title">Grit Gear HQ</h1>
-            <p class="gg-about__tag">Built for the rough stuff.</p>
-            <p class="gg-about__text">
-              We’re fieldcraft nerds who break cheap gear so you don’t have to.
-              Grit Gear HQ exists to cut the guesswork for daypackers, truck-campers,
-              and anyone who still chooses the hard way on purpose. Expect honest
-              write-ups, small-format skills, and kits that survive wind, grit,
-              and the occasional dumb mistake.
-            </p>
-            <ul class="gg-about__bullets" role="list">
+          <div class="about__copy">
+            <h1 id="about-title">Grit Gear HQ</h1>
+            <p class="tag">Built for the rough stuff.</p>
+            <p>We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups, small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.</p>
+            <ul>
               <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
               <li><strong>Smart loadouts:</strong> only the pieces that pull their weight.</li>
               <li><strong>Legal & transparent:</strong> hemp features are 21+ and COA-verified.</li>
               <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
             </ul>
           </div>
+
         </div>
       </section>
 
-      <!-- ===== RIGHT: JBL feature (Creator note at the TOP of this column) ===== -->
-      <section class="ggx-card" aria-label="Grit Crew JBL Exclusive">
-        <div class="ggx-split">
+      <!-- ===== CENTER: JBL DEAL ===== -->
+      <section class="deal" aria-label="Grit Crew JBL Exclusive">
+        <!-- your two exact image files, URL-encoded so they load -->
+        <div class="tiles">
+          <a class="tile" target="_blank" rel="nofollow sponsored noopener"
+             href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">
+            <img src="./images/ChatGPT%20Image%20Sep%2025%2C%202025%2C%2008_46_18%20PM.png"
+                 alt="Exclusive deal for the Grit Crew — up to 50% off JBL speakers">
+          </a>
+          <a class="tile" target="_blank" rel="nofollow sponsored noopener"
+             href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">
+            <img src="./images/288c9767-45be-4c73-8a1f-a1e2ec20d1b8.png"
+                 alt="Exclusive JBL speakers offer — Grit Crew">
+          </a>
+        </div>
 
-          <!-- LEFT column of the JBL card -->
-          <div>
-            <div class="ggx-imgs">
-              <!-- use EXACT filenames (URL-encoded) -->
-              <img
-                src="./images/ChatGPT%20Image%20Sep%2025%2C%202025%2C%2008_46_18%20PM.png"
-                alt="Exclusive deal for the Grit Crew — up to 50% off JBL speakers">
-              <img
-                src="./images/288c9767-45be-4c73-8a1f-a1e2ec20d1b8.png"
-                alt="Exclusive JBL speakers offer — Grit Crew">
-            </div>
+        <h2>🔥 Grit Crew Exclusive: JBL Built for the Outdoors</h2>
+        <p class="muted">
+          I keep a <strong>JBL Clip</strong> clipped to my pack—it’s waterproof, tough, and still kicks after rain, dust, and long weekends off-grid.
+          Unlock <strong>up to 50% off</strong> at the official JBL Brand Outlet on eBay, only through this link:
+        </p>
+        <p><span class="mono">https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670</span></p>
 
-            <h2 class="ggx-head">🔥 Grit Crew Exclusive: JBL Built for the Outdoors</h2>
-            <p class="ggx-muted">
-              I keep a <strong>JBL Clip</strong> <em>clipped to my pack</em> because it’s waterproof, tough, and still kicks after rain,
-              dust, and long weekends off-grid. The <strong>official JBL Brand Outlet on eBay</strong> is offering
-              <strong>up to 50% off</strong>—and you can <em>only</em> unlock it through this link:
-            </p>
-            <p><span class="ggx-link">https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670</span></p>
+        <ul class="bullets">
+          <li><strong>Rugged:</strong> waterproof, dust-resistant, drop-forgiving.</li>
+          <li><strong>Portable:</strong> clip to your bag, toss in a bugout kit, or park by the campfire.</li>
+          <li><strong>Reliable:</strong> solid battery life; loud enough for wind and river noise.</li>
+        </ul>
 
-            <ul class="ggx-list">
-              <li><strong>Rugged:</strong> waterproof, dust-resistant, drop-forgiving.</li>
-              <li><strong>Portable:</strong> clip to your bag, toss in a bugout kit, or park by the campfire.</li>
-              <li><strong>Reliable:</strong> solid battery life; loud enough for wind and river noise.</li>
-            </ul>
+        <a class="cta" target="_blank" rel="nofollow sponsored noopener"
+           href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">
+          ✅ Grab the Grit Crew JBL Deal
+        </a>
 
-            <a class="ggx-cta" target="_blank" rel="nofollow sponsored noopener"
-               href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">
-              ✅ Grab the Grit Crew JBL Deal <small>Official eBay Brand Outlet</small>
-            </a>
+        <p class="kicker"><strong>GritGearHQ</strong> — Thanks for the support. More Grit Crew exclusives are coming. We’re just getting started.</p>
+      </section>
 
-            <p class="ggx-kicker"><span class="ggx-brand">GritGearHQ</span> — Thanks for the support. More Grit Crew exclusives are coming. We’re just getting started.</p>
+      <!-- ===== RIGHT: SIDEBAR (Creator at very top) ===== -->
+      <aside class="col-right">
+        <div class="creator" aria-label="About the Creator">
+          <div class="row">
+            <img class="face" src="./images/grit_gear_hq_logo_500.png" alt="">
+            <h4>About the Creator</h4>
           </div>
-
-          <!-- RIGHT column of the JBL card -->
-          <aside>
-            <!-- EXACT spot: top of RIGHT column -->
-            <div class="creator-note" aria-label="About the Creator">
-              <div class="row">
-                <img src="./images/grit_gear_hq_logo_500.png" alt="" class="face">
-                <h4>About the Creator</h4>
-              </div>
-              <p>
-                Fieldcraft tinkerer, chronic over-packer, and occasional <em>campfire finger-burner</em>.
-                I run Grit Gear HQ with Amber — <strong>part gear reviews, part survival blog</strong>.
-                If a tool can’t handle mud, wind, and smoke, it doesn’t make this site.
-                Deals fund the mission; honesty sets the bar.
-              </p>
-            </div>
-
-            <h3 class="ggx-head" style="margin-top:2px;">New on the Blog: Why JBL Fits the Grit Lifestyle</h3>
-            <img src="/assets/images/grit-crew-jbl-blog-thumb.jpg"
-                 alt="JBL speaker by camp stove — blog cover"
-                 style="width:100%;height:auto;border-radius:12px;border:1px solid #262a33;margin:8px 0 10px">
-            <p class="ggx-muted" style="margin-top:0">
-              Not all gear earns space in the pack. Here’s how I run the JBL Clip for EDC, when to step up to Flip/Charge for basecamp,
-              and the case for a PartyBox when you’re running the backyard.
-            </p>
-            <ul class="ggx-list">
-              <li>EDC: <strong>Clip</strong> — lives on the strap.</li>
-              <li>Camp: <strong>Flip / Charge</strong> — battery workhorses.</li>
-              <li>Backyard: <strong>PartyBox</strong> — big fun, bigger sound.</li>
-            </ul>
-            <a class="ggx-cta" href="/blog/grit-crew-jbl-deal.html">
-              Read the Full Post <small>2–3 minute read</small>
-            </a>
-          </aside>
-
+          <p style="margin:0;color:#cfd3da">
+            Fieldcraft tinkerer, chronic over-packer, and occasional <em>campfire finger-burner</em>.
+            I run Grit Gear HQ with Amber — <strong>part gear reviews, part survival blog</strong>.
+            If a tool can’t handle mud, wind, and smoke, it doesn’t make this site.
+            Deals fund the mission; honesty sets the bar.
+          </p>
         </div>
-      </section>
+
+        <div class="blog">
+          <h3>New on the Blog: Why JBL Fits the Grit Lifestyle</h3>
+          <img class="thumb" src="/assets/images/grit-crew-jbl-blog-thumb.jpg"
+               alt="JBL speaker by camp stove — blog cover">
+          <p class="muted">
+            Not all gear earns space in the pack. Here’s how I run the JBL Clip for EDC,
+            when to step up to Flip/Charge for basecamp, and the case for a PartyBox
+            when you’re running the backyard.
+          </p>
+          <ul style="margin:8px 0 0 18px">
+            <li>EDC: <strong>Clip</strong> — lives on the strap.</li>
+            <li>Camp: <strong>Flip / Charge</strong> — battery workhorses.</li>
+            <li>Backyard: <strong>PartyBox</strong> — big fun, bigger sound.</li>
+          </ul>
+          <a class="cta" href="/blog/grit-crew-jbl-deal.html">Read the Full Post</a>
+        </div>
+      </aside>
 
     </div>
+  </div>
+</body>
+</html>
+
   </div>
 </body>
 </html>
