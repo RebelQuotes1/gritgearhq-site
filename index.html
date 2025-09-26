@@ -105,7 +105,7 @@
     }
 
     /* ===== JBL FEATURE (new) ===== */
-    .ggx-card{background:#141418;border:1px solid #23232b;border-radius:16px;padding:18px;color:#eaeaea;display:block;overflow:hidden;position:relative}
+    .ggx-card{background:#141418;border:1px solid #23232b;border-radius:16px;padding:18px;color:#eaeaea;display:block;overflow:hidden}
     .ggx-head{margin:0 0 10px;font-size:1.3rem}
     .ggx-muted{color:#b7bcc5}
     .ggx-imgs{display:grid;gap:10px;margin-bottom:10px}
@@ -123,21 +123,15 @@
     .ggx-kicker{font-size:.9rem;color:#9aa0a6;border-left:3px solid #2e2e36;padding-left:10px;margin-top:12px}
     .ggx-brand{font-weight:900;color:#ffa500;letter-spacing:.4px}
 
-    /* About the Creator overlay (top-right of JBL card) */
+    /* About the Creator panel — now INSIDE the right column (not overlay) */
     .creator-note{
-      position:absolute; top:10px; right:10px;
-      width:min(280px, 42%);
       background:#0f0f13; border:1px solid #2b2f37; border-radius:12px;
       padding:10px 12px; color:#cfd3da; box-shadow:0 12px 28px rgba(0,0,0,.35);
-      font-size:.92rem; line-height:1.35;
+      font-size:.92rem; line-height:1.35; margin:0 0 12px 0;
     }
     .creator-note h4{margin:0 0 6px; font-size:.95rem; color:#ffd166; letter-spacing:.3px}
     .creator-note .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
     .creator-note .face{width:28px;height:28px;border-radius:50%;border:1px solid #2a2e37}
-    .creator-note p{margin:0; color:#bfc6cf}
-    @media (max-width:980px){
-      .creator-note{ position:static; width:auto; margin:0 0 10px; }
-    }
 
     /* ===== KEY FIXES when About lives inside the two-column row ===== */
     .pair-grid > section{ min-width:0; position:relative; z-index:auto; }
@@ -212,19 +206,6 @@
 
       <!-- ==== RIGHT: JBL FEATURE ==== -->
       <section class="ggx-card" aria-label="Grit Crew JBL Exclusive">
-        <!-- NEW overlay in the red-marked spot -->
-        <div class="creator-note" aria-label="About the Creator">
-          <div class="row">
-            <img src="./images/grit_gear_hq_logo_500.png" alt="" class="face">
-            <h4>About the Creator</h4>
-          </div>
-          <p>
-            Fieldcraft tinkerer, chronic over-packer, and occasional <em>campfire finger-burner</em>.
-            I run Grit Gear HQ with Amber — part gear reviews, part survival blog. If a tool can’t
-            handle mud, wind, and smoke, it doesn’t make this site. Deals fund the mission; honesty sets the bar.
-          </p>
-        </div>
-
         <div class="ggx-split">
           <!-- LEFT of JBL card -->
           <div>
@@ -260,6 +241,20 @@
 
           <!-- RIGHT of JBL card -->
           <aside>
+            <!-- NEW: About the Creator sits at the very top of the RIGHT column -->
+            <div class="creator-note" aria-label="About the Creator">
+              <div class="row">
+                <img src="./images/grit_gear_hq_logo_500.png" alt="" class="face">
+                <h4>About the Creator</h4>
+              </div>
+              <p>
+                Fieldcraft tinkerer, chronic over-packer, and occasional <em>campfire finger-burner</em>.
+                I run Grit Gear HQ with Amber — <strong>part gear reviews, part survival blog</strong>.
+                If a tool can’t handle mud, wind, and smoke, it doesn’t make this site.
+                Deals fund the mission; honesty sets the bar.
+              </p>
+            </div>
+
             <h3 class="ggx-head" style="margin-top:2px;">New on the Blog: Why JBL Fits the Grit Lifestyle</h3>
 
             <img src="/assets/images/grit-crew-jbl-blog-thumb.jpg"
@@ -286,6 +281,11 @@
 
     </div>
   </div>
+
+  <!-- (Your other content continues here) -->
+
+</body>
+</html>
 
   <!-- (Your other content continues here) -->
 
