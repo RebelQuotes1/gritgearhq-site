@@ -19,7 +19,7 @@
   /* ===== TOP: 3-col masthead (tighter center) ===== */
   .masthead{
     display:grid;
-    grid-template-columns: 520px minmax(300px,380px) 300px; /* LEFT / CENTER / RIGHT */
+    grid-template-columns: 520px minmax(280px,340px) 300px; /* LEFT / CENTER / RIGHT */
     gap:22px; align-items:start;
   }
   @media (max-width:1160px){ .masthead{grid-template-columns:520px minmax(280px,1fr)} .col-right{grid-column:2} }
@@ -28,13 +28,19 @@
   /* ===== LEFT: ABOUT ===== */
   .about{background:linear-gradient(180deg,#111,#0d0d0d);border:1px solid var(--edge);border-radius:18px;padding:16px}
   .about__wrap{display:grid;gap:14px}
-  .about__media{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#121212;border:1px solid #2b2b2b}
+
+  /* small two-up photo strip above the collage (optional) */
+  .about__strip{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+  .about__strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid #2b2b2b;background:#0c0c0c}
+  @media (max-width:560px){ .about__strip{grid-template-columns:1fr} }
+
+  .about__media{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#121212;border:1px solid #2b2b2b;max-height:360px}
   .shot{position:absolute;margin:0;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b}
   .shot--a{left:2.5%;top:5%;width:58%;height:90%}
   .shot--b{right:3%;bottom:5%;width:44%;height:50%}
-  .badge{position:absolute;left:10px;top:10px;width:78px;height:78px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
+  .badge{position:absolute;left:10px;top:10px;width:72px;height:72px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
   .badge img{width:100%;height:100%;object-fit:cover}
-  .logo-over{position:absolute;right:3%;bottom:58%;width:84px;height:84px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
+  .logo-over{position:absolute;right:3%;bottom:58%;width:80px;height:80px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
   .logo-over img{width:100%;height:100%;object-fit:contain}
 
   .about h1{margin:0 0 6px;font-size:clamp(1.4rem,1.2vw + 1rem,2rem)}
@@ -43,12 +49,12 @@
   .about ul{margin:8px 0 0 18px;color:#cfd7df}
   .about li{margin:.45rem 0}
 
-  /* ===== CENTER: JBL deal (ONE tile) ===== */
+  /* ===== CENTER: JBL deal (ONE tile, capped) ===== */
   .deal{background:var(--panel);border:1px solid #23232b;border-radius:18px;padding:16px}
-  .tile{display:block;border:1px solid #262a33;border-radius:12px;overflow:hidden;background:#0c0c0c;box-shadow:var(--shadow);transition:transform .15s ease, filter .15s ease}
+  .tile{display:block;border:1px solid #262a33;border-radius:12px;overflow:hidden;background:#0c0c0c;box-shadow:var(--shadow);transition:transform .15s ease, filter .15s ease;max-height:460px}
+  .tile img{width:100%;height:100%;object-fit:cover}
   .tile:hover{transform:translateY(-1px);filter:brightness(1.02)}
-  .tile img{display:block;width:100%;height:auto}
-  .deal h2{margin:10px 0 8px;font-size:1.22rem}
+  .deal h2{margin:10px 0 8px;font-size:1.18rem}
   .muted{color:#b7bcc5}
   .mono{background:#1b1e25;border:1px solid #2a2e37;color:#ffe08a;padding:4px 6px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
   .bullets{margin:10px 0 0 18px}
@@ -74,10 +80,9 @@
   .gg-card{
     display:grid; grid-template-columns: clamp(210px, 28vw, 300px) 1fr; gap:14px;
     min-height:240px; background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid var(--edge); border-radius:16px; padding:14px;
-    box-shadow:var(--shadow);
+    border:1px solid var(--edge); border-radius:16px; padding:14px; box-shadow:var(--shadow);
   }
-  .gg-media{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:12px;margin:0;background:#0c0c0c;max-height:340px}
+  .gg-media{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:12px;margin:0;background:#0c0c0c;max-height:320px}
   .gg-media img{width:100%;height:100%;object-fit:cover}
   .gg-title{margin:0 0 6px;font-size:clamp(1.06rem,1.05vw + 1rem,1.45rem)}
   .gg-sub{margin:0 0 10px;color:var(--muted);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -96,6 +101,13 @@
       <!-- LEFT: About -->
       <section class="about" aria-labelledby="about-title">
         <div class="about__wrap">
+
+          <!-- OPTIONAL: two-up strip -->
+          <div class="about__strip">
+            <img src="./images/WhatsApp%20Image%202025-09-26%20at%2012.58.28%20AM.jpeg" alt="Creekside at sunset during a fieldcraft walk" loading="lazy" decoding="async">
+            <img src="./images/WhatsApp%20Image%202025-09-26%20at%2012.58.28%20AM%20(2).jpeg" alt="Amber and me resting inside a cave" loading="lazy" decoding="async">
+          </div>
+
           <div class="about__media">
             <figure class="shot shot--a">
               <img src="./images/profileIcon_ch1vcvx0bl1f1.jpg" alt="Portrait seated on brick steps" loading="eager" fetchpriority="high">
@@ -121,12 +133,12 @@
         </div>
       </section>
 
-      <!-- CENTER: JBL (one ad) -->
+      <!-- CENTER: JBL (one ad, capped) -->
       <section class="deal" aria-label="Grit Crew JBL Exclusive">
         <a class="tile" target="_blank" rel="nofollow sponsored noopener"
            href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">
           <img src="./images/ChatGPT%20Image%20Sep%2025%2C%202025%2C%2008_46_18%20PM.png"
-               alt="Exclusive deal for the Grit Crew — up to 50% off JBL speakers">
+               alt="Exclusive deal for the Grit Crew — up to 50% off JBL speakers" loading="eager" fetchpriority="high">
         </a>
 
         <h2>🔥 Grit Crew Exclusive: JBL Built for the Outdoors</h2>
@@ -161,7 +173,15 @@
             Deals fund the mission; honesty sets the bar.
           </p>
         </div>
-        
+
+        <div class="blog">
+          <h3>New on the Blog: Why JBL Fits the Grit Lifestyle</h3>
+          <img class="thumb" src="/assets/images/grit-crew-jbl-blog-thumb.jpg" alt="JBL speaker by camp stove — blog cover">
+          <p class="muted">How I run the JBL Clip for EDC, when to step up to Flip/Charge for basecamp, and the case for a PartyBox for backyard duty.</p>
+          <a class="cta" href="/blog/grit-crew-jbl-deal.html">Read the Full Post</a>
+        </div>
+      </aside>
+
     </div>
   </div>
 
@@ -183,7 +203,7 @@
         </div>
       </a>
 
-      <!-- ETSY CARD (Charlie image now capped by .gg-media max-height) -->
+      <!-- ETSY CARD (image size capped by .gg-media max-height) -->
       <a class="gg-card gg-etsy-hero"
          href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=site&utm_campaign=turning_point"
          target="_blank" rel="noopener nofollow">
@@ -214,6 +234,10 @@
 
     </div>
   </section>
+
+</body>
+</html>
+
 
 </body>
 </html>
