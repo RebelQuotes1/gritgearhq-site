@@ -34,7 +34,6 @@
   .shot--b{right:3%;bottom:5%;width:44%;height:50%}
   .badge{position:absolute;left:10px;top:10px;width:88px;height:88px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
   .badge img{width:100%;height:100%;object-fit:cover}
-  /* New: logo above the small bench photo (you requested) */
   .logo-over{position:absolute;right:3%;bottom:58%;width:90px;height:90px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
   .logo-over img{width:100%;height:100%;object-fit:contain}
 
@@ -66,20 +65,66 @@
   .blog h3{margin:0 0 8px}
   .thumb{border:1px solid #262a33;border-radius:10px;margin:6px 0 10px}
 
-  /* a little breathing room on mobile */
-  @media (max-width:980px){
-    .about,.deal,.creator,.blog{border-radius:14px}
+  /* ===== BELOW THE FOLD: Card Grid ===== */
+  .cards-wrap{max-width:1200px;margin:0 auto;padding:8px 18px 40px}
+  .cards-grid{
+    display:grid; gap:18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media (max-width:1100px){
+    .cards-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width:720px){
+    .cards-grid{ grid-template-columns: 1fr; }
+  }
+
+  .gg-card{
+    display:grid; grid-template-columns: clamp(220px, 30vw, 320px) 1fr; gap:14px;
+    min-height:260px; background:linear-gradient(120deg,#151515,#0f0f0f 55%);
+    border:1px solid var(--edge); border-radius:16px; padding:14px;
+    color:var(--ink); text-decoration:none; box-shadow:var(--shadow);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .gg-card:hover{ transform:translateY(-2px); box-shadow:0 18px 44px rgba(0,0,0,.55); border-color:#333 }
+
+  .gg-blog-hero{ background:linear-gradient(120deg,#151a16,#0f1311 55%) }
+  .gg-etsy-hero{ background:linear-gradient(120deg,#151515,#0f0f0f 55%) }
+  .gg-titan-hero{ background:linear-gradient(120deg,#131a17,#0f1316 55%) }
+
+  .gg-media{ position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:12px; margin:0; background:#0c0c0c; }
+  .gg-media img{ width:100%; height:100%; object-fit:cover; object-position:center; }
+  .gg-titan-img .logo-box{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:10% }
+  .gg-titan-img .logo-box img{ width:100%; height:100%; object-fit:contain }
+
+  .gg-badge{
+    position:absolute; left:8px; top:8px; font-size:.72rem; color:#eee;
+    background:rgba(0,0,0,.6); border:1px solid #2a2a2a; padding:4px 6px; border-radius:8px;
+  }
+
+  .gg-meta{ display:grid; grid-template-rows:auto auto 1fr auto; min-height:100% }
+  .gg-title{ margin:0 0 6px; font-size:clamp(1.06rem,1.05vw + 1rem,1.45rem); line-height:1.25; }
+  .gg-sub{ margin:0 0 10px; color:var(--muted); line-height:1.55; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .gg-chips{ display:flex; flex-wrap:wrap; gap:8px; align-self:end }
+  .gg-chips span{ font-size:.82rem; color:#ddd; padding:6px 10px; border-radius:999px; border:1px solid #2b2b2b; background:#1a1a1a; }
+  .gg-cta{
+    display:inline-block; font-weight:800; padding:10px 14px; border-radius:12px; border:2px solid #333;
+    background:#3fae5a; color:#0b1510; box-shadow:0 12px 26px rgba(63,174,90,.25); width:max-content;
+  }
+
+  @media (max-width:840px){
+    .gg-card{ grid-template-columns: 1fr; min-height:unset }
   }
 </style>
 </head>
 <body>
+
+  <!-- ===== TOP (unchanged) ===== -->
   <div class="wrap">
     <div class="masthead">
 
-      <!-- ===== LEFT: ABOUT ===== -->
+      <!-- LEFT: ABOUT -->
       <section class="about" aria-labelledby="about-title">
         <div class="about__wrap">
-
           <div class="about__media">
             <figure class="shot shot--a">
               <img src="./images/profileIcon_ch1vcvx0bl1f1.jpg" alt="Portrait seated on brick steps" loading="eager" fetchpriority="high">
@@ -87,12 +132,8 @@
             <figure class="shot shot--b">
               <img src="./images/images.jfif" alt="You & Amber on a park bench" loading="lazy" decoding="async">
             </figure>
-            <div class="logo-over">
-              <img src="./images/grit_gear_hq_logo_500.png" alt="Grit Gear HQ logo">
-            </div>
-            <div class="badge">
-              <img src="./images/gritgearlogo.jpg" alt="Grit Gear badge">
-            </div>
+            <div class="logo-over"><img src="./images/grit_gear_hq_logo_500.png" alt="Grit Gear HQ logo"></div>
+            <div class="badge"><img src="./images/gritgearlogo.jpg" alt="Grit Gear badge"></div>
           </div>
 
           <div class="about__copy">
@@ -106,13 +147,11 @@
               <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
             </ul>
           </div>
-
         </div>
       </section>
 
-      <!-- ===== CENTER: JBL DEAL ===== -->
+      <!-- CENTER: JBL DEAL -->
       <section class="deal" aria-label="Grit Crew JBL Exclusive">
-        <!-- your two exact image files, URL-encoded so they load -->
         <div class="tiles">
           <a class="tile" target="_blank" rel="nofollow sponsored noopener"
              href="https://www.ebay.com/e/_electronics/brand-outlet-jbl?campid=5339123670">
@@ -147,13 +186,10 @@
         <p class="kicker"><strong>GritGearHQ</strong> — Thanks for the support. More Grit Crew exclusives are coming. We’re just getting started.</p>
       </section>
 
-      <!-- ===== RIGHT: SIDEBAR (Creator at very top) ===== -->
+      <!-- RIGHT: Sidebar -->
       <aside class="col-right">
         <div class="creator" aria-label="About the Creator">
-          <div class="row">
-            <img class="face" src="./images/grit_gear_hq_logo_500.png" alt="">
-            <h4>About the Creator</h4>
-          </div>
+          <div class="row"><img class="face" src="./images/grit_gear_hq_logo_500.png" alt=""><h4>About the Creator</h4></div>
           <p style="margin:0;color:#cfd3da">
             Fieldcraft tinkerer, chronic over-packer, and occasional <em>campfire finger-burner</em>.
             I run Grit Gear HQ with Amber — <strong>part gear reviews, part survival blog</strong>.
@@ -182,9 +218,10 @@
 
     </div>
   </div>
-</body>
-</html>
 
+  <!-- ===== BELOW THE FOLD: Card Grid (resized + ordered) ===== -->
+  <section class="cards-wrap" aria-label="Featured content">
+    <div class="cards-grid">
 
       <!-- BLOG PREVIEW -->
       <a class="gg-card gg-blog-hero"
@@ -199,9 +236,7 @@
         <div class="gg-meta">
           <h3 class="gg-title">Bud Over Booze — A Survivalist’s Manifesto</h3>
           <p class="gg-sub">Alcohol almost ended me. Cannabis helped me live, lead, and love—plus it’s a smarter tool for sleep, pain, appetite, and group calm.</p>
-          <div class="gg-chips">
-            <span>Survival Mindset</span><span>8 min read</span>
-          </div>
+          <div class="gg-chips"><span>Survival Mindset</span><span>8 min read</span></div>
           <span class="gg-cta">Read the post →</span>
         </div>
       </a>
@@ -214,40 +249,41 @@
         <figure class="gg-media">
           <img class="gg-back" src="back1.jpg.png"
                alt="Back graphic: ‘THIS IS THE TURNING POINT’ on white tee" loading="eager" fetchpriority="high">
-          <img class="gg-front" src="front3.jpg.png" alt="" aria-hidden="true" loading="lazy">
-          <figcaption class="gg-badge">Back view</figcaption>
+          <!-- optional front overlay if you add one later -->
         </figure>
         <div class="gg-meta">
           <h3 class="gg-title">This Is The Turning Point — Premium Tee</h3>
           <p class="gg-sub">From <strong>$25.02</strong> – <strong>$32.02</strong> • <strong>10% to TPUSA</strong></p>
-          <div class="gg-chips">
-            <span>Unisex fit</span><span>Fast shipping</span><span>Easy returns</span>
-          </div>
+          <div class="gg-chips"><span>Unisex fit</span><span>Fast shipping</span><span>Easy returns</span></div>
           <span class="gg-cta">Buy on Etsy →</span>
         </div>
       </a>
 
-     <!-- TITAN CARD (now points to your blog page) -->
-<a class="gg-card gg-titan-hero"
-   href="https://gritgearhq.com/titan-survival-collab.html"
-   aria-label="Read: TITAN Survival × Grit Gear HQ — Built for the Rough Stuff">
-  <figure class="gg-media gg-titan-img">
-    <div class="logo-box">
-      <img src="titanlogo.jpg"
-           alt="TITAN Survival logo for the Grit Gear HQ collaboration"
-           loading="lazy" decoding="async">
+      <!-- TITAN CARD -->
+      <a class="gg-card gg-titan-hero"
+         href="https://gritgearhq.com/titan-survival-collab.html"
+         aria-label="Read: TITAN Survival × Grit Gear HQ — Built for the Rough Stuff">
+        <figure class="gg-media gg-titan-img">
+          <div class="logo-box">
+            <img src="titanlogo.jpg"
+                 alt="TITAN Survival logo for the Grit Gear HQ collaboration"
+                 loading="lazy" decoding="async">
+          </div>
+          <figcaption class="gg-badge">Collab + Discount</figcaption>
+        </figure>
+        <div class="gg-meta">
+          <h3 class="gg-title">TITAN Survival × Grit Gear HQ</h3>
+          <p class="gg-sub">Why we chose SurvivorCord®, shock cord, and sane stitching—and how to save with code <strong>GRITGEARHQ</strong>.</p>
+          <div class="gg-chips"><span>SurvivorCord®</span><span>Shock Cord</span><span>IFAK & Packs</span></div>
+          <span class="gg-cta">Read the collab page →</span>
+        </div>
+      </a>
+
     </div>
-    <figcaption class="gg-badge">Collab + Discount</figcaption>
-  </figure>
-  <div class="gg-meta">
-    <h3 class="gg-title">TITAN Survival × Grit Gear HQ</h3>
-    <p class="gg-sub">Why we chose SurvivorCord®, shock cord, and sane stitching—and how to save with code <strong>GRITGEARHQ</strong>.</p>
-    <div class="gg-chips">
-      <span>SurvivorCord®</span><span>Shock Cord</span><span>IFAK & Packs</span>
-    </div>
-    <span class="gg-cta">Read the collab page →</span>
-  </div>
-</a>
+  </section>
+
+</body>
+</html>
 
   <!-- Ads (as you had it) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
