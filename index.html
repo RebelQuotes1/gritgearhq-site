@@ -1,3 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Grit Gear HQ — Clean Layout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  /* Base */
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#0f0f0f;color:#e9ecef;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  img{max-width:100%;height:auto;display:block}
+  a{text-decoration:none;color:inherit}
+  :root{
+    --ink:#e9ecef; --muted:#aab3bb; --edge:#262626; --panel:#141418;
+    --accent:#ffa500; --accent2:#34d399; --shadow:0 14px 34px rgba(0,0,0,.45);
+  }
+  .wrap{max-width:1200px;margin:0 auto;padding:26px 18px}
+
+  /* ===== TOP: 3-col masthead (center column narrower) ===== */
+  .masthead{
+    display:grid;
+    grid-template-columns: 520px minmax(280px,330px) 300px; /* LEFT / CENTER / RIGHT */
+    gap:22px; align-items:start;
+  }
+  /* collapse RIGHT under CENTER on medium, then stack on small */
+  @media (max-width:1160px){
+    .masthead{grid-template-columns:520px minmax(260px,1fr)}
+    .col-right{grid-column:2}
+  }
+  @media (max-width:980px){
+    .masthead{grid-template-columns:1fr}
+    .col-right{grid-column:auto}
+  }
+
+  /* ===== LEFT: ABOUT ===== */
+  .about{background:linear-gradient(180deg,#111,#0d0d0d);border:1px solid var(--edge);border-radius:18px;padding:16px}
+  .about__wrap{display:grid;gap:14px}
+
+  .about__strip{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+  .about__strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid #2b2b2b;background:#0c0c0c}
+  @media (max-width:560px){ .about__strip{grid-template-columns:1fr} }
+
+  .about__media{position:relative;aspect-ratio:4/3;max-height:360px;border-radius:14px;overflow:hidden;background:#121212;border:1px solid #2b2b2b}
+  .about__media img.bg{width:100%;height:100%;object-fit:cover}
+
+  .badge{position:absolute;left:10px;top:10px;width:72px;height:72px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
+  .badge img{width:100%;height:100%;object-fit:cover}
+  .logo-over{position:absolute;right:10px;top:10px;width:80px;height:80px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
+  .logo-over img{width:100%;height:100%;object-fit:contain}
+
+  .about h1{margin:0 0 6px;font-size:clamp(1.4rem,1.2vw + 1rem,2rem)}
+  .tag{color:var(--accent);font-weight:900;margin:0 0 10px}
+  .about p{margin:0 0 10px;color:#bfc7cf}
+  .about ul{margin:8px 0 0 18px;color:#cfd7df}
+  .about li{margin:.45rem 0}
+
+  /* ===== CENTER: DEAL ===== */
+  .deal{background:var(--panel);border:1px solid #23232b;border-radius:18px;padding:16px}
+  .tile{display:block;border:1px solid #262a33;border-radius:12px;overflow:hidden;background:#0c0c0c;box-shadow:var(--shadow);transition:transform .15s ease, filter .15s ease;max-height:440px}
+  .tile img{width:100%;height:100%;object-fit:cover}
+  .tile:hover{transform:translateY(-1px);filter:brightness(1.02)}
+  .deal h2{margin:10px 0 8px;font-size:1.12rem}
+  .muted{color:#b7bcc5}
+  .mono{background:#1b1e25;border:1px solid #2a2e37;color:#ffe08a;padding:4px 6px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
+  .bullets{margin:10px 0 0 18px}
+  .bullets li{margin:6px 0}
+  .cta{display:inline-flex;gap:10px;margin-top:12px;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;font-weight:800;padding:12px 16px;border-radius:12px}
+
+  /* ===== RIGHT: CREATOR ===== */
+  .col-right{display:grid;gap:14px}
+  .creator{background:var(--panel);border:1px solid #23232b;border-radius:12px;padding:14px}
+  .creator h4{margin:0 0 6px;color:#ffd166}
+  .creator .row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .creator .face{width:26px;height:26px;border-radius:50%;border:1px solid #2a2e37;object-fit:cover}
+  .creator__brand{margin:4px 0 2px;font-size:1.05rem;font-weight:900;color:#e9ecef}
+  .creator__tag{margin:0 0 10px;color:#ffa500;font-weight:800}
+  .creator p{margin:0 0 10px;color:#cfd3da;line-height:1.55}
+  .creator ul{margin:6px 0 0 18px;color:#d9e3ea}
+  .creator li{margin:.4rem 0}
+
+  /* ===== CARDS GRID ===== */
+  .cards-wrap{max-width:1200px;margin:0 auto;padding:8px 18px 40px}
+  .cards-grid{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:1100px){.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:720px){.cards-grid{grid-template-columns:1fr}}
+
+  .gg-card{
+    display:grid; grid-template-columns: clamp(210px, 28vw, 300px) 1fr; gap:14px;
+    min-height:240px; background:linear-gradient(120deg,#151515,#0f0f0f 55%);
+    border:1px solid var(--edge); border-radius:16px; padding:14px; box-shadow:var(--shadow);
+  }
+  .gg-media{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:12px;margin:0;background:#0c0c0c;max-height:300px}
+  .gg-media img{width:100%;height:100%;object-fit:cover}
+  .gg-title{margin:0 0 6px;font-size:clamp(1.06rem,1.05vw + 1rem,1.45rem)}
+  .gg-sub{
+    margin:0 0 10px;color:var(--muted);line-height:1.55;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+    max-width:60ch;
+  }
+  .gg-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+  .gg-chips span{font-size:.82rem;color:#ddd;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#1a1a1a}
+  .gg-cta{display:inline-block;margin-top:8px;font-weight:800;padding:10px 14px;border-radius:12px;border:2px solid #333;background:#3fae5a;color:#0b1510}
+
+  /* Mobile card layout */
+  @media (max-width:840px){
+    .gg-card{grid-template-columns:1fr}
+    .gg-media{max-height:none;aspect-ratio:16/9}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <section class="masthead">
+      <!-- LEFT: ABOUT -->
+      <div class="about">
+        <div class="about__wrap">
+          <h1>Grit Gear HQ</h1>
+          <div class="tag">Rough gear for rougher times</div>
+
+          <div class="about__strip">
+            <img src="back1.jpg.png" alt="Turning Point tee — back graphic">
+            <img src="front3.jpg.png" alt="Turning Point tee — front chest mark">
+          </div>
+
+          <div class="about__media">
+            <img class="bg" src="back2.jpg.png" alt="Flat lay">
+            <div class="badge"><img src="front3.jpg.png" alt="GG mark"></div>
+            <div class="logo-over"><img src="back1.jpg.png" alt="Back graphic badge"></div>
+          </div>
+
+          <p>Small, stubborn, and mission-driven. We make simple, hard-wearing pieces with a clear message—and give 10% of profits from the Turning Point tee to TPUSA.</p>
+          <ul>
+            <li>Fast shipping • Easy returns</li>
+            <li>Monthly donation receipts</li>
+            <li>Unisex fits that actually fit</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CENTER: DEAL / FEATURED -->
+      <div class="deal">
+        <a class="tile" href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=site&utm_campaign=turning_point" target="_blank" rel="noopener nofollow">
+          <img src="back1.jpg.png" alt="This Is The Turning Point — back graphic (main)">
+        </a>
+        <h2>This Is The Turning Point — Premium Tee</h2>
+        <p class="muted">From <strong>$25.02–$32.02</strong> • 10% of profits to TPUSA</p>
+        <ul class="bullets">
+          <li>Soft mid-weight blend, pre-shrunk</li>
+          <li>Sharp, durable print (wash-tested)</li>
+        </ul>
+        <a class="cta" href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=site&utm_campaign=turning_point" target="_blank" rel="noopener nofollow">Buy on Etsy →</a>
+      </div>
+
+      <!-- RIGHT: CREATOR -->
+      <aside class="col-right">
+        <div class="creator">
+          <div class="row">
+            <img class="face" src="front3.jpg.png" alt="Grit Gear icon">
+            <div>
+              <div class="creator__brand">Grit Gear HQ</div>
+              <div class="creator__tag">Independent • USA</div>
+            </div>
+          </div>
+          <p>We build gear that speaks plainly. No gimmicks—just message, fit, and durability.</p>
+          <ul>
+            <li>Email: gritgearhq@proton.me</li>
+            <li>Shop: gritgearhq.com</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <!-- CARDS -->
+  <section class="cards-wrap">
+    <div class="cards-grid">
+
+      <!-- Thought Crimes Notebook (updated tag + image) -->
+      <a class="gg-card"
+         href="https://amzn.to/4gt5cIt"
+         target="_blank" rel="nofollow sponsored noopener">
+        <div class="gg-media">
+          <img src="assets_aff_cards/tcc.jpg" alt="Thought Crimes: A Notebook for Dangerous Ideas">
+        </div>
+        <div>
+          <h3 class="gg-title">Thought Crimes: A Notebook for Dangerous Ideas</h3>
+          <p class="gg-sub">Hardcover look, rugged pages. Capture unfiltered thoughts, plans, and debates—off the algorithm.</p>
+          <div class="gg-chips">
+            <span>Hardcover look</span><span>Durable pages</span><span>Everyday carry</span>
+          </div>
+          <span class="gg-cta">Check price →</span>
+        </div>
+      </a>
+
+      <!-- Example product card (you can duplicate) -->
+      <a class="gg-card"
+         href="https://www.etsy.com/listing/4370202042/this-is-the-turning-point-turning-point?utm_source=gritgearhq&utm_medium=grid&utm_campaign=turning_point"
+         target="_blank" rel="noopener nofollow">
+        <div class="gg-media">
+          <img src="back1.jpg.png" alt="Turning Point tee — back">
+        </div>
+        <div>
+          <h3 class="gg-title">This Is The Turning Point Tee</h3>
+          <p class="gg-sub">Clean lines, tough vibe, and a statement that reads across the room.</p>
+          <div class="gg-chips">
+            <span>Unisex fit</span><span>Soft blend</span><span>10% to TPUSA</span>
+          </div>
+          <span class="gg-cta">Buy on Etsy →</span>
+        </div>
+      </a>
+
+      <!-- Another example card -->
+      <a class="gg-card" href="#" aria-label="Coming soon">
+        <div class="gg-media">
+          <img src="back2.jpg.png" alt="Coming soon">
+        </div>
+        <div>
+          <h3 class="gg-title">New drop loading…</h3>
+          <p class="gg-sub">Get on the list and you’ll see it first.</p>
+          <div class="gg-chips"><span>Early access</span><span>Limited</span></div>
+          <span class="gg-cta">Notify me →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</body>
+</html>
 
   <!-- ===== BELOW: cards (images/text capped & tidy) ===== -->
   <section class="cards-wrap" aria-label="Featured content">
