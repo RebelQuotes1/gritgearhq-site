@@ -155,6 +155,131 @@
     <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
   </ul>
 </div>
+<!-- ===== FRONT-PAGE TAB: Compact Cook Set (auto-rotating images) ===== -->
+<section class="tab-card" aria-label="Outdoor Cook Set">
+  <header class="tab-head">
+    <h3 class="tab-title">Compact Backpacking Cook Set</h3>
+    <span class="tab-pill">New</span>
+  </header>
+
+  <figure class="tab-media">
+    <img id="cookTabSlide" src="/outdoorp1.jpg" alt="Backpacking cook set — pots, burner, utensils">
+    <button class="tab-nav prev" type="button" aria-label="Previous image">‹</button>
+    <button class="tab-nav next" type="button" aria-label="Next image">›</button>
+    <div class="tab-dots" id="cookTabDots" role="tablist" aria-label="Cook set images"></div>
+  </figure>
+
+  <div class="tab-body">
+    <ul class="tab-bullets">
+      <li>Nested pots + pan with foldable handles</li>
+      <li>Ultralight gas burner (case included)</li>
+      <li>Bowls, utensils, rice paddle, loofah, carabiner</li>
+      <li>Packs small, perfect for daypack or bug-out</li>
+    </ul>
+    <a class="tab-cta"
+       href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+       target="_blank" rel="nofollow sponsored noopener">
+      View on eBay →
+    </a>
+  </div>
+</section>
+
+<style>
+  .tab-card{
+    --edge:#262626; --panel:#141418; --ink:#e9ecef; --muted:#aab3bb; --accent:#ffa500;
+    background:linear-gradient(120deg,#151515,#0f0f0f 55%);
+    border:1px solid var(--edge); border-radius:16px; box-shadow:0 14px 34px rgba(0,0,0,.45);
+    color:var(--ink); padding:14px; display:grid; gap:12px; max-width:620px; margin:0 auto;
+  }
+  .tab-head{display:flex; justify-content:space-between; align-items:center; gap:10px}
+  .tab-title{margin:0; font-size:clamp(1.1rem,1vw + 1rem,1.5rem)}
+  .tab-pill{border:1px solid #2b2b2b; background:#101214; color:#ffd166; padding:4px 8px; border-radius:999px; font-weight:800; font-size:.8rem}
+  .tab-media{position:relative; margin:0; border-radius:12px; overflow:hidden; border:1px solid #2b2b2b; background:#0c0c0c; aspect-ratio:4/3}
+  .tab-media img{width:100%; height:100%; object-fit:cover; display:block}
+  .tab-nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(0,0,0,.45); border:1px solid #333; color:#fff; width:36px; height:36px;
+    border-radius:50%; cursor:pointer; font-size:22px; line-height:32px; text-align:center;
+  }
+  .tab-nav:hover{background:rgba(0,0,0,.65)}
+  .tab-nav.prev{left:8px} .tab-nav.next{right:8px}
+  .tab-dots{position:absolute; left:0; right:0; bottom:8px; display:flex; gap:6px; justify-content:center}
+  .tab-dots button{
+    width:9px; height:9px; border-radius:50%; border:1px solid #999; background:#111; opacity:.75; cursor:pointer;
+  }
+  .tab-dots button[aria-selected="true"]{background:#ffa500; border-color:#ffa500; opacity:1}
+  .tab-body{display:grid; gap:10px}
+  .tab-bullets{margin:0; padding:0 0 0 18px; color:var(--muted)}
+  .tab-cta{
+    justify-self:start; font-weight:900; padding:10px 14px; border-radius:12px;
+    border:2px solid #333; background:linear-gradient(180deg,#ffae00,#ff8c00); color:#111;
+  }
+  @media (max-width:560px){
+    .tab-card{padding:12px}
+    .tab-nav{width:32px; height:32px; font-size:20px; line-height:28px}
+  }
+</style>
+
+<script>
+  (function(){
+    const imgs = [
+      "/outdoorp1.jpg","/outdoorp2.jpg","/outdoorp3.jpg","/outdoorp4.jpg",
+      "/outdoorp5.jpg","/outdoorp6.jpg","/outdoorp7.jpg"
+    ];
+    const el = document.getElementById("cookTabSlide");
+    const dotsWrap = document.getElementById("cookTabDots");
+    let i = 0, timer;
+
+    // Build dots
+    imgs.forEach((_, idx) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("role","tab");
+      b.setAttribute("aria-label","Image "+(idx+1));
+      b.addEventListener("click", () => show(idx, true));
+      dotsWrap.appendChild(b);
+    });
+
+    function show(n, manual=false){
+      i = (n + imgs.length) % imgs.length;
+      el.src = imgs[i];
+      [...dotsWrap.children].forEach((d, k) => d.setAttribute("aria-selected", k===i));
+      if (manual) restart();
+    }
+
+    function next(){ show(i+1); }
+    function prev(){ show(i-1); }
+
+    function start(){ timer = setInterval(next, 4000); }
+    function stop(){ clearInterval(timer); }
+    function restart(){ stop(); start(); }
+
+    document.querySelector(".tab-nav.next").addEventListener("click", () => { next(); restart(); });
+    document.querySelector(".tab-nav.prev").addEventListener("click", () => { prev(); restart(); });
+
+    // Pause on hover / focus for accessibility
+    const media = document.querySelector(".tab-media");
+    media.addEventListener("mouseenter", stop);
+    media.addEventListener("mouseleave", start);
+    media.addEventListener("focusin", stop);
+    media.addEventListener("focusout", start);
+
+    // Basic touch swipe
+    let sx=0;
+    media.addEventListener("touchstart", e => sx = e.touches[0].clientX, {passive:true});
+    media.addEventListener("touchend", e => {
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 40) { dx>0 ? prev() : next(); restart(); }
+    });
+
+    // Preload
+    imgs.slice(1).forEach(src => { const im = new Image(); im.src = src; });
+
+    show(0);
+    start();
+  })();
+</script>
+<!-- ===== /FRONT-PAGE TAB ===== -->
 
 
   <div>
