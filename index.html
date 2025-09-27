@@ -81,18 +81,37 @@
     (function(){const imgs=["/cordad1.jpg","/cordad2.jpg","/cordad4.jpg"];const el=document.getElementById("titanSlide");let i=0;setInterval(()=>{i=(i+1)%imgs.length;el.src=imgs[i];},5000)})();
   </script>
 
-  <div class="wrap">
-    <!-- ===== Masthead ===== -->
-    <section class="masthead">
-      <article class="about">
-        <h1>Grit Gear HQ</h1>
-        <div class="tag">Rough gear for rougher times</div>
-        <div class="about__strip">
-          <img src="back1.jpg.png" alt="Turning Point tee — back graphic">
-          <img src="front3.jpg.png" alt="Turning Point tee — front chest mark">
-        </div>
-        <p>Small, stubborn, and mission-driven. We make hard-wearing pieces with a clear message—and donate 10% of profits from the Turning Point tee to TPUSA.</p>
-      </article>
+ <article class="about">
+  <h1>Grit Gear HQ</h1>
+  <div class="tag">Rough gear for rougher times</div>
+
+  <style>
+    .ad-link{display:block;border-radius:12px;overflow:hidden}
+    .ad-link:hover img{filter:brightness(1.06)}
+  </style>
+
+  <!-- Clickable ad (both images) -->
+  <a class="ad-link"
+     href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid"
+     target="_blank" rel="noopener nofollow"
+     aria-label="Buy the Turning Point tee on Etsy">
+    <div class="about__strip">
+      <img src="back1.jpg.png" alt="Turning Point tee — back graphic">
+      <img src="front3.jpg.png" alt="Turning Point tee — front chest mark">
+    </div>
+  </a>
+
+  <p>Small, stubborn, and mission-driven. We make hard-wearing pieces with a clear message—and donate 10% of profits from the Turning Point tee to TPUSA.</p>
+
+  <!-- Optional CTA button under the ad -->
+  <p style="text-align:center;margin:10px 0 0;">
+    <a href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid"
+       target="_blank" rel="noopener nofollow"
+       style="display:inline-block;background:#ffa500;color:#111;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;">
+      Buy on Etsy →
+    </a>
+  </p>
+</article>
 
      <div>
             <div class="creator__brand">Grit Gear HQ</div>
