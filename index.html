@@ -93,15 +93,59 @@
 </style>
 </head>
 <body>
+<!-- ===== Titan SurvivorCord Header Ad (sticky, rotator) ===== -->
+<style>
+  .titan-header{position:sticky;top:0;z-index:9999;background:#0f0f0f;border-bottom:1px solid #262626}
+  .titan-bar{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;max-width:1200px;margin:0 auto;padding:8px 14px}
+  .titan-link{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center;color:#e9ecef;text-decoration:none}
+  .titan-img{width:120px;height:56px;border-radius:10px;overflow:hidden;border:1px solid #2a2a2a}
+  .titan-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .titan-copy{line-height:1.25}
+  .titan-eyebrow{font-size:.75rem;letter-spacing:.08em;color:#34d399;text-transform:uppercase}
+  .titan-title{font-weight:800}
+  .titan-cta{display:inline-block;margin-left:8px;padding:6px 10px;border-radius:10px;border:2px solid #333;background:#ffa500;color:#111;font-weight:900}
+  .titan-close{background:#171717;border:1px solid #2a2a2a;color:#bbb;border-radius:8px;padding:6px 10px;cursor:pointer}
+  .titan-close:hover{color:#fff}
+  @media (max-width:720px){
+    .titan-link{grid-template-columns:90px 1fr}
+    .titan-img{width:90px;height:52px}
+    .titan-title{display:block;margin-top:2px}
+    .titan-cta{margin-top:6px}
+  }
+</style>
+
+<div class="titan-header" id="titanHeaderAd">
+  <div class="titan-bar">
+    <a class="titan-link" href="https://collabs.shop/rl5mw6" target="_blank" rel="noopener sponsored nofollow" aria-label="Shop TITAN SurvivorCord">
+      <span class="titan-img">
+        <!-- Rotate these images automatically -->
+        <img id="titanSlide" src="/cordad1.jpg" alt="TITAN SurvivorCord – mil-spec paracord with fishing line, snare wire, and tinder">
+      </span>
+      <span class="titan-copy">
+        <span class="titan-eyebrow">Featured Gear</span>
+        <span class="titan-title">TITAN SurvivorCord® – Paracord with Fishing Line, Snare Wire & Tinder</span>
+        <span class="titan-cta">Shop Now →</span>
+      </span>
+    </a>
+    <button class="titan-close" type="button" aria-label="Close banner" onclick="document.getElementById('titanHeaderAd').remove()">✕</button>
+  </div>
+</div>
+
+<script>
+  // Simple 3-image rotator (change paths if your images live elsewhere)
+  (function(){
+    const imgs = ["/cordad1.jpg","/cordad2.jpg","/cordad4.jpg"];
+    const el = document.getElementById("titanSlide");
+    let i = 0;
+    setInterval(()=>{ i = (i+1)%imgs.length; el.src = imgs[i]; }, 5000);
+  })();
+</script>
+<!-- ===== /Titan SurvivorCord Header Ad ===== -->
 
       <!-- RIGHT: FEATURE + CREATOR (stacked, centered) -->
       <div class="right-stack">
         <div class="card">
-          <img src="images/matepump.jpg" alt="SurviMate Water Purifier Pump">
-          <h3 style="margin:10px 0 6px">💧 SurviMate Pump</h3>
-          <p class="muted" style="margin:0 0 8px">0.01 micron, 5-stage hand pump. Water anywhere.</p>
-          <a class="buy-btn" href="https://amzn.to/4nNUa3K?tag=gritgearhq-20" target="_blank" rel="nofollow sponsored noopener">Grab the Pump →</a>
-        </div>
+      20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006666666666+2388888888888885
 
         <aside class="creator">
           <h4>About the shop</h4>
