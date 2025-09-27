@@ -110,7 +110,7 @@
 
   <div>
 
-    <!-- ========== GRIT GEAR HQ • Survival Basics Quiz ========== -->
+  <!-- ========== GRIT GEAR HQ • Survival Basics Quiz (Drop-in) ========== -->
 <section id="gg-quiz" class="gg-quiz">
   <div class="ggq-wrap">
     <header class="ggq-head">
@@ -170,12 +170,12 @@
 </section>
 
 <style>
-/* ---------- Theme (uses your tokens with fallbacks) ---------- */
+/* ---------- Quiz theme (self-contained; respects your CSS variables) ---------- */
 .gg-quiz { --bg: var(--bg, #0f0f0f); --panel: var(--panel, #141418); --edge: var(--edge, #262626);
   --ink: var(--ink, #e9ecef); --muted: var(--muted, #aab3bb); --accent: var(--accent, #ffa500);
   --ok:#34d399; --bad:#ef4444; --shadow: var(--shadow, 0 14px 34px rgba(0,0,0,.45));
   color:var(--ink); background:transparent; font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
-.ggq-wrap { max-width:900px; margin:24px auto; padding:0 12px; }
+.ggq-wrap { max-width:900px; margin:32px auto 40px; padding:0 12px; }
 
 .ggq-head { display:flex; align-items:end; justify-content:space-between; gap:10px; margin-bottom:12px; }
 .ggq-title { display:flex; align-items:center; gap:10px; }
@@ -226,12 +226,12 @@
 .ggq-hint { font-size:.9rem; }
 
 @media (max-width:720px){
-  .ggq-wrap{ padding:0 }
+  .ggq-wrap{ padding:0 8px }
   .ggq-meta{ gap:8px }
   .ggq-answer .badge{ width:26px; height:26px }
 }
 
-/* ---------- Completion dialog ---------- */
+/* Completion dialog */
 .ggq-done { border:none; background:transparent; padding:0; inset:0; width:100%; height:100%; }
 .ggq-done[open]::backdrop { background:rgba(0,0,0,.65) }
 .ggq-done-card { position:relative; max-width:540px; margin:10vh auto; background:linear-gradient(120deg,#161616,#101010 55%);
@@ -245,104 +245,52 @@
 (() => {
   // ---------- Quiz data ----------
   const QUESTIONS = [
-    {
-      q: "You realize you’re not where you thought you were on trail. First move?",
-      a: ["Keep moving downhill—water is downhill","Sprint back the way you came","S.T.O.P.: Stop, Think, Observe, Plan","Build a shelter immediately"],
-      correct: 2,
-      why: "S.T.O.P. breaks panic loops so you can reassess maps, terrain, and options."
-    },
-    {
-      q: "At sea level, how long should you boil water to make it safe?",
-      a: ["Bring to a boil and remove immediately","Rolling boil for 30 seconds","Rolling boil for 1 minute","Rolling boil for 5 minutes"],
-      correct: 2,
-      why: "Sea level: 1 minute at a rolling boil (extend at altitude)."
-    },
-    {
-      q: "Above ~6,500 ft (≈2,000 m), how long should you boil water?",
-      a: ["Same as sea level—1 minute","90 seconds","2 minutes","3 minutes"],
-      correct: 3,
-      why: "Lower boiling temps at altitude → boil for 3 minutes."
-    },
-    {
-      q: "Which best describes early hypothermia treatment in the field?",
-      a: ["Give alcohol and rub limbs hard","Strip wet clothing, insulate, protect from wind, warm core first","Full-body hot immersion immediately","Make them run to generate heat"],
-      correct: 1,
-      why: "Gentle handling, dry/insulate, warm core first; avoid rough movement and alcohol."
-    },
-    {
-      q: "Which finding suggests heat stroke (not just heat exhaustion)?",
-      a: ["Heavy sweating and cramps, normal mentation","Cool clammy skin, nausea, fatigue","Altered mental status; may be hot/dry or still sweaty","Mild headache, normal behavior"],
-      correct: 2,
-      why: "CNS changes = heat stroke → rapid cooling and EMS."
-    },
-    {
-      q: "On a topo map, what indicates the steepest terrain?",
-      a: ["Widely spaced contour lines","Contours crossing a stream","Contour lines close together","Index contour lines (bold)"],
-      correct: 2,
-      why: "Closer lines = faster elevation change = steeper slope."
-    },
-    {
-      q: "Best tinder that often lights even when damp?",
-      a: ["Fresh green grass","Birch bark curls","Waterlogged leaves","River reeds"],
-      correct: 1,
-      why: "Oils in birch bark catch easily, even when damp."
-    },
-    {
-      q: "Standard whistle signal for distress is…",
-      a: ["1 long blast every minute","2 short blasts","3 short blasts","Continuous blowing"],
-      correct: 2,
-      why: "Three blasts is the universal distress signal."
-    },
-    {
-      q: "Ground-to-air signaling: which symbol means “need medical assistance”?",
-      a: ["V","X","N","→ (arrow)"],
-      correct: 1,
-      why: "“X” = require medical assistance; “V” = need assistance; “N” = negative."
-    },
-    {
-      q: "You see a bear ~60 yards away; it hasn’t noticed you. Best move?",
-      a: ["Run—bears are slow to react","Shout and throw rocks","Back away slowly, give space, avoid eye contact, leave the area","Climb a tree"],
-      correct: 2,
-      why: "Create calm distance; never run. Carry spray in bear country."
-    },
-    {
-      q: "Life-threatening bleeding from a leg wound. Proper tourniquet placement?",
-      a: ["Directly over the wound","Around the knee joint","2–3 inches above the wound, not over a joint; tighten until bleeding stops","As loose as possible for comfort"],
-      correct: 2,
-      why: "Place proximal to wound (not over joints), tighten until bleeding stops; note time."
-    },
-    {
-      q: "Safer emergency shelter site selection?",
-      a: ["Dry wash—flat ground","Under the largest lone tree","Slight rise, away from dead branches/gullies, with natural windbreak","Bottom of a valley (cold sink)"],
-      correct: 2,
-      why: "Avoid widowmakers, flood paths, and cold sinks; use windbreaks."
-    },
-    {
-      q: "Lightning safety: best option if available?",
-      a: ["Under a lone tall tree","Open ridgeline—far from trees","Metal-roofed/hard-topped vehicle with windows up","Lie flat in a field"],
-      correct: 2,
-      why: "A vehicle acts as a Faraday cage. Outdoors: reduce profile; feet together on insulation."
-    },
-    {
-      q: "Northern Hemisphere watch method: how to find south (analog watch)?",
-      a: ["Point 12 at the sun; halfway to hour hand is south","Point hour hand at the sun; halfway to 12 is south","Point the minute hand at the sun; 12 is south","Point the crown at the sun; opposite is south"],
-      correct: 1,
-      why: "Hour hand → sun; midpoint to 12 = south (adjust for daylight saving)."
-    },
-    {
-      q: "Water in dry country: which usually yields more in practice?",
-      a: ["Solar still in the ground","Licking dew off rocks","Transpiration bag over a leafy branch in sun","Drinking urine to recycle water"],
-      correct: 2,
-      why: "Transpiration bags often outperform ground stills; do not drink urine."
-    }
+    { q:"You realize you’re not where you thought you were on trail. First move?",
+      a:["Keep moving downhill—water is downhill","Sprint back the way you came","S.T.O.P.: Stop, Think, Observe, Plan","Build a shelter immediately"],
+      correct:2, why:"S.T.O.P. breaks panic loops so you can reassess maps, terrain, and options." },
+    { q:"At sea level, how long should you boil water to make it safe?",
+      a:["Bring to a boil and remove immediately","Rolling boil for 30 seconds","Rolling boil for 1 minute","Rolling boil for 5 minutes"],
+      correct:2, why:"Sea level: 1 minute at a rolling boil (extend at altitude)." },
+    { q:"Above ~6,500 ft (≈2,000 m), how long should you boil water?",
+      a:["Same as sea level—1 minute","90 seconds","2 minutes","3 minutes"],
+      correct:3, why:"Lower boiling temps at altitude → boil for 3 minutes." },
+    { q:"Which best describes early hypothermia treatment in the field?",
+      a:["Give alcohol and rub limbs hard","Strip wet clothing, insulate, protect from wind, warm core first","Full-body hot immersion immediately","Make them run to generate heat"],
+      correct:1, why:"Gentle handling, dry/insulate, warm core first; avoid rough movement and alcohol." },
+    { q:"Which finding suggests heat stroke (not just heat exhaustion)?",
+      a:["Heavy sweating and cramps, normal mentation","Cool clammy skin, nausea, fatigue","Altered mental status; may be hot/dry or still sweaty","Mild headache, normal behavior"],
+      correct:2, why:"CNS changes = heat stroke → rapid cooling and EMS." },
+    { q:"On a topo map, what indicates the steepest terrain?",
+      a:["Widely spaced contour lines","Contours crossing a stream","Contour lines close together","Index contour lines (bold)"],
+      correct:2, why:"Closer lines = faster elevation change = steeper slope." },
+    { q:"Best tinder that often lights even when damp?",
+      a:["Fresh green grass","Birch bark curls","Waterlogged leaves","River reeds"],
+      correct:1, why:"Oils in birch bark catch easily, even when damp." },
+    { q:"Standard whistle signal for distress is…",
+      a:["1 long blast every minute","2 short blasts","3 short blasts","Continuous blowing"],
+      correct:2, why:"Three blasts is the universal distress signal." },
+    { q:"Ground-to-air signaling: which symbol means “need medical assistance”?",
+      a:["V","X","N","→ (arrow)"],
+      correct:1, why:"“X” = require medical assistance; “V” = need assistance; “N” = negative." },
+    { q:"You see a bear ~60 yards away; it hasn’t noticed you. Best move?",
+      a:["Run—bears are slow to react","Shout and throw rocks","Back away slowly, give space, avoid eye contact, leave the area","Climb a tree"],
+      correct:2, why:"Create calm distance; never run. Carry spray in bear country." },
+    { q:"Life-threatening bleeding from a leg wound. Proper tourniquet placement?",
+      a:["Directly over the wound","Around the knee joint","2–3 inches above the wound, not over a joint; tighten until bleeding stops","As loose as possible for comfort"],
+      correct:2, why:"Place proximal to wound (not over joints), tighten until bleeding stops; note time." },
+    { q:"Safer emergency shelter site selection?",
+      a:["Dry wash—flat ground","Under the largest lone tree","Slight rise, away from dead branches/gullies, with natural windbreak","Bottom of a valley (cold sink)"],
+      correct:2, why:"Avoid widowmakers, flood paths, and cold sinks; use windbreaks." },
+    { q:"Lightning safety: best option if available?",
+      a:["Under a lone tall tree","Open ridgeline—far from trees","Metal-roofed/hard-topped vehicle with windows up","Lie flat in a field"],
+      correct:2, why:"A vehicle acts as a Faraday cage. Outdoors: reduce profile; feet together on insulation." },
+    { q:"Northern Hemisphere watch method: how to find south (analog watch)?",
+      a:["Point 12 at the sun; halfway to hour hand is south","Point hour hand at the sun; halfway to 12 is south","Point the minute hand at the sun; 12 is south","Point the crown at the sun; opposite is south"],
+      correct:1, why:"Hour hand → sun; midpoint to 12 = south (adjust for daylight saving)." },
+    { q:"Water in dry country: which usually yields more in practice?",
+      a:["Solar still in the ground","Licking dew off rocks","Transpiration bag over a leafy branch in sun","Drinking urine to recycle water"],
+      correct:2, why:"Transpiration bags often outperform ground stills; do not drink urine." }
   ];
-
-  // ---------- State ----------
-  let order = [];           // question indices in play
-  let idx = 0;              // current position in 'order'
-  let score = 0;            // total correct
-  let streak = 0;           // current streak
-  const TOTAL = QUESTIONS.length;
 
   // ---------- Elements ----------
   const elQ = document.getElementById('ggq-question-text');
@@ -367,16 +315,23 @@
   const btnShare = document.getElementById('ggq-share');
   const confettiCanvas = document.getElementById('ggq-confetti');
 
+  // ---------- State ----------
+  const TOTAL = QUESTIONS.length;
+  let order = [];
+  let idx = 0;
+  let score = 0;
+  let streak = 0;
+  let locked = false;
+
   // ---------- Helpers ----------
   const lsKey = 'ggq-best-score-v1';
   const getBest = () => Number(localStorage.getItem(lsKey) || 0);
   const setBest = v => localStorage.setItem(lsKey, String(v));
-  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const shuffle = arr => { for (let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]] } return arr };
 
   function init(){
     order = shuffle([...Array(TOTAL).keys()]);
-    idx = 0; score = 0; streak = 0;
+    idx = 0; score = 0; streak = 0; locked = false;
     elScore.textContent = score;
     elStreak.textContent = streak;
     elBest.textContent = getBest();
@@ -389,8 +344,7 @@
 
   function updateProgress(){
     elStep.textContent = String(idx+1);
-    const pct = ((idx)/TOTAL)*100;
-    elBar.style.width = pct + '%';
+    elBar.style.width = ((idx / TOTAL) * 100) + '%';
   }
 
   function render(){
@@ -407,8 +361,6 @@
       li.className = 'ggq-answer';
       li.setAttribute('role','button');
       li.setAttribute('tabindex','0');
-      li.dataset.idx = i;
-
       li.innerHTML = `
         <input type="radio" name="ggq" value="${i}" aria-label="${opt}">
         <div class="label">
@@ -422,7 +374,6 @@
     });
   }
 
-  let locked = false;
   function choose(i){
     if (locked) return;
     locked = true;
@@ -466,8 +417,7 @@
 
   function skip(){
     if (locked) return; // prevent skipping after answering
-    // Move current question to end of order (once)
-    order.push(order[idx]);
+    order.push(order[idx]); // send current to end
     idx++;
     if (idx >= TOTAL){
       finish();
@@ -478,45 +428,43 @@
   }
 
   function finish(){
-    // progress to 100%
     elBar.style.width = '100%';
 
     const best = getBest();
     if (score > best) setBest(score);
 
-    // update dialog stats
     elFinal.textContent = `You scored ${score} out of ${TOTAL}.`;
     elBest2.textContent = Math.max(score, best);
     elStreak2.textContent = streak;
 
-    // show dialog + confetti
     dlg.showModal();
     blastConfetti(confettiCanvas, score / TOTAL);
   }
 
   function replay(){
     dlg.close();
-    confettiCanvas.getContext('2d').clearRect(0,0,confettiCanvas.width,confettiCanvas.height);
+    const ctx = confettiCanvas.getContext('2d');
+    ctx && ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height);
     init();
   }
 
-  // ---------- Micro-interactions ----------
+  // Micro-interactions
   function pulse(el){
-    el.animate([{transform:'scale(1)'},{transform:'scale(1.02)'},{transform:'scale(1)'}],
-               {duration:220, easing:'ease-out'});
+    el && el.animate([{transform:'scale(1)'},{transform:'scale(1.02)'},{transform:'scale(1)'}],
+                     {duration:220, easing:'ease-out'});
   }
   function shake(el){
-    el.animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],
-               {duration:180, easing:'ease-in-out'});
+    el && el.animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],
+                     {duration:180, easing:'ease-in-out'});
   }
 
-  // ---------- Confetti ----------
+  // Confetti
   function blastConfetti(canvas, intensity=0.7){
     const dpr = window.devicePixelRatio || 1;
     const resize = () => { canvas.width = innerWidth*dpr; canvas.height = innerHeight*dpr; }
     resize();
     const ctx = canvas.getContext('2d');
-    const N = Math.floor(120 * clamp(intensity, .25, 1));
+    const N = Math.floor(120 * Math.max(.25, Math.min(1, intensity)));
     const pieces = Array.from({length:N}, () => ({
       x: Math.random()*canvas.width, y: -20,
       r: 6 + Math.random()*8,
@@ -531,11 +479,8 @@
       ctx.clearRect(0,0,canvas.width,canvas.height);
       pieces.forEach(p=>{
         p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.vy += 0.03; p.life++;
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot);
-        ctx.fillStyle = p.c;
-        ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.6);
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+        ctx.fillStyle = p.c; ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.6);
         ctx.restore();
       });
       if (pieces.some(p=>p.life<p.max && p.y < canvas.height+50)) raf=requestAnimationFrame(step);
@@ -546,23 +491,42 @@
     window.addEventListener('resize', resize, {once:true});
   }
 
-  // ---------- Events ----------
+  // Events
   elNext.addEventListener('click', next);
   elSkip.addEventListener('click', skip);
   btnReplay.addEventListener('click', replay);
+
+  // Robust Share (Web Share API -> Clipboard -> Twitter/X)
   btnShare.addEventListener('click', async () => {
+    const url = location.origin + location.pathname + '#gg-quiz';
     const text = `I scored ${score}/${TOTAL} on the Grit Gear HQ Survival Quiz!`;
+    const title = 'Grit Gear HQ Survival Quiz';
+
+    if (navigator.share) {
+      try { await navigator.share({ title, text, url }); return; }
+      catch(e) { /* fall through */ }
+    }
+
     try {
-      if (navigator.share) { await navigator.share({text}); }
-      else {
-        await navigator.clipboard.writeText(text);
-        btnShare.textContent = 'Copied!';
-        setTimeout(()=>btnShare.textContent='Share Score', 1200);
+      const payload = `${text} ${url}`;
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(payload);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = payload; ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        document.execCommand('copy'); ta.remove();
       }
-    } catch(e){}
+      btnShare.textContent = 'Copied!';
+      setTimeout(()=>btnShare.textContent='Share Score', 1500);
+      return;
+    } catch(e) { /* fall through */ }
+
+    const tw = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&via=GritGearHQ`;
+    window.open(tw, '_blank', 'noopener');
   });
 
-  // ---------- Kick off ----------
+  // Kick off
   init();
 })();
 </script>
