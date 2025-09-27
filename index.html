@@ -194,6 +194,33 @@
   --ink: var(--ink, #e9ecef); --muted: var(--muted, #aab3bb); --accent: var(--accent, #ffa500);
   --ok:#34d399; --bad:#ef4444; --shadow: var(--shadow, 0 14px 34px rgba(0,0,0,.45));
   color:var(--ink); background:transparent; font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
+
+/* --- FIX: keep all content inside the viewport and wrap long text --- */
+#gg-quiz *, #gg-quiz *::before, #gg-quiz *::after { box-sizing: border-box; }
+#gg-quiz { overflow-x: hidden; }
+#gg-quiz .ggq-wrap, 
+#gg-quiz .ggq-head, 
+#gg-quiz .ggq-card, 
+#gg-quiz .ggq-foot { max-width: 100%; }
+#gg-quiz .ggq-title,
+#gg-quiz .ggq-meta,
+#gg-quiz .ggq-actions,
+#gg-quiz .ggq-answer .label { min-width: 0; }
+#gg-quiz .ggq-question,
+#gg-quiz .ggq-answer .txt,
+#gg-quiz .ggq-hint,
+#gg-quiz .ggq-title h2 {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
+#gg-quiz .ggq-actions { flex-wrap: wrap; gap: 8px; }
+#gg-quiz .ggq-btn { white-space: normal; }
+#gg-quiz .ggq-answers { grid-auto-rows: auto; }
+#gg-quiz .ggq-answer { overflow: hidden; }
+#gg-quiz .ggq-step { min-width: 0; }
+#gg-quiz .ggq-done-card { max-width: min(92vw, 540px); }
+
 .ggq-wrap { max-width:900px; margin:32px auto 40px; padding:0 12px; }
 
 .ggq-head { display:flex; align-items:end; justify-content:space-between; gap:10px; margin-bottom:12px; }
