@@ -4,212 +4,166 @@
   <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
-<meta charset="utf-8" />
-<title>Grit Gear HQ — Clean Layout</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-  /* Base */
-  *{box-sizing:border-box}
-  html,body{margin:0;background:#0f0f0f;color:#e9ecef;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-  img{max-width:100%;height:auto;display:block}
-  a{text-decoration:none;color:inherit}
-  :root{
-    --ink:#e9ecef; --muted:#aab3bb; --edge:#262626; --panel:#141418;
-    --accent:#ffa500; --accent2:#34d399; --shadow:0 14px 34px rgba(0,0,0,.45);
-  }
-  .wrap{max-width:1200px;margin:0 auto;padding:26px 18px}
+  <meta charset="utf-8" />
+  <title>Grit Gear HQ — Clean Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#0f0f0f;color:#e9ecef;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    img{max-width:100%;height:auto;display:block}
+    a{text-decoration:none;color:inherit}
+    :root{--ink:#e9ecef;--muted:#aab3bb;--edge:#262626;--panel:#141418;--accent:#ffa500;--shadow:0 14px 34px rgba(0,0,0,.45)}
+    .wrap{max-width:1200px;margin:0 auto;padding:26px 18px}
 
-  /* ===== TOP: 2-col masthead (rows of two, centered) ===== */
-  .masthead{
-    display:grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap:22px; align-items:start;
-  }
-  @media (max-width:980px){ .masthead{grid-template-columns:1fr} }
+    /* ===== Sticky Titan header ===== */
+    .titan-header{position:sticky;top:0;z-index:9999;background:#0f0f0f;border-bottom:1px solid #262626}
+    .titan-bar{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;max-width:1200px;margin:0 auto;padding:8px 14px}
+    .titan-link{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
+    .titan-img{width:120px;height:56px;border-radius:10px;overflow:hidden;border:1px solid #2a2a2a}
+    .titan-img img{width:100%;height:100%;object-fit:cover}
+    .titan-eyebrow{font-size:.75rem;letter-spacing:.08em;color:#34d399;text-transform:uppercase}
+    .titan-title{font-weight:800}
+    .titan-cta{display:inline-block;margin-left:8px;padding:6px 10px;border-radius:10px;border:2px solid #333;background:#ffa500;color:#111;font-weight:900}
+    .titan-close{background:#171717;border:1px solid #2a2a2a;color:#bbb;border-radius:8px;padding:6px 10px;cursor:pointer}
+    .titan-close:hover{color:#fff}
+    @media (max-width:720px){.titan-link{grid-template-columns:90px 1fr}.titan-img{width:90px;height:52px}}
 
-  /* ABOUT (left) */
-  .about{background:linear-gradient(180deg,#111,#0d0d0d);border:1px solid var(--edge);border-radius:18px;padding:16px}
-  .about__wrap{display:grid;gap:14px}
-  .about__strip{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
-  .about__strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid #2b2b2b;background:#0c0c0c}
-  @media (max-width:560px){ .about__strip{grid-template-columns:1fr} }
-  .about__media{position:relative;aspect-ratio:4/3;max-height:360px;border-radius:14px;overflow:hidden;background:#121212;border:1px solid #2b2b2b}
-  .about__media img.bg{width:100%;height:100%;object-fit:cover}
-  .badge{position:absolute;left:10px;top:10px;width:72px;height:72px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
-  .badge img{width:100%;height:100%;object-fit:cover}
-  .logo-over{position:absolute;right:10px;top:10px;width:80px;height:80px;border-radius:50%;overflow:hidden;border:2px solid #2f2f2f;background:#0e0e0e}
-  .logo-over img{width:100%;height:100%;object-fit:contain}
-  .about h1{margin:0 0 6px;font-size:clamp(1.4rem,1.2vw + 1rem,2rem);text-align:center}
-  .tag{color:var(--accent);font-weight:900;margin:0 0 10px;text-align:center}
-  .about p{margin:0 0 10px;color:#bfc7cf}
-  .about ul{margin:8px 0 0 18px;color:#cfd7df}
-  .about li{margin:.45rem 0}
+    /* ===== Masthead (2 columns, centered) ===== */
+    .masthead{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    @media (max-width:980px){.masthead{grid-template-columns:1fr}}
 
-  /* RIGHT COLUMN stack: feature card + creator card, centered */
-  .right-stack{display:grid;gap:14px}
-  .card{
-    background:var(--panel);border:1px solid #23232b;border-radius:16px;padding:16px;
-    text-align:center; box-shadow:var(--shadow);
-  }
-  .card img{border-radius:12px;margin:0 auto}
-  .buy-btn{
-    display:inline-block;margin-top:12px;font-weight:800;padding:12px 16px;border-radius:12px;
-    border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010
-  }
+    .about,.creator{background:var(--panel);border:1px solid var(--edge);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+    .about h1{margin:0 0 6px;font-size:clamp(1.4rem,1.2vw + 1rem,2rem);text-align:center}
+    .tag{color:var(--accent);font-weight:900;margin:0 0 12px;text-align:center}
+    .about__strip{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+    .about__strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid #2b2b2b;background:#0c0c0c}
+    @media (max-width:560px){.about__strip{grid-template-columns:1fr}}
 
-  .creator{background:var(--panel);border:1px solid #23232b;border-radius:16px;padding:16px;text-align:center}
-  .creator h4{margin:0 0 6px;color:#ffd166}
-  .creator .row{display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:8px}
-  .creator .face{width:36px;height:36px;border-radius:50%;border:1px solid #2a2e37;object-fit:cover}
-  .creator__brand{margin:4px 0 2px;font-size:1.05rem;font-weight:900;color:#e9ecef}
-  .creator__tag{margin:0 0 10px;color:#ffa500;font-weight:800}
-  .creator p{margin:0 0 10px;color:#cfd3da;line-height:1.55}
-  .creator ul{margin:6px 0 0 0;padding:0;list-style:none;color:#d9e3ea}
-  .creator li{margin:.4rem 0}
-  .ftc{font-size:.85rem;color:#aab3bb;margin:0}
+    .creator{text-align:center}
+    .creator .row{display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:8px}
+    .creator .face{width:36px;height:36px;border-radius:50%;border:1px solid #2a2e37;object-fit:cover}
+    .creator__brand{font-weight:900}
+    .creator ul{margin:8px 0 0;padding:0;list-style:none}
+    .ftc{font-size:.85rem;color:#aab3bb;margin-top:8px}
 
-  /* ===== CARDS GRID (rows of two, centered) ===== */
-  .cards-wrap{max-width:1100px;margin:0 auto;padding:8px 0 40px}
-  .cards-grid{
-    display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr));
-    align-items:stretch; justify-items:center;
-  }
-  @media (max-width:800px){.cards-grid{grid-template-columns:1fr}}
+    /* ===== Card grid (rows of two, centered) ===== */
+    .cards-wrap{max-width:1100px;margin:0 auto;padding:8px 0 40px}
+    .cards-grid{display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr));justify-items:center;align-items:stretch}
+    @media (max-width:800px){.cards-grid{grid-template-columns:1fr}}
 
-  /* unified product card (vertical, centered) */
-  .gg-card{
-    display:flex; flex-direction:column; align-items:center; text-align:center;
-    width:100%; max-width:520px; min-height:0;
-    background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid var(--edge); border-radius:16px; padding:14px; box-shadow:var(--shadow);
-  }
-  .gg-media{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:#0c0c0c}
-  .gg-media img{width:100%;height:100%;object-fit:cover}
-  .gg-title{margin:10px 0 6px;font-size:clamp(1.06rem,1.05vw + 1rem,1.45rem)}
-  .gg-sub{margin:0 0 10px;color:var(--muted);line-height:1.55;max-width:60ch}
-  .gg-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-  .gg-chips span{font-size:.82rem;color:#ddd;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#1a1a1a}
-  .gg-cta{display:inline-block;margin-top:10px;font-weight:800;padding:10px 14px;border-radius:12px;border:2px solid #333;background:#3fae5a;color:#0b1510}
-</style>
+    .gg-card{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:520px;background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid var(--edge);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+    .gg-media{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:#0c0c0c}
+    .gg-media img{width:100%;height:100%;object-fit:cover}
+    .gg-title{margin:10px 0 6px;font-size:clamp(1.06rem,1.05vw + 1rem,1.45rem)}
+    .gg-sub{margin:0 0 10px;color:var(--muted);line-height:1.55;max-width:60ch}
+    .gg-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+    .gg-chips span{font-size:.82rem;color:#ddd;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#1a1a1a}
+    .gg-cta{display:inline-block;margin-top:10px;font-weight:800;padding:10px 14px;border-radius:12px;border:2px solid #333;background:#3fae5a;color:#0b1510}
+  </style>
 </head>
 <body>
-<!-- ===== Titan SurvivorCord Header Ad (sticky, rotator) ===== -->
-<style>
-  .titan-header{position:sticky;top:0;z-index:9999;background:#0f0f0f;border-bottom:1px solid #262626}
-  .titan-bar{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;max-width:1200px;margin:0 auto;padding:8px 14px}
-  .titan-link{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center;color:#e9ecef;text-decoration:none}
-  .titan-img{width:120px;height:56px;border-radius:10px;overflow:hidden;border:1px solid #2a2a2a}
-  .titan-img img{width:100%;height:100%;object-fit:cover;display:block}
-  .titan-copy{line-height:1.25}
-  .titan-eyebrow{font-size:.75rem;letter-spacing:.08em;color:#34d399;text-transform:uppercase}
-  .titan-title{font-weight:800}
-  .titan-cta{display:inline-block;margin-left:8px;padding:6px 10px;border-radius:10px;border:2px solid #333;background:#ffa500;color:#111;font-weight:900}
-  .titan-close{background:#171717;border:1px solid #2a2a2a;color:#bbb;border-radius:8px;padding:6px 10px;cursor:pointer}
-  .titan-close:hover{color:#fff}
-  @media (max-width:720px){
-    .titan-link{grid-template-columns:90px 1fr}
-    .titan-img{width:90px;height:52px}
-    .titan-title{display:block;margin-top:2px}
-    .titan-cta{margin-top:6px}
-  }
-</style>
 
-<div class="titan-header" id="titanHeaderAd">
-  <div class="titan-bar">
-    <a class="titan-link" href="https://collabs.shop/rl5mw6" target="_blank" rel="noopener sponsored nofollow" aria-label="Shop TITAN SurvivorCord">
-      <span class="titan-img">
-        <!-- Rotate these images automatically -->
-        <img id="titanSlide" src="/cordad1.jpg" alt="TITAN SurvivorCord – mil-spec paracord with fishing line, snare wire, and tinder">
-      </span>
-      <span class="titan-copy">
-        <span class="titan-eyebrow">Featured Gear</span>
-        <span class="titan-title">TITAN SurvivorCord® – Paracord with Fishing Line, Snare Wire & Tinder</span>
-        <span class="titan-cta">Shop Now →</span>
-      </span>
-    </a>
-    <button class="titan-close" type="button" aria-label="Close banner" onclick="document.getElementById('titanHeaderAd').remove()">✕</button>
+  <!-- ===== TITAN header ===== -->
+  <div class="titan-header" id="titanHeaderAd">
+    <div class="titan-bar">
+      <a class="titan-link" href="https://collabs.shop/rl5mw6" target="_blank" rel="noopener sponsored nofollow">
+        <span class="titan-img"><img id="titanSlide" src="/cordad1.jpg" alt="TITAN SurvivorCord – paracord with extras"></span>
+        <span>
+          <span class="titan-eyebrow">Featured Gear</span><br>
+          <span class="titan-title">TITAN SurvivorCord® — Paracord + Fishing Line, Snare Wire & Tinder</span>
+          <span class="titan-cta">Shop Now →</span>
+        </span>
+      </a>
+      <button class="titan-close" type="button" aria-label="Close banner" onclick="document.getElementById('titanHeaderAd').remove()">✕</button>
+    </div>
   </div>
-</div>
+  <script>
+    (function(){const imgs=["/cordad1.jpg","/cordad2.jpg","/cordad4.jpg"];const el=document.getElementById("titanSlide");let i=0;setInterval(()=>{i=(i+1)%imgs.length;el.src=imgs[i];},5000)})();
+  </script>
 
-<script>
-  // Simple 3-image rotator (change paths if your images live elsewhere)
-  (function(){
-    const imgs = ["/cordad1.jpg","/cordad2.jpg","/cordad4.jpg"];
-    const el = document.getElementById("titanSlide");
-    let i = 0;
-    setInterval(()=>{ i = (i+1)%imgs.length; el.src = imgs[i]; }, 5000);
-  })();
-</script>
-<!-- ===== /Titan SurvivorCord Header Ad ===== -->
+  <div class="wrap">
+    <!-- ===== Masthead ===== -->
+    <section class="masthead">
+      <article class="about">
+        <h1>Grit Gear HQ</h1>
+        <div class="tag">Rough gear for rougher times</div>
+        <div class="about__strip">
+          <img src="back1.jpg.png" alt="Turning Point tee — back graphic">
+          <img src="front3.jpg.png" alt="Turning Point tee — front chest mark">
+        </div>
+        <p>Small, stubborn, and mission-driven. We make hard-wearing pieces with a clear message—and donate 10% of profits from the Turning Point tee to TPUSA.</p>
+      </article>
 
-      <!-- RIGHT: FEATURE + CREATOR (stacked, centered) -->
-      <div class="right-stack">
-        <div class="card">
-      20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006666666666+2388888888888885
-
-        <aside class="creator">
-          <h4>About the shop</h4>
-          <div class="row">
-            <img class="face" src="front3.jpg.png" alt="Grit Gear icon">
-            <div>
-              <div class="creator__brand">Grit Gear HQ</div>
-              <div class="creator__tag">Independent • Small batch</div>
-            </div>
+      <aside class="creator">
+        <h4>About the shop</h4>
+        <div class="row">
+          <img class="face" src="front3.jpg.png" alt="Grit Gear icon">
+          <div>
+            <div class="creator__brand">Grit Gear HQ</div>
+            <div class="creator__tag">Independent • Small batch</div>
           </div>
-          <p>Built for people who show up, speak up, and don’t flinch. Field-tested basics with a point of view.</p>
-          <ul>
-            <li>US-based fulfillment</li>
-            <li>cserpico84@gmail.com</li>
-            <li>Donation receipts posted monthly</li>
-          </ul>
-          <p class="ftc">Disclosure: Some links may be affiliate/sponsored; we may earn a commission.</p>
-        </aside>
-      </div>
+        </div>
+        <ul>
+          <li>US-based fulfillment</li>
+          <li>cserpico84@gmail.com</li>
+          <li>Donation receipts posted monthly</li>
+        </ul>
+        <p class="ftc">Some links are affiliate/sponsored; we may earn a commission.</p>
+      </aside>
     </section>
 
-    <!-- ===== PRODUCT CARDS (rows of two, centered) ===== -->
-    <section class="cards-wrap">
+    <!-- ===== Cards (rows of two) ===== -->
+    <section class="cards-wrap" aria-label="Featured gear & posts">
       <div class="cards-grid">
-        
-<img src="./tccc.jpg?v=3"
-     alt="Thought Crimes: A Notebook for Dangerous Ideas"
-     style="width:50%;height:auto;display:block;margin:0 auto"
-     loading="lazy" decoding="async"
-     onerror="this.onerror=null;this.src='./thought-crimes.jpg?v=3';">
 
-  <!-- ===== BELOW: cards (images/text capped & tidy) ===== -->
-  <section class="cards-wrap" aria-label="Featured content">
-    <div class="cards-grid">
+        <!-- Thought Crimes Notebook -->
+        <a class="gg-card" href="https://amzn.to/4gt5cIt" target="_blank" rel="nofollow sponsored noopener">
+          <div class="gg-media">
+            <img src="/tccc.jpg" alt="Thought Crimes: A Notebook for Dangerous Ideas"
+                 onerror="this.onerror=null;this.src='/thought-crimes.jpg'">
+          </div>
+          <h3 class="gg-title">Thought Crimes: A Notebook for Dangerous Ideas</h3>
+          <p class="gg-sub">Hardcover look, rugged pages. Capture unfiltered thoughts, plans, and debates—off the algorithm.</p>
+          <div class="gg-chips"><span>Hardcover look</span><span>Durable pages</span><span>Everyday carry</span></div>
+          <span class="gg-cta">Check price →</span>
+        </a>
 
-      <!-- BLOG PREVIEW -->
-      <a class="gg-card gg-blog-hero" href="/cannabis-for-survival.html#top">
-        <figure class="gg-media">
-          <img src="cannabis-friendly-1-1024x683.jpg" alt="Forest camp scene" loading="lazy" decoding="async" style="object-position:center 40%">
-        </figure>
-        <div class="gg-meta">
+        <!-- Ultralight Survival Tarp -->
+        <a class="gg-card" href="https://collabs.shop/apa2pp" target="_blank" rel="noopener sponsored nofollow">
+          <div class="gg-media">
+            <img src="/tarpad1.jpg" alt="Ultralight survival tarp in the woods">
+          </div>
+          <h3 class="gg-title">Ultralight Survival Tarp</h3>
+          <p class="gg-sub">Fast shelter that packs tiny. Pitch diamond or A-frame—rain, wind, or sun you’re covered.</p>
+          <div class="gg-chips"><span>Waterproof</span><span>Multi-pitch</span><span>Trail-ready</span></div>
+          <span class="gg-cta">Check it out →</span>
+        </a>
+
+        <!-- Blog Preview -->
+        <a class="gg-card" href="/cannabis-for-survival.html#top">
+          <div class="gg-media">
+            <img src="/cannabis-friendly-1-1024x683.jpg" alt="Camp scene" style="object-position:center 40%">
+          </div>
           <h3 class="gg-title">Bud Over Booze — A Survivalist’s Manifesto</h3>
           <p class="gg-sub">Alcohol almost ended me. Cannabis helped me live, lead, and love—plus it’s a smarter tool for sleep, pain, appetite, and group calm.</p>
           <div class="gg-chips"><span>Survival Mindset</span><span>8 min read</span></div>
           <span class="gg-cta">Read the post →</span>
-        </div>
-      </a>
+        </a>
 
-      <!-- TITAN CARD -->
-      <a class="gg-card gg-titan-hero" href="https://gritgearhq.com/titan-survival-collab.html">
-        <figure class="gg-media gg-titan-img">
-          <img src="titanlogo.jpg" alt="TITAN Survival logo" loading="lazy" decoding="async" style="object-fit:contain;background:#0c0c0c">
-        </figure>
-        <div class="gg-meta">
+        <!-- Titan Collab Page -->
+        <a class="gg-card" href="/titan-survival-collab.html">
+          <div class="gg-media" style="background:#0c0c0c">
+            <img src="/titanlogo.jpg" alt="TITAN Survival logo" style="object-fit:contain">
+          </div>
           <h3 class="gg-title">TITAN Survival × Grit Gear HQ</h3>
           <p class="gg-sub">Why we chose SurvivorCord®, shock cord, and sane stitching—and how to save with code <strong>GRITGEARHQ</strong>.</p>
           <div class="gg-chips"><span>SurvivorCord®</span><span>Shock Cord</span><span>IFAK & Packs</span></div>
           <span class="gg-cta">Read the collab page →</span>
-        </div>
-      </a>
+        </a>
 
-    </div>
-  </section>
-
+      </div>
+    </section>
+  </div>
 </body>
 </html>
 
