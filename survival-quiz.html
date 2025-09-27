@@ -1,57 +1,152 @@
 <!doctype html>
 <html lang="en">
 <head>
- <!-- === Partner Ad: GetBud Online (drop-in) — uses your affiliate link === -->
-<style>
-  .promo-ad{
-    background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid #262626;border-radius:16px;padding:14px;
-    box-shadow:0 14px 34px rgba(0,0,0,.45); margin:14px 0;
-  }
-  .promo-ad__link{
-    display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;
-    text-decoration:none;color:#e9ecef;
-  }
-  .promo-ad__logo{width:72px;height:72px;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b;background:#0c0c0c}
-  .promo-ad__logo img{width:100%;height:100%;object-fit:contain;display:block}
-  .promo-ad__title{margin:0;font-weight:900;color:#ffa500}
-  .promo-ad__sub{margin:2px 0 0;color:#aab3bb;line-height:1.45}
-  .promo-ad__cta{
-    display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;
-    background:#3fae5a;color:#0b1510;white-space:nowrap;
-  }
-  @media (max-width:600px){
-    .promo-ad__link{grid-template-columns:56px 1fr;grid-auto-flow:row}
-    .promo-ad__cta{justify-self:start;margin-top:6px}
-    .promo-ad__logo{width:56px;height:56px}
-  }
-</style>
+  <meta charset="utf-8" />
+  <title>Survival Basics Quiz | Grit Gear HQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="15 fast survival questions with instant feedback. Test your trail skills and share your score." />
+  <!-- Google Ads (keep once per page) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
-<div class="promo-ad" role="complementary" aria-label="Sponsor: GetBud Online">
-  <a class="promo-ad__link"
-     href="https://gritgearhq.com/subid/christopher.serpico/"
-     target="_blank" rel="nofollow sponsored noopener">
-    <span class="promo-ad__logo">
-      <img
-        src="/cropped-Untitled-design-2023-11-22T194540.179-1.png"
-        alt="GetBud Online"
-        onerror="this.onerror=null;this.src='/getbud-logo.png';">
-    </span>
-    <div>
-      <h3 class="promo-ad__title">GetBud Online</h3>
-      <p class="promo-ad__sub">Trusted mail-order cannabis. Fast shipping, member deals, and solid reviews.</p>
+  <style>
+    :root{
+      --bg:#0f0f0f; --panel:#141418; --edge:#262626; --ink:#e9ecef; --muted:#aab3bb;
+      --accent:#ffa500; --ok:#34d399; --bad:#ef4444; --shadow:0 14px 34px rgba(0,0,0,.45)
+    }
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:980px;margin:0 auto;padding:22px 12px}
+    header.page{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+    .cta-back{font-weight:800;border:1px solid #2b2b2b;border-radius:10px;padding:8px 12px;color:#ddd}
+    .ad{margin:14px 0;border:1px dashed #2c2c2c;border-radius:12px;min-height:90px;display:grid;place-items:center;color:#aab3bb}
+
+    /* ===== Partner ad (GetBud) ===== */
+    .promo-ad{
+      background:#111;border:1px solid #262626;border-radius:16px;padding:14px;
+      box-shadow:var(--shadow);margin:14px 0;position:relative;isolation:isolate
+    }
+    .promo-ad__link{
+      display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;
+      text-decoration:none;color:#f5f7fa;-webkit-tap-highlight-color:transparent
+    }
+    .promo-ad__logo{width:72px;height:72px;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b;background:#0c0c0c}
+    .promo-ad__logo img{width:100%;height:100%;object-fit:contain;display:block}
+    .promo-ad__title{margin:0;font-weight:900;color:#ffc04d;text-shadow:0 1px 0 #000}
+    .promo-ad__sub{margin:2px 0 0;color:#d0d6dc;line-height:1.5}
+    .promo-ad__cta{
+      display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;
+      background:#3fae5a;color:#0b1510;white-space:nowrap;box-shadow:0 10px 22px rgba(63,174,90,.25)
+    }
+    @media (max-width:600px){
+      .promo-ad__link{grid-template-columns:56px 1fr;grid-auto-flow:row}
+      .promo-ad__cta{justify-self:start;margin-top:8px}
+      .promo-ad__logo{width:56px;height:56px}
+    }
+
+    /* ===== Quiz ===== */
+    .gg-quiz { color:var(--ink); background:transparent }
+    #gg-quiz *, #gg-quiz *::before, #gg-quiz *::after { box-sizing: border-box }
+    #gg-quiz { overflow-x: hidden }
+    .ggq-wrap { max-width:900px; margin:12px auto 18px; padding:0 8px }
+    .ggq-head { display:flex; align-items:end; justify-content:space-between; gap:10px; margin-bottom:10px }
+    .ggq-title { display:flex; align-items:center; gap:10px }
+    .ggq-title h2 { margin:0; font-size:clamp(1.2rem,1.2vw + 1rem,1.6rem) }
+    .ggq-icon { font-size:1.6rem }
+    .ggq-meta { display:flex; gap:10px; font-weight:800 }
+    .ggq-streak, .ggq-best {
+      display:flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px;
+      background:#101214; border:1px solid #23232b; color:#e8f5e9
+    }
+    .ggq-best { color:#ffe9b2 }
+    .ggq-progress { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px }
+    .ggq-bar { flex:1; height:10px; background:#0d0d0f; border:1px solid #23232b; border-radius:999px; overflow:hidden }
+    .ggq-bar span { display:block; height:100%; width:0%; background:linear-gradient(90deg, var(--accent), #e06100);
+      box-shadow:0 6px 20px rgba(224,97,0,.25) inset; transition:width .25s ease }
+    .ggq-step { min-width:84px; text-align:right; color:var(--muted) }
+    .ggq-card {
+      background:linear-gradient(140deg,#151515,#0f0f0f 55%); border:1px solid var(--edge); border-radius:18px;
+      box-shadow:var(--shadow); padding:16px
+    }
+    .ggq-question { margin:0 0 10px; line-height:1.3; overflow-wrap:anywhere }
+    .ggq-answers { display:grid; gap:10px; margin:0; padding:0; list-style:none }
+    .ggq-answer { position:relative; border:1px solid #2a2e37; background:#111317; color:var(--ink); padding:12px 14px;
+      border-radius:12px; cursor:pointer; transition:transform .12s ease, border-color .2s ease, background .2s ease, filter .2s ease }
+    .ggq-answer:hover { transform:translateY(-1px); filter:brightness(1.02) }
+    .ggq-answer .label { display:flex; align-items:center; gap:10px; min-width:0 }
+    .ggq-answer .badge { width:28px; height:28px; display:grid; place-items:center; border-radius:8px; border:1px solid #2d2f36; background:#151821; color:#cfd7df; font-weight:900 }
+    .ggq-answer.correct { border-color:#1f7a5b; background:#0f1a17 }
+    .ggq-answer.correct .badge { background:#113e34; color:#9fe6c3 }
+    .ggq-answer.wrong { border-color:#703030; background:#1a1111 }
+    .ggq-answer.wrong .badge { background:#3a1d1d; color:#f5b4b4 }
+    .ggq-answer.lock{cursor:default;filter:none}
+    .ggq-answer.lock:hover{transform:none}
+    .ggq-feedback { min-height:24px; margin-top:6px; color:var(--muted) }
+    .ggq-feedback.ok { color:var(--ok) }
+    .ggq-feedback.bad { color:var(--bad) }
+    .ggq-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:10px; flex-wrap:wrap }
+    .ggq-btn {
+      font-weight:900; padding:10px 14px; border-radius:12px;
+      background:linear-gradient(180deg,#ffe08a,#ffae00); color:#111; /* HIGH CONTRAST */
+      border:1px solid #a86f00; box-shadow:0 12px 26px rgba(224,97,0,.28); cursor:pointer; text-shadow:none
+    }
+    .ggq-btn[disabled]{ opacity:.55; cursor:not-allowed }
+    .ggq-ghost { background:#121216; color:#e9ecef; border:1px solid #2b2b2b; box-shadow:0 12px 26px rgba(0,0,0,.25) }
+    .ggq-foot { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:10px; color:var(--muted) }
+    .ggq-score strong { color:#fff }
+    .ggq-hint { font-size:.9rem }
+    @media (max-width:720px){ .ggq-wrap{padding:0 8px} .ggq-meta{gap:8px} .ggq-answer .badge{width:26px;height:26px} }
+    .ggq-done { border:none; background:transparent; padding:0; inset:0; width:100%; height:100% }
+    .ggq-done[open]::backdrop { background:rgba(0,0,0,.65) }
+    .ggq-done-card {
+      position:relative; max-width:540px; margin:10vh auto; background:linear-gradient(120deg,#161616,#101010 55%);
+      border:1px solid #2c2c2c; border-radius:18px; padding:20px; color:var(--ink); text-align:center; box-shadow:var(--shadow)
+    }
+    .ggq-trophy { font-size:2.2rem; margin-bottom:6px }
+    .ggq-done-actions { display:flex; gap:10px; justify-content:center; margin-top:10px }
+
+    /* ===== Gear cards ===== */
+    .gear{margin-top:24px}
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid var(--edge);border-radius:16px;padding:14px;box-shadow:var(--shadow);display:grid;gap:10px}
+    .card figure{margin:0;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#0c0c0c;border:1px solid #2b2b2b}
+    .card img{width:100%;height:100%;object-fit:cover;display:block}
+    .card h3{margin:0 0 6px}
+    .btn{display:inline-block;margin-top:6px;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;background:#3fae5a;color:#0b1510}
+  </style>
+</head>
+<body id="top">
+  <div class="wrap">
+    <header class="page">
+      <a class="cta-back" href="/">← Back to Grit Gear HQ</a>
+      <h1 style="margin:0;color:#ffa500">Survival Basics Quiz</h1>
+      <span></span>
+    </header>
+
+    <!-- ===== Partner Ad: GetBud (uses your affiliate link exactly) ===== -->
+    <div class="promo-ad" role="complementary" aria-label="Sponsor: GetBud Online">
+      <a class="promo-ad__link"
+         href="https://gritgearhq.com/subid/christopher.serpico/"
+         target="_blank" rel="nofollow sponsored noopener">
+        <span class="promo-ad__logo">
+          <img
+            src="/cropped-Untitled-design-2023-11-22T194540.179-1.png"
+            alt="GetBud Online"
+            onerror="this.onerror=null;this.src='/getbud-logo.png';">
+        </span>
+        <div>
+          <h3 class="promo-ad__title">GetBud Online</h3>
+          <p class="promo-ad__sub">Trusted mail-order cannabis. Fast shipping, member deals, and solid reviews.</p>
+        </div>
+        <span class="promo-ad__cta">Shop GetBud →</span>
+      </a>
     </div>
-    <span class="promo-ad__cta">Shop GetBud →</span>
-  </a>
-</div>
-<!-- === /Partner Ad === -->
+    <!-- /Partner Ad -->
 
     <!-- Ad slot (top) -->
     <div class="ad"><!-- Your ad unit here --></div>
 
-    <!-- === QUIZ (exact, wrapped to this page) === -->
-    <!-- paste of the fixed quiz block from earlier -->
-    <!-- ========== GRIT GEAR HQ • Survival Basics Quiz (Drop-in) ========== -->
+    <!-- ========== Grit Gear HQ • Survival Basics Quiz ========== -->
     <section id="gg-quiz" class="gg-quiz">
       <div class="ggq-wrap">
         <header class="ggq-head">
@@ -92,6 +187,7 @@
           <div class="ggq-trophy">🏆</div>
           <h3>Nice work, trailboss!</h3>
           <p><strong id="ggq-final"></strong></p>
+          <p class="ggq-sub">Rank: <strong id="ggq-rank"></strong></p>
           <p class="ggq-sub">Best: <strong id="ggq-best2">0</strong> • Streak: <strong id="ggq-streak2">0</strong></p>
           <div class="ggq-done-actions">
             <button id="ggq-replay" class="ggq-btn">Play Again</button>
@@ -101,100 +197,145 @@
       </dialog>
     </section>
 
-    <style>
-      /* keep the same fixed, overflow-safe quiz styles you approved */
-      /* (identical to the last version I gave you) */
-      .gg-quiz { --bg: var(--bg, #0f0f0f); --panel: var(--panel, #141418); --edge: var(--edge, #262626);
-        --ink: var(--ink, #e9ecef); --muted: var(--muted, #aab3bb); --accent: var(--accent, #ffa500);
-        --ok:#34d399; --bad:#ef4444; --shadow: var(--shadow, 0 14px 34px rgba(0,0,0,.45));
-        color:var(--ink); background:transparent; font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
-      #gg-quiz *, #gg-quiz *::before, #gg-quiz *::after { box-sizing: border-box; }
-      #gg-quiz { overflow-x: hidden; }
-      #gg-quiz .ggq-wrap, #gg-quiz .ggq-head, #gg-quiz .ggq-card, #gg-quiz .ggq-foot { max-width: 100%; }
-      #gg-quiz .ggq-title, #gg-quiz .ggq-meta, #gg-quiz .ggq-actions, #gg-quiz .ggq-answer .label { min-width: 0; }
-      #gg-quiz .ggq-question, #gg-quiz .ggq-answer .txt, #gg-quiz .ggq-hint, #gg-quiz .ggq-title h2 {
-        overflow-wrap:anywhere; word-break:normal; hyphens:auto;
-      }
-      .ggq-wrap { max-width:900px; margin:12px auto 18px; padding:0 8px; }
-      .ggq-head { display:flex; align-items:end; justify-content:space-between; gap:10px; margin-bottom:10px; }
-      .ggq-title { display:flex; align-items:center; gap:10px; }
-      .ggq-title h2 { margin:0; font-size:clamp(1.2rem,1.2vw + 1rem,1.6rem); }
-      .ggq-icon { font-size:1.6rem; }
-      .ggq-meta { display:flex; gap:10px; font-weight:800; }
-      .ggq-streak, .ggq-best { display:flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px;
-        background:#101214; border:1px solid #23232b; color:#e8f5e9; }
-      .ggq-best { color:#ffe9b2; }
-      .ggq-progress { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
-      .ggq-bar { flex:1; height:10px; background:#0d0d0f; border:1px solid #23232b; border-radius:999px; overflow:hidden; }
-      .ggq-bar span { display:block; height:100%; width:0%; background:linear-gradient(90deg, var(--accent), #e06100);
-        box-shadow:0 6px 20px rgba(224,97,0,.25) inset; transition:width .25s ease; }
-      .ggq-step { min-width:84px; text-align:right; color:var(--muted); }
-      .ggq-card { background:linear-gradient(140deg,#151515,#0f0f0f 55%); border:1px solid var(--edge); border-radius:18px;
-        box-shadow:var(--shadow); padding:16px; }
-      .ggq-question { margin:0 0 10px; line-height:1.3; }
-      .ggq-answers { display:grid; gap:10px; margin:0; padding:0; list-style:none; }
-      .ggq-answer { position:relative; border:1px solid #2a2e37; background:#111317; color:var(--ink); padding:12px 14px;
-        border-radius:12px; cursor:pointer; transition:transform .12s ease, border-color .2s ease, background .2s ease, filter .2s ease; }
-      .ggq-answer:hover { transform:translateY(-1px); filter:brightness(1.02); }
-      .ggq-answer .label { display:flex; align-items:center; gap:10px; }
-      .ggq-answer .badge { width:28px; height:28px; display:grid; place-items:center; border-radius:8px; border:1px solid #2d2f36; background:#151821; color:#cfd7df; font-weight:900; }
-      .ggq-answer.correct { border-color:#1f7a5b; background:#0f1a17; }
-      .ggq-answer.correct .badge { background:#113e34; color:#9fe6c3; }
-      .ggq-answer.wrong { border-color:#703030; background:#1a1111; }
-      .ggq-answer.wrong .badge { background:#3a1d1d; color:#f5b4b4; }
-      .ggq-answer.lock{cursor:default;filter:none}
-      .ggq-answer.lock:hover{transform:none}
-      .ggq-feedback { min-height:24px; margin-top:6px; color:var(--muted); }
-      .ggq-feedback.ok { color:#34d399; }
-      .ggq-feedback.bad { color:#ef4444; }
-      .ggq-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:10px; flex-wrap:wrap }
-      .ggq-btn { font-weight:900; padding:10px 14px; border-radius:12px; background:linear-gradient(180deg,var(--accent),#e06100);
-        color:#111; border:1px solid #a86f00; box-shadow:0 12px 26px rgba(224,97,0,.28); cursor:pointer; }
-      .ggq-btn[disabled]{ opacity:.55; cursor:not-allowed; }
-      .ggq-ghost { background:#121216; color:#e9ecef; border:1px solid #2b2b2b; box-shadow:0 12px 26px rgba(0,0,0,.25); }
-      .ggq-foot { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:10px; color:var(--muted); }
-      .ggq-score strong { color:#fff; }
-      .ggq-hint { font-size:.9rem; }
-      @media (max-width:720px){ .ggq-wrap{padding:0 8px} .ggq-meta{gap:8px} .ggq-answer .badge{width:26px;height:26px} }
-      .ggq-done { border:none; background:transparent; padding:0; inset:0; width:100%; height:100%; }
-      .ggq-done[open]::backdrop { background:rgba(0,0,0,.65) }
-      .ggq-done-card { position:relative; max-width:540px; margin:10vh auto; background:linear-gradient(120deg,#161616,#101010 55%);
-        border:1px solid #2c2c2c; border-radius:18px; padding:20px; color:var(--ink); text-align:center; box-shadow:var(--shadow); }
-      .ggq-trophy { font-size:2.2rem; margin-bottom:6px }
-      .ggq-done-actions { display:flex; gap:10px; justify-content:center; margin-top:10px }
-      #ggq-confetti { position:fixed; inset:0; pointer-events:none; }
-    </style>
-
     <script>
-      (()=>{ /* ---- quiz JS (unchanged) ---- */
-        const QUESTIONS=[{q:"You realize you’re not where you thought you were on trail. First move?",a:["Keep moving downhill—water is downhill","Sprint back the way you came","S.T.O.P.: Stop, Think, Observe, Plan","Build a shelter immediately"],correct:2,why:"S.T.O.P. breaks panic loops so you can reassess maps, terrain, and options."},{q:"At sea level, how long should you boil water to make it safe?",a:["Bring to a boil and remove immediately","Rolling boil for 30 seconds","Rolling boil for 1 minute","Rolling boil for 5 minutes"],correct:2,why:"Sea level: 1 minute at a rolling boil (extend at altitude)."},{q:"Above ~6,500 ft (≈2,000 m), how long should you boil water?",a:["Same as sea level—1 minute","90 seconds","2 minutes","3 minutes"],correct:3,why:"Lower boiling temps at altitude → boil for 3 minutes."},{q:"Which best describes early hypothermia treatment in the field?",a:["Give alcohol and rub limbs hard","Strip wet clothing, insulate, protect from wind, warm core first","Full-body hot immersion immediately","Make them run to generate heat"],correct:1,why:"Gentle handling, dry/insulate, warm core first; avoid rough movement and alcohol."},{q:"Which finding suggests heat stroke (not just heat exhaustion)?",a:["Heavy sweating and cramps, normal mentation","Cool clammy skin, nausea, fatigue","Altered mental status; may be hot/dry or still sweaty","Mild headache, normal behavior"],correct:2,why:"CNS changes = heat stroke → rapid cooling and EMS."},{q:"On a topo map, what indicates the steepest terrain?",a:["Widely spaced contour lines","Contours crossing a stream","Contour lines close together","Index contour lines (bold)"],correct:2,why:"Closer lines = faster elevation change = steeper slope."},{q:"Best tinder that often lights even when damp?",a:["Fresh green grass","Birch bark curls","Waterlogged leaves","River reeds"],correct:1,why:"Oils in birch bark catch easily, even when damp."},{q:"Standard whistle signal for distress is…",a:["1 long blast every minute","2 short blasts","3 short blasts","Continuous blowing"],correct:2,why:"Three blasts is the universal distress signal."},{q:"Ground-to-air signaling: which symbol means “need medical assistance”?",a:["V","X","N","→ (arrow)"],correct:1,why:"“X” = require medical assistance; “V” = need assistance; “N” = negative."},{q:"You see a bear ~60 yards away; it hasn’t noticed you. Best move?",a:["Run—bears are slow to react","Shout and throw rocks","Back away slowly, give space, avoid eye contact, leave the area","Climb a tree"],correct:2,why:"Create calm distance; never run. Carry spray in bear country."},{q:"Life-threatening bleeding from a leg wound. Proper tourniquet placement?",a:["Directly over the wound","Around the knee joint","2–3 inches above the wound, not over a joint; tighten until bleeding stops","As loose as possible for comfort"],correct:2,why:"Place proximal to wound (not over joints), tighten until bleeding stops; note time."},{q:"Safer emergency shelter site selection?",a:["Dry wash—flat ground","Under the largest lone tree","Slight rise, away from dead branches/gullies, with natural windbreak","Bottom of a valley (cold sink)"],correct:2,why:"Avoid widowmakers, flood paths, and cold sinks; use windbreaks."},{q:"Lightning safety: best option if available?",a:["Under a lone tall tree","Open ridgeline—far from trees","Metal-roofed/hard-topped vehicle with windows up","Lie flat in a field"],correct:2,why:"A vehicle acts as a Faraday cage. Outdoors: reduce profile; feet together on insulation."},{q:"Northern Hemisphere watch method: how to find south (analog watch)?",a:["Point 12 at the sun; halfway to hour hand is south","Point hour hand at the sun; halfway to 12 is south","Point the minute hand at the sun; 12 is south","Point the crown at the sun; opposite is south"],correct:1,why:"Hour hand → sun; midpoint to 12 = south (adjust for daylight saving)."},{q:"Water in dry country: which usually yields more in practice?",a:["Solar still in the ground","Licking dew off rocks","Transpiration bag over a leafy branch in sun","Drinking urine to recycle water"],correct:2,why:"Transpiration bags often outperform ground stills; do not drink urine."}];
-        const elQ=document.getElementById('ggq-question-text'),elA=document.getElementById('ggq-answers'),elNext=document.getElementById('ggq-next'),elSkip=document.getElementById('ggq-skip'),elFeedback=document.getElementById('ggq-feedback'),elScore=document.getElementById('ggq-score'),elStreak=document.getElementById('ggq-streak'),elBest=document.getElementById('ggq-best'),elBar=document.getElementById('ggq-bar'),elStep=document.getElementById('ggq-step'),elTotalA=document.getElementById('ggq-totalA'),elTotalB=document.getElementById('ggq-totalB'),elTotalC=document.getElementById('ggq-totalC'),dlg=document.getElementById('ggq-done'),elFinal=document.getElementById('ggq-final'),elBest2=document.getElementById('ggq-best2'),elStreak2=document.getElementById('ggq-streak2'),btnReplay=document.getElementById('ggq-replay'),btnShare=document.getElementById('ggq-share'),confettiCanvas=document.getElementById('ggq-confetti');
+      (()=>{ /* ---- quiz JS ---- */
+        const QUESTIONS=[
+          {q:"You realize you’re not where you thought you were on trail. First move?",a:["Keep moving downhill—water is downhill","Sprint back the way you came","S.T.O.P.: Stop, Think, Observe, Plan","Build a shelter immediately"],correct:2,why:"S.T.O.P. breaks panic loops so you can reassess maps, terrain, and options."},
+          {q:"At sea level, how long should you boil water to make it safe?",a:["Bring to a boil and remove immediately","Rolling boil for 30 seconds","Rolling boil for 1 minute","Rolling boil for 5 minutes"],correct:2,why:"Sea level: 1 minute at a rolling boil (extend at altitude)."},
+          {q:"Above ~6,500 ft (≈2,000 m), how long should you boil water?",a:["Same as sea level—1 minute","90 seconds","2 minutes","3 minutes"],correct:3,why:"Lower boiling temps at altitude → boil for 3 minutes."},
+          {q:"Which best describes early hypothermia treatment in the field?",a:["Give alcohol and rub limbs hard","Strip wet clothing, insulate, protect from wind, warm core first","Full-body hot immersion immediately","Make them run to generate heat"],correct:1,why:"Gentle handling, dry/insulate, warm core first; avoid rough movement and alcohol."},
+          {q:"Which finding suggests heat stroke (not just heat exhaustion)?",a:["Heavy sweating and cramps, normal mentation","Cool clammy skin, nausea, fatigue","Altered mental status; may be hot/dry or still sweaty","Mild headache, normal behavior"],correct:2,why:"CNS changes = heat stroke → rapid cooling and EMS."},
+          {q:"On a topo map, what indicates the steepest terrain?",a:["Widely spaced contour lines","Contours crossing a stream","Contour lines close together","Index contour lines (bold)"],correct:2,why:"Closer lines = faster elevation change = steeper slope."},
+          {q:"Best tinder that often lights even when damp?",a:["Fresh green grass","Birch bark curls","Waterlogged leaves","River reeds"],correct:1,why:"Oils in birch bark catch easily, even when damp."},
+          {q:"Standard whistle signal for distress is…",a:["1 long blast every minute","2 short blasts","3 short blasts","Continuous blowing"],correct:2,why:"Three blasts is the universal distress signal."},
+          {q:"Ground-to-air signaling: which symbol means “need medical assistance”?",a:["V","X","N","→ (arrow)"],correct:1,why:"“X” = require medical assistance; “V” = need assistance; “N” = negative."},
+          {q:"You see a bear ~60 yards away; it hasn’t noticed you. Best move?",a:["Run—bears are slow to react","Shout and throw rocks","Back away slowly, give space, avoid eye contact, leave the area","Climb a tree"],correct:2,why:"Create calm distance; never run. Carry spray in bear country."},
+          {q:"Life-threatening bleeding from a leg wound. Proper tourniquet placement?",a:["Directly over the wound","Around the knee joint","2–3 inches above the wound, not over a joint; tighten until bleeding stops","As loose as possible for comfort"],correct:2,why:"Place proximal to wound (not over joints), tighten until bleeding stops; note time."},
+          {q:"Safer emergency shelter site selection?",a:["Dry wash—flat ground","Under the largest lone tree","Slight rise, away from dead branches/gullies, with natural windbreak","Bottom of a valley (cold sink)"],correct:2,why:"Avoid widowmakers, flood paths, and cold sinks; use windbreaks."},
+          {q:"Lightning safety: best option if available?",a:["Under a lone tall tree","Open ridgeline—far from trees","Metal-roofed/hard-topped vehicle with windows up","Lie flat in a field"],correct:2,why:"A vehicle acts as a Faraday cage. Outdoors: reduce profile; feet together on insulation."},
+          {q:"Northern Hemisphere watch method: how to find south (analog watch)?",a:["Point 12 at the sun; halfway to hour hand is south","Point hour hand at the sun; halfway to 12 is south","Point the minute hand at the sun; 12 is south","Point the crown at the sun; opposite is south"],correct:1,why:"Hour hand → sun; midpoint to 12 = south (adjust for daylight saving)."},
+          {q:"Water in dry country: which usually yields more in practice?",a:["Solar still in the ground","Licking dew off rocks","Transpiration bag over a leafy branch in sun","Drinking urine to recycle water"],correct:2,why:"Transpiration bags often outperform ground stills; do not drink urine."}
+        ];
+        const elQ=document.getElementById('ggq-question-text'),
+              elA=document.getElementById('ggq-answers'),
+              elNext=document.getElementById('ggq-next'),
+              elSkip=document.getElementById('ggq-skip'),
+              elFeedback=document.getElementById('ggq-feedback'),
+              elScore=document.getElementById('ggq-score'),
+              elStreak=document.getElementById('ggq-streak'),
+              elBest=document.getElementById('ggq-best'),
+              elBar=document.getElementById('ggq-bar'),
+              elStep=document.getElementById('ggq-step'),
+              elTotalA=document.getElementById('ggq-totalA'),
+              elTotalB=document.getElementById('ggq-totalB'),
+              elTotalC=document.getElementById('ggq-totalC'),
+              dlg=document.getElementById('ggq-done'),
+              elFinal=document.getElementById('ggq-final'),
+              elBest2=document.getElementById('ggq-best2'),
+              elStreak2=document.getElementById('ggq-streak2'),
+              btnReplay=document.getElementById('ggq-replay'),
+              btnShare=document.getElementById('ggq-share'),
+              confettiCanvas=document.getElementById('ggq-confetti'),
+              elRank=document.getElementById('ggq-rank');
+
         const TOTAL=QUESTIONS.length;let order=[],idx=0,score=0,streak=0,locked=false;
-        const lsKey='ggq-best-score-v1',getBest=()=>Number(localStorage.getItem(lsKey)||0),setBest=v=>localStorage.setItem(lsKey,String(v)),shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
-        function init(){order=shuffle([...Array(TOTAL).keys()]);idx=0;score=0;streak=0;locked=false;elScore.textContent=score;elStreak.textContent=streak;elBest.textContent=getBest();elTotalA.textContent=TOTAL;elTotalB.textContent=TOTAL;elTotalC.textContent=TOTAL;updateProgress();render()}
-        function updateProgress(){elStep.textContent=String(idx+1);elBar.style.width=((idx/TOTAL)*100)+'%'}
-        function render(){elNext.disabled=true;elFeedback.textContent='';elFeedback.className='ggq-feedback';elA.innerHTML='';const q=QUESTIONS[order[idx]];elQ.textContent=q.q;q.a.forEach((opt,i)=>{const li=document.createElement('li');li.className='ggq-answer';li.setAttribute('role','button');li.setAttribute('tabindex','0');li.innerHTML=`<input type="radio" name="ggq" value="${i}" aria-label="${opt}"><div class="label"><span class="badge">${String.fromCharCode(65+i)}</span><span class="txt">${opt}</span></div>`;li.addEventListener('click',()=>choose(i));li.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(i)}});elA.appendChild(li)})}
-        function choose(i){if(locked)return;locked=true;const q=QUESTIONS[order[idx]],correct=q.correct,items=[...document.querySelectorAll('.ggq-answer')];items.forEach(el=>el.classList.add('lock'));items[correct].classList.add('correct');if(i===correct){score++;streak++;elFeedback.textContent="Correct — "+q.why;elFeedback.classList.add('ok');pulse(items[correct])}else{streak=0;items[i]?.classList.add('wrong');elFeedback.textContent="Not quite — "+q.why;elFeedback.classList.add('bad');shake(items[i])}elScore.textContent=score;elStreak.textContent=streak;elNext.disabled=false}
-        function next(){if(!locked)return;idx++;locked=false;if(idx>=TOTAL){finish()}else{updateProgress();render()}}
-        function skip(){if(locked)return;order.push(order[idx]);idx++;if(idx>=TOTAL){finish()}else{updateProgress();render()}}
-        function finish(){elBar.style.width='100%';const best=getBest();if(score>best)setBest(score);elFinal.textContent=`You scored ${score} out of ${TOTAL}.`;elBest2.textContent=Math.max(score,best);elStreak2.textContent=streak;dlg.showModal();blastConfetti(confettiCanvas,score/TOTAL)}
-        function replay(){dlg.close();const ctx=confettiCanvas.getContext('2d');ctx&&ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height);init()}
-        function pulse(el){el&&el.animate([{transform:'scale(1)'},{transform:'scale(1.02)'},{transform:'scale(1)'}],{duration:220,easing:'ease-out'})}
-        function shake(el){el&&el.animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:180,easing:'ease-in-out'})}
-        function blastConfetti(canvas,intensity=.7){const dpr=window.devicePixelRatio||1;const resize=()=>{canvas.width=innerWidth*dpr;canvas.height=innerHeight*dpr};resize();const ctx=canvas.getContext('2d');const N=Math.floor(120*Math.max(.25,Math.min(1,intensity)));const pieces=Array.from({length:N},()=>({x:Math.random()*canvas.width,y:-20,r:6+Math.random()*8,c:Math.random()<.5?'#ffa500':(Math.random()<.5?'#34d399':'#e9ecef'),vx:-2+Math.random()*4,vy:2+Math.random()*3,rot:Math.random()*Math.PI,vr:(-.2+Math.random()*.4),life:0,max:120+Math.random()*80}));let raf;const step=()=>{ctx.clearRect(0,0,canvas.width,canvas.height);pieces.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=0.03;p.life++;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);ctx.restore()});if(pieces.some(p=>p.life<p.max&&p.y<canvas.height+50))raf=requestAnimationFrame(step);else cancelAnimationFrame(raf)};step();setTimeout(()=>cancelAnimationFrame(raf),4500);window.addEventListener('resize',resize,{once:true})}
-        document.getElementById('ggq-next').addEventListener('click',next);
-        document.getElementById('ggq-skip').addEventListener('click',skip);
-        document.getElementById('ggq-replay').addEventListener('click',replay);
-        document.getElementById('ggq-share').addEventListener('click',async()=>{const url=location.origin+location.pathname+'#gg-quiz',text=`I scored ${score}/${TOTAL} on the Grit Gear HQ Survival Quiz!`,title='Grit Gear HQ Survival Quiz';if(navigator.share){try{await navigator.share({title,text,url});return}catch(e){}}try{const payload=`${text} ${url}`;if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(payload)}else{const ta=document.createElement('textarea');ta.value=payload;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();document.execCommand('copy');ta.remove()}document.getElementById('ggq-share').textContent='Copied!';setTimeout(()=>document.getElementById('ggq-share').textContent='Share Score',1500);return}catch(e){}const tw=`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&via=GritGearHQ`;window.open(tw,'_blank','noopener')});
+        const lsKey='ggq-best-score-v1',
+              getBest=()=>Number(localStorage.getItem(lsKey)||0),
+              setBest=v=>localStorage.setItem(lsKey,String(v)),
+              shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+
+        function init(){
+          order=shuffle([...Array(TOTAL).keys()]);
+          idx=0; score=0; streak=0; locked=false;
+          elScore.textContent=score; elStreak.textContent=streak; elBest.textContent=getBest();
+          elTotalA.textContent=TOTAL; elTotalB.textContent=TOTAL; elTotalC.textContent=TOTAL;
+          updateProgress(); render();
+        }
+        function updateProgress(){ elStep.textContent=String(idx+1); elBar.style.width=((idx/TOTAL)*100)+'%' }
+        function render(){
+          elNext.disabled=true; elFeedback.textContent=''; elFeedback.className='ggq-feedback'; elA.innerHTML='';
+          const q=QUESTIONS[order[idx]]; elQ.textContent=q.q;
+          q.a.forEach((opt,i)=>{
+            const li=document.createElement('li');
+            li.className='ggq-answer'; li.setAttribute('role','button'); li.setAttribute('tabindex','0');
+            li.innerHTML=`<input type="radio" name="ggq" value="${i}" aria-label="${opt}">
+              <div class="label"><span class="badge">${String.fromCharCode(65+i)}</span><span class="txt">${opt}</span></div>`;
+            li.addEventListener('click',()=>choose(i));
+            li.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); choose(i); }});
+            elA.appendChild(li);
+          });
+        }
+        function choose(i){
+          if (locked) return; locked=true;
+          const q=QUESTIONS[order[idx]], correct=q.correct, items=[...document.querySelectorAll('.ggq-answer')];
+          items.forEach(el=>el.classList.add('lock')); items[correct].classList.add('correct');
+          if (i===correct){ score++; streak++; elFeedback.textContent="Correct — "+q.why; elFeedback.classList.add('ok'); pulse(items[correct]); }
+          else { streak=0; items[i]?.classList.add('wrong'); elFeedback.textContent="Not quite — "+q.why; elFeedback.classList.add('bad'); shake(items[i]); }
+          elScore.textContent=score; elStreak.textContent=streak; elNext.disabled=false;
+        }
+        function next(){ if(!locked) return; idx++; locked=false; if(idx>=TOTAL){ finish(); } else { updateProgress(); render(); } }
+        function skip(){ if(locked) return; order.push(order[idx]); idx++; if(idx>=TOTAL){ finish(); } else { updateProgress(); render(); } }
+
+        function rankName(s, t){
+          const pct = (s/t)*100;
+          if (pct <= 20) return "Backpack Full of Rocks";
+          if (pct <= 40) return "Map? I Thought You Had It";
+          if (pct <= 60) return "Decent Trailbrain";
+          if (pct <= 80) return "Campfire Quarterback";
+          if (pct <= 95) return "Ranger Danger";
+          return "Wilderness Wizard";
+        }
+
+        function finish(){
+          elBar.style.width='100%';
+          const best=getBest(); if(score>best) setBest(score);
+          elFinal.textContent=`You scored ${score} out of ${TOTAL}.`;
+          elBest2.textContent=Math.max(score,best);
+          elStreak2.textContent=streak;
+          elRank.textContent = rankName(score, TOTAL);
+          dlg.showModal();
+          blastConfetti(confettiCanvas, score/TOTAL);
+        }
+        function replay(){ dlg.close(); const ctx=confettiCanvas.getContext('2d'); ctx&&ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height); init(); }
+        function pulse(el){ el&&el.animate([{transform:'scale(1)'},{transform:'scale(1.02)'},{transform:'scale(1)'}],{duration:220,easing:'ease-out'}) }
+        function shake(el){ el&&el.animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:180,easing:'ease-in-out'}) }
+        function blastConfetti(canvas,intensity=.7){
+          const dpr=window.devicePixelRatio||1, resize=()=>{canvas.width=innerWidth*dpr;canvas.height=innerHeight*dpr}; resize();
+          const ctx=canvas.getContext('2d'); const N=Math.floor(120*Math.max(.25,Math.min(1,intensity)));
+          const pieces=Array.from({length:N},()=>({x:Math.random()*canvas.width,y:-20,r:6+Math.random()*8,c:Math.random()<.5?'#ffa500':(Math.random()<.5?'#34d399':'#e9ecef'),vx:-2+Math.random()*4,vy:2+Math.random()*3,rot:Math.random()*Math.PI,vr:(-.2+Math.random()*.4),life:0,max:120+Math.random()*80}));
+          let raf; const step=()=>{ ctx.clearRect(0,0,canvas.width,canvas.height);
+            pieces.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=0.03;p.life++;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);ctx.restore()});
+            if (pieces.some(p=>p.life<p.max&&p.y<canvas.height+50)) raf=requestAnimationFrame(step); else cancelAnimationFrame(raf);
+          };
+          step(); setTimeout(()=>cancelAnimationFrame(raf),4500); window.addEventListener('resize',resize,{once:true});
+        }
+        elNext.addEventListener('click',next);
+        elSkip.addEventListener('click',skip);
+        btnReplay.addEventListener('click',replay);
+        btnShare.addEventListener('click',async()=>{
+          const url=location.origin+location.pathname+'#gg-quiz',
+                text=`I scored ${score}/${TOTAL} on the Grit Gear HQ Survival Quiz!`,
+                title='Grit Gear HQ Survival Quiz';
+          if (navigator.share){ try{ await navigator.share({title,text,url}); return;}catch(e){} }
+          try{
+            const payload=`${text} ${url}`;
+            if (navigator.clipboard && window.isSecureContext){ await navigator.clipboard.writeText(payload); }
+            else{ const ta=document.createElement('textarea'); ta.value=payload; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); document.execCommand('copy'); ta.remove(); }
+            btnShare.textContent='Copied!'; setTimeout(()=>btnShare.textContent='Share Score',1500);
+          }catch(e){
+            const tw=`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&via=GritGearHQ`;
+            window.open(tw,'_blank','noopener');
+          }
+        });
         init();
       })();
     </script>
-    <!-- === /QUIZ === -->
+    <!-- ========== /Quiz ========== -->
 
     <!-- Ad slot (mid) -->
     <div class="ad"><!-- Your ad unit here --></div>
 
-    <!-- Affiliate/partner picks (edit/expand as you like) -->
+    <!-- ===== Recommended gear ===== -->
     <section class="gear" aria-label="Recommended gear">
       <h2 style="margin:0 0 10px;color:#ffa500">Recommended Gear</h2>
       <div class="grid">
@@ -204,22 +345,21 @@
           <p style="margin:0;color:#aab3bb">Paracord with fishing line, snare wire & tinder.</p>
           <span class="btn">Shop TITAN →</span>
         </a>
-        
-<!-- Thought Crimes Notebook (fixed image path to root) -->
-<a class="card" href="https://amzn.to/4gt5cIt" target="_blank" rel="nofollow sponsored noopener">
-  <figure>
-    <img
-      src="/tccc.jpg?v=2"
-      alt="Thought Crimes: A Notebook for Dangerous Ideas"
-      loading="lazy" decoding="async"
-      onerror="this.onerror=null;this.src='/thought-crimes.jpg?v=2';"
-      style="display:block;width:100%;height:auto"
-    >
-  </figure>
-  <h3>Thought Crimes Notebook</h3>
-  <p style="margin:0;color:#aab3bb">Hardcover look. Rugged pages. Everyday carry.</p>
-  <span class="btn">Check price →</span>
-</a>
+
+        <a class="card" href="https://amzn.to/4gt5cIt" target="_blank" rel="nofollow sponsored noopener">
+          <figure>
+            <img
+              src="/tccc.jpg"
+              alt="Thought Crimes: A Notebook for Dangerous Ideas"
+              loading="lazy" decoding="async"
+              onerror="this.onerror=null;this.src='/thought-crimes.jpg';">
+          </figure>
+          <h3>Thought Crimes Notebook</h3>
+          <p style="margin:0;color:#aab3bb">Hardcover look. Rugged pages. Everyday carry.</p>
+          <span class="btn">Check price →</span>
+        </a>
+      </div>
+    </section>
 
     <!-- Ad slot (bottom) -->
     <div class="ad"><!-- Your ad unit here --></div>
