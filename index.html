@@ -129,37 +129,42 @@
 
   <div>
 
- <!-- ===== Survival Quiz PREVIEW (CTA → subpage) ===== -->
+<!-- ===== Survival Quiz PREVIEW (CTA → subpage) ===== -->
 <section id="quiz-preview" style="max-width:980px;margin:24px auto;padding:0 12px">
-  <a href="/survival-quiz.html#top" style="
-    display:grid;grid-template-columns:1fr;gap:14px;
-    background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid #262626;border-radius:18px;padding:16px;
-    text-decoration:none;color:#e9ecef;box-shadow:0 14px 34px rgba(0,0,0,.45);
-  ">
+  <a href="/survival-quiz.html#top" aria-label="Open the Survival Basics Quiz"
+     style="display:grid;grid-template-columns:1fr;gap:14px;background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid #262626;border-radius:18px;padding:16px;text-decoration:none;color:#e9ecef;box-shadow:0 14px 34px rgba(0,0,0,.45)">
+    
+    <!-- Optional image header (will gracefully hide if missing) -->
+    <figure style="margin:0;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#0c0c0c;border:1px solid #2a2a2a">
+      <img src="/images/quiz-preview.jpg" alt="" loading="lazy" decoding="async"
+           onerror="this.closest('figure').style.display='none'"
+           style="width:100%;height:100%;object-fit:cover;display:block;">
+    </figure>
+
     <div style="display:flex;align-items:center;gap:10px">
       <span style="font-size:1.6rem">🧭</span>
-      <h2 style="margin:0;font-size:clamp(1.2rem,1.2vw + 1rem,1.8rem);color:#ffa500">
+      <h2 style="margin:0;font-size:clamp(1.2rem,1.2vw + 1rem,1.8rem);color:#ffa500;line-height:1.2">
         Survival Basics Quiz
       </h2>
     </div>
-    <p style="margin:0;color:#aab3bb;line-height:1.55">
+
+    <p style="margin:0;color:#aab3bb;line-height:1.55;max-width:70ch">
       15 fast questions. Learn, level up, and share your score. Ready to test your field sense?
     </p>
-    <ul style="margin:6px 0 0 18px;color:#cfd7df;line-height:1.6">
+
+    <ul style="margin:6px 0 0 18px;color:#cfd7df;line-height:1.6;max-width:70ch">
       <li>Trail safety, water, shelter, signaling</li>
       <li>Instant feedback + shareable results</li>
     </ul>
+
     <div style="margin-top:6px">
-      <span style="
-        display:inline-block;font-weight:900;padding:12px 16px;border-radius:12px;
-        border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;
-      ">Take the Quiz →</span>
+      <span style="display:inline-block;font-weight:900;padding:12px 16px;border-radius:12px;border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010">
+        Take the Quiz →
+      </span>
     </div>
   </a>
 </section>
 <!-- ===== /Preview CTA ===== -->
-
 
     <!-- ===== Cards (rows of two) ===== -->
     <section class="cards-wrap" aria-label="Featured gear & posts">
