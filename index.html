@@ -352,27 +352,56 @@
 
 <section class="home-pair">
 
-  <!-- Card A: Survival Quiz (CTA to subpage) -->
-  <a class="tab-card" href="/survival-quiz.html#top" aria-label="Open the Survival Basics Quiz">
-    <header class="tab-head">
-      <h2 class="tab-title">Survival Basics Quiz</h2>
-      <span class="tab-pill">15 Questions</span>
-    </header>
+ <!-- ===== Survival Quiz PREVIEW (CTA → subpage, using your island image) ===== -->
+<style>
+  .quiz-preview{max-width:980px;margin:24px auto;padding:0 12px}
+  .qp-card{
+    display:grid;gap:14px;
+    background:linear-gradient(120deg,#151515,#0f0f0f 55%);
+    border:1px solid #262626;border-radius:18px;padding:16px;
+    color:#e9ecef;text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,.45)
+  }
+  .qp-figure{margin:0;position:relative;border-radius:12px;overflow:hidden;
+    aspect-ratio:16/9;background:#0c0c0c;border:1px solid #2a2a2a}
+  .qp-figure img{width:100%;height:100%;object-fit:cover;display:block}
+  /* subtle bottom fade to add polish without darkening the whole image */
+  .qp-figure::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;
+    background:linear-gradient(180deg,transparent,rgba(0,0,0,.25))}
+  .qp-row{display:flex;align-items:center;gap:10px}
+  .qp-title{margin:0;font-size:clamp(1.2rem,1.2vw + 1rem,1.8rem);color:#ffa500;line-height:1.2}
+  .qp-text{margin:0;color:#aab3bb;line-height:1.55;max-width:70ch}
+  .qp-list{margin:6px 0 0 18px;color:#cfd7df;line-height:1.6;max-width:70ch}
+  .qp-cta{display:inline-block;font-weight:900;padding:12px 16px;border-radius:12px;
+    border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010}
+</style>
 
-    <figure class="tab-media">
-      <img src="/images/quiz-preview.jpg" alt="Survival quiz preview banner"
+<section id="quiz-preview" class="quiz-preview">
+  <a href="/survival-quiz.html#top" class="qp-card" aria-label="Open the Survival Basics Quiz">
+    <figure class="qp-figure">
+      <img src="/survive-8683959_1280.jpg" alt="Cartoon island survival scene for quiz preview"
            loading="lazy" decoding="async"
            onerror="this.closest('figure').style.display='none'">
     </figure>
 
-    <div class="tab-body">
-      <p style="margin:0;color:#aab3bb">Fast, field-tested questions with instant feedback. Learn, level up, and share your score.</p>
-      <ul class="tab-bullets">
-        <li>Trail safety • water • shelter • signaling</li>
-        <li>Mobile-friendly + shareable results</li>
-      </ul>
-      <span class="tab-cta">Take the Quiz →</span>
+    <div class="qp-row">
+      <span style="font-size:1.6rem">🧭</span>
+      <h2 class="qp-title">Survival Basics Quiz</h2>
     </div>
+
+    <p class="qp-text">
+      15 fast questions. Learn, level up, and share your score. Ready to test your field sense?
+    </p>
+
+    <ul class="qp-list">
+      <li>Trail safety, water, shelter, signaling</li>
+      <li>Instant feedback + shareable results</li>
+    </ul>
+
+    <div><span class="qp-cta">Take the Quiz →</span></div>
+  </a>
+</section>
+<!-- ===== /Preview CTA ===== -->
+
   </a>
 
   <!-- Card B: Paracord Bracelet Knife (auto-rotating images) -->
