@@ -155,64 +155,76 @@
     <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
   </ul>
 </div>
-       <!-- ===== CARD: Uncle Tommy's Fire Starten Combo Kit (place this right beside your cook-set tab) ===== -->
-<section class="tab-card" aria-label="Uncle Tommy's Fire Starten Combo Kit">
-  <header class="tab-head">
-    <h3 class="tab-title">Uncle Tommy’s Fire Starten Kit</h3>
-    <span class="tab-pill">EDC Fire</span>
-  </header>
+      <!-- ========== Drop-in wrapper to show both cards side-by-side (stacks on phones) ========== -->
+<style>
+  .tabs-grid{
+    display:grid;
+    gap:16px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:stretch;
+  }
+  @media (max-width:720px){
+    .tabs-grid{ grid-template-columns:1fr; }
+  }
+</style>
 
-  <figure class="tab-media">
-    <img src="/uncletommy.jpg" alt="Uncle Tommy’s Stuff — Fire Starten Combo Kit with matches, striker, and fire discs">
-  </figure>
+<section class="tabs-grid">
+  <!-- ===== Uncle Tommy’s Fire Starten Kit ===== -->
+  <section class="tab-card" aria-label="Uncle Tommy's Fire Starten Combo Kit">
+    <header class="tab-head">
+      <h3 class="tab-title">Uncle Tommy’s Fire Starten Kit</h3>
+      <span class="tab-pill">EDC Fire</span>
+    </header>
 
-  <div class="tab-body">
-    <ul class="tab-bullets">
-      <li>25 large waterproof matches + striker</li>
-      <li>4 sawdust-infused, waterproof fire discs</li>
-      <li>Pocket tin: toss in pack, glove box, or kit</li>
-      <li>Lights easy, burns hot with strong split</li>
-    </ul>
-    <a class="tab-cta"
-       href="https://www.ebay.com/itm/175132576181?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1dxU8LoGZ15e69wiRtDrf7ryrwSy%2Btrco5WCCEsJ98I6MhSsSZjFCu14kFEAqulT82WD%2FhTOIsTKzZb0OHvXabNl%2FzmAWMciU75KQHsaJpy%2FXYQmKH1dvLWzyab%2BjZyZKfiH%2FiuHNrkbeJaucP5I%2BNmSZmhiG8NFGmQJL7%2FgU7ivpYhG%2F93hrjOMH%2BYpcvxJIY%3D"
-       target="_blank" rel="nofollow sponsored noopener">
-      View on eBay →
-    </a>
-  </div>
+    <figure class="tab-media">
+      <img src="/uncletommy.jpg" alt="Uncle Tommy’s Stuff — Fire Starten Combo Kit with matches, striker, and fire discs">
+    </figure>
+
+    <div class="tab-body">
+      <ul class="tab-bullets">
+        <li>25 large waterproof matches + striker</li>
+        <li>4 sawdust-infused, waterproof fire discs</li>
+        <li>Pocket tin: toss in pack, glove box, or kit</li>
+        <li>Lights easy, burns hot with strong split</li>
+      </ul>
+      <a class="tab-cta"
+         href="https://www.ebay.com/itm/175132576181?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1dxU8LoGZ15e69wiRtDrf7ryrwSy%2Btrco5WCCEsJ98I6MhSsSZjFCu14kFEAqulT82WD%2FhTOIsTKzZb0OHvXabNl%2FzmAWMciU75KQHsaJpy%2FXYQmKH1dvLWzyab%2BjZyZKfiH%2FiuHNrkbeJaucP5I%2BNmSZmhiG8NFGmQJL7%2FgU7ivpYhG%2F93hrjOMH%2BYpcvxJIY%3D"
+         target="_blank" rel="nofollow sponsored noopener">
+        Check availability →
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Compact Backpacking Cook Set (rotator) ===== -->
+  <section class="tab-card" aria-label="Outdoor Cook Set">
+    <header class="tab-head">
+      <h3 class="tab-title">Compact Backpacking Cook Set</h3>
+      <span class="tab-pill">New</span>
+    </header>
+
+    <figure class="tab-media">
+      <img id="cookTabSlide" src="/outdoorp1.jpg" alt="Backpacking cook set — pots, burner, utensils">
+      <button class="tab-nav prev" type="button" aria-label="Previous image">‹</button>
+      <button class="tab-nav next" type="button" aria-label="Next image">›</button>
+      <div class="tab-dots" id="cookTabDots" role="tablist" aria-label="Cook set images"></div>
+    </figure>
+
+    <div class="tab-body">
+      <ul class="tab-bullets">
+        <li>Nested pots + pan with foldable handles</li>
+        <li>Ultralight gas burner (case included)</li>
+        <li>Bowls, utensils, rice paddle, loofah, carabiner</li>
+        <li>Packs small, perfect for daypack or bug-out</li>
+      </ul>
+      <a class="tab-cta"
+         href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+         target="_blank" rel="nofollow sponsored noopener">
+        Check availability →
+      </a>
+    </div>
+  </section>
 </section>
-<!-- Tip: To sit side-by-side with the cook-set card, wrap both cards in a grid container like:
-<section class="tabs-grid">[cook-set card here] [this card here]</section>
-and add:
-<style>.tabs-grid{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:720px){.tabs-grid{grid-template-columns:1fr}}</style> -->
-
-<!-- ===== FRONT-PAGE TAB: Compact Cook Set (auto-rotating images) ===== -->
-<section class="tab-card" aria-label="Outdoor Cook Set">
-  <header class="tab-head">
-    <h3 class="tab-title">Compact Backpacking Cook Set</h3>
-    <span class="tab-pill">New</span>
-  </header>
-
-  <figure class="tab-media">
-    <img id="cookTabSlide" src="/outdoorp1.jpg" alt="Backpacking cook set — pots, burner, utensils">
-    <button class="tab-nav prev" type="button" aria-label="Previous image">‹</button>
-    <button class="tab-nav next" type="button" aria-label="Next image">›</button>
-    <div class="tab-dots" id="cookTabDots" role="tablist" aria-label="Cook set images"></div>
-  </figure>
-
-  <div class="tab-body">
-    <ul class="tab-bullets">
-      <li>Nested pots + pan with foldable handles</li>
-      <li>Ultralight gas burner (case included)</li>
-      <li>Bowls, utensils, rice paddle, loofah, carabiner</li>
-      <li>Packs small, perfect for daypack or bug-out</li>
-    </ul>
-    <a class="tab-cta"
-       href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">
-      View on eBay →
-    </a>
-  </div>
-</section>
+<!-- ========== /Drop-in wrapper ========== -->
 
 <style>
   .tab-card{
