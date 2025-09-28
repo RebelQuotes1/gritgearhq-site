@@ -164,6 +164,16 @@
       <span class="tw-pill">Backcountry Pick</span>
     </header>
 
+   <!-- ============== TWO-UP: Warpath Bowie + Skull Inlay Folder ============== -->
+<section class="twins" aria-label="Featured knives">
+
+  <!-- ========== CARD A: Warpath Bowie (blacked) ========== -->
+  <article class="tw-card">
+    <header class="tw-head">
+      <h3 class="tw-title">Warpath Bowie — Blacked Carbon Steel</h3>
+      <span class="tw-pill">Backcountry Pick</span>
+    </header>
+
     <figure class="tw-figure">
       <img id="knifeA-img" alt="Warpath Bowie blacked bowie knife"
            src="/$_57%20(7).jfif"
@@ -174,16 +184,14 @@
     </figure>
 
     <ul class="tw-bullets">
-      <li>Full-tang, blacked carbon steel blade for abuse without glare.</li>
-      <li>Guarded handle with stacked-leather accent for confident grip.</li>
-      <li>Trail tasks: batoning, camp food prep, and camp chores.</li>
+      <li>Full-tang, blacked carbon steel for hard use without glare.</li>
+      <li>Guarded handle with stacked-leather accent for locked-in grip.</li>
+      <li>Happy doing it all: batoning, camp prep, trail chores.</li>
       <li>Built like the classics—made to be sharpened, not shelved.</li>
     </ul>
 
     <div class="tw-meta">
-      <div class="tw-stars" aria-label="Rated 4.7 out of 5">
-        ★★★★★ <span>4.7 (132 reviews)</span>
-      </div>
+      <div class="tw-stars" aria-label="Rated 4.7 out of 5">★★★★★ <span>4.7 (132 reviews)</span></div>
       <div class="tw-urgency">🔥 27 sold this week • Low stock</div>
     </div>
 
@@ -192,47 +200,100 @@
        target="_blank" rel="nofollow sponsored noopener">Check price →</a>
   </article>
 
+  <!-- ========== CARD B: Skull Inlay Traditional Folder ========== -->
+  <article class="tw-card">
+    <header class="tw-head">
+      <h3 class="tw-title">Skull-Inlay Traditional Folder (Sheepsfoot)</h3>
+      <span class="tw-pill tw-pill--green">Everyday Carry</span>
+    </header>
+
+    <figure class="tw-figure">
+      <img id="knifeSkull-img" alt="Skull inlay pocket knife, sheepsfoot blade"
+           src="/skullknife2.jpg"
+           onerror="this.onerror=null;this.src='/skullknife1.jpg';">
+      <button class="tw-nav prev" aria-label="Previous image" data-target="knifeSkull">‹</button>
+      <button class="tw-nav next" aria-label="Next image" data-target="knifeSkull">›</button>
+      <div class="tw-dots" id="knifeSkull-dots"></div>
+    </figure>
+
+    <ul class="tw-bullets">
+      <li>Clean sheepsfoot profile = precise control for daily tasks.</li>
+      <li>Signature skull shield—subtle attitude, classic lines.</li>
+      <li>Bolsters & pins, walk-and-talk that feels premium.</li>
+      <li>Pocket-friendly, gift-ready, field-use approved.</li>
+    </ul>
+
+    <div class="tw-meta">
+      <div class="tw-stars" aria-label="Rated 4.8 out of 5">★★★★★ <span>4.8 (210+ ratings)</span></div>
+      <div class="tw-urgency">⏳ Popular drop • Moving fast</div>
+    </div>
+
+    <a class="tw-cta"
+       href="https://www.ebay.com/itm/236281207985?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+       target="_blank" rel="nofollow sponsored noopener">See options →</a>
+  </article>
+
+</section>
+
 <script>
-  // Simple rotators with graceful fallbacks
+  // Rotators: Warpath (A) and Skull Folder
   const galleries = {
     knifeA: [
       "/$_57%20(7).jfif",
       "/$_57%20(6).jfif",
       "/s-l1600%20(11).jpg"
     ],
-    // ✅ Mirror-finish images only (removed the blacked knife)
-    knifeB: [
-      "/s-l1600%20(11).jpg",
-      "/s-l1600%20(10).jpg"
+    knifeSkull: [
+      "/skullknife2.jpg",
+      "/skullknife1.jpg",
+      "/skullknife.jpg"
     ]
   };
 
   for (const key of Object.keys(galleries)) {
     const img = document.getElementById(key + "-img");
     const dotsWrap = document.getElementById(key + "-dots");
-    let i = 0;
+    if (!img || !dotsWrap) continue;
 
-    galleries[key].forEach((_, idx)=>{
+    let i = 0;
+    // build dots
+    galleries[key].forEach((_, idx) => {
       const b = document.createElement("button");
-      b.setAttribute("aria-label","Show image " + (idx+1));
-      if(idx===0) b.setAttribute("aria-current","true");
-      b.addEventListener("click",()=>go(idx));
+      b.type = "button";
+      b.setAttribute("aria-label", "Show image " + (idx + 1));
+      if (idx === 0) b.setAttribute("aria-current", "true");
+      b.addEventListener("click", () => go(idx));
       dotsWrap.appendChild(b);
     });
     const dots = [...dotsWrap.children];
 
-    function go(n){
-      i = (n + galleries[key].length) % galleries[key].length;
+    function paint() {
       img.src = galleries[key][i];
-      dots.forEach(d=>d.removeAttribute("aria-current"));
-      dots[i].setAttribute("aria-current","true");
+      dots.forEach((d, di) => d.toggleAttribute("aria-current", di === i));
     }
-    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn=>{
-      btn.addEventListener("click", ()=> go(i + (btn.classList.contains('next') ? 1 : -1)));
+    function go(n) {
+      i = (n + galleries[key].length) % galleries[key].length;
+      paint();
+    }
+
+    // prev/next buttons
+    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn => {
+      btn.addEventListener("click", () => go(i + (btn.classList.contains("next") ? 1 : -1)));
     });
-    setInterval(()=>go(i+1), 4500);
+
+    // start + auto-rotate
+    paint();
+    setInterval(() => go(i + 1), 4500);
+
+    // skip broken images gracefully
+    img.addEventListener("error", () => {
+      galleries[key].splice(i, 1);
+      if (!galleries[key].length) { img.style.display = "none"; return; }
+      i = 0; paint();
+    });
   }
 </script>
+
 <style>
   /* --- layout --- */
   .twins{max-width:980px;margin:18px auto;padding:0 12px;
@@ -273,53 +334,8 @@
           background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none}
   .tw-cta:hover{filter:brightness(1.05)}
 </style>
+<!-- ============== /TWO-UP: Warpath Bowie + Skull Inlay Folder ============== -->
 
-<script>
-  // Simple rotators with graceful fallbacks
-  const galleries = {
-    knifeA: [
-      "/$_57%20(7).jfif",
-      "/$_57%20(6).jfif",
-      "/s-l1600%20(11).jpg" // extra fallback if you want
-    ],
-    knifeB: [
-      "/s-l1600%20(11).jpg",
-      "/s-l1600%20(10).jpg",
-      "/$_57%20(9).jfif" // extra fallback
-    ]
-  };
-
-  for (const key of Object.keys(galleries)) {
-    const img = document.getElementById(key + "-img");
-    const dotsWrap = document.getElementById(key + "-dots");
-    let i = 0;
-
-    // dots
-    galleries[key].forEach((_, idx)=>{
-      const b = document.createElement("button");
-      b.setAttribute("aria-label","Show image " + (idx+1));
-      if(idx===0) b.setAttribute("aria-current","true");
-      b.addEventListener("click",()=>go(idx));
-      dotsWrap.appendChild(b);
-    });
-    const dots = [...dotsWrap.children];
-
-    function go(n){
-      i = (n + galleries[key].length) % galleries[key].length;
-      img.src = galleries[key][i];
-      dots.forEach(d=>d.removeAttribute("aria-current"));
-      dots[i].setAttribute("aria-current","true");
-    }
-    // buttons
-    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn=>{
-      btn.addEventListener("click", ()=> go(i + (btn.classList.contains('next') ? 1 : -1)));
-    });
-    // autorotate
-    setInterval(()=>go(i+1), 4500);
-  }
-</script>
-<!-- ============== /TWO-UP: Bowie Knives ============== -->
-    
 </div>
        
       <!-- ========== Drop-in wrapper to show both cards side-by-side (stacks on phones) ========== -->
