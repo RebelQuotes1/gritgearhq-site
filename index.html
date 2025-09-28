@@ -947,7 +947,7 @@
       🐓 Read Full Blog Post
     </a>
   </div>
-<!-- ===== Front-Page: Rooftop Tent + 13,500-lb Winch (side-by-side) ===== -->
+<!-- ===== Front-Page: Rooftop Tent + 13,500-lb Winch (with real image paths) ===== -->
 <section class="tabs-grid" aria-label="Featured overland gear">
   <!-- Rooftop Tent -->
   <article class="tab-card" aria-label="Rooftop Tent">
@@ -957,7 +957,7 @@
     </header>
 
     <figure class="tab-media">
-      <img id="rtSlide" src="/rt1.jpg" alt="Rooftop tent set up on SUV with ladder">
+      <img id="rtSlide" src="/$_1%20(3).jfif" alt="Rooftop tent set up on SUV with ladder">
       <button class="tab-nav prev" type="button" aria-label="Previous image" data-target="rt">‹</button>
       <button class="tab-nav next" type="button" aria-label="Next image" data-target="rt">›</button>
       <div class="tab-dots" id="rtDots" role="tablist" aria-label="Rooftop tent images"></div>
@@ -990,7 +990,7 @@
     </header>
 
     <figure class="tab-media">
-      <img id="winchSlide" src="/winch1.jpg" alt="13500 lb orange synthetic rope winch">
+      <img id="winchSlide" src="/s-l1600%20(5).jpg" alt="13500 lb orange synthetic rope winch">
       <button class="tab-nav prev" type="button" aria-label="Previous image" data-target="winch">‹</button>
       <button class="tab-nav next" type="button" aria-label="Next image" data-target="winch">›</button>
       <div class="tab-dots" id="winchDots" role="tablist" aria-label="Winch images"></div>
@@ -1015,6 +1015,89 @@
     </div>
   </article>
 </section>
+
+<style>
+  .tabs-grid{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px;margin:22px auto;padding:0 12px}
+  @media (max-width:760px){.tabs-grid{grid-template-columns:1fr}}
+  .tab-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid #262626;border-radius:16px;
+            box-shadow:0 14px 34px rgba(0,0,0,.45);padding:14px;color:#e9ecef;display:grid;gap:12px}
+  .tab-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .tab-title{margin:0;font-size:clamp(1.05rem,1vw + 1rem,1.35rem);color:#ffa500}
+  .tab-pill{font-weight:800;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#101214;color:#ffe9b2}
+  .tab-media{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#0c0c0c;border:1px solid #2a2a2a}
+  .tab-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .tab-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);border:1px solid #333;
+           color:#fff;border-radius:10px;padding:6px 10px;cursor:pointer}
+  .tab-nav.prev{left:8px}.tab-nav.next{right:8px}
+  .tab-dots{position:absolute;inset:auto 0 8px 0;display:flex;gap:6px;justify-content:center}
+  .tab-dots button{width:8px;height:8px;border-radius:50%;border:1px solid #333;background:#555;opacity:.7}
+  .tab-dots button[aria-current="true"]{background:#ffa500;opacity:1}
+  .tab-body{display:grid;gap:10px}
+  .tab-bullets{margin:0;padding-left:18px;color:#cfd7df;line-height:1.55}
+  .tab-meta{display:flex;align-items:center;gap:8px;color:#aab3bb}
+  .stars{letter-spacing:2px;color:#ffd86b}
+  .tab-cta{display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;
+           background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none}
+</style>
+
+<script>
+  // Use your actual file paths; parentheses/spaces are URL-encoded here.
+  const galleries = {
+    rt: {
+      img: document.getElementById('rtSlide'),
+      dots: document.getElementById('rtDots'),
+      list: [
+        '/$_1%20(3).jfif','/$_1%20(1).jfif','/$_1.jfif','/$_1%20(2).jfif','/$_1%20(3).jfif'
+      ],
+      i: 0, timer: null
+    },
+    winch: {
+      img: document.getElementById('winchSlide'),
+      dots: document.getElementById('winchDots'),
+      list: [
+        '/s-l1600%20(5).jpg','/s-l1600%20(4).jpg','/$_1%20(5).jfif','/s-l1600%20(8).jpg','/s-l1600%20(7).jpg','/s-l1600%20(6).jpg'
+      ],
+      i: 0, timer: null
+    }
+  };
+
+  function buildDots(key){
+    const g = galleries[key]; g.dots.innerHTML = '';
+    g.list.forEach((_,idx)=>{
+      const b = document.createElement('button');
+      b.type='button'; b.setAttribute('aria-label','Go to image '+(idx+1));
+      b.addEventListener('click',()=>show(key,idx,true));
+      g.dots.appendChild(b);
+    });
+  }
+  function show(key, idx, pause){
+    const g = galleries[key];
+    g.i = (idx + g.list.length) % g.list.length;
+    g.img.src = g.list[g.i];
+    [...g.dots.children].forEach((d,i)=>d.setAttribute('aria-current', i===g.i ? 'true' : 'false'));
+    if(pause){clearInterval(g.timer); g.timer = setInterval(()=>show(key,g.i+1,false), 3500);}
+  }
+  function setup(key){
+    buildDots(key);
+    show(key,0,false);
+    galleries[key].timer = setInterval(()=>show(key,galleries[key].i+1,false),3500);
+  }
+  setup('rt'); setup('winch');
+
+  // Graceful image fallback (keeps layout clean if a file is missing)
+  Object.values(galleries).forEach(g=>{
+    g.img.onerror = ()=>{ g.img.style.display='none'; };
+  });
+
+  // Prev/Next controls
+  document.querySelectorAll('.tab-nav').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const key = btn.dataset.target;
+      const g = galleries[key];
+      show(key, g.i + (btn.classList.contains('next') ? 1 : -1), true);
+    });
+  });
+</script>
 
 <style>
   /* grid */
