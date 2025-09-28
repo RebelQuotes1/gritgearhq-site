@@ -323,6 +323,134 @@
 </script>
 <!-- ===== /FRONT-PAGE TAB ===== -->
 
+   <div>    
+       
+  <!-- ===== FRONT-PAGE FEATURED: 2 cards side-by-side (responsive) ===== -->
+<section class="fp-grid" aria-label="Featured gear">
+  <!-- ===== Card A: Conductive self-defense device (carousel) ===== -->
+  <article class="fp-card" aria-label="Conductive self-defense device">
+    <header class="fp-head">
+      <h3 class="fp-title">Conductive Self-Defense Device (3 heads)</h3>
+      <span class="fp-pill">Low stock</span>
+    </header>
+
+    <figure class="fp-media">
+      <img id="psg-slide" src="/psg.jpg" alt="Conductive self-defense device with 3 heads">
+      <button class="fp-nav prev" data-for="psg" aria-label="Previous image">‹</button>
+      <button class="fp-nav next" data-for="psg" aria-label="Next image">›</button>
+      <div class="fp-dots" id="psg-dots" role="tablist" aria-label="Image selector"></div>
+    </figure>
+
+    <div class="fp-body">
+      <div class="fp-stars" aria-label="Rating 4.7 out of 5">★★★★☆ <span>4.7 (213)</span></div>
+      <ul class="fp-bullets">
+        <li>Includes 3 replaceable heads + case</li>
+        <li>Integrated laser pointer & safety wrist lanyard</li>
+        <li>Ergonomic grip; quick cartridge swap</li>
+      </ul>
+      <a class="fp-cta"
+         href="https://www.ebay.com/itm/197691660077?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+         target="_blank" rel="nofollow sponsored noopener">
+        Check price →
+      </a>
+      <p class="fp-note">Know your local laws and carry/use responsibly.</p>
+    </div>
+  </article>
+
+  <!-- ===== Card B: 5-gal Solar Camp Shower (carousel) ===== -->
+  <article class="fp-card" aria-label="5-gallon solar camp shower">
+    <header class="fp-head">
+      <h3 class="fp-title">Solar Camp Shower (5-gal)</h3>
+      <span class="fp-pill hot">Trending</span>
+    </header>
+
+    <figure class="fp-media">
+      <img id="shower-slide" src="/shower1.jpg" alt="5-gallon solar shower bag with hose and shower head">
+      <button class="fp-nav prev" data-for="shower" aria-label="Previous image">‹</button>
+      <button class="fp-nav next" data-for="shower" aria-label="Next image">›</button>
+      <div class="fp-dots" id="shower-dots" role="tablist" aria-label="Image selector"></div>
+    </figure>
+
+    <div class="fp-body">
+      <div class="fp-stars" aria-label="Rating 4.6 out of 5">★★★★☆ <span>4.6 (168)</span></div>
+      <ul class="fp-bullets">
+        <li>Heats with sunlight—no power needed</li>
+        <li>Window pocket + on/off shower head</li>
+        <li>Great for camping, beach, off-grid rinses</li>
+      </ul>
+      <a class="fp-cta"
+         href="https://www.ebay.com/itm/234159796659?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1ebTfgRcZmYsgwpg0ZK15hl3ouha%2BThHnsX1ibwEnlaZk4Tsawe930zFH8jsVFjB771DiVeFepH%2FPJv7w9On3IEKLdI9G%2BQyAlatEtMLzDW4AKxu9BfkMpbk880C8pY9jxvmJsFSaIkqtzgCyXFvquC6BA9kDHql6gXjsORt%2B7fdqQA52uSxIZ6ekmqIz7m9fo%3D"
+         target="_blank" rel="nofollow sponsored noopener">
+        See colors & deal →
+      </a>
+      <p class="fp-note">Weekend promo: popular colors move fast.</p>
+    </div>
+  </article>
+</section>
+
+<style>
+  .fp-grid{max-width:980px;margin:20px auto;padding:0 12px;
+    display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media(max-width:760px){.fp-grid{grid-template-columns:1fr}}
+
+  .fp-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);
+    border:1px solid #262626;border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.45);
+    color:#e9ecef;display:grid;gap:12px;padding:14px}
+  .fp-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .fp-title{margin:0;font-size:clamp(1.05rem,1vw + .8rem,1.35rem);color:#ffa500}
+  .fp-pill{border:1px solid #2b2b2b;border-radius:999px;padding:4px 10px;font-weight:800;color:#ffe9b2;background:#101214}
+  .fp-pill.hot{color:#ffd2a6}
+  .fp-media{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#0c0c0c;border:1px solid #2a2a2a}
+  .fp-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .fp-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(17,17,17,.7);
+    color:#fff;border:1px solid #333;border-radius:10px;padding:6px 10px;cursor:pointer}
+  .fp-nav.prev{left:8px} .fp-nav.next{right:8px}
+  .fp-dots{position:absolute;left:0;right:0;bottom:6px;display:flex;gap:6px;justify-content:center}
+  .fp-dots button{width:8px;height:8px;border-radius:999px;border:1px solid #444;background:#161616;opacity:.75}
+  .fp-dots button[aria-current="true"]{background:#ffa500;opacity:1}
+  .fp-body{display:grid;gap:8px}
+  .fp-stars{font-weight:800;color:#ffd28a} .fp-stars span{color:#aab3bb;font-weight:600;margin-left:6px}
+  .fp-bullets{margin:0;padding:0 0 0 18px;color:#cfd7df;line-height:1.55}
+  .fp-cta{display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;
+    background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;text-decoration:none}
+  .fp-note{margin:0;color:#9aa0a6;font-size:.85rem}
+</style>
+
+<script>
+  // --- Mini carousels: add image lists here ---
+  const carousels = {
+    psg: ["/psg.jpg","/psg1.jpg","/psg2.jpg","/psg3.jpg","/psg.jpg"], // first 5 supplied
+    shower: ["/shower1.jpg","/shower3.jpg"]
+  };
+
+  function initCarousel(key){
+    const img = document.getElementById(key+"-slide");
+    const dotsWrap = document.getElementById(key+"-dots");
+    if(!img || !dotsWrap) return;
+
+    let i = 0, imgs = carousels[key];
+    const render = ()=>{ img.src = imgs[i]; [...dotsWrap.children].forEach((b,idx)=>b.setAttribute("aria-current", idx===i)) };
+    imgs.forEach((_,idx)=>{
+      const b=document.createElement("button");
+      b.type="button"; b.addEventListener("click",()=>{i=idx;render()});
+      dotsWrap.appendChild(b);
+    });
+    render();
+
+    // buttons
+    document.querySelector(`.fp-nav.prev[data-for="${key}"]`)?.addEventListener("click",()=>{ i=(i-1+imgs.length)%imgs.length; render(); });
+    document.querySelector(`.fp-nav.next[data-for="${key}"]`)?.addEventListener("click",()=>{ i=(i+1)%imgs.length; render(); });
+
+    // auto-rotate (pause on hover)
+    let t=setInterval(()=>{ i=(i+1)%imgs.length; render(); }, 3500);
+    img.closest(".fp-media").addEventListener("mouseenter",()=>clearInterval(t));
+    img.closest(".fp-media").addEventListener("mouseleave",()=> t=setInterval(()=>{ i=(i+1)%imgs.length; render(); }, 3500));
+  }
+  initCarousel("psg");
+  initCarousel("shower");
+</script>
+<!-- ===== /FRONT-PAGE FEATURED ===== -->
+     
 
   <div>
 
