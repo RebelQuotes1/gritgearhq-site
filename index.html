@@ -1,6 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- === High-Intent CTA Text + Subtle Pulse === -->
+<style>
+  .tw-cta, .tab-cta, .shop-cta, .fp-cta, .gg-cta, .ou-cta, .qp-cta {
+    transition: transform .06s ease, box-shadow .06s ease;
+  }
+  .tw-cta:hover, .tab-cta:hover, .shop-cta:hover, .fp-cta:hover, .gg-cta:hover, .ou-cta:hover, .qp-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(255,140,0,.25);
+  }
+</style>
+
+<script>
+/* Replace low-intent CTAs with purchase-focused microcopy */
+(function(){
+  const map = [
+    // —— Knives ——
+    { href: "226375066069", text: "Own the Warpath Bowie →", cls: ".tw-cta" },
+    { href: "236281207985", text: "Carry the Skull Folder →", cls: ".tw-cta" },
+
+    // —— Overland (Tent + Winch) ——
+    { href: "286423670948", text: "Mount This Rooftop Tent →", cls: ".ou-cta" },
+    { href: "375582132759", text: "Equip This 13,500-lb Winch →", cls: ".ou-cta" },
+
+    // —— Heaters row ——
+    { href: "396302793768", text: "Warm Up — Get This Heater →", cls: ".shop-cta" },
+    { href: "187037140543", text: "Multi-Fuel Heat — Shop Now →", cls: ".shop-cta" },
+
+    // —— Stun device & Solar Shower ——
+    { href: "197691660077", text: "Get the 3-Head Kit →", cls: ".fp-cta" },
+    { href: "234159796659", text: "Upgrade Your Camp Shower →", cls: ".fp-cta" },
+
+    // —— Fire Kit & Cook Set ——
+    { href: "175132576181", text: "Spark a Fire — Grab the Kit →", cls: ".tab-cta" },
+    { href: "365794714749", text: "Cook Anywhere — Bundle Now →", cls: ".tab-cta" },
+
+    // —— EDC Bracelet Knife ——
+    { href: "356876389109", text: "Get the Bracelet Knife →", cls: ".tab-cta" },
+
+    // —— Notebook / Tarp / Collab ——
+    { href: "amzn.to",       text: "Add Notebook to Cart →", cls: ".gg-cta" },
+    { href: "collabs.shop",  text: "Shop the Ultralight Tarp →", cls: ".gg-cta" },
+    { href: "titan-survival-collab.html", text: "See the Collab & Save →", cls: ".gg-cta" }
+  ];
+
+  map.forEach(({href, text, cls})=>{
+    // find any anchor whose href contains the token, then set its text
+    document.querySelectorAll(`a${cls}[href*="${href}"]`).forEach(a => a.textContent = text);
+  });
+
+  // Optional: add small “secure” hint for external stores
+  document.querySelectorAll('a[target="_blank"][rel*="sponsored"]').forEach(a=>{
+    a.setAttribute('aria-label', (a.getAttribute('aria-label') || a.textContent) + " (opens in new tab)");
+  });
+})();
+</script>
+
   <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
