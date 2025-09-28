@@ -211,25 +211,9 @@
     <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
   </ul>
 </div>
-   <!-- ============== Bowie Knive ============== -->
+   <!-- ============== TWO KNIVES SIDE-BY-SIDE (CLEAN DROP-IN) ============== -->
 <section class="twins" aria-label="Featured knives">
   <!-- ========== CARD A: Warpath Bowie (blacked) ========== -->
-  <article class="tw-card">
-    <header class="tw-head">
-      <h3 class="tw-title">Warpath Bowie — Blacked Carbon Steel</h3>
-      <span class="tw-pill">Backcountry Pick</span>
-    </header>
-
-   <!-- ============== TWO-UP: Warpath Bowie + Skull Inlay Folder ============== -->
-<section class="twins" aria-label="Featured knives">
-
-    <a class="tw-cta"
-       href="https://www.ebay.com/itm/226375066069?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">Check price →</a>
-  </article>
-<!-- ============== TWO KNIVES SIDE-BY-SIDE ============== -->
-<section class="twins" aria-label="Featured knives">
-  <!-- ========== CARD A: Warpath Bowie (example) ========== -->
   <article class="tw-card">
     <header class="tw-head">
       <h3 class="tw-title">Warpath Bowie — Blacked Carbon Steel</h3>
@@ -295,6 +279,105 @@
        target="_blank" rel="nofollow sponsored noopener">Pick your handle →</a>
   </article>
 </section>
+
+<!-- ========== STYLES (scoped) ========== -->
+<style>
+  /* layout */
+  .twins{
+    max-width:980px;
+    margin:18px auto;
+    padding:0 12px;
+    display:grid;
+    gap:16px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:stretch;
+  }
+  @media (max-width:760px){ .twins{ grid-template-columns:1fr; } }
+
+  /* card */
+  .tw-card{
+    background:linear-gradient(120deg,#151515,#0f0f0f 55%);
+    border:1px solid #262626;border-radius:18px;padding:14px;
+    color:#e9ecef;box-shadow:0 14px 34px rgba(0,0,0,.45);
+    display:grid;gap:10px
+  }
+  .tw-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .tw-title{margin:0;font-size:clamp(1.05rem,1vw + .9rem,1.35rem)}
+  .tw-pill{font-weight:900;font-size:.78rem;padding:6px 10px;border-radius:999px;
+           background:#201f16;border:1px solid #2f2a16;color:#ffcc66;white-space:nowrap}
+  .tw-pill--green{background:#0f1a12;border-color:#224233;color:#9fe6c3}
+
+  /* media */
+  .tw-figure{position:relative;margin:0;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b;background:#0c0c0c}
+  .tw-figure img{display:block;width:100%;height:280px;object-fit:cover}
+  .tw-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);color:#fff;border:1px solid #333;width:34px;height:34px;border-radius:10px;cursor:pointer}
+  .tw-nav.prev{left:8px} .tw-nav.next{right:8px}
+  .tw-dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center}
+  .tw-dots button{width:8px;height:8px;border-radius:50%;border:1px solid #555;background:#222}
+  .tw-dots button[aria-current="true"]{background:#ffa500;border-color:#ffa500}
+
+  /* body */
+  .tw-bullets{margin:0;padding:0 0 0 18px;line-height:1.55;color:#cfd7df}
+  .tw-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#aab3bb}
+  .tw-stars{font-weight:900;color:#ffd98a}
+  .tw-stars span{font-weight:600;color:#c3cbd4;margin-left:6px}
+  .tw-urgency{font-size:.92rem;color:#ffb977}
+  .tw-cta{display:inline-block;text-align:center;margin-top:2px;font-weight:900;padding:12px 16px;border-radius:12px;border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none}
+  .tw-cta:hover{filter:brightness(1.05)}
+</style>
+
+<!-- ========== JS: tiny image rotators ========== -->
+<script>
+  const galleries = {
+    knifeA: ["/$_57%20(7).jfif","/$_57%20(6).jfif","/s-l1600%20(11).jpg"],
+    knifeSkull: ["/skullknife2.jpg","/skullknife1.jpg","/skullknife.jpg"]
+  };
+
+  Object.keys(galleries).forEach(key=>{
+    const img = document.getElementById(key + "-img");
+    const dotsWrap = document.getElementById(key + "-dots");
+    if(!img || !dotsWrap) return;
+    let i = 0;
+
+    // build dots
+    dotsWrap.innerHTML = "";
+    galleries[key].forEach((_, idx)=>{
+      const b = document.createElement("button");
+      b.setAttribute("aria-label","Show image " + (idx+1));
+      if(idx===0) b.setAttribute("aria-current","true");
+      b.addEventListener("click",()=>go(idx,true));
+      dotsWrap.appendChild(b);
+    });
+    const dots = [...dotsWrap.children];
+
+    function paint(){
+      img.src = galleries[key][i];
+      dots.forEach(d=>d.removeAttribute("aria-current"));
+      dots[i]?.setAttribute("aria-current","true");
+    }
+    function go(n, pause){
+      i = (n + galleries[key].length) % galleries[key].length;
+      paint();
+      if(pause){ restart(); }
+    }
+
+    // prev/next
+    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn=>{
+      btn.addEventListener("click", ()=> go(i + (btn.classList.contains('next') ? 1 : -1), true));
+    });
+
+    // autorotate
+    let t; function restart(){ clearInterval(t); t=setInterval(()=>go(i+1,false), 4500); }
+    paint(); restart();
+
+    // graceful 404 skip
+    img.addEventListener('error', ()=>{
+      galleries[key].splice(i,1);
+      if(!galleries[key].length){ img.style.display='none'; clearInterval(t); return; }
+      i=0; paint(); restart();
+    });
+  });
+</script>
 
 <style>
   /* layout */
