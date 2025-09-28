@@ -1188,7 +1188,188 @@
         </a>
       </div>
     </article>
+  </div
+    <!-- ========== FRONT-PAGE DUO: Overland Upgrade (Tent + Winch) ========== -->
+<section id="overland-upgrade" aria-label="Overland upgrade">
+  <header class="ou-head">
+    <h2 class="ou-title">Turn Your Daily Driver into a Go-Anywhere Rig</h2>
+    <p class="ou-sub">Two bolt-on upgrades that change everything: sleep anywhere, recover anywhere.</p>
+  </header>
+
+  <div class="ou-grid">
+    <!-- ===== Rooftop Tent ===== -->
+    <article class="ou-card" aria-label="Rooftop Tent">
+      <header class="ou-card-head">
+        <h3 class="ou-card-title">Hard-Shell Rooftop Tent (4-Season)</h3>
+        <span class="ou-pill">Overland</span>
+      </header>
+
+      <figure class="ou-media">
+        <img id="rtSlide" src="/$_1%20(3).jfif" alt="Rooftop tent set up on SUV with ladder">
+        <button class="ou-nav prev" type="button" aria-label="Previous image" data-target="rt">‹</button>
+        <button class="ou-nav next" type="button" aria-label="Next image" data-target="rt">›</button>
+        <div class="ou-dots" id="rtDots" role="tablist" aria-label="Rooftop tent images"></div>
+      </figure>
+
+      <div class="ou-body">
+        <ul class="ou-bullets">
+          <li>Opens in seconds — true one-person setup</li>
+          <li>Waterproof, insulated, breathable mesh</li>
+          <li>330-lb telescoping ladder (7.5 ft)</li>
+          <li>Fits most Jeep/SUV/Truck racks (≥600-lb static)</li>
+        </ul>
+        <div class="ou-meta">
+          <span class="ou-stars" aria-label="4.7 out of 5 stars">★★★★★</span>
+          <span class="ou-note">4.7 • 120+ reviews</span>
+        </div>
+        <a class="ou-cta"
+           href="https://www.ebay.com/itm/286423670948?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cI7TSu%2Bv6jbuh8cC%2BWkzlE65Za7KS%2F5ivkShC9d1dQ6hSZufQkK7mkuPN2f%2B6epYIKlNnaleCgkUcZYQDEwyDEBC%2B4xIQ4GdYnn5ZkrmxGRj2FMdzEEkWubFDdZBgWiDQhqvaQFdAt9bcVlKD%2BflFBbH1AwHz6hYBsQzAGZm0Hb1dEC2rwrmIgGj023q7Tz4o%3D"
+           target="_blank" rel="nofollow sponsored noopener">
+          Check availability →
+        </a>
+      </div>
+    </article>
+
+    <!-- ===== 13,500-lb Winch (Synthetic Rope) — single image only ===== -->
+    <article class="ou-card" aria-label="13500 lb Winch">
+      <header class="ou-card-head">
+        <h3 class="ou-card-title">13,500-lb Winch — Synthetic Rope</h3>
+        <span class="ou-pill">Recovery</span>
+      </header>
+
+      <figure class="ou-media">
+        <img id="winchSlide" src="/s-l1600%20(5).jpg" alt="13,500 lb synthetic rope winch mounted on bumper">
+        <!-- Controls/dots are auto-hidden because there’s only one image -->
+        <button class="ou-nav prev" type="button" aria-label="Previous image" data-target="winch">‹</button>
+        <button class="ou-nav next" type="button" aria-label="Next image" data-target="winch">›</button>
+        <div class="ou-dots" id="winchDots" role="tablist" aria-label="Winch images"></div>
+      </figure>
+
+      <div class="ou-body">
+        <ul class="ou-bullets">
+          <li>Max line pull: <strong>13,500 lbs</strong></li>
+          <li>80 ft synthetic rope — strong & safer than steel</li>
+          <li>Wireless & wired remotes + complete hardware</li>
+          <li>IP-rated components for mud, snow & creek crossings</li>
+        </ul>
+        <div class="ou-meta">
+          <span class="ou-stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+          <span class="ou-note">4.8 • 150+ reviews</span>
+        </div>
+        <a class="ou-cta"
+           href="https://www.ebay.com/itm/375582132759?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+           target="_blank" rel="nofollow sponsored noopener">
+          See current deal →
+        </a>
+      </div>
+    </article>
   </div>
+</section>
+
+<style>
+  /* —— Scoped layout/theme —— */
+  #overland-upgrade{max-width:980px;margin:26px auto;padding:0 12px;color:#e9ecef;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  #overland-upgrade .ou-head{display:grid;gap:6px;margin-bottom:10px}
+  #overland-upgrade .ou-title{margin:0;font-size:clamp(1.2rem,1.1vw + 1rem,1.9rem);color:#ffa500}
+  #overland-upgrade .ou-sub{margin:0;color:#aab3bb}
+
+  #overland-upgrade .ou-grid{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:760px){#overland-upgrade .ou-grid{grid-template-columns:1fr}}
+
+  #overland-upgrade .ou-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid #262626;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.45);padding:14px;display:grid;gap:12px}
+  #overland-upgrade .ou-card-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  #overland-upgrade .ou-card-title{margin:0;font-size:clamp(1.05rem,1vw + 1rem,1.35rem);color:#ffa500}
+  #overland-upgrade .ou-pill{font-weight:800;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#101214;color:#ffe9b2}
+
+  #overland-upgrade .ou-media{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#0c0c0c;border:1px solid #2a2a2a}
+  #overland-upgrade .ou-media img{width:100%;height:100%;object-fit:cover;display:block}
+  #overland-upgrade .ou-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);border:1px solid #333;color:#fff;border-radius:10px;padding:6px 10px;cursor:pointer}
+  #overland-upgrade .ou-nav.prev{left:8px} 
+  #overland-upgrade .ou-nav.next{right:8px}
+  #overland-upgrade .ou-dots{position:absolute;inset:auto 0 8px 0;display:flex;gap:6px;justify-content:center}
+  #overland-upgrade .ou-dots button{width:8px;height:8px;border-radius:50%;border:1px solid #333;background:#555;opacity:.75;cursor:pointer}
+  #overland-upgrade .ou-dots button[aria-current="true"]{background:#ffa500;opacity:1}
+
+  #overland-upgrade .ou-body{display:grid;gap:10px}
+  #overland-upgrade .ou-bullets{margin:0;padding-left:18px;color:#cfd7df;line-height:1.55}
+  #overland-upgrade .ou-meta{display:flex;align-items:center;gap:8px;color:#aab3bb}
+  #overland-upgrade .ou-stars{letter-spacing:2px;color:#ffd86b}
+  #overland-upgrade .ou-cta{display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none}
+</style>
+
+<script>
+(function(){
+  // Tent rotates through multiple images; winch intentionally uses just ONE image.
+  const sliders = {
+    rt: {
+      img:  document.querySelector('#overland-upgrade #rtSlide'),
+      dots: document.querySelector('#overland-upgrade #rtDots'),
+      list: ['/$_1%20(3).jfif','/$_1%20(1).jfif','/$_1.jfif','/$_1%20(2).jfif']
+    },
+    winch: {
+      img:  document.querySelector('#overland-upgrade #winchSlide'),
+      dots: document.querySelector('#overland-upgrade #winchDots'),
+      list: ['/s-l1600%20(5).jpg'] // single, correct winch image only
+    }
+  };
+
+  Object.keys(sliders).forEach(key=>{
+    const s = sliders[key];
+    if(!s?.img || !s?.dots || !s.list?.length) return;
+
+    // If only one image, hide controls/dots and just load it
+    if (s.list.length < 2) {
+      s.img.src = s.list[0];
+      const navBtns = document.querySelectorAll(`#overland-upgrade .ou-nav[data-target="${key}"]`);
+      navBtns.forEach(b => b.style.display = 'none');
+      s.dots.style.display = 'none';
+      return;
+    }
+
+    // Build dots
+    s.dots.innerHTML = '';
+    s.list.forEach((_, idx)=>{
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', `Go to image ${idx+1}`);
+      b.addEventListener('click', ()=> go(idx, true));
+      s.dots.appendChild(b);
+    });
+    const dots = [...s.dots.children];
+
+    let i = 0, timer;
+    function paint(){
+      s.img.src = s.list[i];
+      dots.forEach((d,di)=> d.toggleAttribute('aria-current', di===i));
+    }
+    function go(n, pause){
+      i = (n + s.list.length) % s.list.length;
+      paint();
+      if(pause) restart();
+    }
+    function restart(){
+      clearInterval(timer);
+      timer = setInterval(()=> go(i+1, false), 3500);
+    }
+
+    // Nav
+    document.querySelectorAll(`#overland-upgrade .ou-nav[data-target="${key}"]`).forEach(btn=>{
+      btn.addEventListener('click', ()=> go(i + (btn.classList.contains('next')?1:-1), true));
+    });
+
+    paint(); restart();
+
+    // Fallback on 404
+    s.img.addEventListener('error', ()=>{
+      s.list.splice(i,1);
+      if(!s.list.length){ s.img.style.display='none'; clearInterval(timer); return; }
+      i = 0; paint(); restart();
+    });
+  });
+})();
+</script>
+<!-- ========== /FRONT-PAGE DUO ========== -->
+
 </section>
 
 <style>
