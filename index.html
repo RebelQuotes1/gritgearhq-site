@@ -1155,7 +1155,7 @@
       </div>
     </article>
 
-    <!-- ===== 13,500-lb Winch (Synthetic Rope) ===== -->
+    <!-- ===== 13,500-lb Winch (Synthetic Rope) — single image only ===== -->
     <article class="ou-card" aria-label="13500 lb Winch">
       <header class="ou-card-head">
         <h3 class="ou-card-title">13,500-lb Winch — Synthetic Rope</h3>
@@ -1164,6 +1164,7 @@
 
       <figure class="ou-media">
         <img id="winchSlide" src="/s-l1600%20(5).jpg" alt="13,500 lb synthetic rope winch mounted on bumper">
+        <!-- nav/dots will auto-hide since there’s only one image -->
         <button class="ou-nav prev" type="button" aria-label="Previous image" data-target="winch">‹</button>
         <button class="ou-nav next" type="button" aria-label="Next image" data-target="winch">›</button>
         <div class="ou-dots" id="winchDots" role="tablist" aria-label="Winch images"></div>
@@ -1222,7 +1223,7 @@
 
 <script>
 (function(){
-  // Update these arrays if you add/remove images. Filenames are URL-encoded where needed.
+  // Tent rotates through multiple tent images; winch intentionally uses just ONE image.
   const sliders = {
     rt: {
       img:  document.getElementById('rtSlide'),
@@ -1238,12 +1239,7 @@
       img:  document.getElementById('winchSlide'),
       dots: document.getElementById('winchDots'),
       list: [
-        '/s-l1600%20(5).jpg',
-        '/s-l1600%20(4).jpg',
-        '/$_1%20(5).jfif',
-        '/s-l1600%20(8).jpg',
-        '/s-l1600%20(7).jpg',
-        '/s-l1600%20(6).jpg'
+        '/s-l1600%20(5).jpg' // single, correct winch image only
       ]
     }
   };
@@ -1251,6 +1247,16 @@
   Object.keys(sliders).forEach(key=>{
     const s = sliders[key];
     if(!s.img || !s.dots || !s.list?.length) return;
+
+    // Build dots & nav visibility depending on count
+    const navBtns = document.querySelectorAll(`.ou-nav[data-target="${key}"]`);
+    if (s.list.length < 2) {
+      // Hide controls if only one image
+      s.dots.style.display = 'none';
+      navBtns.forEach(b => b.style.display = 'none');
+      s.img.src = s.list[0];
+      return;
+    }
 
     // Build dots
     s.dots.innerHTML = '';
@@ -1279,7 +1285,7 @@
     }
 
     // Nav buttons
-    document.querySelectorAll(`.ou-nav[data-target="${key}"]`).forEach(btn=>{
+    navBtns.forEach(btn=>{
       btn.addEventListener('click', ()=> go(i + (btn.classList.contains('next')?1:-1), true));
     });
 
@@ -1290,7 +1296,7 @@
     s.img.addEventListener('mouseenter', ()=> clearInterval(timer));
     s.img.addEventListener('mouseleave', restart);
 
-    // Graceful 404 handling: skip bad image and continue
+    // Graceful 404 handling
     s.img.addEventListener('error', ()=>{
       s.list.splice(i,1);
       if(!s.list.length){ s.img.style.display='none'; clearInterval(timer); return; }
