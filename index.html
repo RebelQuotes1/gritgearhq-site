@@ -1114,7 +1114,7 @@
       🐓 Read Full Blog Post
     </a>
   </div>
-<!-- ===== Front-Page: Rooftop Tent + 13,500-lb Winch (with real image paths) ===== -->
+<!-- ===== Front-Page: Rooftop Tent + 13,500-lb Winch ===== -->
 <section class="tabs-grid" aria-label="Featured overland gear">
   <!-- Rooftop Tent -->
   <article class="tab-card" aria-label="Rooftop Tent">
@@ -1132,7 +1132,7 @@
 
     <div class="tab-body">
       <ul class="tab-bullets">
-        <li>Opens in seconds; one-person setup</li>
+        <li>Opens in seconds — true one-person setup</li>
         <li>Waterproof, insulated, breathable mesh</li>
         <li>330-lb telescoping ladder (7.5 ft)</li>
         <li>Fits most Jeep/SUV/Truck racks (≥600-lb static)</li>
@@ -1148,7 +1148,117 @@
       </a>
     </div>
   </article>
-    
+
+  <!-- 13,500-lb Winch (Synthetic Rope) -->
+  <article class="tab-card" aria-label="13500 lb Winch">
+    <header class="tab-head">
+      <h3 class="tab-title">13,500-lb Winch — Synthetic Rope</h3>
+      <span class="tab-pill">Recovery</span>
+    </header>
+
+    <figure class="tab-media">
+      <img id="winchSlide" src="/s-l1600%20(5).jpg" alt="13500 lb synthetic rope winch mounted on bumper">
+      <button class="tab-nav prev" type="button" aria-label="Previous image" data-target="winch">‹</button>
+      <button class="tab-nav next" type="button" aria-label="Next image" data-target="winch">›</button>
+      <div class="tab-dots" id="winchDots" role="tablist" aria-label="Winch images"></div>
+    </figure>
+
+    <div class="tab-body">
+      <ul class="tab-bullets">
+        <li>Max line pull: <strong>13,500 lbs</strong></li>
+        <li>80 ft synthetic rope — strong & safer than steel</li>
+        <li>Wireless & wired remotes + complete hardware</li>
+        <li>IP-rated components for mud, snow & creek crossings</li>
+      </ul>
+      <div class="tab-meta">
+        <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+        <span class="meta-note">4.8 • 150+ reviews</span>
+      </div>
+      <a class="tab-cta"
+         href="https://www.ebay.com/itm/375582132759?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+         target="_blank" rel="nofollow sponsored noopener">
+        See current deal →
+      </a>
+    </div>
+  </article>
+</section>
+
+<style>
+  .tabs-grid{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px;margin:22px auto;padding:0 12px}
+  @media (max-width:760px){.tabs-grid{grid-template-columns:1fr}}
+  .tab-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid #262626;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.45);padding:14px;color:#e9ecef;display:grid;gap:12px}
+  .tab-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .tab-title{margin:0;font-size:clamp(1.05rem,1vw + 1rem,1.35rem);color:#ffa500}
+  .tab-pill{font-weight:800;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#101214;color:#ffe9b2}
+  .tab-media{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#0c0c0c;border:1px solid #2a2a2a}
+  .tab-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .tab-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);border:1px solid #333;color:#fff;border-radius:10px;padding:6px 10px;cursor:pointer}
+  .tab-nav.prev{left:8px}.tab-nav.next{right:8px}
+  .tab-dots{position:absolute;inset:auto 0 8px 0;display:flex;gap:6px;justify-content:center}
+  .tab-dots button{width:8px;height:8px;border-radius:50%;border:1px solid #333;background:#555;opacity:.7}
+  .tab-dots button[aria-current="true"]{background:#ffa500;opacity:1}
+  .tab-body{display:grid;gap:10px}
+  .tab-bullets{margin:0;padding-left:18px;color:#cfd7df;line-height:1.55}
+  .tab-meta{display:flex;align-items:center;gap:8px;color:#aab3bb}
+  .stars{letter-spacing:2px;color:#ffd86b}
+  .tab-cta{display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none}
+</style>
+
+<script>
+(function(){
+  // Single source of truth (update only here)
+  const sliders = {
+    rt:  {
+      img:  document.getElementById('rtSlide'),
+      dots: document.getElementById('rtDots'),
+      list: ['/$_1%20(3).jfif','/$_1%20(1).jfif','/$_1.jfif','/$_1%20(2).jfif','/$_1%20(3).jfif']
+    },
+    winch: {
+      img:  document.getElementById('winchSlide'),
+      dots: document.getElementById('winchDots'),
+      list: ['/s-l1600%20(5).jpg','/s-l1600%20(4).jpg','/$_1%20(5).jfif','/s-l1600%20(8).jpg','/s-l1600%20(7).jpg','/s-l1600%20(6).jpg']
+    }
+  };
+
+  Object.keys(sliders).forEach((key)=>{
+    const s = sliders[key];
+    if (!s.img || !s.dots) return;
+
+    let i = 0, timer;
+    s.dots.innerHTML = '';
+    s.list.forEach((_, idx)=>{
+      const b = document.createElement('button');
+      b.type='button';
+      b.setAttribute('aria-label',`Go to image ${idx+1}`);
+      b.addEventListener('click',()=>go(idx,true));
+      s.dots.appendChild(b);
+    });
+    const dots = [...s.dots.children];
+
+    function paint(){
+      s.img.src = s.list[i];
+      dots.forEach((d,di)=> d.toggleAttribute('aria-current', di===i));
+    }
+    function go(n, pause){
+      i = (n + s.list.length) % s.list.length;
+      paint();
+      if (pause){ restart(); }
+    }
+    function restart(){
+      clearInterval(timer);
+      timer = setInterval(()=> go(i+1,false), 3500);
+    }
+
+    document.querySelectorAll(`.tab-nav[data-target="${key}"]`).forEach(btn=>{
+      btn.addEventListener('click',()=> go(i + (btn.classList.contains('next')?1:-1), true));
+    });
+
+    // start + resilience
+    paint(); restart();
+    s.img.addEventListener('error',()=>{ s.list.splice(i,1); if(!s.list.length){ s.img.style.display='none'; clearInterval(timer);} else { i=0; paint(); }});
+  });
+})();
+</script>
 
 <style>
   .tabs-grid{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px;margin:22px auto;padding:0 12px}
