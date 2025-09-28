@@ -561,122 +561,237 @@
 
 </div>
        
-      <!-- ========== Drop-in wrapper to show both cards side-by-side (stacks on phones) ========== -->
-<style>
-  .tabs-grid{
-    display:grid;
-    gap:16px;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    align-items:stretch;
-  }
-  @media (max-width:720px){
-    .tabs-grid{ grid-template-columns:1fr; }
-  }
-</style>
+     <!-- =============== FEATURED: Fire Kit + Cook Set, plus Heaters (neatly grouped) =============== -->
+<section id="featured-pairs" aria-label="Featured essentials">
+  <!-- Optional section header -->
+  <header class="fpairs-head">
+    <h2>Trail Essentials & Cold-Weather Picks</h2>
+    <p>Pack smart, cook fast, and keep warm. Two tidy rows that stack on phones.</p>
+  </header>
 
-<section class="tabs-grid">
-  <!-- ===== Uncle Tommy’s Fire Starten Kit ===== -->
-  <section class="tab-card" aria-label="Uncle Tommy's Fire Starten Combo Kit">
-    <header class="tab-head">
-      <h3 class="tab-title">Uncle Tommy’s Fire Starten Kit</h3>
-      <span class="tab-pill">EDC Fire</span>
-    </header>
+  <!-- ========== Row 1: Fire Kit + Cook Set (side-by-side) ========== -->
+  <section class="fpairs-grid">
+    <!-- Uncle Tommy’s Fire Starten Kit -->
+    <article class="tab-card" aria-label="Uncle Tommy's Fire Starten Combo Kit">
+      <header class="tab-head">
+        <h3 class="tab-title">Uncle Tommy’s Fire Starten Kit</h3>
+        <span class="tab-pill">EDC Fire</span>
+      </header>
 
-    <figure class="tab-media">
-      <img src="/uncletommy.jpg" alt="Uncle Tommy’s Stuff — Fire Starten Combo Kit with matches, striker, and fire discs">
-    </figure>
+      <figure class="tab-media">
+        <img src="/uncletommy.jpg" alt="Uncle Tommy’s Stuff — Fire Starten Combo Kit with matches, striker, and fire discs">
+      </figure>
 
-    <div class="tab-body">
-      <ul class="tab-bullets">
-        <li>25 large waterproof matches + striker</li>
-        <li>4 sawdust-infused, waterproof fire discs</li>
-        <li>Pocket tin: toss in pack, glove box, or kit</li>
-        <li>Lights easy, burns hot with strong split</li>
-      </ul>
-      <a class="tab-cta"
-         href="https://www.ebay.com/itm/175132576181?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1dxU8LoGZ15e69wiRtDrf7ryrwSy%2Btrco5WCCEsJ98I6MhSsSZjFCu14kFEAqulT82WD%2FhTOIsTKzZb0OHvXabNl%2FzmAWMciU75KQHsaJpy%2FXYQmKH1dvLWzyab%2BjZyZKfiH%2FiuHNrkbeJaucP5I%2BNmSZmhiG8NFGmQJL7%2FgU7ivpYhG%2F93hrjOMH%2BYpcvxJIY%3D"
-         target="_blank" rel="nofollow sponsored noopener">
-        Check availability →
-      </a>
-    </div>
+      <div class="tab-body">
+        <ul class="tab-bullets">
+          <li>25 large waterproof matches + striker</li>
+          <li>4 sawdust-infused, waterproof fire discs</li>
+          <li>Pocket tin: toss in pack, glove box, or kit</li>
+          <li>Lights easy, burns hot with strong split</li>
+        </ul>
+        <a class="tab-cta"
+           href="https://www.ebay.com/itm/175132576181?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1dxU8LoGZ15e69wiRtDrf7ryrwSy%2Btrco5WCCEsJ98I6MhSsSZjFCu14kFEAqulT82WD%2FhTOIsTKzZb0OHvXabNl%2FzmAWMciU75KQHsaJpy%2FXYQmKH1dvLWzyab%2BjZyZKfiH%2FiuHNrkbeJaucP5I%2BNmSZmhiG8NFGmQJL7%2FgU7ivpYhG%2F93hrjOMH%2BYpcvxJIY%3D"
+           target="_blank" rel="nofollow sponsored noopener">
+          Add fire-start to cart →
+        </a>
+      </div>
+    </article>
+
+    <!-- Compact Backpacking Cook Set (rotator) -->
+    <article class="tab-card" aria-label="Outdoor Cook Set">
+      <header class="tab-head">
+        <h3 class="tab-title">Compact Backpacking Cook Set</h3>
+        <span class="tab-pill">New</span>
+      </header>
+
+      <figure class="tab-media">
+        <img id="cookTabSlide" src="/outdoorp1.jpg" alt="Backpacking cook set — pots, burner, utensils">
+        <button class="tab-nav prev" type="button" aria-label="Previous image">‹</button>
+        <button class="tab-nav next" type="button" aria-label="Next image">›</button>
+        <div class="tab-dots" id="cookTabDots" role="tablist" aria-label="Cook set images"></div>
+      </figure>
+
+      <div class="tab-body">
+        <ul class="tab-bullets">
+          <li>Nested pots + pan with foldable handles</li>
+          <li>Ultralight gas burner (case included)</li>
+          <li>Bowls, utensils, rice paddle, loofah, carabiner</li>
+          <li>Packs small — daypack or bug-out ready</li>
+        </ul>
+        <a class="tab-cta"
+           href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+           target="_blank" rel="nofollow sponsored noopener">
+          Cook kit listing →
+        </a>
+      </div>
+    </article>
   </section>
 
-  <!-- ===== Compact Backpacking Cook Set (rotator) ===== -->
-  <section class="tab-card" aria-label="Outdoor Cook Set">
-    <header class="tab-head">
-      <h3 class="tab-title">Compact Backpacking Cook Set</h3>
-      <span class="tab-pill">New</span>
-    </header>
+  <!-- ========== Row 2: Two Heaters (side-by-side) ========== -->
+  <section class="shop-row" aria-label="Featured deals">
+    <!-- Portable Gas Heater / Warmer -->
+    <article class="shop-card" data-rot="true" data-images='["/%24_57.jfif","/%24_57%20(2).jfif"]'>
+      <figure class="shop-media">
+        <img alt="Compact portable gas heater for heating, cooking and heat preservation"
+             loading="lazy" src="/%24_57.jfif"
+             onerror="this.src='/fallback-heater.jpg'">
+        <div class="shop-nav" aria-hidden="true">
+          <span class="shop-dot active"></span><span class="shop-dot"></span>
+        </div>
+      </figure>
+      <div class="shop-body">
+        <div class="shop-head">
+          <h3 class="shop-title">Portable Gas Heater &amp; Warmer</h3>
+          <span class="shop-badge">Selling fast</span>
+        </div>
+        <ul class="shop-bullets">
+          <li>3-zone top: heat, cook, keep-warm</li>
+          <li>Carry handle • adjustable output</li>
+          <li>Compact for tents, ice shacks, outages</li>
+        </ul>
+        <div class="shop-rev">
+          <span class="shop-stars">★★★★☆</span>
+          <span>4.6 (1,240+ reviews)</span>
+        </div>
+        <div class="shop-urg">Low stock today — ships quick from US.</div>
+        <a class="shop-cta" target="_blank" rel="nofollow sponsored noopener"
+           href="https://www.ebay.com/itm/396302793768?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1">
+          See today’s price →
+        </a>
+      </div>
+    </article>
 
-    <figure class="tab-media">
-      <img id="cookTabSlide" src="/outdoorp1.jpg" alt="Backpacking cook set — pots, burner, utensils">
-      <button class="tab-nav prev" type="button" aria-label="Previous image">‹</button>
-      <button class="tab-nav next" type="button" aria-label="Next image">›</button>
-      <div class="tab-dots" id="cookTabDots" role="tablist" aria-label="Cook set images"></div>
-    </figure>
-
-    <div class="tab-body">
-      <ul class="tab-bullets">
-        <li>Nested pots + pan with foldable handles</li>
-        <li>Ultralight gas burner (case included)</li>
-        <li>Bowls, utensils, rice paddle, loofah, carabiner</li>
-        <li>Packs small, perfect for daypack or bug-out</li>
-      </ul>
-      <a class="tab-cta"
-         href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-         target="_blank" rel="nofollow sponsored noopener">
-        Check availability →
-      </a>
-    </div>
+    <!-- Multi-Fuel Tabletop Tent Heater -->
+    <article class="shop-card" data-rot="true" data-images='["/s-l1600%20(1).jpg","/%24_57%20(3).jfif"]'>
+      <figure class="shop-media">
+        <img alt="Orange multi-fuel tabletop tent heater with adjustable control"
+             loading="lazy" src="/s-l1600%20(1).jpg"
+             onerror="this.src='/fallback-heater2.jpg'">
+        <div class="shop-nav" aria-hidden="true">
+          <span class="shop-dot active"></span><span class="shop-dot"></span>
+        </div>
+      </figure>
+      <div class="shop-body">
+        <div class="shop-head">
+          <h3 class="shop-title">Multi-Fuel Tabletop Tent Heater</h3>
+          <span class="shop-badge">Hot pick</span>
+        </div>
+        <ul class="shop-bullets">
+          <li>Iso-butane, butane, or propane (adapters)</li>
+          <li>Dial control from simmer-warm to toasty</li>
+          <li>Great for camps, patios &amp; power outages</li>
+        </ul>
+        <div class="shop-rev">
+          <span class="shop-stars">★★★★★</span>
+          <span>4.8 (890+ reviews)</span>
+        </div>
+        <div class="shop-urg">Weekend promo active — don’t miss it.</div>
+        <a class="shop-cta" target="_blank" rel="nofollow sponsored noopener"
+           href="https://www.ebay.com/itm/187037140543?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1">
+          Grab the deal →
+        </a>
+      </div>
+    </article>
   </section>
 </section>
-<!-- ========== /Drop-in wrapper ========== -->
+<!-- ============================== /FEATURED GROUP ============================== -->
 
+<!-- ========== SCOPED STYLES (kept tight so they don’t clash) ========== -->
 <style>
-  .tab-card{
-    --edge:#262626; --panel:#141418; --ink:#e9ecef; --muted:#aab3bb; --accent:#ffa500;
+  /* Wrapper & header */
+  #featured-pairs{max-width:980px;margin:24px auto;padding:0 12px;color:#e9ecef;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .fpairs-head{display:grid;gap:6px;margin:0 0 14px}
+  .fpairs-head h2{margin:0;color:#ffa500;font-size:clamp(1.2rem,1.1vw + 1rem,1.8rem)}
+  .fpairs-head p{margin:0;color:#aab3bb}
+
+  /* Row 1 grid */
+  #featured-pairs .fpairs-grid{
+    display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch
+  }
+  @media (max-width:720px){ #featured-pairs .fpairs-grid{ grid-template-columns:1fr; } }
+
+  /* Row 2 grid (heaters) */
+  #featured-pairs .shop-row{
+    display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:16px
+  }
+  @media (max-width:820px){ #featured-pairs .shop-row{ grid-template-columns:1fr; } }
+
+  /* Shared card look */
+  #featured-pairs .tab-card,
+  #featured-pairs .shop-card{
     background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid var(--edge); border-radius:16px; box-shadow:0 14px 34px rgba(0,0,0,.45);
-    color:var(--ink); padding:14px; display:grid; gap:12px; max-width:620px; margin:0 auto;
+    border:1px solid #262626;border-radius:16px;
+    box-shadow:0 14px 34px rgba(0,0,0,.45);
+    display:grid;gap:12px;color:#e9ecef;padding:14px
   }
-  .tab-head{display:flex; justify-content:space-between; align-items:center; gap:10px}
-  .tab-title{margin:0; font-size:clamp(1.1rem,1vw + 1rem,1.5rem)}
-  .tab-pill{border:1px solid #2b2b2b; background:#101214; color:#ffd166; padding:4px 8px; border-radius:999px; font-weight:800; font-size:.8rem}
-  .tab-media{position:relative; margin:0; border-radius:12px; overflow:hidden; border:1px solid #2b2b2b; background:#0c0c0c; aspect-ratio:4/3}
-  .tab-media img{width:100%; height:100%; object-fit:cover; display:block}
-  .tab-nav{
-    position:absolute; top:50%; transform:translateY(-50%);
-    background:rgba(0,0,0,.45); border:1px solid #333; color:#fff; width:36px; height:36px;
-    border-radius:50%; cursor:pointer; font-size:22px; line-height:32px; text-align:center;
+
+  /* Head */
+  #featured-pairs .tab-head,
+  #featured-pairs .shop-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  #featured-pairs .tab-title,
+  #featured-pairs .shop-title{margin:0;font-size:clamp(1.05rem,1vw + .9rem,1.35rem);color:#ffa500}
+  #featured-pairs .tab-pill,
+  #featured-pairs .shop-badge{font-size:.8rem;padding:4px 8px;border-radius:999px;font-weight:800;white-space:nowrap}
+  #featured-pairs .tab-pill{border:1px solid #2b2b2b;background:#101214;color:#ffd166}
+  #featured-pairs .shop-badge{background:#102112;border:1px solid #204a29;color:#97f2b2}
+
+  /* Media blocks */
+  #featured-pairs .tab-media,
+  #featured-pairs .shop-media{position:relative;margin:0;border-radius:12px;overflow:hidden;background:#0c0c0c;border:1px solid #2a2a2a}
+  #featured-pairs .tab-media{aspect-ratio:4/3}
+  #featured-pairs .shop-media{aspect-ratio:16/10}
+  #featured-pairs .tab-media img,
+  #featured-pairs .shop-media img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* Nav + dots for cook-set */
+  #featured-pairs .tab-nav{position:absolute;top:50%;transform:translateY(-50%);
+    background:rgba(0,0,0,.45);border:1px solid #333;color:#fff;width:36px;height:36px;border-radius:50%;
+    cursor:pointer;font-size:22px;line-height:32px;text-align:center}
+  #featured-pairs .tab-nav:hover{background:rgba(0,0,0,.65)}
+  #featured-pairs .tab-nav.prev{left:8px} 
+  #featured-pairs .tab-nav.next{right:8px}
+  #featured-pairs .tab-dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center}
+  #featured-pairs .tab-dots button{width:9px;height:9px;border-radius:50%;border:1px solid #999;background:#111;opacity:.75;cursor:pointer}
+  #featured-pairs .tab-dots button[aria-selected="true"]{background:#ffa500;border-color:#ffa500;opacity:1}
+
+  /* Lists & meta */
+  #featured-pairs .tab-body{display:grid;gap:10px}
+  #featured-pairs .tab-bullets,
+  #featured-pairs .shop-bullets{margin:0;padding-left:18px;color:#cfd7df;line-height:1.55}
+
+  /* Heaters: small UI */
+  #featured-pairs .shop-nav{position:absolute;inset:auto 8px 8px;display:flex;gap:6px}
+  #featured-pairs .shop-dot{width:8px;height:8px;border-radius:999px;background:#333;border:1px solid #555}
+  #featured-pairs .shop-dot.active{background:#ffa500;border-color:#ffb23c}
+  #featured-pairs .shop-body{padding:0 14px 14px}
+  #featured-pairs .shop-rev{display:flex;align-items:center;gap:8px;color:#d6dbdf;font-size:.95rem}
+  #featured-pairs .shop-stars{letter-spacing:1px;color:#ffcc66}
+  #featured-pairs .shop-urg{margin-top:8px;font-size:.88rem;color:#ffd59e}
+
+  /* CTAs */
+  #featured-pairs .tab-cta,
+  #featured-pairs .shop-cta{
+    display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;
+    background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none
   }
-  .tab-nav:hover{background:rgba(0,0,0,.65)}
-  .tab-nav.prev{left:8px} .tab-nav.next{right:8px}
-  .tab-dots{position:absolute; left:0; right:0; bottom:8px; display:flex; gap:6px; justify-content:center}
-  .tab-dots button{
-    width:9px; height:9px; border-radius:50%; border:1px solid #999; background:#111; opacity:.75; cursor:pointer;
-  }
-  .tab-dots button[aria-selected="true"]{background:#ffa500; border-color:#ffa500; opacity:1}
-  .tab-body{display:grid; gap:10px}
-  .tab-bullets{margin:0; padding:0 0 0 18px; color:var(--muted)}
-  .tab-cta{
-    justify-self:start; font-weight:900; padding:10px 14px; border-radius:12px;
-    border:2px solid #333; background:linear-gradient(180deg,#ffae00,#ff8c00); color:#111;
-  }
+
   @media (max-width:560px){
-    .tab-card{padding:12px}
-    .tab-nav{width:32px; height:32px; font-size:20px; line-height:28px}
+    #featured-pairs .tab-card{padding:12px}
+    #featured-pairs .tab-nav{width:32px;height:32px;font-size:20px;line-height:28px}
   }
 </style>
 
+<!-- ========== SCRIPTS: cook-set rotator + mini heater rotators ========== -->
 <script>
+  // Cook set image rotator (Row 1)
   (function(){
-    const imgs = [
-      "/outdoorp1.jpg","/outdoorp2.jpg","/outdoorp3.jpg","/outdoorp4.jpg",
-      "/outdoorp5.jpg","/outdoorp6.jpg","/outdoorp7.jpg"
-    ];
+    const imgs = ["/outdoorp1.jpg","/outdoorp2.jpg","/outdoorp3.jpg","/outdoorp4.jpg","/outdoorp5.jpg","/outdoorp6.jpg","/outdoorp7.jpg"];
     const el = document.getElementById("cookTabSlide");
     const dotsWrap = document.getElementById("cookTabDots");
-    let i = 0, timer;
+    if(!el || !dotsWrap) return;
+
+    let i = 0, t;
 
     // Build dots
     imgs.forEach((_, idx) => {
@@ -694,19 +809,18 @@
       [...dotsWrap.children].forEach((d, k) => d.setAttribute("aria-selected", k===i));
       if (manual) restart();
     }
-
     function next(){ show(i+1); }
     function prev(){ show(i-1); }
-
-    function start(){ timer = setInterval(next, 4000); }
-    function stop(){ clearInterval(timer); }
+    function start(){ t = setInterval(next, 4000); }
+    function stop(){ clearInterval(t); }
     function restart(){ stop(); start(); }
 
-    document.querySelector(".tab-nav.next").addEventListener("click", () => { next(); restart(); });
-    document.querySelector(".tab-nav.prev").addEventListener("click", () => { prev(); restart(); });
+    // Buttons (scoped to this figure)
+    const media = el.closest(".tab-media");
+    media.querySelector(".tab-nav.next").addEventListener("click", () => { next(); restart(); });
+    media.querySelector(".tab-nav.prev").addEventListener("click", () => { prev(); restart(); });
 
-    // Pause on hover / focus for accessibility
-    const media = document.querySelector(".tab-media");
+    // Pause on hover/focus
     media.addEventListener("mouseenter", stop);
     media.addEventListener("mouseleave", start);
     media.addEventListener("focusin", stop);
@@ -723,105 +837,34 @@
     // Preload
     imgs.slice(1).forEach(src => { const im = new Image(); im.src = src; });
 
-    show(0);
-    start();
+    show(0); start();
+  })();
+
+  // Mini rotators for heaters (Row 2)
+  (function(){
+    const cards=[...document.querySelectorAll('#featured-pairs .shop-card[data-rot]')];
+    cards.forEach(card=>{
+      const imgs=JSON.parse(card.getAttribute('data-images')||'[]');
+      const fig=card.querySelector('.shop-media img');
+      const dots=[...card.querySelectorAll('.shop-dot')];
+      let i=0, timer;
+
+      function go(n){
+        i=(n+imgs.length)%imgs.length;
+        if(fig){ fig.src=imgs[i]; }
+        dots.forEach((d,k)=>d.classList.toggle('active',k===i));
+      }
+      function play(){ timer=setInterval(()=>go(i+1), 3500); }
+      function stop(){ clearInterval(timer); }
+
+      if(imgs.length>1){ play(); }
+      card.addEventListener('mouseenter',stop);
+      card.addEventListener('mouseleave',play);
+      card.addEventListener('focusin',stop);
+      card.addEventListener('focusout',play);
+    });
   })();
 </script>
-<!-- ===== /FRONT-PAGE TAB ===== -->
-
-          <div>    
-
-       <!-- === Side-by-side Featured Deals (drop-in) ============================= -->
-<style>
-  .shop-row{max-width:980px;margin:20px auto;padding:0 12px;
-    display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
-  @media (max-width:820px){.shop-row{grid-template-columns:1fr}}
-  .shop-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid #262626;border-radius:18px;color:#e9ecef;
-    box-shadow:0 14px 34px rgba(0,0,0,.45);overflow:hidden;display:grid}
-  .shop-media{position:relative;aspect-ratio:16/10;background:#0c0c0c;border-bottom:1px solid #242424}
-  .shop-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .shop-nav{position:absolute;inset:auto 8px 8px;display:flex;gap:6px}
-  .shop-dot{width:8px;height:8px;border-radius:999px;background:#333;border:1px solid #555}
-  .shop-dot.active{background:#ffa500;border-color:#ffb23c}
-  .shop-body{padding:14px}
-  .shop-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
-  .shop-title{margin:0;font-size:clamp(1.05rem,1vw + .9rem,1.35rem);color:#ffa500;line-height:1.2}
-  .shop-badge{font-size:.8rem;padding:4px 8px;border-radius:999px;background:#102112;border:1px solid #204a29;color:#97f2b2;white-space:nowrap}
-  .shop-bullets{margin:8px 0 10px 18px;color:#cfd7df;line-height:1.55}
-  .shop-rev{display:flex;align-items:center;gap:8px;color:#d6dbdf;font-size:.95rem}
-  .shop-stars{letter-spacing:1px;color:#ffcc66}
-  .shop-urg{margin-top:8px;font-size:.88rem;color:#ffd59e}
-  .shop-cta{display:inline-block;margin-top:10px;font-weight:900;padding:12px 16px;border-radius:12px;
-    border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;text-decoration:none}
-</style>
-
-<section class="shop-row" aria-label="Featured deals">
-
-  <!-- Card A — Portable Gas Heater / Warmer (your first affiliate link) -->
-  <article class="shop-card" data-rot="true" data-images='["/%24_57.jfif","/%24_57%20(2).jfif"]'>
-    <figure class="shop-media">
-      <!-- first image will be swapped by JS for the carousel -->
-      <img alt="Compact portable gas heater for heating, cooking and heat preservation" loading="lazy"
-           src="/%24_57.jfif"
-           onerror="this.src='/fallback-heater.jpg'">
-      <div class="shop-nav" aria-hidden="true">
-        <span class="shop-dot active"></span><span class="shop-dot"></span>
-      </div>
-    </figure>
-    <div class="shop-body">
-      <div class="shop-head">
-        <h3 class="shop-title">Portable Gas Heater &amp; Warmer</h3>
-        <span class="shop-badge">Selling fast</span>
-      </div>
-      <ul class="shop-bullets">
-        <li>3-zone top: heat, cook, keep-warm</li>
-        <li>Carry handle • adjustable output</li>
-        <li>Compact for tents, ice shacks, outages</li>
-      </ul>
-      <div class="shop-rev">
-        <span class="shop-stars">★★★★☆</span>
-        <span>4.6 (1,240+ reviews)</span>
-      </div>
-      <div class="shop-urg">Low stock today — ships quick from US.</div>
-      <a class="shop-cta" target="_blank" rel="nofollow sponsored noopener"
-         href="https://www.ebay.com/itm/396302793768?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1">
-        Check price →
-      </a>
-    </div>
-  </article>
-
-  <!-- Card B — Multi-Fuel Tabletop Tent Heater (your second affiliate link) -->
-  <article class="shop-card" data-rot="true" data-images='["/s-l1600%20(1).jpg","/%24_57%20(3).jfif"]'>
-    <figure class="shop-media">
-      <img alt="Orange multi-fuel tabletop tent heater with adjustable control" loading="lazy"
-           src="/s-l1600%20(1).jpg"
-           onerror="this.src='/fallback-heater2.jpg'">
-      <div class="shop-nav" aria-hidden="true">
-        <span class="shop-dot active"></span><span class="shop-dot"></span>
-      </div>
-    </figure>
-    <div class="shop-body">
-      <div class="shop-head">
-        <h3 class="shop-title">Multi-Fuel Tabletop Tent Heater</h3>
-        <span class="shop-badge">Hot pick</span>
-      </div>
-      <ul class="shop-bullets">
-        <li>Iso-butane, butane, or propane (adapters)</li>
-        <li>Dial control from simmer-warm to toasty</li>
-        <li>Great for camps, patios &amp; power outages</li>
-      </ul>
-      <div class="shop-rev">
-        <span class="shop-stars">★★★★★</span>
-        <span>4.8 (890+ reviews)</span>
-      </div>
-      <div class="shop-urg">Weekend promo active — don’t miss it.</div>
-      <a class="shop-cta" target="_blank" rel="nofollow sponsored noopener"
-         href="https://www.ebay.com/itm/187037140543?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1">
-        Check price →
-      </a>
-    </div>
-  </article>
 
 </section>
 
