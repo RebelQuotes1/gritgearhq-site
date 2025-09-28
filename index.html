@@ -632,93 +632,131 @@
 </body>
 </html>
 
-<div class="manifesto-bar" aria-label="Manifesto button grid">
-  <!-- Ant & Grasshopper fable CTA (matches your .cta-button cards) -->
-  <a href="ant-grasshopper-locked-door.html#fable-start" class="cta-button cta-plain">
-    🐜 The Ant, the Grasshopper &amp; the Locked Door
-    <div class="desc">Darker modern fable—boundaries, math, and no hard feelings.</div>
-  </a>
+<!-- ===== Compact “Mini-Hub” (drop-in replacement for .manifesto-bar) ===== -->
+<section id="mini-hub" aria-label="Quick navigation">
+  <header class="mh-head">
+    <h2>Quick Picks</h2>
+    <button class="mh-toggle" type="button" aria-expanded="false" aria-controls="mh-more">
+      Show more
+    </button>
+  </header>
 
-   <a class="btn primary" href="https://gritgearhq.com/titan-survival-collab.html#why-550">
-  Read the SurvivorCord® Guide →
-</a>
+  <!-- Featured (always visible) -->
+  <nav class="mh-grid" aria-label="Featured">
+    <a class="mh-card" href="survival-quiz.html#top">
+      🧭 Survival Basics Quiz
+      <span class="mh-desc">15 fast questions + instant feedback.</span>
+    </a>
+    <a class="mh-card" href="https://gritgearhq.com/titan-survival-collab.html#why-550">
+      🧵 SurvivorCord® Guide
+      <span class="mh-desc">Real-world uses, knots, & loadouts.</span>
+    </a>
+    <a class="mh-card" href="top-5-home-water-filters.html#filters">
+      💧 Top 5 Home Water Filters
+      <span class="mh-desc">Cut PFAS, lead, & junk from tap water.</span>
+    </a>
+    <a class="mh-card" href="/best-survival-gear-amazon-2025.html#best-survival-gear">
+      🎒 20 Best Survival & Self-Reliance Items (2025)
+      <span class="mh-desc">Only the pieces that pull their weight.</span>
+    </a>
+  </nav>
 
-  <a href="amish-winter-heat.html#amish-winter-heat" class="cta-button cta-plain">
-    🔥 How the Amish Stay Warm in Winter
-    <div class="desc">Old-world heat without the grid—stoves, window quilts, humidity, and daily rhythm you can copy today.</div>
-  </a>
+  <!-- More links (collapsed by default) -->
+  <div id="mh-more" hidden>
+    <!-- Guides -->
+    <h3 class="mh-sub">Guides & Skills</h3>
+    <nav class="mh-grid">
+      <a class="mh-card" href="amish-winter-heat.html#amish-winter-heat">🔥 Amish Winter Heat
+        <span class="mh-desc">Stoves, window quilts, humidity, rhythm.</span>
+      </a>
+      <a class="mh-card" href="ant-grasshopper-locked-door.html#fable-start">🐜 The Ant, the Grasshopper & the Locked Door
+        <span class="mh-desc">Boundaries, math, & no hard feelings.</span>
+      </a>
+      <a class="mh-card" href="skinny-to-strong.html#skinny-to-strong">💪 From Skinny to Strong
+        <span class="mh-desc">Simple, durable path to capability.</span>
+      </a>
+    </nav>
 
-  <a href="hugh-glass.html#hugh-glass" class="cta-button cta-plain">
-    🐻 Hugh Glass: The Man Who Wouldn’t Die
-    <div class="desc">From pirates and Pawnee to a grizzly bear and a 200-mile crawl — the true story of America’s toughest survivor.</div>
-  </a>
+    <!-- Reviews -->
+    <h3 class="mh-sub">Reviews</h3>
+    <nav class="mh-grid">
+      <a class="mh-card" href="kamp-king.html#kamp-king-review">🗡️ NEW! Kamp King Knife Review
+        <span class="mh-desc">Classic look, rugged build. Gift-ready.</span>
+      </a>
+      <a class="mh-card" href="solar-fan-hat-review.html#solar-fan-hat-review">🌞 Solar Fan Hat Review
+        <span class="mh-desc">Goofy? Yes. Also shockingly useful.</span>
+      </a>
+    </nav>
 
-  <a href="skinny-to-strong.html#skinny-to-strong" class="cta-button cta-plain">
-    💪 From Skinny to Strong
-    <div class="desc">How I went from frail and sick to capable and confident — and how you can too.</div>
-  </a>
+    <!-- Stories -->
+    <h3 class="mh-sub">Stories</h3>
+    <nav class="mh-grid">
+      <a class="mh-card" href="hugh-glass.html#hugh-glass">🐻 Hugh Glass: The Man Who Wouldn’t Die
+        <span class="mh-desc">Grizzly attack to 200-mile crawl.</span>
+      </a>
+      <a class="mh-card" href="surviving-county-jail.html#jail-survival-blog">🚔 Surviving County Jail
+        <span class="mh-desc">Fear, boredom, humor, & grit.</span>
+      </a>
+      <a class="mh-card" href="chicken-shortage-2025.html#chicken-shortage-blog">🐔 Chicken Shortage 2025
+        <span class="mh-desc">Backyard flock lessons & gear.</span>
+      </a>
+      <a class="mh-card" href="bear-vs-man.html#bear-vs-man">🐻 Would You Rather: Man vs Bear
+        <span class="mh-desc">Memes met field sense.</span>
+      </a>
+    </nav>
 
-  <a href="pale-horse-prepping.html#apocalypse-guide" class="cta-button cta-plain">
-    🐎 Preparing for the Pale Horse
-    <div class="desc">Revelation, collapse, and how to face the end with grit and preparation.</div>
-  </a>
+    <!-- Opinion / Manifesto -->
+    <h3 class="mh-sub">Opinion</h3>
+    <nav class="mh-grid">
+      <a class="mh-card" href="collapse.html#collapse-blog">🔥 Western Society Is Doomed
+        <span class="mh-desc">5 things I stopped buying.</span>
+      </a>
+      <a class="mh-card" href="manifesto.html#violence-answer">⚔️ When Violence Is the Answer
+        <span class="mh-desc">The ugly truth about self-defense.</span>
+      </a>
+      <a class="mh-card" href="manifesto.html#masculinity-blog">💥 The Masculinity Manifesto</a>
+      <a class="mh-card" href="manifesto.html#ufo-distraction">🛸 UFOs & Government Deception</a>
+      <a class="mh-card" href="5affirmations.html">💭 5 “Good” Affirmations (That Aren’t)</a>
+    </nav>
+  </div>
+</section>
 
-  <a href="top-5-home-water-filters.html#filters" class="cta-button cta-plain">
-    💧 Top 5 Home Water Filters
-    <div class="desc">From LifeStraw to Berkey—5 filters that strip out lead, PFAS, and other toxins hiding in your tap.</div>
-  </a>
+<style>
+  /* Mini-Hub layout (dark theme friendly) */
+  #mini-hub{max-width:980px;margin:18px auto;padding:0 12px}
+  .mh-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .mh-head h2{margin:0;color:#ffa500;font-size:clamp(1.05rem,1vw+1rem,1.35rem)}
+  .mh-toggle{border:1px solid #2b2b2b;background:#121216;color:#e9ecef;
+    border-radius:999px;padding:6px 10px;font-weight:800;cursor:pointer}
+  .mh-sub{margin:14px 0 8px;font-size:1rem;color:#cfd7df}
 
-  <a href="/best-survival-gear-amazon-2025.html#best-survival-gear" class="cta-button cta-plain">
-    20 Best Survival &amp; Self-Reliance Items You Can Buy on Amazon in 2025
-    <div class="desc">Forget overpriced tacti-cool junk — this is the gear I actually use, trust, and recommend for real-world prepping.</div>
-  </a>
+  .mh-grid{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media(max-width:720px){.mh-grid{grid-template-columns:1fr}}
 
-  <a href="chicken-shortage-2025.html#chicken-shortage-blog" class="cta-button cta-plain">
-    🐔 The Chicken Shortage of 2025
-    <div class="desc">Toilet paper was just the beginning—now it’s chickens. Our backyard flock journey, survival insights, and the gear we used.</div>
-  </a>
+  .mh-card{display:block;padding:12px;border-radius:12px;text-decoration:none;color:#e9ecef;
+    background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid #262626;
+    box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .12s ease,filter .2s ease}
+  .mh-card:hover{transform:translateY(-1px);filter:brightness(1.04)}
+  .mh-desc{display:block;color:#aab3bb;font-size:.9rem;margin-top:2px}
 
-  <a href="solar-fan-hat-review.html#solar-fan-hat-review" class="cta-button cta-plain">
-    🌞 Solar Fan Hat Review (Yes, Seriously)
-    <div class="desc">Laugh all you want—this goofy fan-powered hat kept me alive while mowing in 100° heat. Here's why I won't take it off.</div>
-  </a>
+  /* keep it compact */
+  #mini-hub .mh-grid .mh-card{min-height:0}
+</style>
 
-  <a href="5affirmations.html" class="cta-card cta-orange w-300">
-    💭 5 Affirmations That Are Actually Terrible Advice
-  </a>
+<script>
+  // Expand/collapse “More” to keep the page tidy
+  (function(){
+    const btn=document.querySelector('.mh-toggle');
+    const more=document.getElementById('mh-more');
+    if(!btn||!more) return;
+    btn.addEventListener('click', ()=>{
+      const open = more.hasAttribute('hidden') ? false : true;
+      if(open){ more.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); btn.textContent='Show more'; }
+      else { more.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); btn.textContent='Show less'; }
+    });
+  })();
+</script>
 
-  <a href="kamp-king.html#kamp-king-review" class="cta-card cta-orange w-300">
-    🗡️ NEW! Kamp King Knife Review
-    <div class="desc" style="color:#111">Classic look, rugged build. Great gift. Less gear to carry. Built for every man.</div>
-  </a>
-
-  <a href="collapse.html#collapse-blog" class="cta-card cta-dark w-300">
-    🔥 Western Society Is Doomed
-    <div class="desc">5 things I stopped buying after realizing the collapse is already happening.</div>
-  </a>
-
-  <a href="surviving-county-jail.html#jail-survival-blog" class="cta-card cta-dark w-300">
-    🚔 Surviving County Jail
-    <div class="desc">Fear, boredom, and twisted humor—here's what jail's really like, and how to keep your soul intact.</div>
-  </a>
-
-  <a href="bear-vs-man.html#bear-vs-man" class="cta-card cta-dark w-300">
-    🐻 Would You Rather: Man vs Bear
-    <div class="desc">Women said the bear. Memes exploded. We answered with grit.</div>
-  </a>
-
-  <a href="manifesto.html#violence-answer" class="cta-card cta-orange w-300">
-    ⚔️ When Violence Is the Answer
-    <div class="desc" style="color:#111">The ugly truth about self-defense, force, and what it really means to survive.</div>
-  </a>
-
-  <a href="manifesto.html#masculinity-blog" class="cta-card cta-dark w-300">
-    💥 The Masculinity Manifesto
-  </a>
-
-  <a href="manifesto.html#ufo-distraction" class="cta-card cta-orange w-300">
-    🛸 UFOs &amp; Government Deception
-  </a>
 
 
   <!-- Hidden CTA Buttons Toggleable with JS -->
