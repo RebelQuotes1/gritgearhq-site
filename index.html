@@ -192,43 +192,47 @@
        target="_blank" rel="nofollow sponsored noopener">Check price →</a>
   </article>
 
-  <!-- ========== CARD B: Long Hunter Bowie (mirror) ========== -->
-  <article class="tw-card">
-    <header class="tw-head">
-      <h3 class="tw-title">Long Hunter Bowie — Mirror Finish</h3>
-      <span class="tw-pill tw-pill--green">Staff Favorite</span>
-    </header>
+<script>
+  // Simple rotators with graceful fallbacks
+  const galleries = {
+    knifeA: [
+      "/$_57%20(7).jfif",
+      "/$_57%20(6).jfif",
+      "/s-l1600%20(11).jpg"
+    ],
+    // ✅ Mirror-finish images only (removed the blacked knife)
+    knifeB: [
+      "/s-l1600%20(11).jpg",
+      "/s-l1600%20(10).jpg"
+    ]
+  };
 
-    <figure class="tw-figure">
-      <img id="knifeB-img" alt="Long Hunter Bowie mirror-polished bowie knife"
-           src="/s-l1600%20(11).jpg"
-           onerror="this.onerror=null;this.src='/s-l1600%20(10).jpg';">
-      <button class="tw-nav prev" aria-label="Previous image" data-target="knifeB">‹</button>
-      <button class="tw-nav next" aria-label="Next image" data-target="knifeB">›</button>
-      <div class="tw-dots" id="knifeB-dots"></div>
-    </figure>
+  for (const key of Object.keys(galleries)) {
+    const img = document.getElementById(key + "-img");
+    const dotsWrap = document.getElementById(key + "-dots");
+    let i = 0;
 
-    <ul class="tw-bullets">
-      <li>Big, confidence-building blade with deep fuller to shed weight.</li>
-      <li>Contoured scales + finger guard = secure, fatigue-free control.</li>
-      <li>Includes stitched sheath—camp, truck, or ranch ready.</li>
-      <li>Great gift piece that still wants to work.</li>
-    </ul>
+    galleries[key].forEach((_, idx)=>{
+      const b = document.createElement("button");
+      b.setAttribute("aria-label","Show image " + (idx+1));
+      if(idx===0) b.setAttribute("aria-current","true");
+      b.addEventListener("click",()=>go(idx));
+      dotsWrap.appendChild(b);
+    });
+    const dots = [...dotsWrap.children];
 
-    <div class="tw-meta">
-      <div class="tw-stars" aria-label="Rated 4.8 out of 5">
-        ★★★★★ <span>4.8 (98 reviews)</span>
-      </div>
-      <div class="tw-urgency">⏳ Weekend promo • Ships from US</div>
-    </div>
-
-    <!-- Uses same affiliate for now—swap if you have a separate link -->
-    <a class="tw-cta"
-       href="https://www.ebay.com/itm/226375066069?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">See current deal →</a>
-  </article>
-</section>
-
+    function go(n){
+      i = (n + galleries[key].length) % galleries[key].length;
+      img.src = galleries[key][i];
+      dots.forEach(d=>d.removeAttribute("aria-current"));
+      dots[i].setAttribute("aria-current","true");
+    }
+    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn=>{
+      btn.addEventListener("click", ()=> go(i + (btn.classList.contains('next') ? 1 : -1)));
+    });
+    setInterval(()=>go(i+1), 4500);
+  }
+</script>
 <style>
   /* --- layout --- */
   .twins{max-width:980px;margin:18px auto;padding:0 12px;
