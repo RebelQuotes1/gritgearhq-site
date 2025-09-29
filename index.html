@@ -1507,20 +1507,64 @@
           <span class="gg-cta">Read the post →</span>
         </a>
 
-        <!-- Titan Collab Page -->
-        <a class="gg-card" href="/titan-survival-collab.html">
-          <div class="gg-media" style="background:#0c0c0c">
-            <img src="/titanlogo.jpg" alt="TITAN Survival logo" style="object-fit:contain">
-          </div>
-          <h3 class="gg-title">TITAN Survival × Grit Gear HQ</h3>
-          <p class="gg-sub">Why we chose SurvivorCord®, shock cord, and sane stitching—and how to save with code <strong>GRITGEARHQ</strong>.</p>
-          <div class="gg-chips"><span>SurvivorCord®</span><span>Shock Cord</span><span>IFAK & Packs</span></div>
-          <span class="gg-cta">Read the collab page →</span>
-        </a>
-
-      </div>
-    </section>
+       <!-- Collab Cards (drop both into the SAME grid). One block, scoped styles included. -->
+<!-- TITAN Survival -->
+<a class="gg-card" href="/titan-survival-collab.html">
+  <div class="gg-media" style="background:#0c0c0c">
+    <img src="/titanlogo.jpg" alt="TITAN Survival logo" style="object-fit:contain">
   </div>
+  <h3 class="gg-title">TITAN Survival × Grit Gear HQ</h3>
+  <p class="gg-sub">Why we chose SurvivorCord®, shock cord, and sane stitching—and how to save with code <strong>GRITGEARHQ</strong>.</p>
+  <div class="gg-chips"><span>SurvivorCord®</span><span>Shock Cord</span><span>IFAK & Packs</span></div>
+  <span class="gg-cta">Read the collab page →</span>
+</a>
+
+<!-- TACAMO Fire Kit (10% off via collab link) -->
+<a class="gg-card gg-card--tacamo" href="https://collabs.shop/mke6bg" target="_blank" rel="nofollow sponsored noopener">
+  <div class="gg-media tacamo-cover">
+    <!-- Save your image as one of these names; first that exists will load -->
+    <img
+      src="/images/tacamo-fire-kit.jpg"
+      srcset="/images/tacamo-fire-kit.jpg,
+              /images/tacamo_fire_kit.jpg 1x,
+              /images/ultimate-fire-kit.jpg 1x"
+      alt="TACAMO Ultimate Fire Making Kit — 15-piece mess tin with canvas bag"
+      loading="lazy" decoding="async">
+    <span class="tacamo-chip">10% OFF</span>
+  </div>
+  <h3 class="gg-title">TACAMO × Grit Gear HQ</h3>
+  <p class="gg-sub">The Ultimate Fire Making Kit: ferro rod, tinder, tools, and a boil-ready mess tin — field proven. Use our link for <strong>10% off</strong>.</p>
+  <div class="gg-chips"><span>Fire Kit</span><span>Mess Tin</span><span>Waxed Canvas</span></div>
+  <span class="gg-cta">Shop the kit →</span>
+</a>
+
+<style>
+  /* ===== Scoped styles just for the TACAMO card ===== */
+  .gg-card--tacamo .gg-title{color:#f29d2a}
+  .gg-card--tacamo .gg-cta{color:#111;background:#18e6a3;border-radius:10px;padding:6px 10px;font-weight:800}
+  .tacamo-cover{position:relative;background:#0c0c0c;border-radius:10px;overflow:hidden}
+  .tacamo-cover img{
+    width:100%;height:100%;display:block;object-fit:cover;
+    aspect-ratio:1/1;            /* square thumbnail like your TITAN tile */
+    object-position:center 46%;   /* nudges crop up so the tiny UI tab is lower */
+  }
+  /* Cleanly mask the tiny bottom-right tab captured in the screenshot */
+  .tacamo-cover::after{
+    content:"";position:absolute;right:0;bottom:0;width:60px;height:60px;
+    background:#0c0c0c;border-top-left-radius:10px;pointer-events:none;
+  }
+  /* Little 10% badge */
+  .tacamo-chip{
+    position:absolute;top:10px;left:10px;z-index:2;
+    font:800 .75rem/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
+    color:#041812;padding:6px 10px;border-radius:999px;
+    background:linear-gradient(180deg,#18e6a3,#0acb92);
+    border:1px solid rgba(9,199,139,.5);box-shadow:0 6px 16px rgba(10,203,146,.35);
+  }
+  /* Optional: subtle hover pop like other cards */
+  .gg-card.gg-card--tacamo:hover .tacamo-cover img{transform:scale(1.02);transition:transform .25s ease}
+</style>
+
 </body>
 </html>
 
