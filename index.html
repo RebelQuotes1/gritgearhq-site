@@ -2483,10 +2483,7 @@
 
 </section>
 
-   <!-- Google AdSense (load once per page) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-
-<!-- Grit Gear • Floating Tabbed Affiliate Sidebar + AdSense (mobile-safe + relauncher) -->
+ <!-- Grit Gear • Floating Tabbed Affiliate Sidebar (no AdSense) -->
 <div id="gg-floaty"
      class="gg-float-wrap tabs"
      data-utm-source="gritgear"
@@ -2495,12 +2492,13 @@
      aria-label="Grit Gear tabbed sidebar">
 
   <style>
-    .gg-float-wrap.tabs{position:relative;z-index:9999} /* raise above other widgets */
+    .gg-float-wrap.tabs{position:relative;z-index:9999}
     .gg-box{position:fixed; top:50vh; right:12px; transform:translateY(-50%);
             width:348px; max-height:86vh; overflow:hidden; border-radius:16px;
             background:#0f1014; border:1px solid #2b2f3a; box-shadow:0 14px 38px rgba(0,0,0,.45)}
     .gg-shell{display:grid; grid-template-columns:auto 1fr; min-height:220px}
 
+    /* Tabs */
     .gg-tabs{list-style:none; margin:0; padding:8px; display:flex; flex-direction:column; gap:10px;
              background:#0b0e13; border-right:1px solid #262c38}
     .gg-tab{cursor:pointer; user-select:none; border:1px solid #2b2f3a; color:#e9ecf4;
@@ -2511,10 +2509,12 @@
     .gg-tab:hover{transform:translateX(-2px)}
     .gg-tab.active{background:#1b2130; border-color:#3a4152}
 
+    /* Panels */
     .gg-panels{position:relative; overflow:auto; max-height:86vh}
     .gg-panel{display:none}
     .gg-panel.active{display:block}
 
+    /* Cards */
     .gg-ad{display:block; color:#e9ecf4; text-decoration:none; border-radius:0 16px 16px 0; overflow:hidden}
     .gg-ad .shot{position:relative; aspect-ratio:16/9; border-bottom:1px solid #252b36; background:#0c0e13}
     .gg-ad img{width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.03) saturate(1.02)}
@@ -2530,13 +2530,6 @@
     .gg-copy p{margin:0 0 10px; font-size:.9rem; color:#cfd5e3; line-height:1.45}
     .gg-btn{display:inline-block; padding:9px 14px; border-radius:10px; font-weight:900; font-size:.84rem;
             background:linear-gradient(180deg,#18f0b4,#0acb92); color:#041812; box-shadow:0 8px 20px rgba(10,203,146,.35)}
-
-    /* AdSense panel */
-    .gg-adsense-wrap{padding:10px 10px 14px}
-    .gg-adsense-label{font:700 .78rem/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
-                      color:#9fb0c7; margin:8px 0 6px 2px; letter-spacing:.2px}
-    .gg-adsense-card{background:#0d0f14;border:1px solid #2b3240;border-radius:12px;padding:8px}
-    .gg-adsense-card .adsbygoogle{display:block; width:100%; min-height:120px} /* responsive */
 
     /* Close + Launcher */
     .gg-close{position:fixed; top:12px; right:12px; z-index:10000; width:34px; height:34px; border-radius:50%;
@@ -2563,9 +2556,10 @@
 
   <div class="gg-box" role="complementary">
     <div class="gg-shell">
+      <!-- Tab handles -->
       <ul class="gg-tabs" role="tablist" aria-orientation="vertical">
         <li class="gg-tab active" role="tab" aria-selected="true" aria-controls="panel-sponsored" tabindex="0">
-          Sponsored <small>Ad</small>
+          Sponsored <small>Partner</small>
         </li>
         <li class="gg-tab" role="tab" aria-selected="false" aria-controls="panel-deals" tabindex="-1">
           Featured Deals <small>Fast Ship</small>
@@ -2581,45 +2575,25 @@
         </li>
       </ul>
 
-     <!-- Panel 0: Sponsored (AdSense via JS injection to avoid raw code) -->
-<div id="panel-sponsored" class="gg-panel active" role="tabpanel">
-  <div class="gg-adsense-wrap">
-    <div class="gg-adsense-label">Advertisement</div>
-    <div id="gg-adsense-slot-1" class="gg-adsense-card"></div>
-  </div>
-
-  <!-- Fallback (shown if ad is blocked or fails to load) -->
-  <a class="gg-ad gg-link gg-ads-fallback gg-hidden"
-     href="https://getbudonline.com/subid/christopher.serpico/"
-     target="_blank" rel="nofollow sponsored noopener">
-    <div class="shot">
-      <span class="tag">Discreet</span>
-      <img src="gbo-sept-banner.jpg" alt="Get Bud Online — September Giveaway">
-    </div>
-    <div class="copy gg-copy">
-      <h4>Get Bud Online — Survival-Grade Calm</h4>
-      <p>If an ad didn’t load, here’s something better: lab-tested flower and edibles delivered.</p>
-      <span class="gg-btn">Shop Now →</span>
-    </div>
-  </a>
-</div>
-          <!-- Affiliate fallback -->
-          <a class="gg-ad gg-link gg-ads-fallback gg-hidden"
+      <div class="gg-panels">
+        <!-- Panel 0: Sponsored (affiliate) -->
+        <div id="panel-sponsored" class="gg-panel active" role="tabpanel">
+          <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
              target="_blank" rel="nofollow sponsored noopener">
             <div class="shot">
-              <span class="tag">Discreet</span>
-              <img src="Screenshot_20250929-135600.png" alt="Fresh stash — weighed, sealed, ready">
+              <span class="tag">Sponsored</span>
+              <img src="gbo-sept-banner.jpg" alt="Get Bud Online — September Giveaway banner">
             </div>
             <div class="copy gg-copy">
               <h4>Get Bud Online — Survival-Grade Calm</h4>
-              <p>If an ad didn’t load, here’s something better: lab-tested flower and edibles delivered.</p>
+              <p>Lab-tested flower & edibles. Discreet shipping. Reliable stock when dispensaries run dry.</p>
               <span class="gg-btn">Shop Now →</span>
             </div>
           </a>
         </div>
 
-        <!-- Featured Deals -->
+        <!-- Panel 1: Featured Deals (funnels to GBO) -->
         <div id="panel-deals" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
@@ -2629,14 +2603,14 @@
               <img src="Screenshot_20250929-135600.png" alt="Fresh stash — weighed, sealed, ready">
             </div>
             <div class="copy gg-copy">
-              <h4>Today’s Best Deals — Get Bud Online</h4>
+              <h4>Today’s Best Deals</h4>
               <p>Skip the lines. Stock up on tested flower & edibles shipped to your door.</p>
-              <span class="gg-btn">Shop Featured Deals →</span>
+              <span class="gg-btn">See Deals →</span>
             </div>
           </a>
         </div>
 
-        <!-- Shop Bud (alt creative) -->
+        <!-- Panel 2: Shop Bud (alt creative) -->
         <div id="panel-shop" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
@@ -2647,30 +2621,30 @@
             </div>
             <div class="copy gg-copy">
               <h4>Survival-Grade Calm</h4>
-              <p>Flower, gummies, carts — reliable stock when dispensaries run dry. Ship-to-door.</p>
+              <p>Flower, gummies, carts — reliable stock, ship-to-door.</p>
               <span class="gg-btn">Shop Now →</span>
             </div>
           </a>
         </div>
 
-        <!-- Giveaway -->
+        <!-- Panel 3: Giveaway -->
         <div id="panel-giveaway" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
              target="_blank" rel="nofollow sponsored noopener">
             <div class="shot">
               <span class="tag">Win Big</span>
-              <img src="gbo-sept-banner.jpg" alt="GBO September Harvest Giveaway banner">
+              <img src="gbo-sept-banner.jpg" alt="September Harvest Giveaway">
             </div>
             <div class="copy gg-copy">
               <h4>September Harvest Giveaway</h4>
-              <p>$1,500+ in prizes up for grabs. Enter automatically when you order through the link.</p>
+              <p>$1,500+ in prizes. Enter automatically with any order via our link.</p>
               <span class="gg-btn">Enter Now →</span>
             </div>
           </a>
         </div>
 
-        <!-- Guide -->
+        <!-- Panel 4: Guide -->
         <div id="panel-kit" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link" href="ptsd-bud-prepper-field-guide.html">
             <div class="shot">
@@ -2684,6 +2658,7 @@
             </div>
           </a>
         </div>
+
       </div>
     </div>
   </div>
@@ -2735,23 +2710,6 @@
           a.href=u.toString();
         }catch(e){}
       });
-
-      /* AdSense: wait for library → render → fallback if blocked */
-      function renderAdsense(){
-        try{ (window.adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
-      }
-      function whenAdsenseReady(cb){
-        if (window.adsbygoogle && window.adsbygoogle.push){ cb(); return; }
-        const t = setInterval(()=>{ if(window.adsbygoogle && window.adsbygoogle.push){ clearInterval(t); cb(); } }, 150);
-        setTimeout(()=>clearInterval(t), 5000);
-      }
-      whenAdsenseReady(renderAdsense);
-
-      const fallback = root.querySelector('.gg-ads-fallback');
-      setTimeout(()=>{
-        const slot = root.querySelector('#panel-sponsored .adsbygoogle');
-        if(slot && slot.offsetHeight < 40){ fallback && fallback.classList.remove('gg-hidden'); }
-      }, 3000);
     })();
   </script>
 </div>
