@@ -1,4 +1,42 @@
 <!DOCTYPE html>
+<!-- Grit Gear • Small CTA Band (self-contained) -->
+<div class="gg-mini-cta" role="region" aria-label="PTSD & Bud mini callout">
+  <style>
+    .gg-mini-cta{
+      --line:#2b2f3a; --ink:#e9ecf4; --muted:#a8afbd; --accent:#17e6a4;
+      max-width:520px; margin:14px auto; position:relative; isolation:isolate;
+      padding:10px 12px; text-align:center; color:var(--ink);
+      background:linear-gradient(180deg,#151a24,#0f121a);
+      border:1px solid var(--line); border-radius:12px; box-shadow:0 10px 26px rgba(0,0,0,.35);
+      font:600 .9rem/1.5 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
+    }
+    .gg-mini-cta:before{
+      /* subtle MOLLE/nylon texture */
+      content:""; position:absolute; inset:0; z-index:-1; border-radius:12px;
+      background:repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 2px, transparent 2px 9px);
+      pointer-events:none;
+    }
+    .gg-mini-cta .lead{letter-spacing:.15px}
+    .gg-mini-cta a{
+      color:var(--accent); text-decoration:none; font-weight:900; margin-left:6px;
+      padding:2px 4px; border-radius:6px; border:1px dashed rgba(23,230,164,.35);
+      background:rgba(23,230,164,.06);
+    }
+    .gg-mini-cta a:hover{filter:brightness(1.07); text-decoration:underline}
+    .gg-mini-cta .shine{
+      content:""; position:absolute; inset:0; border-radius:12px; pointer-events:none;
+      background:linear-gradient(110deg, transparent 0%, rgba(255,255,255,.06) 35%, transparent 65%);
+      mix-blend-mode:screen; animation:gg-sweep 5.5s linear infinite;
+    }
+    @keyframes gg-sweep{0%{transform:translateX(-80%)}100%{transform:translateX(80%)}}
+  </style>
+
+  <span class="lead">🍃 Ready to trade the bottle for control?</span>
+  <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
+    Stock up discreetly here
+  </a>
+  <i class="shine" aria-hidden="true"></i>
+</div>
 
 <html lang="en">
 <head>
@@ -291,6 +329,7 @@
 
 </body>
 </html>
+
 
 
 
