@@ -211,7 +211,7 @@
     <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
   </ul>
 </div>
-   <!-- ============== TWO KNIVES SIDE-BY-SIDE (CLEAN DROP-IN) ============== -->
+  <!-- ============== TWO KNIVES SIDE-BY-SIDE (CLEAN DROP-IN) ============== -->
 <section class="twins" aria-label="Featured knives">
   <!-- ========== CARD A: Warpath Bowie (blacked) ========== -->
   <article class="tw-card">
@@ -279,6 +279,110 @@
        target="_blank" rel="nofollow sponsored noopener">Pick your handle →</a>
   </article>
 </section>
+
+<!-- ============== NEW ROW UNDERNEATH: Pocket Woodcarver + RoseCraft Jack ============== -->
+<section class="twins" aria-label="Pocket Woodcarver and RoseCraft Jack" style="margin-top:16px">
+  <!-- === Card A: Pocket Woodcarver (mini fixed with wood sheath) === -->
+  <article class="tw-card">
+    <header class="tw-head">
+      <h3 class="tw-title">Pocket Woodcarver — Micro Fixed Blade</h3>
+      <span class="tw-pill">EDC Craft</span>
+    </header>
+
+    <figure class="tw-figure">
+      <img id="carver-img" alt="Mini fixed-blade with matching wooden sheath"
+           src="/s-l1600%20(13).jpg"
+           onerror="this.onerror=null;this.src='/%24_57%20(10).jfif';">
+      <button class="tw-nav prev" aria-label="Previous image" data-target="carver">‹</button>
+      <button class="tw-nav next" aria-label="Next image" data-target="carver">›</button>
+      <div class="tw-dots" id="carver-dots"></div>
+    </figure>
+
+    <ul class="tw-bullets">
+      <li>Compact carving blade—zip ties, packages, tinder, tags.</li>
+      <li>Matching hardwood sheath with lanyard hole.</li>
+      <li>Curved handle fills the grip; easy control.</li>
+      <li>Pocketable gift that actually gets used.</li>
+    </ul>
+
+    <div class="tw-meta">
+      <div class="tw-stars" aria-label="Rated 4.7 out of 5">★★★★★ <span>4.7 (300+)</span></div>
+      <div class="tw-urgency">⚡ Daily-driver utility • Great stocking stuffer</div>
+    </div>
+
+    <a class="tw-cta"
+       href="https://www.ebay.com/itm/315930343136?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+       target="_blank" rel="nofollow sponsored noopener">Grab the Pocket Woodcarver →</a>
+  </article>
+
+  <!-- === Card B: RoseCraft Modern Jack (spade shield) === -->
+  <article class="tw-card">
+    <header class="tw-head">
+      <h3 class="tw-title">RoseCraft Modern Jack — Spade Shield</h3>
+      <span class="tw-pill tw-pill--green">Everyday Carry</span>
+    </header>
+
+    <figure class="tw-figure">
+      <img id="rose-img" alt="RoseCraft jack knife with spade shield and satin blade"
+           src="/s-l1600%20(14).jpg"
+           onerror="this.onerror=null;this.src='/%24_12.jfif';">
+      <button class="tw-nav prev" aria-label="Previous image" data-target="rose">‹</button>
+      <button class="tw-nav next" aria-label="Next image" data-target="rose">›</button>
+      <div class="tw-dots" id="rose-dots"></div>
+    </figure>
+
+    <ul class="tw-bullets">
+      <li>Satin spear-point with long pull—slice, pierce, and detail.</li>
+      <li>Polished bolsters, flush fit, crisp walk-and-talk.</li>
+      <li>Blue scales with spade inlay—classy without being loud.</li>
+      <li>Great pocket companion—office to camp.</li>
+    </ul>
+
+    <div class="tw-meta">
+      <div class="tw-stars" aria-label="Rated 4.8 out of 5">★★★★★ <span>4.8 (190+)</span></div>
+      <div class="tw-urgency">⏳ Limited drop • Ships from the US</div>
+    </div>
+
+    <a class="tw-cta"
+       href="https://www.ebay.com/itm/364931067827?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+       target="_blank" rel="nofollow sponsored noopener">Claim the RoseCraft Deal →</a>
+  </article>
+</section>
+
+<script>
+  /* Rotators for the new UNDERNEATH row only (carver + rose) */
+  const miniGalleries = {
+    carver: ["/s-l1600%20(13).jpg","/%24_57%20(10).jfif"],
+    rose:   ["/s-l1600%20(14).jpg","/%24_12.jfif"]
+  };
+
+  Object.keys(miniGalleries).forEach(key=>{
+    const img = document.getElementById(key + "-img");
+    const dotsWrap = document.getElementById(key + "-dots");
+    if(!img || !dotsWrap) return;
+
+    let i = 0;
+    miniGalleries[key].forEach((_, idx)=>{
+      const b = document.createElement("button");
+      b.setAttribute("aria-label","Show image " + (idx+1));
+      if(idx===0) b.setAttribute("aria-current","true");
+      b.addEventListener("click",()=>go(idx));
+      dotsWrap.appendChild(b);
+    });
+    const dots = [...dotsWrap.children];
+
+    function go(n){
+      i = (n + miniGalleries[key].length) % miniGalleries[key].length;
+      img.src = miniGalleries[key][i];
+      dots.forEach(d=>d.removeAttribute("aria-current"));
+      dots[i].setAttribute("aria-current","true");
+    }
+    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn=>{
+      btn.addEventListener("click", ()=> go(i + (btn.classList.contains('next') ? 1 : -1)));
+    });
+    setInterval(()=>go(i+1), 4500);
+  });
+</script>
 
 <!-- ========== STYLES (scoped) ========== -->
 <style>
