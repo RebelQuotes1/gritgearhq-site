@@ -2487,11 +2487,10 @@
 
 </section>
 
-   </section>
-<!-- Google AdSense (once per page) -->
+   <!-- Google AdSense (load once per page) -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
-<!-- Grit Gear • Floating Tabbed Affiliate Sidebar + AdSense -->
+<!-- Grit Gear • Floating Tabbed Affiliate Sidebar + AdSense (mobile-safe + relauncher) -->
 <div id="gg-floaty"
      class="gg-float-wrap tabs"
      data-utm-source="gritgear"
@@ -2500,13 +2499,12 @@
      aria-label="Grit Gear tabbed sidebar">
 
   <style>
-    .gg-float-wrap.tabs{position:relative;z-index:60}
+    .gg-float-wrap.tabs{position:relative;z-index:9999} /* raise above other widgets */
     .gg-box{position:fixed; top:50vh; right:12px; transform:translateY(-50%);
             width:348px; max-height:86vh; overflow:hidden; border-radius:16px;
             background:#0f1014; border:1px solid #2b2f3a; box-shadow:0 14px 38px rgba(0,0,0,.45)}
     .gg-shell{display:grid; grid-template-columns:auto 1fr; min-height:220px}
 
-    /* Tab handles */
     .gg-tabs{list-style:none; margin:0; padding:8px; display:flex; flex-direction:column; gap:10px;
              background:#0b0e13; border-right:1px solid #262c38}
     .gg-tab{cursor:pointer; user-select:none; border:1px solid #2b2f3a; color:#e9ecf4;
@@ -2517,12 +2515,10 @@
     .gg-tab:hover{transform:translateX(-2px)}
     .gg-tab.active{background:#1b2130; border-color:#3a4152}
 
-    /* Panels */
     .gg-panels{position:relative; overflow:auto; max-height:86vh}
     .gg-panel{display:none}
     .gg-panel.active{display:block}
 
-    /* Card (affiliate) */
     .gg-ad{display:block; color:#e9ecf4; text-decoration:none; border-radius:0 16px 16px 0; overflow:hidden}
     .gg-ad .shot{position:relative; aspect-ratio:16/9; border-bottom:1px solid #252b36; background:#0c0e13}
     .gg-ad img{width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.03) saturate(1.02)}
@@ -2544,32 +2540,33 @@
     .gg-adsense-label{font:700 .78rem/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
                       color:#9fb0c7; margin:8px 0 6px 2px; letter-spacing:.2px}
     .gg-adsense-card{background:#0d0f14;border:1px solid #2b3240;border-radius:12px;padding:8px}
-    /* limit height to avoid intrusive sticky */
-    .gg-adsense-card .adsbygoogle{display:block; width:100%; min-height:120px; max-height:300px}
+    .gg-adsense-card .adsbygoogle{display:block; width:100%; min-height:120px} /* responsive */
 
-    /* Close */
-    .gg-close{position:fixed; top:12px; right:12px; z-index:70; width:34px; height:34px; border-radius:50%;
+    /* Close + Launcher */
+    .gg-close{position:fixed; top:12px; right:12px; z-index:10000; width:34px; height:34px; border-radius:50%;
               display:flex; align-items:center; justify-content:center; color:#e9ecf4; background:rgba(15,16,20,.85);
               border:1px solid #2b2f3a; box-shadow:0 8px 22px rgba(0,0,0,.45);
               font:900 16px/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif; cursor:pointer; user-select:none}
     .gg-close:after{content:"✕"; transform:translateY(-1px)}
+    .gg-launch{position:fixed; right:12px; bottom:calc(12px + env(safe-area-inset-bottom)); z-index:10001;
+               background:#141824;border:1px solid #2b2f3a;color:#e9ecf4;border-radius:999px;padding:8px 12px;
+               font:800 .85rem/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif; box-shadow:0 10px 22px rgba(0,0,0,.45);
+               cursor:pointer}
     .gg-hidden{display:none!important}
 
     /* Mobile dock */
     @media (max-width:860px){
-      .gg-box{top:auto; bottom:12px; right:8px; left:8px; transform:none; width:auto; border-radius:14px}
+      .gg-box{top:auto; bottom:calc(12px + env(safe-area-inset-bottom)); right:8px; left:8px; transform:none; width:auto; border-radius:14px}
       .gg-shell{grid-template-columns:1fr}
       .gg-tabs{flex-direction:row; border-right:none; border-bottom:1px solid #262c38; overflow:auto}
       .gg-tab{min-width:120px; text-align:center}
       .gg-panels{max-height:56vh}
-      .gg-close{top:auto; right:12px; bottom:calc(12px + 62vh)}
+      .gg-close{top:auto; right:12px; bottom:calc(12px + 62vh + env(safe-area-inset-bottom))}
     }
   </style>
 
   <div class="gg-box" role="complementary">
     <div class="gg-shell">
-
-      <!-- Tab handles (AdSense first, clearly labeled) -->
       <ul class="gg-tabs" role="tablist" aria-orientation="vertical">
         <li class="gg-tab active" role="tab" aria-selected="true" aria-controls="panel-sponsored" tabindex="0">
           Sponsored <small>Ad</small>
@@ -2588,25 +2585,22 @@
         </li>
       </ul>
 
-      <!-- Panels -->
       <div class="gg-panels">
-
-        <!-- Panel 0: AdSense (policy-safe: labeled, distinct, non-deceptive) -->
+        <!-- AdSense -->
         <div id="panel-sponsored" class="gg-panel active" role="tabpanel">
           <div class="gg-adsense-wrap">
             <div class="gg-adsense-label">Advertisement</div>
             <div class="gg-adsense-card">
-              <!-- Responsive AdSense ad unit -->
               <ins class="adsbygoogle"
                    style="display:block"
                    data-ad-client="ca-pub-1532367766505583"
-                   data-ad-slot="1234567890"    <!-- TODO: replace with your real slot ID -->
+                   data-ad-slot="1234567890"  <!-- ← replace with your real slot id -->
                    data-ad-format="auto"
                    data-full-width-responsive="true"></ins>
             </div>
           </div>
 
-          <!-- Fallback (if ad blocked or fails to load in 3s): show an affiliate card instead -->
+          <!-- Affiliate fallback -->
           <a class="gg-ad gg-link gg-ads-fallback gg-hidden"
              href="https://getbudonline.com/subid/christopher.serpico/"
              target="_blank" rel="nofollow sponsored noopener">
@@ -2622,7 +2616,7 @@
           </a>
         </div>
 
-        <!-- Panel 1: Featured Deals (funnels to GBO) -->
+        <!-- Featured Deals -->
         <div id="panel-deals" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
@@ -2639,7 +2633,7 @@
           </a>
         </div>
 
-        <!-- Panel 2: Shop Bud (alt creative) -->
+        <!-- Shop Bud (alt creative) -->
         <div id="panel-shop" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
@@ -2656,7 +2650,7 @@
           </a>
         </div>
 
-        <!-- Panel 3: Giveaway banner -->
+        <!-- Giveaway -->
         <div id="panel-giveaway" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
@@ -2673,7 +2667,7 @@
           </a>
         </div>
 
-        <!-- Panel 4: Your guide -->
+        <!-- Guide -->
         <div id="panel-kit" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link" href="ptsd-bud-prepper-field-guide.html">
             <div class="shot">
@@ -2687,26 +2681,31 @@
             </div>
           </a>
         </div>
-
       </div>
     </div>
   </div>
 
-  <!-- Close button -->
+  <!-- Close + Launcher -->
   <button type="button" class="gg-close" aria-label="Hide sidebar"></button>
+  <button type="button" class="gg-launch gg-hidden" aria-label="Open sidebar">Open Ads</button>
 
   <script>
     (function(){
       const root = document.getElementById('gg-floaty');
       if(!root) return;
 
-      /* Persisted close */
       const HIDE_KEY='ggTabbedSidebarClosed';
       const box=root.querySelector('.gg-box');
       const closeBtn=root.querySelector('.gg-close');
-      function hide(){box.classList.add('gg-hidden');closeBtn.classList.add('gg-hidden');try{localStorage.setItem(HIDE_KEY,'1')}catch(e){}}
-      function maybe(){try{if(localStorage.getItem(HIDE_KEY)==='1'){hide();}}catch(e){}}
-      closeBtn.addEventListener('click',hide); maybe();
+      const launcher=root.querySelector('.gg-launch');
+
+      function show(){ box.classList.remove('gg-hidden'); closeBtn.classList.remove('gg-hidden'); launcher.classList.add('gg-hidden'); try{localStorage.removeItem(HIDE_KEY);}catch(e){} }
+      function hide(){ box.classList.add('gg-hidden'); closeBtn.classList.add('gg-hidden'); launcher.classList.remove('gg-hidden'); try{localStorage.setItem(HIDE_KEY,'1');}catch(e){} }
+      function maybe(){ try{ if(localStorage.getItem(HIDE_KEY)==='1'){ hide(); } }catch(e){} }
+
+      closeBtn.addEventListener('click',hide);
+      launcher.addEventListener('click',show);
+      maybe();
 
       /* Tabs */
       const tabs=[...root.querySelectorAll('.gg-tab')];
@@ -2720,7 +2719,7 @@
         t.addEventListener('keydown',(e)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(i);}});
       });
 
-      /* UTM tagging for analytics */
+      /* UTM tagging */
       const src=root.getAttribute('data-utm-source')||'gritgear';
       const med=root.getAttribute('data-utm-medium')||'sidebar';
       const camp=root.getAttribute('data-utm-campaign')||'affiliates';
@@ -2734,13 +2733,21 @@
         }catch(e){}
       });
 
-      /* Load AdSense in the sponsored panel, with a soft fallback if blocked */
-      try{ (adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
+      /* AdSense: wait for library → render → fallback if blocked */
+      function renderAdsense(){
+        try{ (window.adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
+      }
+      function whenAdsenseReady(cb){
+        if (window.adsbygoogle && window.adsbygoogle.push){ cb(); return; }
+        const t = setInterval(()=>{ if(window.adsbygoogle && window.adsbygoogle.push){ clearInterval(t); cb(); } }, 150);
+        setTimeout(()=>clearInterval(t), 5000);
+      }
+      whenAdsenseReady(renderAdsense);
+
       const fallback = root.querySelector('.gg-ads-fallback');
       setTimeout(()=>{
-        // If the ad container still has no height, show fallback affiliate card
         const slot = root.querySelector('#panel-sponsored .adsbygoogle');
-        if(slot && (slot.offsetHeight < 40)) { fallback && fallback.classList.remove('gg-hidden'); }
+        if(slot && slot.offsetHeight < 40){ fallback && fallback.classList.remove('gg-hidden'); }
       }, 3000);
     })();
   </script>
