@@ -2488,13 +2488,16 @@
 </section>
 
    </section>
-<!-- Grit Gear • Floating Tabbed Affiliate Sidebar (GBO funnel) -->
+<!-- Google AdSense (once per page) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+
+<!-- Grit Gear • Floating Tabbed Affiliate Sidebar + AdSense -->
 <div id="gg-floaty"
      class="gg-float-wrap tabs"
      data-utm-source="gritgear"
      data-utm-medium="sidebar"
      data-utm-campaign="affiliates"
-     aria-label="Grit Gear tabbed affiliate sidebar">
+     aria-label="Grit Gear tabbed sidebar">
 
   <style>
     .gg-float-wrap.tabs{position:relative;z-index:60}
@@ -2504,63 +2507,74 @@
     .gg-shell{display:grid; grid-template-columns:auto 1fr; min-height:220px}
 
     /* Tab handles */
-    .gg-tabs{list-style:none;margin:0;padding:8px;display:flex;flex-direction:column;gap:10px;
-             background:#0b0e13;border-right:1px solid #262c38}
-    .gg-tab{cursor:pointer;user-select:none;border:1px solid #2b2f3a;color:#e9ecf4;
-            background:#141824;border-radius:10px;padding:8px 10px;min-width:98px;
+    .gg-tabs{list-style:none; margin:0; padding:8px; display:flex; flex-direction:column; gap:10px;
+             background:#0b0e13; border-right:1px solid #262c38}
+    .gg-tab{cursor:pointer; user-select:none; border:1px solid #2b2f3a; color:#e9ecf4;
+            background:#141824; border-radius:10px; padding:8px 10px; min-width:108px;
             font:800 .82rem/1.1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
-            box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .2s ease, background .2s ease}
-    .gg-tab small{display:block;color:#8ea3b8;font-weight:700;font-size:.7rem;letter-spacing:.2px}
+            box-shadow:0 6px 18px rgba(0,0,0,.35); transition:transform .2s ease, background .2s ease}
+    .gg-tab small{display:block; color:#8ea3b8; font-weight:700; font-size:.7rem; letter-spacing:.2px}
     .gg-tab:hover{transform:translateX(-2px)}
-    .gg-tab.active{background:#1b2130;border-color:#3a4152}
+    .gg-tab.active{background:#1b2130; border-color:#3a4152}
 
     /* Panels */
-    .gg-panels{position:relative;overflow:auto;max-height:86vh}
+    .gg-panels{position:relative; overflow:auto; max-height:86vh}
     .gg-panel{display:none}
     .gg-panel.active{display:block}
 
-    /* Card */
-    .gg-ad{display:block;color:#e9ecf4;text-decoration:none;border-radius:0 16px 16px 0;overflow:hidden}
-    .gg-ad .shot{position:relative;aspect-ratio:16/9;border-bottom:1px solid #252b36;background:#0c0e13}
-    .gg-ad img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) saturate(1.02)}
-    .gg-ad .tag{position:absolute;top:8px;left:8px;z-index:2;font-size:.72rem;font-weight:800;
-                color:#041812;background:linear-gradient(180deg,#18e6a3,#09c78b);
-                padding:6px 10px;border-radius:999px;border:1px solid rgba(9,199,139,.5)}
-    .gg-ad .shot:after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;
+    /* Card (affiliate) */
+    .gg-ad{display:block; color:#e9ecf4; text-decoration:none; border-radius:0 16px 16px 0; overflow:hidden}
+    .gg-ad .shot{position:relative; aspect-ratio:16/9; border-bottom:1px solid #252b36; background:#0c0e13}
+    .gg-ad img{width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.03) saturate(1.02)}
+    .gg-ad .tag{position:absolute; top:8px; left:8px; z-index:2; font-size:.72rem; font-weight:800;
+                color:#041812; background:linear-gradient(180deg,#18e6a3,#09c78b);
+                padding:6px 10px; border-radius:999px; border:1px solid rgba(9,199,139,.5)}
+    .gg-ad .shot:after{content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:screen;
                        background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.18) 35%,transparent 70%);
-                       transform:translateX(-80%);animation:gg-sweep 10s linear infinite}
+                       transform:translateX(-80%); animation:gg-sweep 10s linear infinite}
     @keyframes gg-sweep{to{transform:translateX(80%)}}
     .gg-copy{padding:14px 16px}
-    .gg-copy h4{margin:0 0 6px;font-weight:900;color:#f29d2a;font-size:1.02rem;letter-spacing:.2px}
-    .gg-copy p{margin:0 0 10px;font-size:.9rem;color:#cfd5e3;line-height:1.45}
-    .gg-btn{display:inline-block;padding:9px 14px;border-radius:10px;font-weight:900;font-size:.84rem;
-            background:linear-gradient(180deg,#18f0b4,#0acb92);color:#041812;box-shadow:0 8px 20px rgba(10,203,146,.35)}
+    .gg-copy h4{margin:0 0 6px; font-weight:900; color:#f29d2a; font-size:1.02rem; letter-spacing:.2px}
+    .gg-copy p{margin:0 0 10px; font-size:.9rem; color:#cfd5e3; line-height:1.45}
+    .gg-btn{display:inline-block; padding:9px 14px; border-radius:10px; font-weight:900; font-size:.84rem;
+            background:linear-gradient(180deg,#18f0b4,#0acb92); color:#041812; box-shadow:0 8px 20px rgba(10,203,146,.35)}
+
+    /* AdSense panel */
+    .gg-adsense-wrap{padding:10px 10px 14px}
+    .gg-adsense-label{font:700 .78rem/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
+                      color:#9fb0c7; margin:8px 0 6px 2px; letter-spacing:.2px}
+    .gg-adsense-card{background:#0d0f14;border:1px solid #2b3240;border-radius:12px;padding:8px}
+    /* limit height to avoid intrusive sticky */
+    .gg-adsense-card .adsbygoogle{display:block; width:100%; min-height:120px; max-height:300px}
 
     /* Close */
-    .gg-close{position:fixed;top:12px;right:12px;z-index:70;width:34px;height:34px;border-radius:50%;
-              display:flex;align-items:center;justify-content:center;color:#e9ecf4;background:rgba(15,16,20,.85);
-              border:1px solid #2b2f3a;box-shadow:0 8px 22px rgba(0,0,0,.45);
-              font:900 16px/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;cursor:pointer;user-select:none}
-    .gg-close:after{content:"✕";transform:translateY(-1px)}
+    .gg-close{position:fixed; top:12px; right:12px; z-index:70; width:34px; height:34px; border-radius:50%;
+              display:flex; align-items:center; justify-content:center; color:#e9ecf4; background:rgba(15,16,20,.85);
+              border:1px solid #2b2f3a; box-shadow:0 8px 22px rgba(0,0,0,.45);
+              font:900 16px/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif; cursor:pointer; user-select:none}
+    .gg-close:after{content:"✕"; transform:translateY(-1px)}
     .gg-hidden{display:none!important}
 
     /* Mobile dock */
     @media (max-width:860px){
-      .gg-box{top:auto;bottom:12px;right:8px;left:8px;transform:none;width:auto;border-radius:14px}
+      .gg-box{top:auto; bottom:12px; right:8px; left:8px; transform:none; width:auto; border-radius:14px}
       .gg-shell{grid-template-columns:1fr}
-      .gg-tabs{flex-direction:row;border-right:none;border-bottom:1px solid #262c38;overflow:auto}
-      .gg-tab{min-width:120px;text-align:center}
+      .gg-tabs{flex-direction:row; border-right:none; border-bottom:1px solid #262c38; overflow:auto}
+      .gg-tab{min-width:120px; text-align:center}
       .gg-panels{max-height:56vh}
-      .gg-close{top:auto;right:12px;bottom:calc(12px + 62vh)}
+      .gg-close{top:auto; right:12px; bottom:calc(12px + 62vh)}
     }
   </style>
 
   <div class="gg-box" role="complementary">
     <div class="gg-shell">
 
-      <!-- TAB HANDLES -->
+      <!-- Tab handles (AdSense first, clearly labeled) -->
       <ul class="gg-tabs" role="tablist" aria-orientation="vertical">
-        <li class="gg-tab active" role="tab" aria-selected="true" aria-controls="panel-deals" tabindex="0">
+        <li class="gg-tab active" role="tab" aria-selected="true" aria-controls="panel-sponsored" tabindex="0">
+          Sponsored <small>Ad</small>
+        </li>
+        <li class="gg-tab" role="tab" aria-selected="false" aria-controls="panel-deals" tabindex="-1">
           Featured Deals <small>Fast Ship</small>
         </li>
         <li class="gg-tab" role="tab" aria-selected="false" aria-controls="panel-shop" tabindex="-1">
@@ -2574,11 +2588,42 @@
         </li>
       </ul>
 
-      <!-- PANELS -->
+      <!-- Panels -->
       <div class="gg-panels">
 
-        <!-- Panel 1 (was Binoid 10%): now FUNNELS to GetBudOnline -->
-        <div id="panel-deals" class="gg-panel active" role="tabpanel">
+        <!-- Panel 0: AdSense (policy-safe: labeled, distinct, non-deceptive) -->
+        <div id="panel-sponsored" class="gg-panel active" role="tabpanel">
+          <div class="gg-adsense-wrap">
+            <div class="gg-adsense-label">Advertisement</div>
+            <div class="gg-adsense-card">
+              <!-- Responsive AdSense ad unit -->
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="ca-pub-1532367766505583"
+                   data-ad-slot="1234567890"    <!-- TODO: replace with your real slot ID -->
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+            </div>
+          </div>
+
+          <!-- Fallback (if ad blocked or fails to load in 3s): show an affiliate card instead -->
+          <a class="gg-ad gg-link gg-ads-fallback gg-hidden"
+             href="https://getbudonline.com/subid/christopher.serpico/"
+             target="_blank" rel="nofollow sponsored noopener">
+            <div class="shot">
+              <span class="tag">Discreet</span>
+              <img src="Screenshot_20250929-135600.png" alt="Fresh stash — weighed, sealed, ready">
+            </div>
+            <div class="copy gg-copy">
+              <h4>Get Bud Online — Survival-Grade Calm</h4>
+              <p>If an ad didn’t load, here’s something better: lab-tested flower and edibles delivered.</p>
+              <span class="gg-btn">Shop Now →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Panel 1: Featured Deals (funnels to GBO) -->
+        <div id="panel-deals" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
              target="_blank" rel="nofollow sponsored noopener">
@@ -2588,13 +2633,13 @@
             </div>
             <div class="copy gg-copy">
               <h4>Today’s Best Deals — Get Bud Online</h4>
-              <p>Skip the pharmacy lines. Stock lab-tested flower & edibles delivered to your door.</p>
+              <p>Skip the lines. Stock up on tested flower & edibles shipped to your door.</p>
               <span class="gg-btn">Shop Featured Deals →</span>
             </div>
           </a>
         </div>
 
-        <!-- Panel 2: Shop Bud (same destination, different creative) -->
+        <!-- Panel 2: Shop Bud (alt creative) -->
         <div id="panel-shop" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
@@ -2605,13 +2650,13 @@
             </div>
             <div class="copy gg-copy">
               <h4>Survival-Grade Calm</h4>
-              <p>Flower, gummies, carts—reliable stock when dispensaries run dry. Ship-to-door.</p>
+              <p>Flower, gummies, carts — reliable stock when dispensaries run dry. Ship-to-door.</p>
               <span class="gg-btn">Shop Now →</span>
             </div>
           </a>
         </div>
 
-        <!-- Panel 3: Giveaway banner (GBO) -->
+        <!-- Panel 3: Giveaway banner -->
         <div id="panel-giveaway" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
@@ -2675,7 +2720,7 @@
         t.addEventListener('keydown',(e)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(i);}});
       });
 
-      /* UTM tagging */
+      /* UTM tagging for analytics */
       const src=root.getAttribute('data-utm-source')||'gritgear';
       const med=root.getAttribute('data-utm-medium')||'sidebar';
       const camp=root.getAttribute('data-utm-campaign')||'affiliates';
@@ -2688,6 +2733,15 @@
           a.href=u.toString();
         }catch(e){}
       });
+
+      /* Load AdSense in the sponsored panel, with a soft fallback if blocked */
+      try{ (adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
+      const fallback = root.querySelector('.gg-ads-fallback');
+      setTimeout(()=>{
+        // If the ad container still has no height, show fallback affiliate card
+        const slot = root.querySelector('#panel-sponsored .adsbygoogle');
+        if(slot && (slot.offsetHeight < 40)) { fallback && fallback.classList.remove('gg-hidden'); }
+      }, 3000);
     })();
   </script>
 </div>
