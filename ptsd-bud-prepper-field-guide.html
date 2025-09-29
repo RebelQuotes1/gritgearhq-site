@@ -431,15 +431,92 @@
                    box-shadow:0 10px 25px rgba(0,0,0,.5);object-fit:cover;object-position:center}
     .fp .photo figcaption{color:var(--muted);font-style:italic;font-size:.9rem;margin-top:6px}
   </style>
+<!-- Grit Gear Photo Card (self-contained) -->
+<figure class="gg-card" aria-label="Grit Gear field photo">
+  <style>
+    .gg-card{
+      --bg:#101217;--ink:#e9ebf3;--muted:#9fa6b5;--line:#2a2e39;--accent:#f29e27;--ok:#18e6a3;
+      margin:20px auto; max-width:540px; color:var(--ink); position:relative;
+      background:linear-gradient(180deg,#141825,#0d1017);
+      border:1px solid var(--line); border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,.40);
+      padding:14px 14px 10px;
+      font:15px/1.6 system-ui, -apple-system, Segoe UI, Inter, Arial, sans-serif;
+    }
+    /* subtle MOLLE/nylon texture */
+    .gg-card::before{
+      content:""; position:absolute; inset:0; border-radius:16px;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 2px, transparent 2px 10px),
+        linear-gradient(180deg,transparent,rgba(0,0,0,.25));
+      pointer-events:none;
+    }
+    .gg-top{
+      display:flex; align-items:center; justify-content:space-between; gap:8px;
+      margin:2px 2px 10px;
+    }
+    .gg-badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px; font-weight:800; font-size:.78rem;
+      color:#041812; background:linear-gradient(180deg,var(--ok),#09c78b);
+      border:1px solid rgba(8,210,150,.6); box-shadow:0 6px 16px rgba(9,199,139,.35);
+    }
+    .gg-tag{
+      color:var(--muted); font-size:.78rem; letter-spacing:.28px; text-transform:uppercase;
+    }
+    .gg-shot{
+      position:relative; margin:0 auto 8px; width:min(100%,420px); /* smaller size */
+      border-radius:12px; overflow:hidden; border:2px solid var(--line);
+      box-shadow:0 10px 24px rgba(0,0,0,.55);
+      transform:rotate(-.6deg);
+      background:#0b0e14;
+    }
+    .gg-shot img{display:block; width:100%; height:100%; object-fit:cover}
+    /* faux tape corners */
+    .gg-shot::before,.gg-shot::after{
+      content:""; position:absolute; width:70px; height:14px; background:
+        linear-gradient(180deg, #fbe3a1, #e9c874);
+      opacity:.85; filter:contrast(1.05); box-shadow:0 2px 6px rgba(0,0,0,.35);
+      transform:rotate(-4deg);
+    }
+    .gg-shot::before{top:-6px; left:8px}
+    .gg-shot::after{bottom:-6px; right:8px; transform:rotate(4deg)}
+    /* dog-tag caption bar */
+    .gg-cap{
+      margin:8px auto 0; width:min(100%,420px);
+      background:#0f1320; border:1px solid #22283a; border-radius:10px;
+      color:var(--muted); font-size:.86rem; display:flex; align-items:center; gap:10px;
+      padding:8px 10px; position:relative;
+    }
+    .gg-cap::before{
+      content:""; width:14px; height:14px; border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, #7f8aa0, #3a4254 60%, #0b0f1a);
+      box-shadow: inset 0 0 2px rgba(255,255,255,.15); margin-right:2px;
+    }
+    .gg-cap strong{color:#cfd6e6; letter-spacing:.2px}
+    /* tiny serial */
+    .gg-serial{
+      margin-left:auto; font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size:.75rem; color:#7d8798; opacity:.9;
+    }
+  </style>
 
-  <!-- Your photo -->
-  <figure class="photo">
+  <div class="gg-top">
+    <span class="gg-badge">Grit Gear HQ</span>
+    <span class="gg-tag">Field Note • Stand-Down</span>
+  </div>
+
+  <div class="gg-shot">
     <img
       src="Screenshot_20250928-212654.png"
       alt="Catching a hard-earned rest against the rock face — calm after the storm"
       loading="lazy" decoding="async">
-    <figcaption>Real life picture of me in my 20s, not stock. This is what getting your calm back looks like.</figcaption>
-  </figure>
+  </div>
+
+  <figcaption class="gg-cap">
+    <strong>Real life, not stock.</strong> Me in my 20s — this is what getting your calm back looks like.
+    <span class="gg-serial">GG-027</span>
+  </figcaption>
+</figure>
 
   <h2 id="protocols">Field Protocols (Run It Like Gear)</h2>
 
