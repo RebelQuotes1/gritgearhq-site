@@ -211,46 +211,65 @@
     <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
   </ul>
 </div>
-<!-- PTSD & Bud CTA (drop on homepage) -->
-<style>
-  .gg-cta {
-    position: relative; border-radius: 16px; overflow: hidden;
-    background: #0f0f12; color: #eef; border: 1px solid #2a2a30;
-    max-width: 980px; margin: 22px auto; box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  }
-  .gg-cta .bg {
-    position:absolute; inset:0;
-    background: url('images/grit-woods.jpg') center/cover no-repeat; /* swap to your image */
-    filter: brightness(.55);
-    transform: scale(1.02);
-  }
-  .gg-cta .veil {
-    position:absolute; inset:0;
-    background: linear-gradient(120deg, rgba(0,0,0,.7), rgba(0,0,0,.25) 45%, rgba(0,0,0,.8));
-  }
-  .gg-cta .body {
-    position:relative; padding:28px; display:grid; gap:10px;
-  }
-  .gg-cta h2 { margin:0; font-size: clamp(1.4rem, 2.4vw, 2rem); color:#f29d2a; letter-spacing:.2px }
-  .gg-cta p { margin:0; font-size: clamp(.98rem, 1.6vw, 1.05rem); line-height:1.6 }
-  .gg-cta .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:2px }
-  .gg-cta .chip{
-    font-size:.82rem; padding:6px 10px; border:1px solid #35353b; border-radius:999px; backdrop-filter: blur(2px);
-    background: rgba(20,20,24,.55); color:#cfcfd6
-  }
-  .gg-cta .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
-  .gg-cta a.btn{
-    display:inline-block; padding:12px 18px; border-radius:12px; font-weight:800; text-decoration:none;
-    background: linear-gradient(180deg, #18f0b4, #0acb92); color:#041611; box-shadow:0 6px 18px rgba(10,203,146,.35);
-  }
-  .gg-cta a.btn:hover{ filter:brightness(1.05) }
-  .gg-cta a.alt{
-    color:#dfe; text-decoration:none; border-bottom:1px dashed #aaa; opacity:.9
-  }
-</style>
+<!-- Grit Gear • Homepage Hero CTA (self-contained) -->
+<a class="gg-cta pro" href="ptsd-bud-prepper-field-guide.html" aria-label="Read the PTSD & Bud Field Guide">
+  <style>
+    .gg-cta.pro{
+      --ink:#e9ecf4; --muted:#b7becc; --line:#2b2f3a; --accent:#f29d2a; --cta:#18f0b4; --cta2:#0acb92;
+      position:relative; display:block; border-radius:18px; overflow:hidden; isolation:isolate;
+      background:#0f1014; color:var(--ink); border:1px solid var(--line);
+      max-width:980px; margin:24px auto; box-shadow:0 14px 38px rgba(0,0,0,.38);
+      text-decoration:none;
+    }
+    .gg-cta .bg, .gg-cta .veil, .gg-cta .grain{position:absolute; inset:0}
+    .gg-cta .bg{transform:scale(1.02)}
+    .gg-cta .veil{
+      background:linear-gradient(120deg, rgba(0,0,0,.78), rgba(0,0,0,.28) 45%, rgba(0,0,0,.85));
+      mix-blend-mode:multiply;
+    }
+    .gg-cta .grain{
+      background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
+<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter>\
+<rect width='120' height='120' filter='url(%23n)' opacity='0.06'/>\
+</svg>");
+      opacity:.55; mix-blend-mode:overlay; pointer-events:none;
+    }
+    .gg-cta .body{position:relative; padding:30px; display:grid; gap:12px}
+    .gg-cta h2{margin:0; font-size:clamp(1.35rem,2.4vw,2rem); color:var(--accent); letter-spacing:.2px; font-weight:900}
+    .gg-cta p{margin:0; font-size:clamp(.98rem,1.6vw,1.08rem); line-height:1.65; color:var(--ink)}
+    .gg-cta .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .gg-cta .chip{
+      font-size:.8rem; padding:6px 10px; border:1px solid #343744; border-radius:999px;
+      background:rgba(18,20,28,.6); color:#d9dfea; backdrop-filter:blur(2px)
+    }
+    .gg-cta .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; align-items:center}
+    .gg-cta .btn{
+      display:inline-block; padding:12px 18px; border-radius:12px; font-weight:900;
+      background:linear-gradient(180deg,var(--cta),var(--cta2)); color:#051812;
+      box-shadow:0 8px 22px rgba(10,203,146,.35)
+    }
+    .gg-cta .btn:hover{filter:brightness(1.05)}
+    .gg-cta .alt{color:#e9ecf4;text-decoration:none;border-bottom:1px dashed #aab;opacity:.92}
+    /* Light sweep accent */
+    .gg-cta .sweep{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:linear-gradient(110deg, transparent 0%, rgba(255,255,255,.18) 35%, transparent 70%);
+      mix-blend-mode:screen; animation:shine 9s linear infinite;
+    }
+    @keyframes shine { 0%{transform:translateX(-80%)} 100%{transform:translateX(80%)} }
+    /* Responsive trim */
+    @media (max-width:720px){ .gg-cta .body{padding:22px} }
+  </style>
 
-<a class="gg-cta" href="ptsd-bud-prepper-field-guide.html">
-  <div class="bg"></div><div class="veil"></div>
+  <!-- BACKGROUND with AVIF + PNG fallback -->
+  <picture class="bg">
+    <source srcset="Does_Smoking_More_heronew.avif" type="image/avif">
+    <img src="Screenshot_20250928-212932.png" alt="" style="width:100%;height:100%;object-fit:cover;filter:brightness(.58) contrast(1.05) saturate(1.02)">
+  </picture>
+  <div class="veil"></div>
+  <div class="grain"></div>
+
   <div class="body">
     <h2>PTSD Quieted in Minutes? The One Tool Most Preppers Forget</h2>
     <p>Trade the bottle and the junk drawer of pills for a plant you can grow, store, and function on. Sleep better, kill the panic, and stay useful for your people.</p>
@@ -265,11 +284,9 @@
       <span class="alt">or stock up discreetly</span>
     </div>
   </div>
-</a>
-<!-- end CTA -->
 
-</div>
-       
+  <i class="sweep" aria-hidden="true"></i>
+</a>
        
   <!-- ============== TWO KNIVES SIDE-BY-SIDE (CLEAN DROP-IN) ============== -->
 <section class="twins" aria-label="Featured knives">
