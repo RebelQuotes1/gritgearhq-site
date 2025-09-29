@@ -2,215 +2,319 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>PTSD & Bud: The Survivalist’s Medicine Cabinet</title>
+  <title>PTSD & Bud: The Survivalist’s Medicine Cabinet (No-BS Field Guide)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A no-BS survival-prepper guide to using cannabis for PTSD, sleep, pain, and stress — why bud beats booze and half the medicine cabinet, plus how to dose, store, and prep it.">
+  <meta name="description" content="A survival-prepper’s guide to using cannabis for PTSD, sleep, pain, and stress — why bud beats booze and half the medicine cabinet, plus field protocols, storage, and gear." />
+  <link rel="canonical" href="/ptsd-bud-prepper-field-guide.html" />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-      background-color: #111;
-      color: #eee;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+    /* ===== Design Tokens ===== */
+    :root{
+      --bg:#0f1014; --bg-2:#12141a; --ink:#e9ebf3; --muted:#b8bcc9; --line:#2a2d37;
+      --accent:#f29e27; --cta:#17e6a4; --cta-2:#06c68a; --chip:#171a22;
+      --shadow: 0 12px 32px rgba(0,0,0,.35);
     }
-    h1, h2, h3 {
-      color: #f48024;
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      background: radial-gradient(1200px 800px at 10% -10%, #1b1f2c, #0f1014 55%) fixed;
+      color:var(--ink); font:16px/1.75 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
     }
-    a {
-      color: #00ff99;
-      text-decoration: none;
-      font-weight: bold;
+    main{max-width:1024px; margin:0 auto; padding:28px 18px 60px}
+    h1,h2,h3{line-height:1.2; color:var(--accent); letter-spacing:.2px}
+    h1{font-size:clamp(1.6rem,3.2vw,2.2rem); margin:10px 0}
+    h2{font-size:clamp(1.25rem,2.2vw,1.6rem); margin:26px 0 10px}
+    h3{font-size:clamp(1.05rem,2vw,1.25rem); margin:18px 0 8px; color:#ffd27c}
+    p{margin:12px 0}
+    a{color:var(--cta); text-decoration:none; font-weight:800}
+    a:hover{text-decoration:underline}
+    ul,ol{margin:10px 0 20px 24px}
+    li{margin:6px 0}
+    hr{border:none;height:1px;background:linear-gradient(90deg, transparent, #2a2d37, transparent); margin:26px 0}
+    .muted{color:var(--muted)}
+    .lead{font-size:1.06rem; color:#fff}
+    .eyebrow{font-size:.8rem; text-transform:uppercase; letter-spacing:.35px; color:var(--muted)}
+
+    /* ===== Hero ===== */
+    .hero{
+      position:relative; padding:26px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg, #151822, #0f1117);
+      box-shadow: var(--shadow);
+      display:grid; gap:14px; grid-template-columns:1.2fr .9fr;
     }
-    a:hover {
-      text-decoration: underline;
+    @media(max-width:900px){ .hero{grid-template-columns:1fr} }
+    .hero .copy p{margin:8px 0 0}
+    .hero .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      display:inline-block; padding:12px 16px; border-radius:12px; font-weight:900;
+      background: linear-gradient(180deg, var(--cta), var(--cta-2)); color:#051a12; box-shadow:0 8px 22px rgba(6,198,138,.35);
     }
-    .cta {
-      background: #222;
-      border: 2px solid #f48024;
-      padding: 15px;
-      margin: 20px 0;
-      text-align: center;
-      font-size: 1.2em;
+    .btn.alt{background:transparent; color:var(--ink); border:1px dashed #3a3f4f}
+    .hero .img{
+      position:relative; background:#0e1118; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+      min-height:240px;
     }
-    .ghostwriter {
-      margin-top: 40px;
-      text-align: center;
-      font-style: italic;
+    .hero img{width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.05) saturate(1.02)}
+    .tagline{font-size:.95rem; color:var(--muted)}
+
+    /* ===== CTA band ===== */
+    .cta-band{
+      margin:20px 0; padding:16px; text-align:center; border:1px solid var(--line); border-radius:14px;
+      background:linear-gradient(180deg, #141824, #10121a); box-shadow:var(--shadow);
     }
-    img.sunny {
-      max-width: 250px;
-      border-radius: 12px;
-      margin-top: 10px;
+
+    /* ===== Pull quote ===== */
+    .pull{
+      margin:18px 0; padding:14px 16px; border-left:4px solid var(--accent);
+      background:#141826; border-radius:10px; color:#ffdfb0; font-weight:700
     }
-    ul, ol {
-      margin: 10px 0 20px 30px;
+
+    /* ===== Promo Card: Turning Point Tee (uses your images) ===== */
+    .about__ad{
+      --ok:#18e6a3;
+      margin:26px 0; background:var(--bg-2); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
     }
+    .about__row{display:grid; grid-template-columns:1.05fr 1fr}
+    @media (max-width:900px){ .about__row{grid-template-columns:1fr} }
+    .about__media{position:relative; background:#0e1118; padding:16px}
+    .about__badge{position:absolute; top:12px; left:12px; font-weight:800; font-size:.78rem; letter-spacing:.2px;
+      background:rgba(24,230,163,.12); color:var(--ok); border:1px solid rgba(24,230,163,.4); padding:6px 10px; border-radius:999px}
+    .about__shot{position:absolute; inset:0; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#141419;
+      transition:transform .25s ease, box-shadow .25s ease}
+    .about__shot img{width:100%; height:100%; object-fit:cover; display:block}
+    .about__shot.--back{transform:rotate(-5deg) translate(-12px,8px); z-index:1}
+    .about__shot.--front{transform:rotate(4deg) translate(12px,-8px); z-index:2; box-shadow:0 12px 28px rgba(0,0,0,.45)}
+    .about__media:hover .about__shot.--back{transform:rotate(-7deg) translate(-18px,12px) scale(1.02)}
+    .about__media:hover .about__shot.--front{transform:rotate(6deg) translate(18px,-12px) scale(1.02)}
+    .about__stack{position:relative; width:100%; max-width:440px; aspect-ratio:4/3; margin:8px auto 10px}
+    .about__strip{display:flex; gap:8px; overflow-x:auto; padding:8px 2px 2px; scrollbar-width:thin}
+    .about__thumb{flex:0 0 86px; height:68px; border-radius:10px; overflow:hidden; border:1px solid var(--line); background:#141419;
+      opacity:.95; transition:opacity .2s ease, transform .2s ease}
+    .about__thumb:hover{opacity:1; transform:scale(1.02)}
+    .about__copy{padding:18px 20px 22px; border-left:1px solid var(--line)}
+    @media (max-width:900px){ .about__copy{border-left:none; border-top:1px solid var(--line)} }
+    .about__eyebrow{color:var(--muted); font-size:.82rem; text-transform:uppercase; letter-spacing:.3px}
+    .about__title{margin:6px 0 6px; font-weight:900; font-size:clamp(1.1rem,2.1vw,1.35rem)}
+    .about__text{color:var(--muted); margin:0 0 10px}
+    .about__chips{display:flex; gap:10px; flex-wrap:wrap; margin:8px 0 12px}
+    .about__chip{font-size:.78rem; color:#d7d7e0; border:1px solid #34343d; padding:6px 10px; border-radius:999px; background:#141419}
+    .about__cta{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:8px}
+    .about__btn{display:inline-block; padding:11px 16px; border-radius:12px; font-weight:900; text-decoration:none;
+      background:linear-gradient(180deg,#18e6a3,#0bbf86); color:#071812; box-shadow:0 8px 22px rgba(13,191,134,.35)}
+    .about__alt{color:#e9e9ef; text-decoration:none; border-bottom:1px dashed #aab; font-size:.92rem; opacity:.95}
+    .about__trust{display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); font-size:.9rem; margin-top:8px}
+
+    /* ===== Promo Card: Survival Kit Ad ===== */
+    .surv{
+      margin:24px 0; background:var(--bg-2); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
+      display:grid; grid-template-columns:1fr 1fr;
+    }
+    @media(max-width:900px){ .surv{grid-template-columns:1fr} }
+    .surv-img{background:#0e1118; padding:12px; display:flex; align-items:center; justify-content:center}
+    .surv-img img{max-width:100%; border-radius:12px; border:1px solid var(--line); display:block}
+    .surv-copy{padding:20px}
+    .chips{display:flex; gap:10px; flex-wrap:wrap}
+    .chip{background:var(--chip); border:1px solid #343748; color:#d7d8e1; padding:6px 10px; border-radius:999px; font-size:.82rem}
+
+    /* ===== Footer / Author ===== */
+    .ghost{margin-top:26px; text-align:center}
+    .ghost img{max-width:260px; width:100%; border-radius:14px; border:1px solid var(--line)}
   </style>
 </head>
 <body>
+<main>
 
-  <h1>PTSD & Bud: The Survivalist’s Medicine Cabinet</h1>
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="copy">
+      <div class="eyebrow">Grit Gear HQ • PTSD Field Guide</div>
+      <h1>PTSD & Bud: The Survivalist’s Medicine Cabinet (No-BS Field Guide)</h1>
+      <p class="lead">PTSD is like an alarm wired to your spine. This is a straight-talk manual for taking your calm back with cannabis—how to dose, store, and run it like gear—without turning into a zombie or a court case.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">Shop discreet bud</a>
+        <a class="btn alt" href="#protocols">Jump to Field Protocols</a>
+      </div>
+      <p class="tagline muted">21+ only. Know your local laws. Don’t drive or handle firearms impaired.</p>
+    </div>
+    <div class="img">
+      <!-- Sunny cameo in hero to humanize the page -->
+      <img loading="lazy" decoding="async" src="PXL_20250929_030832437~2.jpg" alt="Sunny the kitten supervising the writing desk">
+    </div>
+  </section>
 
-  <p>Let’s be blunt: PTSD is a survivalist’s worst enemy. It’s like having a tripwire wired into your nervous system — always primed, always waiting for the blast. You try to live normal, but your brain thinks you’re in a warzone during a trip to Walmart. And what do the doctors hand you? Pills. A handful for sleep, a handful for pain, another handful for depression. Wash it down with coffee in the morning, whiskey at night. That was my life, and it damn near killed me.</p>
-
-  <p>But here’s the truth I clawed my way to: <strong>cannabis can replace a whole medicine cabinet</strong>. It doesn’t just mute symptoms, it helps you function, laugh again, and keep your edge without burning your life down. For preppers, weed isn’t just “recreation.” It’s strategy. It’s resilience. It’s the most useful plant you can grow, store, and use when the pharmacy lights go dark.</p>
-
-  <div class="cta">
-    🌱 <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
-    Get discreet, lab-tested bud shipped straight to your door</a> — survival-grade calm.
+  <div class="cta-band">
+    🌱 Prefer the fast lane? <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">Get lab-tested bud shipped discreetly</a> and follow the protocols below.
   </div>
-<!-- Turning Point Tee — Updated Ad Block (replaces your original) -->
-<style>
-  /* Scoped to this ad so it won't collide with your site */
-  .about__ad{--bg:#121217;--ink:#e9e9ef;--muted:#b9bbca;--line:#2a2a32;--ok:#18e6a3;--accent:#f39b22;
-    max-width:840px;margin:24px auto;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:16px;
-    overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.35);font:16px/1.6 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif}
-  .about__row{display:grid;grid-template-columns:1.05fr 1fr}
-  @media (max-width:860px){.about__row{grid-template-columns:1fr}}
-  .about__media{position:relative;background:#0f0f13;padding:16px}
-  .about__badge{position:absolute;top:12px;left:12px;font-weight:800;font-size:.78rem;letter-spacing:.2px;
-    background:rgba(24,230,163,.12);color:var(--ok);border:1px solid rgba(24,230,163,.4);padding:6px 10px;border-radius:999px}
-  .about__stack{position:relative;width:100%;max-width:440px;aspect-ratio:4/3;margin:8px auto 10px}
-  .about__shot{position:absolute;inset:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#141419;
-    transition:transform .25s ease, box-shadow .25s ease}
-  .about__shot img{width:100%;height:100%;object-fit:cover;display:block}
-  .about__shot.--back{transform:rotate(-5deg) translate(-12px,8px);z-index:1}
-  .about__shot.--front{transform:rotate(4deg) translate(12px,-8px);z-index:2;box-shadow:0 12px 28px rgba(0,0,0,.45)}
-  .about__media:hover .about__shot.--back{transform:rotate(-7deg) translate(-18px,12px) scale(1.02)}
-  .about__media:hover .about__shot.--front{transform:rotate(6deg) translate(18px,-12px) scale(1.02)}
-  .about__strip{display:flex;gap:8px;overflow-x:auto;padding:8px 2px 2px;scrollbar-width:thin}
-  .about__thumb{flex:0 0 86px;height:68px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#141419;opacity:.95}
-  .about__thumb img{width:100%;height:100%;object-fit:cover;display:block}
-  .about__thumb:hover{opacity:1;transform:scale(1.02)}
-  .about__copy{padding:18px 20px 22px;border-left:1px solid var(--line)}
-  @media (max-width:860px){.about__copy{border-left:none;border-top:1px solid var(--line)}}
-  .about__eyebrow{color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.3px}
-  .about__title{margin:6px 0 6px;font-weight:900;font-size:clamp(1.1rem,2.1vw,1.35rem)}
-  .about__text{color:var(--muted);margin:0 0 10px}
-  .about__chips{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 12px}
-  .about__chip{font-size:.78rem;color:#d7d7e0;border:1px solid #34343d;padding:6px 10px;border-radius:999px;background:#141419}
-  .about__cta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
-  .about__btn{display:inline-block;padding:11px 16px;border-radius:12px;font-weight:900;text-decoration:none;
-    background:linear-gradient(180deg,#18e6a3,#0bbf86);color:#071812;box-shadow:0 8px 22px rgba(13,191,134,.35)}
-  .about__btn:hover{filter:brightness(1.05)}
-  .about__alt{color:#e9e9ef;text-decoration:none;border-bottom:1px dashed #aab;font-size:.92rem;opacity:.95}
-  .about__trust{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.9rem;margin-top:8px}
-</style>
 
-<article class="about__ad" aria-label="Turning Point USA Tee — Updated Ad">
-  <div class="about__row">
+  <!-- BODY -->
+  <h2 id="sabotage">PTSD: Survival Sabotage</h2>
+  <p>Clinics describe PTSD in bullet points, but those points don’t bleed. Real life looks like this:</p>
+  <ul>
+    <li><strong>Sleep isn’t rest.</strong> It’s guard duty. You’re scanning the dark at 3 a.m., waiting for a fight that never comes.</li>
+    <li><strong>Anger misfires.</strong> Somebody cuts you off in traffic, and your brain thinks it’s a threat to your life.</li>
+    <li><strong>Relationships take the hit.</strong> Not because you don’t care, but because hypervigilance burns you out.</li>
+    <li><strong>Appetite and energy crash.</strong> Trauma wrecks hunger, wrecks hormones, wrecks everything.</li>
+  </ul>
+  <p>Now stack that on top of survivalism. We train to stay sharp, but PTSD hijacks that training and redlines the engine until it blows. That’s not sustainable. That’s sabotage. You need relief without losing readiness. That’s where cannabis steps in.</p>
 
-    <!-- LEFT: collage + proof strip (uses your photos) -->
-    <div class="about__media">
-      <div class="about__badge">10% Donated to TPUSA</div>
+  <h2 id="why">Why Cannabis Works</h2>
+  <p>Your body’s got a built-in balancing system called the endocannabinoid system. Think of it as mission control for mood, sleep, pain, and stress. When trauma hijacks your system, cannabis compounds lock into that control board and reset the dials. No wonder one plant can handle so much:</p>
+  <ul>
+    <li><strong>Panic attacks:</strong> THC + calming terpenes quiet the noise without a benzo hangover.</li>
+    <li><strong>Sleep:</strong> Indicas pull you into real rest, not just sedation.</li>
+    <li><strong>Pain:</strong> THC + CBD together dull the volume without wrecking your clarity.</li>
+    <li><strong>Appetite:</strong> Bud kicks hunger back on, which matters for healing and energy.</li>
+    <li><strong>Mood:</strong> The right strain can lift your head above water when depression drags you under.</li>
+  </ul>
 
-      <!-- Clickable ad (collage) -->
-      <a class="ad-link"
-         href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid"
-         target="_blank" rel="noopener nofollow" aria-label="Buy the Turning Point tee on Etsy">
-        <figure class="about__shot --back">
-          <img src="PXL_20250929_030832437~2.jpg" alt="Real shop photo — Turning Point tee detail">
-        </figure>
-        <figure class="about__shot --front">
-          <img src="$_57 (18).jfif" alt="Real shop photo — Turning Point tee front">
-        </figure>
+  <div class="pull">One plant. Five jobs. That’s survival math.</div>
+
+  <h2>Bud vs. Booze</h2>
+  <p>Booze is the classic self-medication tool. I know, I lived it. A bottle quiets the noise for a few hours, then turns your life into ashes. Liver failure, rage, bad decisions, broken families—alcohol numbs but never heals.</p>
+  <p>Weed is different. With cannabis, you can ease your nerves, laugh with your crew, sleep like a human, and still wake up ready. No blackouts. No “what did I say last night?” It’s relief without chaos.</p>
+
+  <div class="cta-band">
+    🍃 Ready to trade the bottle for control? <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">Stock up discreetly here</a>.
+  </div>
+
+  <h2>Bud vs. Big Pharma</h2>
+  <p>Doctors love to prescribe, but the pharmacy lineup often makes life worse:</p>
+  <ul>
+    <li><strong>Benzos:</strong> Calm fast but hook you faster. Bud calms without chains.</li>
+    <li><strong>Opioids:</strong> Kill pain but steal your life. Cannabis takes the edge off without turning you into a ghost.</li>
+    <li><strong>SSRIs:</strong> Maybe help, maybe don’t; side effects can hollow you out. The right flower can lift mood in minutes.</li>
+    <li><strong>Sleeping pills:</strong> Knock you out but rob deep sleep. Bud lets you wake up human.</li>
+  </ul>
+  <p>One plant can do the work of half the cabinet. In a collapse, you won’t refill scripts anyway. Cannabis is the only medicine you can <em>grow, cure, and store</em> yourself.</p>
+
+  <!-- Turning Point Tee Promo (your images) -->
+  <article class="about__ad" aria-label="Turning Point USA Tee — Promo">
+    <div class="about__row">
+      <div class="about__media">
+        <div class="about__badge">10% Donated to TPUSA</div>
+        <a class="about__stack" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow" aria-label="Buy the Turning Point tee on Etsy">
+          <figure class="about__shot --back">
+            <img loading="lazy" decoding="async" src="PXL_20250929_030832437~2.jpg" alt="Real shop photo — Turning Point tee detail">
+          </figure>
+          <figure class="about__shot --front">
+            <img loading="lazy" decoding="async" src="%24_57%20%2818%29.jfif" alt="Real photo — Turning Point tee front">
+          </figure>
+        </a>
+        <div class="about__strip" aria-label="More real photos">
+          <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
+            <img loading="lazy" decoding="async" src="%24_57%20%2817%29.jfif" alt="Angle shot">
+          </a>
+          <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
+            <img loading="lazy" decoding="async" src="%24_57%20%2816%29.jfif" alt="Back graphic close-up">
+          </a>
+          <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
+            <img loading="lazy" decoding="async" src="Screenshot_20241107-184102%20%281%29.png" alt="Etsy listing screenshot">
+          </a>
+          <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
+            <img loading="lazy" decoding="async" src="Screenshot_20250928-212947.png" alt="Order proof">
+          </a>
+          <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
+            <img loading="lazy" decoding="async" src="Screenshot_20250928-212932.png" alt="Color/size options">
+          </a>
+          <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
+            <img loading="lazy" decoding="async" src="Screenshot_20250928-212654.png" alt="Cart screen">
+          </a>
+          <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
+            <img loading="lazy" decoding="async" src="f761ef3b-25c9-42f8-b4a8-1b102e252c6a.png" alt="Promo graphic">
+          </a>
+        </div>
+      </div>
+
+      <div class="about__copy">
+        <div class="about__eyebrow">Grit Gear HQ • Limited Batch</div>
+        <h3 class="about__title">“This Is the Turning Point” — Premium Men’s Tee</h3>
+        <p class="about__text">Small, stubborn, mission-driven. Hard-wearing cotton with a clean chest mark up front and the full message on the back. We keep it honest: <strong>10% of profits go to TPUSA</strong>.</p>
+        <div class="about__chips">
+          <span class="about__chip">Soft mid-weight</span><span class="about__chip">True-to-size</span><span class="about__chip">Printed in USA</span>
+        </div>
+        <div class="about__cta">
+          <a class="about__btn" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">Buy on Etsy →</a>
+          <a class="about__alt" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">View sizes & colors</a>
+        </div>
+        <div class="about__trust"><span>✅ 10% to TPUSA</span><span>🚚 Made-to-order</span><span>🔒 Secure Etsy checkout</span></div>
+      </div>
+    </div>
+  </article>
+
+  <h2 id="protocols">Field Protocols (Run It Like Gear)</h2>
+  <h3>Sleep Loadout</h3>
+  <p>Indica flower or a 5–10mg edible about 45 minutes before bed. Blackout room, cool air, phone in a drawer. Sleep like a mammal, not a lab rat.</p>
+
+  <h3>Panic Loadout</h3>
+  <p>Two deep breaths, 1–2 pulls on a vape. Hydrate. Step outside. Let your nervous system reset. Faster than a benzo, safer than a shot of whiskey.</p>
+
+  <h3>Pain Loadout</h3>
+  <p>Balanced THC:CBD strain. Small hits plus a topical cream on the joint or scar. Enough to move, enough to train, without checking out.</p>
+
+  <h3>Resilience Loadout</h3>
+  <p>Daily walk in the sun. Protein for breakfast. Cannabis microdoses when stress spikes. The plant is the assist—discipline is the foundation.</p>
+
+  <div class="cta-band">
+    🔗 Ready to build your calm-under-pressure kit? <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">Start here</a>.
+  </div>
+
+  <h2>Prepper Logistics</h2>
+  <p>Pharmacies close in 72 hours during crisis. If your stability depends on refills, you’re at the mercy of a supply chain. With cannabis, you can source, store, and even grow your own.</p>
+  <ul>
+    <li><strong>Discreet sourcing:</strong> <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">Get Bud Online</a> delivers fast, quiet, and tested.</li>
+    <li><strong>Storage:</strong> Mason jars in a dark cabinet with humidity packs. Label strain, date, effect notes. Rotate like ammo.</li>
+    <li><strong>Grow (where legal):</strong> A couple seeds, good soil, patience. Dry, cure, and you’ve got jars of calm on the shelf.</li>
+  </ul>
+
+  <!-- Survival Kit Promo (your eBay link + image) -->
+  <section class="surv" aria-label="Survival Kit Promo">
+    <div class="surv-img">
+      <a href="https://www.ebay.com/itm/226417365711?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1d2tC6kroBJvyEXw6bepMirP53f9z6UMcTWs7rc73%2FLg2IZWV7Wvsvl63IZPqh4pdfcOjmdS9iVgyWF6KXD32SINa9kDqzG%2Fr2DuRMO5nq51CcJHVJttk9vbBa7HKw5R2Baha8NDOlqIxLuoO2J7W8EPa6rApaf7SyP3IQVILcV%2FLTYVu7pcK01Fw%2B3pCgMHAY%3D"
+         target="_blank" rel="noopener nofollow">
+        <img loading="lazy" decoding="async" src="s-l1600%20%2815%29.jpg" alt="43-in-1 Survival & First Aid Kit">
       </a>
-
-      <!-- Proof strip (all extra images you sent) -->
-      <div class="about__strip" aria-label="More real photos">
-        <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
-          <img src="$_57 (17).jfif" alt="Angle shot">
-        </a>
-        <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
-          <img src="$_57 (16).jfif" alt="Back graphic close-up">
-        </a>
-        <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
-          <img src="Screenshot_20241107-184102 (1).png" alt="Listing screenshot">
-        </a>
-        <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
-          <img src="Screenshot_20250928-212947.png" alt="Order proof">
-        </a>
-        <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
-          <img src="Screenshot_20250928-212932.png" alt="Color/size options">
-        </a>
-        <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
-          <img src="Screenshot_20250928-212654.png" alt="Cart screen">
-        </a>
-        <a class="about__thumb" href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid" target="_blank" rel="noopener nofollow">
-          <img src="f761ef3b-25c9-42f8-b4a8-1b102e252c6a.png" alt="Promo graphic">
-        </a>
-      </div>
     </div>
-
-    <!-- RIGHT: copy + CTA (kept your message, upgraded styling) -->
-    <div class="about__copy">
-      <div class="about__eyebrow">Grit Gear HQ • Limited Batch</div>
-      <h3 class="about__title">“This Is the Turning Point” — Premium Men’s Tee</h3>
-
-      <p class="about__text">Small, stubborn, and mission-driven. We make hard-wearing pieces with a clear message — and donate <strong>10% of profits</strong> from the Turning Point tee to TPUSA.</p>
-
-      <div class="about__chips">
-        <span class="about__chip">Soft mid-weight</span>
-        <span class="about__chip">True-to-size</span>
-        <span class="about__chip">Printed in USA</span>
+    <div class="surv-copy">
+      <div class="eyebrow">Grit Gear HQ Pick</div>
+      <h3>43-in-1 Survival & First Aid Kit</h3>
+      <p class="muted">Shovel, hatchet, knives, fire starter, fishing kit, paracord, first aid, and more—packed in a compact MOLLE pouch. Bug-out, backwoods, or blackout, this kit’s got your back.</p>
+      <div class="chips">
+        <span class="chip">✅ 43 Tools</span><span class="chip">✅ MOLLE Ready</span><span class="chip">✅ First Aid</span>
       </div>
-
-      <!-- Optional CTA button under the ad -->
-      <div class="about__cta">
-        <a class="about__btn"
-           href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid"
-           target="_blank" rel="noopener nofollow">Buy on Etsy →</a>
-        <a class="about__alt"
-           href="https://www.etsy.com/listing/4370202042/turning-point-usa-mens-t-shirt?ref=listings_manager_grid"
-           target="_blank" rel="noopener nofollow">View sizes & colors</a>
-      </div>
-
-      <div class="about__trust">
-        <span>✅ 10% to TPUSA</span>
-        <span>🚚 Made-to-order</span>
-        <span>🔒 Secure checkout on Etsy</span>
-      </div>
+      <p style="margin-top:10px">
+        <a class="btn" href="https://www.ebay.com/itm/226417365711?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1d2tC6kroBJvyEXw6bepMirP53f9z6UMcTWs7rc73%2FLg2IZWV7Wvsvl63IZPqh4pdfcOjmdS9iVgyWF6KXD32SINa9kDqzG%2Fr2DuRMO5nq51CcJHVJttk9vbBa7HKw5R2Baha8NDOlqIxLuoO2J7W8EPa6rApaf7SyP3IQVILcV%2FLTYVu7pcK01Fw%2B3pCgMHAY%3D"
+           target="_blank" rel="noopener nofollow">Get it on eBay →</a>
+      </p>
     </div>
-  </div>
-</article>
-<!-- /Turning Point Tee — Updated Ad Block -->
+  </section>
 
-  <div class="cta">
-    🔗 <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
-    Get your survival-grade calm here</a>.
-  </div>
-
-  <h2>My Story</h2>
-  <p>I’ve lived the worst of it. Alcohol almost took me out. Pills left me hollow. Jail, detox, hospital beds — I’ve seen all of it. But when I switched to cannabis, I didn’t just quit drinking. I got my life back. Appetite returned. Sleep improved. The rage softened. I became the man my wife and kids deserve instead of a ghost pacing the house. That’s why I preach this plant: because it works in real life, not just in lab studies.</p>
+  <h2>Real Talk</h2>
+  <p>I’ve lived the worst of it. Alcohol almost took me out. Pills left me hollow. Jail, detox, hospital beds—I’ve seen the inside of all three. When I switched to cannabis, I didn’t just quit drinking. I got my life back. Appetite returned. Sleep improved. The rage softened. I became the man my family deserves instead of a ghost pacing the house. That’s why I preach this plant: because it works in the field, not just in lab abstracts.</p>
 
   <h2>FAQs (No Sugarcoating)</h2>
-  <p><strong>Will weed make me lazy?</strong> Only if laziness is your plan. Use it right, and it keeps you sharp.</p>
-  <p><strong>Can I carry while high?</strong> Don’t. Be responsible. You’re a protector, not a statistic.</p>
-  <p><strong>What about tolerance?</strong> Rotate strains, take breaks, and dose smart. Most tolerance issues are just dose issues.</p>
-  <p><strong>Is it legal?</strong> Depends where you are. Stay smart. Survival means staying out of court.</p>
+  <p><strong>Will weed make me lazy?</strong> Only if laziness is your plan. Use it right and it keeps you useful.</p>
+  <p><strong>Can I carry while high?</strong> Don’t. Be the responsible adult your people need.</p>
+  <p><strong>What about tolerance?</strong> Rotate strains, take 48-hour breaks, and dose smart. Most tolerance issues are dose issues.</p>
+  <p><strong>Is it legal?</strong> Depends where you are. Know the law. The goal is peace, not court dates.</p>
 
   <h2>Quick Survival Cheat Sheet</h2>
   <ul>
     <li><strong>Sleep:</strong> Indica + blackout room.</li>
-    <li><strong>Panic:</strong> Vape microdose + water + deep breaths.</li>
-    <li><strong>Pain:</strong> THC:CBD + topical + mobility work.</li>
+    <li><strong>Panic:</strong> Vape microdose + water + 10 slow breaths.</li>
+    <li><strong>Pain:</strong> THC:CBD + topical + light mobility.</li>
     <li><strong>Daily resilience:</strong> Sunlight, protein, discipline, cannabis as backup.</li>
   </ul>
 
-  <h2>Final Word</h2>
-  <p>Survival isn’t just beans and bullets. It’s mental stability. PTSD will sabotage you if you don’t get a handle on it. Cannabis is the tool that lets you regain balance without trading freedom for dependence. It’s not weakness. It’s strategy. It’s how you stay calm, functional, and dangerous when life tries to crush you.</p>
-
-  <div class="cta">
-    🌿 <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
-    Order discreet bud now</a> — tested, trusted, survivalist-approved.
+  <div class="cta-band">
+    🌿 Ready when you are: <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">Order discreet bud now</a> — tested, trusted, survivalist-approved.
   </div>
 
-  <div class="ghostwriter">
-    <p>Special thanks to my part-time ghostwriter, Sunny.</p>
-    <img src="sunny.jpg" alt="Sunny the kitten ghostwriter" class="sunny">
-  </div>
+  <hr>
 
+  <section class="ghost">
+    <p class="muted">Special thanks to my part-time ghostwriter, Sunny.</p>
+    <img loading="lazy" decoding="async" src="PXL_20250929_030832437~2.jpg" alt="Sunny the kitten ghostwriter, close-up">
+  </section>
+
+</main>
 </body>
 </html>
