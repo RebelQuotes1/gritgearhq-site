@@ -2488,7 +2488,7 @@
 </section>
 
    </section>
-<!-- Grit Gear • Floating Tabbed Affiliate Sidebar (uses your images) -->
+<!-- Grit Gear • Floating Tabbed Affiliate Sidebar (GBO funnel) -->
 <div id="gg-floaty"
      class="gg-float-wrap tabs"
      data-utm-source="gritgear"
@@ -2497,83 +2497,71 @@
      aria-label="Grit Gear tabbed affiliate sidebar">
 
   <style>
-    /* ====== Layout base ====== */
     .gg-float-wrap.tabs{position:relative;z-index:60}
     .gg-box{position:fixed; top:50vh; right:12px; transform:translateY(-50%);
             width:348px; max-height:86vh; overflow:hidden; border-radius:16px;
             background:#0f1014; border:1px solid #2b2f3a; box-shadow:0 14px 38px rgba(0,0,0,.45)}
     .gg-shell{display:grid; grid-template-columns:auto 1fr; min-height:220px}
 
-    /* Vertical tab handles (desktop) */
-    .gg-tabs{
-      list-style:none; margin:0; padding:8px; display:flex; flex-direction:column; gap:10px;
-      background:#0b0e13; border-right:1px solid #262c38
-    }
-    .gg-tab{
-      cursor:pointer; user-select:none; border:1px solid #2b2f3a; color:#e9ecf4;
-      background:#141824; border-radius:10px; padding:8px 10px; min-width:98px;
-      font:800 .82rem/1.1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
-      box-shadow:0 6px 18px rgba(0,0,0,.35); transition:transform .2s ease, background .2s ease
-    }
-    .gg-tab small{display:block; color:#8ea3b8; font-weight:700; font-size:.7rem; letter-spacing:.2px}
+    /* Tab handles */
+    .gg-tabs{list-style:none;margin:0;padding:8px;display:flex;flex-direction:column;gap:10px;
+             background:#0b0e13;border-right:1px solid #262c38}
+    .gg-tab{cursor:pointer;user-select:none;border:1px solid #2b2f3a;color:#e9ecf4;
+            background:#141824;border-radius:10px;padding:8px 10px;min-width:98px;
+            font:800 .82rem/1.1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
+            box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .2s ease, background .2s ease}
+    .gg-tab small{display:block;color:#8ea3b8;font-weight:700;font-size:.7rem;letter-spacing:.2px}
     .gg-tab:hover{transform:translateX(-2px)}
-    .gg-tab.active{background:#1b2130; border-color:#3a4152}
+    .gg-tab.active{background:#1b2130;border-color:#3a4152}
 
     /* Panels */
-    .gg-panels{position:relative; overflow:auto; max-height:86vh}
+    .gg-panels{position:relative;overflow:auto;max-height:86vh}
     .gg-panel{display:none}
     .gg-panel.active{display:block}
 
-    /* Card inside panel */
-    .gg-ad{
-      display:block; color:#e9ecf4; text-decoration:none;
-      border-radius:0 16px 16px 0; overflow:hidden
-    }
-    .gg-ad .shot{position:relative; aspect-ratio:16/9; border-bottom:1px solid #252b36; background:#0c0e13}
-    .gg-ad img{width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.03) saturate(1.02)}
-    .gg-ad .tag{position:absolute; top:8px; left:8px; z-index:2; font-size:.72rem; font-weight:800;
-      color:#041812; background:linear-gradient(180deg,#18e6a3,#09c78b);
-      padding:6px 10px; border-radius:999px; border:1px solid rgba(9,199,139,.5)}
-    .gg-ad .shot:after{
-      content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:screen;
-      background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.18) 35%,transparent 70%);
-      transform:translateX(-80%); animation:gg-sweep 10s linear infinite;
-    }
+    /* Card */
+    .gg-ad{display:block;color:#e9ecf4;text-decoration:none;border-radius:0 16px 16px 0;overflow:hidden}
+    .gg-ad .shot{position:relative;aspect-ratio:16/9;border-bottom:1px solid #252b36;background:#0c0e13}
+    .gg-ad img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) saturate(1.02)}
+    .gg-ad .tag{position:absolute;top:8px;left:8px;z-index:2;font-size:.72rem;font-weight:800;
+                color:#041812;background:linear-gradient(180deg,#18e6a3,#09c78b);
+                padding:6px 10px;border-radius:999px;border:1px solid rgba(9,199,139,.5)}
+    .gg-ad .shot:after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;
+                       background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.18) 35%,transparent 70%);
+                       transform:translateX(-80%);animation:gg-sweep 10s linear infinite}
     @keyframes gg-sweep{to{transform:translateX(80%)}}
-
     .gg-copy{padding:14px 16px}
-    .gg-copy h4{margin:0 0 6px; font-weight:900; color:#f29d2a; font-size:1.02rem; letter-spacing:.2px}
-    .gg-copy p{margin:0 0 10px; font-size:.9rem; color:#cfd5e3; line-height:1.45}
-    .gg-btn{display:inline-block; padding:9px 14px; border-radius:10px; font-weight:900; font-size:.84rem;
-      background:linear-gradient(180deg,#18f0b4,#0acb92); color:#041812; box-shadow:0 8px 20px rgba(10,203,146,.35)}
+    .gg-copy h4{margin:0 0 6px;font-weight:900;color:#f29d2a;font-size:1.02rem;letter-spacing:.2px}
+    .gg-copy p{margin:0 0 10px;font-size:.9rem;color:#cfd5e3;line-height:1.45}
+    .gg-btn{display:inline-block;padding:9px 14px;border-radius:10px;font-weight:900;font-size:.84rem;
+            background:linear-gradient(180deg,#18f0b4,#0acb92);color:#041812;box-shadow:0 8px 20px rgba(10,203,146,.35)}
 
     /* Close */
-    .gg-close{
-      position:fixed; top:12px; right:12px; z-index:70; width:34px; height:34px; border-radius:50%;
-      display:flex; align-items:center; justify-content:center; color:#e9ecf4; background:rgba(15,16,20,.85);
-      border:1px solid #2b2f3a; box-shadow:0 8px 22px rgba(0,0,0,.45);
-      font:900 16px/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif; cursor:pointer; user-select:none
-    }
-    .gg-close:after{content:"✕"; transform:translateY(-1px)}
-    .gg-hidden{display:none !important}
+    .gg-close{position:fixed;top:12px;right:12px;z-index:70;width:34px;height:34px;border-radius:50%;
+              display:flex;align-items:center;justify-content:center;color:#e9ecf4;background:rgba(15,16,20,.85);
+              border:1px solid #2b2f3a;box-shadow:0 8px 22px rgba(0,0,0,.45);
+              font:900 16px/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;cursor:pointer;user-select:none}
+    .gg-close:after{content:"✕";transform:translateY(-1px)}
+    .gg-hidden{display:none!important}
 
-    /* ====== Mobile: bottom dock with horizontal tabs ====== */
+    /* Mobile dock */
     @media (max-width:860px){
-      .gg-box{top:auto; bottom:12px; right:8px; left:8px; transform:none; width:auto; border-radius:14px}
+      .gg-box{top:auto;bottom:12px;right:8px;left:8px;transform:none;width:auto;border-radius:14px}
       .gg-shell{grid-template-columns:1fr}
-      .gg-tabs{flex-direction:row; border-right:none; border-bottom:1px solid #262c38; overflow:auto}
-      .gg-tab{min-width:120px; text-align:center}
+      .gg-tabs{flex-direction:row;border-right:none;border-bottom:1px solid #262c38;overflow:auto}
+      .gg-tab{min-width:120px;text-align:center}
       .gg-panels{max-height:56vh}
-      .gg-close{top:auto; right:12px; bottom:calc(12px + 62vh)}
+      .gg-close{top:auto;right:12px;bottom:calc(12px + 62vh)}
     }
   </style>
 
   <div class="gg-box" role="complementary">
     <div class="gg-shell">
+
       <!-- TAB HANDLES -->
       <ul class="gg-tabs" role="tablist" aria-orientation="vertical">
-        <li class="gg-tab active" role="tab" aria-selected="true" aria-controls="panel-10off" tabindex="0">
-          10% OFF <small>Code: gritbud</small>
+        <li class="gg-tab active" role="tab" aria-selected="true" aria-controls="panel-deals" tabindex="0">
+          Featured Deals <small>Fast Ship</small>
         </li>
         <li class="gg-tab" role="tab" aria-selected="false" aria-controls="panel-shop" tabindex="-1">
           Shop Bud <small>Discreet</small>
@@ -2588,41 +2576,42 @@
 
       <!-- PANELS -->
       <div class="gg-panels">
-        <!-- Panel 1: 10% OFF (Binoid) -->
-        <div id="panel-10off" class="gg-panel active" role="tabpanel">
+
+        <!-- Panel 1 (was Binoid 10%): now FUNNELS to GetBudOnline -->
+        <div id="panel-deals" class="gg-panel active" role="tabpanel">
           <a class="gg-ad gg-link"
-             href="https://www.binoidcbd.goaffpro.com/?ref=gritbud"
+             href="https://getbudonline.com/subid/christopher.serpico/"
              target="_blank" rel="nofollow sponsored noopener">
             <div class="shot">
-              <span class="tag">10% Off</span>
-              <img src="Screenshot_20250929-125542.png" alt="Binoid dashboard — code gritbud 10% off">
+              <span class="tag">Featured</span>
+              <img src="Screenshot_20250929-135600.png" alt="Fresh stash — weighed, sealed, ready">
             </div>
             <div class="copy gg-copy">
-              <h4>Binoid CBD/THC — Use Code <strong>gritbud</strong></h4>
-              <p>Fast-shipping oils, vapes, gummies. Reliable stock when dispensaries run dry.</p>
-              <span class="gg-btn">Claim 10% Off →</span>
+              <h4>Today’s Best Deals — Get Bud Online</h4>
+              <p>Skip the pharmacy lines. Stock lab-tested flower & edibles delivered to your door.</p>
+              <span class="gg-btn">Shop Featured Deals →</span>
             </div>
           </a>
         </div>
 
-        <!-- Panel 2: Shop Bud (GetBudOnline) -->
+        <!-- Panel 2: Shop Bud (same destination, different creative) -->
         <div id="panel-shop" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
              target="_blank" rel="nofollow sponsored noopener">
             <div class="shot">
               <span class="tag">Discreet</span>
-              <img src="Screenshot_20250929-135600.png" alt="Real stash — weighed, sealed, ready">
+              <img src="Screenshot_20250929-135629.png" alt="Field brew — stress tea with bud prep">
             </div>
             <div class="copy gg-copy">
-              <h4>Get Bud Online — Survival-Grade Calm</h4>
-              <p>Lab-tested flower and edibles. Ship-to-door. No pharmacy lines, ever.</p>
+              <h4>Survival-Grade Calm</h4>
+              <p>Flower, gummies, carts—reliable stock when dispensaries run dry. Ship-to-door.</p>
               <span class="gg-btn">Shop Now →</span>
             </div>
           </a>
         </div>
 
-        <!-- Panel 3: Giveaway banner -->
+        <!-- Panel 3: Giveaway banner (GBO) -->
         <div id="panel-giveaway" class="gg-panel" role="tabpanel">
           <a class="gg-ad gg-link"
              href="https://getbudonline.com/subid/christopher.serpico/"
@@ -2633,19 +2622,18 @@
             </div>
             <div class="copy gg-copy">
               <h4>September Harvest Giveaway</h4>
-              <p>$1,500+ in prizes up for grabs. Enter with any order from the link.</p>
+              <p>$1,500+ in prizes up for grabs. Enter automatically when you order through the link.</p>
               <span class="gg-btn">Enter Now →</span>
             </div>
           </a>
         </div>
 
-        <!-- Panel 4: Prep Kit (tea + bud + mushrooms photo) -->
+        <!-- Panel 4: Your guide -->
         <div id="panel-kit" class="gg-panel" role="tabpanel">
-          <a class="gg-ad gg-link"
-             href="ptsd-bud-prepper-field-guide.html">
+          <a class="gg-ad gg-link" href="ptsd-bud-prepper-field-guide.html">
             <div class="shot">
               <span class="tag">Field Guide</span>
-              <img src="Screenshot_20250929-135629.png" alt="Field brew — stress tea with bud prep">
+              <img src="Screenshot_20250929-135629.png" alt="PTSD & Bud prepper loadout">
             </div>
             <div class="copy gg-copy">
               <h4>PTSD & Bud: Prepper Loadout</h4>
@@ -2654,6 +2642,7 @@
             </div>
           </a>
         </div>
+
       </div>
     </div>
   </div>
@@ -2667,36 +2656,36 @@
       if(!root) return;
 
       /* Persisted close */
-      const HIDE_KEY = 'ggTabbedSidebarClosed';
-      const box = root.querySelector('.gg-box');
-      const closeBtn = root.querySelector('.gg-close');
-      function hide(){ box.classList.add('gg-hidden'); closeBtn.classList.add('gg-hidden'); try{localStorage.setItem(HIDE_KEY,'1')}catch(e){} }
-      function maybe(){ try{ if(localStorage.getItem(HIDE_KEY)==='1'){ hide(); } }catch(e){} }
-      closeBtn.addEventListener('click', hide); maybe();
+      const HIDE_KEY='ggTabbedSidebarClosed';
+      const box=root.querySelector('.gg-box');
+      const closeBtn=root.querySelector('.gg-close');
+      function hide(){box.classList.add('gg-hidden');closeBtn.classList.add('gg-hidden');try{localStorage.setItem(HIDE_KEY,'1')}catch(e){}}
+      function maybe(){try{if(localStorage.getItem(HIDE_KEY)==='1'){hide();}}catch(e){}}
+      closeBtn.addEventListener('click',hide); maybe();
 
       /* Tabs */
-      const tabs = Array.from(root.querySelectorAll('.gg-tab'));
-      const panels = Array.from(root.querySelectorAll('.gg-panel'));
+      const tabs=[...root.querySelectorAll('.gg-tab')];
+      const panels=[...root.querySelectorAll('.gg-panel')];
       function activate(i){
-        tabs.forEach((t,idx)=>{ t.classList.toggle('active', idx===i); t.setAttribute('aria-selected', idx===i); t.tabIndex = idx===i ? 0 : -1; });
-        panels.forEach((p,idx)=> p.classList.toggle('active', idx===i));
+        tabs.forEach((t,idx)=>{t.classList.toggle('active',idx===i);t.setAttribute('aria-selected',idx===i);t.tabIndex=idx===i?0:-1;});
+        panels.forEach((p,idx)=>p.classList.toggle('active',idx===i));
       }
       tabs.forEach((t,i)=>{
-        t.addEventListener('click', ()=>activate(i));
-        t.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); activate(i); } });
+        t.addEventListener('click',()=>activate(i));
+        t.addEventListener('keydown',(e)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(i);}});
       });
 
-      /* UTM tagging for analytics */
-      const src = root.getAttribute('data-utm-source') || 'gritgear';
-      const med = root.getAttribute('data-utm-medium') || 'sidebar';
-      const camp = root.getAttribute('data-utm-campaign') || 'affiliates';
+      /* UTM tagging */
+      const src=root.getAttribute('data-utm-source')||'gritgear';
+      const med=root.getAttribute('data-utm-medium')||'sidebar';
+      const camp=root.getAttribute('data-utm-campaign')||'affiliates';
       root.querySelectorAll('a.gg-link').forEach(a=>{
         try{
-          const url = new URL(a.href, location.href);
-          if(!url.searchParams.has('utm_source')) url.searchParams.set('utm_source', src);
-          if(!url.searchParams.has('utm_medium')) url.searchParams.set('utm_medium', med);
-          if(!url.searchParams.has('utm_campaign')) url.searchParams.set('utm_campaign', camp);
-          a.href = url.toString();
+          const u=new URL(a.href,location.href);
+          if(!u.searchParams.has('utm_source')) u.searchParams.set('utm_source',src);
+          if(!u.searchParams.has('utm_medium')) u.searchParams.set('utm_medium',med);
+          if(!u.searchParams.has('utm_campaign')) u.searchParams.set('utm_campaign',camp);
+          a.href=u.toString();
         }catch(e){}
       });
     })();
