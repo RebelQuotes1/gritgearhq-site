@@ -2486,6 +2486,175 @@
   </footer>
 
 </section>
+<!-- Grit Gear • Floaty Sticky Affiliate Sidebar (with UTM + Close) -->
+<div id="gg-floaty"
+     class="gg-float-wrap"
+     data-utm-source="gritgear"
+     data-utm-medium="sidebar"
+     data-utm-campaign="affiliates"
+     aria-label="Grit Gear sticky affiliate sidebar">
+
+  <style>
+    .gg-float-wrap{position:relative;z-index:30}
+    .gg-sidebar{
+      position:sticky; top:16px; right:0; width:320px; max-width:32vw;
+      margin-left:auto; display:grid; gap:16px; padding:2px;
+      filter:drop-shadow(0 14px 34px rgba(0,0,0,.35));
+      animation:gg-drift 6s ease-in-out infinite;
+    }
+    @keyframes gg-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+    .gg-ad{
+      display:block; background:#0f1014; color:#e9ecf4; text-decoration:none;
+      border:1px solid #2b2f3a; border-radius:14px; overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .gg-ad:hover{transform:translateY(-3px); border-color:#3a4152; box-shadow:0 12px 26px rgba(0,0,0,.45)}
+    .gg-ad .shot{
+      position:relative; background:#0c0e13; overflow:hidden; border-bottom:1px solid #252b36;
+      aspect-ratio:16/9;
+    }
+    .gg-ad img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) saturate(1.02)}
+    .gg-ad .shot:after{
+      content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:screen;
+      background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,.18) 35%, transparent 70%);
+      transform:translateX(-80%); animation:gg-sweep 10s linear infinite;
+    }
+    @keyframes gg-sweep{to{transform:translateX(80%)}}
+
+    .gg-ad .copy{padding:12px 14px}
+    .gg-ad h4{margin:0 0 4px; font-weight:900; color:#f29d2a; font-size:1rem; letter-spacing:.2px}
+    .gg-ad p{margin:0 0 10px; font-size:.86rem; color:#cfd5e3; line-height:1.45}
+    .gg-ad .btn{
+      display:inline-block; padding:8px 12px; border-radius:9px; font-weight:900; font-size:.82rem;
+      background:linear-gradient(180deg,#18f0b4,#0acb92); color:#041812; box-shadow:0 8px 20px rgba(10,203,146,.35)
+    }
+    .gg-ad .tag{
+      position:absolute; top:8px; left:8px; z-index:2; font-size:.72rem; font-weight:800;
+      color:#041812; background:linear-gradient(180deg,#18e6a3,#09c78b);
+      padding:6px 10px; border-radius:999px; border:1px solid rgba(9,199,139,.5)
+    }
+
+    /* Close button (both desktop & mobile) */
+    .gg-close{
+      position:fixed; right:10px; bottom:calc(12px + 180px); /* sits above dock on mobile */
+      z-index:65; width:34px; height:34px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      color:#e9ecf4; background:rgba(15,16,20,.85);
+      border:1px solid #2b2f3a; box-shadow:0 8px 22px rgba(0,0,0,.45);
+      font:900 16px/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
+      cursor:pointer; user-select:none;
+    }
+    .gg-close:hover{filter:brightness(1.08)}
+    .gg-close:after{content:"✕"; transform:translateY(-1px)}
+
+    /* Mobile: convert to bottom dock */
+    @media (max-width: 860px){
+      .gg-sidebar{position:fixed; inset:auto 8px 12px; width:auto; max-width:none; z-index:60;
+                  display:flex; gap:10px; padding:8px; background:rgba(12,14,20,.85);
+                  border:1px solid #2b2f3a; border-radius:14px; backdrop-filter: blur(6px)}
+      .gg-ad{flex:1 1 0; min-width:0; border-radius:10px}
+      .gg-ad .shot{aspect-ratio:5/3}
+      .gg-ad .copy{padding:8px}
+      .gg-ad h4{font-size:.92rem}
+      .gg-ad p{display:none}
+      .gg-ad .btn{padding:7px 10px; font-size:.8rem}
+      .gg-ad .tag{display:none}
+      .gg-close{bottom:calc(12px + 76px)} /* adjust to the dock height */
+    }
+
+    /* Hidden state */
+    .gg-hidden{display:none !important}
+  </style>
+
+  <aside class="gg-sidebar">
+
+    <!-- Ad 1: Survival Kit -->
+    <a class="gg-ad gg-link"
+       href="https://www.ebay.com/itm/226417365711?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1d2tC6kroBJvyEXw6bepMirP53f9z6UMcTWs7rc73%2FLg2IZWV7Wvsvl63IZPqh4pdfcOjmdS9iVgyWF6KXD32SINa9kDqzG%2Fr2DuRMO5nq51CcJHVJttk9vbBa7HKw5R2Baha8NDOlqIxLuoO2J7W8EPa6rApaf7SyP3IQVILcV%2FLTYVu7pcK01Fw%2B3pCgMHAY%3D"
+       target="_blank" rel="noopener nofollow">
+      <div class="shot">
+        <span class="tag">Bug-Out Ready</span>
+        <img src="s-l1600%20%2815%29.jpg" alt="43-in-1 Survival & First Aid Kit">
+      </div>
+      <div class="copy">
+        <h4>43-in-1 Survival & First Aid Kit</h4>
+        <p>Shovel, hatchet, knives, fire, fishing, paracord, first aid — field-packed.</p>
+        <span class="btn">Buy Now →</span>
+      </div>
+    </a>
+
+    <!-- Ad 2: Bud Affiliate -->
+    <a class="gg-ad gg-link" href="https://getbudonline.com/subid/christopher.serpico/"
+       target="_blank" rel="nofollow sponsored noopener">
+      <div class="shot">
+        <span class="tag">10% Off Code</span>
+        <img src="Untitled.png" alt="Gritbud affiliate — discreet, tested bud">
+      </div>
+      <div class="copy">
+        <h4>Survival-Grade Calm</h4>
+        <p>Skip the pharmacy. Get discreet, lab-tested bud shipped to your door.</p>
+        <span class="btn">Shop Now →</span>
+      </div>
+    </a>
+
+    <!-- Ad 3: Field Guide -->
+    <a class="gg-ad gg-link" href="ptsd-bud-prepper-field-guide.html">
+      <div class="shot">
+        <span class="tag">Field Guide</span>
+        <img src="Screenshot_20250928-212932.png" alt="PTSD & Bud field guide — real field photo">
+      </div>
+      <div class="copy">
+        <h4>PTSD & Bud: No-BS Prepper Guide</h4>
+        <p>Sleep, panic, pain, storage, dosing — run it like gear.</p>
+        <span class="btn">Read Now →</span>
+      </div>
+    </a>
+
+  </aside>
+
+  <!-- Close button -->
+  <button type="button" class="gg-close" aria-label="Hide affiliate sidebar"></button>
+
+  <script>
+    (function(){
+      const root = document.getElementById('gg-floaty');
+      if(!root) return;
+
+      // Persisted close
+      const HIDE_KEY = 'ggSidebarClosed';
+      const closeBtn = root.querySelector('.gg-close');
+      const sidebar = root.querySelector('.gg-sidebar');
+
+      function hideSidebar(){
+        sidebar.classList.add('gg-hidden');
+        closeBtn.classList.add('gg-hidden');
+        try{ localStorage.setItem(HIDE_KEY,'1'); }catch(e){}
+      }
+      function maybeHide(){
+        try{ if(localStorage.getItem(HIDE_KEY)==='1'){ hideSidebar(); } }catch(e){}
+      }
+      closeBtn.addEventListener('click', hideSidebar);
+      maybeHide();
+
+      // Auto-append UTM tracking to all links inside this widget
+      const src = root.getAttribute('data-utm-source') || 'gritgear';
+      const med = root.getAttribute('data-utm-medium') || 'sidebar';
+      const camp = root.getAttribute('data-utm-campaign') || 'affiliates';
+
+      root.querySelectorAll('a.gg-link').forEach(a => {
+        try{
+          const url = new URL(a.href, location.href);
+          // Only add if not already present
+          if(!url.searchParams.has('utm_source')) url.searchParams.set('utm_source', src);
+          if(!url.searchParams.has('utm_medium')) url.searchParams.set('utm_medium', med);
+          if(!url.searchParams.has('utm_campaign')) url.searchParams.set('utm_campaign', camp);
+          a.href = url.toString();
+        }catch(e){ /* ignore bad URLs */ }
+      });
+    })();
+  </script>
+</div>
 
 <!-- 🎨 SCOPED, MOBILE-FIRST CSS -->
 <style>
