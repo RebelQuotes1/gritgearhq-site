@@ -211,6 +211,66 @@
     <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
   </ul>
 </div>
+<!-- PTSD & Bud CTA (drop on homepage) -->
+<style>
+  .gg-cta {
+    position: relative; border-radius: 16px; overflow: hidden;
+    background: #0f0f12; color: #eef; border: 1px solid #2a2a30;
+    max-width: 980px; margin: 22px auto; box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .gg-cta .bg {
+    position:absolute; inset:0;
+    background: url('images/grit-woods.jpg') center/cover no-repeat; /* swap to your image */
+    filter: brightness(.55);
+    transform: scale(1.02);
+  }
+  .gg-cta .veil {
+    position:absolute; inset:0;
+    background: linear-gradient(120deg, rgba(0,0,0,.7), rgba(0,0,0,.25) 45%, rgba(0,0,0,.8));
+  }
+  .gg-cta .body {
+    position:relative; padding:28px; display:grid; gap:10px;
+  }
+  .gg-cta h2 { margin:0; font-size: clamp(1.4rem, 2.4vw, 2rem); color:#f29d2a; letter-spacing:.2px }
+  .gg-cta p { margin:0; font-size: clamp(.98rem, 1.6vw, 1.05rem); line-height:1.6 }
+  .gg-cta .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:2px }
+  .gg-cta .chip{
+    font-size:.82rem; padding:6px 10px; border:1px solid #35353b; border-radius:999px; backdrop-filter: blur(2px);
+    background: rgba(20,20,24,.55); color:#cfcfd6
+  }
+  .gg-cta .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+  .gg-cta a.btn{
+    display:inline-block; padding:12px 18px; border-radius:12px; font-weight:800; text-decoration:none;
+    background: linear-gradient(180deg, #18f0b4, #0acb92); color:#041611; box-shadow:0 6px 18px rgba(10,203,146,.35);
+  }
+  .gg-cta a.btn:hover{ filter:brightness(1.05) }
+  .gg-cta a.alt{
+    color:#dfe; text-decoration:none; border-bottom:1px dashed #aaa; opacity:.9
+  }
+</style>
+
+<a class="gg-cta" href="ptsd-bud-prepper-field-guide.html">
+  <div class="bg"></div><div class="veil"></div>
+  <div class="body">
+    <h2>PTSD Quieted in Minutes? The One Tool Most Preppers Forget</h2>
+    <p>Trade the bottle and the junk drawer of pills for a plant you can grow, store, and function on. Sleep better, kill the panic, and stay useful for your people.</p>
+    <div class="chips">
+      <span class="chip">Sleep Protocol</span>
+      <span class="chip">Pain & Calm</span>
+      <span class="chip">Legal & Discreet</span>
+      <span class="chip">Field-Tested</span>
+    </div>
+    <div class="cta-row">
+      <span class="btn">Read the Field Guide</span>
+      <span class="alt">or stock up discreetly</span>
+    </div>
+  </div>
+</a>
+<!-- end CTA -->
+
+</div>
+       
+       
   <!-- ============== TWO KNIVES SIDE-BY-SIDE (CLEAN DROP-IN) ============== -->
 <section class="twins" aria-label="Featured knives">
   <!-- ========== CARD A: Warpath Bowie (blacked) ========== -->
