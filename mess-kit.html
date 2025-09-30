@@ -31,20 +31,19 @@
     ul{padding-left:18px}
     figure{margin:0}
 
-    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .gallery img{width:100%;height:260px;object-fit:cover;border-radius:12px;border:1px solid #2a3138}
-    figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+    /* GALLERY — smaller */
+    .gallery{display:grid;grid-template-columns:1fr;gap:10px;max-width:520px;margin:0 auto}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid #2a3138}
+    @media (max-width:560px){.gallery img{height:150px}}
+    figcaption{font-size:.85rem;color:var(--muted);margin-top:6px;text-align:center}
 
-    /* HERO proof photo */
-    .hero-photo{margin:18px 0 0;border-radius:16px;overflow:hidden;border:1px solid #242a31;background:#0f1215}
-    .hero-photo img{width:100%;height:auto;display:block}
-    .hero-photo figcaption{padding:8px 12px;color:#b8c3ce;font-size:.9rem}
-
-    /* Kershaw mini-carousel */
+    /* Kershaw mini-carousel — smaller & centered */
+    .kershaw-wrap{max-width:520px;margin:0 auto}
     .carousel{position:relative;overflow:hidden;border-radius:14px;border:1px solid #2b3239;background:#0f1215}
     .carousel-track{display:flex;transition:transform .6s ease}
-    .carousel img{width:100%;height:220px;object-fit:cover}
-    .carousel-nav{position:absolute;inset:auto 8px 8px 8px;display:flex;gap:6px;justify-content:center}
+    .carousel img{width:100%;height:170px;object-fit:cover}
+    @media (max-width:560px){.carousel img{height:150px}}
+    .carousel-nav{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center}
     .dot{width:8px;height:8px;border-radius:50%;background:#47515c;cursor:pointer}
     .dot.active{background:var(--accent)}
 
@@ -67,12 +66,6 @@
       <a class="cta secondary" href="#why">Skip to the hands-on notes ↓</a>
     </div>
     <div class="chips"><span class="chip">Bug-out friendly</span><span class="chip">E&amp;E kit approved</span><span class="chip">Bunker-ready</span></div>
-
-    <!-- HERO proof shot (uses your exact filename) -->
-    <figure class="hero-photo">
-      <img src="images/$_12 (6).jfif" alt="Cooking with the compact mess kit on a camp stove, with collapsible cups">
-      <figcaption>Real-use proof: compact kit + collapsible cups cooking a full trail meal.</figcaption>
-    </figure>
   </header>
 
   <section class="grid cols-2">
@@ -89,9 +82,9 @@
       <p class="note">Perfect for solo/duo trips and absolutely at home in <strong>bug-out bags, escape-and-evade kits, and bunkers</strong> where space &amp; reliability matter.</p>
     </div>
     <figure>
-      <!-- Gallery (keeps your provided filenames exactly) -->
+      <!-- Gallery (EXACT filename, smaller) -->
       <div class="gallery">
-        <img src="images/s-l1600 (6).jpg" alt="13-piece mess kit components nested with utensils and collapsible cups">
+        <img src="images/s-l1600 (6).jpg" alt="13-piece mess kit components nested with utensils and collapsible cups" loading="lazy">
       </div>
       <figcaption>Everything nests inside the pot — compact and organized.</figcaption>
     </figure>
@@ -116,28 +109,20 @@
   </section>
 
   <section>
-    <h2>Anecdotes from the Trail</h2>
-    <ul>
-      <li><strong>Colorado (10k+ ft):</strong> melted snow to drinking water on a micro-stove — flawless boil.</li>
-      <li><strong>NE Arkansas swamps:</strong> fish stew over damp wood; no warping.</li>
-      <li><strong>Mindanao, Philippines:</strong> daily pot for weeks in tropical humidity.</li>
-      <li><strong>Home:</strong> I still use it to heat a can of chili instead of messing up a big pot.</li>
-    </ul>
-  </section>
-
-  <section>
     <h2>Quality Comparison (This Will Click for Knife Guys)</h2>
     <p>If cookware had a knife equivalent, this kit is a <strong>Kershaw</strong>: <em>upper mid-range, dependable, no frills</em>. Not boutique titanium; not cheap junk. Just a tool that works every time.</p>
 
-    <!-- Kershaw carousel (uses exact filenames from earlier) -->
-    <div class="carousel" id="kershaw">
-      <div class="carousel-track">
-        <img src="images/$_57 (4).jfif" alt="Kershaw folder close-up, stonewash blade">
-        <img src="images/$_57 (3).jfif" alt="Kershaw folder opened on check cloth">
-      </div>
-      <div class="carousel-nav">
-        <span class="dot active" data-i="0" aria-label="slide 1"></span>
-        <span class="dot" data-i="1" aria-label="slide 2"></span>
+    <!-- Kershaw carousel (EXACT filenames, smaller & centered) -->
+    <div class="kershaw-wrap">
+      <div class="carousel" id="kershaw">
+        <div class="carousel-track">
+          <img src="images/$_57 (4).jfif" alt="Kershaw folder close-up, stonewash blade" loading="lazy">
+          <img src="images/$_57 (3).jfif" alt="Kershaw folder opened on check cloth" loading="lazy">
+        </div>
+        <div class="carousel-nav">
+          <span class="dot active" data-i="0" aria-label="slide 1"></span>
+          <span class="dot" data-i="1" aria-label="slide 2"></span>
+        </div>
       </div>
     </div>
 
