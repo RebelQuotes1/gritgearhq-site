@@ -221,21 +221,19 @@
     .gg-bio__lede{font-size:1rem}
   }
 </style>
-
-<!-- Clickbait-Style Thumbnail (compact, polished) -->
+<!-- Clickbait-Style Thumbnail (compact, polished, cross-browser safe) -->
 <div class="gg-thumb">
   <a class="gg-thumb__link" href="/ptsd-bud-prepper-field-guide.html" aria-label="Read the PTSD Prepper Field Guide">
     <figure class="gg-thumb__frame">
-      <picture>
-        <source srcset="/images/Does_Smoking_More_heronew.avif" type="image/avif">
-        <!-- filename kept; URL-encoded so it loads everywhere -->
-        <img src="/images/Screenshot_120250928-212932%20%281%29.png" alt="PTSD field guide teaser — sunset patrol" loading="lazy" decoding="async">
-      </picture>
+      <!-- Use the encoded PNG directly (no <source> so desktop can't pick a missing AVIF) -->
+      <img
+        src="/images/Screenshot_20250928-212932%20%281%29.png"
+        alt="PTSD field guide teaser — sunset patrol"
+        loading="lazy" decoding="async" width="1280" height="720"
+        style="width:100%;height:100%;object-fit:cover;filter:brightness(.72) contrast(1.08) saturate(1.04);transition:transform .35s ease,filter .35s ease;"
+      >
 
-      <!-- overlay bits -->
-      <figcaption class="gg-thumb__caption">
-        PTSD Relief? The Low-Key Plant Preppers Miss
-      </figcaption>
+      <figcaption class="gg-thumb__caption">PTSD Relief? The Low-Key Plant Preppers Miss</figcaption>
       <span class="gg-thumb__badge">NEW</span>
       <span class="gg-thumb__cta">READ NOW →</span>
     </figure>
@@ -243,143 +241,40 @@
 </div>
 
 <style>
-  /* container: small and centered, perfect for “thumbnail” */
   .gg-thumb{display:grid;place-items:center;margin:12px 0}
   .gg-thumb__link{text-decoration:none}
-
   .gg-thumb__frame{
-    position:relative; margin:0;
-    width:min(380px,92vw);           /* not too large on desktop, comfy on phone */
-    aspect-ratio:16/9;               /* keeps the image from getting tall/skinny */
-    border-radius:16px; overflow:hidden;
-    border:1px solid #2b2f3a; background:#0f1115;
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
-    transform:translateZ(0);
+    position:relative;margin:0;width:min(380px,92vw);aspect-ratio:16/9;border-radius:16px;overflow:hidden;
+    border:1px solid #2b2f3a;background:#0f1115;box-shadow:0 10px 30px rgba(0,0,0,.35);transform:translateZ(0)
   }
-
-  .gg-thumb__frame img{
-    width:100%; height:100%; object-fit:cover;
-    filter:brightness(.72) contrast(1.08) saturate(1.04);
-    transition:transform .35s ease, filter .35s ease;
-  }
-
-  /* gradient veil + grain for “pro” look */
   .gg-thumb__frame::before,
+  .gg-thumb__frame::after{content:"";position:absolute;inset:0;pointer-events:none}
+  .gg-thumb__frame::before{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 95%)}
   .gg-thumb__frame::after{
-    content:""; position:absolute; inset:0; pointer-events:none;
-  }
-  .gg-thumb__frame::before{
-    background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 95%);
-  }
-  .gg-thumb__frame::after{
-    opacity:.5; mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml;utf8,\
+    opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'>\
 <filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter>\
-<rect width='140' height='140' filter='url(%23n)' opacity='0.07'/></svg>");
+<rect width='140' height='140' filter='url(%23n)' opacity='0.07'/></svg>")
   }
-
-  /* headline over image */
   .gg-thumb__caption{
-    position:absolute; left:12px; right:12px; bottom:34px;
-    color:#e9f1ff; font:700 clamp(.95rem,2.2vw,1.05rem)/1.25 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
-    text-shadow:0 3px 14px rgba(0,0,0,.55);
+    position:absolute;left:12px;right:12px;bottom:34px;color:#e9f1ff;
+    font:700 clamp(.95rem,2.2vw,1.05rem)/1.25 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+    text-shadow:0 3px 14px rgba(0,0,0,.55)
   }
-
-  /* badge + CTA ribbons */
   .gg-thumb__badge{
-    position:absolute; top:10px; left:10px;
-    font:800 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
-    color:#081014; background:linear-gradient(180deg,#18f0b4,#0acb92);
-    padding:6px 8px; border-radius:10px; border:1px solid #1c5;
-    box-shadow:0 6px 18px rgba(10,203,146,.35);
+    position:absolute;top:10px;left:10px;font:800 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+    color:#081014;background:linear-gradient(180deg,#18f0b4,#0acb92);padding:6px 8px;border-radius:10px;border:1px solid #1c5;
+    box-shadow:0 6px 18px rgba(10,203,146,.35)
   }
   .gg-thumb__cta{
-    position:absolute; right:10px; bottom:10px;
-    font:900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
-    color:#101214; background:linear-gradient(90deg,#ff6a00,#ffa000,#ff6a00);
-    padding:8px 10px; border-radius:999px; box-shadow:0 8px 22px rgba(255,106,0,.32);
+    position:absolute;right:10px;bottom:10px;font:900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+    color:#101214;background:linear-gradient(90deg,#ff6a00,#ffa000,#ff6a00);padding:8px 10px;border-radius:999px;
+    box-shadow:0 8px 22px rgba(255,106,0,.32)
   }
-
-  /* hover polish */
-  .gg-thumb__link:hover img{transform:scale(1.03); filter:brightness(.78) contrast(1.1) saturate(1.06)}
+  .gg-thumb__link:hover img{transform:scale(1.03);filter:brightness(.78) contrast(1.1) saturate(1.06)}
   .gg-thumb__link:hover .gg-thumb__cta{filter:brightness(1.05)}
 </style>
 
-<style>
-  /* Layout */
-  .collab-hero{
-    max-width: clamp(320px, 92vw, 860px);
-    margin: 16px auto 10px;
-    padding: 0 4px;
-    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
-  }
-
-  /* Image card */
-  .hero-photo{
-    position: relative;
-    margin: 0 0 10px;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #232a31;
-    background: #0f1215;
-    box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  }
-  .hero-photo img{
-    display:block;
-    width:100%;
-    height:auto;
-    aspect-ratio: 16 / 9;         /* keeps it from getting tall & skinny */
-    object-fit: cover;             /* professional crop on small screens */
-    filter: saturate(1.02) contrast(1.02);
-    transform: translateZ(0);      /* crisp on mobile GPUs */
-  }
-  /* subtle gradient for legibility and polish */
-  .hero-photo::after{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.35) 90%);
-    pointer-events:none;
-  }
-  .hero-photo figcaption{
-    position:absolute; left:12px; right:12px; bottom:10px;
-    color:#dbe6f3; font-size:.9rem; line-height:1.25;
-    text-shadow:0 2px 10px rgba(0,0,0,.6);
-  }
-
-  /* CTAs */
-  .cta-row{
-    display:flex; flex-wrap:wrap; gap:10px; align-items:center;
-    justify-content:flex-start;
-  }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; font-weight:800;
-    background: linear-gradient(90deg,#ff6a00,#ffa000,#ff6a00);
-    background-size:200% 100%; animation:shimmer 2.5s linear infinite;
-    padding:12px 16px; border-radius:12px; color:#101214; text-decoration:none;
-    box-shadow:0 6px 20px rgba(255,106,0,.25);
-  }
-  .alt{
-    color:#b8c3ce; text-decoration:none; border-bottom:2px solid rgba(255,106,0,.35);
-    padding-bottom:2px; font-weight:600;
-  }
-
-  /* Mobile polish: keep text readable, buttons full-width if tight */
-  @media (max-width: 560px){
-    .hero-photo{border-radius:14px}
-    .hero-photo figcaption{font-size:.85rem}
-    .cta-row{gap:8px}
-    .btn{flex:1 1 100%; justify-content:center}
-  }
-
-  @keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
-</style>
-
-
-    <!-- Light disclaimer for compliance -->
-    <p style="margin:6px 0 16px;color:#9aa3ad;font-size:.85rem">
-      This content is educational and not medical advice. Check local laws and talk to a licensed professional if you have questions about your health.
-    </p>
 
   <!-- Responsive Mess Kit CTA (mobile-friendly) -->
 <div data-cta="messkit" class="cta-card">
