@@ -1,37 +1,82 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Grit Gear HQ — Built for the Rough Stuff • 25 Years Field-Tested</title>
-  <style>
-    :root{
-      --bg:#0d0f10; --ink:#e9ecf4; --muted:#b7becc; --line:#2b2f3a;
-      --accent:#ff8a28; --accent2:#18f0b4;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif}
+<!-- Grit Gear HQ • Centered Professional Header + Bio (updated: uses your header image) -->
+<section class="gg-bio">
+  <header class="gg-bio__head" role="banner" aria-label="Grit Gear HQ intro">
+    <!-- replaced emoji badge with your image -->
+    <img class="gg-bio__badge-img" src="/images/how-to-choose-survival-gear-.jpeg"
+         alt="Survival gear header image" loading="lazy" decoding="async">
+    <h1 class="gg-bio__brand">Grit Gear HQ</h1>
+    <p class="gg-bio__tag">Built for the rough stuff — 25 years field-tested.</p>
+    <div class="gg-bio__rule" aria-hidden="true"></div>
+  </header>
 
-    /* ===== Header ===== */
-    .site-header{
-      position:sticky; top:0; z-index:50;
-      background:linear-gradient(180deg,#0f1116,rgba(15,17,22,.92));
-      border-bottom:1px solid var(--line);
-      backdrop-filter:saturate(1.1) blur(4px);
-    }
-    .site-header .wrap{
-      max-width:1100px; margin:0 auto; padding:14px 16px;
-      display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center;
-    }
-    .brand{display:flex; align-items:center; gap:12px; min-width:0}
-    .logo{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:6px 10px; border-radius:10px; text-decoration:none;
-      background:linear-gradient(180deg,#1a1e25,#14171d); color:#fff; font-weight:900; letter-spacing:.2px
-    }
-    .tagline{
-      color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-      font-size:.92rem;
+  <p class="gg-bio__lede">
+    We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for
+    daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups,
+    small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.
+  </p>
+
+  <ul class="gg-bio__points">
+    <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
+    <li><strong>Smart loadouts:</strong> only the pieces that pull their weight.</li>
+    <li><strong>Legal &amp; transparent:</strong> hemp features are 21+ and COA-verified.</li>
+    <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
+  </ul>
+</section>
+
+<style>
+  /* Container */
+  .gg-bio{
+    --ink:#e9ecf4; --muted:#b7becc; --line:#2b2f3a;
+    max-width: 920px; margin: 18px auto 10px; padding: 0 14px; color: var(--ink);
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+  }
+
+  /* Header (centered, elevated) */
+  .gg-bio__head{
+    text-align: center; padding: 26px 12px 18px; border-radius: 18px;
+    background: radial-gradient(1200px 260px at 50% -60px, rgba(255,138,40,.18), rgba(255,138,40,0) 60%),
+                linear-gradient(180deg,#12141a,#0e1014);
+    border: 1px solid var(--line); box-shadow: 0 10px 34px rgba(0,0,0,.35);
+  }
+  /* NEW: image badge */
+  .gg-bio__badge-img{
+    width:58px;height:58px;border-radius:14px;object-fit:cover;object-position:center;
+    border:1px solid var(--line); display:inline-block; margin-bottom:8px;
+    filter:saturate(1.05) contrast(1.05);
+  }
+
+  .gg-bio__brand{
+    margin: 4px 0 2px; font-size: clamp(26px, 4vw, 40px); line-height: 1.05; font-weight: 900;
+    letter-spacing: .2px;
+    background: linear-gradient(90deg,#ffffff,#ffe1c9,#ffd1a4,#ffffff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .gg-bio__tag{
+    margin: 0 auto 10px; color: var(--muted); font-size: clamp(14px,1.8vw,18px);
+    letter-spacing: .3px;
+  }
+  .gg-bio__rule{
+    width:min(520px,80%); height:1px; margin: 12px auto 0;
+    background: linear-gradient(90deg,transparent,#2f3540,transparent);
+  }
+
+  /* Body text */
+  .gg-bio__lede{
+    margin:14px auto 10px; max-width: 72ch; text-align: center; line-height: 1.7; color:#dfe6f3;
+  }
+  .gg-bio__points{
+    margin:14px auto 0; max-width: 70ch; line-height:1.7; color:#d2dae7;
+  }
+  .gg-bio__points li{ margin: 6px 0; }
+
+  /* Mobile polish */
+  @media (max-width:560px){
+    .gg-bio__head{padding:22px 12px 16px;border-radius:16px}
+    .gg-bio__badge-img{width:50px;height:50px;border-radius:12px}
+    .gg-bio__lede{font-size:1rem}
+  }
+</style>
+
     }
 
     /* Nav */
