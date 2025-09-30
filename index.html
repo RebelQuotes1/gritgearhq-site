@@ -14,9 +14,10 @@
     body{margin:0;background:var(--bg);color:var(--ink);
       font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif}
 
-    /* ===== Site Header ===== */
+    /* ===== Site Header (ONLY place the brand appears) ===== */
     .site-header{
-      position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0f1116,rgba(15,17,22,.92));
+      position:sticky; top:0; z-index:50;
+      background:linear-gradient(180deg,#0f1116,rgba(15,17,22,.92));
       border-bottom:1px solid var(--line); backdrop-filter:saturate(1.05) blur(4px);
     }
     .site-header .wrap{
@@ -46,10 +47,8 @@
       .menu-btn{display:grid}
     }
 
-    /* ===== Bio / Intro Block ===== */
-    .gg-bio{
-      max-width:920px; margin:18px auto 10px; padding:0 14px;
-    }
+    /* ===== Bio / Intro Block (NO second company heading) ===== */
+    .gg-bio{max-width:920px; margin:18px auto 10px; padding:0 14px}
     .gg-bio__head{
       text-align:center; padding:26px 12px 18px; border-radius:18px;
       background: radial-gradient(1200px 260px at 50% -60px, rgba(255,138,40,.18), rgba(255,138,40,0) 60%),
@@ -60,11 +59,7 @@
       width:58px; height:58px; border-radius:14px; object-fit:cover; object-position:center;
       border:1px solid var(--line); display:inline-block; margin-bottom:8px; filter:saturate(1.05) contrast(1.05);
     }
-    .gg-bio__brand{
-      margin:4px 0 2px; font-size:clamp(26px,4vw,40px); line-height:1.05; font-weight:900; letter-spacing:.2px;
-      background:linear-gradient(90deg,#ffffff,#ffe1c9,#ffd1a4,#ffffff);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-    }
+    /* subtitle only */
     .gg-bio__tag{margin:0 auto 10px; color:var(--muted); font-size:clamp(14px,1.8vw,18px); letter-spacing:.3px}
     .gg-bio__rule{width:min(520px,80%); height:1px; margin:12px auto 0; background:linear-gradient(90deg,transparent,#2f3540,transparent)}
     .gg-bio__lede{margin:14px auto 10px; max-width:72ch; text-align:center; line-height:1.7; color:#dfe6f3}
@@ -87,6 +82,15 @@
   </style>
 </head>
 
+<body>
+  <!-- ===== Single Header with Brand ===== -->
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <a href="/" class="logo" aria-label="Grit Gear HQ home">Grit Gear HQ</a>
+        <span class="tagline">Built for the Rough Stuff • 25 Years Field-Tested</span>
+      </div>
+
       <div></div>
 
       <button class="menu-btn" aria-label="Open menu" id="menuBtn" title="Menu">
@@ -103,12 +107,11 @@
     </div>
   </header>
 
-  <!-- ===== Centered Professional Header + Bio (uses your header image) ===== -->
+  <!-- ===== Bio / Intro (subtitle only, no second H1) ===== -->
   <section class="gg-bio">
-    <header class="gg-bio__head" role="banner" aria-label="Grit Gear HQ intro">
+    <header class="gg-bio__head" role="img" aria-label="Survival gear header">
       <img class="gg-bio__badge-img" src="/images/how-to-choose-survival-gear-.jpeg"
            alt="Survival gear header image" loading="lazy" decoding="async">
-      <h1 class="gg-bio__brand">Grit Gear HQ</h1>
       <p class="gg-bio__tag">Built for the rough stuff — 25 years field-tested.</p>
       <div class="gg-bio__rule" aria-hidden="true"></div>
     </header>
@@ -131,7 +134,7 @@
     // Mobile menu toggle
     (function(){
       const btn = document.getElementById('menuBtn');
-      const nav = document.getElementById('siteNav');
+      const nav  = document.getElementById('siteNav');
       if(!btn || !nav) return;
       btn.addEventListener('click', ()=>{
         const open = nav.classList.toggle('open');
@@ -139,7 +142,7 @@
       });
     })();
 
-    // CTA text mapping (cleaned)
+    // CTA text mapping (kept from your site)
     document.addEventListener('DOMContentLoaded', function(){
       const map = [
         { href:"226375066069", text:"Own the Warpath Bowie →", cls:".tw-cta" },
@@ -166,69 +169,7 @@
     });
   </script>
 </body>
-</html>
-
-  <!-- Google Ads -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-
-  <meta charset="utf-8" />
-  <title>Grit Gear HQ — Clean Layout</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    *{box-sizing:border-box}
-    html,body{margin:0;background:#0f0f0f;color:#e9ecef;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    img{max-width:100%;height:auto;display:block}
-    a{text-decoration:none;color:inherit}
-    :root{--ink:#e9ecef;--muted:#aab3bb;--edge:#262626;--panel:#141418;--accent:#ffa500;--shadow:0 14px 34px rgba(0,0,0,.45)}
-    .wrap{max-width:1200px;margin:0 auto;padding:26px 18px}
-
-    /* ===== Sticky Titan header ===== */
-    .titan-header{position:sticky;top:0;z-index:9999;background:#0f0f0f;border-bottom:1px solid #262626}
-    .titan-bar{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;max-width:1200px;margin:0 auto;padding:8px 14px}
-    .titan-link{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
-    .titan-img{width:120px;height:56px;border-radius:10px;overflow:hidden;border:1px solid #2a2a2a}
-    .titan-img img{width:100%;height:100%;object-fit:cover}
-    .titan-eyebrow{font-size:.75rem;letter-spacing:.08em;color:#34d399;text-transform:uppercase}
-    .titan-title{font-weight:800}
-    .titan-cta{display:inline-block;margin-left:8px;padding:6px 10px;border-radius:10px;border:2px solid #333;background:#ffa500;color:#111;font-weight:900}
-    .titan-close{background:#171717;border:1px solid #2a2a2a;color:#bbb;border-radius:8px;padding:6px 10px;cursor:pointer}
-    .titan-close:hover{color:#fff}
-    @media (max-width:720px){.titan-link{grid-template-columns:90px 1fr}.titan-img{width:90px;height:52px}}
-
-    /* ===== Masthead (2 columns, centered) ===== */
-    .masthead{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-    @media (max-width:980px){.masthead{grid-template-columns:1fr}}
-
-    .about,.creator{background:var(--panel);border:1px solid var(--edge);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
-    .about h1{margin:0 0 6px;font-size:clamp(1.4rem,1.2vw + 1rem,2rem);text-align:center}
-    .tag{color:var(--accent);font-weight:900;margin:0 0 12px;text-align:center}
-    .about__strip{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
-    .about__strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid #2b2b2b;background:#0c0c0c}
-    @media (max-width:560px){.about__strip{grid-template-columns:1fr}}
-
-    .creator{text-align:center}
-    .creator .row{display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:8px}
-    .creator .face{width:36px;height:36px;border-radius:50%;border:1px solid #2a2e37;object-fit:cover}
-    .creator__brand{font-weight:900}
-    .creator ul{margin:8px 0 0;padding:0;list-style:none}
-    .ftc{font-size:.85rem;color:#aab3bb;margin-top:8px}
-
-    /* ===== Card grid (rows of two, centered) ===== */
-    .cards-wrap{max-width:1100px;margin:0 auto;padding:8px 0 40px}
-    .cards-grid{display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr));justify-items:center;align-items:stretch}
-    @media (max-width:800px){.cards-grid{grid-template-columns:1fr}}
-
-    .gg-card{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:520px;background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid var(--edge);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
-    .gg-media{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:#0c0c0c}
-    .gg-media img{width:100%;height:100%;object-fit:cover}
-    .gg-title{margin:10px 0 6px;font-size:clamp(1.06rem,1.05vw + 1rem,1.45rem)}
-    .gg-sub{margin:0 0 10px;color:var(--muted);line-height:1.55;max-width:60ch}
-    .gg-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-    .gg-chips span{font-size:.82rem;color:#ddd;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#1a1a1a}
-    .gg-cta{display:inline-block;margin-top:10px;font-weight:800;padding:10px 14px;border-radius:12px;border:2px solid #333;background:#3fae5a;color:#0b1510}
-  </style>
-</head>
-<body>
+</html>\
 
   <!-- ===== TITAN header ===== -->
   <div class="titan-header" id="titanHeaderAd">
