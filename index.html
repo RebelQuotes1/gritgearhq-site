@@ -262,25 +262,45 @@
       This content is educational and not medical advice. Check local laws and talk to a licensed professional if you have questions about your health.
     </p>
 
-    <!-- Mess Kit CTA (links to your subpage, not affiliate) -->
-    <div style="max-width:600px;margin:20px 0;padding:16px;border-radius:14px;
-                background:linear-gradient(135deg,#15181b 0%,#1b2026 60%,#111418 100%);
-                border:1px solid #2c3239;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center">
-      <img src="/images/messkit-chili.jpg" alt="Compact 13-Piece Mess Kit" 
-           style="width:72px;height:72px;object-fit:cover;border-radius:12px;border:1px solid #2b3239">
-      <div style="min-width:0">
-        <h3 style="margin:0 0 4px;font-size:1.05rem">Compact 13-Piece Mess Kit</h3>
-        <p style="margin:0;color:#b8c3ce;font-size:.9rem">Field-tested 10+ years • Bug-out ready • Easy-clean soot</p>
-        <div style="margin-top:6px;color:#dfe8f5;font-size:.85rem">⭐️⭐️⭐️⭐️⭐️ 1K+ happy campers</div>
-      </div>
-      <!-- Route to your subpage review -->
-      <a href="/mess-kit.html" 
-         style="display:inline-flex;align-items:center;gap:8px;font-weight:800;
-                background:linear-gradient(90deg,#09a66d,#35d29a,#09a66d);background-size:200% 100%;
-                padding:12px 16px;border-radius:12px;color:#081014;text-decoration:none;box-shadow:0 6px 20px rgba(9,166,109,.25);animation:shimmer 2.5s linear infinite">
-        🛒 Read the Full Review
-      </a>
-    </div>
+  <!-- Responsive Mess Kit CTA (mobile-friendly) -->
+<div data-cta="messkit" class="cta-card">
+  <img class="thumb" src="/images/messkit-chili.jpg" alt="Compact 13-Piece Mess Kit">
+  <div class="copy">
+    <h3>Compact 13-Piece Mess Kit</h3>
+    <p>Field-tested 10+ years • Bug-out ready • Easy-clean soot</p>
+    <div class="social">⭐️⭐️⭐️⭐️⭐️ 1K+ happy campers</div>
+  </div>
+  <a class="btn" href="/mess-kit.html">🛒 Read the Full Review</a>
+</div>
+
+<style>
+  /* base card */
+  .cta-card{
+    max-width:600px;margin:20px 0;padding:16px;border-radius:14px;
+    background:linear-gradient(135deg,#15181b 0%,#1b2026 60%,#111418 100%);
+    border:1px solid #2c3239;
+    display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;
+  }
+  .cta-card .thumb{width:72px;height:72px;object-fit:cover;border-radius:12px;border:1px solid #2b3239}
+  .cta-card h3{margin:0 0 4px;font-size:1.05rem;line-height:1.2}
+  .cta-card p{margin:0;color:#b8c3ce;font-size:.9rem;line-height:1.4}
+  .cta-card .social{margin-top:6px;color:#dfe8f5;font-size:.85rem}
+  .cta-card .btn{
+    display:inline-flex;align-items:center;gap:8px;font-weight:800;
+    background:linear-gradient(90deg,#09a66d,#35d29a,#09a66d);background-size:200% 100%;
+    padding:12px 16px;border-radius:12px;color:#081014;text-decoration:none;
+    box-shadow:0 6px 20px rgba(9,166,109,.25);animation:shimmer 2.5s linear infinite; white-space:nowrap;
+  }
+
+  /* fix for small screens: stack the button on its own row and keep text wide */
+  @media (max-width: 600px){
+    .cta-card{grid-template-columns:56px 1fr}
+    .cta-card .thumb{width:56px;height:56px}
+    .cta-card .btn{grid-column:1 / -1;justify-content:center;width:100%;white-space:normal;text-align:center}
+  }
+
+  @keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+</style>
 
   </div>
 
