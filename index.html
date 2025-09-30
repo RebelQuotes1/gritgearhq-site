@@ -245,19 +245,92 @@
   <span class="chip" style="background:#1b2026;border:1px solid #2c3239;border-radius:999px;padding:6px 10px;font-size:.9rem;color:#dbe6f3">Field-Tested</span>
 </div>
 
-<!-- Primary CTAs (fixed links) -->
-<div class="cta-row" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:6px 0 4px">
-  <a class="btn" href="/ptsd-bud-prepper-field-guide.html" style="display:inline-flex;align-items:center;gap:8px;font-weight:800;
-     background:linear-gradient(90deg,#ff6a00,#ffa000,#ff6a00);background-size:200% 100%;
-     padding:12px 16px;border-radius:12px;color:#101214;text-decoration:none;box-shadow:0 6px 20px rgba(255,106,0,.25);animation:shimmer 2.5s linear infinite"
-     aria-label="Read the PTSD Prepper Field Guide">
-     📘 Read the Field Guide
-  </a>
-  <a class="alt" href="/ptsd-bud-prepper-field-guide.html" style="color:#b8c3ce;text-decoration:none;border-bottom:2px solid rgba(255,106,0,.35);padding-bottom:2px"
-     aria-label="Go to the PTSD Prepper Field Guide">
-    or stock up discreetly
-  </a>
-</div>
+<!-- Collab-Ready Hero + CTA (polished, mobile-first, not too large) -->
+<section class="collab-hero">
+  <figure class="hero-photo">
+    <img src="/images/Screenshot_20250928-212932 (1).png" alt="Sunset patrol along a creek — field-ready mindset" loading="lazy" decoding="async">
+    <figcaption>Field-tested, not theory. Real miles. Real gear.</figcaption>
+  </figure>
+
+  <!-- Primary CTAs (fixed links) -->
+  <div class="cta-row">
+    <a class="btn" href="/ptsd-bud-prepper-field-guide.html" aria-label="Read the PTSD Prepper Field Guide">
+      📘 Read the Field Guide
+    </a>
+    <a class="alt" href="/ptsd-bud-prepper-field-guide.html" aria-label="Go to the PTSD Prepper Field Guide">
+      or stock up discreetly
+    </a>
+  </div>
+</section>
+
+<style>
+  /* Layout */
+  .collab-hero{
+    max-width: clamp(320px, 92vw, 860px);
+    margin: 16px auto 10px;
+    padding: 0 4px;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+  }
+
+  /* Image card */
+  .hero-photo{
+    position: relative;
+    margin: 0 0 10px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #232a31;
+    background: #0f1215;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .hero-photo img{
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio: 16 / 9;         /* keeps it from getting tall & skinny */
+    object-fit: cover;             /* professional crop on small screens */
+    filter: saturate(1.02) contrast(1.02);
+    transform: translateZ(0);      /* crisp on mobile GPUs */
+  }
+  /* subtle gradient for legibility and polish */
+  .hero-photo::after{
+    content:"";
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.35) 90%);
+    pointer-events:none;
+  }
+  .hero-photo figcaption{
+    position:absolute; left:12px; right:12px; bottom:10px;
+    color:#dbe6f3; font-size:.9rem; line-height:1.25;
+    text-shadow:0 2px 10px rgba(0,0,0,.6);
+  }
+
+  /* CTAs */
+  .cta-row{
+    display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+    justify-content:flex-start;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; font-weight:800;
+    background: linear-gradient(90deg,#ff6a00,#ffa000,#ff6a00);
+    background-size:200% 100%; animation:shimmer 2.5s linear infinite;
+    padding:12px 16px; border-radius:12px; color:#101214; text-decoration:none;
+    box-shadow:0 6px 20px rgba(255,106,0,.25);
+  }
+  .alt{
+    color:#b8c3ce; text-decoration:none; border-bottom:2px solid rgba(255,106,0,.35);
+    padding-bottom:2px; font-weight:600;
+  }
+
+  /* Mobile polish: keep text readable, buttons full-width if tight */
+  @media (max-width: 560px){
+    .hero-photo{border-radius:14px}
+    .hero-photo figcaption{font-size:.85rem}
+    .cta-row{gap:8px}
+    .btn{flex:1 1 100%; justify-content:center}
+  }
+
+  @keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+</style>
 
 
     <!-- Light disclaimer for compliance -->
