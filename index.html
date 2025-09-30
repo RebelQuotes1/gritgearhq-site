@@ -222,55 +222,89 @@
   }
 </style>
 
-  <!-- BACKGROUND with AVIF + PNG fallback -->
-  <picture class="bg">
-    <source srcset="Does_Smoking_More_heronew.avif" type="image/avif">
-    <img src="Screenshot_20250928-212932.png" alt="" style="width:100%;height:100%;object-fit:cover;filter:brightness(.58) contrast(1.05) saturate(1.02)">
-  </picture>
-  <div class="veil"></div>
-  <div class="grain"></div>
+<!-- Clickbait-Style Thumbnail (compact, polished) -->
+<div class="gg-thumb">
+  <a class="gg-thumb__link" href="/ptsd-bud-prepper-field-guide.html" aria-label="Read the PTSD Prepper Field Guide">
+    <figure class="gg-thumb__frame">
+      <picture>
+        <source srcset="/images/Does_Smoking_More_heronew.avif" type="image/avif">
+        <!-- filename kept; URL-encoded so it loads everywhere -->
+        <img src="/images/Screenshot_20250928-212932%20%281%29.png" alt="PTSD field guide teaser — sunset patrol" loading="lazy" decoding="async">
+      </picture>
 
-<!-- ===== START: GGHQ Body Section w/ CTAs (single block) ===== -->
-<section class="body" style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;color:#e7eef7">
-  <div style="max-width:960px;margin:0 auto;padding:20px">
-
-   <!-- Headline (toned for compliance) -->
-<h2 style="margin:0 0 8px;font-size:clamp(22px,3vw,32px);line-height:1.15">
-  PTSD Relief in Minutes? The Low-Key Plant Most Preppers Overlook
-</h2>
-
-<p style="margin:6px 0 12px;color:#cfe0f5">
-  Ditch the junk-drawer “solutions.” Learn a legal, growable option you can store, dose, and actually function on. 
-  Sleep better, calm the panic, and stay useful for your people — the practical way.
-</p>
-
-<!-- Chips -->
-<div class="chips" style="display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px">
-  <span class="chip" style="background:#1b2026;border:1px solid #2c3239;border-radius:999px;padding:6px 10px;font-size:.9rem;color:#dbe6f3">Sleep Protocol</span>
-  <span class="chip" style="background:#1b2026;border:1px solid #2c3239;border-radius:999px;padding:6px 10px;font-size:.9rem;color:#dbe6f3">Pain &amp; Calm</span>
-  <span class="chip" style="background:#1b2026;border:1px solid #2c3239;border-radius:999px;padding:6px 10px;font-size:.9rem;color:#dbe6f3">Legal &amp; Discreet</span>
-  <span class="chip" style="background:#1b2026;border:1px solid #2c3239;border-radius:999px;padding:6px 10px;font-size:.9rem;color:#dbe6f3">Field-Tested</span>
+      <!-- overlay bits -->
+      <figcaption class="gg-thumb__caption">
+        PTSD Relief? The Low-Key Plant Preppers Miss
+      </figcaption>
+      <span class="gg-thumb__badge">NEW</span>
+      <span class="gg-thumb__cta">READ NOW →</span>
+    </figure>
+  </a>
 </div>
 
-<!-- Collab-Ready Hero + CTA (polished, mobile-first, not too large) -->
-<section class="collab-hero">
-  <figure class="hero-photo">
-    <!-- fixed: URL-encoded filename so it loads everywhere -->
-    <img src="/images/Screenshot_20250928-212932%20%281%29.png"
-         alt="Sunset patrol along a creek — field-ready mindset" loading="lazy" decoding="async">
-    <figcaption>Field-tested, not theory. Real miles. Real gear.</figcaption>
-  </figure>
+<style>
+  /* container: small and centered, perfect for “thumbnail” */
+  .gg-thumb{display:grid;place-items:center;margin:12px 0}
+  .gg-thumb__link{text-decoration:none}
 
-  <!-- Primary CTAs (fixed links) -->
-  <div class="cta-row">
-    <a class="btn" href="/ptsd-bud-prepper-field-guide.html" aria-label="Read the PTSD Prepper Field Guide">
-      📘 Read the Field Guide
-    </a>
-    <a class="alt" href="/ptsd-bud-prepper-field-guide.html" aria-label="Go to the PTSD Prepper Field Guide">
-      or stock up discreetly
-    </a>
-  </div>
-</section>
+  .gg-thumb__frame{
+    position:relative; margin:0;
+    width:min(380px,92vw);           /* not too large on desktop, comfy on phone */
+    aspect-ratio:16/9;               /* keeps the image from getting tall/skinny */
+    border-radius:16px; overflow:hidden;
+    border:1px solid #2b2f3a; background:#0f1115;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    transform:translateZ(0);
+  }
+
+  .gg-thumb__frame img{
+    width:100%; height:100%; object-fit:cover;
+    filter:brightness(.72) contrast(1.08) saturate(1.04);
+    transition:transform .35s ease, filter .35s ease;
+  }
+
+  /* gradient veil + grain for “pro” look */
+  .gg-thumb__frame::before,
+  .gg-thumb__frame::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+  }
+  .gg-thumb__frame::before{
+    background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 95%);
+  }
+  .gg-thumb__frame::after{
+    opacity:.5; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'>\
+<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter>\
+<rect width='140' height='140' filter='url(%23n)' opacity='0.07'/></svg>");
+  }
+
+  /* headline over image */
+  .gg-thumb__caption{
+    position:absolute; left:12px; right:12px; bottom:34px;
+    color:#e9f1ff; font:700 clamp(.95rem,2.2vw,1.05rem)/1.25 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+    text-shadow:0 3px 14px rgba(0,0,0,.55);
+  }
+
+  /* badge + CTA ribbons */
+  .gg-thumb__badge{
+    position:absolute; top:10px; left:10px;
+    font:800 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+    color:#081014; background:linear-gradient(180deg,#18f0b4,#0acb92);
+    padding:6px 8px; border-radius:10px; border:1px solid #1c5;
+    box-shadow:0 6px 18px rgba(10,203,146,.35);
+  }
+  .gg-thumb__cta{
+    position:absolute; right:10px; bottom:10px;
+    font:900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+    color:#101214; background:linear-gradient(90deg,#ff6a00,#ffa000,#ff6a00);
+    padding:8px 10px; border-radius:999px; box-shadow:0 8px 22px rgba(255,106,0,.32);
+  }
+
+  /* hover polish */
+  .gg-thumb__link:hover img{transform:scale(1.03); filter:brightness(.78) contrast(1.1) saturate(1.06)}
+  .gg-thumb__link:hover .gg-thumb__cta{filter:brightness(1.05)}
+</style>
 
 <style>
   /* Layout */
