@@ -1,120 +1,93 @@
-<!-- Grit Gear HQ • Centered Professional Header + Bio (updated: uses your header image) -->
-<section class="gg-bio">
-  <header class="gg-bio__head" role="banner" aria-label="Grit Gear HQ intro">
-    <!-- replaced emoji badge with your image -->
-    <img class="gg-bio__badge-img" src="/images/how-to-choose-survival-gear-.jpeg"
-         alt="Survival gear header image" loading="lazy" decoding="async">
-    <h1 class="gg-bio__brand">Grit Gear HQ</h1>
-    <p class="gg-bio__tag">Built for the rough stuff — 25 years field-tested.</p>
-    <div class="gg-bio__rule" aria-hidden="true"></div>
-  </header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grit Gear HQ — Built for the Rough Stuff • 25 Years Field-Tested</title>
 
-  <p class="gg-bio__lede">
-    We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for
-    daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups,
-    small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.
-  </p>
-
-  <ul class="gg-bio__points">
-    <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
-    <li><strong>Smart loadouts:</strong> only the pieces that pull their weight.</li>
-    <li><strong>Legal &amp; transparent:</strong> hemp features are 21+ and COA-verified.</li>
-    <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
-  </ul>
-</section>
-
-<style>
-  /* Container */
-  .gg-bio{
-    --ink:#e9ecf4; --muted:#b7becc; --line:#2b2f3a;
-    max-width: 920px; margin: 18px auto 10px; padding: 0 14px; color: var(--ink);
-    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
-  }
-
-  /* Header (centered, elevated) */
-  .gg-bio__head{
-    text-align: center; padding: 26px 12px 18px; border-radius: 18px;
-    background: radial-gradient(1200px 260px at 50% -60px, rgba(255,138,40,.18), rgba(255,138,40,0) 60%),
-                linear-gradient(180deg,#12141a,#0e1014);
-    border: 1px solid var(--line); box-shadow: 0 10px 34px rgba(0,0,0,.35);
-  }
-  /* NEW: image badge */
-  .gg-bio__badge-img{
-    width:58px;height:58px;border-radius:14px;object-fit:cover;object-position:center;
-    border:1px solid var(--line); display:inline-block; margin-bottom:8px;
-    filter:saturate(1.05) contrast(1.05);
-  }
-
-  .gg-bio__brand{
-    margin: 4px 0 2px; font-size: clamp(26px, 4vw, 40px); line-height: 1.05; font-weight: 900;
-    letter-spacing: .2px;
-    background: linear-gradient(90deg,#ffffff,#ffe1c9,#ffd1a4,#ffffff);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .gg-bio__tag{
-    margin: 0 auto 10px; color: var(--muted); font-size: clamp(14px,1.8vw,18px);
-    letter-spacing: .3px;
-  }
-  .gg-bio__rule{
-    width:min(520px,80%); height:1px; margin: 12px auto 0;
-    background: linear-gradient(90deg,transparent,#2f3540,transparent);
-  }
-
-  /* Body text */
-  .gg-bio__lede{
-    margin:14px auto 10px; max-width: 72ch; text-align: center; line-height: 1.7; color:#dfe6f3;
-  }
-  .gg-bio__points{
-    margin:14px auto 0; max-width: 70ch; line-height:1.7; color:#d2dae7;
-  }
-  .gg-bio__points li{ margin: 6px 0; }
-
-  /* Mobile polish */
-  @media (max-width:560px){
-    .gg-bio__head{padding:22px 12px 16px;border-radius:16px}
-    .gg-bio__badge-img{width:50px;height:50px;border-radius:12px}
-    .gg-bio__lede{font-size:1rem}
-  }
-</style>
-
+  <style>
+    :root{
+      --bg:#0d0f10; --ink:#e9ecf4; --muted:#b7becc; --line:#2b2f3a;
+      --panel:#0f1116; --chip:#14171d;
     }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif}
 
-    /* Nav */
+    /* ===== Site Header ===== */
+    .site-header{
+      position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0f1116,rgba(15,17,22,.92));
+      border-bottom:1px solid var(--line); backdrop-filter:saturate(1.05) blur(4px);
+    }
+    .site-header .wrap{
+      max-width:1100px; margin:0 auto; padding:14px 16px;
+      display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:0}
+    .logo{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:10px;
+      background:linear-gradient(180deg,#1a1e25,#14171d); color:#fff; font-weight:900; letter-spacing:.2px; text-decoration:none}
+    .tagline{color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:.92rem}
+
     nav.primary{display:flex; gap:12px; align-items:center}
-    nav.primary a{
-      color:#dbe6f3; text-decoration:none; padding:8px 10px; border-radius:10px;
-      border:1px solid transparent;
-    }
-    nav.primary a:hover{border-color:#2f3540; background:#14171d}
+    nav.primary a{color:#dbe6f3; text-decoration:none; padding:8px 10px; border-radius:10px; border:1px solid transparent}
+    nav.primary a:hover{border-color:#2f3540; background:var(--chip)}
 
-    /* Mobile menu */
-    .menu-btn{
-      display:none; width:38px; height:38px; border:1px solid #2b2f3a; border-radius:10px;
-      background:#15181b; color:#fff; place-items:center; cursor:pointer;
-    }
-    .menu-btn svg{width:20px;height:20px}
+    .menu-btn{display:none; width:38px; height:38px; border:1px solid #2b2f3a; border-radius:10px;
+      background:#15181b; color:#fff; place-items:center; cursor:pointer}
+    .menu-btn svg{width:20px; height:20px}
+
     @media (max-width:820px){
       .site-header .wrap{grid-template-columns:auto auto auto}
       .tagline{display:none}
-      nav.primary{display:none; position:fixed; inset:auto 12px 12px 12px; background:#0f1116;
+      nav.primary{display:none; position:fixed; inset:auto 12px 12px 12px; background:var(--panel);
         border:1px solid #2b2f3a; border-radius:14px; padding:10px; flex-direction:column; gap:6px;
         box-shadow:0 20px 40px rgba(0,0,0,.45)}
       nav.primary.open{display:flex}
       .menu-btn{display:grid}
     }
 
-    /* CTA hover micro-interactions (your classes preserved) */
+    /* ===== Bio / Intro Block ===== */
+    .gg-bio{
+      max-width:920px; margin:18px auto 10px; padding:0 14px;
+    }
+    .gg-bio__head{
+      text-align:center; padding:26px 12px 18px; border-radius:18px;
+      background: radial-gradient(1200px 260px at 50% -60px, rgba(255,138,40,.18), rgba(255,138,40,0) 60%),
+                  linear-gradient(180deg,#12141a,#0e1014);
+      border:1px solid var(--line); box-shadow:0 10px 34px rgba(0,0,0,.35);
+    }
+    .gg-bio__badge-img{
+      width:58px; height:58px; border-radius:14px; object-fit:cover; object-position:center;
+      border:1px solid var(--line); display:inline-block; margin-bottom:8px; filter:saturate(1.05) contrast(1.05);
+    }
+    .gg-bio__brand{
+      margin:4px 0 2px; font-size:clamp(26px,4vw,40px); line-height:1.05; font-weight:900; letter-spacing:.2px;
+      background:linear-gradient(90deg,#ffffff,#ffe1c9,#ffd1a4,#ffffff);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .gg-bio__tag{margin:0 auto 10px; color:var(--muted); font-size:clamp(14px,1.8vw,18px); letter-spacing:.3px}
+    .gg-bio__rule{width:min(520px,80%); height:1px; margin:12px auto 0; background:linear-gradient(90deg,transparent,#2f3540,transparent)}
+    .gg-bio__lede{margin:14px auto 10px; max-width:72ch; text-align:center; line-height:1.7; color:#dfe6f3}
+    .gg-bio__points{margin:14px auto 0; max-width:70ch; line-height:1.7; color:#d2dae7}
+    .gg-bio__points li{margin:6px 0}
+
+    @media (max-width:560px){
+      .gg-bio__head{padding:22px 12px 16px; border-radius:16px}
+      .gg-bio__badge-img{width:50px; height:50px; border-radius:12px}
+      .gg-bio__lede{font-size:1rem}
+    }
+
+    /* CTA hover micro-interactions (kept) */
     .tw-cta,.tab-cta,.shop-cta,.fp-cta,.gg-cta,.ou-cta,.qp-cta{
       transition:transform .06s ease, box-shadow .06s ease;
     }
     .tw-cta:hover,.tab-cta:hover,.shop-cta:hover,.fp-cta:hover,.gg-cta:hover,.ou-cta:hover,.qp-cta:hover{
-      transform:translateY(-1px);
-      box-shadow:0 6px 18px rgba(255,140,0,.25);
+      transform:translateY(-1px); box-shadow:0 6px 18px rgba(255,140,0,.25);
     }
   </style>
 </head>
-<body>
 
+<body>
   <!-- ===== Header ===== -->
   <header class="site-header">
     <div class="wrap">
@@ -123,10 +96,8 @@
         <span class="tagline">Built for the Rough Stuff • 25 Years Field-Tested</span>
       </div>
 
-      <!-- spacer -->
       <div></div>
 
-      <!-- desktop nav + mobile toggle -->
       <button class="menu-btn" aria-label="Open menu" id="menuBtn" title="Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/>
@@ -141,7 +112,29 @@
     </div>
   </header>
 
-  <!-- Your page content goes here -->
+  <!-- ===== Centered Professional Header + Bio (uses your header image) ===== -->
+  <section class="gg-bio">
+    <header class="gg-bio__head" role="banner" aria-label="Grit Gear HQ intro">
+      <img class="gg-bio__badge-img" src="/images/how-to-choose-survival-gear-.jpeg"
+           alt="Survival gear header image" loading="lazy" decoding="async">
+      <h1 class="gg-bio__brand">Grit Gear HQ</h1>
+      <p class="gg-bio__tag">Built for the rough stuff — 25 years field-tested.</p>
+      <div class="gg-bio__rule" aria-hidden="true"></div>
+    </header>
+
+    <p class="gg-bio__lede">
+      We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for
+      daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups,
+      small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.
+    </p>
+
+    <ul class="gg-bio__points">
+      <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
+      <li><strong>Smart loadouts:</strong> only the pieces that pull their weight.</li>
+      <li><strong>Legal &amp; transparent:</strong> hemp features are 21+ and COA-verified.</li>
+      <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
+    </ul>
+  </section>
 
   <script>
     // Mobile menu toggle
@@ -155,52 +148,34 @@
       });
     })();
 
-    // Replace low-intent CTAs with purchase-focused microcopy (your original logic, cleaned)
+    // CTA text mapping (cleaned)
     document.addEventListener('DOMContentLoaded', function(){
       const map = [
-        // —— Knives ——
-        { href: "226375066069", text: "Own the Warpath Bowie →", cls: ".tw-cta" },
-        { href: "236281207985", text: "Carry the Skull Folder →", cls: ".tw-cta" },
-
-        // —— Overland (Tent + Winch) ——
-        { href: "286423670948", text: "Mount This Rooftop Tent →", cls: ".ou-cta" },
-        { href: "375582132759", text: "Equip This 13,500-lb Winch →", cls: ".ou-cta" },
-
-        // —— Heaters row ——
-        { href: "396302793768", text: "Warm Up — Get This Heater →", cls: ".shop-cta" },
-        { href: "187037140543", text: "Multi-Fuel Heat — Shop Now →", cls: ".shop-cta" },
-
-        // —— Stun device & Solar Shower ——
-        { href: "197691660077", text: "Get the 3-Head Kit →", cls: ".fp-cta" },
-        { href: "234159796659", text: "Upgrade Your Camp Shower →", cls: ".fp-cta" },
-
-        // —— Fire Kit & Cook Set ——
-        { href: "175132576181", text: "Spark a Fire — Grab the Kit →", cls: ".tab-cta" },
-        { href: "365794714749", text: "Cook Anywhere — Bundle Now →", cls: ".tab-cta" },
-
-        // —— EDC Bracelet Knife ——
-        { href: "356876389109", text: "Get the Bracelet Knife →", cls: ".tab-cta" },
-
-        // —— Notebook / Tarp / Collab ——
-        { href: "amzn.to",                  text: "Add Notebook to Cart →",   cls: ".gg-cta" },
-        { href: "collabs.shop",             text: "Shop the Ultralight Tarp →", cls: ".gg-cta" },
-        { href: "titan-survival-collab.html", text: "See the Collab & Save →", cls: ".gg-cta" }
+        { href:"226375066069", text:"Own the Warpath Bowie →", cls:".tw-cta" },
+        { href:"236281207985", text:"Carry the Skull Folder →", cls:".tw-cta" },
+        { href:"286423670948", text:"Mount This Rooftop Tent →", cls:".ou-cta" },
+        { href:"375582132759", text:"Equip This 13,500-lb Winch →", cls:".ou-cta" },
+        { href:"396302793768", text:"Warm Up — Get This Heater →", cls:".shop-cta" },
+        { href:"187037140543", text:"Multi-Fuel Heat — Shop Now →", cls:".shop-cta" },
+        { href:"197691660077", text:"Get the 3-Head Kit →", cls:".fp-cta" },
+        { href:"234159796659", text:"Upgrade Your Camp Shower →", cls:".fp-cta" },
+        { href:"175132576181", text:"Spark a Fire — Grab the Kit →", cls:".tab-cta" },
+        { href:"365794714749", text:"Cook Anywhere — Bundle Now →", cls:".tab-cta" },
+        { href:"356876389109", text:"Get the Bracelet Knife →", cls:".tab-cta" },
+        { href:"amzn.to", text:"Add Notebook to Cart →", cls:".gg-cta" },
+        { href:"collabs.shop", text:"Shop the Ultralight Tarp →", cls:".gg-cta" },
+        { href:"titan-survival-collab.html", text:"See the Collab & Save →", cls:".gg-cta" }
       ];
-
-      map.forEach(({href, text, cls})=>{
-        document.querySelectorAll(`a${cls}[href*="${href}"]`).forEach(a => a.textContent = text);
+      map.forEach(({href,text,cls})=>{
+        document.querySelectorAll(`a${cls}[href*="${href}"]`).forEach(a=>a.textContent=text);
       });
-
-      // Accessibility: describe new-tab behavior for sponsored external links
       document.querySelectorAll('a[target="_blank"][rel*="sponsored"]').forEach(a=>{
-        a.setAttribute('aria-label', (a.getAttribute('aria-label') || a.textContent) + " (opens in new tab)");
+        a.setAttribute('aria-label', (a.getAttribute('aria-label') || a.textContent) + ' (opens in new tab)');
       });
     });
   </script>
 </body>
 </html>
-
-</script>
 
   <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
