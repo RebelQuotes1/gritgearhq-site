@@ -146,74 +146,81 @@
     .ad-link:hover img{filter:brightness(1.06)}
   </style>
 
-<div class="bio-card">
-  <div class="bio-head">
-    <span class="bio-badge">🏕️</span>
-    <div>
-      <div class="creator__brand">Grit Gear HQ</div>
-      <div class="creator__tag">Built for the rough stuff.</div>
-    </div>
-  </div>
+<!-- Grit Gear HQ • Centered Professional Header + Bio -->
+<section class="gg-bio">
+  <header class="gg-bio__head" role="banner" aria-label="Grit Gear HQ intro">
+    <span class="gg-bio__badge" aria-hidden="true">🏕️</span>
+    <h1 class="gg-bio__brand">Grit Gear HQ</h1>
+    <p class="gg-bio__tag">Built for the rough stuff.</p>
+    <div class="gg-bio__rule" aria-hidden="true"></div>
+  </header>
 
-  <p>We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups, small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.</p>
+  <p class="gg-bio__lede">
+    We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for
+    daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups,
+    small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.
+  </p>
 
-  <ul>
+  <ul class="gg-bio__points">
     <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
     <li><strong>Smart loadouts:</strong> only the pieces that pull their weight.</li>
-    <li><strong>Legal & transparent:</strong> hemp features are 21+ and COA-verified.</li>
+    <li><strong>Legal &amp; transparent:</strong> hemp features are 21+ and COA-verified.</li>
     <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
   </ul>
-</div>
-<!-- Grit Gear • Homepage Hero CTA (self-contained) -->
-<a class="gg-cta pro" href="ptsd-bud-prepper-field-guide.html" aria-label="Read the PTSD & Bud Field Guide">
-  <style>
-    .gg-cta.pro{
-      --ink:#e9ecf4; --muted:#b7becc; --line:#2b2f3a; --accent:#f29d2a; --cta:#18f0b4; --cta2:#0acb92;
-      position:relative; display:block; border-radius:18px; overflow:hidden; isolation:isolate;
-      background:#0f1014; color:var(--ink); border:1px solid var(--line);
-      max-width:980px; margin:24px auto; box-shadow:0 14px 38px rgba(0,0,0,.38);
-      text-decoration:none;
-    }
-    .gg-cta .bg, .gg-cta .veil, .gg-cta .grain{position:absolute; inset:0}
-    .gg-cta .bg{transform:scale(1.02)}
-    .gg-cta .veil{
-      background:linear-gradient(120deg, rgba(0,0,0,.78), rgba(0,0,0,.28) 45%, rgba(0,0,0,.85));
-      mix-blend-mode:multiply;
-    }
-    .gg-cta .grain{
-      background-image:url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
-<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter>\
-<rect width='120' height='120' filter='url(%23n)' opacity='0.06'/>\
-</svg>");
-      opacity:.55; mix-blend-mode:overlay; pointer-events:none;
-    }
-    .gg-cta .body{position:relative; padding:30px; display:grid; gap:12px}
-    .gg-cta h2{margin:0; font-size:clamp(1.35rem,2.4vw,2rem); color:var(--accent); letter-spacing:.2px; font-weight:900}
-    .gg-cta p{margin:0; font-size:clamp(.98rem,1.6vw,1.08rem); line-height:1.65; color:var(--ink)}
-    .gg-cta .chips{display:flex; flex-wrap:wrap; gap:8px}
-    .gg-cta .chip{
-      font-size:.8rem; padding:6px 10px; border:1px solid #343744; border-radius:999px;
-      background:rgba(18,20,28,.6); color:#d9dfea; backdrop-filter:blur(2px)
-    }
-    .gg-cta .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; align-items:center}
-    .gg-cta .btn{
-      display:inline-block; padding:12px 18px; border-radius:12px; font-weight:900;
-      background:linear-gradient(180deg,var(--cta),var(--cta2)); color:#051812;
-      box-shadow:0 8px 22px rgba(10,203,146,.35)
-    }
-    .gg-cta .btn:hover{filter:brightness(1.05)}
-    .gg-cta .alt{color:#e9ecf4;text-decoration:none;border-bottom:1px dashed #aab;opacity:.92}
-    /* Light sweep accent */
-    .gg-cta .sweep{
-      content:""; position:absolute; inset:0; pointer-events:none;
-      background:linear-gradient(110deg, transparent 0%, rgba(255,255,255,.18) 35%, transparent 70%);
-      mix-blend-mode:screen; animation:shine 9s linear infinite;
-    }
-    @keyframes shine { 0%{transform:translateX(-80%)} 100%{transform:translateX(80%)} }
-    /* Responsive trim */
-    @media (max-width:720px){ .gg-cta .body{padding:22px} }
-  </style>
+</section>
+
+<style>
+  /* Container */
+  .gg-bio{
+    --ink:#e9ecf4; --muted:#b7becc; --line:#2b2f3a; --hi:#ff8a28;
+    max-width: 920px; margin: 18px auto 10px; padding: 0 14px; color: var(--ink);
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+  }
+
+  /* Header (centered, elevated) */
+  .gg-bio__head{
+    text-align: center; padding: 26px 12px 18px; border-radius: 18px;
+    background: radial-gradient(1200px 260px at 50% -60px, rgba(255,138,40,.18), rgba(255,138,40,0) 60%),
+                linear-gradient(180deg,#12141a,#0e1014);
+    border: 1px solid var(--line); box-shadow: 0 10px 34px rgba(0,0,0,.35);
+  }
+  .gg-bio__badge{
+    display:inline-grid; place-items:center; width:58px; height:58px; margin-bottom:8px;
+    border-radius:14px; border:1px solid var(--line);
+    background:linear-gradient(180deg,#1a1d24,#14171d);
+    font-size:28px; filter: drop-shadow(0 6px 16px rgba(0,0,0,.35));
+  }
+  .gg-bio__brand{
+    margin: 4px 0 2px; font-size: clamp(26px, 4vw, 40px); line-height: 1.05; font-weight: 900;
+    letter-spacing: .2px;
+    background: linear-gradient(90deg,#ffffff,#ffe1c9,#ffd1a4,#ffffff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .gg-bio__tag{
+    margin: 0 auto 10px; color: var(--muted); font-size: clamp(14px,1.8vw,18px);
+    letter-spacing: .3px;
+  }
+  .gg-bio__rule{
+    width:min(520px,80%); height:1px; margin: 12px auto 0;
+    background: linear-gradient(90deg,transparent,#2f3540,transparent);
+  }
+
+  /* Body text */
+  .gg-bio__lede{
+    margin:14px auto 10px; max-width: 72ch; text-align: center; line-height: 1.7; color:#dfe6f3;
+  }
+  .gg-bio__points{
+    margin:14px auto 0; max-width: 70ch; line-height:1.7; color:#d2dae7;
+  }
+  .gg-bio__points li{ margin: 6px 0; }
+
+  /* Mobile polish */
+  @media (max-width:560px){
+    .gg-bio__head{padding:22px 12px 16px;border-radius:16px}
+    .gg-bio__badge{width:50px;height:50px;font-size:24px;border-radius:12px}
+    .gg-bio__lede{font-size:1rem}
+  }
+</style>
 
   <!-- BACKGROUND with AVIF + PNG fallback -->
   <picture class="bg">
