@@ -2305,28 +2305,95 @@
     </div>
   </a>
 
-  <!-- RIGHT: Bloomz Snow Caps THCA (compact) -->
-  <a class="preview-card bloomz"
-     href="https://bloomzhemp.com/collections/snow-caps-thca-flower/products/thca-snow-caps?ref=gritbud"
-     target="_blank" rel="nofollow sponsored noopener"
-     aria-label="Shop Bloomz THCA Snow Caps — discreet shipping">
-    <div class="preview-media" style="background:#0f1520">
-      <img src="/bloom.jpg" alt="Bloomz THCA Snow Caps jars with coated flower" loading="lazy">
-      <span class="preview-badge">Featured</span>
-    </div>
-    <div class="preview-body">
-      <div class="preview-tag">Shop • Bloomz Hemp</div>
-      <h3 class="preview-title">THCA Snow Caps — Premium Flower</h3>
-      <p class="preview-deck">Top-tier “Snow Caps” with discreet shipping direct from Bloomz.</p>
-      <div class="preview-chips" style="display:flex;flex-wrap:wrap;gap:6px;margin:.15rem 0">
-        <span style="font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px">THCA Flower</span>
-        <span style="font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px">Snow Caps</span>
-        <span style="font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px">Fast shipping</span>
+<!-- === Do It For Me + GritGearHQ (side-by-side) === -->
+<style>
+  /* 2-up grid */
+  .promo-split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:760px){.promo-split{grid-template-columns:1fr}}
+
+  /* Minimal preview-card styles (safe to remove if you already have them globally) */
+  .preview-card{
+    display:grid; grid-template-columns:120px 1fr; gap:12px;
+    align-items:stretch; background:#0f1216; color:#e9ecf4;
+    border:1px solid #2b2f3a; border-radius:14px; overflow:hidden;
+    text-decoration:none; box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  @media (max-width:560px){ .preview-card{grid-template-columns:1fr} }
+  .preview-media{position:relative; min-height:120px; overflow:hidden}
+  .preview-media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(1.03); opacity:.96; transition:transform .35s ease, opacity .25s ease}
+  .preview-card:hover .preview-media img{ transform:scale(1.03); opacity:1 }
+  .preview-badge{position:absolute; top:10px; left:10px; font-size:.72rem; font-weight:800; padding:6px 9px; border-radius:999px; background:linear-gradient(90deg,#18f0b4,#0acb92); color:#051512; border:1px solid rgba(255,255,255,.12)}
+  .preview-body{ padding:12px; display:flex; flex-direction:column; gap:6px }
+  .preview-tag{ color:#9fb5c6; font-size:.86rem }
+  .preview-title{ margin:0; font-size:1.02rem; font-weight:900; letter-spacing:.2px }
+  .preview-deck{ margin:0; color:#c7d2e0; font-size:.94rem; line-height:1.45 }
+  .preview-chips span{
+    display:inline-flex; align-items:center; gap:6px; margin:4px 6px 0 0;
+    padding:5px 9px; border-radius:999px; font-size:.78rem;
+    color:#e6eef7; background:#16202b; border:1px solid #243243; white-space:nowrap;
+  }
+  .preview-cta{
+    margin-top:6px; font-weight:900; display:inline-flex; align-items:center; gap:6px;
+    color:#051512; align-self:flex-start;
+    background:linear-gradient(90deg,#18f0b4,#0acb92);
+    padding:8px 12px; border-radius:10px; box-shadow:0 8px 24px rgba(10,203,146,.28);
+  }
+  .preview-cta::after{ content:"→" }
+  .preview-cta:hover{ filter:brightness(1.06) }
+  .tiny-note{ color:#9aa3ad; font-size:.84rem }
+</style>
+
+<section class="container" aria-label="Do it for me and GritGear">
+  <div class="promo-split">
+
+    <!-- LEFT: Do it for me (replace this block with your existing DIFM card if you have one) -->
+    <a class="preview-card do-it-for-me" href="do-it-for-me.html"
+       aria-label="Get a customized kit built for you">
+      <div class="preview-media" style="background:#10151b">
+        <img src="cbd.jpg" alt="Curated kit: pre-rolls, lighter, case" loading="lazy" decoding="async">
+        <span class="preview-badge">Personalized</span>
       </div>
-      <span class="preview-cta">Shop Snow Caps →</span>
-      <div class="tiny-note" style="color:#9aa3ad;font-size:.84rem;margin-top:.35rem">Adults 21+. Check your local laws.</div>
-    </div>
-  </a>
+      <div class="preview-body">
+        <div class="preview-tag">Service • Cannabis Field Guide</div>
+        <h3 class="preview-title">Do it for me (Starter Kit)</h3>
+        <p class="preview-deck">
+          Tell me your vibe and constraints; I’ll build a discreet, morning-friendly kit with easy dosing and zero fluff.
+        </p>
+        <div class="preview-chips">
+          <span>Age 21+</span><span>AM-friendly</span><span>Budget aware</span>
+        </div>
+        <span class="preview-cta">Build my kit</span>
+        <div class="tiny-note">No pressure upsells. You approve before you buy.</div>
+      </div>
+    </a>
+
+    <!-- RIGHT: GritGearHQ Pocket Tin (eBay) -->
+    <a class="preview-card gritgear"
+       href="https://www.ebay.com/itm/183293279124?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+       target="_blank" rel="sponsored noopener noreferrer"
+       aria-label="Shop GritGearHQ pocket essentials tin on eBay">
+      <div class="preview-media" style="background:#0f1520">
+        <!-- Use your asset name if different (e.g., gb3.jpg) -->
+        <img src="gr.jpg" alt="GritGearHQ rugged pocket essentials tin" loading="lazy" decoding="async">
+        <span class="preview-badge">Trending</span>
+      </div>
+      <div class="preview-body">
+        <div class="preview-tag">Shop • GritGearHQ</div>
+        <h3 class="preview-title">Rugged Pocket Essentials Tin</h3>
+        <p class="preview-deck">
+          Field-ready, giftable, and actually useful. Ships via eBay with buyer protection.
+        </p>
+        <div class="preview-chips">
+          <span>Rugged tin</span><span>Carry-on friendly*</span><span>Great gift</span>
+        </div>
+        <span class="preview-cta">Shop the Tin</span>
+        <div class="tiny-note">*Check current airline rules. Stock moves fast on weekends.</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
 </div>
 <!-- ===== GEAR CARDS ROW (centered; **4-up on desktop**) ===== -->
 <style>
