@@ -1,2890 +1,473 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google Ads -->
+  <!-- Google Ads (kept) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Grit Gear HQ — Built for the Rough Stuff • 25 Years Field-Tested</title>
+  <meta name="theme-color" content="#0d0f10"/>
 
+  <!-- Critical CSS (single block) -->
   <style>
     :root{
-      --bg:#0d0f10; --ink:#e9ecf4; --muted:#b7becc; --line:#2b2f3a;
-      --panel:#0f1116; --chip:#14171d;
+      --bg:#0d0f10;--ink:#e9ecf4;--mut:#9aa3ad;--line:#262b33;
+      --card:#101319;--chip:#151a20;--hi:#ffa500;--cta:#ffae00;--cta2:#ff8c00;
+      --rad:16px;--shadow:0 14px 34px rgba(0,0,0,.45)
     }
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{margin:0;background:var(--bg);color:var(--ink);
-      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif}
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 14px}
 
-    /* ===== Site Header (ONLY place the brand appears) ===== */
-    .site-header{
-      position:sticky; top:0; z-index:50;
-      background:linear-gradient(180deg,#0f1116,rgba(15,17,22,.92));
-      border-bottom:1px solid var(--line); backdrop-filter:saturate(1.05) blur(4px);
-    }
-    .site-header .wrap{
-      max-width:1100px; margin:0 auto; padding:14px 16px;
-      display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center;
-    }
-    .brand{display:flex; align-items:center; gap:12px; min-width:0}
-    .logo{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:10px;
-      background:linear-gradient(180deg,#1a1e25,#14171d); color:#fff; font-weight:900; letter-spacing:.2px; text-decoration:none}
-    .tagline{color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:.92rem}
+    /* ===== Header ===== */
+    .hdr{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0f1116,.92,#0d0f10);
+      border-bottom:1px solid var(--line);backdrop-filter:saturate(1.05) blur(6px)}
+    .hdr-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;min-height:58px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{font-weight:900;letter-spacing:.2px;padding:6px 10px;border-radius:10px;background:#141821;border:1px solid var(--line)}
+    .tag{color:#b7becc;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .nav{display:flex;gap:10px}
+    .nav a{padding:8px 10px;border:1px solid transparent;border-radius:10px}
+    .nav a:hover{border-color:#303744;background:#141821}
+    .menu{display:none;place-items:center;width:38px;height:38px;border-radius:10px;background:#141821;border:1px solid var(--line)}
+    @media (max-width:820px){.nav{display:none}.menu{display:grid}}
 
-    nav.primary{display:flex; gap:12px; align-items:center}
-    nav.primary a{color:#dbe6f3; text-decoration:none; padding:8px 10px; border-radius:10px; border:1px solid transparent}
-    nav.primary a:hover{border-color:#2f3540; background:var(--chip)}
+    /* ===== Hero ===== */
+    .hero{margin:18px 0}
+    .hero-card{position:relative;overflow:hidden;border-radius:var(--rad);
+      border:1px solid var(--line);background:#0f1116;box-shadow:var(--shadow)}
+    .hero-media{position:absolute;inset:0;background:
+      radial-gradient(1000px 260px at 50% -60px,rgba(255,138,40,.18),transparent 60%),
+      linear-gradient(180deg,rgba(0,0,0,.0) 40%,rgba(0,0,0,.55) 100%),
+      url("/images/how-to-choose-survival-gear-.jpeg") center/cover no-repeat}
+    .hero-content{position:relative;z-index:1;padding:26px 18px 18px}
+    .kicker{margin:0;color:#b7becc}
+    .h1{margin:6px 0 10px;font-size:clamp(26px,4.2vw,44px);line-height:1.07;font-weight:900;
+      background:linear-gradient(90deg,#fff,#ffe1c9,#ffd1a4,#fff);
+      -webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 16px rgba(0,0,0,.35)}
+    .hero-deck{margin:0;color:#dfe6f3;max-width:62ch}
+    .hero-cta{display:inline-flex;gap:8px;align-items:center;margin-top:12px;
+      padding:12px 14px;border-radius:12px;font-weight:900;color:#101214;
+      background:linear-gradient(180deg,var(--cta),var(--cta2));box-shadow:0 8px 24px rgba(255,140,0,.28)}
 
-    .menu-btn{display:none; width:38px; height:38px; border:1px solid #2b2f3a; border-radius:10px;
-      background:#15181b; color:#fff; place-items:center; cursor:pointer}
-    .menu-btn svg{width:20px; height:20px}
+    /* ===== Fast Grid (cards) ===== */
+    .grid{margin:18px 0;display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:grid}
+    .media{aspect-ratio:16/10;background:#0b0e13}
+    .media>img{width:100%;height:100%;object-fit:cover;filter:saturate(1.03)}
+    .body{padding:12px}
+    .eyebrow{color:#b7becc;font-size:.86rem;margin:0}
+    .title{margin:4px 0 6px;font-size:1.06rem;color:#ffe1b0}
+    .bullets{margin:0 0 8px 18px;color:#d0d7e0;line-height:1.55}
+    .meta{display:flex;justify-content:space-between;align-items:center;color:#c2c8d1;font-size:.92rem}
+    .stars{color:#ffd98a;font-weight:900;letter-spacing:.5px}
+    .cta{display:inline-block;margin-top:10px;padding:10px 12px;border-radius:12px;border:2px solid #343c46;
+      background:linear-gradient(180deg,var(--cta),var(--cta2));color:#121315;font-weight:900}
 
-    @media (max-width:820px){
-      .site-header .wrap{grid-template-columns:auto auto auto}
-      .tagline{display:none}
-      nav.primary{display:none; position:fixed; inset:auto 12px 12px 12px; background:var(--panel);
-        border:1px solid #2b2f3a; border-radius:14px; padding:10px; flex-direction:column; gap:6px;
-        box-shadow:0 20px 40px rgba(0,0,0,.45)}
-      nav.primary.open{display:flex}
-      .menu-btn{display:grid}
-    }
+    /* ===== Mini sections ===== */
+    .section-head{display:flex;justify-content:space-between;align-items:center;margin:6px 0 10px}
+    .section-head h2{margin:0;color:var(--hi);font-size:clamp(1.1rem,1.1vw + 1rem,1.6rem)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{padding:6px 10px;border-radius:999px;background:var(--chip);border:1px solid #2a303a;color:#d7dfe9;font-size:.86rem}
 
-    /* ===== Bio / Intro Block (NO second company heading) ===== */
-    .gg-bio{max-width:920px; margin:18px auto 10px; padding:0 14px}
-    .gg-bio__head{
-      text-align:center; padding:26px 12px 18px; border-radius:18px;
-      background: radial-gradient(1200px 260px at 50% -60px, rgba(255,138,40,.18), rgba(255,138,40,0) 60%),
-                  linear-gradient(180deg,#12141a,#0e1014);
-      border:1px solid var(--line); box-shadow:0 10px 34px rgba(0,0,0,.35);
-    }
-    .gg-bio__badge-img{
-      width:58px; height:58px; border-radius:14px; object-fit:cover; object-position:center;
-      border:1px solid var(--line); display:inline-block; margin-bottom:8px; filter:saturate(1.05) contrast(1.05);
-    }
-    /* subtitle only */
-    .gg-bio__tag{margin:0 auto 10px; color:var(--muted); font-size:clamp(14px,1.8vw,18px); letter-spacing:.3px}
-    .gg-bio__rule{width:min(520px,80%); height:1px; margin:12px auto 0; background:linear-gradient(90deg,transparent,#2f3540,transparent)}
-    .gg-bio__lede{margin:14px auto 10px; max-width:72ch; text-align:center; line-height:1.7; color:#dfe6f3}
-    .gg-bio__points{margin:14px auto 0; max-width:70ch; line-height:1.7; color:#d2dae7}
-    .gg-bio__points li{margin:6px 0}
+    /* ===== Footer ===== */
+    footer{margin:22px 0 28px;border-top:1px solid var(--line)}
+    .ft{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;color:#b7becc}
 
-    @media (max-width:560px){
-      .gg-bio__head{padding:22px 12px 16px; border-radius:16px}
-      .gg-bio__badge-img{width:50px; height:50px; border-radius:12px}
-      .gg-bio__lede{font-size:1rem}
-    }
-
-    /* CTA hover micro-interactions (kept) */
-    .tw-cta,.tab-cta,.shop-cta,.fp-cta,.gg-cta,.ou-cta,.qp-cta{
-      transition:transform .06s ease, box-shadow .06s ease;
-    }
-    .tw-cta:hover,.tab-cta:hover,.shop-cta:hover,.fp-cta:hover,.gg-cta:hover,.ou-cta:hover,.qp-cta:hover{
-      transform:translateY(-1px); box-shadow:0 6px 18px rgba(255,140,0,.25);
+    /* Motion off respect */
+    @media (prefers-reduced-motion:reduce){
+      .hero-cta{transition:none}
     }
   </style>
 </head>
-
 <body>
-  <!-- ===== Single Header with Brand ===== -->
-  <header class="site-header">
-    <div class="wrap">
+  <!-- ===== Header ===== -->
+  <header class="hdr">
+    <div class="wrap hdr-row">
       <div class="brand">
-        <a href="/" class="logo" aria-label="Grit Gear HQ home">Grit Gear HQ</a>
-        <span class="tagline">Built for the Rough Stuff • 25 Years Field-Tested</span>
+        <a class="logo" href="/">Grit Gear HQ</a>
+        <span class="tag">Built for the Rough Stuff • 25 Years Field-Tested</span>
       </div>
-
-      <div></div>
-
-      <button class="menu-btn" aria-label="Open menu" id="menuBtn" title="Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/>
-        </svg>
-      </button>
-      <nav class="primary" id="siteNav" aria-label="Primary">
+      <nav class="nav" aria-label="Primary">
         <a href="/blog.html">Blog</a>
         <a href="/gear.html">Gear</a>
         <a href="/field-guides.html">Field Guides</a>
         <a href="/about.html">About</a>
       </nav>
+      <button class="menu" id="menuBtn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </header>
 
-  <!-- ===== Bio / Intro (subtitle only, no second H1) ===== -->
-  <section class="gg-bio">
-    <header class="gg-bio__head" role="img" aria-label="Survival gear header">
-      <img class="gg-bio__badge-img" src="/images/how-to-choose-survival-gear-.jpeg"
-           alt="Survival gear header image" loading="lazy" decoding="async">
-      <p class="gg-bio__tag">Built for the rough stuff — 25 years field-tested.</p>
-      <div class="gg-bio__rule" aria-hidden="true"></div>
-    </header>
-
-    <p class="gg-bio__lede">
-      We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for
-      daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups,
-      small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.
-    </p>
-
-    <ul class="gg-bio__points">
-      <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
-      <li><strong>Smart loadouts:</strong> only the pieces that pull their weight.</li>
-      <li><strong>Legal &amp; transparent:</strong> hemp features are 21+ and COA-verified.</li>
-      <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
-    </ul>
-  </section>
-
-  <script>
-    // Mobile menu toggle
-    (function(){
-      const btn = document.getElementById('menuBtn');
-      const nav  = document.getElementById('siteNav');
-      if(!btn || !nav) return;
-      btn.addEventListener('click', ()=>{
-        const open = nav.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-
-    // CTA text mapping (kept from your site)
-    document.addEventListener('DOMContentLoaded', function(){
-      const map = [
-        { href:"226375066069", text:"Own the Warpath Bowie →", cls:".tw-cta" },
-        { href:"236281207985", text:"Carry the Skull Folder →", cls:".tw-cta" },
-        { href:"286423670948", text:"Mount This Rooftop Tent →", cls:".ou-cta" },
-        { href:"375582132759", text:"Equip This 13,500-lb Winch →", cls:".ou-cta" },
-        { href:"396302793768", text:"Warm Up — Get This Heater →", cls:".shop-cta" },
-        { href:"187037140543", text:"Multi-Fuel Heat — Shop Now →", cls:".shop-cta" },
-        { href:"197691660077", text:"Get the 3-Head Kit →", cls:".fp-cta" },
-        { href:"234159796659", text:"Upgrade Your Camp Shower →", cls:".fp-cta" },
-        { href:"175132576181", text:"Spark a Fire — Grab the Kit →", cls:".tab-cta" },
-        { href:"365794714749", text:"Cook Anywhere — Bundle Now →", cls:".tab-cta" },
-        { href:"356876389109", text:"Get the Bracelet Knife →", cls:".tab-cta" },
-        { href:"amzn.to", text:"Add Notebook to Cart →", cls:".gg-cta" },
-        { href:"collabs.shop", text:"Shop the Ultralight Tarp →", cls:".gg-cta" },
-        { href:"titan-survival-collab.html", text:"See the Collab & Save →", cls:".gg-cta" }
-      ];
-      map.forEach(({href,text,cls})=>{
-        document.querySelectorAll(`a${cls}[href*="${href}"]`).forEach(a=>a.textContent=text);
-      });
-      document.querySelectorAll('a[target="_blank"][rel*="sponsored"]').forEach(a=>{
-        a.setAttribute('aria-label', (a.getAttribute('aria-label') || a.textContent) + ' (opens in new tab)');
-      });
-    });
-  </script>
-</body>
-</html>\
-
-  <!-- ===== TITAN header ===== -->
-  <div class="titan-header" id="titanHeaderAd">
-    <div class="titan-bar">
-      <a class="titan-link" href="https://collabs.shop/rl5mw6" target="_blank" rel="noopener sponsored nofollow">
-        <span class="titan-img"><img id="titanSlide" src="/cordad1.jpg" alt="TITAN SurvivorCord – paracord with extras"></span>
-        <span>
-          <span class="titan-eyebrow">Featured Gear</span><br>
-          <span class="titan-title">TITAN SurvivorCord® — Paracord + Fishing Line, Snare Wire & Tinder</span>
-          <span class="titan-cta">Shop Now →</span>
-        </span>
-      </a>
-      <button class="titan-close" type="button" aria-label="Close banner" onclick="document.getElementById('titanHeaderAd').remove()">✕</button>
-    </div>
-  </div>
-  <script>
-    (function(){const imgs=["/cordad1.jpg","/cordad2.jpg","/cordad4.jpg"];const el=document.getElementById("titanSlide");let i=0;setInterval(()=>{i=(i+1)%imgs.length;el.src=imgs[i];},5000)})();
-  </script>
-
- <article class="about">
-  <h1>Grit Gear HQ</h1>
-  <div class="tag">Rough gear for rougher times</div>
-
-  <style>
-    .ad-link{display:block;border-radius:12px;overflow:hidden}
-    .ad-link:hover img{filter:brightness(1.06)}
-  </style>
-
-<!-- Grit Gear HQ • Centered Professional Header + Bio -->
-<section class="gg-bio">
-  <header class="gg-bio__head" role="banner" aria-label="Grit Gear HQ intro">
-    <span class="gg-bio__badge" aria-hidden="true">🏕️</span>
-    <h1 class="gg-bio__brand">Grit Gear HQ</h1>
-    <p class="gg-bio__tag">Built for the rough stuff.</p>
-    <div class="gg-bio__rule" aria-hidden="true"></div>
-  </header>
-
-  <p class="gg-bio__lede">
-    We’re fieldcraft nerds who break cheap gear so you don’t have to. Grit Gear HQ exists to cut the guesswork for
-    daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Expect honest write-ups,
-    small-format skills, and kits that survive wind, grit, and the occasional dumb mistake.
-  </p>
-
-  <ul class="gg-bio__points">
-    <li><strong>Real testing:</strong> cordage, shelter, power, carry.</li>
-    <li><strong>Smart loadouts:</strong> only the pieces that pull their weight.</li>
-    <li><strong>Legal &amp; transparent:</strong> hemp features are 21+ and COA-verified.</li>
-    <li><strong>Community first:</strong> we highlight veteran-owned brands and practical skills.</li>
-  </ul>
-</section>
-
-<style>
-  /* Container */
-  .gg-bio{
-    --ink:#e9ecf4; --muted:#b7becc; --line:#2b2f3a; --hi:#ff8a28;
-    max-width: 920px; margin: 18px auto 10px; padding: 0 14px; color: var(--ink);
-    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
-  }
-
-  /* Header (centered, elevated) */
-  .gg-bio__head{
-    text-align: center; padding: 26px 12px 18px; border-radius: 18px;
-    background: radial-gradient(1200px 260px at 50% -60px, rgba(255,138,40,.18), rgba(255,138,40,0) 60%),
-                linear-gradient(180deg,#12141a,#0e1014);
-    border: 1px solid var(--line); box-shadow: 0 10px 34px rgba(0,0,0,.35);
-  }
-  .gg-bio__badge{
-    display:inline-grid; place-items:center; width:58px; height:58px; margin-bottom:8px;
-    border-radius:14px; border:1px solid var(--line);
-    background:linear-gradient(180deg,#1a1d24,#14171d);
-    font-size:28px; filter: drop-shadow(0 6px 16px rgba(0,0,0,.35));
-  }
-  .gg-bio__brand{
-    margin: 4px 0 2px; font-size: clamp(26px, 4vw, 40px); line-height: 1.05; font-weight: 900;
-    letter-spacing: .2px;
-    background: linear-gradient(90deg,#ffffff,#ffe1c9,#ffd1a4,#ffffff);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .gg-bio__tag{
-    margin: 0 auto 10px; color: var(--muted); font-size: clamp(14px,1.8vw,18px);
-    letter-spacing: .3px;
-  }
-  .gg-bio__rule{
-    width:min(520px,80%); height:1px; margin: 12px auto 0;
-    background: linear-gradient(90deg,transparent,#2f3540,transparent);
-  }
-
-  /* Body text */
-  .gg-bio__lede{
-    margin:14px auto 10px; max-width: 72ch; text-align: center; line-height: 1.7; color:#dfe6f3;
-  }
-  .gg-bio__points{
-    margin:14px auto 0; max-width: 70ch; line-height:1.7; color:#d2dae7;
-  }
-  .gg-bio__points li{ margin: 6px 0; }
-
-  /* Mobile polish */
-  @media (max-width:560px){
-    .gg-bio__head{padding:22px 12px 16px;border-radius:16px}
-    .gg-bio__badge{width:50px;height:50px;font-size:24px;border-radius:12px}
-    .gg-bio__lede{font-size:1rem}
-  }
-</style>
-<!-- Clickbait-Style Thumbnail (compact, polished, cross-browser safe) -->
-<div class="gg-thumb">
-  <a class="gg-thumb__link" href="/ptsd-bud-prepper-field-guide.html" aria-label="Read the PTSD Prepper Field Guide">
-    <figure class="gg-thumb__frame">
-      <!-- Use the encoded PNG directly (no <source> so desktop can't pick a missing AVIF) -->
-      <img
-        src="/images/Screenshot_20250928-212932%20%281%29.png"
-        alt="PTSD field guide teaser — sunset patrol"
-        loading="lazy" decoding="async" width="1280" height="720"
-        style="width:100%;height:100%;object-fit:cover;filter:brightness(.72) contrast(1.08) saturate(1.04);transition:transform .35s ease,filter .35s ease;"
-      >
-
-      <figcaption class="gg-thumb__caption">PTSD Relief? The Low-Key Plant Preppers Miss</figcaption>
-      <span class="gg-thumb__badge">NEW</span>
-      <span class="gg-thumb__cta">READ NOW →</span>
-    </figure>
-  </a>
-</div>
-
-<style>
-  .gg-thumb{display:grid;place-items:center;margin:12px 0}
-  .gg-thumb__link{text-decoration:none}
-  .gg-thumb__frame{
-    position:relative;margin:0;width:min(380px,92vw);aspect-ratio:16/9;border-radius:16px;overflow:hidden;
-    border:1px solid #2b2f3a;background:#0f1115;box-shadow:0 10px 30px rgba(0,0,0,.35);transform:translateZ(0)
-  }
-  .gg-thumb__frame::before,
-  .gg-thumb__frame::after{content:"";position:absolute;inset:0;pointer-events:none}
-  .gg-thumb__frame::before{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 95%)}
-  .gg-thumb__frame::after{
-    opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'>\
-<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter>\
-<rect width='140' height='140' filter='url(%23n)' opacity='0.07'/></svg>")
-  }
-  .gg-thumb__caption{
-    position:absolute;left:12px;right:12px;bottom:34px;color:#e9f1ff;
-    font:700 clamp(.95rem,2.2vw,1.05rem)/1.25 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
-    text-shadow:0 3px 14px rgba(0,0,0,.55)
-  }
-  .gg-thumb__badge{
-    position:absolute;top:10px;left:10px;font:800 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
-    color:#081014;background:linear-gradient(180deg,#18f0b4,#0acb92);padding:6px 8px;border-radius:10px;border:1px solid #1c5;
-    box-shadow:0 6px 18px rgba(10,203,146,.35)
-  }
-  .gg-thumb__cta{
-    position:absolute;right:10px;bottom:10px;font:900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
-    color:#101214;background:linear-gradient(90deg,#ff6a00,#ffa000,#ff6a00);padding:8px 10px;border-radius:999px;
-    box-shadow:0 8px 22px rgba(255,106,0,.32)
-  }
-  .gg-thumb__link:hover img{transform:scale(1.03);filter:brightness(.78) contrast(1.1) saturate(1.06)}
-  .gg-thumb__link:hover .gg-thumb__cta{filter:brightness(1.05)}
-</style>
-
-
-  <!-- Responsive Mess Kit CTA (mobile-friendly) -->
-<div data-cta="messkit" class="cta-card">
-  <img class="thumb" src="/images/messkit-chili.jpg" alt="Compact 13-Piece Mess Kit">
-  <div class="copy">
-    <h3>Compact 13-Piece Mess Kit</h3>
-    <p>Field-tested 10+ years • Bug-out ready • Easy-clean soot</p>
-    <div class="social">⭐️⭐️⭐️⭐️⭐️ 1K+ happy campers</div>
-  </div>
-  <a class="btn" href="/mess-kit.html">🛒 Read the Full Review</a>
-</div>
-
-<style>
-  /* base card */
-  .cta-card{
-    max-width:600px;margin:20px 0;padding:16px;border-radius:14px;
-    background:linear-gradient(135deg,#15181b 0%,#1b2026 60%,#111418 100%);
-    border:1px solid #2c3239;
-    display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;
-  }
-  .cta-card .thumb{width:72px;height:72px;object-fit:cover;border-radius:12px;border:1px solid #2b3239}
-  .cta-card h3{margin:0 0 4px;font-size:1.05rem;line-height:1.2}
-  .cta-card p{margin:0;color:#b8c3ce;font-size:.9rem;line-height:1.4}
-  .cta-card .social{margin-top:6px;color:#dfe8f5;font-size:.85rem}
-  .cta-card .btn{
-    display:inline-flex;align-items:center;gap:8px;font-weight:800;
-    background:linear-gradient(90deg,#09a66d,#35d29a,#09a66d);background-size:200% 100%;
-    padding:12px 16px;border-radius:12px;color:#081014;text-decoration:none;
-    box-shadow:0 6px 20px rgba(9,166,109,.25);animation:shimmer 2.5s linear infinite; white-space:nowrap;
-  }
-
-  /* fix for small screens: stack the button on its own row and keep text wide */
-  @media (max-width: 600px){
-    .cta-card{grid-template-columns:56px 1fr}
-    .cta-card .thumb{width:56px;height:56px}
-    .cta-card .btn{grid-column:1 / -1;justify-content:center;width:100%;white-space:normal;text-align:center}
-  }
-
-  @keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
-</style>
-
-  </div>
-
-  <!-- Keyframes (used by both shimmering buttons) -->
-  <style>
-    @keyframes shimmer { 0% {background-position:0% 50%} 100% {background-position:200% 50%} }
-  </style>
-</section>
-<!-- ===== END: GGHQ Body Section ===== -->
-
-  <!-- ============== TWO KNIVES SIDE-BY-SIDE (CLEAN DROP-IN) ============== -->
-<section class="twins" aria-label="Featured knives">
-  <!-- ========== CARD A: Warpath Bowie (blacked) ========== -->
-  <article class="tw-card">
-    <header class="tw-head">
-      <h3 class="tw-title">Warpath Bowie — Blacked Carbon Steel</h3>
-      <span class="tw-pill">Backcountry Pick</span>
-    </header>
-
-    <figure class="tw-figure">
-      <img id="knifeA-img" alt="Warpath Bowie blacked bowie knife"
-           src="/$_57%20(7).jfif"
-           onerror="this.onerror=null;this.src='/$_57%20(6).jfif';">
-      <button class="tw-nav prev" aria-label="Previous image" data-target="knifeA">‹</button>
-      <button class="tw-nav next" aria-label="Next image" data-target="knifeA">›</button>
-      <div class="tw-dots" id="knifeA-dots"></div>
-    </figure>
-
-    <ul class="tw-bullets">
-      <li>Full-tang, blacked carbon steel blade.</li>
-      <li>Guarded handle with stacked-leather accent.</li>
-      <li>Made for batoning, camp prep, and chores.</li>
-      <li>Built to be sharpened, not shelved.</li>
-    </ul>
-
-    <div class="tw-meta">
-      <div class="tw-stars" aria-label="Rated 4.7 out of 5">★★★★★ <span>4.7 (132)</span></div>
-      <div class="tw-urgency">🔥 27 sold this week • Low stock</div>
-    </div>
-
-    <a class="tw-cta"
-       href="https://www.ebay.com/itm/226375066069?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">Add to kit →</a>
-  </article>
-
-  <!-- ========== CARD B: Skull Inlay Traditional Folder ========== -->
-  <article class="tw-card">
-    <header class="tw-head">
-      <h3 class="tw-title">Skull-Inlay Traditional Folder (Sheepsfoot)</h3>
-      <span class="tw-pill tw-pill--green">Everyday Carry</span>
-    </header>
-
-    <figure class="tw-figure">
-      <img id="knifeSkull-img" alt="Skull inlay pocket knife, sheepsfoot blade"
-           src="/skullknife2.jpg"
-           onerror="this.onerror=null;this.src='/skullknife1.jpg';">
-      <button class="tw-nav prev" aria-label="Previous image" data-target="knifeSkull">‹</button>
-      <button class="tw-nav next" aria-label="Next image" data-target="knifeSkull">›</button>
-      <div class="tw-dots" id="knifeSkull-dots"></div>
-    </figure>
-
-    <ul class="tw-bullets">
-      <li>Clean sheepsfoot profile for precise control.</li>
-      <li>Signature skull shield—subtle attitude, classic lines.</li>
-      <li>Bolsters & pins with premium walk-and-talk.</li>
-      <li>Pocket-friendly, gift-ready, field-approved.</li>
-    </ul>
-
-    <div class="tw-meta">
-      <div class="tw-stars" aria-label="Rated 4.8 out of 5">★★★★★ <span>4.8 (210+)</span></div>
-      <div class="tw-urgency">⏳ Popular drop • Moving fast</div>
-    </div>
-
-    <a class="tw-cta"
-       href="https://www.ebay.com/itm/236281207985?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">Pick your handle →</a>
-  </article>
-</section>
-
-<!-- ============== NEW ROW UNDERNEATH: Pocket Woodcarver + RoseCraft Jack ============== -->
-<section class="twins" aria-label="Pocket Woodcarver and RoseCraft Jack" style="margin-top:16px">
-  <!-- === Card A: Pocket Woodcarver (mini fixed with wood sheath) === -->
-  <article class="tw-card">
-    <header class="tw-head">
-      <h3 class="tw-title">Pocket Woodcarver — Micro Fixed Blade</h3>
-      <span class="tw-pill">EDC Craft</span>
-    </header>
-
-    <figure class="tw-figure">
-      <img id="carver-img" alt="Mini fixed-blade with matching wooden sheath"
-           src="/s-l1600%20(13).jpg"
-           onerror="this.onerror=null;this.src='/%24_57%20(10).jfif';">
-      <button class="tw-nav prev" aria-label="Previous image" data-target="carver">‹</button>
-      <button class="tw-nav next" aria-label="Next image" data-target="carver">›</button>
-      <div class="tw-dots" id="carver-dots"></div>
-    </figure>
-
-    <ul class="tw-bullets">
-      <li>Compact carving blade—zip ties, packages, tinder, tags.</li>
-      <li>Matching hardwood sheath with lanyard hole.</li>
-      <li>Curved handle fills the grip; easy control.</li>
-      <li>Pocketable gift that actually gets used.</li>
-    </ul>
-
-    <div class="tw-meta">
-      <div class="tw-stars" aria-label="Rated 4.7 out of 5">★★★★★ <span>4.7 (300+)</span></div>
-      <div class="tw-urgency">⚡ Daily-driver utility • Great stocking stuffer</div>
-    </div>
-
-    <a class="tw-cta"
-       href="https://www.ebay.com/itm/315930343136?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">Grab the Pocket Woodcarver →</a>
-  </article>
-
-  <!-- === Card B: RoseCraft Modern Jack (spade shield) === -->
-  <article class="tw-card">
-    <header class="tw-head">
-      <h3 class="tw-title">RoseCraft Modern Jack — Spade Shield</h3>
-      <span class="tw-pill tw-pill--green">Everyday Carry</span>
-    </header>
-
-    <figure class="tw-figure">
-      <img id="rose-img" alt="RoseCraft jack knife with spade shield and satin blade"
-           src="/s-l1600%20(14).jpg"
-           onerror="this.onerror=null;this.src='/%24_12.jfif';">
-      <button class="tw-nav prev" aria-label="Previous image" data-target="rose">‹</button>
-      <button class="tw-nav next" aria-label="Next image" data-target="rose">›</button>
-      <div class="tw-dots" id="rose-dots"></div>
-    </figure>
-
-    <ul class="tw-bullets">
-      <li>Satin spear-point with long pull—slice, pierce, and detail.</li>
-      <li>Polished bolsters, flush fit, crisp walk-and-talk.</li>
-      <li>Blue scales with spade inlay—classy without being loud.</li>
-      <li>Great pocket companion—office to camp.</li>
-    </ul>
-
-    <div class="tw-meta">
-      <div class="tw-stars" aria-label="Rated 4.8 out of 5">★★★★★ <span>4.8 (190+)</span></div>
-      <div class="tw-urgency">⏳ Limited drop • Ships from the US</div>
-    </div>
-
-    <a class="tw-cta"
-       href="https://www.ebay.com/itm/364931067827?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">Claim the RoseCraft Deal →</a>
-  </article>
-</section>
-
-<script>
-  /* Rotators for the new UNDERNEATH row only (carver + rose) */
-  const miniGalleries = {
-    carver: ["/s-l1600%20(13).jpg","/%24_57%20(10).jfif"],
-    rose:   ["/s-l1600%20(14).jpg","/%24_12.jfif"]
-  };
-
-  Object.keys(miniGalleries).forEach(key=>{
-    const img = document.getElementById(key + "-img");
-    const dotsWrap = document.getElementById(key + "-dots");
-    if(!img || !dotsWrap) return;
-
-    let i = 0;
-    miniGalleries[key].forEach((_, idx)=>{
-      const b = document.createElement("button");
-      b.setAttribute("aria-label","Show image " + (idx+1));
-      if(idx===0) b.setAttribute("aria-current","true");
-      b.addEventListener("click",()=>go(idx));
-      dotsWrap.appendChild(b);
-    });
-    const dots = [...dotsWrap.children];
-
-    function go(n){
-      i = (n + miniGalleries[key].length) % miniGalleries[key].length;
-      img.src = miniGalleries[key][i];
-      dots.forEach(d=>d.removeAttribute("aria-current"));
-      dots[i].setAttribute("aria-current","true");
-    }
-    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn=>{
-      btn.addEventListener("click", ()=> go(i + (btn.classList.contains('next') ? 1 : -1)));
-    });
-    setInterval(()=>go(i+1), 4500);
-  });
-</script>
-
-<!-- ========== STYLES (scoped) ========== -->
-<style>
-  /* layout */
-  .twins{
-    max-width:980px;
-    margin:18px auto;
-    padding:0 12px;
-    display:grid;
-    gap:16px;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    align-items:stretch;
-  }
-  @media (max-width:760px){ .twins{ grid-template-columns:1fr; } }
-
-  /* card */
-  .tw-card{
-    background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid #262626;border-radius:18px;padding:14px;
-    color:#e9ecef;box-shadow:0 14px 34px rgba(0,0,0,.45);
-    display:grid;gap:10px
-  }
-  .tw-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
-  .tw-title{margin:0;font-size:clamp(1.05rem,1vw + .9rem,1.35rem)}
-  .tw-pill{font-weight:900;font-size:.78rem;padding:6px 10px;border-radius:999px;
-           background:#201f16;border:1px solid #2f2a16;color:#ffcc66;white-space:nowrap}
-  .tw-pill--green{background:#0f1a12;border-color:#224233;color:#9fe6c3}
-
-  /* media */
-  .tw-figure{position:relative;margin:0;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b;background:#0c0c0c}
-  .tw-figure img{display:block;width:100%;height:280px;object-fit:cover}
-  .tw-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);color:#fff;border:1px solid #333;width:34px;height:34px;border-radius:10px;cursor:pointer}
-  .tw-nav.prev{left:8px} .tw-nav.next{right:8px}
-  .tw-dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center}
-  .tw-dots button{width:8px;height:8px;border-radius:50%;border:1px solid #555;background:#222}
-  .tw-dots button[aria-current="true"]{background:#ffa500;border-color:#ffa500}
-
-  /* body */
-  .tw-bullets{margin:0;padding:0 0 0 18px;line-height:1.55;color:#cfd7df}
-  .tw-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#aab3bb}
-  .tw-stars{font-weight:900;color:#ffd98a}
-  .tw-stars span{font-weight:600;color:#c3cbd4;margin-left:6px}
-  .tw-urgency{font-size:.92rem;color:#ffb977}
-  .tw-cta{display:inline-block;text-align:center;margin-top:2px;font-weight:900;padding:12px 16px;border-radius:12px;border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none}
-  .tw-cta:hover{filter:brightness(1.05)}
-</style>
-
-<!-- ========== JS: tiny image rotators ========== -->
-<script>
-  const galleries = {
-    knifeA: ["/$_57%20(7).jfif","/$_57%20(6).jfif","/s-l1600%20(11).jpg"],
-    knifeSkull: ["/skullknife2.jpg","/skullknife1.jpg","/skullknife.jpg"]
-  };
-
-  Object.keys(galleries).forEach(key=>{
-    const img = document.getElementById(key + "-img");
-    const dotsWrap = document.getElementById(key + "-dots");
-    if(!img || !dotsWrap) return;
-    let i = 0;
-
-    // build dots
-    dotsWrap.innerHTML = "";
-    galleries[key].forEach((_, idx)=>{
-      const b = document.createElement("button");
-      b.setAttribute("aria-label","Show image " + (idx+1));
-      if(idx===0) b.setAttribute("aria-current","true");
-      b.addEventListener("click",()=>go(idx,true));
-      dotsWrap.appendChild(b);
-    });
-    const dots = [...dotsWrap.children];
-
-    function paint(){
-      img.src = galleries[key][i];
-      dots.forEach(d=>d.removeAttribute("aria-current"));
-      dots[i]?.setAttribute("aria-current","true");
-    }
-    function go(n, pause){
-      i = (n + galleries[key].length) % galleries[key].length;
-      paint();
-      if(pause){ restart(); }
-    }
-
-    // prev/next
-    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn=>{
-      btn.addEventListener("click", ()=> go(i + (btn.classList.contains('next') ? 1 : -1), true));
-    });
-
-    // autorotate
-    let t; function restart(){ clearInterval(t); t=setInterval(()=>go(i+1,false), 4500); }
-    paint(); restart();
-
-    // graceful 404 skip
-    img.addEventListener('error', ()=>{
-      galleries[key].splice(i,1);
-      if(!galleries[key].length){ img.style.display='none'; clearInterval(t); return; }
-      i=0; paint(); restart();
-    });
-  });
-</script>
-
-<style>
-  /* layout */
-  .twins{
-    max-width:980px;
-    margin:18px auto;
-    padding:0 12px;
-    display:grid;
-    gap:16px;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    align-items:stretch;
-  }
-  @media (max-width:760px){ .twins{ grid-template-columns:1fr; } }
-
-  /* card */
-  .tw-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-           border:1px solid #262626;border-radius:18px;padding:14px;
-           color:#e9ecef;box-shadow:0 14px 34px rgba(0,0,0,.45);display:grid;gap:10px}
-  .tw-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
-  .tw-title{margin:0;font-size:clamp(1.05rem,1vw + .9rem,1.35rem)}
-  .tw-pill{font-weight:900;font-size:.78rem;padding:6px 10px;border-radius:999px;
-           background:#201f16;border:1px solid #2f2a16;color:#ffcc66;white-space:nowrap}
-  .tw-pill--green{background:#0f1a12;border-color:#224233;color:#9fe6c3}
-
-  /* media */
-  .tw-figure{position:relative;margin:0;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b;background:#0c0c0c}
-  .tw-figure img{display:block;width:100%;height:280px;object-fit:cover}
-  .tw-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);color:#fff;border:1px solid #333;width:34px;height:34px;border-radius:10px;cursor:pointer}
-  .tw-nav.prev{left:8px} .tw-nav.next{right:8px}
-  .tw-dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center}
-  .tw-dots button{width:8px;height:8px;border-radius:50%;border:1px solid #555;background:#222}
-  .tw-dots button[aria-current="true"]{background:#ffa500;border-color:#ffa500}
-
-  /* body */
-  .tw-bullets{margin:0;padding:0 0 0 18px;line-height:1.55;color:#cfd7df}
-  .tw-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#aab3bb}
-  .tw-stars{font-weight:900;color:#ffd98a}
-  .tw-stars span{font-weight:600;color:#c3cbd4;margin-left:6px}
-  .tw-urgency{font-size:.92rem;color:#ffb977}
-  .tw-cta{display:inline-block;text-align:center;margin-top:2px;font-weight:900;padding:12px 16px;border-radius:12px;border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none}
-  .tw-cta:hover{filter:brightness(1.05)}
-</style>
-
-<script>
-  /* Simple rotators for each card (optional) */
-  const galleries = {
-    knifeA: ["/$_57%20(7).jfif","/$_57%20(6).jfif","/s-l1600%20(11).jpg"],
-    knifeSkull: ["/skullknife2.jpg","/skullknife1.jpg","/skullknife.jpg"]
-  };
-
-  Object.keys(galleries).forEach(key=>{
-    const img = document.getElementById(key + "-img");
-    const dotsWrap = document.getElementById(key + "-dots");
-    if(!img || !dotsWrap) return;
-    let i = 0;
-
-    galleries[key].forEach((_, idx)=>{
-      const b = document.createElement("button");
-      b.setAttribute("aria-label","Show image " + (idx+1));
-      if(idx===0) b.setAttribute("aria-current","true");
-      b.addEventListener("click",()=>go(idx));
-      dotsWrap.appendChild(b);
-    });
-    const dots = [...dotsWrap.children];
-
-    function go(n){
-      i = (n + galleries[key].length) % galleries[key].length;
-      img.src = galleries[key][i];
-      dots.forEach(d=>d.removeAttribute("aria-current"));
-      dots[i].setAttribute("aria-current","true");
-    }
-    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn=>{
-      btn.addEventListener("click", ()=> go(i + (btn.classList.contains('next') ? 1 : -1)));
-    });
-    setInterval(()=>go(i+1), 4500);
-  });
-</script>
-
-</section>
-
-<script>
-  // Rotators: Warpath (A) and Skull Folder
-  const galleries = {
-    knifeA: [
-      "/$_57%20(7).jfif",
-      "/$_57%20(6).jfif",
-      "/s-l1600%20(11).jpg"
-    ],
-    knifeSkull: [
-      "/skullknife2.jpg",
-      "/skullknife1.jpg",
-      "/skullknife.jpg"
-    ]
-  };
-
-  for (const key of Object.keys(galleries)) {
-    const img = document.getElementById(key + "-img");
-    const dotsWrap = document.getElementById(key + "-dots");
-    if (!img || !dotsWrap) continue;
-
-    let i = 0;
-    // build dots
-    galleries[key].forEach((_, idx) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.setAttribute("aria-label", "Show image " + (idx + 1));
-      if (idx === 0) b.setAttribute("aria-current", "true");
-      b.addEventListener("click", () => go(idx));
-      dotsWrap.appendChild(b);
-    });
-    const dots = [...dotsWrap.children];
-
-    function paint() {
-      img.src = galleries[key][i];
-      dots.forEach((d, di) => d.toggleAttribute("aria-current", di === i));
-    }
-    function go(n) {
-      i = (n + galleries[key].length) % galleries[key].length;
-      paint();
-    }
-
-    // prev/next buttons
-    document.querySelectorAll(`.tw-nav[data-target="${key}"]`).forEach(btn => {
-      btn.addEventListener("click", () => go(i + (btn.classList.contains("next") ? 1 : -1)));
-    });
-
-    // start + auto-rotate
-    paint();
-    setInterval(() => go(i + 1), 4500);
-
-    // skip broken images gracefully
-    img.addEventListener("error", () => {
-      galleries[key].splice(i, 1);
-      if (!galleries[key].length) { img.style.display = "none"; return; }
-      i = 0; paint();
-    });
-  }
-</script>
-
-<style>
-  /* --- layout --- */
-  .twins{max-width:980px;margin:18px auto;padding:0 12px;
-         display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
-  @media (max-width:760px){.twins{grid-template-columns:1fr}}
-
-  /* --- card --- */
-  .tw-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-           border:1px solid #262626;border-radius:18px;padding:14px;
-           color:#e9ecef;box-shadow:0 14px 34px rgba(0,0,0,.45);display:grid;gap:10px}
-  .tw-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
-  .tw-title{margin:0;font-size:clamp(1.05rem,1vw + .9rem,1.35rem)}
-  .tw-pill{font-weight:900;font-size:.78rem;padding:6px 10px;border-radius:999px;
-           background:#201f16;border:1px solid #2f2a16;color:#ffcc66;white-space:nowrap}
-  .tw-pill--green{background:#0f1a12;border-color:#224233;color:#9fe6c3}
-
-  /* --- media --- */
-  .tw-figure{position:relative;margin:0;border-radius:12px;overflow:hidden;
-             border:1px solid #2b2b2b;background:#0c0c0c}
-  .tw-figure img{display:block;width:100%;height:280px;object-fit:cover}
-  .tw-nav{position:absolute;top:50%;transform:translateY(-50%);
-          background:rgba(0,0,0,.5);color:#fff;border:1px solid #333;
-          width:34px;height:34px;border-radius:10px;cursor:pointer}
-  .tw-nav.prev{left:8px} .tw-nav.next{right:8px}
-  .tw-dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center}
-  .tw-dots button{width:8px;height:8px;border-radius:50%;border:1px solid #555;background:#222}
-  .tw-dots button[aria-current="true"]{background:#ffa500;border-color:#ffa500}
-
-  /* --- body --- */
-  .tw-bullets{margin:0;padding:0 0 0 18px;line-height:1.55;color:#cfd7df}
-  .tw-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#aab3bb}
-  .tw-stars{font-weight:900;color:#ffd98a}
-  .tw-stars span{font-weight:600;color:#c3cbd4;margin-left:6px}
-  .tw-urgency{font-size:.92rem;color:#ffb977}
-
-  .tw-cta{display:inline-block;text-align:center;margin-top:2px;
-          font-weight:900;padding:12px 16px;border-radius:12px;border:2px solid #333;
-          background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none}
-  .tw-cta:hover{filter:brightness(1.05)}
-</style>
-<!-- ============== /TWO-UP: Warpath Bowie + Skull Inlay Folder ============== -->
-
-</div>
-       
-     <!-- =============== FEATURED: Fire Kit + Cook Set, plus Heaters (neatly grouped) =============== -->
-<section id="featured-pairs" aria-label="Featured essentials">
-  <!-- Optional section header -->
-  <header class="fpairs-head">
-    <h2>Trail Essentials & Cold-Weather Picks</h2>
-    <p>Pack smart, cook fast, and keep warm. Two tidy rows that stack on phones.</p>
-  </header>
-
-  <!-- ========== Row 1: Fire Kit + Cook Set (side-by-side) ========== -->
-  <section class="fpairs-grid">
-    <!-- Uncle Tommy’s Fire Starten Kit -->
-    <article class="tab-card" aria-label="Uncle Tommy's Fire Starten Combo Kit">
-      <header class="tab-head">
-        <h3 class="tab-title">Uncle Tommy’s Fire Starten Kit</h3>
-        <span class="tab-pill">EDC Fire</span>
-      </header>
-
-      <figure class="tab-media">
-        <img src="/uncletommy.jpg" alt="Uncle Tommy’s Stuff — Fire Starten Combo Kit with matches, striker, and fire discs">
-      </figure>
-
-      <div class="tab-body">
-        <ul class="tab-bullets">
-          <li>25 large waterproof matches + striker</li>
-          <li>4 sawdust-infused, waterproof fire discs</li>
-          <li>Pocket tin: toss in pack, glove box, or kit</li>
-          <li>Lights easy, burns hot with strong split</li>
-        </ul>
-        <a class="tab-cta"
-           href="https://www.ebay.com/itm/175132576181?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1dxU8LoGZ15e69wiRtDrf7ryrwSy%2Btrco5WCCEsJ98I6MhSsSZjFCu14kFEAqulT82WD%2FhTOIsTKzZb0OHvXabNl%2FzmAWMciU75KQHsaJpy%2FXYQmKH1dvLWzyab%2BjZyZKfiH%2FiuHNrkbeJaucP5I%2BNmSZmhiG8NFGmQJL7%2FgU7ivpYhG%2F93hrjOMH%2BYpcvxJIY%3D"
-           target="_blank" rel="nofollow sponsored noopener">
-          Add fire-start to cart →
-        </a>
-      </div>
-    </article>
-
-    <!-- Compact Backpacking Cook Set (rotator) -->
-    <article class="tab-card" aria-label="Outdoor Cook Set">
-      <header class="tab-head">
-        <h3 class="tab-title">Compact Backpacking Cook Set</h3>
-        <span class="tab-pill">New</span>
-      </header>
-
-      <figure class="tab-media">
-        <img id="cookTabSlide" src="/outdoorp1.jpg" alt="Backpacking cook set — pots, burner, utensils">
-        <button class="tab-nav prev" type="button" aria-label="Previous image">‹</button>
-        <button class="tab-nav next" type="button" aria-label="Next image">›</button>
-        <div class="tab-dots" id="cookTabDots" role="tablist" aria-label="Cook set images"></div>
-      </figure>
-
-      <div class="tab-body">
-        <ul class="tab-bullets">
-          <li>Nested pots + pan with foldable handles</li>
-          <li>Ultralight gas burner (case included)</li>
-          <li>Bowls, utensils, rice paddle, loofah, carabiner</li>
-          <li>Packs small — daypack or bug-out ready</li>
-        </ul>
-        <a class="tab-cta"
-           href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-           target="_blank" rel="nofollow sponsored noopener">
-          Cook kit listing →
-        </a>
-      </div>
-    </article>
-  </section>
-
-  <!-- ========== Row 2: Two Heaters (side-by-side) ========== -->
-  <section class="shop-row" aria-label="Featured deals">
-    <!-- Portable Gas Heater / Warmer -->
-    <article class="shop-card" data-rot="true" data-images='["/%24_57.jfif","/%24_57%20(2).jfif"]'>
-      <figure class="shop-media">
-        <img alt="Compact portable gas heater for heating, cooking and heat preservation"
-             loading="lazy" src="/%24_57.jfif"
-             onerror="this.src='/fallback-heater.jpg'">
-        <div class="shop-nav" aria-hidden="true">
-          <span class="shop-dot active"></span><span class="shop-dot"></span>
-        </div>
-      </figure>
-      <div class="shop-body">
-        <div class="shop-head">
-          <h3 class="shop-title">Portable Gas Heater &amp; Warmer</h3>
-          <span class="shop-badge">Selling fast</span>
-        </div>
-        <ul class="shop-bullets">
-          <li>3-zone top: heat, cook, keep-warm</li>
-          <li>Carry handle • adjustable output</li>
-          <li>Compact for tents, ice shacks, outages</li>
-        </ul>
-        <div class="shop-rev">
-          <span class="shop-stars">★★★★☆</span>
-          <span>4.6 (1,240+ reviews)</span>
-        </div>
-        <div class="shop-urg">Low stock today — ships quick from US.</div>
-        <a class="shop-cta" target="_blank" rel="nofollow sponsored noopener"
-           href="https://www.ebay.com/itm/396302793768?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1">
-          See today’s price →
-        </a>
-      </div>
-    </article>
-
-    <!-- Multi-Fuel Tabletop Tent Heater -->
-    <article class="shop-card" data-rot="true" data-images='["/s-l1600%20(1).jpg","/%24_57%20(3).jfif"]'>
-      <figure class="shop-media">
-        <img alt="Orange multi-fuel tabletop tent heater with adjustable control"
-             loading="lazy" src="/s-l1600%20(1).jpg"
-             onerror="this.src='/fallback-heater2.jpg'">
-        <div class="shop-nav" aria-hidden="true">
-          <span class="shop-dot active"></span><span class="shop-dot"></span>
-        </div>
-      </figure>
-      <div class="shop-body">
-        <div class="shop-head">
-          <h3 class="shop-title">Multi-Fuel Tabletop Tent Heater</h3>
-          <span class="shop-badge">Hot pick</span>
-        </div>
-        <ul class="shop-bullets">
-          <li>Iso-butane, butane, or propane (adapters)</li>
-          <li>Dial control from simmer-warm to toasty</li>
-          <li>Great for camps, patios &amp; power outages</li>
-        </ul>
-        <div class="shop-rev">
-          <span class="shop-stars">★★★★★</span>
-          <span>4.8 (890+ reviews)</span>
-        </div>
-        <div class="shop-urg">Weekend promo active — don’t miss it.</div>
-        <a class="shop-cta" target="_blank" rel="nofollow sponsored noopener"
-           href="https://www.ebay.com/itm/187037140543?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1">
-          Grab the deal →
-        </a>
-      </div>
-    </article>
-  </section>
-</section>
-<!-- ============================== /FEATURED GROUP ============================== -->
-
-<!-- ========== SCOPED STYLES (kept tight so they don’t clash) ========== -->
-<style>
-  /* Wrapper & header */
-  #featured-pairs{max-width:980px;margin:24px auto;padding:0 12px;color:#e9ecef;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-  .fpairs-head{display:grid;gap:6px;margin:0 0 14px}
-  .fpairs-head h2{margin:0;color:#ffa500;font-size:clamp(1.2rem,1.1vw + 1rem,1.8rem)}
-  .fpairs-head p{margin:0;color:#aab3bb}
-
-  /* Row 1 grid */
-  #featured-pairs .fpairs-grid{
-    display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch
-  }
-  @media (max-width:720px){ #featured-pairs .fpairs-grid{ grid-template-columns:1fr; } }
-
-  /* Row 2 grid (heaters) */
-  #featured-pairs .shop-row{
-    display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:16px
-  }
-  @media (max-width:820px){ #featured-pairs .shop-row{ grid-template-columns:1fr; } }
-
-  /* Shared card look */
-  #featured-pairs .tab-card,
-  #featured-pairs .shop-card{
-    background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid #262626;border-radius:16px;
-    box-shadow:0 14px 34px rgba(0,0,0,.45);
-    display:grid;gap:12px;color:#e9ecef;padding:14px
-  }
-
-  /* Head */
-  #featured-pairs .tab-head,
-  #featured-pairs .shop-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
-  #featured-pairs .tab-title,
-  #featured-pairs .shop-title{margin:0;font-size:clamp(1.05rem,1vw + .9rem,1.35rem);color:#ffa500}
-  #featured-pairs .tab-pill,
-  #featured-pairs .shop-badge{font-size:.8rem;padding:4px 8px;border-radius:999px;font-weight:800;white-space:nowrap}
-  #featured-pairs .tab-pill{border:1px solid #2b2b2b;background:#101214;color:#ffd166}
-  #featured-pairs .shop-badge{background:#102112;border:1px solid #204a29;color:#97f2b2}
-
-  /* Media blocks */
-  #featured-pairs .tab-media,
-  #featured-pairs .shop-media{position:relative;margin:0;border-radius:12px;overflow:hidden;background:#0c0c0c;border:1px solid #2a2a2a}
-  #featured-pairs .tab-media{aspect-ratio:4/3}
-  #featured-pairs .shop-media{aspect-ratio:16/10}
-  #featured-pairs .tab-media img,
-  #featured-pairs .shop-media img{width:100%;height:100%;object-fit:cover;display:block}
-
-  /* Nav + dots for cook-set */
-  #featured-pairs .tab-nav{position:absolute;top:50%;transform:translateY(-50%);
-    background:rgba(0,0,0,.45);border:1px solid #333;color:#fff;width:36px;height:36px;border-radius:50%;
-    cursor:pointer;font-size:22px;line-height:32px;text-align:center}
-  #featured-pairs .tab-nav:hover{background:rgba(0,0,0,.65)}
-  #featured-pairs .tab-nav.prev{left:8px} 
-  #featured-pairs .tab-nav.next{right:8px}
-  #featured-pairs .tab-dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center}
-  #featured-pairs .tab-dots button{width:9px;height:9px;border-radius:50%;border:1px solid #999;background:#111;opacity:.75;cursor:pointer}
-  #featured-pairs .tab-dots button[aria-selected="true"]{background:#ffa500;border-color:#ffa500;opacity:1}
-
-  /* Lists & meta */
-  #featured-pairs .tab-body{display:grid;gap:10px}
-  #featured-pairs .tab-bullets,
-  #featured-pairs .shop-bullets{margin:0;padding-left:18px;color:#cfd7df;line-height:1.55}
-
-  /* Heaters: small UI */
-  #featured-pairs .shop-nav{position:absolute;inset:auto 8px 8px;display:flex;gap:6px}
-  #featured-pairs .shop-dot{width:8px;height:8px;border-radius:999px;background:#333;border:1px solid #555}
-  #featured-pairs .shop-dot.active{background:#ffa500;border-color:#ffb23c}
-  #featured-pairs .shop-body{padding:0 14px 14px}
-  #featured-pairs .shop-rev{display:flex;align-items:center;gap:8px;color:#d6dbdf;font-size:.95rem}
-  #featured-pairs .shop-stars{letter-spacing:1px;color:#ffcc66}
-  #featured-pairs .shop-urg{margin-top:8px;font-size:.88rem;color:#ffd59e}
-
-  /* CTAs */
-  #featured-pairs .tab-cta,
-  #featured-pairs .shop-cta{
-    display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;
-    background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none
-  }
-
-  @media (max-width:560px){
-    #featured-pairs .tab-card{padding:12px}
-    #featured-pairs .tab-nav{width:32px;height:32px;font-size:20px;line-height:28px}
-  }
-</style>
-
-<!-- ========== SCRIPTS: cook-set rotator + mini heater rotators ========== -->
-<script>
-  // Cook set image rotator (Row 1)
-  (function(){
-    const imgs = ["/outdoorp1.jpg","/outdoorp2.jpg","/outdoorp3.jpg","/outdoorp4.jpg","/outdoorp5.jpg","/outdoorp6.jpg","/outdoorp7.jpg"];
-    const el = document.getElementById("cookTabSlide");
-    const dotsWrap = document.getElementById("cookTabDots");
-    if(!el || !dotsWrap) return;
-
-    let i = 0, t;
-
-    // Build dots
-    imgs.forEach((_, idx) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.setAttribute("role","tab");
-      b.setAttribute("aria-label","Image "+(idx+1));
-      b.addEventListener("click", () => show(idx, true));
-      dotsWrap.appendChild(b);
-    });
-
-    function show(n, manual=false){
-      i = (n + imgs.length) % imgs.length;
-      el.src = imgs[i];
-      [...dotsWrap.children].forEach((d, k) => d.setAttribute("aria-selected", k===i));
-      if (manual) restart();
-    }
-    function next(){ show(i+1); }
-    function prev(){ show(i-1); }
-    function start(){ t = setInterval(next, 4000); }
-    function stop(){ clearInterval(t); }
-    function restart(){ stop(); start(); }
-
-    // Buttons (scoped to this figure)
-    const media = el.closest(".tab-media");
-    media.querySelector(".tab-nav.next").addEventListener("click", () => { next(); restart(); });
-    media.querySelector(".tab-nav.prev").addEventListener("click", () => { prev(); restart(); });
-
-    // Pause on hover/focus
-    media.addEventListener("mouseenter", stop);
-    media.addEventListener("mouseleave", start);
-    media.addEventListener("focusin", stop);
-    media.addEventListener("focusout", start);
-
-    // Basic touch swipe
-    let sx=0;
-    media.addEventListener("touchstart", e => sx = e.touches[0].clientX, {passive:true});
-    media.addEventListener("touchend", e => {
-      const dx = e.changedTouches[0].clientX - sx;
-      if (Math.abs(dx) > 40) { dx>0 ? prev() : next(); restart(); }
-    });
-
-    // Preload
-    imgs.slice(1).forEach(src => { const im = new Image(); im.src = src; });
-
-    show(0); start();
-  })();
-
-  // Mini rotators for heaters (Row 2)
-  (function(){
-    const cards=[...document.querySelectorAll('#featured-pairs .shop-card[data-rot]')];
-    cards.forEach(card=>{
-      const imgs=JSON.parse(card.getAttribute('data-images')||'[]');
-      const fig=card.querySelector('.shop-media img');
-      const dots=[...card.querySelectorAll('.shop-dot')];
-      let i=0, timer;
-
-      function go(n){
-        i=(n+imgs.length)%imgs.length;
-        if(fig){ fig.src=imgs[i]; }
-        dots.forEach((d,k)=>d.classList.toggle('active',k===i));
-      }
-      function play(){ timer=setInterval(()=>go(i+1), 3500); }
-      function stop(){ clearInterval(timer); }
-
-      if(imgs.length>1){ play(); }
-      card.addEventListener('mouseenter',stop);
-      card.addEventListener('mouseleave',play);
-      card.addEventListener('focusin',stop);
-      card.addEventListener('focusout',play);
-    });
-  })();
-</script>
-
-</section>
-
-<script>
-/* Tiny, shared rotator for any .shop-card[data-rot] */
-(function(){
-  const cards=[...document.querySelectorAll('.shop-card[data-rot]')];
-  cards.forEach(card=>{
-    const imgs=JSON.parse(card.getAttribute('data-images')||'[]');
-    const fig=card.querySelector('.shop-media img');
-    const dots=[...card.querySelectorAll('.shop-dot')];
-    let i=0, t;
-
-    function go(n){
-      i=(n+imgs.length)%imgs.length;
-      if(fig){ fig.src=imgs[i]; }
-      dots.forEach((d,k)=>d.classList.toggle('active',k===i));
-    }
-    function play(){ t=setInterval(()=>go(i+1), 4000); }
-    function stop(){ clearInterval(t); }
-
-    // start
-    if(imgs.length>1){ play(); }
-    // accessibility: pause on hover/focus
-    card.addEventListener('mouseenter',stop);
-    card.addEventListener('mouseleave',play);
-    card.addEventListener('focusin',stop);
-    card.addEventListener('focusout',play);
-  });
-})();
-</script>
-<!-- === /Side-by-side Featured Deals ===================================== -->
-
-   <div>    
-       
-  <!-- ===== FRONT-PAGE FEATURED: 2 cards side-by-side (responsive) ===== -->
-<section class="fp-grid" aria-label="Featured gear">
-  <!-- ===== Card A: Police and MP style taser with 3 disposable barb heads (carousel) ===== -->
-  <article class="fp-card" aria-label="Conductive self-defense device">
-    <header class="fp-head">
-      <h3 class="fp-title">Police and MP style taser with 3 disposable barb heads(3 heads)</h3>
-      <span class="fp-pill">Low stock</span>
-    </header>
-
-    <figure class="fp-media">
-      <img id="psg-slide" src="/psg.jpg" alt="Conductive self-defense device with 3 heads">
-      <button class="fp-nav prev" data-for="psg" aria-label="Previous image">‹</button>
-      <button class="fp-nav next" data-for="psg" aria-label="Next image">›</button>
-      <div class="fp-dots" id="psg-dots" role="tablist" aria-label="Image selector"></div>
-    </figure>
-
-    <div class="fp-body">
-      <div class="fp-stars" aria-label="Rating 4.7 out of 5">★★★★☆ <span>4.7 (213)</span></div>
-      <ul class="fp-bullets">
-        <li>Includes 3 replaceable heads + case</li>
-        <li>Integrated laser pointer & safety wrist lanyard</li>
-        <li>Ergonomic grip; quick cartridge swap</li>
-      </ul>
-      <a class="fp-cta"
-         href="https://www.ebay.com/itm/197691660077?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-         target="_blank" rel="nofollow sponsored noopener">
-        Check price →
-      </a>
-      <p class="fp-note">Know your local laws and carry/use responsibly.</p>
-    </div>
-  </article>
-
-  <!-- ===== Card B: 5-gal Solar Camp Shower (carousel) ===== -->
-  <article class="fp-card" aria-label="5-gallon solar camp shower">
-    <header class="fp-head">
-      <h3 class="fp-title">Solar Camp Shower (5-gal)</h3>
-      <span class="fp-pill hot">Trending</span>
-    </header>
-
-    <figure class="fp-media">
-      <img id="shower-slide" src="/shower1.jpg" alt="5-gallon solar shower bag with hose and shower head">
-      <button class="fp-nav prev" data-for="shower" aria-label="Previous image">‹</button>
-      <button class="fp-nav next" data-for="shower" aria-label="Next image">›</button>
-      <div class="fp-dots" id="shower-dots" role="tablist" aria-label="Image selector"></div>
-    </figure>
-
-    <div class="fp-body">
-      <div class="fp-stars" aria-label="Rating 4.6 out of 5">★★★★☆ <span>4.6 (168)</span></div>
-      <ul class="fp-bullets">
-        <li>Heats with sunlight—no power needed</li>
-        <li>Window pocket + on/off shower head</li>
-        <li>Great for camping, beach, off-grid rinses</li>
-      </ul>
-      <a class="fp-cta"
-         href="https://www.ebay.com/itm/234159796659?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1ebTfgRcZmYsgwpg0ZK15hl3ouha%2BThHnsX1ibwEnlaZk4Tsawe930zFH8jsVFjB771DiVeFepH%2FPJv7w9On3IEKLdI9G%2BQyAlatEtMLzDW4AKxu9BfkMpbk880C8pY9jxvmJsFSaIkqtzgCyXFvquC6BA9kDHql6gXjsORt%2B7fdqQA52uSxIZ6ekmqIz7m9fo%3D"
-         target="_blank" rel="nofollow sponsored noopener">
-        See colors & deal →
-      </a>
-      <p class="fp-note">Weekend promo: popular colors move fast.</p>
-    </div>
-  </article>
-</section>
-
-<style>
-  .fp-grid{max-width:980px;margin:20px auto;padding:0 12px;
-    display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
-  @media(max-width:760px){.fp-grid{grid-template-columns:1fr}}
-
-  .fp-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid #262626;border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.45);
-    color:#e9ecef;display:grid;gap:12px;padding:14px}
-  .fp-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
-  .fp-title{margin:0;font-size:clamp(1.05rem,1vw + .8rem,1.35rem);color:#ffa500}
-  .fp-pill{border:1px solid #2b2b2b;border-radius:999px;padding:4px 10px;font-weight:800;color:#ffe9b2;background:#101214}
-  .fp-pill.hot{color:#ffd2a6}
-  .fp-media{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#0c0c0c;border:1px solid #2a2a2a}
-  .fp-media img{width:100%;height:100%;object-fit:cover;display:block}
-  .fp-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(17,17,17,.7);
-    color:#fff;border:1px solid #333;border-radius:10px;padding:6px 10px;cursor:pointer}
-  .fp-nav.prev{left:8px} .fp-nav.next{right:8px}
-  .fp-dots{position:absolute;left:0;right:0;bottom:6px;display:flex;gap:6px;justify-content:center}
-  .fp-dots button{width:8px;height:8px;border-radius:999px;border:1px solid #444;background:#161616;opacity:.75}
-  .fp-dots button[aria-current="true"]{background:#ffa500;opacity:1}
-  .fp-body{display:grid;gap:8px}
-  .fp-stars{font-weight:800;color:#ffd28a} .fp-stars span{color:#aab3bb;font-weight:600;margin-left:6px}
-  .fp-bullets{margin:0;padding:0 0 0 18px;color:#cfd7df;line-height:1.55}
-  .fp-cta{display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;
-    background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;text-decoration:none}
-  .fp-note{margin:0;color:#9aa0a6;font-size:.85rem}
-</style>
-
-<script>
-  // --- Mini carousels: add image lists here ---
-  const carousels = {
-    psg: ["/psg.jpg","/psg1.jpg","/psg2.jpg","/psg3.jpg","/psg.jpg"], // first 5 supplied
-    shower: ["/shower1.jpg","/shower3.jpg"]
-  };
-
-  function initCarousel(key){
-    const img = document.getElementById(key+"-slide");
-    const dotsWrap = document.getElementById(key+"-dots");
-    if(!img || !dotsWrap) return;
-
-    let i = 0, imgs = carousels[key];
-    const render = ()=>{ img.src = imgs[i]; [...dotsWrap.children].forEach((b,idx)=>b.setAttribute("aria-current", idx===i)) };
-    imgs.forEach((_,idx)=>{
-      const b=document.createElement("button");
-      b.type="button"; b.addEventListener("click",()=>{i=idx;render()});
-      dotsWrap.appendChild(b);
-    });
-    render();
-
-    // buttons
-    document.querySelector(`.fp-nav.prev[data-for="${key}"]`)?.addEventListener("click",()=>{ i=(i-1+imgs.length)%imgs.length; render(); });
-    document.querySelector(`.fp-nav.next[data-for="${key}"]`)?.addEventListener("click",()=>{ i=(i+1)%imgs.length; render(); });
-
-    // auto-rotate (pause on hover)
-    let t=setInterval(()=>{ i=(i+1)%imgs.length; render(); }, 3500);
-    img.closest(".fp-media").addEventListener("mouseenter",()=>clearInterval(t));
-    img.closest(".fp-media").addEventListener("mouseleave",()=> t=setInterval(()=>{ i=(i+1)%imgs.length; render(); }, 3500));
-  }
-  initCarousel("psg");
-  initCarousel("shower");
-</script>
-<!-- ===== /FRONT-PAGE FEATURED ===== -->
-     
-
-  <div>
-
-<!-- ===== FRONT PAGE: Quiz + EDC Bracelet (side-by-side) ===== -->
-<style>
-  .home-pair{max-width:980px;margin:24px auto;padding:0 12px;display:grid;gap:16px;
-    grid-template-columns:repeat(2,minmax(0,1fr))}
-  @media (max-width:760px){.home-pair{grid-template-columns:1fr}}
-  .tab-card{display:grid;gap:14px;background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid #262626;border-radius:18px;padding:16px;color:#e9ecef;
-    text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,.45)}
-  .tab-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
-  .tab-title{margin:0;font-size:clamp(1.1rem,1.1vw + 1rem,1.6rem);color:#ffa500}
-  .tab-pill{font-weight:800;padding:6px 10px;border-radius:999px;background:#101214;
-    border:1px solid #23232b;color:#ffe9b2}
-  .tab-media{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#0c0c0c;border:1px solid #2a2a2a;position:relative}
-  .tab-media img{width:100%;height:100%;object-fit:cover;display:block}
-  .tab-body{display:grid;gap:10px}
-  .tab-bullets{margin:0 0 2px 18px;color:#cfd7df;line-height:1.55}
-  .tab-cta{display:inline-block;font-weight:900;padding:12px 16px;border-radius:12px;border:2px solid #333;
-    background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;text-decoration:none}
-  /* mini rotator */
-  .dots{position:absolute;inset:auto 8px 8px auto;display:flex;gap:6px}
-  .dot{width:8px;height:8px;border-radius:50%;background:#6b6b6b;border:1px solid #1e1e1e;opacity:.75}
-  .dot.on{background:#ffa500;opacity:1}
-</style>
-
-<section class="home-pair">
-
-<!-- ===== Survival Quiz PREVIEW (CTA → subpage, using your island image) ===== -->
-<style>
-  .quiz-preview{max-width:980px;margin:24px auto;padding:0 12px}
-  .qp-card{
-    display:grid;gap:14px;
-    background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-    border:1px solid #262626;border-radius:18px;padding:16px;
-    color:#e9ecef;text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,.45)
-  }
-  .qp-figure{margin:0;position:relative;border-radius:12px;overflow:hidden;
-    aspect-ratio:16/9;background:#0c0c0c;border:1px solid #2a2a2a}
-  .qp-figure img{width:100%;height:100%;object-fit:cover;display:block}
-  /* subtle bottom fade to add polish without darkening the whole image */
-  .qp-figure::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;
-    background:linear-gradient(180deg,transparent,rgba(0,0,0,.25))}
-  .qp-row{display:flex;align-items:center;gap:10px}
-  .qp-title{margin:0;font-size:clamp(1.2rem,1.2vw + 1rem,1.8rem);color:#ffa500;line-height:1.2}
-  .qp-text{margin:0;color:#aab3bb;line-height:1.55;max-width:70ch}
-  .qp-list{margin:6px 0 0 18px;color:#cfd7df;line-height:1.6;max-width:70ch}
-  .qp-cta{display:inline-block;font-weight:900;padding:12px 16px;border-radius:12px;
-    border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010}
-</style>
-
-<section id="quiz-preview" class="quiz-preview">
-  <a href="/survival-quiz.html#top" class="qp-card" aria-label="Open the Survival Basics Quiz">
-    <figure class="qp-figure">
-      <img src="/survive-8683959_1280.jpg" alt="Cartoon island survival scene for quiz preview"
-           loading="lazy" decoding="async"
-           onerror="this.closest('figure').style.display='none'">
-    </figure>
-
-    <div class="qp-row">
-      <span style="font-size:1.6rem">🧭</span>
-      <h2 class="qp-title">Survival Basics Quiz</h2>
-    </div>
-
-    <p class="qp-text">
-      15 fast questions. Learn, level up, and share your score. Ready to test your field sense?
-    </p>
-
-    <ul class="qp-list">
-      <li>Trail safety, water, shelter, signaling</li>
-      <li>Instant feedback + shareable results</li>
-    </ul>
-
-    <div><span class="qp-cta">Take the Quiz →</span></div>
-  </a>
-</section>
-<!-- ===== /Preview CTA ===== -->
-
-  </a>
-
-  <!-- Card B: 2 Paracord Bracelet Knives (auto-rotating images) -->
-  <section class="tab-card" aria-label="Paracord Bracelet Knife">
-    <header class="tab-head">
-      <h3 class="tab-title">Paracord Bracelet Knife</h3>
-      <span class="tab-pill">EDC</span>
-    </header>
-
-    <figure class="tab-media">
-      <img id="edcShow" src="/edc.jpg" alt="Paracord bracelet with hidden blade">
-      <div class="dots" aria-hidden="true">
-        <span class="dot on" id="d0"></span><span class="dot" id="d1"></span>
-        <span class="dot" id="d2"></span><span class="dot" id="d3"></span>
-      </div>
-    </figure>
-
-    <div class="tab-body">
-      <ul class="tab-bullets">
-        <li>Buckle knife design — stainless steel</li>
-        <li>Hand-woven paracord for emergency use</li>
-        <li>Compact, practical, and durable</li>
-        <li>Giftable two-pack option on listing</li>
-      </ul>
-      <a class="tab-cta"
-         href="https://www.ebay.com/itm/356876389109?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-         target="_blank" rel="nofollow sponsored noopener">See details →</a>
-    </div>
-  </section>
-
-</section>
-
-<script>
-  // Lightweight image rotator for the bracelet card
-  (function(){
-    const imgs=["/edc.jpg","/edc1.jpg","/edc3.jpg","/edc5.jpg"];
-    const imgEl=document.getElementById("edcShow");
-    if(!imgEl) return;
-    let i=0, dots=[d0,d1,d2,d3];
-    const next=()=>{ i=(i+1)%imgs.length; imgEl.src=imgs[i]; dots.forEach((d,k)=>d.classList.toggle('on',k===i)); };
-    let t=setInterval(next,3500);
-    imgEl.addEventListener('mouseenter',()=>clearInterval(t));
-    imgEl.addEventListener('mouseleave',()=>t=setInterval(next,3500));
-  })();
-</script>
-<!-- ===== /FRONT PAGE: Quiz + EDC Bracelet ===== -->
-
-    <!-- ===== Cards (rows of two) ===== -->
-    <section class="cards-wrap" aria-label="Featured gear & posts">
-      <div class="cards-grid">
-
-        <!-- Thought Crimes Notebook -->
-        <a class="gg-card" href="https://amzn.to/4gt5cIt" target="_blank" rel="nofollow sponsored noopener">
-          <div class="gg-media">
-            <img src="/tccc.jpg" alt="Thought Crimes: A Notebook for Dangerous Ideas"
-                 onerror="this.onerror=null;this.src='/thought-crimes.jpg'">
-          </div>
-          <h3 class="gg-title">Thought Crimes: A Notebook for Dangerous Ideas</h3>
-          <p class="gg-sub">Hardcover look, rugged pages. Capture unfiltered thoughts, plans, and debates—off the algorithm.</p>
-          <div class="gg-chips"><span>Hardcover look</span><span>Durable pages</span><span>Everyday carry</span></div>
-          <span class="gg-cta">Check price →</span>
-        </a>
-
-        <!-- Ultralight Survival Tarp -->
-        <a class="gg-card" href="https://collabs.shop/apa2pp" target="_blank" rel="noopener sponsored nofollow">
-          <div class="gg-media">
-            <img src="/tarpad1.jpg" alt="Ultralight survival tarp in the woods">
-          </div>
-          <h3 class="gg-title">Ultralight Survival Tarp</h3>
-          <p class="gg-sub">Fast shelter that packs tiny. Pitch diamond or A-frame—rain, wind, or sun you’re covered.</p>
-          <div class="gg-chips"><span>Waterproof</span><span>Multi-pitch</span><span>Trail-ready</span></div>
-          <span class="gg-cta">Check it out →</span>
-        </a>
-
-        <!-- ========== TWO-UP: Perimeter Alarm + Solar Power Station ========== -->
-<section class="gear-row" aria-label="Perimeter alarm and solar power station">
-  <!-- ===== Card 1: Trip-Wire Perimeter Alarm (4 images) ===== -->
-  <article class="gear-card" data-key="alarm">
-    <header class="gear-head">
-      <h3 class="gear-title">Trip-Wire Perimeter Alarm (12-Gauge)</h3>
-      <span class="gear-pill">Camp Security</span>
-    </header>
-
-    <figure class="gear-media">
-      <img id="alarm-slide" src="/$_57%20(13).jfif" alt="Trip-wire perimeter alarm device mounted to a tree">
-      <button class="gear-nav prev" type="button" aria-label="Previous image" data-for="alarm">‹</button>
-      <button class="gear-nav next" type="button" aria-label="Next image" data-for="alarm">›</button>
-      <div class="gear-dots" id="alarm-dots" role="tablist" aria-label="Alarm photos"></div>
-    </figure>
-
-    <ul class="gear-bullets">
-      <li>Deploys in seconds—mount to tree/post; add line &amp; blank.</li>
-      <li>Loud report to scare wildlife &amp; alert and protect your camp.</li>
-      <li>Multiple mounting holes + zip-tie channels.</li>
-      <li>Use with blanks or flares per local laws.</li>
-    </ul>
-
-    <div class="gear-meta">
-      <span class="gear-stars" aria-label="4.7 out of 5">★★★★☆</span>
-      <span>4.7 (900+)</span>
-    </div>
-
-    <a class="gear-cta"
-       href="https://www.ebay.com/itm/365693113174?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">
-      Arm the Perimeter →
-    </a>
-    <p class="gear-note">Always follow local regs; use blanks responsibly.</p>
-  </article>
-
-  <!-- ===== Card 2: Portable Solar Power Station (up to 4 images) ===== -->
-  <article class="gear-card" data-key="solar">
-    <header class="gear-head">
-      <h3 class="gear-title">Portable Solar Power Station + 4 LED Bulbs</h3>
-      <span class="gear-pill pill-green">Off-Grid Power</span>
-    </header>
-
-    <figure class="gear-media">
-      <img id="solar-slide" src="/$_12%20(4).jfif" alt="Portable solar generator kit with panel and LED bulbs">
-      <button class="gear-nav prev" type="button" aria-label="Previous image" data-for="solar">‹</button>
-      <button class="gear-nav next" type="button" aria-label="Next image" data-for="solar">›</button>
-      <div class="gear-dots" id="solar-dots" role="tablist" aria-label="Solar kit photos"></div>
-    </figure>
-
-    <ul class="gear-bullets">
-      <li>Charge by sun or AC; power lights, phones, radio.</li>
-      <li>Includes 4 hanging LED bulbs + remote.</li>
-      <li>Great for camps, outages, cabins &amp; vans.</li>
-      <li>Compact, carry-friendly, US-stock shipping.</li>
-    </ul>
-
-    <div class="gear-meta">
-      <span class="gear-stars" aria-label="4.6 out of 5">★★★★☆</span>
-      <span>4.6 (1,100+)</span>
-    </div>
-
-    <a class="gear-cta"
-       href="https://www.ebay.com/itm/333785000242?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">
-      Power Your Base →
-    </a>
-    <p class="gear-note">Tip: charge in daylight; run lights at dusk.</p>
-  </article>
-</section>
-
-<style>
-/* Layout */
-.gear-row{max-width:980px;margin:22px auto;padding:0 12px;
-  display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
-@media (max-width:760px){.gear-row{grid-template-columns:1fr}}
-
-/* Card */
-.gear-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);
-  border:1px solid #262626;border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.45);
-  color:#e9ecef;display:grid;gap:12px;padding:14px}
-.gear-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.gear-title{margin:0;font-size:clamp(1.05rem,1vw + .9rem,1.35rem);color:#ffa500;line-height:1.2}
-.gear-pill{border:1px solid #2b2b2b;border-radius:999px;padding:4px 10px;font-weight:800;color:#ffe9b2;background:#101214;white-space:nowrap}
-.pill-green{color:#9fe6c3;background:#0f1a12;border-color:#224233}
-
-/* Media / carousel */
-.gear-media{position:relative;margin:0;border-radius:12px;overflow:hidden;
-  aspect-ratio:16/10;background:#0c0c0c;border:1px solid #2a2a2a}
-.gear-media img{width:100%;height:100%;object-fit:cover;display:block}
-.gear-nav{position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(0,0,0,.55);color:#fff;border:1px solid #333;border-radius:10px;
-  padding:6px 10px;cursor:pointer}
-.gear-nav.prev{left:8px}.gear-nav.next{right:8px}
-.gear-dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center}
-.gear-dots button{width:8px;height:8px;border-radius:999px;border:1px solid #555;background:#222;opacity:.8}
-.gear-dots button[aria-current="true"]{background:#ffa500;opacity:1}
-
-/* Body */
-.gear-bullets{margin:0;padding-left:18px;color:#cfd7df;line-height:1.55}
-.gear-meta{display:flex;align-items:center;gap:8px;color:#aab3bb}
-.gear-stars{color:#ffd98a;font-weight:900;letter-spacing:1px}
-.gear-cta{display:inline-block;font-weight:900;padding:12px 16px;border-radius:12px;border:2px solid #333;
-  background:linear-gradient(180deg,#ffae00,#ff8c00);color:#101010;text-decoration:none}
-.gear-cta:hover{filter:brightness(1.05)}
-.gear-note{margin:0;color:#9aa3ad;font-size:.86rem}
-</style>
-
-<script>
-/* Tiny carousel builder (skips missing images automatically) */
-(function(){
-  const sets = {
-    alarm: [
-      "/$_57%20(13).jfif",
-      "/$_57%20(15).jfif",
-      "/$_57%20(14).jfif",
-      "/$_57%20(12).jfif"
-    ],
-    solar: [
-      "/$_12%20(4).jfif",
-      "/$_12%20(2).jfif",
-      "/$_12%20(1).jfif",
-      "/$_12%20(3).jfif" // if this one 404s, we skip it
-    ]
-  };
-
-  Object.keys(sets).forEach(key=>{
-    const img = document.getElementById(key+"-slide");
-    const dotsWrap = document.getElementById(key+"-dots");
-    if(!img || !dotsWrap) return;
-
-    // Filter out any images that 404
-    const list = [];
-    let i = 0, t;
-
-    const addDot = (idx)=>{
-      const b=document.createElement("button");
-      b.type="button";
-      b.addEventListener("click",()=>go(idx,true));
-      dotsWrap.appendChild(b);
-    };
-
-    const tryLoad = (src, idx, done)=>{
-      const probe = new Image();
-      probe.onload = ()=>{ list.push(src); addDot(list.length-1); done(); };
-      probe.onerror = ()=> done(); // skip missing
-      probe.src = src;
-    };
-
-    // Load candidates sequentially, then start
-    (function loadAll(k=0){
-      if(k>=sets[key].length){
-        if(!list.length){ img.closest(".gear-media").style.display="none"; return; }
-        paint(); play();
-        return;
-      }
-      tryLoad(sets[key][k], k, ()=>loadAll(k+1));
-    })();
-
-    function paint(){
-      img.src = list[i];
-      [...dotsWrap.children].forEach((d,di)=>d.setAttribute("aria-current", di===i));
-    }
-    function go(n, manual){
-      i = (n + list.length) % list.length;
-      paint();
-      if(manual) restart();
-    }
-    function play(){ t=setInterval(()=>go(i+1,false), 3500); }
-    function stop(){ clearInterval(t); }
-    function restart(){ stop(); play(); }
-
-    document.querySelector(`.gear-nav.prev[data-for="${key}"]`)?.addEventListener("click",()=>go(i-1,true));
-    document.querySelector(`.gear-nav.next[data-for="${key}"]`)?.addEventListener("click",()=>go(i+1,true));
-
-    // Pause on hover
-    img.closest(".gear-media").addEventListener("mouseenter", stop);
-    img.closest(".gear-media").addEventListener("mouseleave", play);
-  });
-})();
-</script>
-<!-- ========== /TWO-UP ========== -->
-
-        <!-- Blog Preview -->
-        <a class="gg-card" href="/cannabis-for-survival.html#top">
-          <div class="gg-media">
-            <img src="/cannabis-friendly-1-1024x683.jpg" alt="Camp scene" style="object-position:center 40%">
-          </div>
-          <h3 class="gg-title">Bud Over Booze — A Survivalist’s Manifesto</h3>
-          <p class="gg-sub">Alcohol almost ended me. Cannabis helped me live, lead, and love—plus it’s a smarter tool for sleep, pain, appetite, and group calm.</p>
-          <div class="gg-chips"><span>Survival Mindset</span><span>8 min read</span></div>
-          <span class="gg-cta">Read the post →</span>
-        </a>
-
-       <!-- Collab Cards (drop both into the SAME grid). One block, scoped styles included. -->
-<!-- === Collab Tiles (TITAN + TACAMO) — drop both inside the same grid as your other gg-card items === -->
-
-<!-- TITAN Survival (unchanged) -->
-<a class="gg-card" href="/titan-survival-collab.html">
-  <div class="gg-media" style="background:#0c0c0c">
-    <img src="/titanlogo.jpg" alt="TITAN Survival logo" style="object-fit:contain">
-  </div>
-  <h3 class="gg-title">TITAN Survival × Grit Gear HQ</h3>
-  <p class="gg-sub">Why we chose SurvivorCord®, shock cord, and sane stitching—and how to save with code <strong>GRITGEARHQ</strong>.</p>
-  <div class="gg-chips"><span>SurvivorCord®</span><span>Shock Cord</span><span>IFAK & Packs</span></div>
-  <span class="gg-cta">Read the collab page →</span>
-</a>
-
-<!-- TACAMO Fire Kit (10% off via collab link) -->
-<a class="gg-card gg-card--tacamo" href="https://collabs.shop/mke6bg" target="_blank" rel="nofollow sponsored noopener">
-  <div class="gg-media tacamo-cover">
-    <img class="tacamo-img"
-         src="Untitled.png"
-         alt="TACAMO Ultimate Fire Making Kit — 15-piece mess tin & waxed canvas bag"
-         loading="lazy" decoding="async"
-         data-fallbacks='["/images/Untitled.png","/images/tacamo-fire-kit.png","/images/ultimate-fire-kit.png"]'>
-    <span class="tacamo-chip">10% OFF</span>
-  </div>
-  <h3 class="gg-title">TACAMO × Grit Gear HQ</h3>
-  <p class="gg-sub">The Ultimate Fire Making Kit: ferro rod, tinder, tools, and a boil-ready mess tin. Use our link for <strong>10% off</strong>.</p>
-  <div class="gg-chips"><span>Fire Kit</span><span>Mess Tin</span><span>Waxed Canvas</span></div>
-  <span class="gg-cta">Shop the kit →</span>
-</a>
-
-<style>
-  /* Scoped TACAMO styling */
-  .gg-card--tacamo .gg-title{color:#f29d2a}
-  .gg-card--tacamo .gg-cta{color:#111;background:#18e6a3;border-radius:10px;padding:6px 10px;font-weight:800}
-  .tacamo-cover{position:relative;background:#0c0c0c;border-radius:10px;overflow:hidden}
-  .tacamo-cover .tacamo-img{
-    width:100%;height:100%;display:block;object-fit:cover;
-    aspect-ratio:1/1;             /* square like your other tiles */
-    object-position:center 46%;    /* nudge crop upward */
-    transition:transform .25s ease
-  }
-  .gg-card.gg-card--tacamo:hover .tacamo-img{transform:scale(1.02)}
-
-  /* Mask the tiny bottom-right UI tab that was captured in the screenshot */
-  .tacamo-cover::after{
-    content:"";position:absolute;right:0;bottom:0;width:64px;height:64px;
-    background:#0c0c0c;border-top-left-radius:10px;pointer-events:none;
-  }
-
-  /* 10% badge */
-  .tacamo-chip{
-    position:absolute;top:10px;left:10px;z-index:2;
-    font:800 .75rem/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
-    color:#041812;padding:6px 10px;border-radius:999px;
-    background:linear-gradient(180deg,#18e6a3,#0acb92);
-    border:1px solid rgba(9,199,139,.5);box-shadow:0 6px 16px rgba(10,203,146,.35);
-  }
-</style>
-
-<script>
-  // Lightweight fallback for the TACAMO image if "Untitled.png" isn't in the same folder.
-  (function(){
-    const img = document.querySelector('.tacamo-img');
-    if(!img) return;
-    const fallbacks = JSON.parse(img.getAttribute('data-fallbacks')||'[]');
-    let i = 0;
-    img.onerror = function(){
-      if(i < fallbacks.length){ img.src = fallbacks[i++]; }
-      else { img.onerror = null; } // stop looping
-    };
-  })();
-</script>
-
-</body>
-</html>
-
-<!-- ===== Compact “Mini-Hub” (drop-in replacement for .manifesto-bar) ===== -->
-<section id="mini-hub" aria-label="Quick navigation">
-  <header class="mh-head">
-    <h2>Quick Picks</h2>
-    <button class="mh-toggle" type="button" aria-expanded="false" aria-controls="mh-more">
-      Show more
-    </button>
-  </header>
-
-  <!-- Featured (always visible) -->
-  <nav class="mh-grid" aria-label="Featured">
-    <a class="mh-card" href="survival-quiz.html#top">
-      🧭 Survival Basics Quiz
-      <span class="mh-desc">15 fast questions + instant feedback.</span>
-    </a>
-    <a class="mh-card" href="https://gritgearhq.com/titan-survival-collab.html#why-550">
-      🧵 SurvivorCord® Guide
-      <span class="mh-desc">Real-world uses, knots, & loadouts.</span>
-    </a>
-    <a class="mh-card" href="top-5-home-water-filters.html#filters">
-      💧 Top 5 Home Water Filters
-      <span class="mh-desc">Cut PFAS, lead, & junk from tap water.</span>
-    </a>
-    <a class="mh-card" href="/best-survival-gear-amazon-2025.html#best-survival-gear">
-      🎒 20 Best Survival & Self-Reliance Items (2025)
-      <span class="mh-desc">Only the pieces that pull their weight.</span>
-    </a>
-  </nav>
-
-  <!-- More links (collapsed by default) -->
-  <div id="mh-more" hidden>
-    <!-- Guides -->
-    <h3 class="mh-sub">Guides & Skills</h3>
-    <nav class="mh-grid">
-      <a class="mh-card" href="amish-winter-heat.html#amish-winter-heat">🔥 Amish Winter Heat
-        <span class="mh-desc">Stoves, window quilts, humidity, rhythm.</span>
-      </a>
-      <a class="mh-card" href="ant-grasshopper-locked-door.html#fable-start">🐜 The Ant, the Grasshopper & the Locked Door
-        <span class="mh-desc">Boundaries, math, & no hard feelings.</span>
-      </a>
-      <a class="mh-card" href="skinny-to-strong.html#skinny-to-strong">💪 From Skinny to Strong
-        <span class="mh-desc">Simple, durable path to capability.</span>
-      </a>
-    </nav>
-
-    <!-- Reviews -->
-    <h3 class="mh-sub">Reviews</h3>
-    <nav class="mh-grid">
-      <a class="mh-card" href="kamp-king.html#kamp-king-review">🗡️ NEW! Kamp King Knife Review
-        <span class="mh-desc">Classic look, rugged build. Gift-ready.</span>
-      </a>
-      <a class="mh-card" href="solar-fan-hat-review.html#solar-fan-hat-review">🌞 Solar Fan Hat Review
-        <span class="mh-desc">Goofy? Yes. Also shockingly useful.</span>
-      </a>
-    </nav>
-
-    <!-- Stories -->
-    <h3 class="mh-sub">Stories</h3>
-    <nav class="mh-grid">
-      <a class="mh-card" href="hugh-glass.html#hugh-glass">🐻 Hugh Glass: The Man Who Wouldn’t Die
-        <span class="mh-desc">Grizzly attack to 200-mile crawl.</span>
-      </a>
-      <a class="mh-card" href="surviving-county-jail.html#jail-survival-blog">🚔 Surviving County Jail
-        <span class="mh-desc">Fear, boredom, humor, & grit.</span>
-      </a>
-      <a class="mh-card" href="chicken-shortage-2025.html#chicken-shortage-blog">🐔 Chicken Shortage 2025
-        <span class="mh-desc">Backyard flock lessons & gear.</span>
-      </a>
-      <a class="mh-card" href="bear-vs-man.html#bear-vs-man">🐻 Would You Rather: Man vs Bear
-        <span class="mh-desc">Memes met field sense.</span>
-      </a>
-    </nav>
-
-    <!-- Opinion / Manifesto -->
-    <h3 class="mh-sub">Opinion</h3>
-    <nav class="mh-grid">
-      <a class="mh-card" href="collapse.html#collapse-blog">🔥 Western Society Is Doomed
-        <span class="mh-desc">5 things I stopped buying.</span>
-      </a>
-      <a class="mh-card" href="manifesto.html#violence-answer">⚔️ When Violence Is the Answer
-        <span class="mh-desc">The ugly truth about self-defense.</span>
-      </a>
-      <a class="mh-card" href="manifesto.html#masculinity-blog">💥 The Masculinity Manifesto</a>
-      <a class="mh-card" href="manifesto.html#ufo-distraction">🛸 UFOs & Government Deception</a>
-      <a class="mh-card" href="5affirmations.html">💭 5 “Good” Affirmations (That Aren’t)</a>
-    </nav>
-  </div>
-</section>
-
-<style>
-  /* Mini-Hub layout (dark theme friendly) */
-  #mini-hub{max-width:980px;margin:18px auto;padding:0 12px}
-  .mh-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-  .mh-head h2{margin:0;color:#ffa500;font-size:clamp(1.05rem,1vw+1rem,1.35rem)}
-  .mh-toggle{border:1px solid #2b2b2b;background:#121216;color:#e9ecef;
-    border-radius:999px;padding:6px 10px;font-weight:800;cursor:pointer}
-  .mh-sub{margin:14px 0 8px;font-size:1rem;color:#cfd7df}
-
-  .mh-grid{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
-  @media(max-width:720px){.mh-grid{grid-template-columns:1fr}}
-
-  .mh-card{display:block;padding:12px;border-radius:12px;text-decoration:none;color:#e9ecef;
-    background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid #262626;
-    box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .12s ease,filter .2s ease}
-  .mh-card:hover{transform:translateY(-1px);filter:brightness(1.04)}
-  .mh-desc{display:block;color:#aab3bb;font-size:.9rem;margin-top:2px}
-
-  /* keep it compact */
-  #mini-hub .mh-grid .mh-card{min-height:0}
-</style>
-
-<script>
-  // Expand/collapse “More” to keep the page tidy
-  (function(){
-    const btn=document.querySelector('.mh-toggle');
-    const more=document.getElementById('mh-more');
-    if(!btn||!more) return;
-    btn.addEventListener('click', ()=>{
-      const open = more.hasAttribute('hidden') ? false : true;
-      if(open){ more.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); btn.textContent='Show more'; }
-      else { more.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); btn.textContent='Show less'; }
-    });
-  })();
-</script>
-
-
-
-  <!-- Hidden CTA Buttons Toggleable with JS -->
-  <div id="more-cta-buttons" style="display:none;">
-    <a href="manifesto.html#bugout-essentials" class="cta-button">🧠 Lost Skills of Our Grandparents</a>
-    <a href="manifesto.html#manila-story" class="cta-button">🚪 Trapped in a Manila Stairwell</a>
-    <a href="manifesto.html#death-valley-germans" class="cta-button">🏜️ Death Valley’s Forgotten Tourists</a>
-    <a href="i-should-be-dead.html" class="cta-button">🩸 I Should Be Dead: The Grit Story</a>
-    <a href="manifesto.html#stockpile-tested" class="cta-button">🎒 Survival Items That Earned Their Place</a>
-    <a href="manifesto.html#stay-cool" class="cta-button">🧊 How to Keep Your Family Cool in a Blackout</a>
-    <a href="manifesto.html#delta-outage" class="cta-button">🌪️ 2 Weeks Without Power in the Delta</a>
-    <a href="manifesto.html#unfuck-your-life" class="cta-button">🧼 How to Unf*ck Your Life</a>
-    <a href="manifesto.html#survivorman-vs-bear" class="cta-button">🐾 Survivorman vs Bear Grylls</a>
-    <a href="manifesto.html#collapse-fitness" class="cta-button">💀 You Won’t Make It 10 Miles</a>
-    <a href="manifesto.html#best-meals" class="cta-button">🍲 10 Best Dehydrated Meals</a>
-    <a href="manifesto.html#nobody-cares-blog" class="cta-button">🕶️ Nobody Gives a Sh*t… And That’s Okay</a>
-    <a href="manifesto.html#stay-cool-blackout" class="cta-button">🥵 How to Keep Cool During a Blackout</a>
-  </div>
-
-</div>
-
-
-<!-- SIDE-BY-SIDE PREVIEWS -->
-<section style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin: 50px auto; max-width: 1200px;">
-
-  <!-- CHICKEN SHORTAGE PREVIEW -->
-  <div style="flex: 1 1 500px; background: #1a1a1a; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px #000; color: #eee; font-family: Arial, sans-serif;">
-    <h1 style="color: #ffa500; font-size: 1.8em; margin-bottom: 10px;">
-      🐔 The Chicken Shortage of 2025 Is Real — And It’s Just Getting Started
-    </h1>
-
-    <img src="images/chicken-farm.jpg" alt="Factory Farmed Chickens" style="width: 100%; border-radius: 8px; margin: 20px 0; box-shadow: 0 0 10px #000;">
-
-    <p style="font-size: 1.05em; line-height: 1.6;">
-      <strong>Remember when people fought over toilet paper?</strong><br>
-      Now it's chickens.
-    </p>
-
-    <p style="font-size: 1.05em; line-height: 1.6;">
-      In towns across America, folks are paying top dollar just to get their hands on a few hens.
-      We paid <strong>$70 for 5 birds in a Tractor Supply parking lot</strong>, and we were lucky.
-      Some people are shelling out <strong>$35 per chicken</strong> — and that’s if they can even find any nearby.
-    </p>
-
-    <p style="font-size: 1.05em; line-height: 1.6;">
-      This isn’t a hobby anymore. It’s a quiet panic.<br>
-      People sense what no one wants to say out loud: <em><strong>The system is cracking</strong></em>, and eggs might be the new currency.
-    </p>
-
-    <a href="https://gritgearhq.com/chicken-shortage-2025.html#chicken-shortage-blog" style="
-      display: inline-block;
-      background: #ffa500;
-      color: #000;
-      font-weight: bold;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 20px;
-      animation: pulseGlow 3s infinite;
-      transition: transform 0.2s ease;
-    ">
-      🐓 Read Full Blog Post
-    </a>
-  </div>
-<!-- ========== FRONT-PAGE DUO: Overland Upgrade (Tent + Winch) ========== -->
-<section id="overland-upgrade" aria-label="Overland upgrade">
-  <header class="ou-head">
-    <h2 class="ou-title">Everyday Rig → Expedition-Ready</h2>
-    <p class="ou-sub">Two bolt-on upgrades that change everything: sleep anywhere, recover anywhere.</p>
-  </header>
-
-  <div class="ou-grid">
-    <!-- ===== Rooftop Tent (rotates) ===== -->
-    <article class="ou-card" aria-label="Rooftop Tent">
-      <header class="ou-card-head">
-        <h3 class="ou-card-title">Hard-Shell Rooftop Tent (4-Season)</h3>
-        <span class="ou-pill">Overland</span>
-      </header>
-
-      <figure class="ou-media">
-        <img id="rtSlide" src="/$_1%20(3).jfif" alt="Rooftop tent set up on SUV with ladder">
-        <button class="ou-nav prev" type="button" aria-label="Previous image" data-target="rt">‹</button>
-        <button class="ou-nav next" type="button" aria-label="Next image" data-target="rt">›</button>
-        <div class="ou-dots" id="rtDots" role="tablist" aria-label="Rooftop tent images"></div>
-      </figure>
-
-      <div class="ou-body">
-        <ul class="ou-bullets">
-          <li>Opens in seconds — true one-person setup</li>
-          <li>Waterproof, insulated, breathable mesh</li>
-          <li>330-lb telescoping ladder (7.5 ft)</li>
-          <li>Fits most Jeep/SUV/Truck racks (≥600-lb static)</li>
-        </ul>
-        <div class="ou-meta">
-          <span class="ou-stars" aria-label="4.7 out of 5 stars">★★★★★</span>
-          <span class="ou-note">4.7 • 120+ reviews</span>
-        </div>
-        <a class="ou-cta"
-           href="https://www.ebay.com/itm/286423670948?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cI7TSu%2Bv6jbuh8cC%2BWkzlE65Za7KS%2F5ivkShC9d1dQ6hSZufQkK7mkuPN2f%2B6epYIKlNnaleCgkUcZYQDEwyDEBC%2B4xIQ4GdYnn5ZkrmxGRj2FMdzEEkWubFDdZBgWiDQhqvaQFdAt9bcVlKD%2BflFBbH1AwHz6hYBsQzAGZm0Hb1dEC2rwrmIgGj023q7Tz4o%3D"
-           target="_blank" rel="nofollow sponsored noopener">
-          Check availability →
-        </a>
-      </div>
-    </article>
-
-    <!-- ===== 13,500-lb Winch (single image) ===== -->
-    <article class="ou-card" aria-label="13500 lb Winch">
-      <header class="ou-card-head">
-        <h3 class="ou-card-title">13,500-lb Winch — Synthetic Rope</h3>
-        <span class="ou-pill">Recovery</span>
-      </header>
-
-      <figure class="ou-media">
-        <img id="winchSlide" src="/s-l1600%20(5).jpg" alt="13,500 lb synthetic rope winch mounted on bumper">
-        <!-- controls/dots will auto-hide because there’s only one image -->
-        <button class="ou-nav prev" type="button" aria-label="Previous image" data-target="winch">‹</button>
-        <button class="ou-nav next" type="button" aria-label="Next image" data-target="winch">›</button>
-        <div class="ou-dots" id="winchDots" role="tablist" aria-label="Winch images"></div>
-      </figure>
-
-      <div class="ou-body">
-        <ul class="ou-bullets">
-          <li>Max line pull: <strong>13,500 lbs</strong></li>
-          <li>80 ft synthetic rope — strong & safer than steel</li>
-          <li>Wireless & wired remotes + complete hardware</li>
-          <li>IP-rated components for mud, snow & creek crossings</li>
-        </ul>
-        <div class="ou-meta">
-          <span class="ou-stars" aria-label="4.8 out of 5 stars">★★★★★</span>
-          <span class="ou-note">4.8 • 150+ reviews</span>
-        </div>
-        <a class="ou-cta"
-           href="https://www.ebay.com/itm/375582132759?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-           target="_blank" rel="nofollow sponsored noopener">
-          See current deal →
-        </a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<style>
-  /* —— Scoped layout/theme —— */
-  #overland-upgrade{max-width:980px;margin:26px auto;padding:0 12px;color:#e9ecef;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-  #overland-upgrade .ou-head{display:grid;gap:6px;margin-bottom:10px}
-  #overland-upgrade .ou-title{margin:0;font-size:clamp(1.2rem,1.1vw + 1rem,1.9rem);color:#ffa500}
-  #overland-upgrade .ou-sub{margin:0;color:#aab3bb}
-
-  #overland-upgrade .ou-grid{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
-  @media (max-width:760px){#overland-upgrade .ou-grid{grid-template-columns:1fr}}
-
-  #overland-upgrade .ou-card{background:linear-gradient(120deg,#151515,#0f0f0f 55%);border:1px solid #262626;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.45);padding:14px;display:grid;gap:12px}
-  #overland-upgrade .ou-card-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
-  #overland-upgrade .ou-card-title{margin:0;font-size:clamp(1.05rem,1vw + 1rem,1.35rem);color:#ffa500}
-  #overland-upgrade .ou-pill{font-weight:800;padding:6px 10px;border-radius:999px;border:1px solid #2b2b2b;background:#101214;color:#ffe9b2}
-
-  #overland-upgrade .ou-media{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#0c0c0c;border:1px solid #2a2a2a}
-  #overland-upgrade .ou-media img{width:100%;height:100%;object-fit:cover;display:block}
-  #overland-upgrade .ou-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);border:1px solid #333;color:#fff;border-radius:10px;padding:6px 10px;cursor:pointer}
-  #overland-upgrade .ou-nav.prev{left:8px} 
-  #overland-upgrade .ou-nav.next{right:8px}
-  #overland-upgrade .ou-dots{position:absolute;inset:auto 0 8px 0;display:flex;gap:6px;justify-content:center}
-  #overland-upgrade .ou-dots button{width:8px;height:8px;border-radius:50%;border:1px solid #333;background:#555;opacity:.75;cursor:pointer}
-  #overland-upgrade .ou-dots button[aria-current="true"]{background:#ffa500;opacity:1}
-
-  #overland-upgrade .ou-body{display:grid;gap:10px}
-  #overland-upgrade .ou-bullets{margin:0;padding-left:18px;color:#cfd7df;line-height:1.55}
-  #overland-upgrade .ou-meta{display:flex;align-items:center;gap:8px;color:#aab3bb}
-  #overland-upgrade .ou-stars{letter-spacing:2px;color:#ffd86b}
-  #overland-upgrade .ou-cta{display:inline-block;font-weight:900;padding:10px 14px;border-radius:12px;border:2px solid #333;background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;text-decoration:none}
-</style>
-
-<script>
-/* —— Slider init: tent rotates; winch stays single image —— */
-(function(){
-  const sliders = {
-    rt: {
-      img:  document.querySelector('#overland-upgrade #rtSlide'),
-      dots: document.querySelector('#overland-upgrade #rtDots'),
-      list: ['/$_1%20(3).jfif','/$_1%20(1).jfif','/$_1.jfif','/$_1%20(2).jfif']
-    },
-    winch: {
-      img:  document.querySelector('#overland-upgrade #winchSlide'),
-      dots: document.querySelector('#overland-upgrade #winchDots'),
-      list: ['/s-l1600%20(5).jpg'] // single, correct winch image only
-    }
-  };
-
-  Object.keys(sliders).forEach(key=>{
-    const s = sliders[key];
-    if(!s?.img || !s?.dots || !s.list?.length) return;
-
-    // If only one image, hide controls/dots and just load it
-    if (s.list.length < 2) {
-      s.img.src = s.list[0];
-      document.querySelectorAll(`#overland-upgrade .ou-nav[data-target="${key}"]`)
-        .forEach(b => b.style.display = 'none');
-      s.dots.style.display = 'none';
-      return;
-    }
-
-    // Build dots
-    s.dots.innerHTML = '';
-    s.list.forEach((_, idx)=>{
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('aria-label', `Go to image ${idx+1}`);
-      b.addEventListener('click', ()=> go(idx, true));
-      s.dots.appendChild(b);
-    });
-    const dots = [...s.dots.children];
-
-    let i = 0, timer;
-    function paint(){
-      s.img.src = s.list[i];
-      dots.forEach((d,di)=> d.toggleAttribute('aria-current', di===i));
-    }
-    function go(n, pause){
-      i = (n + s.list.length) % s.list.length;
-      paint();
-      if(pause) restart();
-    }
-    function restart(){
-      clearInterval(timer);
-      timer = setInterval(()=> go(i+1, false), 3500);
-    }
-
-    // Nav
-    document.querySelectorAll(`#overland-upgrade .ou-nav[data-target="${key}"]`).forEach(btn=>{
-      btn.addEventListener('click', ()=> go(i + (btn.classList.contains('next')?1:-1), true));
-    });
-
-    paint(); restart();
-
-    // Fallback on 404
-    s.img.addEventListener('error', ()=>{
-      s.list.splice(i,1);
-      if(!s.list.length){ s.img.style.display='none'; clearInterval(timer); return; }
-      i = 0; paint(); restart();
-    });
-  });
-})();
-</script>
-<!-- ========== /FRONT-PAGE DUO ========== -->
-
-   </div>
- <!-- PALE HORSE PREPPING PREVIEW -->
-  <div style="flex: 1 1 500px; position: relative; background:#1a1a1a url('meteor.jpg') center/cover no-repeat; border-radius: 10px; overflow: hidden; min-height: 400px; box-shadow: 0 0 20px #000;">
-    <!-- overlay -->
-    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.85));"></div>
-
-  <!-- content -->
-<div style="position: absolute; bottom: 24px; left: 24px; right: 24px; color: #eee; font-family: Arial, sans-serif;">
-  <span style="display:inline-block; background:#ffa500; color:#111; font-weight:800; padding:6px 14px; border-radius:999px; font-size:13px; margin-bottom:12px;">
-    🐎 Preparing for the Pale Horse
-  </span>
-  <h3 style="margin:0 0 10px; color:#ffa500; font-size:1.8rem; text-shadow:2px 2px 8px #000;">
-    Revelation, Collapse &amp; Survival
-  </h3>
-  <p style="margin:0 0 20px; font-size:1.05em; line-height:1.6; color:#ddd;">
-    Exhibit A: war headlines that won’t leave the crawl. Exhibit B: shakey and unstable supply chains and prices with a drummer’s heartbeat. Exhibit C: a grid with a two-pack cough—wheezing in heat, freezing on contact. Exhibit D: earthquakes crashing ZIP codes they don't belong in. Exhibit E: pestilence with a PR team. Exhibit F: deception at scale—deepfakes, velvet tongues, and “peace” deals that read like pawn slips. Cross-check with the old brief—wars and rumors, famine and plague, quakes in “various places,” many led astray—and the pattern stops whispering and starts underlining. This isn’t coincidence; it’s choreography. Revelation shifts from poetry to procedure: seals, scarcity, counterfeit saviors, a world trading truth for permission. The full case pins verses to this week’s clippings, runs red string across the board, and turns doomscroll static into coordinates—then closes with field notes for grown-ups: tighten the house, steady the mind, keep vows, keep watch. Call it pattern recognition with a spine.
-  </p>
-  <a href="pale-horse-prepping.html#apocalypse-guide" style="
-    display:inline-block;
-    background:#ffa500;
-    color:#111;
-    font-weight:bold;
-    padding:12px 22px;
-    border-radius:6px;
-    text-decoration:none;
-    box-shadow:0 0 14px #ffa500;
-    transition:transform .2s;
-  ">
-    Read More →
-  </a>
-</div>
-
-</section>
-
-<!-- Glow Animation (reuse for both buttons) -->
-<style>
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500; }
-  50% { box-shadow: 0 0 20px #ff8c00, 0 0 30px #ff8c00; }
-  100% { box-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500; }
-}
-</style>
-
-
-
-</div>
-
-  <!-- ✅ Canonical -->
-  <link rel="canonical" href="https://gritgearhq.com/">
-
-  <!-- ✅ Meta SEO -->
-  <meta name="description" content="Discover rugged survival gear, prepper tools, and off-grid living tips at Grit Gear HQ. Take the Grit Test and join the resistance.">
-  <meta name="keywords" content="survival gear, prepping, bug out bag, self-defense, off-grid living, Grit Gear HQ">
-  <meta name="author" content="Grit Gear HQ">
-  <meta name="robots" content="index, follow">
-
-  <!-- ✅ Open Graph -->
-  <meta property="og:title" content="Grit Gear HQ – Rough Gear for Rougher Times">
-  <meta property="og:description" content="Rugged survival gear, prepper tools, and off-grid wisdom. Take the Grit Test.">
-  <meta property="og:image" content="https://gritgearhq.com/images/og-image.jpg">
-  <meta property="og:url" content="https://gritgearhq.com/">
-  <meta property="og:type" content="website">
-
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Grit Gear HQ">
-  <meta name="twitter:description" content="Prep like your life depends on it. Shop rugged survival gear at Grit Gear HQ.">
-  <meta name="twitter:image" content="https://gritgearhq.com/images/og-image.jpg">
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- ✅ Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- ✅ Google Analytics + Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSRKJ63PPM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TSRKJ63PPM'); // GA
-    gtag('config', 'AW-1781B792361'); // Google Ads
-  </script>
-
-<!-- ================== FIXED & CENTERED: FRONT PAIR + GEAR CARDS ================== -->
-<!-- Prefetch (keep these OUTSIDE <style>) -->
-<link rel="prefetch" href="/amish-winter-heat.html">
-<link rel="prefetch" href="https://bloomzhemp.com/collections/snow-caps-thca-flower/products/thca-snow-caps?ref=gritbud">
-
-<style>
-  /* ===== Global (kept from your snippet) ===== */
-  html, body {
-    margin: 0; padding: 0; min-height: 100vh; scroll-behavior: smooth;
-    font-family: 'Orbitron', sans-serif;
-    background: url('images/bg-dust.jpg') no-repeat center center fixed;
-    background-size: cover; color: #fff; overflow-x: hidden;
-  }
-  *{ margin:0; padding:0; box-sizing:border-box }
-
-  .cta-button{
-    display:inline-block; margin:10px; padding:12px 24px;
-    background:#ffa500; color:#000; border-radius:6px; font-weight:bold; text-decoration:none;
-    box-shadow:0 0 10px #ffa500; transition:all .3s ease-in-out;
-  }
-  .cta-button:hover{ background:#ff6600; color:#fff }
-
-  .flash-card,.reading-card{
-    background:#000; width:280px; min-height:460px; border-radius:10px; padding:16px;
-    box-shadow:0 0 15px #000; text-align:center; margin-bottom:30px;
-    display:flex; flex-direction:column; justify-content:space-between;
-  }
-  .flash-card img,.reading-card img{
-    width:100%; border-radius:8px; max-height:140px; object-fit:contain; margin-bottom:12px;
-  }
-  .flash-card h3,.reading-card h3{ color:#ffa500; margin:10px 0; font-size:18px }
-  .flash-card p,.reading-card p{ font-size:14px; color:#ccc; margin-bottom:10px }
-
-  .buy-btn{
-    display:inline-block; margin-top:10px; background:#ffa500; color:#000;
-    padding:8px 16px; border-radius:5px; font-weight:bold; text-decoration:none;
-    box-shadow:0 0 10px #ffa500; transition:all .2s ease-in-out;
-  }
-  .buy-btn:hover{ background:#ff6600; color:#fff }
-
-  .section-title{ text-align:center; color:#ffa500; font-size:2em; margin:30px 0 }
-
-  /* ===== Utility row to center card grids ===== */
-  .product-boxes, .center-row{
-    display:flex; flex-wrap:wrap; justify-content:center; align-items:stretch;
-    gap:30px; margin:52px auto; max-width:1100px; padding:0 12px;
-  }
-
-  /* ===== FRONT PAIR: always 2-up & centered on desktop ===== */
-  .front-pair{
-    display:grid; gap:16px; align-items:stretch; justify-content:center;
-    grid-template-columns:repeat(2, minmax(320px, 520px));
-    max-width:1100px; margin:18px auto; padding:clamp(12px,3vw,24px);
-  }
-  @media (max-width:900px){
-    .front-pair{ grid-template-columns:1fr; }
-  }
-
-  /* ===== Preview cards (shared) ===== */
-  .preview-card{
-    display:grid; grid-template-columns:42% 58%; gap:0; text-decoration:none;
-    background:var(--panel,#121821); color:var(--ink,#e8edf2);
-    border:1px solid var(--line,#1f2a35); border-radius:16px; overflow:hidden;
-    box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.5);
-    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-  }
-  .preview-card:hover{ transform:translateY(-2px); box-shadow:0 0 0 1px rgba(255,255,255,.1), 0 16px 42px rgba(0,0,0,.6) }
-  @media (max-width:760px){ .preview-card{ grid-template-columns:1fr } }
-
-  .preview-media{ position:relative; height:150px; min-height:150px; background:#0f141a }
-  .preview-media img{ width:100%; height:100%; object-fit:cover; display:block }
-
-  .preview-badge{
-    position:absolute; top:10px; left:10px; padding:6px 10px; border-radius:999px;
-    background:linear-gradient(180deg,#ff7a00,#e06100); color:#0b0f12; font-weight:800; font-size:.75rem;
-  }
-  .preview-body{ padding:12px 14px 14px }
-  .preview-tag{ color:#9aa3ad; font-size:.85rem; letter-spacing:.35px; text-transform:uppercase }
-  .preview-title{ margin:.2rem 0 .3rem; font-size:clamp(1.05rem,2vw,1.35rem); font-weight:800 }
-  .preview-deck{ color:#c9d2da; margin:0 0 .6rem; font-size:.96rem; line-height:1.45 }
-  .preview-cta{
-    display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px;
-    font-weight:900; letter-spacing:.3px; background:linear-gradient(180deg,#ff7a00,#e06100);
-    color:#101318; box-shadow:0 8px 24px rgba(255,122,0,.25);
-  }
-
-  /* ===== Bloomz accent (blue) ===== */
-  .preview-card.bloomz{ border-color:#1d2a3b; box-shadow:0 0 0 1px rgba(96,165,250,.16), 0 10px 30px rgba(0,0,0,.5) }
-  .preview-card.bloomz:hover{ box-shadow:0 0 0 1px rgba(37,99,235,.22), 0 16px 42px rgba(0,0,0,.62) }
-  .preview-card.bloomz .preview-badge{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#071019 }
-  .preview-card.bloomz .preview-cta{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#0b1220; box-shadow:0 8px 24px rgba(37,99,235,.25) }
-
-  /* ===== Gear cards container (centered) ===== */
-  .gear-card{
-    background:#000; width:280px; padding:16px; border-radius:10px; text-align:center;
-    box-shadow:0 0 20px #000;
-  }
-  .gear-card img{
-    width:100%; max-width:200px; height:200px; object-fit:cover;
-    margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;
-  }
-  .gear-card h3{ color:#ffa500 }
-  .gear-card p{ color:#ccc }
-  .gear-card p.hot{ color:#ff5555 }
-  .gear-card p.note{ color:#aaa; font-size:13px; font-style:italic }
-  .gear-card a{
-    color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px;
-    display:inline-block; margin-top:10px; text-decoration:none;
-  }
-  .gear-card a:hover{ background:#ff6600 }
-</style>
-
-<!-- ===== FRONT PAIR (centered, side-by-side on desktop) ===== -->
-<div class="front-pair">
-  <!-- LEFT: Amish Guide (compact) -->
-  <a class="preview-card"
-     href="/amish-winter-heat.html#amish-winter-heat"
-     aria-label="Read: How the Amish Stay Warm in Winter">
-    <div class="preview-media">
-      <img src="/berne.jpg" alt="Amish buggy on a snowy road — winter heat the old-world way" onerror="this.src='conewango.jpg'">
-      <span class="preview-badge">New</span>
-    </div>
-    <div class="preview-body">
-      <div class="preview-tag">Field Guide</div>
-      <h3 class="preview-title">How the Amish Stay Warm in Winter</h3>
-      <p class="preview-deck">Old-world heat without the grid — wood &amp; coal stoves, window quilts, humidity, and daily rhythms you can copy at home.</p>
-      <span class="preview-cta">Read the guide →</span>
-    </div>
-  </a>
-
-<!-- ===== GEAR CARDS ROW (centered; **4-up on desktop**) ===== -->
-<style>
-  /* Upgrade: force 4 columns on desktop, center the row, keep responsive */
-  .center-row{
-    display:grid; gap:22px; align-items:stretch; justify-items:center;
-    grid-template-columns:1fr;                       /* phones */
-    max-width:1320px; margin:52px auto; padding:0 12px;
-  }
-  @media (min-width:700px){ .center-row{ grid-template-columns:repeat(2, minmax(260px, 1fr)); } }
-  @media (min-width:1100px){ .center-row{ grid-template-columns:repeat(4, minmax(260px, 1fr)); } }
-
-  .gear-card{
-    background:#000; width:100%; max-width:300px; padding:16px; border-radius:12px; text-align:center;
-    box-shadow:0 0 20px #000, 0 0 0 1px rgba(255,255,255,.06);
-    display:flex; flex-direction:column; gap:8px; position:relative; overflow:hidden;
-  }
-  .gear-card img{
-    width:100%; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 0 10px #000;
-  }
-  .gear-card h3{ color:#ffa500; font-size:1rem; margin:.25rem 0 }
-  .gear-card p{ color:#cfcfcf; font-size:.93rem; margin:0 }
-  .gear-card p.hot{ color:#ff6b6b; font-weight:700 }
-  .gear-card p.note{ color:#a9a9a9; font-size:.83rem; font-style:italic }
-  .gear-card a{
-    color:#101318; background:#ffa500; padding:10px 14px; border-radius:8px; font-weight:900;
-    text-decoration:none; display:inline-block; margin-top:6px;
-    box-shadow:0 10px 26px rgba(255,165,0,.25);
-    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
-  }
-  .gear-card a:hover{ background:#ff7a00; transform:translateY(-1px); box-shadow:0 16px 34px rgba(255,165,0,.35) }
-
-  /* Small corner badge for urgency */
-  .gear-badge{
-    position:absolute; top:10px; left:-8px; padding:6px 12px; font-size:.78rem; font-weight:900;
-    background:linear-gradient(180deg,#ff7a00,#e06100); color:#0b0f12;
-    border-top-right-radius:8px; border-bottom-right-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,.35);
-  }
-</style>
-
-
-
-   <!-- 🥵 Stay Cool Blog Teaser -->
-<section style="background: url('images/hotsun.jpg') center center / cover no-repeat; position: relative; padding: 60px 20px; text-align: center; font-family:'Orbitron', sans-serif; box-shadow: inset 0 0 0 9999px rgba(0,0,0,0.4);">
-  <div style="max-width:800px; margin:0 auto; color:#fff;">
-    <h2 style="font-size:2em; color:#00e1ff;">🥵 How We Beat the Blackout Heat</h2>
-    <p style="font-size:1.1em; line-height:1.6; color:#eee;">
-      After a rogue tornado knocked out power for two sweltering weeks in the Mississippi Delta, our small town got left behind. But while others wilted, we kept our cool — literally. With clever tricks, essential gear, and a little old-school grit, we stayed calm, clean, and comfortable. Here’s exactly how we did it.
-    </p>
-    <a href="manifesto.html#stay-cool-blackout" class="cta-button" style="margin-top:20px;">🧊 Read More</a>
-  </div>
-</section>
-
-
-<style>
-  :root{ --ink:#e9ecef; --muted:#9aa3ab; --bg:#0f0f0f; --edge:#262626; --accent:#ffa500; }
-  .gg-about{ background:linear-gradient(180deg,#111,#0d0d0d); border-bottom:1px solid var(--edge) }
-  .gg-about__wrap{ max-width:1100px; margin:0 auto; padding:clamp(18px,3vw,28px) 18px; display:grid; grid-template-columns:520px 1fr; gap:22px; align-items:center }
-  @media (max-width:980px){ .gg-about__wrap{ grid-template-columns:1fr } }
-  .gg-about__media{ position:relative; aspect-ratio:5/4; border:1px solid var(--edge); border-radius:18px; overflow:hidden; background:#121212; box-shadow:0 18px 44px rgba(0,0,0,.55) }
-  .gg-about__shot{ position:absolute; margin:0; border-radius:12px; overflow:hidden; box-shadow:0 12px 28px rgba(0,0,0,.45); border:1px solid #2b2b2b }
-  .gg-about__shot img{ width:100%; height:100%; object-fit:cover; display:block }
-  .gg-about__shot--a{ left:2.5%; top:5%; width:58%; height:90% }
-  .gg-about__shot--b{ right:3%; bottom:5%; width:44%; height:50% }
-  .gg-about__logo{ position:absolute; left:10px; top:10px; width:84px; height:84px; border-radius:50%; background:rgba(0,0,0,.6); border:1px solid #2b2b2b; display:grid; place-items:center }
-  .gg-about__logo img{ width:72%; height:72%; object-fit:contain }
-  .gg-about__title{ margin:0 0 6px; font-size:clamp(1.4rem,1.4vw + 1rem,2rem) }
-  .gg-about__tag{ margin:0 0 12px; color:var(--accent); font-weight:800 }
-  .gg-about__text{ margin:0 0 10px; color:var(--muted); max-width:60ch }
-  .gg-about__bullets{ margin:10px 0 12px; padding-left:1.1rem; color:#c9d2da }
-  .gg-about__bullets li{ margin:.4rem 0 }
-  .gg-about__ctas{ display:flex; gap:10px; margin-top:12px }
-  .gg-btn{ display:inline-block; font-weight:900; padding:10px 14px; border-radius:12px; text-decoration:none }
-  .gg-btn--primary{ background:linear-gradient(180deg,var(--accent),#e06100); color:#111; border:1px solid #a86f00; box-shadow:0 12px 26px rgba(224,97,0,.28) }
-  .gg-btn--ghost{ color:#d9e3ea; border:1px solid #2f2f2f; background:#151515 }
-</style>
-
-    
-    <a href="solar-fan-hat-review.html#solar-fan-hat-review" class="cta-button">
-  🌞 Solar Fan Hat Review (Yes, Seriously)
-  <div class="desc">
-    Looks like a gag gift… but this solar-powered fan hat saved my sanity while mowing in 100° heat. Dual fans. Solar panel. USB backup. <strong>Read more ➜</strong>
-  </div>
-</a>
-
-  </div>
-</section>
-
-<!-- ===== Two-Up Preview Grid: Stove + Paracord ===== -->
-<style>
-  :root{
-    --ink:#e9ecef; --muted:#b3bdc6; --edge:#2a2a2a; --bg:#111;
-    --card:#1a1a1a; --accent:#ffa500; --accent2:#34d399;
-  }
-  .previews-wrap{max-width:1100px;margin:32px auto;padding:0 16px}
-  .preview-grid{
-    display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;
-  }
-  @media (max-width:900px){ .preview-grid{grid-template-columns:1fr} }
-
-  .preview-card{
-    display:grid; grid-template-columns:260px 1fr; gap:16px;
-    background:linear-gradient(120deg,#1b1b1b,#141414 60%);
-    color:var(--ink); text-decoration:none; border:1px solid var(--edge);
-    border-radius:14px; padding:14px; box-shadow:0 10px 26px rgba(0,0,0,.35);
-    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  }
-  .preview-card:hover{ transform:translateY(-2px); box-shadow:0 16px 38px rgba(0,0,0,.5); border-color:#333 }
-  .media{position:relative; aspect-ratio:4/3; overflow:hidden; border-radius:10px; background:#0c0c0c}
-  .media img{width:100%;height:100%;object-fit:cover;display:block}
-  .badge{
-    position:absolute; left:8px; top:8px; font-size:.78rem; font-weight:800;
-    background:rgba(0,0,0,.55); border:1px solid #2d2d2d; color:#e9eef4;
-    padding:6px 10px; border-radius:999px
-  }
-  .content{display:grid; grid-template-rows:auto auto 1fr auto}
-  .title{margin:0 0 6px; font-size:clamp(1.05rem,1vw + .9rem,1.55rem); line-height:1.2; color:var(--ink)}
-  .desc{margin:0; color:var(--muted); line-height:1.55; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden}
-  .cta{
-    margin-top:10px; width:max-content; font-weight:900; letter-spacing:.2px;
-    background:linear-gradient(180deg,var(--accent),#e06100); color:#111;
-    padding:9px 12px; border-radius:10px; border:1px solid #a86f00; box-shadow:0 10px 22px rgba(224,97,0,.28)
-  }
-  .cta.green{background:linear-gradient(180deg,var(--accent2),#0aa57f); border-color:#127a62; color:#081013}
-  @media (max-width:760px){ .preview-card{grid-template-columns:1fr} }
-</style>
-
-
-
-  <!-- Paracord / TITAN Preview (robust image + fallback) -->
-<a class="preview-card" href="https://gritgearhq.com/titan-survival-collab.html#why-550"
-   aria-label="Read: Why real 550 paracord beats cheap cordage">
-  <figure class="media" style="min-width:0">
-    <picture>
-      <!-- WebP first -->
-      <source type="image/webp" srcset="/images/survivorcord-hero-2000.webp">
-      <!-- Fallback (served if WebP not supported or MIME misconfigured) -->
-      <img src="/images/survivorcord-hero-2000.jpg"
-           alt="Bundles of SurvivorCord 550 paracord—orange and OD green—on a workbench"
-           loading="lazy" decoding="async"
-           style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block">
-    </picture>
-    <span class="badge">🪢 Paracord Guide</span>
-  </figure>
-  <div class="content" style="min-width:0">
-    <h3 class="title" style="overflow-wrap:anywhere">Why 550 Paracord Beats Cheap Cordage</h3>
-    <p class="desc" style="-webkit-line-clamp:3;-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden;overflow-wrap:anywhere">
-      Real 550 ties cleaner, lasts longer, and TITAN’s SurvivorCord® adds fishing line, wire, and tinder in the core. Wrap it on your kit and wonder how you lived without it.
-    </p>
-    <span class="cta green">Read the SurvivorCord® guide →</span>
-  </div>
-</a>
-
-<!-- mobile single-column fallback -->
-<style>
-@media (max-width:760px){
-  .preview-card { grid-template-columns:1fr !important; }
-}
-</style>
-
-  </div>
-</div>
-<!-- /Two-Up Preview Grid -->
-
-  </a>
-</section>
-
-  </a>
-</section>
-
-<!-- 🔥 Blog Preview Card: Nobody Gives a Sh*t -->
-<section style="background:#1a1a1a; border:2px solid #ffa500; border-radius:10px; box-shadow:0 0 20px #000; margin:40px auto; padding:20px; max-width:1000px; font-family:'Orbitron', sans-serif;">
-  <a href="manifesto.html#nobody-cares-blog" style="text-decoration:none; color:inherit;">
-    <img src="images/lonely.jpg" alt="Grind in Silence" style="width:100%; border-radius:10px; margin-bottom:20px; box-shadow:0 0 10px #000;">
-    <h2 style="color:#ffa500; font-size:1.8em; margin-bottom:10px;">Nobody Gives a Sh*t... And That's Okay</h2>
-    <p style="color:#ccc; font-size:1.05em; line-height:1.6;">
-      Take a break from the noise. Grind alone. Get better in silence. Nobody needs to cheer you on — and that’s the whole point. 
-      This is how you come back stronger, smarter, and unrecognizable. Includes stoic wisdom, Goggins fire, and a truth bomb or two.
-    </p>
-    <div style="margin-top:15px; text-align:right;">
-      <span style="background:#ffa500; color:#000; padding:8px 16px; border-radius:6px; font-weight:bold; display:inline-block;">
-        🔗 Read the Full Post
-      </span>
-    </div>
-  </a>
-</section>
-
-
-<!-- Side-by-Side Section -->
-<section style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; align-items:stretch; margin:60px auto; max-width:1100px;">
-
-  <!-- 🐻 Man vs Bear Blog Teaser -->
-  <div style="flex:1; min-width:300px; background:#111 url('images/manbear1.jpg') center/cover no-repeat; border:2px solid #ffa500; border-radius:14px; box-shadow:0 0 30px #000; display:flex; align-items:center; justify-content:center;">
-    <div style="background:rgba(0,0,0,0.6); padding:30px; border-radius:12px; text-align:center; font-family:'Orbitron', sans-serif;">
-      <h2 style="color:#ffa500; font-size:1.8em; margin-bottom:15px;">🐻 Man vs Bear: Who Would You Trust?</h2>
-      <p style="color:#ddd; font-size:1em; line-height:1.6; margin-bottom:20px;">
-        Would you feel safer stranded in the deep woods with a random man or a wild bear? It’s not just a meme — it’s a look at how we see danger, trust, and survival in today’s world. This one's spicy. 
-      </p>
-      <a href="bear-vs-man.html#bear-vs-man" class="cta-button">🐾 Read More</a>
-    </div>
-  </div>
-
-
-</section>
-
-
-<!-- SIDE-BY-SIDE PREVIEWS: Survival Blog + Masculinity Manifesto (drop anywhere) -->
-<link rel="prefetch" href="/cannabis-for-survival.html">
-<link rel="prefetch" href="/manifesto.html">
-
-<style>
-  :root{
-    --ink:#e8edf2; --muted:#b8c2cc; --panel:#121821; --edge:#1f2a35; --accent:#ffa500;
-  }
-  .pair-wrap{max-width:1100px;margin:22px auto;padding:clamp(12px,3vw,24px)}
-  .pair-grid{
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;
-    align-items:stretch;justify-items:center;
-  }
-  @media (max-width:900px){ .pair-grid{grid-template-columns:1fr} }
-
-  .pair-card{
-    display:grid;grid-template-columns:42% 58%;
-    width:100%;max-width:540px;text-decoration:none;color:var(--ink);
-    background:var(--panel);border:1px solid var(--edge);border-radius:16px;overflow:hidden;
-    box-shadow:0 0 0 1px rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.5);
-    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-    font-family: 'Orbitron', system-ui, sans-serif;
-  }
-  .pair-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.1),0 16px 42px rgba(0,0,0,.6)}
-  @media (max-width:760px){ .pair-card{grid-template-columns:1fr} }
-
-  .pair-media{position:relative;height:160px;min-height:160px;background:#0f141a}
-  .pair-media img{width:100%;height:100%;object-fit:cover;display:block}
-  .pair-badge{
-    position:absolute;top:10px;left:10px;padding:6px 10px;border-radius:999px;
-    background:linear-gradient(180deg,var(--accent),#e06100);color:#0b0f12;font-weight:800;font-size:.75rem
-  }
-
-  .pair-body{padding:14px 16px 16px}
-  .pair-tag{color:var(--muted);font-size:.85rem;letter-spacing:.35px;text-transform:uppercase}
-  .pair-title{margin:.25rem 0 .4rem;font-size:clamp(1.06rem,2vw,1.38rem);font-weight:800;color:#fff}
-  .pair-deck{color:#c9d2da;margin:0 0 .7rem;line-height:1.45}
-  .pair-cta{
-    display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:10px;font-weight:900;letter-spacing:.3px;
-    background:linear-gradient(180deg,var(--accent),#e06100);color:#101318;box-shadow:0 8px 24px rgba(255,122,0,.25)
-  }
-
-  /* Optional: thin accent line above/below the whole block */
-  .pair-wrap .accent-top{height:2px;background:var(--accent);opacity:.9;margin-bottom:10px;border-radius:2px}
-  .pair-wrap .accent-bot{height:2px;background:var(--accent);opacity:.9;margin-top:10px;border-radius:2px}
-</style>
-
-<div class="pair-wrap">
-  <div class="accent-top" aria-hidden="true"></div>
-
-  <div class="pair-grid">
-    <!-- LEFT: Survival Blog -->
-    <a class="pair-card"
-       href="/cannabis-for-survival.html#top"
-       aria-label="Read: Bud Over Booze — A Survivalist’s Manifesto">
-      <div class="pair-media">
-        <img src="/cannabis-friendly-1-1024x683.jpg"
-             alt="Calm camp in the forest — clear-headed survival vibes" loading="lazy" decoding="async">
-        <span class="pair-badge">New</span>
-      </div>
-      <div class="pair-body">
-        <div class="pair-tag">Survival Mindset</div>
-        <h3 class="pair-title">Bud Over Booze — A Survivalist’s Manifesto</h3>
-        <p class="pair-deck">How a simple plant outperforms alcohol for pain, sleep, appetite, and group calm — plus my vetted, discreet source.</p>
-        <span class="pair-cta">Read the survival blog →</span>
-      </div>
-    </a>
-
-    <!-- RIGHT: Masculinity Manifesto -->
-    <a class="pair-card"
-       href="/manifesto.html#top"
-       aria-label="Read: Where Have All the Men Gone? — The Manifesto">
-      <div class="pair-media">
-        <img src="images/manly.jpg"
-             alt="Masculinity manifesto cover — bold type and grit" loading="lazy" decoding="async">
-        <span class="pair-badge">Featured</span>
-      </div>
-      <div class="pair-body">
-        <div class="pair-tag">Culture &amp; Duty</div>
-        <h3 class="pair-title">Where Have All the Men Gone?</h3>
-        <p class="pair-deck">Not bullets — shame, censorship, and softness. If you’ve felt it, you’re not crazy — you’re awake. Plant your flag.</p>
-        <span class="pair-cta">Read the manifesto →</span>
-      </div>
-    </a>
-  </div>
-
-  <div class="accent-bot" aria-hidden="true"></div>
-</div>
-
-  <!-- 🏜️ Death Valley Germans Blog Feature -->
-  <section class="gg-feature" aria-labelledby="gg-dvg-title">
-    <div class="gg-container">
-      <article class="gg-feature-card">
-        <img src="images/germans.jpg" alt="Death Valley Germans Missing" class="gg-feature-img" />
-        <div class="gg-feature-body">
-          <h2 id="gg-dvg-title">The Death Valley Germans: A Desert Mystery Turned Tragedy</h2>
-          <p>
-            In the sweltering July heat of 1996, a young German family of four vanished without a trace in Death Valley National Park. Egbert Rimkus, a 34-year-old engineer, his son Georg, girlfriend Cornelia Meyer, and her 4-year-old son Max were adventuring across the Southwest—until they weren’t.
-          </p>
-          <p>
-            Their minivan was later found abandoned deep in the desert, far off any safe path. It would be years before searchers uncovered the remains. No one knows why they veered so far off course.
-          </p>
-          <p><em>Respect to the families who endured. May their memory echo as a warning.</em></p>
-          <a href="manifesto.html" class="gg-btn">🔗 Read the Full Story In The Manifesto</a>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <article class="hero-card">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="kicker">Independent • Honest • Field-Tested</p>
+          <h1 class="h1">Straight talk gear: we break cheap stuff so you don’t.</h1>
+          <p class="hero-deck">Real kits for daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Fewer tabs, better picks, legal and transparent.</p>
+          <a class="hero-cta" href="https://collabs.shop/rl5mw6" target="_blank" rel="noopener sponsored nofollow">Featured: SurvivorCord® →</a>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- 🐾 Survivorman vs Bear Grylls -->
-  <section class="gg-compare" aria-labelledby="gg-compare-title">
-    <div class="gg-container gg-flex">
-      <a href="manifesto.html#survivorman-vs-bear" class="gg-media">
-        <img src="images/les-vs-bear.jpg" alt="Survivorman vs Bear Grylls" class="gg-img--shadow" />
-      </a>
-      <div class="gg-copy">
-        <h2 id="gg-compare-title">🐾 Survivorman vs Bear Grylls</h2>
-        <p>
-          One man fakes the wild with a safety crew and stunt doubles. The other hauls 50 lbs of camera gear and actually <i>survives</i>. If your life depended on it... who would you trust?
-        </p>
-        <p class="gg-muted">Spoiler: It ain’t the guy drinking his own pee for ratings.</p>
-        <a href="manifesto.html#survivorman-vs-bear" class="gg-btn gg-btn--lg">🔥 Read the Full Breakdown</a>
+  <!-- ===== Fast Movers (top row) ===== -->
+  <section class="wrap">
+    <div class="section-head">
+      <h2>Fast Movers</h2>
+      <div class="chips">
+        <span class="chip">Camp-Ready</span><span class="chip">Field-Tested</span><span class="chip">Ships Fast</span>
       </div>
     </div>
-  </section>
-  
-<a href="/quiet-medicine.html#quiet-medicine" class="cta-button">
-  🌿 The Quiet Medicine — Read Now
-</a>
 
-  <!-- FOOTER -->
-  <footer class="gg-footer">
-    <div class="gg-container gg-center">
-      <p>&copy; 2024 Grit Gear HQ · All Rights Reserved</p>
-      <p class="gg-small">
-        Affiliate disclosure: As an Amazon Associate, we earn from qualifying purchases.
-        Proceeds help keep this site alive and full of free survival content.
-        Stay prepared. Stay gritty. – Serpico
-      </p>
-      <p class="gg-tribute">Dedicated To Christopher Ballard. Until Valhalla, SEMPER FIDELIS.</p>
+    <div class="grid">
+      <!-- Warpath Bowie -->
+      <article class="card">
+        <figure class="media">
+          <img src="/$_57%20(7).jfif" loading="lazy" decoding="async" alt="Warpath Bowie blacked carbon steel" onerror="this.src='/$_57%20(6).jfif'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Backcountry Pick</p>
+          <h3 class="title">Warpath Bowie — Blacked Carbon Steel</h3>
+          <ul class="bullets">
+            <li>Full-tang carbon steel, built to be sharpened.</li>
+            <li>Guarded handle; batons, preps, and chops.</li>
+          </ul>
+          <div class="meta"><span class="stars">★★★★★</span><span>4.7 (132)</span></div>
+          <a class="cta" href="https://www.ebay.com/itm/226375066069?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Add to kit →</a>
+        </div>
+      </article>
+
+      <!-- Skull folder -->
+      <article class="card">
+        <figure class="media">
+          <img src="/skullknife2.jpg" loading="lazy" decoding="async" alt="Skull inlay folder sheepsfoot" onerror="this.src='/skullknife1.jpg'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Everyday Carry</p>
+          <h3 class="title">Skull-Inlay Traditional Folder</h3>
+          <ul class="bullets">
+            <li>Clean sheepsfoot profile; precise control.</li>
+            <li>Classic walk-and-talk; pocket-friendly.</li>
+          </ul>
+          <div class="meta"><span class="stars">★★★★★</span><span>4.8 (210+)</span></div>
+          <a class="cta" href="https://www.ebay.com/itm/236281207985?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Pick your handle →</a>
+        </div>
+      </article>
+
+      <!-- Pocket Woodcarver -->
+      <article class="card">
+        <figure class="media">
+          <img src="/s-l1600%20(13).jpg" loading="lazy" decoding="async" alt="Pocket woodcarver with wooden sheath" onerror="this.src='/%24_57%20(10).jfif'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">EDC Craft</p>
+          <h3 class="title">Pocket Woodcarver — Micro Fixed Blade</h3>
+          <ul class="bullets">
+            <li>Zip ties, tinder, tags—high control.</li>
+            <li>Gift-ready; daily-driver utility.</li>
+          </ul>
+          <div class="meta"><span class="stars">★★★★★</span><span>4.7 (300+)</span></div>
+          <a class="cta" href="https://www.ebay.com/itm/315930343136?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab it →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Heat, Cook, Power ===== -->
+  <section class="wrap">
+    <div class="section-head">
+      <h2>Heat • Cook • Power</h2>
+      <div class="chips"><span class="chip">Low Temp</span><span class="chip">Off-Grid</span><span class="chip">Tested</span></div>
+    </div>
+
+    <div class="grid">
+      <!-- Portable gas heater -->
+      <article class="card">
+        <figure class="media">
+          <img src="/%24_57.jfif" loading="lazy" decoding="async" alt="Portable gas heater" onerror="this.src='/%24_57%20(2).jfif'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Selling Fast</p>
+          <h3 class="title">Portable Gas Heater & Warmer</h3>
+          <ul class="bullets">
+            <li>3-zone top: heat, cook, keep-warm.</li>
+            <li>Compact for tents, ice shacks, outages.</li>
+          </ul>
+          <div class="meta"><span class="stars">★★★★☆</span><span>4.6 (1,240+)</span></div>
+          <a class="cta" href="https://www.ebay.com/itm/396302793768?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">See today’s price →</a>
+        </div>
+      </article>
+
+      <!-- Multi-fuel tabletop heater -->
+      <article class="card">
+        <figure class="media">
+          <img src="/s-l1600%20(1).jpg" loading="lazy" decoding="async" alt="Multi-fuel tabletop heater" onerror="this.src='/%24_57%20(3).jfif'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Hot Pick</p>
+          <h3 class="title">Multi-Fuel Tabletop Tent Heater</h3>
+          <ul class="bullets">
+            <li>Iso-butane, butane, or propane (adapters).</li>
+            <li>Dial control from simmer-warm to toasty.</li>
+          </ul>
+          <div class="meta"><span class="stars">★★★★★</span><span>4.8 (890+)</span></div>
+          <a class="cta" href="https://www.ebay.com/itm/187037140543?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab the deal →</a>
+        </div>
+      </article>
+
+      <!-- Cook set -->
+      <article class="card">
+        <figure class="media">
+          <img src="/outdoorp1.jpg" loading="lazy" decoding="async" alt="Compact backpacking cook set" onerror="this.src='/outdoorp2.jpg'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">New</p>
+          <h3 class="title">Compact Backpacking Cook Set</h3>
+          <ul class="bullets">
+            <li>Nested pots + pan; ultralight burner.</li>
+            <li>Packs tiny—daypack & bug-out ready.</li>
+          </ul>
+          <div class="meta"><span class="stars">★★★★☆</span><span>4.6</span></div>
+          <a class="cta" href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Cook kit listing →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Security, Water, Cleanups ===== -->
+  <section class="wrap">
+    <div class="section-head">
+      <h2>Security • Water • Cleanups</h2>
+      <div class="chips"><span class="chip">Practical</span><span class="chip">Legal</span><span class="chip">Discreet</span></div>
+    </div>
+
+    <div class="grid">
+      <!-- Conductive device (taser listing) -->
+      <article class="card">
+        <figure class="media">
+          <img src="/psg.jpg" loading="lazy" decoding="async" alt="Conductive self-defense device" onerror="this.src='/psg1.jpg'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Low Stock</p>
+          <h3 class="title">Police & MP Style — 3 Disposable Heads</h3>
+          <ul class="bullets">
+            <li>Includes 3 replaceable heads + case.</li>
+            <li>Laser pointer & safety wrist lanyard.</li>
+          </ul>
+          <div class="meta"><span class="stars">★★★★☆</span><span>4.7 (213)</span></div>
+          <a class="cta" href="https://www.ebay.com/itm/197691660077?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check price →</a>
+        </div>
+      </article>
+
+      <!-- 5-gal Solar Camp Shower -->
+      <article class="card">
+        <figure class="media">
+          <img src="/shower1.jpg" loading="lazy" decoding="async" alt="5-gal solar shower" onerror="this.src='/shower3.jpg'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Trending</p>
+          <h3 class="title">Solar Camp Shower (5-gal)</h3>
+          <ul class="bullets">
+            <li>Heats with sunlight; on/off shower head.</li>
+            <li>Great for camping, beach, off-grid rinses.</li>
+          </ul>
+          <div class="meta"><span class="stars">★★★★☆</span><span>4.6 (168)</span></div>
+          <a class="cta" href="https://www.ebay.com/itm/234159796659?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1ebTfgRcZmYsgwpg0ZK15hl3ouha%2BThHnsX1ibwEnlaZk4Tsawe930zFH8jsVFjB771DiVeFepH%2FPJv7w9On3IEKLdI9G%2BQyAlatEtMLzDW4AKxu9BfkMpbk880C8pY9jxvmJsFSaIkqtzgCyXFvquC6BA9kDHql6gXjsORt%2B7fdqQA52uSxIZ6ekmqIz7m9fo%3D" target="_blank" rel="nofollow sponsored noopener">See colors & deal →</a>
+        </div>
+      </article>
+
+      <!-- Fire kit tin (Uncle Tommy’s) -->
+      <article class="card">
+        <figure class="media">
+          <img src="/uncletommy.jpg" loading="lazy" decoding="async" alt="Uncle Tommy’s Fire Starten Kit">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">EDC Fire</p>
+          <h3 class="title">Uncle Tommy’s Fire Starten Kit</h3>
+          <ul class="bullets">
+            <li>25 large waterproof matches + striker.</li>
+            <li>4 sawdust fire discs in a pocket tin.</li>
+          </ul>
+          <div class="meta"><span class="stars">★★★★☆</span><span>4.6</span></div>
+          <a class="cta" href="https://www.ebay.com/itm/175132576181?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1dxU8LoGZ15e69wiRtDrf7ryrwSy%2Btrco5WCCEsJ98I6MhSsSZjFCu14kFEAqulT82WD%2FhTOIsTKzZb0OHvXabNl%2FzmAWMciU75KQHsaJpy%2FXYQmKH1dvLWzyab%2BjZyZKfiH%2FiuHNrkbeJaucP5I%2BNmSZmhiG8NFGmQJL7%2FgU7ivpYhG%2F93hrjOMH%2BYpcvxJIY%3D" target="_blank" rel="nofollow sponsored noopener">Add fire-start →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Big Upgrades (Overland + Power + Collabs + Notebook) ===== -->
+  <section class="wrap">
+    <div class="section-head">
+      <h2>Upgrades & Collabs</h2>
+      <div class="chips"><span class="chip">Overland</span><span class="chip">Power</span><span class="chip">Collab</span></div>
+    </div>
+
+    <div class="grid">
+      <!-- Rooftop tent -->
+      <article class="card">
+        <figure class="media">
+          <img src="/$_1%20(3).jfif" loading="lazy" decoding="async" alt="Hard-shell rooftop tent">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Overland</p>
+          <h3 class="title">Hard-Shell Rooftop Tent (4-Season)</h3>
+          <ul class="bullets">
+            <li>Opens in seconds; insulated & waterproof.</li>
+            <li>Fits most racks (≥600-lb static).</li>
+          </ul>
+          <a class="cta" href="https://www.ebay.com/itm/286423670948?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cI7TSu%2Bv6jbuh8cC%2BWkzlE65Za7KS%2F5ivkShC9d1dQ6hSZufQkK7mkuPN2f%2B6epYIKlNnaleCgkUcZYQDEwyDEBC%2B4xIQ4GdYnn5ZkrmxGRj2FMdzEEkWubFDdZBgWiDQhqvaQFdAt9bcVlKD%2BflFBbH1AwHz6hYBsQzAGZm0Hb1dEC2rwrmIgGj023q7Tz4o%3D" target="_blank" rel="nofollow sponsored noopener">Check availability →</a>
+        </div>
+      </article>
+
+      <!-- 13,500-lb winch -->
+      <article class="card">
+        <figure class="media">
+          <img src="/winch.jpg" loading="lazy" decoding="async" alt="13,500-lb winch with synthetic rope" onerror="this.style.display='none'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Recovery</p>
+          <h3 class="title">13,500-lb Winch — Synthetic Rope</h3>
+          <ul class="bullets">
+            <li>Remote control; sealed; trail-ready.</li>
+            <li>Solid for trucks, SUVs, and Jeeps.</li>
+          </ul>
+          <a class="cta" href="https://www.ebay.com/itm/375582132759?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Equip this winch →</a>
+        </div>
+      </article>
+
+      <!-- Portable Solar Power Station -->
+      <article class="card">
+        <figure class="media">
+          <img src="/$_12%20(4).jfif" loading="lazy" decoding="async" alt="Portable solar power station kit">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Off-Grid Power</p>
+          <h3 class="title">Solar Power Station + 4 LED Bulbs</h3>
+          <ul class="bullets">
+            <li>Charge via sun or AC; run lights/phones.</li>
+            <li>US-stock shipping; compact carry.</li>
+          </ul>
+          <a class="cta" href="https://www.ebay.com/itm/333785000242?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Power your base →</a>
+        </div>
+      </article>
+
+      <!-- Collab: TITAN -->
+      <article class="card">
+        <figure class="media">
+          <img src="/titanlogo.jpg" loading="lazy" decoding="async" alt="TITAN Survival logo" style="object-fit:contain;background:#0c0c0c">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Collab</p>
+          <h3 class="title">TITAN Survival × Grit Gear HQ</h3>
+          <ul class="bullets">
+            <li>Why SurvivorCord®, shock cord, sane stitching.</li>
+          </ul>
+          <a class="cta" href="/titan-survival-collab.html">Read the collab →</a>
+        </div>
+      </article>
+
+      <!-- Collab: TACAMO fire kit -->
+      <article class="card">
+        <figure class="media">
+          <img src="/images/ultimate-fire-kit.png" loading="lazy" decoding="async" alt="TACAMO ultimate fire kit" onerror="this.src='Untitled.png'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">10% OFF</p>
+          <h3 class="title">TACAMO × Grit Gear HQ</h3>
+          <ul class="bullets">
+            <li>Ferro rod, tinder, tools, boil-ready mess tin.</li>
+          </ul>
+          <a class="cta" href="https://collabs.shop/mke6bg" target="_blank" rel="nofollow sponsored noopener">Shop the kit →</a>
+        </div>
+      </article>
+
+      <!-- Thought Crimes notebook (Amazon) -->
+      <article class="card">
+        <figure class="media">
+          <img src="/tccc.jpg" loading="lazy" decoding="async" alt="Thought Crimes notebook" onerror="this.src='/thought-crimes.jpg'">
+        </figure>
+        <div class="body">
+          <p class="eyebrow">Everyday Carry</p>
+          <h3 class="title">Thought Crimes: A Notebook for Dangerous Ideas</h3>
+          <ul class="bullets">
+            <li>Hardcover look, rugged pages; capture plans off-grid.</li>
+          </ul>
+          <a class="cta" href="https://amzn.to/4gt5cIt" target="_blank" rel="nofollow sponsored noopener">Check price →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Quick Picks / Internal Content ===== -->
+  <section class="wrap">
+    <div class="section-head"><h2>Quick Picks</h2></div>
+    <div class="grid">
+      <!-- Survival quiz -->
+      <a class="card" href="/survival-quiz.html#top">
+        <figure class="media"><img src="/survive-8683959_1280.jpg" loading="lazy" decoding="async" alt="Survival quiz teaser"></figure>
+        <div class="body">
+          <p class="eyebrow">Learn & Share</p>
+          <h3 class="title">Survival Basics Quiz (15 questions)</h3>
+          <p class="eyebrow">Instant feedback • Trail safety • Shelter • Signals</p>
+          <span class="cta" style="display:inline-block">Take the quiz →</span>
+        </div>
+      </a>
+
+      <!-- Blog: Bud over booze -->
+      <a class="card" href="/cannabis-for-survival.html#top">
+        <figure class="media"><img src="/cannabis-friendly-1-1024x683.jpg" loading="lazy" decoding="async" alt="Camp scene"></figure>
+        <div class="body">
+          <p class="eyebrow">Manifesto</p>
+          <h3 class="title">Bud Over Booze — A Survivalist’s Manifesto</h3>
+          <p class="eyebrow">Sleep, pain, appetite, group calm—smarter than alcohol.</p>
+          <span class="cta" style="display:inline-block">Read the post →</span>
+        </div>
+      </a>
+
+      <!-- Mess kit review -->
+      <a class="card" href="/mess-kit.html">
+        <figure class="media"><img src="/images/messkit-chili.jpg" loading="lazy" decoding="async" alt="13-piece mess kit"></figure>
+        <div class="body">
+          <p class="eyebrow">Review</p>
+          <h3 class="title">Compact 13-Piece Mess Kit</h3>
+          <p class="eyebrow">10+ years tested • Bug-out ready • Easy-clean soot</p>
+          <span class="cta" style="display:inline-block">Read the full review →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="wrap">
+    <div class="ft">
+      <span>© <span id="y"></span> Grit Gear HQ</span>
+      <span style="color:var(--mut)">21+ where applicable. Always follow local laws.</span>
     </div>
   </footer>
 
-</section>
-
- <!-- Grit Gear • Floating Tabbed Affiliate Sidebar (no AdSense) -->
-<div id="gg-floaty"
-     class="gg-float-wrap tabs"
-     data-utm-source="gritgear"
-     data-utm-medium="sidebar"
-     data-utm-campaign="affiliates"
-     aria-label="Grit Gear tabbed sidebar">
-
-  <style>
-    .gg-float-wrap.tabs{position:relative;z-index:9999}
-    .gg-box{position:fixed; top:50vh; right:12px; transform:translateY(-50%);
-            width:348px; max-height:86vh; overflow:hidden; border-radius:16px;
-            background:#0f1014; border:1px solid #2b2f3a; box-shadow:0 14px 38px rgba(0,0,0,.45)}
-    .gg-shell{display:grid; grid-template-columns:auto 1fr; min-height:220px}
-
-    /* Tabs */
-    .gg-tabs{list-style:none; margin:0; padding:8px; display:flex; flex-direction:column; gap:10px;
-             background:#0b0e13; border-right:1px solid #262c38}
-    .gg-tab{cursor:pointer; user-select:none; border:1px solid #2b2f3a; color:#e9ecf4;
-            background:#141824; border-radius:10px; padding:8px 10px; min-width:108px;
-            font:800 .82rem/1.1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
-            box-shadow:0 6px 18px rgba(0,0,0,.35); transition:transform .2s ease, background .2s ease}
-    .gg-tab small{display:block; color:#8ea3b8; font-weight:700; font-size:.7rem; letter-spacing:.2px}
-    .gg-tab:hover{transform:translateX(-2px)}
-    .gg-tab.active{background:#1b2130; border-color:#3a4152}
-
-    /* Panels */
-    .gg-panels{position:relative; overflow:auto; max-height:86vh}
-    .gg-panel{display:none}
-    .gg-panel.active{display:block}
-
-    /* Cards */
-    .gg-ad{display:block; color:#e9ecf4; text-decoration:none; border-radius:0 16px 16px 0; overflow:hidden}
-    .gg-ad .shot{position:relative; aspect-ratio:16/9; border-bottom:1px solid #252b36; background:#0c0e13}
-    .gg-ad img{width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.03) saturate(1.02)}
-    .gg-ad .tag{position:absolute; top:8px; left:8px; z-index:2; font-size:.72rem; font-weight:800;
-                color:#041812; background:linear-gradient(180deg,#18e6a3,#09c78b);
-                padding:6px 10px; border-radius:999px; border:1px solid rgba(9,199,139,.5)}
-    .gg-ad .shot:after{content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:screen;
-                       background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.18) 35%,transparent 70%);
-                       transform:translateX(-80%); animation:gg-sweep 10s linear infinite}
-    @keyframes gg-sweep{to{transform:translateX(80%)}}
-    .gg-copy{padding:14px 16px}
-    .gg-copy h4{margin:0 0 6px; font-weight:900; color:#f29d2a; font-size:1.02rem; letter-spacing:.2px}
-    .gg-copy p{margin:0 0 10px; font-size:.9rem; color:#cfd5e3; line-height:1.45}
-    .gg-btn{display:inline-block; padding:9px 14px; border-radius:10px; font-weight:900; font-size:.84rem;
-            background:linear-gradient(180deg,#18f0b4,#0acb92); color:#041812; box-shadow:0 8px 20px rgba(10,203,146,.35)}
-
-    /* Close + Launcher */
-    .gg-close{position:fixed; top:12px; right:12px; z-index:10000; width:34px; height:34px; border-radius:50%;
-              display:flex; align-items:center; justify-content:center; color:#e9ecf4; background:rgba(15,16,20,.85);
-              border:1px solid #2b2f3a; box-shadow:0 8px 22px rgba(0,0,0,.45);
-              font:900 16px/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif; cursor:pointer; user-select:none}
-    .gg-close:after{content:"✕"; transform:translateY(-1px)}
-    .gg-launch{position:fixed; right:12px; bottom:calc(12px + env(safe-area-inset-bottom)); z-index:10001;
-               background:#141824;border:1px solid #2b2f3a;color:#e9ecf4;border-radius:999px;padding:8px 12px;
-               font:800 .85rem/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif; box-shadow:0 10px 22px rgba(0,0,0,.45);
-               cursor:pointer}
-    .gg-hidden{display:none!important}
-
-    /* Mobile dock */
-    @media (max-width:860px){
-      .gg-box{top:auto; bottom:calc(12px + env(safe-area-inset-bottom)); right:8px; left:8px; transform:none; width:auto; border-radius:14px}
-      .gg-shell{grid-template-columns:1fr}
-      .gg-tabs{flex-direction:row; border-right:none; border-bottom:1px solid #262c38; overflow:auto}
-      .gg-tab{min-width:120px; text-align:center}
-      .gg-panels{max-height:56vh}
-      .gg-close{top:auto; right:12px; bottom:calc(12px + 62vh + env(safe-area-inset-bottom))}
-    }
-  </style>
-
-  <div class="gg-box" role="complementary">
-    <div class="gg-shell">
-      <!-- Tab handles -->
-      <ul class="gg-tabs" role="tablist" aria-orientation="vertical">
-        <li class="gg-tab active" role="tab" aria-selected="true" aria-controls="panel-sponsored" tabindex="0">
-          Sponsored <small>Partner</small>
-        </li>
-        <li class="gg-tab" role="tab" aria-selected="false" aria-controls="panel-deals" tabindex="-1">
-          Featured Deals <small>Fast Ship</small>
-        </li>
-        <li class="gg-tab" role="tab" aria-selected="false" aria-controls="panel-shop" tabindex="-1">
-          Shop Bud <small>Discreet</small>
-        </li>
-        <li class="gg-tab" role="tab" aria-selected="false" aria-controls="panel-giveaway" tabindex="-1">
-          Giveaway <small>$1.5k+</small>
-        </li>
-        <li class="gg-tab" role="tab" aria-selected="false" aria-controls="panel-kit" tabindex="-1">
-          Prep Kit <small>Loadout</small>
-        </li>
-      </ul>
-
-      <div class="gg-panels">
-        <!-- Panel 0: Sponsored (affiliate) -->
-        <div id="panel-sponsored" class="gg-panel active" role="tabpanel">
-          <a class="gg-ad gg-link"
-             href="https://getbudonline.com/subid/christopher.serpico/"
-             target="_blank" rel="nofollow sponsored noopener">
-            <div class="shot">
-              <span class="tag">Sponsored</span>
-              <img src="gbo-sept-banner.jpg" alt="Get Bud Online — September Giveaway banner">
-            </div>
-            <div class="copy gg-copy">
-              <h4>Get Bud Online — Survival-Grade Calm</h4>
-              <p>Lab-tested flower & edibles. Discreet shipping. Reliable stock when dispensaries run dry.</p>
-              <span class="gg-btn">Shop Now →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Panel 1: Featured Deals (funnels to GBO) -->
-        <div id="panel-deals" class="gg-panel" role="tabpanel">
-          <a class="gg-ad gg-link"
-             href="https://getbudonline.com/subid/christopher.serpico/"
-             target="_blank" rel="nofollow sponsored noopener">
-            <div class="shot">
-              <span class="tag">Featured</span>
-              <img src="Screenshot_20250929-135600.png" alt="Fresh stash — weighed, sealed, ready">
-            </div>
-            <div class="copy gg-copy">
-              <h4>Today’s Best Deals</h4>
-              <p>Skip the lines. Stock up on tested flower & edibles shipped to your door.</p>
-              <span class="gg-btn">See Deals →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Panel 2: Shop Bud (alt creative) -->
-        <div id="panel-shop" class="gg-panel" role="tabpanel">
-          <a class="gg-ad gg-link"
-             href="https://getbudonline.com/subid/christopher.serpico/"
-             target="_blank" rel="nofollow sponsored noopener">
-            <div class="shot">
-              <span class="tag">Discreet</span>
-              <img src="Screenshot_20250929-135629.png" alt="Field brew — stress tea with bud prep">
-            </div>
-            <div class="copy gg-copy">
-              <h4>Survival-Grade Calm</h4>
-              <p>Flower, gummies, carts — reliable stock, ship-to-door.</p>
-              <span class="gg-btn">Shop Now →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Panel 3: Giveaway -->
-        <div id="panel-giveaway" class="gg-panel" role="tabpanel">
-          <a class="gg-ad gg-link"
-             href="https://getbudonline.com/subid/christopher.serpico/"
-             target="_blank" rel="nofollow sponsored noopener">
-            <div class="shot">
-              <span class="tag">Win Big</span>
-              <img src="gbo-sept-banner.jpg" alt="September Harvest Giveaway">
-            </div>
-            <div class="copy gg-copy">
-              <h4>September Harvest Giveaway</h4>
-              <p>$1,500+ in prizes. Enter automatically with any order via our link.</p>
-              <span class="gg-btn">Enter Now →</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Panel 4: Guide -->
-        <div id="panel-kit" class="gg-panel" role="tabpanel">
-          <a class="gg-ad gg-link" href="ptsd-bud-prepper-field-guide.html">
-            <div class="shot">
-              <span class="tag">Field Guide</span>
-              <img src="Screenshot_20250929-135629.png" alt="PTSD & Bud prepper loadout">
-            </div>
-            <div class="copy gg-copy">
-              <h4>PTSD & Bud: Prepper Loadout</h4>
-              <p>Sleep, panic, pain protocols; storage & dosing; how to grow and rotate stock.</p>
-              <span class="gg-btn">Read the Guide →</span>
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Close + Launcher -->
-  <button type="button" class="gg-close" aria-label="Hide sidebar"></button>
-  <button type="button" class="gg-launch gg-hidden" aria-label="Open sidebar">Open Ads</button>
-
+  <!-- Tiny JS (deferred) -->
   <script>
-    (function(){
-      const root = document.getElementById('gg-floaty');
-      if(!root) return;
-
-      const HIDE_KEY='ggTabbedSidebarClosed';
-      const box=root.querySelector('.gg-box');
-      const closeBtn=root.querySelector('.gg-close');
-      const launcher=root.querySelector('.gg-launch');
-
-      function show(){ box.classList.remove('gg-hidden'); closeBtn.classList.remove('gg-hidden'); launcher.classList.add('gg-hidden'); try{localStorage.removeItem(HIDE_KEY);}catch(e){} }
-      function hide(){ box.classList.add('gg-hidden'); closeBtn.classList.add('gg-hidden'); launcher.classList.remove('gg-hidden'); try{localStorage.setItem(HIDE_KEY,'1');}catch(e){} }
-      function maybe(){ try{ if(localStorage.getItem(HIDE_KEY)==='1'){ hide(); } }catch(e){} }
-
-      closeBtn.addEventListener('click',hide);
-      launcher.addEventListener('click',show);
-      maybe();
-
-      /* Tabs */
-      const tabs=[...root.querySelectorAll('.gg-tab')];
-      const panels=[...root.querySelectorAll('.gg-panel')];
-      function activate(i){
-        tabs.forEach((t,idx)=>{t.classList.toggle('active',idx===i);t.setAttribute('aria-selected',idx===i);t.tabIndex=idx===i?0:-1;});
-        panels.forEach((p,idx)=>p.classList.toggle('active',idx===i));
-      }
-      tabs.forEach((t,i)=>{
-        t.addEventListener('click',()=>activate(i));
-        t.addEventListener('keydown',(e)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(i);}});
-      });
-
-      /* UTM tagging */
-      const src=root.getAttribute('data-utm-source')||'gritgear';
-      const med=root.getAttribute('data-utm-medium')||'sidebar';
-      const camp=root.getAttribute('data-utm-campaign')||'affiliates';
-      root.querySelectorAll('a.gg-link').forEach(a=>{
-        try{
-          const u=new URL(a.href,location.href);
-          if(!u.searchParams.has('utm_source')) u.searchParams.set('utm_source',src);
-          if(!u.searchParams.has('utm_medium')) u.searchParams.set('utm_medium',med);
-          if(!u.searchParams.has('utm_campaign')) u.searchParams.set('utm_campaign',camp);
-          a.href=u.toString();
-        }catch(e){}
-      });
-    })();
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // simple mobile menu
+    document.getElementById('menuBtn')?.addEventListener('click',()=>{
+      const nav=document.querySelector('.nav'); if(!nav) return;
+      const open=nav.style.display==='flex'; nav.style.display=open?'none':'flex';
+      nav.style.position='fixed'; nav.style.inset='auto 12px 12px 12px'; nav.style.background='#101319';
+      nav.style.border='1px solid #2a303a'; nav.style.borderRadius='14px'; nav.style.padding='10px'; nav.style.flexDirection='column'; nav.style.gap='6px';
+    });
   </script>
-</div>
+</body>
+</html>
