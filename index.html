@@ -2233,59 +2233,8 @@
     .front-pair{ grid-template-columns:1fr; }
   }
 
-  /* ===== Preview cards (shared) ===== */
-  .preview-card{
-    display:grid; grid-template-columns:42% 58%; gap:0; text-decoration:none;
-    background:var(--panel,#121821); color:var(--ink,#e8edf2);
-    border:1px solid var(--line,#1f2a35); border-radius:16px; overflow:hidden;
-    box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.5);
-    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-  }
-  .preview-card:hover{ transform:translateY(-2px); box-shadow:0 0 0 1px rgba(255,255,255,.1), 0 16px 42px rgba(0,0,0,.6) }
-  @media (max-width:760px){ .preview-card{ grid-template-columns:1fr } }
-
-  .preview-media{ position:relative; height:150px; min-height:150px; background:#0f141a }
-  .preview-media img{ width:100%; height:100%; object-fit:cover; display:block }
-
-  .preview-badge{
-    position:absolute; top:10px; left:10px; padding:6px 10px; border-radius:999px;
-    background:linear-gradient(180deg,#ff7a00,#e06100); color:#0b0f12; font-weight:800; font-size:.75rem;
-  }
-  .preview-body{ padding:12px 14px 14px }
-  .preview-tag{ color:#9aa3ad; font-size:.85rem; letter-spacing:.35px; text-transform:uppercase }
-  .preview-title{ margin:.2rem 0 .3rem; font-size:clamp(1.05rem,2vw,1.35rem); font-weight:800 }
-  .preview-deck{ color:#c9d2da; margin:0 0 .6rem; font-size:.96rem; line-height:1.45 }
-  .preview-cta{
-    display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px;
-    font-weight:900; letter-spacing:.3px; background:linear-gradient(180deg,#ff7a00,#e06100);
-    color:#101318; box-shadow:0 8px 24px rgba(255,122,0,.25);
-  }
-
-  /* ===== Bloomz accent (blue) ===== */
-  .preview-card.bloomz{ border-color:#1d2a3b; box-shadow:0 0 0 1px rgba(96,165,250,.16), 0 10px 30px rgba(0,0,0,.5) }
-  .preview-card.bloomz:hover{ box-shadow:0 0 0 1px rgba(37,99,235,.22), 0 16px 42px rgba(0,0,0,.62) }
-  .preview-card.bloomz .preview-badge{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#071019 }
-  .preview-card.bloomz .preview-cta{ background:linear-gradient(180deg,#60a5fa,#2563eb); color:#0b1220; box-shadow:0 8px 24px rgba(37,99,235,.25) }
-
-  /* ===== Gear cards container (centered) ===== */
-  .gear-card{
-    background:#000; width:280px; padding:16px; border-radius:10px; text-align:center;
-    box-shadow:0 0 20px #000;
-  }
-  .gear-card img{
-    width:100%; max-width:200px; height:200px; object-fit:cover;
-    margin:0 auto 10px; display:block; border-radius:6px; box-shadow:0 0 10px #000;
-  }
-  .gear-card h3{ color:#ffa500 }
-  .gear-card p{ color:#ccc }
-  .gear-card p.hot{ color:#ff5555 }
-  .gear-card p.note{ color:#aaa; font-size:13px; font-style:italic }
-  .gear-card a{
-    color:#fff; background:#ffa500; padding:8px 16px; border-radius:5px;
-    display:inline-block; margin-top:10px; text-decoration:none;
-  }
-  .gear-card a:hover{ background:#ff6600 }
-</style>
+  
+ 
 
 <!-- ===== FRONT PAIR (centered, side-by-side on desktop) ===== -->
 <div class="front-pair">
@@ -2304,30 +2253,89 @@
       <span class="preview-cta">Read the guide →</span>
     </div>
   </a>
+<!-- GritGearHQ Pocket Tin — full, drop-in block -->
+<style>
+  /* Compact preview card – minimal, conflict-safe */
+  .preview-card{
+    display:grid; grid-template-columns:120px 1fr; gap:12px;
+    align-items:stretch; background:#0f1216; color:#e9ecf4;
+    border:1px solid #2b2f3a; border-radius:14px; overflow:hidden;
+    text-decoration:none; box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  @media (max-width:560px){ .preview-card{grid-template-columns:1fr} }
 
-  <!-- RIGHT: Bloomz Snow Caps THCA (compact) -->
-  <a class="preview-card bloomz"
-     href="https://bloomzhemp.com/collections/snow-caps-thca-flower/products/thca-snow-caps?ref=gritbud"
-     target="_blank" rel="nofollow sponsored noopener"
-     aria-label="Shop Bloomz THCA Snow Caps — discreet shipping">
-    <div class="preview-media" style="background:#0f1520">
-      <img src="/bloom.jpg" alt="Bloomz THCA Snow Caps jars with coated flower" loading="lazy">
-      <span class="preview-badge">Featured</span>
+  .preview-card .preview-media{
+    position:relative; min-height:120px; overflow:hidden;
+  }
+  .preview-card .preview-media img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    filter:saturate(1.03);
+    transition:transform .35s ease, opacity .25s ease;
+    opacity:.96;
+  }
+  .preview-card:hover .preview-media img{ transform:scale(1.03); opacity:1 }
+
+  .preview-badge{
+    position:absolute; top:10px; left:10px;
+    font-size:.72rem; font-weight:800;
+    padding:6px 9px; border-radius:999px;
+    background:linear-gradient(90deg,#18f0b4,#0acb92);
+    color:#051512; border:1px solid rgba(255,255,255,.12);
+  }
+
+  .preview-body{ padding:12px; display:flex; flex-direction:column; gap:6px }
+  .preview-tag{ color:#9fb5c6; font-size:.86rem }
+  .preview-title{ margin:0; font-size:1.02rem; font-weight:900; letter-spacing:.2px }
+  .preview-deck{ margin:0; color:#c7d2e0; font-size:.94rem; line-height:1.45 }
+
+  .preview-chips span{
+    display:inline-flex; align-items:center; gap:6px; margin:4px 6px 0 0;
+    padding:5px 9px; border-radius:999px; font-size:.78rem;
+    color:#e6eef7; background:#16202b; border:1px solid #243243;
+    white-space:nowrap;
+  }
+
+  .preview-cta{
+    margin-top:6px; font-weight:900; display:inline-flex; align-items:center; gap:6px;
+    color:#051512; align-self:flex-start;
+    background:linear-gradient(90deg,#18f0b4,#0acb92);
+    padding:8px 12px; border-radius:10px; box-shadow:0 8px 24px rgba(10,203,146,.28);
+  }
+  .preview-cta::after{ content:"→" }
+  .preview-cta:hover{ filter:brightness(1.06) }
+
+  .tiny-note{ color:#9aa3ad; font-size:.84rem }
+</style>
+
+<a class="preview-card gritgear"
+   href="https://www.ebay.com/itm/183293279124?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+   target="_blank" rel="sponsored noopener noreferrer"
+   aria-label="Shop GritGearHQ pocket essentials tin on eBay">
+  <div class="preview-media" style="background:#0f1520">
+    <!-- Swap the src if your filename is different, e.g. gb3.jpg -->
+    <img src="gr.jpg" alt="GritGearHQ rugged pocket essentials tin" loading="lazy" decoding="async">
+    <span class="preview-badge">Trending</span>
+  </div>
+  <div class="preview-body">
+    <div class="preview-tag">Shop • GritGearHQ</div>
+    <h3 class="preview-title">Rugged Pocket Essentials Tin</h3>
+    <p class="preview-deck">
+      Compact, field-ready kit that actually earns pocket space. Ships via eBay with buyer protection.
+    </p>
+
+    <div class="preview-chips" style="display:flex;flex-wrap:wrap;gap:6px;margin:.15rem 0">
+      <span>Rugged tin</span>
+      <span>Carry-on friendly*</span>
+      <span>Great gift</span>
     </div>
-    <div class="preview-body">
-      <div class="preview-tag">Shop • Bloomz Hemp</div>
-      <h3 class="preview-title">THCA Snow Caps — Premium Flower</h3>
-      <p class="preview-deck">Top-tier “Snow Caps” with discreet shipping direct from Bloomz.</p>
-      <div class="preview-chips" style="display:flex;flex-wrap:wrap;gap:6px;margin:.15rem 0">
-        <span style="font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px">THCA Flower</span>
-        <span style="font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px">Snow Caps</span>
-        <span style="font-size:.78rem;color:#e6eef7;background:#16202b;border:1px solid #243243;padding:5px 9px;border-radius:999px">Fast shipping</span>
-      </div>
-      <span class="preview-cta">Shop Snow Caps →</span>
-      <div class="tiny-note" style="color:#9aa3ad;font-size:.84rem;margin-top:.35rem">Adults 21+. Check your local laws.</div>
+
+    <span class="preview-cta">Shop the Tin</span>
+    <div class="tiny-note" style="margin-top:.35rem">
+      *Always check current airline rules. Stock moves fast on weekends.
     </div>
-  </a>
-</div>
+  </div>
+</a>
+
 <!-- ===== GEAR CARDS ROW (centered; **4-up on desktop**) ===== -->
 <style>
   /* Upgrade: force 4 columns on desktop, center the row, keep responsive */
