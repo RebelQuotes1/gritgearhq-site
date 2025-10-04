@@ -1,103 +1,582 @@
-<!-- ===== GETBUD ONLINE — Sticky Right-Rail Ad ===== -->
-<aside class="gbo-rail" aria-label="GetBud Online deals">
-  <a class="gbo-card"
-     href="https://getbudonline.com/subid/christopher.serpico/"
-     target="_blank" rel="noopener sponsored nofollow"
-     aria-label="Shop GetBud Online — discreet shipping, COA-verified hemp">
-    
-    <header class="gbo-head">
-      <span class="gbo-mark">🌿</span>
-      <div class="gbo-brand">
-        <strong>GetBud Online</strong>
-        <span class="gbo-sub">Discreet • Fast • COA-Verified</span>
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grit Gear HQ — Built for the Rough Stuff • 25 Years Field-Tested</title>
+  <meta name="theme-color" content="#0d0f10"/>
+
+  <!-- ===== Critical CSS ===== -->
+  <style>
+    :root{
+      --bg:#0d0f10; --ink:#e9ecf4; --mut:#9aa3ad; --line:#262b33;
+      --panel:#0f1116; --card:#101319; --chip:#151a20;
+      --hi:#ffa500; --cta:#ffae00; --cta2:#ff8c00;
+      --rad:16px; --shadow:0 14px 34px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 14px}
+
+    /* ===== Header ===== */
+    .hdr{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0f1116,rgba(15,17,22,.92));border-bottom:1px solid var(--line);backdrop-filter:saturate(1.05) blur(6px)}
+    .hdr-row{min-height:58px;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{font-weight:900;letter-spacing:.2px;padding:6px 10px;border-radius:10px;background:#141821;border:1px solid var(--line)}
+    .tag{color:#b7becc;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .nav{display:flex;gap:10px}
+    .nav a{padding:8px 10px;border:1px solid transparent;border-radius:10px}
+    .nav a:hover{border-color:#303744;background:#141821}
+    .menu{display:none;place-items:center;width:38px;height:38px;border-radius:10px;background:#141821;border:1px solid var(--line)}
+    .menu svg{width:20px;height:20px}
+    @media(max-width:820px){.nav{display:none}.menu{display:grid}}
+
+    /* ===== Page layout: content + right rail ===== */
+    .page{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media(max-width:1100px){.page{grid-template-columns:1fr}}
+    main{min-width:0}
+
+    /* ===== Hero (with strong legibility) ===== */
+    .hero{margin:18px 0}
+    .hero-card{position:relative;overflow:hidden;border-radius:var(--rad);border:1px solid var(--line);background:var(--panel);box-shadow:var(--shadow)}
+    .hero-media{
+      position:absolute;inset:0;
+      background:
+        radial-gradient(1000px 260px at 50% -60px,rgba(255,138,40,.18),transparent 60%),
+        /* contrast layer for text legibility */
+        linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.75) 100%),
+        url("/images/how-to-choose-survival-gear-.jpeg") center/cover no-repeat;
+      filter:saturate(1.05) contrast(1.02);
+    }
+    .hero-content{position:relative;z-index:1;padding:26px 18px 18px}
+    .kicker{margin:0;color:#c6cfdb}
+    .h1{margin:6px 0 10px;font-size:clamp(26px,4.2vw,44px);line-height:1.07;font-weight:900;
+      background:linear-gradient(90deg,#fff,#ffe1c9,#ffd1a4,#fff);
+      -webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 16px rgba(0,0,0,.55)}
+    .hero-deck{margin:0;color:#e6eef7;max-width:68ch}
+    .hero-cta{display:inline-flex;gap:8px;align-items:center;margin-top:12px;
+      padding:12px 14px;border-radius:12px;font-weight:900;color:#101214;
+      background:linear-gradient(180deg,var(--cta),var(--cta2));box-shadow:0 8px 24px rgba(255,140,0,.28)}
+
+    /* ===== Section head ===== */
+    .section-head{display:flex;justify-content:space-between;align-items:center;margin:10px 0}
+    .section-head h2{margin:0;color:var(--hi);font-size:clamp(1.1rem,1.1vw + 1rem,1.6rem)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{padding:6px 10px;border-radius:999px;background:var(--chip);border:1px solid #2a303a;color:#d7dfe9;font-size:.86rem}
+
+    /* ===== Card Grid ===== */
+    .grid{margin:14px 0;display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:grid}
+    .media{aspect-ratio:16/10;background:#0b0e13}
+    .media>img{width:100%;height:100%;object-fit:cover;filter:saturate(1.03)}
+    .body{padding:12px}
+    .eyebrow{color:#b7becc;font-size:.86rem;margin:0}
+    .title{margin:4px 0 6px;font-size:1.06rem;color:#ffe1b0}
+    .bullets{margin:0 0 8px 18px;color:#d0d7e0;line-height:1.55}
+    .meta{display:flex;justify-content:space-between;align-items:center;color:#c2c8d1;font-size:.92rem}
+    .stars{color:#ffd98a;font-weight:900;letter-spacing:.5px}
+    .cta{display:inline-block;margin-top:10px;padding:10px 12px;border-radius:12px;border:2px solid #343c46;background:linear-gradient(180deg,var(--cta),var(--cta2));color:#121315;font-weight:900}
+    .cta:hover{filter:brightness(1.05)}
+
+    /* ===== Tiny 2-up deals (side-by-side gear) ===== */
+    .duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    @media(max-width:720px){.duo{grid-template-columns:1fr}}
+    .deal{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-rows:auto 1fr auto}
+    .deal h4{margin:8px 12px 0;font-size:1.02rem;color:#ffe1b0}
+    .deal .price{margin:6px 12px 10px;color:#e9f1ff;font-weight:900}
+    .deal .price small{color:#9cd39f;font-weight:700;margin-left:8px}
+    .deal .cta{margin:0 12px 12px}
+
+    /* ===== Footer ===== */
+    footer{margin:22px 0 28px;border-top:1px solid var(--line)}
+    .ft{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;color:#b7becc}
+
+    /* ===== Right rail (GetBud ad) ===== */
+    .gbo-rail{position:sticky;top:14px;max-width:320px;margin-left:auto}
+    @media(max-width:1100px){.gbo-rail{position:static;max-width:680px;margin:18px auto}}
+    .gbo-card{display:block;color:var(--ink);background:linear-gradient(135deg,#101319 0%,#0f1116 60%,#0c0f13 100%);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+    .gbo-head{display:flex;align-items:center;gap:10px;padding:12px 12px 8px}
+    .gbo-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:#142018;border:1px solid #224b35;font-size:20px}
+    .gbo-brand strong{font-weight:900;letter-spacing:.2px}
+    .gbo-sub{display:block;color:#9fb5a8;font-size:.85rem;margin-top:2px}
+    .gbo-hero{position:relative;margin:0;height:150px;overflow:hidden;background:#0f1116}
+    .gbo-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.8) contrast(1.1) saturate(1.05)}
+    .gbo-hero::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.6))}
+    .gbo-chip{position:absolute;left:10px;bottom:10px;font:800 .72rem/1 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;color:#041812;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,#18e6a3,#0acb92);border:1px solid rgba(9,199,139,.5);box-shadow:0 6px 16px rgba(10,203,146,.35)}
+    .gbo-body{padding:12px}
+    .gbo-title{margin:2px 0 6px;font-size:1.06rem;color:#ffe1b0}
+    .gbo-deck{margin:0 0 8px;color:#cfd7df}
+    .gbo-bullets{margin:0 0 10px 18px;color:#d2dae7}
+    .gbo-meta{display:flex;justify-content:space-between;align-items:center;margin:2px 0 8px;color:#aab3bb}
+    .gbo-stars{color:#ffd98a;font-weight:900;letter-spacing:.5px}
+    .gbo-hot{font-weight:800;font-size:.86rem;color:#97f2b2;background:#0f1a12;border:1px solid #244b32;padding:4px 8px;border-radius:999px}
+    .gbo-cta{display:block;text-align:center;font-weight:900;padding:12px 14px;border-radius:12px;margin-top:6px;border:2px solid #343c46;color:#101214;background:linear-gradient(180deg,#ffae00,#ff8c00);box-shadow:0 8px 22px rgba(255,140,0,.28)}
+    .gbo-cta:hover{filter:brightness(1.05)}
+    .gbo-note{display:block;margin-top:8px;color:#8e97a3;font-size:.82rem}
+
+    @media (prefers-reduced-motion:reduce){
+      .hero-cta,.cta,.gbo-cta{transition:none}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ====================================================== -->
+  <header class="hdr">
+    <div class="wrap hdr-row">
+      <div class="brand">
+        <a class="logo" href="/">Grit Gear HQ</a>
+        <span class="tag">Built for the Rough Stuff • 25 Years Field-Tested</span>
       </div>
-    </header>
-
-    <!-- optional hero image (safe to remove if you don’t have one) -->
-    <figure class="gbo-hero" role="img" aria-label="Premium flower & hemp products"></figure>
-
-    <div class="gbo-body">
-      <h3 class="gbo-title">Premium Flower, Carts & Edibles</h3>
-      <p class="gbo-deck">
-        Real reviews. Lab-tested lots. Deals that actually move. If you’re shopping anyway, start here and get it right the first time.
-      </p>
-
-      <ul class="gbo-bullets">
-        <li>Discreet, plain-box shipping</li>
-        <li>COA on product pages</li>
-        <li>U.S. warehouses — quick delivery</li>
-        <li>New promos drop weekly</li>
-      </ul>
-
-      <div class="gbo-meta">
-        <span class="gbo-stars" aria-label="Rated 4.8 out of 5">★★★★★</span>
-        <span class="gbo-hot">Trending picks today</span>
-      </div>
-
-      <span class="gbo-cta">Shop GetBud Online →</span>
-      <small class="gbo-note">Adults 21+. Check your local laws.</small>
+      <nav class="nav" aria-label="Primary">
+        <a href="/blog.html">Blog</a>
+        <a href="/gear.html">Gear</a>
+        <a href="/field-guides.html">Field Guides</a>
+        <a href="/about.html">About</a>
+      </nav>
+      <button class="menu" id="menuBtn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
-  </a>
-</aside>
+  </header>
 
-<style>
-  /* layout */
-  .gbo-rail{
-    position:sticky; top:14px;
-    max-width:320px; margin-left:auto; /* push to right in a two-column layout */
-  }
-  @media (max-width:980px){
-    .gbo-rail{ position:static; max-width:680px; margin:18px auto }
-  }
+  <!-- ===== Hero ======================================================== -->
+  <section class="hero">
+    <div class="wrap">
+      <article class="hero-card">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="kicker">Independent • Honest • Field-Tested</p>
+          <h1 class="h1">Straight talk gear: we break cheap stuff so you don’t.</h1>
+          <p class="hero-deck">Real kits for daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Fewer tabs, better picks, legal and transparent.</p>
+          <a class="hero-cta" href="https://collabs.shop/rl5mw6" target="_blank" rel="noopener sponsored nofollow">Featured: SurvivorCord® →</a>
+        </div>
+      </article>
+    </div>
+  </section>
 
-  /* card */
-  .gbo-card{
-    display:block; color:var(--ink,#e9ecf4); text-decoration:none;
-    background:linear-gradient(135deg,#101319 0%,#0f1116 60%,#0c0f13 100%);
-    border:1px solid var(--line,#262b33);
-    border-radius:16px; overflow:hidden;
-    box-shadow:0 14px 34px rgba(0,0,0,.45);
-  }
+  <!-- ===== Page body: main + right rail ================================ -->
+  <div class="wrap page">
 
-  /* head */
-  .gbo-head{ display:flex; align-items:center; gap:10px; padding:12px 12px 8px }
-  .gbo-mark{
-    display:grid; place-items:center; width:38px; height:38px;
-    border-radius:10px; background:#142018; border:1px solid #224b35; font-size:20px
-  }
-  .gbo-brand{ line-height:1.1 }
-  .gbo-brand strong{ font-weight:900; letter-spacing:.2px }
-  .gbo-sub{ display:block; color:#9fb5a8; font-size:.85rem; margin-top:2px }
+    <!-- ===================== MAIN ===================== -->
+    <main>
 
-  /* hero band (no external image required) */
-  .gbo-hero{
-    margin:0; height:140px;
-    background:
-      radial-gradient(800px 220px at 50% -80px, rgba(24,240,180,.18), rgba(24,240,180,0) 60%),
-      linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.45)),
-      url('/images/leaf-dark.jpg') center/cover no-repeat;
-    border-top:1px solid rgba(255,255,255,.04);
-    border-bottom:1px solid rgba(255,255,255,.06);
-  }
+      <!-- Fast Movers -->
+      <section>
+        <div class="section-head">
+          <h2>Fast Movers</h2>
+          <div class="chips"><span class="chip">Camp-Ready</span><span class="chip">Field-Tested</span><span class="chip">Ships Fast</span></div>
+        </div>
+        <div class="grid">
+          <!-- Warpath Bowie -->
+          <article class="card">
+            <figure class="media">
+              <img src="/$_57%20(7).jfif" loading="lazy" decoding="async" alt="Warpath Bowie blacked carbon steel" onerror="this.src='/$_57%20(6).jfif'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Backcountry Pick</p>
+              <h3 class="title">Warpath Bowie — Blacked Carbon Steel</h3>
+              <ul class="bullets">
+                <li>Full-tang carbon steel, built to be sharpened.</li>
+                <li>Guarded handle; batons, preps, and chops.</li>
+              </ul>
+              <div class="meta"><span class="stars">★★★★★</span><span>4.7 (132)</span></div>
+              <a class="cta" href="https://www.ebay.com/itm/226375066069?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Add to kit →</a>
+            </div>
+          </article>
 
-  /* body */
-  .gbo-body{ padding:12px }
-  .gbo-title{ margin:2px 0 6px; font-size:1.06rem; color:#ffe1b0 }
-  .gbo-deck{ margin:0 0 8px; color:#cfd7df; line-height:1.55 }
-  .gbo-bullets{ margin:0 0 10px 18px; color:#d2dae7; line-height:1.55 }
-  .gbo-meta{ display:flex; justify-content:space-between; align-items:center; margin:2px 0 8px; color:#aab3bb }
-  .gbo-stars{ color:#ffd98a; font-weight:900; letter-spacing:.5px }
-  .gbo-hot{
-    font-weight:800; font-size:.86rem; color:#97f2b2;
-    background:#0f1a12; border:1px solid #244b32; padding:4px 8px; border-radius:999px;
-  }
-  .gbo-cta{
-    display:block; text-align:center; font-weight:900;
-    padding:12px 14px; border-radius:12px; margin-top:6px;
-    border:2px solid #343c46; color:#101214;
-    background:linear-gradient(180deg,#ffae00,#ff8c00);
-    box-shadow:0 8px 22px rgba(255,140,0,.28)
-  }
-  .gbo-cta:hover{ filter:brightness(1.05) }
-  .gbo-note{ display:block; margin-top:8px; color:#8e97a3; font-size:.82rem }
-</style>
+          <!-- Skull folder -->
+          <article class="card">
+            <figure class="media">
+              <img src="/skullknife2.jpg" loading="lazy" decoding="async" alt="Skull inlay folder sheepsfoot" onerror="this.src='/skullknife1.jpg'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Everyday Carry</p>
+              <h3 class="title">Skull-Inlay Traditional Folder</h3>
+              <ul class="bullets">
+                <li>Clean sheepsfoot profile; precise control.</li>
+                <li>Classic walk-and-talk; pocket-friendly.</li>
+              </ul>
+              <div class="meta"><span class="stars">★★★★★</span><span>4.8 (210+)</span></div>
+              <a class="cta" href="https://www.ebay.com/itm/236281207985?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Pick your handle →</a>
+            </div>
+          </article>
+
+          <!-- Pocket Woodcarver -->
+          <article class="card">
+            <figure class="media">
+              <img src="/s-l1600%20(13).jpg" loading="lazy" decoding="async" alt="Pocket woodcarver with wooden sheath" onerror="this.src='/%24_57%20(10).jfif'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">EDC Craft</p>
+              <h3 class="title">Pocket Woodcarver — Micro Fixed Blade</h3>
+              <ul class="bullets">
+                <li>Zip ties, tinder, tags—high control.</li>
+                <li>Gift-ready; daily-driver utility.</li>
+              </ul>
+              <div class="meta"><span class="stars">★★★★★</span><span>4.7 (300+)</span></div>
+              <a class="cta" href="https://www.ebay.com/itm/315930343136?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab it →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Heat • Cook • Power -->
+      <section>
+        <div class="section-head">
+          <h2>Heat • Cook • Power</h2>
+          <div class="chips"><span class="chip">Low Temp</span><span class="chip">Off-Grid</span><span class="chip">Tested</span></div>
+        </div>
+        <div class="grid">
+          <!-- Portable gas heater -->
+          <article class="card">
+            <figure class="media">
+              <img src="/%24_57.jfif" loading="lazy" decoding="async" alt="Portable gas heater" onerror="this.src='/%24_57%20(2).jfif'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Selling Fast</p>
+              <h3 class="title">Portable Gas Heater & Warmer</h3>
+              <ul class="bullets">
+                <li>3-zone top: heat, cook, keep-warm.</li>
+                <li>Compact for tents, ice shacks, outages.</li>
+              </ul>
+              <div class="meta"><span class="stars">★★★★☆</span><span>4.6 (1,240+)</span></div>
+              <a class="cta" href="https://www.ebay.com/itm/396302793768?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">See today’s price →</a>
+            </div>
+          </article>
+
+          <!-- Multi-fuel tabletop heater -->
+          <article class="card">
+            <figure class="media">
+              <img src="/s-l1600%20(1).jpg" loading="lazy" decoding="async" alt="Multi-fuel tabletop heater" onerror="this.src='/%24_57%20(3).jfif'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Hot Pick</p>
+              <h3 class="title">Multi-Fuel Tabletop Tent Heater</h3>
+              <ul class="bullets">
+                <li>Iso-butane, butane, or propane (adapters).</li>
+                <li>Dial control from simmer-warm to toasty.</li>
+              </ul>
+              <div class="meta"><span class="stars">★★★★★</span><span>4.8 (890+)</span></div>
+              <a class="cta" href="https://www.ebay.com/itm/187037140543?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab the deal →</a>
+            </div>
+          </article>
+
+          <!-- Cook set -->
+          <article class="card">
+            <figure class="media">
+              <img src="/outdoorp1.jpg" loading="lazy" decoding="async" alt="Compact backpacking cook set" onerror="this.src='/outdoorp2.jpg'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">New</p>
+              <h3 class="title">Compact Backpacking Cook Set</h3>
+              <ul class="bullets">
+                <li>Nested pots + pan; ultralight burner.</li>
+                <li>Packs tiny—daypack & bug-out ready.</li>
+              </ul>
+              <div class="meta"><span class="stars">★★★★☆</span><span>4.6</span></div>
+              <a class="cta" href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Cook kit listing →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Security • Water • Cleanups -->
+      <section>
+        <div class="section-head">
+          <h2>Security • Water • Cleanups</h2>
+          <div class="chips"><span class="chip">Practical</span><span class="chip">Legal</span><span class="chip">Discreet</span></div>
+        </div>
+        <div class="grid">
+          <!-- Conductive device -->
+          <article class="card">
+            <figure class="media">
+              <img src="/psg.jpg" loading="lazy" decoding="async" alt="Conductive self-defense device" onerror="this.src='/psg1.jpg'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Low Stock</p>
+              <h3 class="title">Police & MP Style — 3 Disposable Heads</h3>
+              <ul class="bullets">
+                <li>Includes 3 replaceable heads + case.</li>
+                <li>Laser pointer & safety wrist lanyard.</li>
+              </ul>
+              <div class="meta"><span class="stars">★★★★☆</span><span>4.7 (213)</span></div>
+              <a class="cta" href="https://www.ebay.com/itm/197691660077?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check price →</a>
+            </div>
+          </article>
+
+          <!-- 5-gal Solar Camp Shower -->
+          <article class="card">
+            <figure class="media">
+              <img src="/shower1.jpg" loading="lazy" decoding="async" alt="5-gal solar shower" onerror="this.src='/shower3.jpg'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Trending</p>
+              <h3 class="title">Solar Camp Shower (5-gal)</h3>
+              <ul class="bullets">
+                <li>Heats with sunlight; on/off shower head.</li>
+                <li>Great for camping, beach, off-grid rinses.</li>
+              </ul>
+              <div class="meta"><span class="stars">★★★★☆</span><span>4.6 (168)</span></div>
+              <a class="cta" href="https://www.ebay.com/itm/234159796659?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1ebTfgRcZmYsgwpg0ZK15hl3ouha%2BThHnsX1ibwEnlaZk4Tsawe930zFH8jsVFjB771DiVeFepH%2FPJv7w9On3IEKLdI9G%2BQyAlatEtMLzDW4AKxu9BfkMpbk880C8pY9jxvmJsFSaIkqtzgCyXFvquC6BA9kDHql6gXjsORt%2B7fdqQA52uSxIZ6ekmqIz7m9fo%3D" target="_blank" rel="nofollow sponsored noopener">See colors & deal →</a>
+            </div>
+          </article>
+
+          <!-- Fire kit tin -->
+          <article class="card">
+            <figure class="media">
+              <img src="/uncletommy.jpg" loading="lazy" decoding="async" alt="Uncle Tommy’s Fire Starten Kit">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">EDC Fire</p>
+              <h3 class="title">Uncle Tommy’s Fire Starten Kit</h3>
+              <ul class="bullets">
+                <li>25 large waterproof matches + striker.</li>
+                <li>4 sawdust fire discs in a pocket tin.</li>
+              </ul>
+              <div class="meta"><span class="stars">★★★★☆</span><span>4.6</span></div>
+              <a class="cta" href="https://www.ebay.com/itm/175132576181?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1dxU8LoGZ15e69wiRtDrf7ryrwSy%2Btrco5WCCEsJ98I6MhSsSZjFCu14kFEAqulT82WD%2FhTOIsTKzZb0OHvXabNl%2FzmAWMciU75KQHsaJpy%2FXYQmKH1dvLWzyab%2BjZyZKfiH%2FiuHNrkbeJaucP5I%2BNmSZmhiG8NFGmQJL7%2FgU7ivpYhG%2F93hrjOMH%2BYpcvxJIY%3D" target="_blank" rel="nofollow sponsored noopener">Add fire-start →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Upgrades & Collabs -->
+      <section>
+        <div class="section-head">
+          <h2>Upgrades & Collabs</h2>
+          <div class="chips"><span class="chip">Overland</span><span class="chip">Power</span><span class="chip">Collab</span></div>
+        </div>
+
+        <div class="grid">
+          <!-- Rooftop tent -->
+          <article class="card">
+            <figure class="media">
+              <img src="/s-l1600%20(1).webp" onerror="this.onerror=null;this.src='/$_1%20(3).jfif';" loading="lazy" decoding="async" alt="Hard-shell rooftop tent on SUV with ladder in a field">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Overland</p>
+              <h3 class="title">Hard-Shell Rooftop Tent (4-Season)</h3>
+              <ul class="bullets">
+                <li>Opens in seconds; insulated & waterproof.</li>
+                <li>Fits most racks (≥600-lb static).</li>
+              </ul>
+              <a class="cta" href="https://www.ebay.com/itm/286423670948?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cI7TSu%2Bv6jbuh8cC%2BWkzlE65Za7KS%2F5ivkShC9d1dQ6hSZufQkK7mkuPN2f%2B6epYIKlNnaleCgkUcZYQDEwyDEBC%2B4xIQ4GdYnn5ZkrmxGRj2FMdzEEkWubFDdZBgWiDQhqvaQFdAt9bcVlKD%2BflFBbH1AwHz6hYBsQzAGZm0Hb1dEC2rwrmIgGj023q7Tz4o%3D" target="_blank" rel="nofollow sponsored noopener">Check availability →</a>
+            </div>
+          </article>
+
+          <!-- 13,500-lb winch -->
+          <article class="card">
+            <figure class="media">
+              <img src="/s-l960.webp" onerror="this.onerror=null;this.src='/winch.jpg';" loading="lazy" decoding="async" alt="13,500-lb winch with synthetic rope">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Recovery</p>
+              <h3 class="title">13,500-lb Winch — Synthetic Rope</h3>
+              <ul class="bullets">
+                <li>Remote control; sealed; trail-ready.</li>
+                <li>Solid for trucks, SUVs, and Jeeps.</li>
+              </ul>
+              <a class="cta" href="https://www.ebay.com/itm/375582132759?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Equip this winch →</a>
+            </div>
+          </article>
+
+          <!-- Solar power station -->
+          <article class="card">
+            <figure class="media">
+              <img src="/$_12%20(4).jfif" loading="lazy" decoding="async" alt="Portable solar power station kit">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Off-Grid Power</p>
+              <h3 class="title">Solar Power Station + 4 LED Bulbs</h3>
+              <ul class="bullets">
+                <li>Charge via sun or AC; run lights/phones.</li>
+                <li>US-stock shipping; compact carry.</li>
+              </ul>
+              <a class="cta" href="https://www.ebay.com/itm/333785000242?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Power your base →</a>
+            </div>
+          </article>
+
+          <!-- TITAN collab -->
+          <article class="card">
+            <figure class="media">
+              <img src="/titanlogo.jpg" loading="lazy" decoding="async" alt="TITAN Survival logo" style="object-fit:contain;background:#0c0c0c">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Collab</p>
+              <h3 class="title">TITAN Survival × Grit Gear HQ</h3>
+              <ul class="bullets"><li>Why SurvivorCord®, shock cord, sane stitching.</li></ul>
+              <a class="cta" href="/titan-survival-collab.html">Read the collab →</a>
+            </div>
+          </article>
+
+          <!-- TACAMO collab -->
+          <article class="card">
+            <figure class="media">
+              <img src="/images/ultimate-fire-kit.png" loading="lazy" decoding="async" alt="TACAMO ultimate fire kit" onerror="this.src='Untitled.png'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">10% OFF</p>
+              <h3 class="title">TACAMO × Grit Gear HQ</h3>
+              <ul class="bullets"><li>Ferro rod, tinder, tools, boil-ready mess tin.</li></ul>
+              <a class="cta" href="https://collabs.shop/mke6bg" target="_blank" rel="nofollow sponsored noopener">Shop the kit →</a>
+            </div>
+          </article>
+
+          <!-- Thought Crimes notebook -->
+          <article class="card">
+            <figure class="media">
+              <img src="/tccc.jpg" loading="lazy" decoding="async" alt="Thought Crimes notebook" onerror="this.src='/thought-crimes.jpg'">
+            </figure>
+            <div class="body">
+              <p class="eyebrow">Everyday Carry</p>
+              <h3 class="title">Thought Crimes: A Notebook for Dangerous Ideas</h3>
+              <ul class="bullets"><li>Hardcover look, rugged pages; capture plans off-grid.</li></ul>
+              <a class="cta" href="https://amzn.to/4gt5cIt" target="_blank" rel="nofollow sponsored noopener">Check price →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Side-by-side gear deals -->
+      <section>
+        <div class="section-head"><h2>Pocket Deals</h2></div>
+        <div class="duo">
+          <!-- Permanent match set -->
+          <article class="deal">
+            <figure class="media">
+              <img src="/s-l1600%20(8).jpg" alt="Permanent match lighters set" loading="lazy">
+            </figure>
+            <h4>5× Permanent Match Lighters (Keychain)</h4>
+            <p class="price">$6.99 <small>Free Shipping</small></p>
+            <a class="cta" href="https://www.ebay.com/itm/384886016959?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80004&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1dJ2akGz0f3R7fMIzsb8r10x%2BqdX8QvoTTs9dzhjQrbxvqaoAL8RbzUqFyVBJqfUqWweDd5Lx36Fl1ZTGvd%2F95%2FN5Yi48RbAi0TdimI1w%2FVKTsBC3a3MVPQB%2BHJmBLy%2B%2B4wH6MrBSMiQrUdkaAufejLsUQmK%2B2rzrQMJLqhboR4%2B2KQbuUVYXCmUpGHrZScd2E%3D" target="_blank" rel="nofollow sponsored noopener">Grab the set →</a>
+          </article>
+
+          <!-- Camp kitchen tool roll -->
+          <article class="deal">
+            <figure class="media">
+              <img src="/s-l1600%20(9).jpg" alt="Camping kitchen utensil set roll" loading="lazy">
+            </figure>
+            <h4>Camp Kitchen Tool Roll (Full Kit)</h4>
+            <p class="price">$32.39</p>
+            <a class="cta" href="https://www.ebay.com/itm/286795289544?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Stock the camp galley →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Quick Picks internal -->
+      <section>
+        <div class="section-head"><h2>Quick Picks</h2></div>
+        <div class="grid">
+          <a class="card" href="/survival-quiz.html#top">
+            <figure class="media"><img src="/survive-8683959_1280.jpg" alt="Survival quiz teaser" loading="lazy"></figure>
+            <div class="body">
+              <p class="eyebrow">Learn & Share</p>
+              <h3 class="title">Survival Basics Quiz (15 questions)</h3>
+              <p class="eyebrow">Instant feedback • Trail safety • Shelter • Signals</p>
+              <span class="cta" style="display:inline-block">Take the quiz →</span>
+            </div>
+          </a>
+
+          <a class="card" href="/cannabis-for-survival.html#top">
+            <figure class="media"><img src="/cannabis-friendly-1-1024x683.jpg" alt="Camp scene" loading="lazy"></figure>
+            <div class="body">
+              <p class="eyebrow">Manifesto</p>
+              <h3 class="title">Bud Over Booze — A Survivalist’s Manifesto</h3>
+              <p class="eyebrow">Sleep, pain, appetite, group calm—smarter than alcohol.</p>
+              <span class="cta" style="display:inline-block">Read the post →</span>
+            </div>
+          </a>
+
+          <a class="card" href="/mess-kit.html">
+            <figure class="media"><img src="/images/messkit-chili.jpg" alt="13-piece mess kit" loading="lazy"></figure>
+            <div class="body">
+              <p class="eyebrow">Review</p>
+              <h3 class="title">Compact 13-Piece Mess Kit</h3>
+              <p class="eyebrow">10+ years tested • Bug-out ready • Easy-clean soot</p>
+              <span class="cta" style="display:inline-block">Read the full review →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===================== RIGHT RAIL (Sticky Ad) ===================== -->
+    <aside class="gbo-rail" aria-label="GetBud Online deals">
+      <a class="gbo-card"
+         href="https://getbudonline.com/subid/christopher.serpico/"
+         target="_blank" rel="noopener sponsored nofollow"
+         aria-label="Shop GetBud Online — discreet shipping, COA-verified hemp">
+
+        <header class="gbo-head">
+          <span class="gbo-mark">🌿</span>
+          <div class="gbo-brand">
+            <strong>GetBud Online</strong>
+            <span class="gbo-sub">Discreet • Fast • COA-Verified</span>
+          </div>
+        </header>
+
+        <figure class="gbo-hero" role="img" aria-label="Kettle, tea and flower — calm kit">
+          <img src="/images/Screenshot_20250929-135629.png" alt="Calm kit on counter" loading="lazy">
+          <figcaption class="gbo-chip">Staff Picks • Calm Kits</figcaption>
+        </figure>
+
+        <div class="gbo-body">
+          <h3 class="gbo-title">Premium Flower, Carts & Edibles</h3>
+          <p class="gbo-deck">Real reviews. Lab-tested lots. Deals that actually move. If you’re shopping anyway, start here and get it right the first time.</p>
+
+          <ul class="gbo-bullets">
+            <li>Discreet, plain-box shipping</li>
+            <li>COA on product pages</li>
+            <li>U.S. warehouses — quick delivery</li>
+            <li>New promos drop weekly</li>
+          </ul>
+
+          <div class="gbo-meta">
+            <span class="gbo-stars" aria-label="Rated 4.8 out of 5">★★★★★</span>
+            <span class="gbo-hot">Trending picks today</span>
+          </div>
+
+          <span class="gbo-cta">Shop GetBud Online →</span>
+          <small class="gbo-note">Adults 21+. Check your local laws.</small>
+        </div>
+      </a>
+    </aside>
+
+  </div><!-- /.page -->
+
+  <!-- ===== Footer ====================================================== -->
+  <footer class="wrap">
+    <div class="ft">
+      <span>© <span id="y"></span> Grit Gear HQ</span>
+      <span style="color:var(--mut)">21+ where applicable. Always follow local laws.</span>
+    </div>
+  </footer>
+
+  <!-- ===== Tiny JS ===== -->
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile menu (inline so it works anywhere)
+    document.getElementById('menuBtn')?.addEventListener('click',()=>{
+      const nav=document.querySelector('.nav'); if(!nav) return;
+      const open=nav.style.display==='flex';
+      nav.style.display=open?'none':'flex';
+      nav.style.position='fixed'; nav.style.inset='auto 12px 12px 12px'; nav.style.background='#101319';
+      nav.style.border='1px solid #2a303a'; nav.style.borderRadius='14px'; nav.style.padding='10px';
+      nav.style.flexDirection='column'; nav.style.gap='6px';
+    });
+  </script>
+</body>
+</html>
