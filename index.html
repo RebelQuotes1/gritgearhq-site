@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google Ads -->
+  <!-- Google Ads (kept) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Grit Gear HQ — Shelter • Water • Food • Fire • Gear</title>
+  <title>Grit Gear HQ — Under Construction (Deals Inside)</title>
   <meta name="theme-color" content="#0d0f10"/>
+  <meta name="description" content="Grit Gear HQ is rebuilding. While we work, grab legit deals on shelter, water, food, fire, and field gear.">
 
   <style>
     :root{
@@ -18,7 +19,6 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    html{scroll-behavior:smooth}
     body{margin:0;background:var(--bg);color:var(--ink);
       font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;-webkit-font-smoothing:antialiased}
     img{display:block;max-width:100%;height:auto}
@@ -31,23 +31,11 @@
     .brand{display:flex;gap:10px;align-items:center}
     .logo{font-weight:900;letter-spacing:.2px;padding:6px 10px;border-radius:10px;background:#141821;border:1px solid var(--line)}
     .tag{color:#b7becc;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .nav{display:flex;gap:10px}
-    .nav a{padding:8px 10px;border:1px solid transparent;border-radius:10px}
-    .nav a:hover{border-color:#303744;background:#141821}
-    .menu{display:none;place-items:center;width:38px;height:38px;border-radius:10px;background:#141821;border:1px solid var(--line)}
+    .menu{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:#141821;border:1px solid var(--line)}
     .menu svg{width:20px;height:20px}
-    @media(max-width:820px){.nav{display:none}.menu{display:grid}}
-
-    /* Category bar */
-    .catbar{position:sticky;top:58px;z-index:55;background:#0e1115;border-bottom:1px solid var(--line)}
-    .catrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;padding:10px 12px}
-    .catbtn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:#151a20;border:1px solid #2a303a;font-weight:800;color:#d9e2ee}
-    .catbtn:hover{filter:brightness(1.06)}
-    .catbtn .dot{width:10px;height:10px;border-radius:50%}
-    .c-shelter{background:#18b2ff}.c-water{background:#00d0ff}.c-food{background:#ffd25a}.c-fire{background:#ff6a3d}.c-gear{background:#7dff9f}
 
     /* Layout: main + rail */
-    .page{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .page{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:16px}
     @media(max-width:1100px){.page{grid-template-columns:1fr}}
 
     /* Hero */
@@ -55,20 +43,26 @@
     .hero-card{position:relative;overflow:hidden;border-radius:var(--rad);border:1px solid var(--line);background:var(--panel);box-shadow:var(--shadow)}
     .hero-media{position:absolute;inset:0;background:
       radial-gradient(1000px 260px at 50% -60px,rgba(255,138,40,.18),transparent 60%),
-      linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.60) 55%,rgba(0,0,0,.85) 100%),
+      linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.70) 56%,rgba(0,0,0,.92) 100%),
       url("/images/how-to-choose-survival-gear-.jpeg") center/cover no-repeat}
     .hero-content{position:relative;z-index:1;padding:26px 18px 18px}
     .kicker{margin:0;color:#c6cfdb}
-    .h1{margin:6px 0 10px;font-size:clamp(26px,4.2vw,44px);line-height:1.07;font-weight:900;
+    .h1{margin:6px 0 6px;font-size:clamp(28px,4.5vw,48px);line-height:1.05;font-weight:900;
       background:linear-gradient(90deg,#fff,#ffe1c9,#ffd1a4,#fff);
       -webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 18px rgba(0,0,0,.55)}
     .hero-deck{margin:0;color:#e6eef7;max-width:68ch}
     .hero-cta{display:inline-flex;gap:8px;align-items:center;margin-top:12px;
       padding:12px 14px;border-radius:12px;font-weight:900;color:#101214;
       background:linear-gradient(180deg,var(--cta),var(--cta2));box-shadow:0 8px 24px rgba(255,140,0,.28)}
+    .countdown{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+    .cd{min-width:88px;text-align:center;border-radius:12px;background:#141821;border:1px solid #2a303a;padding:10px}
+    .cd b{display:block;font-size:1.25rem}
 
-    /* Sections & grids */
-    .section{scroll-margin-top:90px}
+    /* Ad blocks */
+    .adwrap{margin:16px 0;border:1px dashed #2a303a;border-radius:12px;padding:8px}
+    .adsbygoogle{display:block}
+
+    /* Featured cards */
     .section-head{display:flex;align-items:center;gap:10px;margin:12px 0 6px}
     .section-head h2{margin:0;color:var(--hi);font-size:clamp(1.1rem,1.1vw + 1rem,1.6rem)}
     .grid{margin:12px 0;display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -88,7 +82,7 @@
     .cta:hover{filter:brightness(1.05)}
 
     /* Right-rail GetBud ad */
-    .gbo-rail{position:sticky;top:98px;max-width:320px;margin-left:auto}
+    .gbo-rail{position:sticky;top:18px;max-width:320px;margin-left:auto}
     @media(max-width:1100px){.gbo-rail{position:static;max-width:680px;margin:18px auto}}
     .gbo-card{display:block;color:var(--ink);background:linear-gradient(135deg,#101319 0%,#0f1116 60%,#0c0f13 100%);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
     .gbo-head{display:flex;align-items:center;gap:10px;padding:12px 12px 8px}
@@ -108,29 +102,9 @@
     .gbo-cta{display:block;text-align:center;font-weight:900;padding:12px 14px;border-radius:12px;margin-top:6px;border:2px solid #343c46;color:#101214;background:linear-gradient(180deg,#ffae00,#ff8c00);box-shadow:0 8px 22px rgba(255,140,0,.28)}
     .gbo-note{display:block;margin-top:8px;color:#8e97a3;font-size:.82rem}
 
-    /* ===== Accordion additions ===== */
-    .more-wrap {
-      grid-column: 1 / -1;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height .35s ease;
-    }
-    .more-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 6px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      border: 2px solid #343c46;
-      background: linear-gradient(180deg, var(--cta,#ffae00), var(--cta2,#ff8c00));
-      color: #101214;
-      font-weight: 900;
-      cursor: pointer;
-      box-shadow: 0 8px 22px rgba(255,140,0,.20);
-    }
-    .more-btn[aria-expanded="true"]{filter:brightness(1.03)}
-    @media (prefers-reduced-motion: reduce){ .more-wrap{transition:none} }
+    /* Footer */
+    footer{margin:22px 0 28px;border-top:1px solid var(--line)}
+    .ft{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;color:#b7becc}
   </style>
 </head>
 <body>
@@ -140,30 +114,16 @@
     <div class="wrap hdr-row">
       <div class="brand">
         <a class="logo" href="/">Grit Gear HQ</a>
-        <span class="tag">Built for the Rough Stuff • 25 Years Field-Tested</span>
+        <span class="tag">Built for the Rough Stuff • Rebuilding now</span>
       </div>
-      <nav class="nav" aria-label="Primary">
-        <a href="/blog.html">Blog</a>
-        <a href="/gear.html">Gear</a>
-        <a href="/field-guides.html">Field Guides</a>
-        <a href="/about.html">About</a>
-      </nav>
-      <button class="menu" id="menuBtn" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <button class="menu" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
       </button>
     </div>
   </header>
-
-  <!-- Category Buttons -->
-  <div class="catbar">
-    <div class="wrap catrow">
-      <a class="catbtn" href="#shelter"><span class="dot c-shelter"></span>Shelter</a>
-      <a class="catbtn" href="#water"><span class="dot c-water"></span>Water</a>
-      <a class="catbtn" href="#food"><span class="dot c-food"></span>Food</a>
-      <a class="catbtn" href="#fire"><span class="dot c-fire"></span>Fire / Heat</a>
-      <a class="catbtn" href="#gear"><span class="dot c-gear"></span>Gear</a>
-    </div>
-  </div>
 
   <!-- Hero -->
   <section class="hero">
@@ -172,278 +132,167 @@
         <div class="hero-media" aria-hidden="true"></div>
         <div class="hero-content">
           <p class="kicker">Independent • Honest • Field-Tested</p>
-          <h1 class="h1">Straight talk gear: we break cheap stuff so you don’t.</h1>
-          <p class="hero-deck">Real kits for daypackers, truck-campers, and anyone who still chooses the hard way on purpose. Fewer tabs, better picks, legal and transparent.</p>
-          <a class="hero-cta" href="https://collabs.shop/rl5mw6" target="_blank" rel="noopener sponsored nofollow">Featured: SurvivorCord® →</a>
+          <h1 class="h1">We’re rebuilding the site—deals still live below.</h1>
+          <p class="hero-deck">Shelter, water, food, fire, gear. If you’re shopping anyway, hit the trusted picks while we tighten the bolts.</p>
+          <div class="countdown" id="countdown" aria-label="Estimated relaunch countdown">
+            <div class="cd"><b id="cd-d">–</b><small>Days</small></div>
+            <div class="cd"><b id="cd-h">–</b><small>Hours</small></div>
+            <div class="cd"><b id="cd-m">–</b><small>Minutes</small></div>
+            <div class="cd"><b id="cd-s">–</b><small>Seconds</small></div>
+          </div>
+          <a class="hero-cta" href="mailto:team@gritgearhq.com?subject=Notify%20me%20when%20Grit%20Gear%20HQ%20is%20live">Notify me when we’re live →</a>
         </div>
       </article>
     </div>
   </section>
 
+  <!-- Top ad -->
+  <div class="wrap adwrap">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1532367766505583"
+         data-ad-slot="5138460001"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
   <!-- Page layout -->
   <div class="wrap page">
     <main>
 
-      <!-- SHELTER -->
-      <section id="shelter" class="section">
-        <div class="section-head"><h2>🏕️ Shelter</h2></div>
-        <div class="grid">
-          <article class="card">
-            <figure class="media">
-              <img src="/s-l1600%20(1).webp" onerror="this.onerror=null;this.src='/$_1%20(3).jfif';" loading="lazy" decoding="async" alt="Hard-shell rooftop tent on SUV with ladder in a field">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Overland</p>
-              <h3 class="title">Hard-Shell Rooftop Tent (4-Season)</h3>
-              <ul class="bullets">
-                <li>Opens in seconds; insulated & waterproof.</li>
-                <li>Fits most racks (≥600-lb static).</li>
-              </ul>
-              <a class="cta" href="https://www.ebay.com/itm/286423670948?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check availability →</a>
-            </div>
-          </article>
-        </div>
-      </section>
+      <!-- Featured Deals -->
+      <div class="section-head"><h2>Featured Deals (Shelter • Food • Fire • Gear)</h2></div>
+      <div class="grid">
 
-      <!-- WATER -->
-      <section id="water" class="section">
-        <div class="section-head"><h2>💧 Water</h2></div>
-        <div class="grid">
-          <article class="card">
-            <figure class="media">
-              <img src="/shower1.jpg" loading="lazy" decoding="async" alt="5-gal solar shower" onerror="this.src='/shower3.jpg'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Trending</p>
-              <h3 class="title">Solar Camp Shower (5-gal)</h3>
-              <ul class="bullets">
-                <li>Heats with sunlight; on/off shower head.</li>
-                <li>Great for camping, beach, off-grid rinses.</li>
-              </ul>
-              <div class="meta"><span class="stars">★★★★☆</span><span>4.6 (168)</span></div>
-              <a class="cta" href="https://www.ebay.com/itm/234159796659?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">See colors & deal →</a>
-            </div>
-          </article>
-        </div>
-      </section>
+        <!-- Fire: Permanent Match Lighters -->
+        <article class="card">
+          <figure class="media">
+            <img src="/s-l1600%20(8).jpg" alt="Permanent match lighters set">
+          </figure>
+          <div class="body">
+            <p class="eyebrow">5-Pack • FIRE</p>
+            <h3 class="title">Permanent Match Keychain Lighters</h3>
+            <ul class="bullets">
+              <li>Refillable ferro strike; clips to pack.</li>
+              <li>Perfect loaners for group kits.</li>
+            </ul>
+            <div class="meta"><span class="stars">★★★★★</span><span>$6.99 • Free Shipping</span></div>
+            <a class="cta" href="https://www.ebay.com/itm/384886016959?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80004&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab the set →</a>
+          </div>
+        </article>
 
-      <!-- FOOD -->
-      <section id="food" class="section">
-        <div class="section-head"><h2>🥘 Food / Camp Kitchen</h2></div>
-        <div class="grid">
-          <article class="card">
-            <figure class="media">
-              <img src="/outdoorp1.jpg" loading="lazy" decoding="async" alt="Compact backpacking cook set" onerror="this.src='/outdoorp2.jpg'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">New</p>
-              <h3 class="title">Compact Backpacking Cook Set</h3>
-              <ul class="bullets">
-                <li>Nested pots + pan; ultralight burner.</li>
-                <li>Packs tiny—daypack & bug-out ready.</li>
-              </ul>
-              <a class="cta" href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Cook kit listing →</a>
-            </div>
-          </article>
+        <!-- Food: Camp Kitchen Tool Roll -->
+        <article class="card">
+          <figure class="media">
+            <img src="/s-l1600%20(9).jpg" alt="Camping kitchen utensil set roll">
+          </figure>
+          <div class="body">
+            <p class="eyebrow">FOOD / GALLEY</p>
+            <h3 class="title">Camp Kitchen Tool Roll (Full Kit)</h3>
+            <ul class="bullets">
+              <li>Cutlery, utensils, bottles & board.</li>
+              <li>Hangs or packs tight in the bin.</li>
+            </ul>
+            <div class="meta"><span class="stars">★★★★☆</span><span>$32.39</span></div>
+            <a class="cta" href="https://www.ebay.com/itm/286795289544?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Stock the camp galley →</a>
+          </div>
+        </article>
 
-          <article class="card">
-            <figure class="media">
-              <img src="/s-l1600%20(9).jpg" alt="Camping kitchen utensil set roll" loading="lazy">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Camp Galley</p>
-              <h3 class="title">Camp Kitchen Tool Roll (Full Kit)</h3>
-              <ul class="bullets">
-                <li>Cutlery, utensils, bottles & board.</li>
-                <li>Hangs or packs tight in the bin.</li>
-              </ul>
-              <div class="meta"><span class="stars">★★★★☆</span><span>$32.39</span></div>
-              <a class="cta" href="https://www.ebay.com/itm/286795289544?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Stock the camp galley →</a>
-            </div>
-          </article>
-        </div>
-      </section>
+        <!-- Shelter: Rooftop Tent -->
+        <article class="card">
+          <figure class="media">
+            <img src="/s-l1600%20(1).webp" onerror="this.onerror=null;this.src='/$_1%20(3).jfif';" alt="Hard-shell rooftop tent on SUV">
+          </figure>
+          <div class="body">
+            <p class="eyebrow">SHELTER • Overland</p>
+            <h3 class="title">Hard-Shell Rooftop Tent (4-Season)</h3>
+            <ul class="bullets">
+              <li>Opens in seconds; insulated & waterproof.</li>
+              <li>Fits most racks (≥600-lb static).</li>
+            </ul>
+            <a class="cta" href="https://www.ebay.com/itm/286423670948?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check availability →</a>
+          </div>
+        </article>
 
-      <!-- FIRE / HEAT -->
-      <section id="fire" class="section">
-        <div class="section-head"><h2>🔥 Fire / Heat</h2></div>
-        <div class="grid">
-          <article class="card">
-            <figure class="media">
-              <img src="/%24_57.jfif" loading="lazy" decoding="async" alt="Portable gas heater" onerror="this.src='/%24_57%20(2).jfif'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Selling Fast</p>
-              <h3 class="title">Portable Gas Heater & Warmer</h3>
-              <ul class="bullets">
-                <li>3-zone top: heat, cook, keep-warm.</li>
-                <li>Compact for tents, ice shacks, outages.</li>
-              </ul>
-              <a class="cta" href="https://www.ebay.com/itm/396302793768?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">See today’s price →</a>
-            </div>
-          </article>
+        <!-- Gear: Winch -->
+        <article class="card">
+          <figure class="media">
+            <img src="/s-l960.webp" onerror="this.onerror=null;this.src='/winch.jpg';" alt="13,500-lb winch with synthetic rope">
+          </figure>
+          <div class="body">
+            <p class="eyebrow">GEAR • Recovery</p>
+            <h3 class="title">13,500-lb Winch — Synthetic Rope</h3>
+            <ul class="bullets">
+              <li>Remote control; sealed; trail-ready.</li>
+              <li>Solid for trucks, SUVs, and Jeeps.</li>
+            </ul>
+            <a class="cta" href="https://www.ebay.com/itm/375582132759?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Equip this winch →</a>
+          </div>
+        </article>
 
-          <article class="card">
-            <figure class="media">
-              <img src="/s-l1600%20(1).jpg" loading="lazy" decoding="async" alt="Multi-fuel tabletop heater" onerror="this.src='/%24_57%20(3).jfif'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Hot Pick</p>
-              <h3 class="title">Multi-Fuel Tabletop Tent Heater</h3>
-              <ul class="bullets">
-                <li>Iso-butane, butane, or propane (adapters).</li>
-                <li>Dial control from simmer-warm to toasty.</li>
-              </ul>
-              <a class="cta" href="https://www.ebay.com/itm/187037140543?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab the deal →</a>
-            </div>
-          </article>
+        <!-- Food: Compact Cook Set -->
+        <article class="card">
+          <figure class="media">
+            <img src="/outdoorp1.jpg" alt="Compact backpacking cook set" onerror="this.src='/outdoorp2.jpg'">
+          </figure>
+          <div class="body">
+            <p class="eyebrow">FOOD • Cook</p>
+            <h3 class="title">Compact Backpacking Cook Set</h3>
+            <ul class="bullets">
+              <li>Nested pots + pan; ultralight burner.</li>
+              <li>Packs tiny — daypack & bug-out ready.</li>
+            </ul>
+            <div class="meta"><span class="stars">★★★★☆</span><span>$32.39</span></div>
+            <a class="cta" href="https://www.ebay.com/itm/365794714749?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Cook kit listing →</a>
+          </div>
+        </article>
 
-          <article class="card">
-            <figure class="media">
-              <img src="/uncletommy.jpg" loading="lazy" decoding="async" alt="Uncle Tommy’s Fire Starten Kit">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">EDC Fire</p>
-              <h3 class="title">Uncle Tommy’s Fire Starten Kit</h3>
-              <ul class="bullets">
-                <li>25 large waterproof matches + striker.</li>
-                <li>4 sawdust fire discs in a pocket tin.</li>
-              </ul>
-              <a class="cta" href="https://www.ebay.com/itm/175132576181?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Add fire-start →</a>
-            </div>
-          </article>
+        <!-- Fire/Heat: Tabletop Heater -->
+        <article class="card">
+          <figure class="media">
+            <img src="/s-l1600%20(1).jpg" alt="Multi-fuel tabletop heater" onerror="this.src='/%24_57%20(3).jfif'">
+          </figure>
+          <div class="body">
+            <p class="eyebrow">FIRE / HEAT</p>
+            <h3 class="title">Multi-Fuel Tabletop Tent Heater</h3>
+            <ul class="bullets">
+              <li>Iso-butane, butane, or propane (adapters).</li>
+              <li>Dial control from simmer-warm to toasty.</li>
+            </ul>
+            <a class="cta" href="https://www.ebay.com/itm/187037140543?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab the deal →</a>
+          </div>
+        </article>
 
-          <article class="card">
-            <figure class="media">
-              <img src="/s-l1600%20(8).jpg" alt="Permanent match lighters set" loading="lazy">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">5-Pack</p>
-              <h3 class="title">Permanent Match Keychain Lighters</h3>
-              <ul class="bullets">
-                <li>Refillable ferro strike; clips to pack.</li>
-                <li>Great loaners for group kits.</li>
-              </ul>
-              <div class="meta"><span class="stars">★★★★★</span><span>$6.99 • Free Shipping</span></div>
-              <a class="cta" href="https://www.ebay.com/itm/384886016959?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80004&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab the set →</a>
-            </div>
-          </article>
+      </div>
 
-          <article class="card">
-            <figure class="media">
-              <img src="/images/ultimate-fire-kit.png" loading="lazy" decoding="async" alt="TACAMO ultimate fire kit" onerror="this.src='Untitled.png'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">10% OFF</p>
-              <h3 class="title">TACAMO × Grit Gear HQ Fire Kit</h3>
-              <ul class="bullets"><li>Ferro rod, tinder, tools, boil-ready mess tin.</li></ul>
-              <a class="cta" href="https://collabs.shop/mke6bg" target="_blank" rel="nofollow sponsored noopener">Shop the kit →</a>
-            </div>
-          </article>
-        </div>
-      </section>
+      <!-- In-content ad -->
+      <div class="adwrap">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1532367766505583"
+             data-ad-slot="5138460002"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
 
-      <!-- GEAR -->
-      <section id="gear" class="section">
-        <div class="section-head"><h2>🧰 Gear (EDC • Recovery • Power)</h2></div>
-        <div class="grid">
-          <article class="card">
-            <figure class="media">
-              <img src="/$_57%20(7).jfif" loading="lazy" decoding="async" alt="Warpath Bowie blacked carbon steel" onerror="this.src='/$_57%20(6).jfif'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Backcountry Pick</p>
-              <h3 class="title">Warpath Bowie — Blacked Carbon Steel</h3>
-              <ul class="bullets"><li>Full-tang carbon steel, built to be sharpened.</li><li>Guarded handle; batons, preps, and chops.</li></ul>
-              <a class="cta" href="https://www.ebay.com/itm/226375066069?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Add to kit →</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <figure class="media">
-              <img src="/skullknife2.jpg" loading="lazy" decoding="async" alt="Skull inlay folder sheepsfoot" onerror="this.src='/skullknife1.jpg'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Everyday Carry</p>
-              <h3 class="title">Skull-Inlay Traditional Folder</h3>
-              <ul class="bullets"><li>Clean sheepsfoot profile; precise control.</li><li>Classic walk-and-talk; pocket-friendly.</li></ul>
-              <a class="cta" href="https://www.ebay.com/itm/236281207985?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Pick your handle →</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <figure class="media">
-              <img src="/s-l1600%20(13).jpg" loading="lazy" decoding="async" alt="Pocket woodcarver with wooden sheath" onerror="this.src='/%24_57%20(10).jfif'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">EDC Craft</p>
-              <h3 class="title">Pocket Woodcarver — Micro Fixed Blade</h3>
-              <ul class="bullets"><li>Zip ties, tinder, tags—high control.</li><li>Gift-ready; daily-driver utility.</li></ul>
-              <a class="cta" href="https://www.ebay.com/itm/315930343136?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab it →</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <figure class="media">
-              <img src="/s-l960.webp" onerror="this.onerror=null;this.src='/winch.jpg';" loading="lazy" decoding="async" alt="13,500-lb winch with synthetic rope">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Recovery</p>
-              <h3 class="title">13,500-lb Winch — Synthetic Rope</h3>
-              <ul class="bullets"><li>Remote control; sealed; trail-ready.</li><li>Solid for trucks, SUVs, and Jeeps.</li></ul>
-              <a class="cta" href="https://www.ebay.com/itm/375582132759?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Equip this winch →</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <figure class="media">
-              <img src="/$_12%20(4).jfif" loading="lazy" decoding="async" alt="Portable solar power station kit">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Off-Grid Power</p>
-              <h3 class="title">Solar Power Station + 4 LED Bulbs</h3>
-              <ul class="bullets"><li>Charge via sun or AC; run lights/phones.</li><li>US-stock shipping; compact carry.</li></ul>
-              <a class="cta" href="https://www.ebay.com/itm/333785000242?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Power your base →</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <figure class="media">
-              <img src="/psg.jpg" loading="lazy" decoding="async" alt="Conductive self-defense device" onerror="this.src='/psg1.jpg'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Security</p>
-              <h3 class="title">Police & MP Style — 3 Disposable Heads</h3>
-              <ul class="bullets"><li>Includes 3 replaceable heads + case.</li><li>Laser pointer & safety wrist lanyard.</li></ul>
-              <a class="cta" href="https://www.ebay.com/itm/197691660077?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check price →</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <figure class="media">
-              <img src="/titanlogo.jpg" loading="lazy" decoding="async" alt="TITAN Survival logo" style="object-fit:contain;background:#0c0c0c">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Collab</p>
-              <h3 class="title">TITAN Survival × Grit Gear HQ</h3>
-              <ul class="bullets"><li>Why SurvivorCord®, shock cord, sane stitching.</li></ul>
-              <a class="cta" href="/titan-survival-collab.html">Read the collab →</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <figure class="media">
-              <img src="/tccc.jpg" loading="lazy" decoding="async" alt="Thought Crimes notebook" onerror="this.src='/thought-crimes.jpg'">
-            </figure>
-            <div class="body">
-              <p class="eyebrow">Everyday Carry</p>
-              <h3 class="title">Thought Crimes: A Notebook for Dangerous Ideas</h3>
-              <ul class="bullets"><li>Hardcover look, rugged pages; capture plans off-grid.</li></ul>
-              <a class="cta" href="https://amzn.to/4gt5cIt" target="_blank" rel="nofollow sponsored noopener">Check price →</a>
-            </div>
-          </article>
-        </div>
-      </section>
+      <!-- Quick Links -->
+      <div class="section-head"><h2>Quick Links</h2></div>
+      <div class="grid" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+        <a class="card" href="/#shelter">
+          <div class="body"><h3 class="title">Shelter</h3><p class="eyebrow">Rooftop, tents, tarps</p></div>
+        </a>
+        <a class="card" href="/#water">
+          <div class="body"><h3 class="title">Water</h3><p class="eyebrow">Filters, storage, showers</p></div>
+        </a>
+        <a class="card" href="/#food">
+          <div class="body"><h3 class="title">Food</h3><p class="eyebrow">Cook kits, pantry, stoves</p></div>
+        </a>
+        <a class="card" href="/#fire">
+          <div class="body"><h3 class="title">Fire</h3><p class="eyebrow">Ignition, heat, fuel</p></div>
+        </a>
+      </div>
 
     </main>
 
@@ -494,103 +343,34 @@
   <footer class="wrap">
     <div class="ft">
       <span>© <span id="y"></span> Grit Gear HQ</span>
-      <span style="color:var(--mut)">21+ where applicable. Always follow local laws.</span>
+      <span style="color:var(--mut)">Rebuild in progress. Affiliate links help keep the lights on.</span>
     </div>
   </footer>
 
   <script>
-    // year
+    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
-    // simple mobile menu
-    document.getElementById('menuBtn')?.addEventListener('click',()=>{
-      const nav=document.querySelector('.nav'); if(!nav) return;
-      const open=nav.style.display==='flex'; nav.style.display=open?'none':'flex';
-      nav.style.position='fixed'; nav.style.inset='auto 12px 12px 12px'; nav.style.background='#101319';
-      nav.style.border='1px solid #2a303a'; nav.style.borderRadius='14px'; nav.style.padding='10px';
-      nav.style.flexDirection='column'; nav.style.gap='6px';
-    });
 
-    /* ===== Accordion builder: hides all but first card in each .section .grid ===== */
-    (function () {
-      const grids = document.querySelectorAll('.section .grid');
-      if (!grids.length) return;
-
-      function closeOthers(exceptId) {
-        document.querySelectorAll('.more-wrap[aria-hidden="false"]').forEach(wrap => {
-          if (wrap.id !== exceptId) toggleWrap(wrap, false);
-        });
+    // Lightweight countdown (set ETA ~10 days from now; adjust if you want)
+    (function(){
+      const now = new Date();
+      const eta = new Date(now.getTime() + 10*24*60*60*1000); // +10 days
+      const dEl=document.getElementById('cd-d'),
+            hEl=document.getElementById('cd-h'),
+            mEl=document.getElementById('cd-m'),
+            sEl=document.getElementById('cd-s');
+      function tick(){
+        const t = eta - new Date();
+        if(t<=0){ dEl.textContent=hEl.textContent=mEl.textContent=sEl.textContent='0'; return; }
+        const s = Math.floor(t/1000),
+              d = Math.floor(s/86400),
+              h = Math.floor((s%86400)/3600),
+              m = Math.floor((s%3600)/60),
+              ss= s%60;
+        dEl.textContent=d; hEl.textContent=h; mEl.textContent=m; sEl.textContent=ss;
+        requestAnimationFrame(()=>setTimeout(tick,1000));
       }
-      function toggleWrap(wrap, expand) {
-        const btn = document.querySelector('[aria-controls="'+ wrap.id +'"]');
-        if (!btn) return;
-        if (expand) {
-          wrap.setAttribute('aria-hidden', 'false');
-          wrap.style.maxHeight = wrap.scrollHeight + 'px';
-          btn.setAttribute('aria-expanded', 'true');
-          btn.innerText = btn.dataset.lessLabel || 'See less';
-          wrap.addEventListener('transitionend', function auto() {
-            wrap.style.maxHeight = 'none';
-            wrap.removeEventListener('transitionend', auto);
-          });
-        } else {
-          wrap.style.maxHeight = wrap.scrollHeight + 'px';
-          requestAnimationFrame(() => {
-            wrap.style.maxHeight = '0px';
-            wrap.setAttribute('aria-hidden', 'true');
-            btn.setAttribute('aria-expanded', 'false');
-            btn.innerText = btn.dataset.moreLabel || 'See more';
-          });
-        }
-      }
-
-      let idSeq = 0;
-      grids.forEach(grid => {
-        const cards = Array.from(grid.children);
-        if (cards.length <= 1) return;
-
-        const wrap = document.createElement('div');
-        wrap.className = 'more-wrap';
-        wrap.id = 'moreWrap-' + (++idSeq);
-        wrap.setAttribute('aria-hidden', 'true');
-
-        cards.slice(1).forEach(card => wrap.appendChild(card));
-        grid.appendChild(wrap);
-
-        const ctrl = document.createElement('div');
-        ctrl.style.marginTop = '6px';
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'more-btn';
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-controls', wrap.id);
-
-        const hiddenCount = cards.length - 1;
-        btn.dataset.moreLabel = `See more (${hiddenCount})`;
-        btn.dataset.lessLabel = 'See less';
-        btn.innerText = btn.dataset.moreLabel;
-
-        btn.addEventListener('click', () => {
-          const expand = btn.getAttribute('aria-expanded') !== 'true';
-          if (expand) closeOthers(wrap.id);
-          toggleWrap(wrap, expand);
-        });
-
-        ctrl.appendChild(btn);
-        grid.after(ctrl);
-
-        // Keep height accurate if window resizes while open
-        let resizeTimer = null;
-        window.addEventListener('resize', () => {
-          if (wrap.getAttribute('aria-hidden') === 'false' && wrap.style.maxHeight !== '0px') {
-            if (wrap.style.maxHeight !== 'none') {
-              clearTimeout(resizeTimer);
-              resizeTimer = setTimeout(() => {
-                wrap.style.maxHeight = wrap.scrollHeight + 'px';
-              }, 50);
-            }
-          }
-        }, { passive: true });
-      });
+      tick();
     })();
   </script>
 </body>
