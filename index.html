@@ -108,9 +108,29 @@
     .gbo-cta{display:block;text-align:center;font-weight:900;padding:12px 14px;border-radius:12px;margin-top:6px;border:2px solid #343c46;color:#101214;background:linear-gradient(180deg,#ffae00,#ff8c00);box-shadow:0 8px 22px rgba(255,140,0,.28)}
     .gbo-note{display:block;margin-top:8px;color:#8e97a3;font-size:.82rem}
 
-    /* Footer */
-    footer{margin:22px 0 28px;border-top:1px solid var(--line)}
-    .ft{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;color:#b7becc}
+    /* ===== Accordion additions ===== */
+    .more-wrap {
+      grid-column: 1 / -1;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .35s ease;
+    }
+    .more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 2px solid #343c46;
+      background: linear-gradient(180deg, var(--cta,#ffae00), var(--cta2,#ff8c00));
+      color: #101214;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(255,140,0,.20);
+    }
+    .more-btn[aria-expanded="true"]{filter:brightness(1.03)}
+    @media (prefers-reduced-motion: reduce){ .more-wrap{transition:none} }
   </style>
 </head>
 <body>
@@ -443,7 +463,6 @@
         </header>
 
         <figure class="gbo-hero" role="img" aria-label="Kettle, tea and flower — calm kit">
-          <!-- Use the path you uploaded; adjust if your images live elsewhere -->
           <img src="/Screenshot_20250929-135629.png" alt="Calm kit on counter" loading="lazy">
           <figcaption class="gbo-chip">Staff Picks • Calm Kits</figcaption>
         </figure>
@@ -490,6 +509,89 @@
       nav.style.border='1px solid #2a303a'; nav.style.borderRadius='14px'; nav.style.padding='10px';
       nav.style.flexDirection='column'; nav.style.gap='6px';
     });
+
+    /* ===== Accordion builder: hides all but first card in each .section .grid ===== */
+    (function () {
+      const grids = document.querySelectorAll('.section .grid');
+      if (!grids.length) return;
+
+      function closeOthers(exceptId) {
+        document.querySelectorAll('.more-wrap[aria-hidden="false"]').forEach(wrap => {
+          if (wrap.id !== exceptId) toggleWrap(wrap, false);
+        });
+      }
+      function toggleWrap(wrap, expand) {
+        const btn = document.querySelector('[aria-controls="'+ wrap.id +'"]');
+        if (!btn) return;
+        if (expand) {
+          wrap.setAttribute('aria-hidden', 'false');
+          wrap.style.maxHeight = wrap.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+          btn.innerText = btn.dataset.lessLabel || 'See less';
+          wrap.addEventListener('transitionend', function auto() {
+            wrap.style.maxHeight = 'none';
+            wrap.removeEventListener('transitionend', auto);
+          });
+        } else {
+          wrap.style.maxHeight = wrap.scrollHeight + 'px';
+          requestAnimationFrame(() => {
+            wrap.style.maxHeight = '0px';
+            wrap.setAttribute('aria-hidden', 'true');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.innerText = btn.dataset.moreLabel || 'See more';
+          });
+        }
+      }
+
+      let idSeq = 0;
+      grids.forEach(grid => {
+        const cards = Array.from(grid.children);
+        if (cards.length <= 1) return;
+
+        const wrap = document.createElement('div');
+        wrap.className = 'more-wrap';
+        wrap.id = 'moreWrap-' + (++idSeq);
+        wrap.setAttribute('aria-hidden', 'true');
+
+        cards.slice(1).forEach(card => wrap.appendChild(card));
+        grid.appendChild(wrap);
+
+        const ctrl = document.createElement('div');
+        ctrl.style.marginTop = '6px';
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'more-btn';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-controls', wrap.id);
+
+        const hiddenCount = cards.length - 1;
+        btn.dataset.moreLabel = `See more (${hiddenCount})`;
+        btn.dataset.lessLabel = 'See less';
+        btn.innerText = btn.dataset.moreLabel;
+
+        btn.addEventListener('click', () => {
+          const expand = btn.getAttribute('aria-expanded') !== 'true';
+          if (expand) closeOthers(wrap.id);
+          toggleWrap(wrap, expand);
+        });
+
+        ctrl.appendChild(btn);
+        grid.after(ctrl);
+
+        // Keep height accurate if window resizes while open
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+          if (wrap.getAttribute('aria-hidden') === 'false' && wrap.style.maxHeight !== '0px') {
+            if (wrap.style.maxHeight !== 'none') {
+              clearTimeout(resizeTimer);
+              resizeTimer = setTimeout(() => {
+                wrap.style.maxHeight = wrap.scrollHeight + 'px';
+              }, 50);
+            }
+          }
+        }, { passive: true });
+      });
+    })();
   </script>
 </body>
 </html>
