@@ -105,6 +105,44 @@
     /* Footer */
     footer{margin:22px 0 28px;border-top:1px solid var(--line)}
     .ft{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;color:#b7becc}
+
+    /* ========== GGHQ Mug Promo (popup + mobile topbar) ========== */
+    #gg-mug {
+      position: fixed; z-index: 9999;
+      right: 18px; bottom: 18px; width: min(92vw, 340px);
+      background: #0f1012; border: 2px solid #2c3139; border-radius: 14px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.02);
+      color:#e8ecf4; padding: 12px; opacity:0; transform: translateY(14px);
+      transition: opacity .45s ease, transform .45s ease;
+      background-image:
+        radial-gradient(120px 60px at 80% -10%, rgba(255,138,40,.18), transparent 60%),
+        radial-gradient(120px 60px at -10% 110%, rgba(255,255,255,.06), transparent 60%);
+    }
+    #gg-mug.show{opacity:1; transform:translateY(0)}
+    #gg-mug .close{position:absolute; top:6px; right:10px; color:#8b92a0; cursor:pointer}
+    #gg-mug .media{display:grid; gap:8px; margin-bottom:8px}
+    #gg-mug img{width:100%; border-radius:8px}
+    #gg-mug h3{margin:4px 0 6px; color:#ffae00; font-weight:900}
+    #gg-mug p{margin:0 0 10px; color:#cfd3d8}
+    #gg-mug .row{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+    #gg-mug .cta{
+      display:inline-block; background:linear-gradient(180deg,#ffae00,#ff8c00);
+      color:#111; font-weight:900; padding:10px 14px; border-radius:10px;
+      text-decoration:none; box-shadow:0 0 18px rgba(255,138,0,.35)
+    }
+    #gg-mug .mute{font-size:.8rem; color:#9aa0a8}
+    #gg-mug .linkish{font-size:.86rem; color:#c9d0da; cursor:pointer; text-decoration:underline}
+
+    /* Mobile top bar mode */
+    @media (max-width: 560px){
+      #gg-mug.bar{
+        top:0; right:0; left:0; bottom:auto; width:auto; border-radius:0;
+        display:flex; align-items:center; gap:10px; padding:10px 12px; transform: translateY(-14px);
+      }
+      #gg-mug.bar .media{display:none}
+      #gg-mug.bar h3{margin:0}
+      #gg-mug.bar .row{margin-left:auto}
+    }
   </style>
 </head>
 <body>
@@ -161,10 +199,26 @@
   <div class="wrap page">
     <main>
 
-      
       <!-- Featured Deals -->
       <div class="section-head"><h2>Featured Deals (Shelter • Food • Fire • Gear)</h2></div>
       <div class="grid">
+
+        <!-- Fire: Permanent Match Lighters -->
+        <article class="card">
+          <figure class="media">
+            <img src="/s-l1600%20(8).jpg" alt="Permanent match lighters set">
+          </figure>
+          <div class="body">
+            <p class="eyebrow">5-Pack • FIRE</p>
+            <h3 class="title">Permanent Match Keychain Lighters</h3>
+            <ul class="bullets">
+              <li>Refillable ferro strike; clips to pack.</li>
+              <li>Perfect loaners for group kits.</li>
+            </ul>
+            <div class="meta"><span class="stars">★★★★★</span><span>$6.99 • Free Shipping</span></div>
+            <a class="cta" href="https://www.ebay.com/itm/384886016959?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80004&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab the set →</a>
+          </div>
+        </article>
 
         <!-- Food: Camp Kitchen Tool Roll -->
         <article class="card">
@@ -331,6 +385,24 @@
     </div>
   </footer>
 
+  <!-- ========== GGHQ Mug Promo ========== -->
+  <div id="gg-mug" role="dialog" aria-label="Grit Gear HQ enamel mug promo" hidden>
+    <span class="close" title="Close" aria-label="Close">✕</span>
+    <div class="media">
+      <!-- Use your two photos here (upload to site root or /images). Filenames below match yours. -->
+      <img src="/il_794xN.7310697131_i2q7.jpg" alt="Grit Gear HQ enamel mug — Rough Gear front">
+      <img src="/il_794xN.7262755758_bn9m.jpg" alt="Grit Gear HQ enamel mug — Woke Is Dead back">
+    </div>
+    <h3>Rough Gear for Rougher Times</h3>
+    <p>Campfire-tough enamel mug. Real steel rim. Built for bad weather and good coffee.</p>
+    <div class="row">
+      <a class="cta" href="https://www.etsy.com/listing/4382443521/grit-gear-hq-enamel-mug-built-for-the?ref=shop_home_feat_1&logging_key=017b3ddf3869697aa751c2428403704a32d1c88c%3A4382443521" target="_blank" rel="noopener">Shop on Etsy</a>
+      <span class="linkish" data-action="later">Not now</span>
+      <span class="linkish" data-action="mute">Don’t show again</span>
+    </div>
+    <div class="mute" style="margin-top:6px">gritgearhq.com</div>
+  </div>
+
   <script>
     // Year
     document.getElementById('y').textContent = new Date().getFullYear();
@@ -355,6 +427,43 @@
         requestAnimationFrame(()=>setTimeout(tick,1000));
       }
       tick();
+    })();
+
+    /* ===== GGHQ Mug Promo logic =====
+       - Shows after 3s if not muted
+       - On phones, becomes a top bar
+       - "Not now" hides for 24h; "Don't show again" hides for 14d
+    */
+    (function(){
+      const KEY = 'gg_mug_hide_until';
+      const DAYS = 24*60*60*1000;
+      const $box = document.getElementById('gg-mug');
+      if(!$box) return;
+
+      // Respect mute cookie
+      const hideUntil = +localStorage.getItem(KEY) || 0;
+      if (Date.now() < hideUntil) return;
+
+      // Mobile top-bar mode
+      if (window.matchMedia('(max-width:560px)').matches) {
+        $box.classList.add('bar');
+      }
+
+      // Show after a short delay
+      setTimeout(()=>{
+        $box.hidden = false;
+        requestAnimationFrame(()=> $box.classList.add('show'));
+      }, 3000);
+
+      // Close helpers
+      function closeFor(ms){ localStorage.setItem(KEY, String(Date.now()+ms)); $box.remove(); }
+
+      $box.querySelector('.close')?.addEventListener('click', ()=> closeFor(DAYS)); // 24h
+      $box.querySelector('[data-action="later"]')?.addEventListener('click', ()=> closeFor(DAYS));
+      $box.querySelector('[data-action="mute"]')?.addEventListener('click', ()=> closeFor(14*DAYS));
+
+      // ESC key
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeFor(DAYS); }});
     })();
   </script>
 </body>
