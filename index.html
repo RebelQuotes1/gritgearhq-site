@@ -65,9 +65,21 @@
     /* Featured cards */
     .section-head{display:flex;align-items:center;gap:10px;margin:12px 0 6px}
     .section-head h2{margin:0;color:var(--hi);font-size:clamp(1.1rem,1.1vw + 1rem,1.6rem)}
-    .grid{margin:12px 0;display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:640px){.grid{grid-template-columns:1fr}}
+
+    /* TWO-COLUMN GEAR GRID, CENTERED */
+    .grid{
+      margin:12px auto;
+      display:grid;
+      gap:14px;
+      grid-template-columns:repeat(2,minmax(280px,520px));
+      justify-content:center;           /* center the 2-col grid */
+    }
+    /* 1-up on small screens */
+    @media(max-width:720px){ .grid{ grid-template-columns:1fr; } }
+    /* center the last orphan card when item count is odd */
+    .grid > .card:last-child:nth-child(odd){
+      grid-column:1 / -1; justify-self:center; width:100%; max-width:520px;
+    }
 
     .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:grid}
     .media{aspect-ratio:16/10;background:#0b0e13}
@@ -140,16 +152,9 @@
         display:flex; align-items:center; gap:10px; padding:10px 12px;
         transform: translateY(-14px);
       }
-      /* show a small thumbnail (first image) */
-      #gg-mug.bar .media{
-        display:flex; align-items:center; gap:10px; margin:0;
-      }
-      #gg-mug.bar .media img{
-        width:56px; height:56px; object-fit:cover; border-radius:8px;
-      }
-      /* hide the second image to save space */
+      #gg-mug.bar .media{display:flex; align-items:center; gap:10px; margin:0;}
+      #gg-mug.bar .media img{width:56px; height:56px; object-fit:cover; border-radius:8px;}
       #gg-mug.bar .media img + img{ display:none; }
-
       #gg-mug.bar h3{ margin:0; font-size:1rem; }
       #gg-mug.bar p{ display:none; }
       #gg-mug.bar .row{ margin-left:auto; gap:10px; }
@@ -212,35 +217,36 @@
     <main>
 
       <!-- Featured Deals -->
-    
-       <!-- Food: Camp Kitchen Tool Roll -->
-<article class="card">
-  <figure class="media">
-    <picture>
-      <source srcset="/s-l1600%20(6).webp" type="image/webp">
-      <img
-        src="/s-l1600%20(9).jpg"
-        alt="Camp kitchen tool roll — full kit with board, knives, bottles, scissors, wooden spoons"
-        loading="lazy" decoding="async">
-    </picture>
-  </figure>
-  <div class="body">
-    <p class="eyebrow">FOOD / GALLEY</p>
-    <h3 class="title">Camp Kitchen Tool Roll (Full Kit)</h3>
-    <ul class="bullets">
-      <li>Cutlery, utensils, bottles & board.</li>
-      <li>Hangs or packs tight in the bin.</li>
-    </ul>
-    <div class="meta"><span class="stars">★★★★☆</span><span>$32.39</span></div>
-    <a class="cta" href="https://www.ebay.com/itm/286795289544?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank" rel="nofollow sponsored noopener">Stock the camp galley →</a>
-  </div>
-</article>
+      <div class="section-head"><h2>Featured Deals (Shelter • Food • Fire • Gear)</h2></div>
+
+      <div class="grid">
+
+        <!-- Food: Camp Kitchen Tool Roll -->
+        <article class="card">
+          <figure class="media">
+            <picture>
+              <source srcset="/s-l1600%20(6).webp" type="image/webp">
+              <img src="/s-l1600%20(9).jpg"
+                   alt="Camp kitchen tool roll — full kit with board, knives, bottles, scissors, wooden spoons"
+                   loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="body">
+            <p class="eyebrow">FOOD / GALLEY</p>
+            <h3 class="title">Camp Kitchen Tool Roll (Full Kit)</h3>
+            <ul class="bullets">
+              <li>Cutlery, utensils, bottles & board.</li>
+              <li>Hangs or packs tight in the bin.</li>
+            </ul>
+            <div class="meta"><span class="stars">★★★★☆</span><span>$32.39</span></div>
+            <a class="cta" href="https://www.ebay.com/itm/286795289544?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Stock the camp galley →</a>
+          </div>
+        </article>
 
         <!-- Shelter: Rooftop Tent -->
         <article class="card">
           <figure class="media">
-            <img src="/s-l1600%20(1).webp" onerror="this.onerror=null;this.src='/$_1%20(3).jfif';" alt="Hard-shell rooftop tent on SUV">
+            <img src="/s-l1600%20(1).webp" onerror="this.onerror=null;this.src='/$_1%20(3).jfif';" alt="Hard-shell rooftop tent on SUV" loading="lazy" decoding="async">
           </figure>
           <div class="body">
             <p class="eyebrow">SHELTER • Overland</p>
@@ -256,7 +262,7 @@
         <!-- Gear: Winch -->
         <article class="card">
           <figure class="media">
-            <img src="/s-l960.webp" onerror="this.onerror=null;this.src='/winch.jpg';" alt="13,500-lb winch with synthetic rope">
+            <img src="/s-l960.webp" onerror="this.onerror=null;this.src='/winch.jpg';" alt="13,500-lb winch with synthetic rope" loading="lazy" decoding="async">
           </figure>
           <div class="body">
             <p class="eyebrow">GEAR • Recovery</p>
@@ -272,7 +278,7 @@
         <!-- Food: Compact Cook Set -->
         <article class="card">
           <figure class="media">
-            <img src="/outdoorp1.jpg" alt="Compact backpacking cook set" onerror="this.src='/outdoorp2.jpg'">
+            <img src="/outdoorp1.jpg" alt="Compact backpacking cook set" onerror="this.src='/outdoorp2.jpg'" loading="lazy" decoding="async">
           </figure>
           <div class="body">
             <p class="eyebrow">FOOD • Cook</p>
@@ -289,7 +295,7 @@
         <!-- Fire/Heat: Tabletop Heater -->
         <article class="card">
           <figure class="media">
-            <img src="/s-l1600%20(1).jpg" alt="Multi-fuel tabletop heater" onerror="this.src='/%24_57%20(3).jfif'">
+            <img src="/s-l1600%20(1).jpg" alt="Multi-fuel tabletop heater" onerror="this.src='/%24_57%20(3).jfif'" loading="lazy" decoding="async">
           </figure>
           <div class="body">
             <p class="eyebrow">FIRE / HEAT</p>
@@ -299,6 +305,50 @@
               <li>Dial control from simmer-warm to toasty.</li>
             </ul>
             <a class="cta" href="https://www.ebay.com/itm/187037140543?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Grab the deal →</a>
+          </div>
+        </article>
+
+        <!-- NEW: 2350W Portable Gasoline Inverter Generator -->
+        <article class="card">
+          <figure class="media">
+            <img
+              src="/gen-2350.webp"
+              alt="2350W portable gasoline inverter generator — eco quiet, 15kg"
+              loading="lazy" decoding="async"
+              onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22720%22 height=%22450%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23101319%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23cfd7df%22 font-size=%2232%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>2350W Inverter Generator</text></svg>';">
+          </figure>
+          <div class="body">
+            <p class="eyebrow">POWER • Inverter</p>
+            <h3 class="title">2350W Portable Gasoline — 15kg Eco-Quiet</h3>
+            <ul class="bullets">
+              <li>Light 15 kg body with carry handle.</li>
+              <li>Eco-mode for whisper operation at camp.</li>
+              <li>Pure sine wave — safe for laptops & fridges.</li>
+            </ul>
+            <div class="meta"><span class="stars">★★★★☆</span><span>Check seller price</span></div>
+            <a class="cta" href="https://www.ebay.com/itm/276695214737?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">See the 2350W deal →</a>
+          </div>
+        </article>
+
+        <!-- NEW: 3600W Dual-Fuel RV-Ready Inverter Generator -->
+        <article class="card">
+          <figure class="media">
+            <img
+              src="/gen-3600.webp"
+              alt="3600W dual fuel portable inverter generator — RV ready"
+              loading="lazy" decoding="async"
+              onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22720%22 height=%22450%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23101319%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23cfd7df%22 font-size=%2232%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>3600W Dual-Fuel Inverter</text></svg>';">
+          </figure>
+          <div class="body">
+            <p class="eyebrow">POWER • Dual-Fuel</p>
+            <h3 class="title">Quiet 3600W Dual-Fuel — RV-Ready</h3>
+            <ul class="bullets">
+              <li>Runs on gasoline or propane — choose your fuel.</li>
+              <li>TT-30R outlet for direct RV hookup.</li>
+              <li>Low-noise inverter tech; parallel-ready.</li>
+            </ul>
+            <div class="meta"><span class="stars">★★★★★</span><span>Check seller price</span></div>
+            <a class="cta" href="https://www.ebay.com/itm/157348893720?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">See the 3600W deal →</a>
           </div>
         </article>
 
@@ -317,7 +367,7 @@
 
       <!-- Quick Links -->
       <div class="section-head"><h2>Quick Links</h2></div>
-      <div class="grid" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+      <div class="grid" style="grid-template-columns:repeat(2,minmax(280px,520px));justify-content:center">
         <a class="card" href="/#shelter">
           <div class="body"><h3 class="title">Shelter</h3><p class="eyebrow">Rooftop, tents, tarps</p></div>
         </a>
@@ -389,7 +439,6 @@
   <div id="gg-mug" role="dialog" aria-label="Grit Gear HQ enamel mug promo" hidden>
     <span class="close" title="Close" aria-label="Close">✕</span>
     <div class="media">
-      <!-- Use your two photos here (upload to site root or /images). Filenames below match yours. -->
       <img src="/il_794xN.7310697131_i2q7.jpg" alt="Grit Gear HQ enamel mug — Rough Gear front">
       <img src="/il_794xN.7262755758_bn9m.jpg" alt="Grit Gear HQ enamel mug — Woke Is Dead back">
     </div>
@@ -429,40 +478,31 @@
       tick();
     })();
 
-    /* ===== GGHQ Mug Promo logic =====
-       - Shows after 3s if not muted
-       - On phones, becomes a top bar
-       - "Not now" hides for 24h; "Don't show again" hides for 14d
-    */
+    /* ===== GGHQ Mug Promo logic ===== */
     (function(){
       const KEY = 'gg_mug_hide_until';
       const DAYS = 24*60*60*1000;
       const $box = document.getElementById('gg-mug');
       if(!$box) return;
 
-      // Respect mute cookie
       const hideUntil = +localStorage.getItem(KEY) || 0;
       if (Date.now() < hideUntil) return;
 
-      // Mobile top-bar mode
       if (window.matchMedia('(max-width:560px)').matches) {
         $box.classList.add('bar');
       }
 
-      // Show after a short delay
       setTimeout(()=>{
         $box.hidden = false;
         requestAnimationFrame(()=> $box.classList.add('show'));
       }, 3000);
 
-      // Close helpers
       function closeFor(ms){ localStorage.setItem(KEY, String(Date.now()+ms)); $box.remove(); }
 
       $box.querySelector('.close')?.addEventListener('click', ()=> closeFor(DAYS)); // 24h
       $box.querySelector('[data-action="later"]')?.addEventListener('click', ()=> closeFor(DAYS));
       $box.querySelector('[data-action="mute"]')?.addEventListener('click', ()=> closeFor(14*DAYS));
 
-      // ESC key
       document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeFor(DAYS); }});
     })();
   </script>
