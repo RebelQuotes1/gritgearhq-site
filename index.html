@@ -133,15 +133,27 @@
     #gg-mug .mute{font-size:.8rem; color:#9aa0a8}
     #gg-mug .linkish{font-size:.86rem; color:#c9d0da; cursor:pointer; text-decoration:underline}
 
-    /* Mobile top bar mode */
+    /* Mobile top bar mode (UPDATED to show image) */
     @media (max-width: 560px){
       #gg-mug.bar{
         top:0; right:0; left:0; bottom:auto; width:auto; border-radius:0;
-        display:flex; align-items:center; gap:10px; padding:10px 12px; transform: translateY(-14px);
+        display:flex; align-items:center; gap:10px; padding:10px 12px;
+        transform: translateY(-14px);
       }
-      #gg-mug.bar .media{display:none}
-      #gg-mug.bar h3{margin:0}
-      #gg-mug.bar .row{margin-left:auto}
+      /* show a small thumbnail (first image) */
+      #gg-mug.bar .media{
+        display:flex; align-items:center; gap:10px; margin:0;
+      }
+      #gg-mug.bar .media img{
+        width:56px; height:56px; object-fit:cover; border-radius:8px;
+      }
+      /* hide the second image to save space */
+      #gg-mug.bar .media img + img{ display:none; }
+
+      #gg-mug.bar h3{ margin:0; font-size:1rem; }
+      #gg-mug.bar p{ display:none; }
+      #gg-mug.bar .row{ margin-left:auto; gap:10px; }
+      #gg-mug.bar .cta{ padding:8px 12px; border-radius:8px; }
     }
   </style>
 </head>
