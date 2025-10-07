@@ -25,14 +25,77 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1200px;margin:0 auto;padding:0 14px}
 
-    /* Header */
-    .hdr{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,#0f1116,rgba(15,17,22,.92));border-bottom:1px solid var(--line);backdrop-filter:saturate(1.05) blur(6px)}
-    .hdr-row{min-height:58px;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
-    .brand{display:flex;gap:10px;align-items:center}
-    .logo{font-weight:900;letter-spacing:.2px;padding:6px 10px;border-radius:10px;background:#141821;border:1px solid var(--line)}
-    .tag{color:#b7becc;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .menu{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:#141821;border:1px solid var(--line)}
-    .menu svg{width:20px;height:20px}
+   <!-- ===== TITAN SURVIVAL AFFILIATE HEADER ===== -->
+<style>
+  .titan-bar{
+    --orange:#ff7a00;        /* TITAN-like accent */
+    --orange2:#ff9a2b;
+    --ink:#0c0f13;           /* charcoal text on button */
+    --bg:#0d0f10;            /* page bg fallback */
+    --panel:#111318;         /* header bg */
+    --mut:#b7c0cc;
+    font:16px/1.4 system-ui,-apple-system,Segoe UI,Inter,Roboto,sans-serif;
+    position:sticky; top:0; z-index:10000;
+    background:linear-gradient(180deg,#12151b,#0f1217 60%,#0c0f13);
+    color:#e9edf4; border-bottom:1px solid #262b33;
+  }
+  .titan-wrap{max-width:1200px;margin:0 auto;padding:10px 14px;display:grid;gap:8px;
+    grid-template-columns:1fr auto; align-items:center}
+  .titan-left{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .titan-badge{display:inline-grid;place-items:center;width:40px;height:40px;
+    border-radius:10px;background:linear-gradient(135deg,#141923,#10141b);
+    border:1px solid #2c313a;font-weight:900;color:var(--orange)}
+  .titan-title{margin:0;font-weight:900;letter-spacing:.3px}
+  .titan-offer{margin:0;color:#d6dde6;font-size:.95rem}
+  .titan-offer b{color:#ffe2ba}
+  .titan-cta{
+    display:inline-flex;gap:10px;align-items:center;
+    padding:10px 14px;border-radius:12px;font-weight:900;
+    background:linear-gradient(180deg,var(--orange),var(--orange2));
+    color:var(--ink); text-decoration:none;
+    box-shadow:0 8px 22px rgba(255,140,0,.25); border:2px solid #343c46;
+    white-space:nowrap
+  }
+  .titan-sub{
+    grid-column:1 / -1; margin:-2px 0 2px; font-size:.85rem; color:var(--mut);
+    display:flex; gap:10px; flex-wrap:wrap; align-items:center
+  }
+  .titan-dot{width:6px;height:6px;border-radius:999px;background:#3a414d;display:inline-block}
+  @media (max-width:720px){
+    .titan-wrap{grid-template-columns:1fr;gap:6px}
+    .titan-title{font-size:1.05rem}
+    .titan-cta{justify-content:center}
+  }
+</style>
+
+<header class="titan-bar" role="banner" aria-label="TITAN Survival affiliate header">
+  <div class="titan-wrap">
+    <div class="titan-left">
+      <span class="titan-badge" aria-hidden="true">TS</span>
+      <div>
+        <h1 class="titan-title">TITAN Survival — Built for the Rough Stuff</h1>
+        <p class="titan-offer">
+          You earn <b>10% commission</b> • Your audience gets <b>10% off</b> storewide.
+          Use link or code <b>GRITGEARHQ</b>.
+        </p>
+      </div>
+    </div>
+
+    <a class="titan-cta"
+       href="https://www.titansurvival.com/GRITGEARHQ"
+       target="_blank" rel="noopener sponsored"
+       aria-label="Shop TITAN Survival with 10% off using code GRITGEARHQ">
+      Shop all gear → 10% OFF
+    </a>
+
+    <div class="titan-sub">
+      <span>Veteran-Owned</span><span class="titan-dot" aria-hidden="true"></span>
+      <span>Lifetime Guarantees</span><span class="titan-dot" aria-hidden="true"></span>
+      <span>2,200+ verified reviews</span>
+    </div>
+  </div>
+</header>
+<!-- ===== /TITAN SURVIVAL AFFILIATE HEADER ===== -->
 
     /* Layout: main + rail */
     .page{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:16px}
