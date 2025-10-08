@@ -286,185 +286,187 @@
   </a>
 </section>
 
-   <!-- Featured Deals -->
+  <!-- Featured Deals -->
 <div class="section-head"><h2>Featured Deals (Shelter • Food • Fire • Gear)</h2></div>
 
-<div class="grid"
-     style="margin:10px auto 18px;display:grid;gap:12px;
-            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-            align-items:start;">
+<!-- BEGIN: scoped sizing + grid overrides -->
+<style>
+  /* scope to this block only */
+  #featured-deals .media{
+    margin:0;
+    height:150px;               /* thumbnail size (sm). Change to 200/240 for larger */
+    overflow:hidden;
+    background:#0b0e13;
+    border-bottom:1px solid #262b33;
+  }
+  #featured-deals .media img{display:block;width:100%;height:100%;object-fit:cover}
 
-  <!-- TOP ROW (2x2 stack): Campfire Accessories Kit -->
+  /* force a tidy two-up layout for the first grid */
+  #featured-deals .grid{
+    margin:10px auto 18px;
+    display:grid; gap:12px;
+    grid-template-columns:repeat(2,minmax(280px,1fr));
+    align-items:start;
+  }
+  @media (max-width:720px){
+    #featured-deals .grid{ grid-template-columns:1fr; }
+  }
+</style>
+<!-- END: overrides -->
+
+<div id="featured-deals">
+
+  <div class="grid">
+    <!-- TOP ROW (2x2 stack): Campfire Accessories Kit -->
+    <article class="card">
+      <figure class="media">
+        <img
+          src="/s-l1600%20(15).jpg"
+          alt="Stainless steel camping gear — campfire cooking accessories set (free shipping)"
+          loading="lazy" decoding="async" width="480" height="360">
+      </figure>
+      <div class="body">
+        <p class="eyebrow">FOOD • Campfire</p>
+        <h3 class="title">Stainless Campfire Cooking Accessories (Free Shipping)</h3>
+        <ul class="bullets">
+          <li>Stainless tools & racks for open-fire cooking.</li>
+          <li>Packable kit — grill, hooks, and hangers.</li>
+        </ul>
+        <a class="cta" href="https://www.ebay.com/itm/286795289241?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">See the accessories set →</a>
+      </div>
+    </article>
+
+    <!-- TOP ROW (2x2 stack): Wood Burning Stove -->
+    <article class="card">
+      <figure class="media">
+        <img
+          src="/%24_12%20(7).jfif"
+          alt="Outdoor wood-burning stove with chimney pipe for camping/cooking"
+          loading="lazy" decoding="async" width="480" height="360">
+      </figure>
+      <div class="body">
+        <p class="eyebrow">FIRE • Cook/Heat</p>
+        <h3 class="title">Portable Wood Stove w/ Chimney Pipe</h3>
+        <ul class="bullets">
+          <li>Cooktop surface + side racks.</li>
+          <li>Packable flue sections for tents or camp.</li>
+        </ul>
+        <a class="cta" href="https://www.ebay.com/itm/404709300670?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check the wood stove →</a>
+      </div>
+    </article>
+
+    <!-- BOTTOM ROW (2x2 stack): Mini Alcohol Stove -->
+    <article class="card">
+      <figure class="media">
+        <img
+          src="/s-l1600%20(14).jpg"
+          alt="Portable cooking tripod and accessiories."
+          loading="lazy" decoding="async" width="480" height="360">
+      </figure>
+      <div class="body">
+        <p class="eyebrow">FOOD • Ultralight</p>
+        <h3 class="title">Outdoor Mini Alcohol Stove Burner</h3>
+        <ul class="bullets">
+          <li>Palm-size; runs on denatured alcohol.</li>
+          <li>Great backup for boil-only meals.</li>
+        </ul>
+        <a class="cta" href="https://www.ebay.com/itm/355697676042?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">View the mini stove →</a>
+      </div>
+    </article>
+
+    <!-- BOTTOM ROW (2x2 stack): Ultralight Alcohol Stove Kit -->
+    <article class="card">
+      <figure class="media">
+        <img
+          src="/s-l1600%20(16).jpg"
+          alt="Ultralight alcohol stove kit with stand/windscreen"
+          loading="lazy" decoding="async" width="480" height="360">
+      </figure>
+      <div class="body">
+        <p class="eyebrow">FOOD • Ultralight</p>
+        <h3 class="title">Ultralight Alcohol Stove Kit</h3>
+        <ul class="bullets">
+          <li>Pot stand & windscreen for fast boils.</li>
+          <li>Simple, reliable field fuel.</li>
+        </ul>
+        <a class="cta" href="https://www.ebay.com/itm/285663893889?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check the UL kit →</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- These three cards sit under the grid; thumbnails are also 150px due to the scoped CSS -->
+  <!-- Food: Camp Kitchen Tool Roll -->
   <article class="card">
-    <figure class="media"
-            style="aspect-ratio:4/3;overflow:hidden;background:#0b0e13;border-bottom:1px solid #262b33;">
-      <img
-        src="/s-l1600%20(15).jpg"
-        alt="Stainless steel camping gear — campfire cooking accessories set (free shipping)"
-        loading="lazy" decoding="async"
-        width="480" height="360"
-        style="width:100%;height:100%;object-fit:cover;display:block;">
+    <figure class="media">
+      <picture>
+        <source srcset="/s-l1600%20(6).webp" type="image/webp">
+        <img src="/s-l1600%20(9).jpg"
+             alt="Camp kitchen tool roll — full kit with board, knives, bottles, scissors, wooden spoons"
+             loading="lazy" decoding="async" width="480" height="360">
+      </picture>
     </figure>
     <div class="body">
-      <p class="eyebrow">FOOD • Campfire</p>
-      <h3 class="title">Stainless Campfire Cooking Accessories (Free Shipping)</h3>
+      <p class="eyebrow">FOOD / GALLEY</p>
+      <h3 class="title">Camp Kitchen Tool Roll (Full Kit)</h3>
       <ul class="bullets">
-        <li>Stainless tools & racks for open-fire cooking.</li>
-        <li>Packable kit — grill, hooks, and hangers.</li>
+        <li>Cutlery, utensils, bottles & board.</li>
+        <li>Hangs or packs tight in the bin.</li>
       </ul>
-      <a class="cta" href="https://www.ebay.com/itm/286795289241?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">See the accessories set →</a>
+      <div class="meta"><span class="stars">★★★★☆</span><span>$32.39</span></div>
+      <a class="cta" href="https://www.ebay.com/itm/286795289544?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Stock the camp galley →</a>
     </div>
   </article>
 
-  <!-- TOP ROW (2x2 stack): Wood Burning Stove -->
+  <!-- Shelter: Rooftop Tent -->
   <article class="card">
-    <figure class="media"
-            style="aspect-ratio:4/3;overflow:hidden;background:#0b0e13;border-bottom:1px solid #262b33;">
-      <img
-        src="/%24_12%20(7).jfif"
-        alt="Outdoor wood-burning stove with chimney pipe for camping/cooking"
-        loading="lazy" decoding="async"
-        width="480" height="360"
-        style="width:100%;height:100%;object-fit:cover;display:block;">
+    <figure class="media">
+      <img src="/s-l1600%20(1).webp" onerror="this.onerror=null;this.src='/$_1%20(3).jfif';"
+           alt="Hard-shell rooftop tent on SUV" loading="lazy" decoding="async" width="480" height="360">
     </figure>
     <div class="body">
-      <p class="eyebrow">FIRE • Cook/Heat</p>
-      <h3 class="title">Portable Wood Stove w/ Chimney Pipe</h3>
+      <p class="eyebrow">SHELTER • Overland</p>
+      <h3 class="title">Hard-Shell Rooftop Tent (4-Season)</h3>
       <ul class="bullets">
-        <li>Cooktop surface + side racks.</li>
-        <li>Packable flue sections for tents or camp.</li>
+        <li>Opens in seconds; insulated & waterproof.</li>
+        <li>Fits most racks (≥600-lb static).</li>
       </ul>
-      <a class="cta" href="https://www.ebay.com/itm/404709300670?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check the wood stove →</a>
+      <a class="cta" href="https://www.ebay.com/itm/286423670948?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check availability →</a>
     </div>
   </article>
 
-  <!-- BOTTOM ROW (2x2 stack): Mini Alcohol Stove -->
+  <!-- Gear: Winch -->
   <article class="card">
-    <figure class="media"
-            style="aspect-ratio:4/3;overflow:hidden;background:#0b0e13;border-bottom:1px solid #262b33;">
-      <img
-        src="/s-l1600%20(14).jpg"
-        alt="Portable cooking tripod and accessiories."
-        loading="lazy" decoding="async"
-        width="480" height="360"
-        style="width:100%;height:100%;object-fit:cover;display:block;">
+    <figure class="media">
+      <img src="/s-l960.webp" onerror="this.onerror=null;this.src='/winch.jpg';"
+           alt="13,500-lb winch with synthetic rope" loading="lazy" decoding="async" width="480" height="360">
     </figure>
     <div class="body">
-      <p class="eyebrow">FOOD • Ultralight</p>
-      <h3 class="title">Outdoor Mini Alcohol Stove Burner</h3>
+      <p class="eyebrow">GEAR • Recovery</p>
+      <h3 class="title">13,500-lb Winch — Synthetic Rope</h3>
       <ul class="bullets">
-        <li>Palm-size; runs on denatured alcohol.</li>
-        <li>Great backup for boil-only meals.</li>
+        <li>Remote control; sealed; trail-ready.</li>
+        <li>Solid for trucks, SUVs, and Jeeps.</li>
       </ul>
-      <a class="cta" href="https://www.ebay.com/itm/355697676042?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">View the mini stove →</a>
-    </div>
-  </article>
-
-  <!-- BOTTOM ROW (2x2 stack): Ultralight Alcohol Stove Kit -->
-  <article class="card">
-    <figure class="media"
-            style="aspect-ratio:4/3;overflow:hidden;background:#0b0e13;border-bottom:1px solid #262b33;">
-      <img
-        src="/s-l1600%20(16).jpg"
-        alt="Ultralight alcohol stove kit with stand/windscreen"
-        loading="lazy" decoding="async"
-        width="480" height="360"
-        style="width:100%;height:100%;object-fit:cover;display:block;">
-    </figure>
-    <div class="body">
-      <p class="eyebrow">FOOD • Ultralight</p>
-      <h3 class="title">Ultralight Alcohol Stove Kit</h3>
-      <ul class="bullets">
-        <li>Pot stand & windscreen for fast boils.</li>
-        <li>Simple, reliable field fuel.</li>
-      </ul>
-      <a class="cta" href="https://www.ebay.com/itm/285663893889?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check the UL kit →</a>
+      <a class="cta" href="https://www.ebay.com/itm/375582132759?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Equip this winch →</a>
     </div>
   </article>
 
 </div>
 
-<!-- Food: Camp Kitchen Tool Roll -->
-<article class="card">
-  <figure class="media"
-          style="margin:0;aspect-ratio:4/3;overflow:hidden;background:#0b0e13;border-bottom:1px solid #262b33;">
-    <picture>
-      <source srcset="/s-l1600%20(6).webp" type="image/webp">
-      <img src="/s-l1600%20(9).jpg"
-           alt="Camp kitchen tool roll — full kit with board, knives, bottles, scissors, wooden spoons"
-           loading="lazy" decoding="async"
-           width="480" height="360"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
-    </picture>
-  </figure>
-  <div class="body">
-    <p class="eyebrow">FOOD / GALLEY</p>
-    <h3 class="title">Camp Kitchen Tool Roll (Full Kit)</h3>
-    <ul class="bullets">
-      <li>Cutlery, utensils, bottles & board.</li>
-      <li>Hangs or packs tight in the bin.</li>
-    </ul>
-    <div class="meta"><span class="stars">★★★★☆</span><span>$32.39</span></div>
-    <a class="cta" href="https://www.ebay.com/itm/286795289544?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Stock the camp galley →</a>
-  </div>
-</article>
-
-<!-- Shelter: Rooftop Tent -->
-<article class="card">
-  <figure class="media"
-          style="margin:0;aspect-ratio:4/3;overflow:hidden;background:#0b0e13;border-bottom:1px solid #262b33;">
-    <img src="/s-l1600%20(1).webp" onerror="this.onerror=null;this.src='/$_1%20(3).jfif';"
-         alt="Hard-shell rooftop tent on SUV" loading="lazy" decoding="async"
-         width="480" height="360"
-         style="width:100%;height:100%;object-fit:cover;display:block;">
-  </figure>
-  <div class="body">
-    <p class="eyebrow">SHELTER • Overland</p>
-    <h3 class="title">Hard-Shell Rooftop Tent (4-Season)</h3>
-    <ul class="bullets">
-      <li>Opens in seconds; insulated & waterproof.</li>
-      <li>Fits most racks (≥600-lb static).</li>
-    </ul>
-    <a class="cta" href="https://www.ebay.com/itm/286423670948?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Check availability →</a>
-  </div>
-</article>
-
-<!-- Gear: Winch -->
-<article class="card">
-  <figure class="media"
-          style="margin:0;aspect-ratio:4/3;overflow:hidden;background:#0b0e13;border-bottom:1px solid #262b33;">
-    <img src="/s-l960.webp" onerror="this.onerror=null;this.src='/winch.jpg';"
-         alt="13,500-lb winch with synthetic rope" loading="lazy" decoding="async"
-         width="480" height="360"
-         style="width:100%;height:100%;object-fit:cover;display:block;">
-  </figure>
-  <div class="body">
-    <p class="eyebrow">GEAR • Recovery</p>
-    <h3 class="title">13,500-lb Winch — Synthetic Rope</h3>
-    <ul class="bullets">
-      <li>Remote control; sealed; trail-ready.</li>
-      <li>Solid for trucks, SUVs, and Jeeps.</li>
-    </ul>
-    <a class="cta" href="https://www.ebay.com/itm/375582132759?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Equip this winch →</a>
-  </div>
-</article>
-
-<!-- Two-up grid for these four items -->
+<!-- Two-up grid for these four items (kept) -->
 <style>
   .two-up{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(260px,1fr));align-items:start;margin:12px 0;}
   @media (max-width: 720px){.two-up{grid-template-columns:1fr}}
-  .two-up .media{margin:0;aspect-ratio:4/3;overflow:hidden;background:#0b0e13;border-bottom:1px solid #262b33}
+  .two-up .media{margin:0;height:150px;overflow:hidden;background:#0b0e13;border-bottom:1px solid #262b33}
   .two-up .media img{width:100%;height:100%;object-fit:cover;display:block}
 </style>
 
 <div class="two-up">
-
   <!-- Food: Compact Cook Set -->
   <article class="card">
     <figure class="media">
       <img src="/outdoorp1.jpg" alt="Compact backpacking cook set"
-           onerror="this.src='/outdoorp2.jpg'"
-           loading="lazy" decoding="async" width="480" height="360">
+           onerror="this.src='/outdoorp2.jpg'" loading="lazy" decoding="async" width="480" height="360">
     </figure>
     <div class="body">
       <p class="eyebrow">FOOD • Cook</p>
@@ -482,8 +484,7 @@
   <article class="card">
     <figure class="media">
       <img src="/s-l1600%20(1).jpg" alt="Multi-fuel tabletop heater"
-           onerror="this.src='/%24_57%20(3).jfif'"
-           loading="lazy" decoding="async" width="480" height="360">
+           onerror="this.src='/%24_57%20(3).jfif'" loading="lazy" decoding="async" width="480" height="360">
     </figure>
     <div class="body">
       <p class="eyebrow">FIRE / HEAT</p>
@@ -540,7 +541,6 @@
       <a class="cta" href="https://www.ebay.com/itm/157348893720?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">See the 3600W deal →</a>
     </div>
   </article>
-
 </div>
 
   <script>
