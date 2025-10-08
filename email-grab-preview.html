@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Email Grab — Preview</title>
+<style>
+  :root{--bg:#0d0f10;--ink:#e9ecf4;--mut:#9aa3ad;--line:#262b33}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,Segoe UI,Roboto,sans-serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:24px 14px}
+  h1{margin:18px 0}
+
+  /* EMAIL GRAB */
+  #gg-email{position:sticky;top:0;z-index:9998;background:linear-gradient(180deg,#111418,#0f1216);
+    border-bottom:1px solid #262b33;color:#e9ecf4;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+  #gg-email .row{max-width:1100px;margin:0 auto;padding:10px 14px;display:grid;gap:10px;
+    grid-template-columns:1fr auto auto;align-items:center}
+  #gg-email .pitch{font-weight:800;letter-spacing:.2px}
+  #gg-email form{display:flex;gap:8px;align-items:center}
+  #gg-email input[type="email"]{background:#0c0f13;color:#e9ecf4;border:1px solid #2a3038;outline:0;
+    padding:10px 12px;border-radius:10px;width:min(48ch,70vw)}
+  #gg-email button{background:linear-gradient(180deg,#ffae00,#ff8c00);color:#111;font-weight:900;
+    border:2px solid #343c46;border-radius:10px;padding:10px 14px;cursor:pointer}
+  #gg-email .ghost{background:#151a20;border:1px solid #2a3038;color:#cfd6df;font-weight:700}
+  #gg-email .x{background:none;border:0;color:#9aa3ad;cursor:pointer;padding:8px}
+  #gg-email .ok{color:#9ff0b3;font-weight:800}
+  #gg-email .err{color:#ffb0b0;font-weight:700}
+  @media(max-width:760px){
+    #gg-email .row{grid-template-columns:1fr}
+    #gg-email input[type="email"]{width:100%}
+    #gg-email .x{justify-self:end}
+  }
+
+  /* demo page content */
+  .card{background:#101319;border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+</style>
+</head>
+<body>
+
+<!-- EMAIL GRAB PREVIEW -->
+<div id="gg-email" role="region" aria-label="Join Grit Gear HQ list">
+  <div class="row">
+    <div class="pitch">⚡ Get launch alert + legit deals (1–2×/mo). No spam.</div>
+
+    <form id="gg-email-form" novalidate>
+      <input type="text" name="company" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+      <input type="email" name="email" id="gg-email-input" placeholder="you@proton.me" required>
+      <button type="submit">Join</button>
+    </form>
+
+    <div style="display:flex;gap:8px">
+      <button class="ghost" id="gg-email-export">Copy CSV</button>
+      <button class="x" id="gg-email-close" aria-label="Hide email bar">✕</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <h1>Preview Content</h1>
+  <p>This page exists so you can see the email bar behavior and styling before dropping it into your site.</p>
+
+  <div class="card">Scroll a bit, the bar stays sticky. Try entering an email, then click “Copy CSV” to see local storage export.</div>
+  <div class="card">Mobile preview: narrow your browser—layout collapses to a single column.</div>
+  <div class="card" style="height:600px">Spacer content for scrolling…</div>
+</div>
+
+<script>
+(function(){
+  const KEY='gg_emails';
+  const $bar=document.getElementById('gg-email');
+  const $form=document.getElementById('gg-email-form');
+  const $input=document.getElementById('gg-email-input');
+  const $close=document.getElementById('gg-email-close');
+  const $copy=document.getElementById('gg-email-export');
+
+  function getList(){ try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]} }
+  function setList(a){ localStorage.setItem(KEY, JSON.stringify(a)) }
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) }
+
+  async function submitEmail(email){ return true } // stub — replace later
+
+  $form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    if($form.elements['company'].value) return; // honeypot
+    const email=$input.value.trim();
+    if(!validEmail(email)){ note('err','Enter a valid email.'); return }
+    try{
+      await submitEmail(email);
+      const list=getList();
+      if(!list.find(r=>r.email===email)) list.push({email,ts:new Date().toISOString()});
+      setList(list);
+      note('ok','Added. Check your inbox soon!');
+      $input.value='';
+    }catch(e){ note('err','Could not save. Try again.') }
+  });
+
+  $close.addEventListener('click', ()=>{ $bar.remove() });
+
+  $copy.addEventListener('click', async ()=>{
+    const rows=getList();
+    if(!rows.length){ note('err','No signups yet.'); return }
+    const csv='email,timestamp\n'+rows.map(r=>`${r.email},${r.ts}`).join('\n');
+    try{ await navigator.clipboard.writeText(csv); note('ok','Copied CSV to clipboard.') }
+    catch(e){ note('err','Clipboard blocked. Here it is:\n'+csv) }
+  });
+
+  function note(type,msg){
+    let el=document.getElementById('gg-email-note');
+    if(!el){ el=document.createElement('div'); el.id='gg-email-note'; el.style.margin='0 0 0 10px'; $form.after(el) }
+    el.className=type; el.textContent=msg; clearTimeout(el._t); el._t=setTimeout(()=>el.textContent='',5000);
+  }
+})();
+</script>
+</body>
+</html>
