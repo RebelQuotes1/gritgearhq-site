@@ -1,6 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- GGHQ • Legal Hemp Rotator (drop anywhere) -->
+<section id="hemp-rotator" style="--ink:#e9ecf4;--line:#2b2f3a;--accent:#18f0b4;max-width:900px;margin:18px auto;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#0f1418,#0b0d11);box-shadow:0 10px 28px rgba(0,0,0,.35)">
+  <div style="display:grid;grid-template-columns:1.2fr 1fr">
+    <!-- Left: copy -->
+    <div style="padding:16px;border-right:1px solid var(--line)">
+      <span style="display:inline-flex;gap:8px;align-items:center;background:linear-gradient(90deg,var(--accent),#0acb92);color:#041812;font-weight:900;padding:6px 10px;border-radius:999px;box-shadow:0 8px 18px rgba(24,240,180,.28)">Grit Gear HQ</span>
+      <h3 style="margin:10px 0 6px;font:900 1.4rem/1.1 system-ui;color:#fff">Legal Hemp — Field-Tested Picks</h3>
+      <p style="margin:0 0 10px;color:#c7d3de">Smooth draw, even burn, verified labs. Ships discreet. 21+ only.</p>
+      <ul style="margin:0 0 12px 18px;color:#d7e3e0;line-height:1.5">
+        <li>Fresh flower & pre-rolls (≤0.3% Δ9 THC)</li>
+        <li>Honest flavor, lab results posted</li>
+        <li>Fast, discreet shipping</li>
+      </ul>
+      <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="noopener sponsored"
+         style="display:inline-block;background:linear-gradient(90deg,var(--accent),#0acb92);color:#081014;font-weight:900;padding:11px 14px;border-radius:12px;text-decoration:none;box-shadow:0 8px 24px rgba(24,240,180,.35)">Shop Legal Hemp →</a>
+      <p style="margin:8px 0 0;color:#9fb0bd;font-size:.82rem;border-top:1px dashed var(--line);padding-top:8px">
+        <strong>Compliance:</strong> Hemp products contain ≤0.3% Δ9-THC by dry weight. 21+ only. Check local laws. We may earn a commission.
+      </p>
+    </div>
+
+    <!-- Right: rotating images (uses existing repo files to avoid 404) -->
+    <figure style="position:relative;height:260px;margin:0;overflow:hidden;background:#0f1116">
+      <img class="hemp-frame" src="/gb1.jpg" alt="Hemp product" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity .6s ease">
+      <img class="hemp-frame" src="/gb2.jpg" alt="Hemp product" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease">
+      <img class="hemp-frame" src="/gb3.jpg" alt="Hemp product" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease">
+      <img class="hemp-frame" src="/gb4.jpg" alt="Hemp product" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease">
+      <div style="position:absolute;left:10px;bottom:10px;font:800 .75rem system-ui;color:#041812;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,#18e6a3,#0acb92);border:1px solid rgba(9,199,139,.5)">Lab-Tested</div>
+    </figure>
+  </div>
+</section>
+
+<script>
+  // tiny rotator (no libs). Cycles /gb1.jpg.. /gb4.jpg that are already in your repo.
+  (function(){
+    const frames = document.querySelectorAll('#hemp-rotator .hemp-frame');
+    if(!frames.length) return;
+    let i = 0;
+    setInterval(()=>{
+      frames[i].style.opacity = 0;
+      i = (i + 1) % frames.length;
+      frames[i].style.opacity = 1;
+    }, 2500);
+  })();
+</script>
+
   <!-- Google Ads (kept) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
