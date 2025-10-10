@@ -552,8 +552,7 @@
       <a class="cta"
          href="https://www.ebay.com/itm/317374658633?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cM5m26q3D0Qy4I7rUUfyI1eHuNLw5dfvlQAZ66pYLDHiiuilnaHQDOHLIYsKo7PsmYaoYZcUunx6kIdcy%2B2QIulRIp6MILpp3NPXBx6bJDM9eCW9Sbr7fVEyFTdfHK5uiq33PqcbyCdBmUTlDLD0hsutqRR3FRDRGRi07ItpJEf%2Bu2fnwzCb6w%2F7bvmdzXRrg%3D"
          target="_blank" rel="nofollow sponsored noopener">
-         See the 8-person tent →
-      </a>
+         See the 8-person tent →</a>
     </div>
   </article>
 
@@ -581,6 +580,100 @@
     </div>
   </article>
 </div>
+
+<!-- ========= LEGAL HEMP POPUP (Grit Gear) ========= -->
+<style>
+  :root{
+    --gg-bg: var(--panel, #111418);
+    --gg-ink: var(--ink, #e9ecf4);
+    --gg-muted: var(--mut, #9aa3ad);
+    --gg-line: var(--line, #2b2f3a);
+    --gg-accent: #18f0b4;
+    --gg-accent2: #0acb92;
+  }
+  .gg-pop-mask{position:fixed;inset:0;z-index:9998;background:rgba(5,8,10,.65);backdrop-filter:blur(6px) saturate(1.05);display:none;}
+  .gg-pop{
+    position:fixed;z-index:9999;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:min(720px,calc(100vw - 28px));
+    border:1px solid var(--gg-line);border-radius:16px;background:linear-gradient(180deg,#0f1418,#0b0d11);
+    box-shadow:0 0 0 1px rgba(24,240,180,.18) inset,0 16px 48px rgba(0,0,0,.45),0 0 40px rgba(24,240,180,.12);
+    display:none;overflow:hidden;
+  }
+  .gg-pop:before{content:"";position:absolute;inset:-8px;background:
+      radial-gradient(60% 50% at 20% 0%, rgba(24,240,180,.18), transparent 60%),
+      radial-gradient(70% 60% at 100% 20%, rgba(10,203,146,.14), transparent 60%),
+      radial-gradient(70% 60% at 0% 60%, rgba(24,240,180,.12), transparent 60%);
+    filter:blur(18px);pointer-events:none;}
+  .gg-pop-grid{display:grid;grid-template-columns:1.2fr 1fr;}
+  @media (max-width:780px){ .gg-pop-grid{grid-template-columns:1fr;} }
+  .gg-left{position:relative;padding:18px;border-right:1px solid var(--gg-line);}
+  @media (max-width:780px){ .gg-left{border-right:0;border-bottom:1px solid var(--gg-line);} }
+  .gg-badge{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:.76rem;color:#051512;background:linear-gradient(90deg,var(--gg-accent),var(--gg-accent2));padding:6px 10px;border-radius:999px;box-shadow:0 8px 22px rgba(10,203,146,.28)}
+  .gg-title{margin:10px 0 6px;font-size:clamp(22px,3.2vw,28px);line-height:1.1;font-weight:900;background:linear-gradient(90deg,#fff,#eafff6,#b6ffe3);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 16px rgba(0,0,0,.35)}
+  .gg-sub{margin:0 0 10px;color:var(--gg-muted)}
+  .gg-bullets{margin:0 0 12px 0;padding:0;list-style:none;color:#d7e3e0}
+  .gg-bullets li{display:flex;gap:8px;margin:8px 0}.gg-bullets li:before{content:"✔";color:var(--gg-accent);font-weight:900}
+  .gg-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  .gg-btn,.gg-btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:12px;font-weight:900;text-decoration:none}
+  .gg-btn{color:#081014;background:linear-gradient(90deg,var(--gg-accent),var(--gg-accent2));box-shadow:0 8px 24px rgba(10,203,146,.35)}
+  .gg-btn-outline{color:var(--gg-ink);background:#11161b;border:1px solid #2a3340}
+  .gg-legal{margin-top:8px;font-size:.78rem;color:#9fb0bd;border-top:1px dashed var(--gg-line);padding-top:8px}
+  .gg-right{position:relative;background:#0b0f12}
+  .gg-media{aspect-ratio:4/3;width:100%;overflow:hidden;border-bottom:1px solid var(--gg-line)}
+  .gg-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.95;filter:saturate(1.04)}
+  .gg-pills{display:flex;gap:8px;flex-wrap:wrap;padding:12px}
+  .gg-pill{border:1px solid var(--gg-line);border-radius:999px;padding:6px 10px;color:#cfe4db;font-size:.8rem}
+  .gg-close{position:absolute;top:8px;right:8px;z-index:2;width:36px;height:36px;border-radius:10px;border:1px solid var(--gg-line);background:#0f1418;color:var(--gg-ink);cursor:pointer;font-weight:900}
+  .gg-mini{position:fixed;right:14px;bottom:14px;z-index:9997;border:1px solid var(--gg-line);border-radius:14px;padding:10px 12px;background:linear-gradient(180deg,#10161b,#0c0f12);color:var(--gg-ink);display:flex;align-items:center;gap:8px;box-shadow:0 12px 28px rgba(0,0,0,.35),0 0 28px rgba(24,240,180,.12);cursor:pointer}
+  .gg-mini .dot{width:10px;height:10px;border-radius:50%;background:var(--gg-accent);box-shadow:0 0 14px rgba(24,240,180,.6)}
+  .gg-hide{display:none!important}
+</style>
+
+<div class="gg-pop-mask" id="ggMask" aria-hidden="true"></div>
+<section class="gg-pop" id="ggPop" role="dialog" aria-modal="true" aria-labelledby="ggTitle" aria-describedby="ggDesc">
+  <button class="gg-close" id="ggClose" aria-label="Close">×</button>
+  <div class="gg-pop-grid">
+    <div class="gg-left">
+      <span class="gg-badge" aria-hidden="true">Grit Gear HQ</span>
+      <h3 class="gg-title" id="ggTitle">Field-Tested <span style="white-space:nowrap">Legal Hemp</span></h3>
+      <p class="gg-sub" id="ggDesc">No hype—just smooth draw, even burn, and clean effects. Farm Bill compliant. Ships discreet.</p>
+      <ul class="gg-bullets">
+        <li>Fresh bud &amp; pre-rolls (hemp-derived, ≤0.3% Δ9 THC)</li>
+        <li>Even burn, honest flavor, real lab results</li>
+        <li>Fast, discreet shipping • 21+ only</li>
+      </ul>
+      <div class="gg-actions">
+        <a class="gg-btn" href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="sponsored noopener noreferrer">Shop Legal Hemp →</a>
+        <a class="gg-btn-outline" href="/products.html">See Our Picks</a>
+      </div>
+      <p class="gg-legal"><strong>Compliance:</strong> Hemp products are derived from hemp and contain ≤0.3% Δ9-THC by dry weight. <strong>21+</strong> only. Check your local laws. Affiliate links may earn us a small commission.</p>
+    </div>
+    <div class="gg-right">
+      <div class="gg-media">
+        <img src="/gb3.jpg" alt="Grit Gear hemp pre-rolls and flower on a dark tray" loading="lazy" decoding="async">
+      </div>
+      <div class="gg-pills">
+        <span class="gg-pill">Even Burn</span>
+        <span class="gg-pill">Discreet Ship</span>
+        <span class="gg-pill">Lab-Tested</span>
+        <span class="gg-pill">Multi-Packs</span>
+      </div>
+    </div>
+  </div>
+</section>
+<button class="gg-mini gg-hide" id="ggMini" aria-label="Open hemp popup">
+  <span class="dot" aria-hidden="true"></span>
+  <strong>Legal Hemp</strong> — View Deals
+</button>
+<!-- ========= /LEGAL HEMP POPUP ========= -->
+
+<!-- Simple footer so the year script doesn't error -->
+<footer>
+  <div class="wrap ft">
+    <span>© <span id="y"></span> Grit Gear HQ — Deals while we rebuild.</span>
+    <a href="mailto:team@gritgearhq.com">Contact</a>
+  </div>
+</footer>
 
   <script>
     // Year
@@ -634,6 +727,54 @@
       $box.querySelector('[data-action="mute"]')?.addEventListener('click', ()=> closeFor(14*DAYS));
 
       document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeFor(DAYS); }});
+    })();
+
+    /* ===== GRIT GEAR Legal Hemp Popup logic (polite) ===== */
+    (function(){
+      const POP_ID = 'gg_popup_seen_at';
+      const COOLDOWN_DAYS = 7;
+      const mask = document.getElementById('ggMask');
+      const pop  = document.getElementById('ggPop');
+      const close= document.getElementById('ggClose');
+      const mini = document.getElementById('ggMini');
+
+      function now(){ return Date.now(); }
+      function days(ms){ return ms / (1000*60*60*24); }
+      function show(){
+        mask.style.display='block';
+        pop.style.display='block';
+        document.body.style.overflow='hidden';
+        localStorage.setItem(POP_ID, String(now()));
+      }
+      function hide(){
+        mask.style.display='none';
+        pop.style.display='none';
+        document.body.style.overflow='';
+        mini.classList.remove('gg-hide');
+      }
+      function okToShow(){
+        try{
+          const last = Number(localStorage.getItem(POP_ID)||0);
+          if(!last) return true;
+          return days(now()-last) >= COOLDOWN_DAYS;
+        }catch(e){ return true; }
+      }
+
+      let armed = true;
+      if(okToShow()){
+        setTimeout(()=>{ if(armed) { show(); armed=false; } }, 10000);
+        document.addEventListener('mouseout', (e)=>{
+          if(!armed) return;
+          if(!e.toElement && !e.relatedTarget && e.clientY <= 0){ show(); armed=false; }
+        });
+      } else {
+        mini.classList.remove('gg-hide');
+      }
+
+      close.addEventListener('click', hide);
+      mask.addEventListener('click', hide);
+      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') hide(); });
+      mini.addEventListener('click', ()=>{ show(); mini.classList.add('gg-hide'); });
     })();
   </script>
 </body>
