@@ -18,75 +18,50 @@
   <link rel="canonical" href="https://gritgearhq.com/">
 
   <!-- Favicon -->
-  <link rel="icon" href="/assets/favicon.png" sizes="32x32">
+  <link rel="icon" href="assets/favicon.png" sizes="32x32">
 
-  <!-- Fonts (system-first for speed) -->
   <style>
     :root{
-      --bg:#0b0d11;
-      --panel:#12151a;
-      --panel-2:#171a20;
-      --ink:#e7edf5;
-      --muted:#a8b0bb;
-      --line:#252a33;
-      --accent:#4bd37b;       /* subtle survival green */
-      --accent-2:#2fb0ff;     /* link hover */
-      --warn:#ffd35a;
-      --rad:14px;
-      --shadow:0 10px 28px rgba(0,0,0,.35);
-      --space: clamp(16px, 2vw, 28px);
-      --max:1100px;
+      --bg:#0b0d11; --panel:#12151a; --panel-2:#171a20; --ink:#e7edf5; --muted:#a8b0bb; --line:#252a33;
+      --accent:#4bd37b; --accent-2:#2fb0ff; --warn:#ffd35a; --rad:14px; --shadow:0 10px 28px rgba(0,0,0,.35);
+      --space: clamp(16px, 2vw, 28px); --max:1100px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;background:radial-gradient(1200px 800px at 80% -10%, #12151a 0%, #0b0d11 55%) no-repeat #0b0d11;
-      color:var(--ink); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
-      text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
+      color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{color:var(--accent-2)}
+    a{color:var(--accent); text-decoration:none} a:hover{color:var(--accent-2)}
     img{max-width:100%; display:block}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--space)}
-    .btn{
-      display:inline-flex; align-items:center; gap:.5rem;
-      padding:.7rem 1rem; border-radius:999px; border:1px solid var(--line);
-      background:linear-gradient(180deg, #161a20, #11141a);
-      color:var(--ink); cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, border-color .2s;
-    }
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1rem; border-radius:999px; border:1px solid var(--line);
+         background:linear-gradient(180deg,#161a20,#11141a); color:var(--ink); cursor:pointer; transition:transform .15s, box-shadow .15s, border-color .2s;}
     .btn:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.4); border-color:#2a303b}
     .btn.primary{background:linear-gradient(180deg,#1a8a56,#10633c); border-color:#0e5a37}
     .btn.ghost{background:transparent}
     .eyebrow{letter-spacing:.06em; text-transform:uppercase; font-size:.75rem; color:var(--muted)}
     .title{font-size:clamp(1.4rem, 2vw, 1.7rem); margin:.25rem 0 .5rem}
     .grid{display:grid; gap:18px}
-    @media (min-width:800px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} }
-    @media (min-width:800px){ .grid.cols-2{grid-template-columns:repeat(2,1fr)} }
+    @media (min-width:800px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)} }
 
     /* Header */
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(1.2) blur(8px);
-      background:rgba(13,15,18,.6); border-bottom:1px solid rgba(37,42,51,.9);
-    }
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px);
+      background:rgba(13,15,18,.6); border-bottom:1px solid rgba(37,42,51,.9)}
     .brand{display:flex; align-items:center; gap:.7rem; padding:.8rem 0}
-    .brand .logo{
-      width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
+    .brand .logo{width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
       background:conic-gradient(from 180deg, #1f252e, #13171d 60%, #1f252e);
       border:1px solid #29303a; box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
-      font-weight:700; letter-spacing:.02em;
-    }
+      font-weight:700; letter-spacing:.02em;}
     nav ul{display:flex; gap:.8rem; list-style:none; margin:0; padding:0}
     nav a{display:inline-block; padding:.55rem .8rem; border-radius:8px}
     nav a.active, nav a:hover{background:#12161c}
 
     /* Hero */
     .hero{padding: clamp(28px, 6vw, 64px) 0}
-    .hero .panel{
-      display:grid; gap:18px; grid-template-columns: 1.2fr 1fr; align-items:center;
-      background:linear-gradient(180deg,#12161c,#101419); border:1px solid var(--line); border-radius:var(--rad); box-shadow:var(--shadow);
-      overflow:hidden;
-    }
+    .hero .panel{display:grid; gap:18px; grid-template-columns: 1.2fr 1fr; align-items:center;
+      background:linear-gradient(180deg,#12161c,#101419); border:1px solid var(--line); border-radius:var(--rad); box-shadow:var(--shadow); overflow:hidden}
     @media (max-width:900px){ .hero .panel{grid-template-columns:1fr} }
     .hero .shot{background:#0b0f14; min-height:260px; display:flex; align-items:center; justify-content:center; padding:10px; border-right:1px solid var(--line)}
     @media (max-width:900px){ .hero .shot{border-right:0; border-bottom:1px solid var(--line)} }
@@ -100,10 +75,8 @@
     .section-sub{color:var(--muted); font-size:.9rem}
 
     /* Cards */
-    .card{
-      background:var(--panel); border:1px solid var(--line); border-radius:var(--rad); overflow:hidden; display:flex; flex-direction:column; min-height:100%;
-      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-    }
+    .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--rad); overflow:hidden; display:flex; flex-direction:column; min-height:100%;
+      transition:transform .18s, box-shadow .18s, border-color .18s}
     .card:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:#2b313b}
     .card .media{border-bottom:1px solid var(--line); background:#0b0f14; display:flex; align-items:center; justify-content:center; height:210px; padding:12px}
     .card .body{padding:14px}
@@ -116,113 +89,33 @@
     .cta a.btn{width:100%; justify-content:center}
 
     /* Featured Deal banner */
-    .feature{
-      position:relative; overflow:hidden; border-radius:var(--rad); border:1px solid var(--line); background:linear-gradient(90deg,#12161c,#101419);
-      display:grid; grid-template-columns: 1fr .9fr; gap:0;
-    }
+    .feature{position:relative; overflow:hidden; border-radius:var(--rad); border:1px solid var(--line);
+      background:linear-gradient(90deg,#12161c,#101419); display:grid; grid-template-columns: 1fr .9fr}
     @media (max-width:900px){ .feature{grid-template-columns:1fr} }
     .feature .copy{padding:18px}
-    .ribbon{
-      position:absolute; top:12px; right:-36px; rotate:12deg; background:linear-gradient(180deg,#ffd35a,#f0b040); color:#1a1200;
-      font-weight:800; padding:.35rem 2.2rem; border-radius:8px; border:1px solid rgba(0,0,0,.2); box-shadow:0 6px 18px rgba(0,0,0,.25);
-    }
+    .ribbon{position:absolute; top:12px; right:-36px; rotate:12deg; background:linear-gradient(180deg,#ffd35a,#f0b040); color:#1a1200;
+      font-weight:800; padding:.35rem 2.2rem; border-radius:8px; border:1px solid rgba(0,0,0,.2); box-shadow:0 6px 18px rgba(0,0,0,.25)}
 
     /* Newsletter */
-    .newsletter{
-      display:grid; gap:14px; grid-template-columns:1.2fr 1fr; align-items:center;
-      border:1px solid var(--line); border-radius:var(--rad); background:linear-gradient(180deg,#12161b,#0e1116);
-      padding:16px;
-    }
+    .newsletter{display:grid; gap:14px; grid-template-columns:1.2fr 1fr; align-items:center;
+      border:1px solid var(--line); border-radius:var(--rad); background:linear-gradient(180deg,#12161b,#0e1116); padding:16px}
     @media (max-width:900px){ .newsletter{grid-template-columns:1fr} }
     .newsletter form{display:flex; gap:8px; flex-wrap:wrap}
-    input[type="email"]{
-      flex:1 1 260px; padding:.75rem .9rem; border-radius:10px; border:1px solid #2a2f38; background:#0b0f14; color:var(--ink);
-    }
+    input[type="email"]{flex:1 1 260px; padding:.75rem .9rem; border-radius:10px; border:1px solid #2a2f38; background:#0b0f14; color:var(--ink)}
     .disclosure{color:var(--muted); font-size:.82rem; margin-top:8px}
 
-    /* Footer */
     footer{margin:34px 0 60px}
     .footer-grid{display:grid; gap:20px}
     @media (min-width:800px){ .footer-grid{grid-template-columns:1.5fr 1fr 1fr} }
     .small{font-size:.9rem; color:var(--muted)}
     .legal a{color:var(--muted)}
   </style>
-
-  <!-- Lightweight JS (no frameworks) -->
-  <script>
-    // Featured Deal rotator (simple, no dependencies)
-    document.addEventListener('DOMContentLoaded', () => {
-      const deals = [
-        {
-          eyebrow: 'Collab • Paracord',
-          title: 'TITAN SurvivorCord® (550 + Kevlar + Fishing Line)',
-          bullets: ['All-in-one cordage for shelter, fire & fixes.', 'Use code GRITGEARHQ to save at checkout.'],
-          price: '$19.98+',
-          link: 'https://www.titansurvival.com/?ref=GRITGEARHQ', // replace with your affiliate ref if different
-          img: '/assets/feature-survivorcord.jpg',
-          tag:'Save with GRITGEARHQ'
-        },
-        {
-          eyebrow: 'Brand Outlet • Audio',
-          title: 'JBL Flip 6 Bluetooth Speaker (Refurb/Outlet)',
-          bullets: ['Camp-tough, water resistant, legit volume.', 'Brand Outlet pricing via eBay partner.'],
-          price: '$69–$89',
-          link: 'https://www.ebay.com/str/brandoutlet/jbl?_trkparms=campid%3D5339123670', // keep your campid
-          img: '/assets/feature-jbl.jpg',
-          tag:'Deal of the Day'
-        },
-        {
-          eyebrow: 'Everyday Carry • Fire',
-          title: 'Permanent Match Keychain Lighters (5-Pack)',
-          bullets: ['Refillable ferro striker. Great loaners for group kits.', 'Pocketable & reliable ignition.'],
-          price: '$6.99',
-          link: 'https://www.ebay.com/itm/384886016959?campid=5339123670', // your item w/ campid
-          img: '/assets/feature-match.jpg',
-          tag:'Steal'
-        }
-      ];
-      const slot = document.querySelector('#feature-slot');
-      if(!slot) return;
-
-      function render(deal){
-        slot.innerHTML = `
-          <div class="feature">
-            <div class="copy">
-              <div class="eyebrow">${deal.eyebrow}</div>
-              <h2 class="title">${deal.title}</h2>
-              <ul>
-                ${deal.bullets.map(b=>`<li>${b}</li>`).join('')}
-              </ul>
-              <div class="badges">
-                <span class="badge">Exclusive</span>
-                <span class="badge">Field-tested</span>
-                <span class="badge">Fast shipping</span>
-              </div>
-              <p class="section-sub" style="margin:.8rem 0 1rem;"><strong class="price">${deal.price}</strong></p>
-              <a class="btn primary" href="${deal.link}" target="_blank" rel="sponsored noopener noreferrer">Get the Deal</a>
-            </div>
-            <figure class="shot" style="border-left:1px solid var(--line);padding:0">
-              <img src="${deal.img}" alt="${deal.title}" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover">
-            </figure>
-            <span class="ribbon">${deal.tag}</span>
-          </div>`;
-      }
-      let i = 0; render(deals[i]);
-      setInterval(()=>{ i = (i+1) % deals.length; render(deals[i]); }, 9000);
-    });
-  </script>
-
-  <!-- Optional: Google Analytics / AdSense (paste your real scripts) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script> -->
-  <!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config','G-XXXXXXX');</script> -->
-  <!-- AdSense example: <script data-ad-client="ca-pub-xxxxxxxx" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
-      <a class="brand" href="/">
+      <a class="brand" href="./">
         <span class="logo">GG</span>
         <div>
           <strong>Grit Gear HQ</strong><div class="small">Rough gear for rougher times</div>
@@ -230,11 +123,11 @@
       </a>
       <nav aria-label="Primary">
         <ul>
-          <li><a class="active" href="/">Home</a></li>
-          <li><a href="/store.html">Gear Store</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tips.html">Survival Tips</a></li>
-          <li><a href="/about.html">About</a></li>
+          <li><a class="active" href="./">Home</a></li>
+          <li><a href="store.html">Gear Store</a></li>
+          <li><a href="blog/">Blog</a></li>
+          <li><a href="tips.html">Survival Tips</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
     </div>
@@ -245,16 +138,15 @@
     <div class="wrap">
       <div class="panel">
         <figure class="shot">
-          <!-- Swap to your branded hero image -->
-          <img src="/assets/hero-gghq-pack.jpg" alt="Field-tested pack on a dusty road" loading="eager" decoding="async" style="height:100%; object-fit:cover">
+          <img src="assets/hero-gghq-pack.jpg" alt="Field-tested pack on a dusty road" loading="eager" decoding="async" style="height:100%; object-fit:cover">
         </figure>
         <div class="copy">
           <div class="eyebrow">Field-Tested • No Fluff</div>
           <h1 class="title" style="font-size:clamp(1.6rem,3vw,2rem); margin:0 0 .5rem;">Gear that earns its keep.</h1>
           <p class="section-sub">I test, compare, and recommend kit I actually trust—then pass you legit deals and brand-outlet finds. If it’s here, it’s useful.</p>
           <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
-            <a class="btn primary" href="/store.html">Shop Picks</a>
-            <a class="btn ghost" href="/blog/">Read Reviews</a>
+            <a class="btn primary" href="store.html">Shop Picks</a>
+            <a class="btn ghost" href="blog/">Read Reviews</a>
           </div>
           <div class="badges">
             <span class="badge">Affiliate Supported</span>
@@ -282,23 +174,19 @@
       <div class="section-sub">Shelter • Food • Fire • Tools • Comms • First Aid</div>
     </div>
     <div class="grid cols-3">
-      <!-- Card 1 -->
       <article class="card">
-        <figure class="media"><img src="/assets/cat-fire.jpg" alt="Fire starting gear"></figure>
+        <figure class="media"><img src="assets/cat-fire.jpg" alt="Fire starting gear"></figure>
         <div class="body">
           <div class="eyebrow">Fire</div>
           <h3 class="title">Ignition & Tinder that Work Wet</h3>
           <p class="small">From ferro rods to permanent matches. Field-reliable, pocketable starts.</p>
           <div class="chipline"><span class="chip">Ferro</span><span class="chip">Stormproof</span><span class="chip">Loaners</span></div>
         </div>
-        <div class="cta">
-          <a class="btn" href="/store.html#fire">Explore Fire</a>
-        </div>
+        <div class="cta"><a class="btn" href="store.html#fire">Explore Fire</a></div>
       </article>
 
-      <!-- Card 2 -->
       <article class="card">
-        <figure class="media"><img src="/assets/cat-shelter.jpg" alt="Shelter gear"></figure>
+        <figure class="media"><img src="assets/cat-shelter.jpg" alt="Shelter gear"></figure>
         <div class="body">
           <div class="eyebrow">Shelter</div>
           <h3 class="title">Tarps, Cordage & Real Stakes</h3>
@@ -310,9 +198,8 @@
         </div>
       </article>
 
-      <!-- Card 3 -->
       <article class="card">
-        <figure class="media"><img src="/assets/cat-audio.jpg" alt="JBL speaker for camp"></figure>
+        <figure class="media"><img src="assets/cat-audio.jpg" alt="JBL speaker for camp"></figure>
         <div class="body">
           <div class="eyebrow">Comms & Comfort</div>
           <h3 class="title">JBL Brand Outlet Finds</h3>
@@ -326,54 +213,41 @@
     </div>
   </section>
 
-  <!-- Popular Picks (affiliate product grid) -->
+  <!-- Popular Picks -->
   <section class="wrap" style="margin-top:30px">
     <div class="section-head">
       <h2>Popular Right Now</h2>
       <div class="section-sub">Fast movers with good value. Verified links.</div>
     </div>
     <div class="grid cols-3">
-      <!-- Example product -->
       <article class="card">
-        <figure class="media">
-          <img src="/assets/prod-perm-match.jpg" alt="Permanent match keychain lighters">
-        </figure>
+        <figure class="media"><img src="assets/prod-perm-match.jpg" alt="Permanent match keychain lighters"></figure>
         <div class="body">
           <h3 class="title">Permanent Match Lighters (5-Pack)</h3>
           <div class="stars">★★★★★</div>
           <div class="meta"><span class="small">Pocket ignition • Loaners • Refillable</span><span class="price">$6.99</span></div>
         </div>
-        <div class="cta">
-          <a class="btn" href="https://www.ebay.com/itm/384886016959?campid=5339123670" target="_blank" rel="sponsored noopener noreferrer">Buy on eBay</a>
-        </div>
+        <div class="cta"><a class="btn" href="https://www.ebay.com/itm/384886016959?campid=5339123670" target="_blank" rel="sponsored noopener noreferrer">Buy on eBay</a></div>
       </article>
 
       <article class="card">
-        <figure class="media">
-          <img src="/assets/prod-survivorcord.jpg" alt="TITAN SurvivorCord">
-        </figure>
+        <figure class="media"><img src="assets/prod-survivorcord.jpg" alt="TITAN SurvivorCord"></figure>
         <div class="body">
           <h3 class="title">TITAN SurvivorCord®</h3>
           <div class="stars">★★★★★</div>
           <div class="meta"><span class="small">Shelter • Snares • Fire • Repair</span><span class="price">$19.98+</span></div>
         </div>
-        <div class="cta">
-          <a class="btn" href="https://www.titansurvival.com/?ref=GRITGEARHQ" target="_blank" rel="sponsored noopener noreferrer">Use Code GRITGEARHQ</a>
-        </div>
+        <div class="cta"><a class="btn" href="https://www.titansurvival.com/?ref=GRITGEARHQ" target="_blank" rel="sponsored noopener noreferrer">Use Code GRITGEARHQ</a></div>
       </article>
 
       <article class="card">
-        <figure class="media">
-          <img src="/assets/prod-ifak.jpg" alt="Compact first aid kit">
-        </figure>
+        <figure class="media"><img src="assets/prod-ifak.jpg" alt="Compact first aid kit"></figure>
         <div class="body">
           <h3 class="title">Compact IFAK (Core Items)</h3>
           <div class="stars">★★★★☆</div>
           <div class="meta"><span class="small">Tourniquet • Gauze • Gloves</span><span class="price">$29–$49</span></div>
         </div>
-        <div class="cta">
-          <a class="btn" href="https://www.amazon.com/s?k=ifak&tag=YOUR_AMAZON_TAG-20" target="_blank" rel="sponsored noopener noreferrer">View on Amazon</a>
-        </div>
+        <div class="cta"><a class="btn" href="https://www.amazon.com/s?k=ifak&tag=YOUR_AMAZON_TAG-20" target="_blank" rel="sponsored noopener noreferrer">View on Amazon</a></div>
       </article>
     </div>
   </section>
@@ -386,33 +260,33 @@
     </div>
     <div class="grid cols-3">
       <article class="card">
-        <figure class="media"><img src="/assets/blog-messkit.jpg" alt="Mess kit review"></figure>
+        <figure class="media"><img src="assets/blog-messkit.jpg" alt="Mess kit review"></figure>
         <div class="body">
           <div class="eyebrow">Field Review</div>
           <h3 class="title">10-Year Mess Kit: Still Worth It?</h3>
           <p class="small">From chili in a sleeping bag to jello on a camp stove—what survived a decade.</p>
         </div>
-        <div class="cta"><a class="btn" href="/mess-kit.html">Read Review</a></div>
+        <div class="cta"><a class="btn" href="mess-kit.html">Read Review</a></div>
       </article>
 
       <article class="card">
-        <figure class="media"><img src="/assets/blog-autoflowers.jpg" alt="Autoflower guide"></figure>
+        <figure class="media"><img src="assets/blog-autoflowers.jpg" alt="Autoflower guide"></figure>
         <div class="body">
           <div class="eyebrow">Grow Basics</div>
           <h3 class="title">Autoflowers for Beginners</h3>
           <p class="small">Tent size, DWC vs. soil, and no-nonsense starter checklist.</p>
         </div>
-        <div class="cta"><a class="btn" href="/blog/autoflowers-for-beginners.html">Read Guide</a></div>
+        <div class="cta"><a class="btn" href="blog/autoflowers-for-beginners.html">Read Guide</a></div>
       </article>
 
       <article class="card">
-        <figure class="media"><img src="/assets/blog-ptsd.jpg" alt="PTSD + preparedness"></figure>
+        <figure class="media"><img src="assets/blog-ptsd.jpg" alt="PTSD + preparedness"></figure>
         <div class="body">
           <div class="eyebrow">Mindset</div>
           <h3 class="title">PTSD, Bud & The Prepper Field Guide</h3>
           <p class="small">Real talk on sleep, pain, and balancing homestead work.</p>
         </div>
-        <div class="cta"><a class="btn" href="/ptsd-bud-prepper-field-guide.html">Read Post</a></div>
+        <div class="cta"><a class="btn" href="ptsd-bud-prepper-field-guide.html">Read Post</a></div>
       </article>
     </div>
   </section>
@@ -446,23 +320,106 @@
       <div>
         <div class="eyebrow">Quick Links</div>
         <ul class="small" style="list-style:none; padding:0; margin:.3rem 0 0; display:grid; gap:.3rem;">
-          <li><a href="/store.html">Store</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tips.html">Survival Tips</a></li>
-          <li><a href="/titan-survival-collab.html">TITAN × GGHQ</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="blog/">Blog</a></li>
+          <li><a href="tips.html">Survival Tips</a></li>
+          <li><a href="titan-survival-collab.html">TITAN × GGHQ</a></li>
         </ul>
       </div>
       <div class="legal">
         <div class="eyebrow">Legal</div>
         <ul class="small" style="list-style:none; padding:0; margin:.3rem 0 0; display:grid; gap:.3rem;">
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-          <li><a href="/terms.html">Terms of Service</a></li>
-          <li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
         </ul>
         <p class="small" style="margin-top:.7rem;">© <span id="yr"></span> Serpico • All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Deal Rotator + Image Fallback -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const deals = [
+        {
+          eyebrow: 'Collab • Paracord',
+          title: 'TITAN SurvivorCord® (550 + Kevlar + Fishing Line)',
+          bullets: ['All-in-one cordage for shelter, fire & fixes.', 'Use code GRITGEARHQ to save at checkout.'],
+          price: '$19.98+',
+          link: 'https://www.titansurvival.com/?ref=GRITGEARHQ',
+          img: 'assets/feature-survivorcord.jpg',
+          tag:'Save with GRITGEARHQ'
+        },
+        {
+          eyebrow: 'Brand Outlet • Audio',
+          title: 'JBL Flip 6 Bluetooth Speaker (Refurb/Outlet)',
+          bullets: ['Camp-tough, water resistant, legit volume.', 'Brand Outlet pricing via eBay partner.'],
+          price: '$69–$89',
+          link: 'https://www.ebay.com/str/brandoutlet/jbl?_trkparms=campid%3D5339123670',
+          img: 'assets/feature-jbl.jpg',
+          tag:'Deal of the Day'
+        },
+        {
+          eyebrow: 'Everyday Carry • Fire',
+          title: 'Permanent Match Keychain Lighters (5-Pack)',
+          bullets: ['Refillable ferro striker. Great loaners for group kits.', 'Pocketable & reliable ignition.'],
+          price: '$6.99',
+          link: 'https://www.ebay.com/itm/384886016959?campid=5339123670',
+          img: 'assets/feature-match.jpg',
+          tag:'Steal'
+        }
+      ];
+      const slot = document.querySelector('#feature-slot');
+      function render(deal){
+        slot.innerHTML = `
+          <div class="feature">
+            <div class="copy">
+              <div class="eyebrow">${deal.eyebrow}</div>
+              <h2 class="title">${deal.title}</h2>
+              <ul>${deal.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+              <div class="badges">
+                <span class="badge">Exclusive</span>
+                <span class="badge">Field-tested</span>
+                <span class="badge">Fast shipping</span>
+              </div>
+              <p class="section-sub" style="margin:.8rem 0 1rem;"><strong class="price">${deal.price}</strong></p>
+              <a class="btn primary" href="${deal.link}" target="_blank" rel="sponsored noopener noreferrer">Get the Deal</a>
+            </div>
+            <figure class="shot" style="border-left:1px solid var(--line);padding:0">
+              <img src="${deal.img}" alt="${deal.title}" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover">
+            </figure>
+            <span class="ribbon">${deal.tag}</span>
+          </div>`;
+      }
+      let i = 0; render(deals[i]);
+      setInterval(()=>{ i = (i+1) % deals.length; render(deals[i]); }, 9000);
+
+      // Image fallback so nothing looks broken
+      function placeholderSVG(text){
+        const t = encodeURIComponent(text || 'Grit Gear HQ');
+        return 'data:image/svg+xml;utf8,' +
+          `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+            <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#12161c"/><stop offset="100%" stop-color="#0e1116"/></linearGradient></defs>
+            <rect width="1200" height="800" fill="url(#g)"/>
+            <rect x="40" y="40" width="1120" height="720" rx="20" fill="none" stroke="#2a3038" stroke-width="4"/>
+            <text x="50%" y="50%" text-anchor="middle" fill="#a8b0bb" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="38">${t}</text>
+            <text x="50%" y="58%" text-anchor="middle" fill="#4bd37b" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="20">image placeholder</text>
+          </svg>`;
+      }
+      document.querySelectorAll('img').forEach(img => {
+        const alt = img.getAttribute('alt') || 'Grit Gear HQ';
+        img.addEventListener('error', function onErr(){
+          img.removeEventListener('error', onErr);
+          img.src = placeholderSVG(alt);
+          img.decoding = 'async'; img.loading = 'lazy';
+          img.style.objectFit = img.style.objectFit || 'cover';
+          img.style.background = img.style.background || '#0b0f14';
+        });
+      });
+    });
+  </script>
 
   <script>document.getElementById('yr').textContent = new Date().getFullYear()</script>
 </body>
