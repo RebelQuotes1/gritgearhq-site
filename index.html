@@ -308,17 +308,79 @@
 <section id="titan-hero" aria-label="SurvivorCord bundles on a workbench">
   <div class="overlay" aria-hidden="true"></div>
 
-  <!-- centered headline over image -->
-  <div class="wrap gghq-center">
-    <div class="gghq-eyebrow">TITAN × GGHQ</div>
-    <h1 class="gghq-title">SurvivorCord® that won’t quit.</h1>
-    <p class="gghq-sub">Real cordage with fire-starting strands and tough-as-nails sheathing—my go-to for shelter rigs and trail fixes.</p>
-    <div class="gghq-ctas">
-      <a class="gghq-btn primary" href="https://www.titansurvival.com/?ref=GRITGEARHQ" rel="sponsored noopener" target="_blank">Shop TITAN Deals</a>
-      <a class="gghq-btn" href="store.html#shelter">See Shelter Picks</a>
-    </div>
+  <!-- Drop-in replacement for your CTA row: keeps the paracord hero image,
+     and styles the “See Shelter Picks” button with a live tarp thumbnail + hover preview. -->
+<style>
+  /* ——— shelter CTA: thumbnail + sleek hover preview ——— */
+  .gghq-ctas { display:flex; gap:10px; flex-wrap:wrap; margin-top:.3rem }
+  .gghq-btn { display:inline-flex; align-items:center; gap:.6rem; padding:.7rem 1rem; border-radius:999px;
+              border:1px solid #2a3038; background:linear-gradient(180deg,#161a20,#11141a); color:#e7edf5;
+              text-decoration:none; transition:.15s; position:relative; overflow:visible }
+  .gghq-btn:hover { transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.4) }
+  .gghq-btn.primary { background:linear-gradient(180deg,#1a8a56,#10633c); border-color:#0e5a37 }
+  /* thumb inside shelter CTA */
+  .cta-shelter .thumb {
+    width:46px; height:30px; border-radius:8px;
+    background:#0b0f14 center/cover no-repeat;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+    flex:0 0 auto;
+  }
+  .cta-shelter .label { white-space:nowrap }
+  /* hover preview card */
+  .cta-shelter .preview {
+    position:absolute; left:0; bottom:calc(100% + 10px); width:260px; height:140px;
+    background:#0b0f14 center/cover no-repeat;
+    border:1px solid #2a3038; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,.5);
+    opacity:0; transform:translateY(6px); pointer-events:none; transition:.18s;
+  }
+  .cta-shelter:hover .preview { opacity:1; transform:translateY(0) }
+</style>
+
+<!-- centered headline over image -->
+<div class="wrap gghq-center">
+  <div class="gghq-eyebrow">TITAN × GGHQ</div>
+  <h1 class="gghq-title">SurvivorCord® that won’t quit.</h1>
+  <p class="gghq-sub">Real cordage with fire-starting strands and tough-as-nails sheathing—my go-to for shelter rigs and trail fixes.</p>
+
+  <div class="gghq-ctas">
+    <a class="gghq-btn primary"
+       href="https://www.titansurvival.com/?ref=GRITGEARHQ"
+       rel="sponsored noopener"
+       target="_blank">Shop TITAN Deals</a>
+
+    <!-- Shelter CTA with tarp thumbnail + preview -->
+    <a class="gghq-btn cta-shelter" href="store.html#shelter">
+      <span class="thumb" id="tarp-thumb" aria-hidden="true"></span>
+      <span class="label">See Shelter Picks</span>
+      <span class="preview" id="tarp-preview" aria-hidden="true"></span>
+    </a>
   </div>
-</section>
+</div>
+
+<script>
+/* Auto-wire the tarp image into the shelter CTA (works with or without an assets/ folder). */
+(function(){
+  const thumb = document.getElementById('tarp-thumb');
+  const preview = document.getElementById('tarp-preview');
+  const candidates = [
+    'tarp1.jpg',                 // same folder as this HTML
+    './tarp1.jpg',
+    'assets/tarp1.jpg'           // if you keep assets/
+  ];
+  function setBG(url){
+    const safe = url.replace(/"/g, '\\"');
+    thumb.style.backgroundImage = `url("${safe}")`;
+    preview.style.backgroundImage = `url("${safe}")`;
+  }
+  (function tryNext(i){
+    if (i >= candidates.length) return;
+    const test = new Image();
+    test.onload = () => setBG(candidates[i]);
+    test.onerror = () => tryNext(i+1);
+    test.src = candidates[i];
+  })(0);
+})();
+</script>
 
 <script>
 /* No images/ folder? No problem.
