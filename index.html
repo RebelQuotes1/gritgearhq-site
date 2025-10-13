@@ -133,30 +133,85 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="panel">
-        <figure class="shot">
-          <img src="assets/hero-gghq-pack.jpg" alt="Field-tested pack on a dusty road" loading="eager" decoding="async" style="height:100%; object-fit:cover">
-        </figure>
-        <div class="copy">
-          <div class="eyebrow">Field-Tested • No Fluff</div>
-          <h1 class="title" style="font-size:clamp(1.6rem,3vw,2rem); margin:0 0 .5rem;">Gear that earns its keep.</h1>
-          <p class="section-sub">I test, compare, and recommend kit I actually trust—then pass you legit deals and brand-outlet finds. If it’s here, it’s useful.</p>
-          <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
-            <a class="btn primary" href="store.html">Shop Picks</a>
-            <a class="btn ghost" href="blog/">Read Reviews</a>
-          </div>
-          <div class="badges">
-            <span class="badge">Affiliate Supported</span>
-            <span class="badge">Fast to Scan</span>
-            <span class="badge">Mobile-Ready</span>
-          </div>
-        </div>
-      </div>
+ <!-- GGHQ HERO: header + headline + footer OVER a real gear image (single drop-in block) -->
+<style>
+  /* Scoped to this hero only */
+  .gghq-hero{ --ink:#e7edf5; --muted:#a8b0bb; --line:#2a3038; --accent:#4bd37b; --accent2:#2fb0ff;
+    position:relative; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    min-height: clamp(380px, 55vw, 640px);
+    background: url("assets/Gear-American-Survivalist-7646.jpg") center/cover no-repeat #0b0f14;
+    color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  }
+  .gghq-hero::before{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(8,10,13,.55),rgba(8,10,13,.35) 45%,rgba(8,10,13,.7));
+    pointer-events:none}
+  .gghq-hero .wrap{max-width:1100px;margin:0 auto;padding:0 clamp(16px,2vw,28px)}
+  .gghq-hero a{color:var(--ink);text-decoration:none}
+  .gghq-hero a:hover{color:var(--accent2)}
+  /* Top header */
+  .gghq-top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:12px 0;margin-top:8px;backdrop-filter:saturate(1.2) blur(6px)}
+  .gghq-brand{display:flex;align-items:center;gap:.6rem}
+  .gghq-logo{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
+    background:conic-gradient(from 180deg,#1f252e,#13171d 60%,#1f252e);border:1px solid #29303a;font-weight:700}
+  .gghq-nav a{padding:.45rem .65rem;border-radius:8px;border:1px solid transparent}
+  .gghq-nav a:hover{background:rgba(18,22,28,.45);border-color:rgba(255,255,255,.06)}
+  /* Center headline */
+  .gghq-center{position:relative;z-index:2;display:grid;gap:10px;padding-top:clamp(42px,10vw,96px)}
+  .gghq-eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--muted)}
+  .gghq-title{font-size:clamp(1.9rem,4.6vw,2.8rem);margin:.1rem 0 .25rem}
+  .gghq-sub{color:var(--muted);max-width:62ch}
+  .gghq-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:.3rem}
+  .gghq-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:999px;border:1px solid var(--line);
+    background:linear-gradient(180deg,#161a20,#11141a);color:var(--ink);transition:.15s}
+  .gghq-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.4);border-color:#343a45}
+  .gghq-btn.primary{background:linear-gradient(180deg,#1a8a56,#10633c);border-color:#0e5a37}
+  .gghq-btn.ghost{background:transparent}
+  /* Footer over image */
+  .gghq-foot{position:absolute;left:0;right:0;bottom:0;z-index:2;
+    background:linear-gradient(180deg,transparent,rgba(10,12,15,.78) 46%,rgba(10,12,15,.9));
+    border-top:1px solid rgba(255,255,255,.06);padding:12px 0 14px}
+  .gghq-badges{display:flex;gap:10px;flex-wrap:wrap}
+  .gghq-badge{font-size:.75rem;padding:.25rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:#0f1217}
+  .gghq-note{color:var(--muted);font-size:.9rem;margin-left:auto}
+  .gghq-foot .row{display:flex;align-items:center;gap:12px}
+  @media (max-width:900px){.gghq-foot .row{flex-direction:column;align-items:flex-start}}
+</style>
+
+<section class="gghq-hero" aria-label="Grit Gear HQ — field-tested survival gear">
+  <div class="wrap gghq-top">
+    <div class="gghq-brand">
+      <span class="gghq-logo">GG</span>
+      <strong>Grit Gear HQ</strong>
     </div>
-  </section>
+    <nav class="gghq-nav" aria-label="Hero navigation">
+      <a href="store.html">Store</a>
+      <a href="blog/">Blog</a>
+      <a href="tips.html">Tips</a>
+    </nav>
+  </div>
+
+  <div class="wrap gghq-center">
+    <div class="gghq-eyebrow">Field-Tested • No Fluff</div>
+    <h1 class="gghq-title">Gear that earns its keep.</h1>
+    <p class="gghq-sub">Real reviews, hard-use picks, and legit deals worth your click. If it’s here, it’s useful.</p>
+    <div class="gghq-ctas">
+      <a class="gghq-btn primary" href="store.html">Shop Picks</a>
+      <a class="gghq-btn ghost" href="blog/">Read Reviews</a>
+    </div>
+  </div>
+
+  <div class="gghq-foot">
+    <div class="wrap row">
+      <div class="gghq-badges">
+        <span class="gghq-badge">Affiliate Supported</span>
+        <span class="gghq-badge">Field-Reviewed</span>
+        <span class="gghq-badge">Mobile-Ready</span>
+      </div>
+      <div class="gghq-note">Save on TITAN with code <strong>GRITGEARHQ</strong> • JBL via eBay Brand Outlet</div>
+    </div>
+  </div>
+</section>
 
   <!-- Featured Deal (rotates automatically) -->
   <section class="wrap">
