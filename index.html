@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-   <!-- Google Ads -->
+  <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
   <meta charset="utf-8">
@@ -61,16 +61,36 @@
     nav a{display:inline-block; padding:.55rem .8rem; border-radius:8px}
     nav a.active, nav a:hover{background:#12161c}
 
-    /* Hero */
-    .hero{padding: clamp(28px, 6vw, 64px) 0}
-    .hero .panel{display:grid; gap:18px; grid-template-columns: 1.2fr 1fr; align-items:center;
-      background:linear-gradient(180deg,#12161c,#101419); border:1px solid var(--line); border-radius:var(--rad); box-shadow:var(--shadow); overflow:hidden}
-    @media (max-width:900px){ .hero .panel{grid-template-columns:1fr} }
-    .hero .shot{background:#0b0f14; min-height:260px; display:flex; align-items:center; justify-content:center; padding:10px; border-right:1px solid var(--line)}
-    @media (max-width:900px){ .hero .shot{border-right:0; border-bottom:1px solid var(--line)} }
-    .hero .copy{padding:22px}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:.5rem 0 0}
-    .badge{font-size:.75rem; padding:.25rem .6rem; border:1px solid var(--line); border-radius:999px; color:var(--muted); background:#0f1217}
+    /* Top “big picture + text” section */
+    .gghq-hero{
+      position:relative; border:1px solid #2a3038; border-radius:14px; overflow:hidden;
+      min-height:clamp(360px,55vw,620px);
+      color:#e7edf5; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      /* REAL FILE — it’s at the site root */
+      background:#0b0f14 url("SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp") center/cover no-repeat;
+      margin: clamp(28px, 6vw, 64px) var(--space) 0;
+    }
+    .gghq-hero::before{content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(8,10,13,.50),rgba(8,10,13,.35) 45%,rgba(8,10,13,.72))}
+    .gghq-hero .wrap{max-width:1100px;margin:0 auto;padding:0}
+    .gghq-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;margin-top:8px;backdrop-filter:saturate(1.1) blur(6px)}
+    .gghq-brand{display:flex;align-items:center;gap:.6rem}
+    .gghq-logo{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:conic-gradient(from 180deg,#1f252e,#13171d 60%,#1f252e);border:1px solid #29303a;font-weight:700}
+    .gghq-nav a{padding:.45rem .65rem;border-radius:8px;border:1px solid transparent;color:inherit}
+    .gghq-nav a:hover{background:rgba(18,22,28,.45);border-color:rgba(255,255,255,.06)}
+    .gghq-center{position:relative;z-index:2;display:grid;gap:10px;padding:clamp(42px,10vw,96px) 0 0}
+    .gghq-eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:#a8b0bb}
+    .gghq-title{font-size:clamp(1.9rem,4.6vw,2.8rem);margin:.1rem 0 .25rem}
+    .gghq-sub{color:#a8b0bb;max-width:62ch}
+    .gghq-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:.3rem}
+    .gghq-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:999px;border:1px solid #2a3038;background:linear-gradient(180deg,#161a20,#11141a);color:#e7edf5;text-decoration:none;transition:.15s}
+    .gghq-btn.primary{background:linear-gradient(180deg,#1a8a56,#10633c);border-color:#0e5a37}
+    .gghq-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+    .gghq-foot{position:absolute;left:0;right:0;bottom:0;z-index:2;background:linear-gradient(180deg,transparent,rgba(10,12,15,.78) 46%,rgba(10,12,15,.9));border-top:1px solid rgba(255,255,255,.06);padding:12px 0 14px}
+    .gghq-row{display:flex;gap:12px;align-items:center}
+    .gghq-badges{display:flex;gap:10px;flex-wrap:wrap}
+    .gghq-badge{font-size:.75rem;padding:.25rem .6rem;border:1px solid #2a3038;border-radius:999px;color:#a8b0bb;background:#0f1217}
+    .gghq-note{color:#a8b0bb;font-size:.9rem;margin-left:auto}
 
     /* Section headers */
     .section-head{display:flex; justify-content:space-between; align-items:flex-end; margin:28px 0 12px}
@@ -136,292 +156,41 @@
     </div>
   </header>
 
- <!-- GGHQ HERO: header + headline + footer OVER a real gear image (single drop-in block) -->
-<style>
-  /* Scoped to this hero only */
-  .gghq-hero{ --ink:#e7edf5; --muted:#a8b0bb; --line:#2a3038; --accent:#4bd37b; --accent2:#2fb0ff;
-    position:relative; border:1px solid var(--line); border-radius:14px; overflow:hidden;
-    min-height: clamp(380px, 55vw, 640px);
-    background: url("assets/Gear-American-Survivalist-7646.jpg") center/cover no-repeat #0b0f14;
-    color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  }
-  .gghq-hero::before{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(8,10,13,.55),rgba(8,10,13,.35) 45%,rgba(8,10,13,.7));
-    pointer-events:none}
-  .gghq-hero .wrap{max-width:1100px;margin:0 auto;padding:0 clamp(16px,2vw,28px)}
-  .gghq-hero a{color:var(--ink);text-decoration:none}
-  .gghq-hero a:hover{color:var(--accent2)}
-  /* Top header */
-  .gghq-top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;
-    gap:12px;padding:12px 0;margin-top:8px;backdrop-filter:saturate(1.2) blur(6px)}
-  .gghq-brand{display:flex;align-items:center;gap:.6rem}
-  .gghq-logo{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
-    background:conic-gradient(from 180deg,#1f252e,#13171d 60%,#1f252e);border:1px solid #29303a;font-weight:700}
-  .gghq-nav a{padding:.45rem .65rem;border-radius:8px;border:1px solid transparent}
-  .gghq-nav a:hover{background:rgba(18,22,28,.45);border-color:rgba(255,255,255,.06)}
-  /* Center headline */
-  .gghq-center{position:relative;z-index:2;display:grid;gap:10px;padding-top:clamp(42px,10vw,96px)}
-  .gghq-eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--muted)}
-  .gghq-title{font-size:clamp(1.9rem,4.6vw,2.8rem);margin:.1rem 0 .25rem}
-  .gghq-sub{color:var(--muted);max-width:62ch}
-  .gghq-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:.3rem}
-  .gghq-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:999px;border:1px solid var(--line);
-    background:linear-gradient(180deg,#161a20,#11141a);color:var(--ink);transition:.15s}
-  .gghq-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.4);border-color:#343a45}
-  .gghq-btn.primary{background:linear-gradient(180deg,#1a8a56,#10633c);border-color:#0e5a37}
-  .gghq-btn.ghost{background:transparent}
-  /* Footer over image */
-  .gghq-foot{position:absolute;left:0;right:0;bottom:0;z-index:2;
-    background:linear-gradient(180deg,transparent,rgba(10,12,15,.78) 46%,rgba(10,12,15,.9));
-    border-top:1px solid rgba(255,255,255,.06);padding:12px 0 14px}
-  .gghq-badges{display:flex;gap:10px;flex-wrap:wrap}
-  .gghq-badge{font-size:.75rem;padding:.25rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:#0f1217}
-  .gghq-note{color:var(--muted);font-size:.9rem;margin-left:auto}
-  .gghq-foot .row{display:flex;align-items:center;gap:12px}
-  @media (max-width:900px){.gghq-foot .row{flex-direction:column;align-items:flex-start}}
-</style>
-
-<section class="gghq-hero" aria-label="Grit Gear HQ — field-tested survival gear">
-  <div class="wrap gghq-top">
-    <div class="gghq-brand">
-      <span class="gghq-logo">GG</span>
-      <strong>Grit Gear HQ</strong>
-    </div>
-    <nav class="gghq-nav" aria-label="Hero navigation">
-      <a href="store.html">Store</a>
-      <a href="blog/">Blog</a>
-      <a href="tips.html">Tips</a>
-    </nav>
-  </div>
-
-  <div class="wrap gghq-center">
-    <div class="gghq-eyebrow">Field-Tested • No Fluff</div>
-    <h1 class="gghq-title">Gear that earns its keep.</h1>
-    <p class="gghq-sub">Real reviews, hard-use picks, and legit deals worth your click. If it’s here, it’s useful.</p>
-    <div class="gghq-ctas">
-      <a class="gghq-btn primary" href="store.html">Shop Picks</a>
-      <a class="gghq-btn ghost" href="blog/">Read Reviews</a>
-    </div>
-  </div>
-<!-- ONE BLOCK: header + headline + footer over the REAL image -->
-<style>
-  .gghq-hero{
-    /* uses your real filename */
-    background: #0b0f14 url("assets/SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp") center/cover no-repeat;
-    position:relative; border:1px solid #2a3038; border-radius:14px; overflow:hidden;
-    min-height:clamp(360px,55vw,620px); color:#e7edf5; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  }
-  .gghq-hero::before{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(8,10,13,.50),rgba(8,10,13,.35) 45%,rgba(8,10,13,.72))}
-  .gghq-hero .wrap{max-width:1100px;margin:0 auto;padding:0 clamp(16px,2vw,28px)}
-  .gghq-hero a{color:inherit;text-decoration:none}
-  .gghq-hero a:hover{color:#2fb0ff}
-
-  /* top header */
-  .gghq-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;
-    gap:12px;padding:12px 0;margin-top:8px;backdrop-filter:saturate(1.1) blur(6px)}
-  .gghq-brand{display:flex;align-items:center;gap:.6rem}
-  .gghq-logo{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
-    background:conic-gradient(from 180deg,#1f252e,#13171d 60%,#1f252e);border:1px solid #29303a;font-weight:700}
-  .gghq-nav a{padding:.45rem .65rem;border-radius:8px;border:1px solid transparent}
-  .gghq-nav a:hover{background:rgba(18,22,28,.45);border-color:rgba(255,255,255,.06)}
-
-  /* center headline */
-  .gghq-center{position:relative;z-index:2;display:grid;gap:10px;padding-top:clamp(42px,10vw,96px)}
-  .gghq-eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:#a8b0bb}
-  .gghq-title{font-size:clamp(1.9rem,4.6vw,2.8rem);margin:.1rem 0 .25rem}
-  .gghq-sub{color:#a8b0bb;max-width:62ch}
-  .gghq-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:.3rem}
-  .gghq-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:999px;border:1px solid #2a3038;background:linear-gradient(180deg,#161a20,#11141a)}
-  .gghq-btn.primary{background:linear-gradient(180deg,#1a8a56,#10633c);border-color:#0e5a37}
-  .gghq-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
-
-  /* footer over image */
-  .gghq-foot{position:absolute;left:0;right:0;bottom:0;z-index:2;
-    background:linear-gradient(180deg,transparent,rgba(10,12,15,.78) 46%,rgba(10,12,15,.9));
-    border-top:1px solid rgba(255,255,255,.06);padding:12px 0 14px}
-  .gghq-row{display:flex;gap:12px;align-items:center}
-  .gghq-badges{display:flex;gap:10px;flex-wrap:wrap}
-  .gghq-badge{font-size:.75rem;padding:.25rem .6rem;border:1px solid #2a3038;border-radius:999px;color:#a8b0bb;background:#0f1217}
-  .gghq-note{color:#a8b0bb;font-size:.9rem;margin-left:auto}
-  @media (max-width:900px){.gghq-row{flex-direction:column;align-items:flex-start}}
-</style>
-
-<section class="gghq-hero" aria-label="SurvivorCord bundles on a workbench">
-  <!-- top header over image -->
-  <div class="wrap gghq-top">
-    <div class="gghq-brand">
-      <span class="gghq-logo">GG</span>
-      <strong>Grit Gear HQ</strong>
-    </div>
-    <nav class="gghq-nav" aria-label="Hero navigation">
-      <a href="store.html">Store</a>
-      <a href="blog/">Blog</a>
-      <a href="tips.html">Tips</a>
-    </nav>
-  </div>
-
-  <!-- HERO (image guaranteed) -->
-<style>
-  .hero-titan{
-    position:relative; border:1px solid #2a3038; border-radius:14px; overflow:hidden;
-    min-height:clamp(360px,55vw,620px); color:#e7edf5; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    background:#0b0f14 url("assets/SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp") center/cover no-repeat;
-  }
-  .hero-titan .wrap{max-width:1100px;margin:0 auto;padding:0 clamp(16px,2vw,28px)}
-  .hero-titan .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,13,.50),rgba(8,10,13,.35) 45%,rgba(8,10,13,.72));pointer-events:none}
-  .hero-titan a{color:inherit;text-decoration:none}
-  .gghq-center{position:relative;z-index:2;display:grid;gap:10px;padding-top:clamp(42px,10vw,96px)}
-  .gghq-eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:#a8b0bb}
-  .gghq-title{font-size:clamp(1.9rem,4.6vw,2.8rem);margin:.1rem 0 .25rem}
-  .gghq-sub{color:#a8b0bb;max-width:62ch}
-  .gghq-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:.3rem}
-  .gghq-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:999px;border:1px solid #2a3038;background:linear-gradient(180deg,#161a20,#11141a)}
-  .gghq-btn.primary{background:linear-gradient(180deg,#1a8a56,#10633c);border-color:#0e5a37}
-  .gghq-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
-</style>
-
-<section class="hero-titan" aria-label="SurvivorCord bundles on a workbench">
-  <div class="overlay" aria-hidden="true"></div>
-<!-- ONE BLOCK — hero with headline over TITAN image (NO images/ folder required) -->
-<style>
-  /* Scoped to this hero only */
-  #titan-hero{
-    position:relative; border:1px solid #2a3038; border-radius:14px; overflow:hidden;
-    min-height:clamp(360px,55vw,620px); color:#e7edf5; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    background:#0b0f14 center/cover no-repeat; /* image set by JS below */
-  }
-  #titan-hero .overlay{position:absolute;inset:0;background:
-    linear-gradient(180deg,rgba(8,10,13,.50),rgba(8,10,13,.35) 45%,rgba(8,10,13,.72));pointer-events:none}
-  #titan-hero .wrap{max-width:1100px;margin:0 auto;padding:0 clamp(16px,2vw,28px)}
-  #titan-hero a{color:inherit;text-decoration:none}
-  .gghq-center{position:relative;z-index:2;display:grid;gap:10px;padding-top:clamp(42px,10vw,96px)}
-  .gghq-eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:#a8b0bb}
-  .gghq-title{font-size:clamp(1.9rem,4.6vw,2.8rem);margin:.1rem 0 .25rem}
-  .gghq-sub{color:#a8b0bb;max-width:62ch}
-  .gghq-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:.3rem}
-  .gghq-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:999px;border:1px solid #2a3038;background:linear-gradient(180deg,#161a20,#11141a)}
-  .gghq-btn.primary{background:linear-gradient(180deg,#1a8a56,#10633c);border-color:#0e5a37}
-  .gghq-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
-</style>
-
-<section id="titan-hero" aria-label="SurvivorCord bundles on a workbench">
-  <div class="overlay" aria-hidden="true"></div>
-
-  <!-- Drop-in replacement for your CTA row: keeps the paracord hero image,
-     and styles the “See Shelter Picks” button with a live tarp thumbnail + hover preview. -->
-<style>
-  /* ——— shelter CTA: thumbnail + sleek hover preview ——— */
-  .gghq-ctas { display:flex; gap:10px; flex-wrap:wrap; margin-top:.3rem }
-  .gghq-btn { display:inline-flex; align-items:center; gap:.6rem; padding:.7rem 1rem; border-radius:999px;
-              border:1px solid #2a3038; background:linear-gradient(180deg,#161a20,#11141a); color:#e7edf5;
-              text-decoration:none; transition:.15s; position:relative; overflow:visible }
-  .gghq-btn:hover { transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.4) }
-  .gghq-btn.primary { background:linear-gradient(180deg,#1a8a56,#10633c); border-color:#0e5a37 }
-  /* thumb inside shelter CTA */
-  .cta-shelter .thumb {
-    width:46px; height:30px; border-radius:8px;
-    background:#0b0f14 center/cover no-repeat;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
-    flex:0 0 auto;
-  }
-  .cta-shelter .label { white-space:nowrap }
-  /* hover preview card */
-  .cta-shelter .preview {
-    position:absolute; left:0; bottom:calc(100% + 10px); width:260px; height:140px;
-    background:#0b0f14 center/cover no-repeat;
-    border:1px solid #2a3038; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,.5);
-    opacity:0; transform:translateY(6px); pointer-events:none; transition:.18s;
-  }
-  .cta-shelter:hover .preview { opacity:1; transform:translateY(0) }
-</style>
-
-<!-- centered headline over image -->
-<div class="wrap gghq-center">
-  <div class="gghq-eyebrow">TITAN × GGHQ</div>
-  <h1 class="gghq-title">SurvivorCord® that won’t quit.</h1>
-  <p class="gghq-sub">Real cordage with fire-starting strands and tough-as-nails sheathing—my go-to for shelter rigs and trail fixes.</p>
-
-  <div class="gghq-ctas">
-    <a class="gghq-btn primary"
-       href="https://www.titansurvival.com/?ref=GRITGEARHQ"
-       rel="sponsored noopener"
-       target="_blank">Shop TITAN Deals</a>
-
-    <!-- Shelter CTA with tarp thumbnail + preview -->
-    <a class="gghq-btn cta-shelter" href="store.html#shelter">
-      <span class="thumb" id="tarp-thumb" aria-hidden="true"></span>
-      <span class="label">See Shelter Picks</span>
-      <span class="preview" id="tarp-preview" aria-hidden="true"></span>
-    </a>
-  </div>
-</div>
-
-<script>
-/* Auto-wire the tarp image into the shelter CTA (works with or without an assets/ folder). */
-(function(){
-  const thumb = document.getElementById('tarp-thumb');
-  const preview = document.getElementById('tarp-preview');
-  const candidates = [
-    'tarp1.jpg',                 // same folder as this HTML
-    './tarp1.jpg',
-    'assets/tarp1.jpg'           // if you keep assets/
-  ];
-  function setBG(url){
-    const safe = url.replace(/"/g, '\\"');
-    thumb.style.backgroundImage = `url("${safe}")`;
-    preview.style.backgroundImage = `url("${safe}")`;
-  }
-  (function tryNext(i){
-    if (i >= candidates.length) return;
-    const test = new Image();
-    test.onload = () => setBG(candidates[i]);
-    test.onerror = () => tryNext(i+1);
-    test.src = candidates[i];
-  })(0);
-})();
-</script>
-
-<script>
-/* No images/ folder? No problem.
-   This picks the first path that actually exists in your repo and sets it as the hero background.
-   Put the file next to your HTML (same folder) as: SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp  */
-(function(){
-  const el = document.getElementById('titan-hero');
-  const candidates = [
-    'SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp',   // same folder as this HTML
-    './SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp', // explicit relative
-    '/SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp'   // site root
-  ];
-  function setBg(src){ el.style.backgroundImage = 'url("'+src.replace(/"/g,'\\"')+'")'; }
-  function tryNext(i){
-    if(i>=candidates.length){ 
-      // graceful placeholder if none load
-      el.style.backgroundImage = 'linear-gradient(135deg,#12161c,#0f1319)';
-      return;
-    }
-    const test = new Image();
-    test.onload  = () => setBg(candidates[i]);
-    test.onerror = () => tryNext(i+1);
-    test.src = candidates[i];
-  }
-  tryNext(0);
-})();
-</script>
-
-
-  <!-- footer band over image -->
-  <div class="gghq-foot">
-    <div class="wrap gghq-row">
-      <div class="gghq-badges">
-        <span class="gghq-badge">Affiliate Supported</span>
-        <span class="gghq-badge">Field-Reviewed</span>
-        <span class="gghq-badge">Mobile-Ready</span>
+  <!-- Top section with big image + text -->
+  <section class="gghq-hero" aria-label="SurvivorCord bundles on a workbench">
+    <div class="wrap gghq-top">
+      <div class="gghq-brand">
+        <span class="gghq-logo">GG</span>
+        <strong>Grit Gear HQ</strong>
       </div>
-      <div class="gghq-note">Use code <strong>GRITGEARHQ</strong> at TITAN • JBL via eBay Brand Outlet</div>
+      <nav class="gghq-nav" aria-label="Top navigation">
+        <a href="store.html">Store</a>
+        <a href="blog/">Blog</a>
+        <a href="tips.html">Tips</a>
+      </nav>
     </div>
-  </div>
-</section>
+
+    <div class="wrap gghq-center">
+      <div class="gghq-eyebrow">TITAN × GGHQ</div>
+      <h1 class="gghq-title">SurvivorCord® that won’t quit.</h1>
+      <p class="gghq-sub">Real cordage with fire-starting strands and tough-as-nails sheathing—my go-to for shelter rigs and trail fixes.</p>
+      <div class="gghq-ctas">
+        <a class="gghq-btn primary" href="https://www.titansurvival.com/?ref=GRITGEARHQ" rel="sponsored noopener" target="_blank">Shop TITAN Deals</a>
+        <a class="gghq-btn" href="store.html#shelter">See Shelter Picks</a>
+      </div>
+    </div>
+
+    <div class="gghq-foot">
+      <div class="wrap gghq-row">
+        <div class="gghq-badges">
+          <span class="gghq-badge">Affiliate Supported</span>
+          <span class="gghq-badge">Field-Reviewed</span>
+          <span class="gghq-badge">Mobile-Ready</span>
+        </div>
+        <div class="gghq-note">Use code <strong>GRITGEARHQ</strong> at TITAN • JBL via eBay Brand Outlet</div>
+      </div>
+    </div>
+  </section>
 
   <!-- Featured Deal (rotates automatically) -->
   <section class="wrap">
@@ -438,59 +207,61 @@
       <h2>Shop by Mission</h2>
       <div class="section-sub">Shelter • Food • Fire • Tools • Comms • First Aid</div>
     </div>
- <article class="card">
-  <figure class="media">
-    <img
-      src="assets/choktaw-fire-tabs-combustion-choktaw-181234_2000x.webp"
-      alt="Choktaw Fire Tabs — wax-impregnated jute tinder, one lit and burning"
-      loading="lazy" decoding="async">
-  </figure>
-  <div class="body">
-    <div class="eyebrow">Fire</div>
-    <h3 class="title">Choktaw Fire Tabs (Waxed Jute)</h3>
-    <p class="small">Fast, dependable ignition even when damp. Great for packs, kits, and loaners.</p>
-    <div class="chipline">
-      <span class="chip">Tinder</span>
-      <span class="chip">Works Wet</span>
-      <span class="chip">Long Burn</span>
-    </div>
-  </div>
-  <div class="cta">
-    <a class="btn"
-       href="https://collabs.shop/mfisn8"
-       target="_blank"
-       rel="sponsored noopener noreferrer"
-       aria-label="Buy Choktaw Fire Tabs via affiliate link">Shop Fire Tabs</a>
-  </div>
-</article>
-     
-     <article class="card">
-  <figure class="media">
-    <img
-      src="assets/tarp1.jpg"
-      alt="Heavy-duty camping tarp rigged between trees for shelter"
-      loading="lazy" decoding="async">
-  </figure>
-  <div class="body">
-    <div class="eyebrow">Shelter</div>
-    <h3 class="title">Tarps, Cordage & Real Stakes</h3>
-    <p class="small">TITAN cordage and tarps that don’t quit. Save with code <strong>GRITGEARHQ</strong>.</p>
-    <div class="chipline">
-      <span class="chip">SurvivorCord®</span>
-      <span class="chip">Shock Cord</span>
-      <span class="chip">Cold-Rated</span>
-    </div>
-  </div>
-  <div class="cta">
-    <a class="btn"
-       href="https://collabs.shop/apa2pp"
-       target="_blank"
-       rel="sponsored noopener noreferrer"
-       aria-label="Shop TITAN tarps and cordage via affiliate link">
-       TITAN Deals
-    </a>
-  </div>
-</article>
+
+    <article class="card">
+      <figure class="media">
+        <img
+          src="assets/choktaw-fire-tabs-combustion-choktaw-181234_2000x.webp"
+          alt="Choktaw Fire Tabs — wax-impregnated jute tinder, one lit and burning"
+          loading="lazy" decoding="async">
+      </figure>
+      <div class="body">
+        <div class="eyebrow">Fire</div>
+        <h3 class="title">Choktaw Fire Tabs (Waxed Jute)</h3>
+        <p class="small">Fast, dependable ignition even when damp. Great for packs, kits, and loaners.</p>
+        <div class="chipline">
+          <span class="chip">Tinder</span>
+          <span class="chip">Works Wet</span>
+          <span class="chip">Long Burn</span>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn"
+           href="https://collabs.shop/mfisn8"
+           target="_blank"
+           rel="sponsored noopener noreferrer"
+           aria-label="Buy Choktaw Fire Tabs via affiliate link">Shop Fire Tabs</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <figure class="media">
+        <img
+          src="tarp.jpg"
+          alt="Heavy-duty camping tarp rigged between trees for shelter"
+          loading="lazy" decoding="async">
+      </figure>
+      <div class="body">
+        <div class="eyebrow">Shelter</div>
+        <h3 class="title">Tarps, Cordage & Real Stakes</h3>
+        <p class="small">TITAN cordage and tarps that don’t quit. Save with code <strong>GRITGEARHQ</strong>.</p>
+        <div class="chipline">
+          <span class="chip">SurvivorCord®</span>
+          <span class="chip">Shock Cord</span>
+          <span class="chip">Cold-Rated</span>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn"
+           href="https://collabs.shop/apa2pp"
+           target="_blank"
+           rel="sponsored noopener noreferrer"
+           aria-label="Shop TITAN tarps and cordage via affiliate link">
+           TITAN Deals
+        </a>
+      </div>
+    </article>
+  </section>
 
   <!-- Popular Picks -->
   <section class="wrap" style="margin-top:30px">
@@ -677,7 +448,7 @@
       // Image fallback so nothing looks broken
       function placeholderSVG(text){
         const t = encodeURIComponent(text || 'Grit Gear HQ');
-        return 'data:image/svg+xml;utf8,' +
+        return 'data:image/svg+xml;utf8,' + 
           `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
             <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
               <stop offset="0%" stop-color="#12161c"/><stop offset="100%" stop-color="#0e1116"/></linearGradient></defs>
