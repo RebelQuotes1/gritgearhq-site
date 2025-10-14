@@ -339,6 +339,54 @@
 </ul>
 
 <p>These biscuits are <em>dense on purpose</em>. They won’t puff like a laminated, folded dough. They’re meant to stick to your ribs and carry you through a cold night or an early morning hike. Think of them as edible morale patches.</p>
+<!-- Drop-in Affiliate Card: Cast Iron Cure -->
+<aside role="complementary" aria-label="Cast Iron Cure seasoning balm promo"
+  style="margin:18px 0; padding:14px; border:1px solid #2b3641; border-radius:12px; background:#0f1217; color:#f1f5f9; text-align:center;">
+  <a href="https://www.ebay.com/itm/166059453647?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1evl6L7Ia77d8CPN3H7DRr9iDaUJ4myTloJ5Rwy7rvU%2BvwIAaDeThzkV%2FHVDZqAb96C86ZyYa3zOP%2BYw1nGYjm1SEphGWypykKJo%2BQDaP1T0etFKUzY453jchMbhf6cCOAC17PTGNV4T0DsXpastg37Ujf%2BaAjoy%2F1iiRKispogQwudJ5fHs7zA0q0JyHDF2ho%3D"
+     target="_blank" rel="sponsored noopener noreferrer"
+     style="display:block; text-decoration:none; color:inherit;">
+    <img src="./s-l1600 (39).jpg" alt="Cast Iron Cure — 2 oz seasoning & care balm"
+         style="width:100%; max-width:520px; height:auto; display:block; margin:0 auto 10px; border-radius:10px;">
+    <h3 style="margin:6px 0 2px; font-size:20px;">Cast Iron Cure — Seasoning & Care Balm (2 oz)</h3>
+    <div style="margin:6px 0 8px; font-size:14px; color:#cbd5e1;">
+      <span aria-hidden="true" style="letter-spacing:1px;">★★★★★</span>
+      <span class="sr-only">Rated five out of five stars</span>
+      <span style="margin-left:6px;">4.9 • 2,400+ reviews • 12,000+ sold</span>
+    </div>
+    <p style="margin:0 0 10px; color:#9aa4ad;">
+      Grapeseed & avocado oils with organic beeswax. Wipe on, heat, and your iron’s happy.
+    </p>
+    <div style="margin:8px 0 12px; font-weight:700;">
+      <span style="padding:6px 10px; border:1px solid #334155; border-radius:8px; background:#111827;">
+        Sale: 15% off • Ends in <span id="cure-timer">03:00:00</span>
+      </span>
+    </div>
+    <span style="display:inline-block; padding:10px 14px; border-radius:10px; background:linear-gradient(180deg,#212a33,#151b22); border:1px solid #2b3641; font-weight:700;">
+      View Deal
+    </span>
+  </a>
+  <small style="display:block; margin-top:8px; color:#93a1aa;">Affiliate link — costs you nothing, helps support Grit Gear HQ.</small>
+</aside>
+
+<!-- Tiny inline timer (counts down from 3 hours on page load) -->
+<script>
+(function(){
+  var el = document.getElementById('cure-timer');
+  if(!el) return;
+  var end = Date.now() + 3*60*60*1000; // 3 hours
+  function pad(n){ return n<10 ? '0'+n : n; }
+  function tick(){
+    var left = end - Date.now();
+    if(left <= 0){ el.textContent = '00:00:00'; return; }
+    var h = Math.floor(left/3600000),
+        m = Math.floor((left%3600000)/60000),
+        s = Math.floor((left%60000)/1000);
+    el.textContent = pad(h)+':'+pad(m)+':'+pad(s);
+    requestAnimationFrame(function(){ setTimeout(tick, 250); });
+  }
+  tick();
+})();
+</script>
 
     <h2 id="troubleshooting">Troubleshooting That Actually Solves Problems</h2>
     <p class="tip"><strong>Bottom too dark?</strong> You parked the pot on live flame. Slide it to the side, set it on a bed of <em>glowing</em> coals, and rotate. A small stick under the bail lifts the oven enough to calm the heat if your ground is too hot.</p>
