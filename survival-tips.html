@@ -14,33 +14,76 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="./biz1.jpeg">
   <meta name="twitter:card" content="summary_large_image">
+
   <style>
-    :root{--ink:#e7ecef;--sub:#b7c0c7;--muted:#93a1aa;--accent:#f8aa36;--bg:#0b0d11;--panel:#101319;--panel-2:#0f1217;--line:#1e2530;--rad:14px}
+    /* ===== Theme ===== */
+    :root{
+      --ink:#e7ecef;--sub:#b7c0c7;--muted:#93a1aa;--accent:#f8aa36;
+      --bg:#0b0d11;--panel:#101319;--panel-2:#0f1217;--line:#1e2530;--rad:14px
+    }
     *{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
     body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.7 system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:1000px;margin:0 auto;padding:22px 18px}
-    header.hero{position:relative;background:radial-gradient(1200px 400px at 50% -100px,#141a22 20%,#0b0d11 70%);}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto}
+
+    /* ===== Shell ===== */
+    .wrap{max-width:1150px;margin:0 auto;padding:22px 18px}
+    header.hero{
+      position:relative;
+      background:radial-gradient(1200px 400px at 50% -100px,#141a22 20%,#0b0d11 70%);
+      border-bottom:1px solid var(--line);
+    }
     .badge{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--sub);font-size:12px;letter-spacing:.2px;background:rgba(255,255,255,.03)}
     h1{margin:10px 0 8px;font-size:44px;line-height:1.05}
-    .lead{color:var(--sub);font-size:18px;max-width:780px}
-    .toc{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
-    .cta{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(180deg,#212a33,#151b22);border:1px solid #2b3641;color:#f1f5f9;font-weight:600}
+    .lead{color:var(--sub);font-size:18px;max-width:820px}
+
+    /* ===== Layout: sticky TOC + content ===== */
+    .layout{
+      display:grid;gap:24px;align-items:start;
+      grid-template-columns: 1fr; /* mobile */
+    }
+    @media(min-width:980px){
+      .layout{grid-template-columns:260px 1fr}
+    }
+
+    .sidebar{
+      position:sticky;top:16px;
+      border:1px solid var(--line);border-radius:var(--rad);
+      background:linear-gradient(180deg,#12161c,#0c0f14);
+      padding:14px;
+    }
+    .sidebar h2{
+      font-size:14px;margin:0 0 10px;color:var(--sub);letter-spacing:.12em;text-transform:uppercase
+    }
+    .toc{display:flex;flex-direction:column;gap:8px}
+    .toc a{
+      display:block;padding:8px 10px;border-radius:10px;border:1px solid #2b3641;
+      background:linear-gradient(180deg,#212a33,#151b22);color:#f1f5f9;font-weight:600
+    }
+
+    /* ===== Content ===== */
     .section{padding:8px 0 2px;margin-top:28px;border-top:1px solid var(--line)}
     h2{font-size:30px;margin:16px 0 10px}
     h3{font-size:22px;margin:12px 0 8px}
     .tip{border:1px dashed #33404d;border-radius:10px;background:#0b0f15;padding:12px;margin:10px 0}
-    .grid{display:grid;gap:16px}
-    @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
-    figure{margin:12px 0;background:var(--panel);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
-    figure img{width:100%;display:block;height:auto}
-    figcaption{padding:10px 12px;color:var(--muted);font-size:13px;background:var(--panel-2);border-top:1px solid var(--line)}
-    .product-grid{display:grid;gap:16px}
-    @media(min-width:900px){.product-grid{grid-template-columns:repeat(3,1fr)}}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
-    .card .body{padding:14px}
-    .product-card img{width:100%;height:180px;object-fit:cover}
     .note{color:var(--muted);font-size:14px}
+
+    /* ===== Media ===== */
+    figure{margin:12px 0;background:var(--panel);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
+    figure img{width:100%;display:block}
+    figcaption{padding:10px 12px;color:var(--muted);font-size:13px;background:var(--panel-2);border-top:1px solid var(--line)}
+
+    /* ===== Cards / Product grid ===== */
+    .product-grid{display:grid;gap:16px}
+    @media(min-width:800px){.product-grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;display:flex;flex-direction:column}
+    .card .media{margin:0;border-bottom:1px solid var(--line);background:#0b0d11}
+    .card .body{padding:14px}
+    .card .title{margin:0 0 6px}
+
+    /* ===== Banner ===== */
     .banner{display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#12161c,#0c0f14);margin:18px 0}
     .banner .row{display:flex;gap:14px;align-items:center;padding:14px}
     .banner img{width:90px;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
@@ -48,7 +91,19 @@
     .rating{font-size:13px;color:#ffe599}
     .pill{display:inline-block;border:1px solid #2b3641;border-radius:999px;padding:3px 8px;margin-left:6px;color:#a7f3d0;background:#083c33}
     .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#0b0f15;border:1px solid #2b3641;border-radius:6px;padding:2px 6px}
+
+    /* ===== Utilities ===== */
+    .grid{display:grid;gap:16px}
+    .grid.two{grid-template-columns:1fr}
+    @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
+    .blocklink{display:block;color:inherit;text-decoration:none}
+    .blocklink:hover .title{text-decoration:underline}
+    .center{max-width:900px;margin:18px auto}
+    .float-right{float:right;width:min(44%,340px);margin:0 0 8px 14px}
+    .chip{border:1px solid #2b3641;border-radius:999px;padding:.22rem .6rem}
+
     footer{border-top:1px solid var(--line);margin-top:36px}
+    .toplink{display:inline-block;margin:18px 0 0;border:1px solid var(--line);border-radius:10px;padding:8px 12px}
   </style>
 </head>
 <body>
@@ -60,288 +115,197 @@
     <p class="lead">
       This isn’t a doom scroll. It’s a calm, useful walk through the things that keep people safe: mindset, shelter, fire, water, food, navigation, first aid, and a little campcraft. You can practice every skill in your backyard this weekend, preferably with coffee and someone you like talking to.
     </p>
-
-    <!-- quick jump -->
-    <nav class="toc" aria-label="On-page navigation">
-      <a class="cta" href="#mindset">Mindset</a>
-      <a class="cta" href="#shelter">Shelter</a>
-      <a class="cta" href="#fire">Fire</a>
-      <a class="cta" href="#water">Water</a>
-      <a class="cta" href="#food">Food</a>
-      <a class="cta" href="#nav">Navigation</a>
-      <a class="cta" href="#firstaid">First Aid</a>
-      <a class="cta" href="#kits">Kits & EDC</a>
-      <a class="cta" href="#signals">Signals</a>
-      <a class="cta" href="#family">Kids & Partners</a>
-      <a class="cta" href="#urban">Urban Stuff</a>
-      <a class="cta" href="#checklists">Checklists</a>
-    </nav>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap layout" id="main">
+  <!-- Sticky TOC -->
+  <aside class="sidebar" aria-label="On-page navigation">
+    <h2>Quick Jump</h2>
+    <nav class="toc">
+      <a href="#mindset">Mindset</a>
+      <a href="#shelter">Shelter</a>
+      <a href="#fire">Fire</a>
+      <a href="#water">Water</a>
+      <a href="#food">Food</a>
+      <a href="#nav">Navigation</a>
+      <a href="#firstaid">First Aid</a>
+      <a href="#kits">Kits & EDC</a>
+      <a href="#signals">Signals</a>
+      <a href="#family">Kids & Partners</a>
+      <a href="#urban">Urban Stuff</a>
+      <a href="#checklists">Checklists</a>
+    </nav>
+  </aside>
 
-  <!-- Affiliate banner hero -->
-  <a class="banner" href="https://www.titansurvival.com/?ref=GRITGEARHQ" target="_blank" rel="sponsored noopener noreferrer">
-    <div class="row">
-      <img src="./survivorcord-dragonscale-survivorcord-titan-survival-159076_400x.webp" alt="TITAN SurvivorCord Dragonscale bundle">
-      <div>
-        <strong>TITAN SurvivorCord® — Our go-to cordage</strong>
-        <div class="note">Paracord with tinder, fishing line, and snare wire inside. Real-world useful and bomb-proof sheathing.</div>
-        <div class="rating">★★★★★ 4.9/5 by folks who actually use it <span class="pill">Use code <span class="kbd">GRITGEARHQ</span> for 10% off</span></div>
-      </div>
-    </div>
-  </a>
+  <!-- Content column -->
+  <div class="content">
 
-  <section class="section" id="mindset">
-    <h2>1) Mindset Beats Gear (But Gear Helps)</h2>
-    <p>
-      Survival starts in your head. Not with a titanium shovel that doubles as a satellite dish. The calm person who can slow their breathing, make a short list, and do the next smallest thing wins. That’s the whole game. I keep a simple loop for anything weird: <strong>Pause → Look → Decide → Do → Review.</strong> It keeps panic from stealing your intelligence.
-    </p>
-    <div class="tip"><strong>Practice drill:</strong> once a week, kill your house breakers to one room for an hour. Phones away. Eat, read, or hang out with a headlamp. You’ll instantly see what’s missing and what’s fine. It'll also force more intimate family time that is actually raw and genuine instead of doomscrolling in each other's company as if that counts as family time.</div>
-    <p>
-      Know the difference between <em>comfort</em> and <em>need</em>. You can be uncomfortable and perfectly safe. You can be comfy and in danger if you’re wandering toward a cliff in soft socks or unarmed hammock camping in bear country. The mindset piece is giving yourself a short plan and sticking to it. Write it down if your brain is scattered like mine.
-    </p>
-    <aside style="display:grid;gap:12px;grid-template-columns:150px 1fr;align-items:center;margin:14px 0;
-              border:1px solid #2b3641;border-radius:14px;background:#101319;padding:12px">
-  <img src="./1000070825.png"
-       alt="Hiker on a ridge in the pines" 
-       style="width:100%;height:150px;object-fit:cover;border-radius:10px;border:1px solid #24303b">
-  <div>
-    <p style="margin:0 0 6px;color:#e7ecef;font-weight:800">“Pause → Look → Decide → Do → Review.”</p>
-    <p style="margin:0;color:#aab3be">A simple loop that keeps panic from stealing your intelligence.</p>
-  </div>
-</aside>
-  </section>
-
-  <section class="section" id="shelter">
-    <h2>2) Shelter: Stop the Wind, Steal Back Heat</h2>
-    <p>
-      You lose heat three ways outdoors: conduction (ground steals it), convection (wind steals it), radiation (space steals it). Your job is to block those thieves. A tarp, some cordage, and a ground pad will outperform fancy jackets when the sky gets rowdy.
-    </p>
-    <h3>Fast tarps you can set up under stress</h3>
-    <ul>
-      <li><strong>Lean-to:</strong> wind at your back, tarp staked low in front, reflect heat from a small fire.</li>
-      <li><strong>A-frame:</strong> line between two trees, tarp over the top, low pitch for stormy nights.</li>
-      <li><strong>Plow point:</strong> one corner high on a line, three corners staked tight—great in wind.</li>
-    </ul>
-    <figure style="margin:14px auto 10px;max-width:900px;border:1px solid #2b3641;border-radius:14px;overflow:hidden;background:#0f1216">
-  <img src="./bushcrafter-reflective-shelter-tarp-cover-tacamo-273593_2048x.jpg"
-       alt="Tarp lean-to pitched low between trees for wind protection"
-       style="display:block;width:100%;height:auto;object-fit:cover">
-  <figcaption style="padding:10px 12px;color:#aab3be;font-size:.92rem;border-top:1px solid #2b3641;text-align:center">
-    Pitch low, face the open side away from wind, and use leaves/foam under you—warmth comes back fast.
-  </figcaption>
-</figure>
-    <div class="tip"><strong>Cordage pro move:</strong> pre-tie four guy lines with loops on one end and taut-line hitches on the other. Stow them attached to your tarp so you’re not playing knot sudoku in the rain.</div>
-
-    <!-- Gear card -->
-    <section class="product-grid" aria-label="Shelter helpers">
-      <article class="card product-card">
-        <figure><img src="./survivorcord-dragonscale-survivorcord-titan-survival-159076_400x.webp" alt="TITAN SurvivorCord Dragonscale"></figure>
-        <div class="body">
-          <h3 class="title">SurvivorCord® (Shelter Lines)</h3>
-          <p class="note">Strong as good paracord, but has fire tinder inside if things get dumb.</p>
-          <a class="cta" href="https://www.titansurvival.com/?ref=GRITGEARHQ" target="_blank" rel="sponsored noopener noreferrer">Shop with code <span class="kbd">GRITGEARHQ</span></a>
-        </div>
-      </article>
-     <article class="card product-card">
-  <!-- Whole top section (image + text) is now a single link -->
-  <a class="blocklink"
-     href="https://www.ebay.com/itm/404456761923?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1eI%2BEegdduOrCdObK%2BWjjoKYg30MG4ogpHJiXmcprcVLpTKzNbMkbM%2FYWTP2xUgr%2F3Qx1Ol2L2EpmCDomMzMwACamwu402SxaOzTWEoktJLLaOyg6xB5beK6fYnJNDNWiDjAJZs0rh0CH%2BZdEqQ4xB7juRsSQmj7QV0TzaO7XhAikwShD8KJgppCxD8xiqWxgw%3D"
-     target="_blank" rel="sponsored noopener noreferrer"
-     aria-label="Open eBay listing: Forged Tripod">
-
-    <figure>
-      <img src="./s-l1600%20(42).jpg" alt="Forged campfire tripod with adjustable chain">
-    </figure>
-
-    <div class="body">
-      <h3 class="title">Forged Tripod</h3>
-      <p class="note">Doubles as shelter ridge support and a rock-solid cook stand.</p>
-    </div>
-  </a>
-
-  <!-- Keep the CTA button as a separate link -->
-  <div class="body" style="padding-top:0">
-    <a class="cta"
-       href="https://www.ebay.com/itm/404456761923?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1eI%2BEegdduOrCdObK%2BWjjoKYg30MG4ogpHJiXmcprcVLpTKzNbMkbM%2FYWTP2xUgr%2F3Qx1Ol2L2EpmCDomMzMwACamwu402SxaOzTWEoktJLLaOyg6xB5beK6fYnJNDNWiDjAJZs0rh0CH%2BZdEqQ4xB7juRsSQmj7QV0TzaO7XhAikwShD8KJgppCxD8xiqWxgw%3D"
-       target="_blank" rel="sponsored noopener noreferrer">
-      View Deal
-    </a>
-  </div>
-    <!-- ===== Tarp-Friendly Tents (2-up ad row) ===== -->
-<section aria-label="Pop-Up Tent & SUV Tailgate Tent" 
-         style="margin:14px 0;">
-  <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
-
-    <!-- 10x10 Pop-Up Camping Tent -->
-    <a href="https://www.ebay.com/itm/224837549186?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cqGqZ4GL%2FlwGTbPmyIoOTQPwzp1tJcTWfm5nRwjJiqui1v4ilMaAkT6f3UcaJ4clz0h5lPkZ2XmEAbyhTPhyn0aKntQqJfrjydxab3cmQGmgCghCSbc4EGvGQXg%2Be%2FUGIyFyuI9rHqGHuIvQ04wNrJa13Vp2mC8IQGF8jfjkcCHmswMt3H1V4m%2BNm0f83lrRo%3D"
-       target="_blank" rel="sponsored noopener noreferrer"
-       style="text-decoration:none;color:#e7ecef;border:1px solid #2b3641;border-radius:14px;overflow:hidden;background:#101319;display:flex;flex-direction:column;">
-      <figure style="margin:0;border-bottom:1px solid #2b3641;background:#0b0d11;position:relative">
-        <img src="./$_12%20(10).jfif" alt="10×10 pop-up camping tent, instant setup"
-             loading="lazy" decoding="async"
-             style="width:100%;height:220px;object-fit:cover;display:block">
-        <span style="position:absolute;left:10px;bottom:10px;background:#151b22;border:1px solid #2b3641;border-radius:999px;padding:6px 10px;font-size:12px;">Instant Setup</span>
-      </figure>
-      <div style="padding:14px">
-        <h3 style="margin:0 0 6px;color:#f8aa36;">10×10 Pop-Up Camping Tent</h3>
-        <p style="margin:0 0 10px;color:#b9c1cc;">Roomy screen-room shelter with weather panels. Fast one-person pitch for camp kitchens, cots, or a picnic table.</p>
-        <div style="display:flex;gap:8px;align-items:center;margin:0 0 10px;color:#cbd5e1;">
-          <span aria-label="Rated 5 out of 5" style="letter-spacing:.08em;">★★★★★</span>
-          <span style="opacity:.9">Rave reviews • “Thousands sold”</span>
-        </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;color:#aab3be;font-size:.86rem;">
-          <span style="border:1px solid #2b3641;border-radius:999px;padding:.22rem .6rem;">Bug-proof mesh</span>
-          <span style="border:1px solid #2b3641;border-radius:999px;padding:.22rem .6rem;">Tall standing room</span>
-          <span style="border:1px solid #2b3641;border-radius:999px;padding:.22rem .6rem;">Great with tarps</span>
-        </div>
-        <div style="margin-top:10px;display:block;text-align:center;padding:.7rem 1rem;border-radius:10px;border:1px solid #2b3641;background:linear-gradient(180deg,#212a33,#151b22);color:#f1f5f9;font-weight:800;">
-          See Today’s Price →
+    <!-- Affiliate banner hero -->
+    <a class="banner" href="https://www.titansurvival.com/?ref=GRITGEARHQ" target="_blank" rel="sponsored noopener noreferrer">
+      <div class="row">
+        <img src="./survivorcord-dragonscale-survivorcord-titan-survival-159076_400x.webp" alt="TITAN SurvivorCord Dragonscale bundle" loading="lazy" decoding="async">
+        <div>
+          <strong>TITAN SurvivorCord® — Our go-to cordage</strong>
+          <div class="note">Paracord with tinder, fishing line, and snare wire inside. Real-world useful and bomb-proof sheathing.</div>
+          <div class="rating">★★★★★ 4.9/5 by folks who actually use it <span class="pill">Use code <span class="kbd">GRITGEARHQ</span> for 10% off</span></div>
         </div>
       </div>
     </a>
 
-    <!-- SUV / Tailgate Dome Tent -->
-    <a href="https://www.ebay.com/itm/286345843471?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1daaPPJa5h4bQgNanr55ib5pvBqukDCbWR%2Fe%2FLnQ0Lr0DXH4%2FowktFXqLjJfUZdCL8H4Xm%2FfXnKvYslxxu8r9Xib0X8EqlruUx%2B5ulryj%2FSIb%2BYMnrl0e%2BEt%2Bf80pp1dsJ9BpF0lEX71DAUynT0jSOuozcUTtIJKbLxuN0TlNbDrtpLSPhozPTR4zazAzKo1U8%3D"
-       target="_blank" rel="sponsored noopener noreferrer"
-       style="text-decoration:none;color:#e7ecef;border:1px solid #2b3641;border-radius:14px;overflow:hidden;background:#101319;display:flex;flex-direction:column;">
-      <figure style="margin:0;border-bottom:1px solid #2b3641;background:#0b0d11;position:relative">
-        <img src="./s-l1600%20(52).jpg" alt="SUV tailgate camping tent attached to hatch"
-             loading="lazy" decoding="async"
-             style="width:100%;height:220px;object-fit:cover;display:block">
-        <span style="position:absolute;left:10px;bottom:10px;background:#151b22;border:1px solid #2b3641;border-radius:999px;padding:6px 10px;font-size:12px;">SUV / Hatchback</span>
-      </figure>
-      <div style="padding:14px">
-        <h3 style="margin:0 0 6px;color:#f8aa36;">SUV Tailgate Dome Tent</h3>
-        <p style="margin:0 0 10px;color:#b9c1cc;">Turns your hatch into a weather-tight camp room. Easy clamp/strap attachment, full floor, and big doors.</p>
-        <div style="display:flex;gap:8px;align-items:center;margin:0 0 10px;color:#cbd5e1;">
-          <span aria-label="Rated 5 out of 5" style="letter-spacing:.08em;">★★★★★</span>
-          <span style="opacity:.9">Loved by road-trippers • Great reviews</span>
-        </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;color:#aab3be;font-size:.86rem;">
-          <span style="border:1px solid #2b3641;border-radius:999px;padding:.22rem .6rem;">Fast attach</span>
-          <span style="border:1px solid #2b3641;border-radius:999px;padding:.22rem .6rem;">Waterproof floor</span>
-          <span style="border:1px solid #2b3641;border-radius:999px;padding:.22rem .6rem;">Storm-ready</span>
-        </div>
-        <div style="margin-top:10px;display:block;text-align:center;padding:.7rem 1rem;border-radius:10px;border:1px solid #2b3641;background:linear-gradient(180deg,#212a33,#151b22);color:#f1f5f9;font-weight:800;">
-          Check Availability →
-        </div>
-      </div>
-    </a>
-
-  </div>
-</section>
-   
-</article>
-
-<style>
-  .product-card .blocklink{
-    display:block; color:inherit; text-decoration:none;
-  }
-  .product-card .blocklink:hover .title{ text-decoration:underline; }
-  .product-card figure{ margin:0; }
-</style>
-<!-- ===== Shelters: photo + chart (consistent width + spacing) ===== -->
-<section style="max-width:900px;margin:18px auto;padding:0 12px;display:grid;gap:18px">
-  <!-- A-frame photo -->
-  <figure style="margin:0;border:1px solid #2b3641;border-radius:14px;overflow:hidden;background:#0f1216">
-    <img src="./tarp-shelter-ideas.png"
-         alt="A-frame tarp pitched low with a trekking pole and bivy inside"
-         style="display:block;width:100%;height:auto;object-fit:cover">
-    <figcaption style="padding:10px 12px;color:#aab3be;font-size:.92rem;border-top:1px solid #2b3641;text-align:center">
-      Low A-frame: pitch the windward edge tight to ground, keep the opening leeward, and add a center pole for headroom.
-    </figcaption>
-  </figure>
-
-  <!-- Tarp Shelter Chart -->
-  <figure style="margin:0;text-align:center">
-    <img src="tarpchart.jpg"
-         alt="Grit Gear HQ tarp shelter setup styles chart"
-         loading="lazy" decoding="async"
-         style="width:100%;height:auto;border-radius:12px;border:1px solid #2b3641;">
-    <figcaption style="margin-top:8px;color:#aab3be;font-size:.9rem">
-      One tarp, endless options — A-frames, lean-tos, and storm rigs built for grit.
-      Image © <a href="https://gritgearhq.com" target="_blank" rel="noopener" style="color:#f8aa36;text-decoration:none">GritGearHQ.com</a>
-    </figcaption>
-  </figure>
-</section>
-
-<!-- ===== Emergency Blankets: unified card (no scattered rows) ===== -->
-<a href="https://www.ebay.com/itm/124595303263?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cOjdpOJo60OXwhMwJ%2BIrGfh009iQlAmj1KCl7y92aQvH1b39r%2BLNJDsRreY0Xivk6dxpsETpAimV24BXj0nJec4jTwtOyIF8tfrvIxleB9FH0z%2FUzFCNCK5HSxeKgiBzMeFM%2FksVDVT3mnmmJ7Pxk5s--vbjIbru2AarEctQddztO8qnve7cXwPvfa3uj2fxg%3D"
-   target="_blank" rel="sponsored noopener noreferrer"
-   style="display:block;max-width:900px;margin:18px auto;padding:0 12px;text-decoration:none">
-  <div style="display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;
-              border:1px solid #1e2530;border-radius:14px;overflow:hidden;background:#0f1217;
-              box-shadow:0 10px 28px rgba(0,0,0,.25);padding:12px;">
-    <div style="background:#0b0d11;border:1px solid #1e2530;border-radius:10px;overflow:hidden;aspect-ratio:1/1;display:grid;place-items:center;">
-      <img src="./s-l1600 (51).jpg" alt="50-Pack emergency mylar blankets, bulk bundle"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
-    </div>
-
-    <div style="min-width:0">
-      <div style="display:flex;gap:10px;align-items:center;margin-bottom:4px;">
-        <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9aa4ad">Field Pick</span>
-        <span style="padding:4px 8px;border-radius:999px;background:linear-gradient(180deg,#1a8a56,#0f6b3d);border:1px solid #0e5a37;font-weight:800;font-size:.78rem;color:#f1f5f9">Bulk Value</span>
-      </div>
-
-      <h3 style="margin:0 0 6px 0;font-size:18px;color:#f8aa36;line-height:1.2">50-Pack Emergency Mylar Blankets</h3>
-
-      <div style="display:flex;gap:8px;align-items:center;margin:0 0 8px 0;color:#cbd5e1">
-        <span aria-label="5 out of 5 stars" style="letter-spacing:.08em">★★★★★</span>
-        <span style="opacity:.9">4.9/5 • 2,300+ reviews</span>
-      </div>
-
-      <p style="margin:0 0 10px 0;color:#b7c0c7;font-size:.95rem">
-        Lightweight, vacuum-sealed, and heat-reflective. Toss a stack in cars, kits, group trips, and emergency bins.
+    <!-- MINDSET -->
+    <section class="section" id="mindset">
+      <h2>1) Mindset Beats Gear (But Gear Helps)</h2>
+      <p>
+        Survival starts in your head. Not with a titanium shovel that doubles as a satellite dish. The calm person who can slow their breathing, make a short list, and do the next smallest thing wins. That’s the whole game. I keep a simple loop for anything weird: <strong>Pause → Look → Decide → Do → Review.</strong> It keeps panic from stealing your intelligence.
+      </p>
+      <div class="tip"><strong>Practice drill:</strong> once a week, kill your house breakers to one room for an hour. Phones away. Eat, read, or hang out with a headlamp. You’ll instantly see what’s missing and what’s fine. It'll also force more intimate family time that is actually raw and genuine instead of doomscrolling in each other's company as if that counts as family time.</div>
+      <p>
+        Know the difference between <em>comfort</em> and <em>need</em>. You can be uncomfortable and perfectly safe. You can be comfy and in danger if you’re wandering toward a cliff in soft socks or unarmed hammock camping in bear country. The mindset piece is giving yourself a short plan and sticking to it. Write it down if your brain is scattered like mine.
       </p>
 
-      <div style="display:flex;gap:10px;align-items:center;margin:0 0 10px 0;">
-        <span style="font-weight:800;font-size:18px;color:#f8aa36">Stock up!</span>
-        <span style="text-decoration:line-through;color:#9aa4ad">Bulk Special Deal</span>
-        <span style="font-size:12px;color:#9ae6b4;background:#14321f;border:1px solid #28543c;padding:2px 6px;border-radius:999px">Save 38%</span>
+      <aside style="display:grid;gap:12px;grid-template-columns:150px 1fr;align-items:center;margin:14px 0;border:1px solid #2b3641;border-radius:14px;background:#101319;padding:12px">
+        <img src="./1000070825.png" alt="Hiker on a ridge in the pines" style="width:100%;height:150px;object-fit:cover;border-radius:10px;border:1px solid #24303b">
+        <div>
+          <p style="margin:0 0 6px;color:#e7ecef;font-weight:800">“Pause → Look → Decide → Do → Review.”</p>
+          <p style="margin:0;color:#aab3be">A simple loop that keeps panic from stealing your intelligence.</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SHELTER -->
+    <section class="section" id="shelter">
+      <h2>2) Shelter: Stop the Wind, Steal Back Heat</h2>
+      <p>
+        You lose heat three ways outdoors: conduction (ground steals it), convection (wind steals it), radiation (space steals it). Your job is to block those thieves. A tarp, some cordage, and a ground pad will outperform fancy jackets when the sky gets rowdy.
+      </p>
+
+      <h3>Fast tarps you can set up under stress</h3>
+      <ul>
+        <li><strong>Lean-to:</strong> wind at your back, tarp staked low in front, reflect heat from a small fire.</li>
+        <li><strong>A-frame:</strong> line between two trees, tarp over the top, low pitch for stormy nights.</li>
+        <li><strong>Plow point:</strong> one corner high on a line, three corners staked tight—great in wind.</li>
+      </ul>
+
+      <figure class="center">
+        <img src="./bushcrafter-reflective-shelter-tarp-cover-tacamo-273593_2048x.jpg"
+             alt="Tarp lean-to pitched low between trees for wind protection" loading="lazy" decoding="async">
+        <figcaption>Pitch low, face the open side away from wind, and use leaves/foam under you—warmth comes back fast.</figcaption>
+      </figure>
+
+      <div class="tip"><strong>Cordage pro move:</strong> pre-tie four guy lines with loops on one end and taut-line hitches on the other. Stow them attached to your tarp so you’re not playing knot sudoku in the rain.</div>
+
+      <!-- Shelter helpers -->
+      <section class="product-grid" aria-label="Shelter helpers">
+        <article class="card">
+          <figure class="media"><img src="./survivorcord-dragonscale-survivorcord-titan-survival-159076_400x.webp" alt="TITAN SurvivorCord Dragonscale"></figure>
+          <div class="body">
+            <h3 class="title">SurvivorCord® (Shelter Lines)</h3>
+            <p class="note">Strong as good paracord, but has fire tinder inside if things get dumb.</p>
+            <a class="blocklink" href="https://www.titansurvival.com/?ref=GRITGEARHQ" target="_blank" rel="sponsored noopener noreferrer">Shop with code <span class="kbd">GRITGEARHQ</span></a>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="blocklink" href="https://www.ebay.com/itm/404456761923?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1eI%2BEegdduOrCdObK%2BWjjoKYg30MG4ogpHJiXmcprcVLpTKzNbMkbM%2FYWTP2xUgr%2F3Qx1Ol2L2EpmCDomMzMwACamwu402SxaOzTWEoktJLLaOyg6xB5beK6fYnJNDNWiDjAJZs0rh0CH%2BZdEqQ4xB7juRsSQmj7QV0TzaO7XhAikwShD8KJgppCxD8xiqWxgw%3D"
+             target="_blank" rel="sponsored noopener noreferrer" aria-label="Open eBay listing: Forged Tripod">
+            <figure class="media"><img src="./s-l1600%20(42).jpg" alt="Forged campfire tripod with adjustable chain" loading="lazy" decoding="async"></figure>
+            <div class="body">
+              <h3 class="title">Forged Tripod</h3>
+              <p class="note">Doubles as shelter ridge support and a rock-solid cook stand.</p>
+              <span class="chip">Multi-use</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a class="blocklink" href="https://www.ebay.com/itm/124595303263?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cOjdpOJo60OXwhMwJ%2BIrGfh009iQlAmj1KCl7y92aQvH1b39r%2BLNJDsRreY0Xivk6dxpsETpAimV24BXj0nJec4jTwtOyIF8tfrvIxleB9FH0z%2FUzFCNCK5HSxeKgiBzMeFM%2FksVDVT3mnmmJ7Pxk5s--vbjIbru2AarEctQddztO8qnve7cXwPvfa3uj2fxg%3D"
+             target="_blank" rel="sponsored noopener noreferrer">
+            <figure class="media"><img src="./s-l1600 (51).jpg" alt="50-Pack emergency mylar blankets, bulk bundle" loading="lazy" decoding="async"></figure>
+            <div class="body">
+              <h3 class="title">50-Pack Emergency Mylar Blankets</h3>
+              <p class="note">Lightweight, heat-reflective, perfect for kits, cars, and group trips.</p>
+              <span class="chip">Bulk value</span>
+            </div>
+          </a>
+        </article>
+      </section>
+
+      <!-- 2-up tents -->
+      <section class="grid two center" aria-label="Pop-Up Tent & SUV Tailgate Tent">
+        <a href="https://www.ebay.com/itm/224837549186?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cqGqZ4GL%2FlwGTbPmyIoOTQPwzp1tJcTWfm5nRwjJiqui1v4ilMaAkT6f3UcaJ4clz0h5lPkZ2XmEAbyhTPhyn0aKntQqJfrjydxab3cmQGmgCghCSbc4EGvGQXg%2Be%2FUGIyFyuI9rHqGHuIvQ04wNrJa13Vp2mC8IQGF8jfjkcCHmswMt3H1V4m%2BNm0f83lrRo%3D"
+           target="_blank" rel="sponsored noopener noreferrer" class="card blocklink">
+          <figure class="media">
+            <img src="./$_12%20(10).jfif" alt="10×10 pop-up camping tent, instant setup" loading="lazy" decoding="async" style="height:220px;object-fit:cover">
+          </figure>
+          <div class="body">
+            <h3 class="title" style="color:#f8aa36">10×10 Pop-Up Camping Tent</h3>
+            <p class="note">Roomy screen-room shelter with weather panels. Fast one-person pitch for camp kitchens, cots, or a picnic table.</p>
+            <div class="note">★★★★★ <span style="opacity:.9">Rave reviews • “Thousands sold”</span></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+              <span class="chip">Bug-proof mesh</span><span class="chip">Tall standing room</span><span class="chip">Great with tarps</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.ebay.com/itm/286345843471?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1daaPPJa5h4bQgNanr55ib5pvBqukDCbWR%2Fe%2FLnQ0Lr0DXH4%2FowktFXqLjJfUZdCL8H4Xm%2FfXnKvYslxxu8r9Xib0X8EqlruUx%2B5ulryj%2FSIb%2BYMnrl0e%2BEt%2Bf80pp1dsJ9BpF0lEX71DAUynT0jSOuozcUTtIJKbLxuN0TlNbDrtpLSPhozPTR4zazAzKo1U8%3D"
+           target="_blank" rel="sponsored noopener noreferrer" class="card blocklink">
+          <figure class="media">
+            <img src="./s-l1600%20(52).jpg" alt="SUV tailgate camping tent attached to hatch" loading="lazy" decoding="async" style="height:220px;object-fit:cover">
+          </figure>
+          <div class="body">
+            <h3 class="title" style="color:#f8aa36">SUV Tailgate Dome Tent</h3>
+            <p class="note">Turns your hatch into a weather-tight camp room. Easy clamp/strap attachment, full floor, and big doors.</p>
+            <div class="note">★★★★★ <span style="opacity:.9">Loved by road-trippers • Great reviews</span></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+              <span class="chip">Fast attach</span><span class="chip">Waterproof floor</span><span class="chip">Storm-ready</span>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <!-- Photo + chart -->
+      <section class="center grid">
+        <figure>
+          <img src="./tarp-shelter-ideas.png" alt="A-frame tarp pitched low with a trekking pole and bivy inside" loading="lazy" decoding="async">
+          <figcaption>Low A-frame: pitch the windward edge tight to ground, keep the opening leeward, and add a center pole for headroom.</figcaption>
+        </figure>
+
+        <figure style="text-align:center">
+          <img src="tarpchart.jpg" alt="Grit Gear HQ tarp shelter setup styles chart" loading="lazy" decoding="async" style="border-radius:12px;border:1px solid #2b3641">
+          <figcaption>One tarp, endless options — A-frames, lean-tos, and storm rigs built for grit. Image © <a href="https://gritgearhq.com" target="_blank" rel="noopener">GritGearHQ.com</a></figcaption>
+        </figure>
+      </section>
+
+      <!-- Debris shelter paragraph with floated image -->
+      <div class="center">
+        <p style="margin-top:0">
+          <img src="./1000_F_278772494_gciOlBKMiVVfC7Nuf4B4lJpXuRW9z3JV.jpg"
+               alt="Bushcraft debris shelter beside a small campfire" loading="lazy" decoding="async"
+               class="float-right"
+               style="border-radius:12px;border:1px solid #1e2530;background:#0b0d11;box-shadow:0 8px 22px rgba(0,0,0,.25);">
+          A debris shelter wins when you’re short on time and energy: keep the opening small, face it away from prevailing wind, and lay down a serious bed of insulation so the ground doesn’t siphon off your heat. Add a small, well-managed fire out front and you’ve got a warm, low-effort camp that disappears at first light. For maximum heat retention, line the inside walls and ceiling with a mylar emergency blanket so heat radiates back to you instead of vanishing into the night.
+        </p>
+        <div style="clear:both"></div>
       </div>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-        <span style="font-weight:800;color:#eafff6;background:#0e1a15;border:1px solid #1f3a2a;border-radius:8px;padding:6px 10px">
-          Great for shelters • first aid • ground cloths
-        </span>
-        <span style="margin-left:auto;color:#cbe5d9;font-weight:800;white-space:nowrap">See Today’s Price →</span>
-      </div>
-    </div>
-  </div>
-  <div style="max-width:900px;margin:0 auto;border:1px solid #1e2530;border-top:none;border-radius:0 0 14px 14px;background:#0b0d11;text-align:center;font-weight:800;padding:10px 14px">
-    Shop the Deal →
-  </div>
-</a>
+      <!-- Collab CTA -->
+      <a href="https://collabs.shop/apa2pp" target="_blank" rel="sponsored noopener noreferrer" class="banner center blocklink" style="text-align:center">
+        <div class="row" style="justify-content:space-between;flex-wrap:wrap">
+          <strong style="font-size:1.05rem">Grit Gear HQ × Collab</strong>
+          <span style="display:inline-flex;align-items:center;gap:.5rem;padding:.55rem .9rem;border-radius:10px;border:1px solid #2b3641;background:linear-gradient(180deg,#1a8a56,#10633c);font-weight:800;">Shop Now →</span>
+        </div>
+        <div class="note" style="margin:6px 14px 10px">Exclusive picks & rotating deals.</div>
+      </a>
+    </section>
 
-<!-- ===== Debris-shelter paragraph with floated image (clears on small screens) ===== -->
-<div style="max-width:900px;margin:18px auto;padding:0 12px">
-  <p style="margin-top:0">
-    <img
-      src="./1000_F_278772494_gciOlBKMiVVfC7Nuf4B4lJpXuRW9z3JV.jpg"
-      alt="Bushcraft debris shelter lit with string lights beside a small campfire"
-      loading="lazy" decoding="async"
-      style="float:right;width:min(44%,340px);max-width:100%;height:auto;
-             margin:0 0 8px 14px;border-radius:12px;border:1px solid #1e2530;
-             background:#0b0d11;box-shadow:0 8px 22px rgba(0,0,0,.25);" />
-    A debris shelter wins when you’re short on time and energy: keep the opening small, face it away from prevailing wind, and lay down a serious bed of insulation so the ground doesn’t siphon off your heat. Add a small, well-managed fire out front and you’ve got a warm, low-effort camp that disappears at first light. For maximum heat retention, line the inside walls and ceiling with a mylar emergency blanket so heat radiates back to you instead of vanishing into the night.
-  </p>
-  <div style="clear:both"></div>
-</div>
+    <!-- TODO: Fire / Water / Food / etc. sections go here in the same pattern -->
 
-<!-- ===== Collab CTA (full-width cap) ===== -->
-<a href="https://collabs.shop/apa2pp" target="_blank" rel="sponsored noopener noreferrer"
-   style="display:block;max-width:900px;margin:14px auto;padding:14px;border-radius:14px;
-          border:1px solid #2b3641;background:linear-gradient(180deg,#12171f,#0e1319);
-          color:#e7ecef;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.35)">
-  <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap">
-    <strong style="font-size:1.05rem">Grit Gear HQ × Collab</strong>
-    <span style="display:inline-flex;align-items:center;gap:.5rem;padding:.55rem .9rem;border-radius:10px;
-                 border:1px solid #2b3641;background:linear-gradient(180deg,#1a8a56,#10633c);font-weight:800;">
-      Shop Now →
-    </span>
+    <footer>
+      <a class="toplink" href="#top" aria-label="Back to top">↑ Back to top</a>
+    </footer>
   </div>
-  <div style="margin-top:6px;color:#aab3be;font-size:.95rem">Exclusive picks & rotating deals.</div>
-</a>
+</main>
+
+</body>
+</html>
