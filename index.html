@@ -1,220 +1,91 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <!-- Google Ads -->
+<!-- Header -->
+<header>
+    <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
-  <meta charset="utf-8">
-  <title>Grit Gear HQ — Field-Tested Gear, Real Talk, Better Prep</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Field-tested survival gear picks, honest reviews, and exclusive deals. No fluff. Just what works.">
-  <meta name="theme-color" content="#0d0f12">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Grit Gear HQ — Field-Tested Gear, Real Talk, Better Prep">
-  <meta property="og:description" content="Field-tested survival gear picks, honest reviews, and exclusive deals.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://gritgearhq.com/">
-  <meta property="og:image" content="https://gritgearhq.com/assets/og-gghq.jpg">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://gritgearhq.com/">
-
-  <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.png" sizes="32x32">
-
-  <style>
-    :root{
-      --bg:#0b0d11; --panel:#12151a; --panel-2:#171a20; --ink:#e7edf5; --muted:#a8b0bb; --line:#252a33;
-      --accent:#4bd37b; --accent-2:#2fb0ff; --warn:#ffd35a; --rad:14px; --shadow:0 10px 28px rgba(0,0,0,.35);
-      --space: clamp(16px, 2vw, 28px); --max:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;background:radial-gradient(1200px 800px at 80% -10%, #12151a 0%, #0b0d11 55%) no-repeat #0b0d11;
-      color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    }
-    a{color:var(--accent); text-decoration:none} a:hover{color:var(--accent-2)}
-    img{max-width:100%; display:block}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--space)}
-    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1rem; border-radius:999px; border:1px solid var(--line);
-         background:linear-gradient(180deg,#161a20,#11141a); color:var(--ink); cursor:pointer; transition:transform .15s, box-shadow .15s, border-color .2s;}
-    .btn:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.4); border-color:#2a303b}
-    .btn.primary{background:linear-gradient(180deg,#1a8a56,#10633c); border-color:#0e5a37}
-    .btn.ghost{background:transparent}
-    .eyebrow{letter-spacing:.06em; text-transform:uppercase; font-size:.75rem; color:var(--muted)}
-    .title{font-size:clamp(1.4rem, 2vw, 1.7rem); margin:.25rem 0 .5rem}
-    .grid{display:grid; gap:18px}
-    @media (min-width:800px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)} }
-
-    /* Header */
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px);
-      background:rgba(13,15,18,.6); border-bottom:1px solid rgba(37,42,51,.9)}
-    .brand{display:flex; align-items:center; gap:.7rem; padding:.8rem 0}
-    .brand .logo{width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
-      background:conic-gradient(from 180deg, #1f252e, #13171d 60%, #1f252e);
-      border:1px solid #29303a; box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
-      font-weight:700; letter-spacing:.02em;}
-    nav ul{display:flex; gap:.8rem; list-style:none; margin:0; padding:0}
-    nav a{display:inline-block; padding:.55rem .8rem; border-radius:8px}
-    nav a.active, nav a:hover{background:#12161c}
-
-    /* Top “big picture + text” section */
-    .gghq-hero{
-      position:relative; border:1px solid #2a3038; border-radius:14px; overflow:hidden;
-      min-height:clamp(360px,55vw,620px);
-      color:#e7edf5; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      /* REAL FILE — it’s at the site root */
-      background:#0b0f14 url("SHOPIFY_HOME_PAGE_SLIDER_SurvivorCord_1_2000x.webp") center/cover no-repeat;
-      margin: clamp(28px, 6vw, 64px) var(--space) 0;
-    }
-    .gghq-hero::before{content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg,rgba(8,10,13,.50),rgba(8,10,13,.35) 45%,rgba(8,10,13,.72))}
-    .gghq-hero .wrap{max-width:1100px;margin:0 auto;padding:0}
-    .gghq-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;margin-top:8px;backdrop-filter:saturate(1.1) blur(6px)}
-    .gghq-brand{display:flex;align-items:center;gap:.6rem}
-    .gghq-logo{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:conic-gradient(from 180deg,#1f252e,#13171d 60%,#1f252e);border:1px solid #29303a;font-weight:700}
-    .gghq-nav a{padding:.45rem .65rem;border-radius:8px;border:1px solid transparent;color:inherit}
-    .gghq-nav a:hover{background:rgba(18,22,28,.45);border-color:rgba(255,255,255,.06)}
-    .gghq-center{position:relative;z-index:2;display:grid;gap:10px;padding:clamp(42px,10vw,96px) 0 0}
-    .gghq-eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:#a8b0bb}
-    .gghq-title{font-size:clamp(1.9rem,4.6vw,2.8rem);margin:.1rem 0 .25rem}
-    .gghq-sub{color:#a8b0bb;max-width:62ch}
-    .gghq-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:.3rem}
-    .gghq-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:999px;border:1px solid #2a3038;background:linear-gradient(180deg,#161a20,#11141a);color:#e7edf5;text-decoration:none;transition:.15s}
-    .gghq-btn.primary{background:linear-gradient(180deg,#1a8a56,#10633c);border-color:#0e5a37}
-    .gghq-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
-    .gghq-foot{position:absolute;left:0;right:0;bottom:0;z-index:2;background:linear-gradient(180deg,transparent,rgba(10,12,15,.78) 46%,rgba(10,12,15,.9));border-top:1px solid rgba(255,255,255,.06);padding:12px 0 14px}
-    .gghq-row{display:flex;gap:12px;align-items:center}
-    .gghq-badges{display:flex;gap:10px;flex-wrap:wrap}
-    .gghq-badge{font-size:.75rem;padding:.25rem .6rem;border:1px solid #2a3038;border-radius:999px;color:#a8b0bb;background:#0f1217}
-    .gghq-note{color:#a8b0bb;font-size:.9rem;margin-left:auto}
-
-    /* Section headers */
-    .section-head{display:flex; justify-content:space-between; align-items:flex-end; margin:28px 0 12px}
-    .section-head h2{margin:0; font-size: clamp(1.2rem, 1.8vw, 1.4rem)}
-    .section-sub{color:var(--muted); font-size:.9rem}
-
-    /* Cards */
-    .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--rad); overflow:hidden; display:flex; flex-direction:column; min-height:100%;
-      transition:transform .18s, box-shadow .18s, border-color .18s}
-    .card:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:#2b313b}
-    .card .media{border-bottom:1px solid var(--line); background:#0b0f14; display:flex; align-items:center; justify-content:center; height:210px; padding:12px}
-    .card .body{padding:14px}
-    .card .meta{display:flex; gap:10px; align-items:center; justify-content:space-between; color:var(--muted); font-size:.9rem; margin:.6rem 0 0}
-    .stars{letter-spacing:.08em}
-    .price{font-weight:700}
-    .chipline{display:flex; gap:8px; flex-wrap:wrap; margin:.4rem 0 .2rem}
-    .chip{border:1px solid var(--line); color:var(--muted); font-size:.75rem; padding:.15rem .5rem; border-radius:999px}
-    .cta{margin-top:auto; padding:0 14px 14px}
-    .cta a.btn{width:100%; justify-content:center}
-
-    /* Featured Deal banner */
-    .feature{position:relative; overflow:hidden; border-radius:var(--rad); border:1px solid var(--line);
-      background:linear-gradient(90deg,#12161c,#101419); display:grid; grid-template-columns: 1fr .9fr}
-    @media (max-width:900px){ .feature{grid-template-columns:1fr} }
-    .feature .copy{padding:18px}
-    .ribbon{position:absolute; top:12px; right:-36px; rotate:12deg; background:linear-gradient(180deg,#ffd35a,#f0b040); color:#1a1200;
-      font-weight:800; padding:.35rem 2.2rem; border-radius:8px; border:1px solid rgba(0,0,0,.2); box-shadow:0 6px 18px rgba(0,0,0,.25)}
-
-    /* Newsletter */
-    .newsletter{display:grid; gap:14px; grid-template-columns:1.2fr 1fr; align-items:center;
-      border:1px solid var(--line); border-radius:var(--rad); background:linear-gradient(180deg,#12161b,#0e1116); padding:16px}
-    @media (max-width:900px){ .newsletter{grid-template-columns:1fr} }
-    .newsletter form{display:flex; gap:8px; flex-wrap:wrap}
-    input[type="email"]{flex:1 1 260px; padding:.75rem .9rem; border-radius:10px; border:1px solid #2a2f38; background:#0b0f14; color:var(--ink)}
-    .disclosure{color:var(--muted); font-size:.82rem; margin-top:8px}
-
-    footer{margin:34px 0 60px}
-    .footer-grid{display:grid; gap:20px}
-    @media (min-width:800px){ .footer-grid{grid-template-columns:1.5fr 1fr 1fr} }
-    .small{font-size:.9rem; color:var(--muted)}
-    .legal a{color:var(--muted)}
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
-      <a class="brand" href="./">
-        <span class="logo">GG</span>
-        <div>
-          <strong>Grit Gear HQ</strong><div class="small">Rough gear for rougher times</div>
-        </div>
-      </a>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a class="active" href="./">Home</a></li>
-         <li>
-  <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="noopener sponsored">
-    Gear Store — 10% Off with code <strong>GRITGEARHQ</strong>
-  </a>
-</li>
-          <li><a href="/gritgearhq-site/blog-index.html">Blog</a></li>
-     <li>
-  <a href="https://rebelquotes1.github.io/gritgearhq-site/survival-tips.html">
-    Survival Tips
-  </a>
-</li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Top section with big image + text -->
-  <section class="gghq-hero" aria-label="SurvivorCord bundles on a workbench">
-    <div class="wrap gghq-top">
-      <div class="gghq-brand">
-        <span class="gghq-logo">GG</span>
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
+    <a class="brand" href="./" style="display:flex;gap:.6rem;align-items:center;text-decoration:none;color:inherit">
+      <span class="logo">GG</span>
+      <div>
         <strong>Grit Gear HQ</strong>
+        <div class="small">Rough gear for rougher times</div>
       </div>
-      <nav class="gghq-nav" aria-label="Top navigation">
-        <a href="store.html">Store</a>
-        <a href="blog/">Blog</a>
-        <a href="tips.html">Tips</a>
-      </nav>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul style="display:flex;gap:1rem;list-style:none;margin:0;padding:0">
+        <li><a class="active" href="./">Home</a></li>
+        <li>
+          <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="noopener sponsored">
+            Gear Store — 10% Off with code <strong>GRITGEARHQ</strong>
+          </a>
+        </li>
+        <li><a href="/gritgearhq-site/blog-index.html">Blog</a></li>
+        <li>
+          <a href="https://rebelquotes1.github.io/gritgearhq-site/survival-tips.html">Survival Tips</a>
+        </li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Top section with big image + text -->
+<section class="gghq-hero" aria-label="SurvivorCord bundles on a workbench">
+  <div class="wrap gghq-top" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+    <div class="gghq-brand" style="display:flex;align-items:center;gap:.6rem">
+      <span class="gghq-logo">GG</span>
+      <strong>Grit Gear HQ</strong>
     </div>
 
- <!-- SurvivorCord® Promo (drop-in, no external CSS) -->
-<a href="https://www.titansurvival.com/?ref=GRITGEARHQ"
-   target="_blank" rel="sponsored noopener"
-   style="display:block;text-decoration:none;color:#e7ecef;background:#0f1217;border:1px solid #1e2530;border-radius:14px;overflow:hidden;">
-  <div style="display:flex;gap:16px;align-items:center;padding:16px;flex-wrap:wrap;">
-    <img src="./survivorcord-dragonscale-survivorcord-titan-survival-159076_400x.webp"
-         alt="TITAN SurvivorCord Dragonscale with exposed inner strands"
-         style="width:120px;height:120px;object-fit:cover;border-radius:12px;display:block;background:#0b0d11;flex:0 0 auto;">
-    <div style="flex:1;min-width:230px">
-      <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9aa4ad;margin-bottom:4px;">TITAN × GGHQ</div>
-      <h2 style="margin:0 0 6px 0;font-size:22px;line-height:1.25;color:#e7ecef;">SurvivorCord® that won’t quit.</h2>
-      <p style="margin:0 0 10px 0;color:#b7c0c7;font-size:14.5px;">
-        Real cordage with fire-starting strands and tough-as-nails sheathing—my go-to for shelter rigs and trail fixes.
-      </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-        <span style="display:inline-block;padding:10px 14px;border-radius:10px;background:#151b22;border:1px solid #2b3641;color:#f1f5f9;font-weight:700;">Shop TITAN Deals →</span>
-        <a href="store.html#shelter" style="display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid #2b3641;color:#e7ecef;text-decoration:none;">See Shelter Picks</a>
-        <span style="margin-left:auto;font-size:12px;color:#a7b1ba;">Use code <strong>GRITGEARHQ</strong> for 10% off</span>
+    <nav class="gghq-nav" aria-label="Top navigation" style="display:flex;gap:1rem">
+      <a href="store.html">Store</a>
+      <a href="blog/">Blog</a>
+      <a href="tips.html">Tips</a>
+    </nav>
+  </div>
+
+  <!-- SurvivorCord® Promo (drop-in, no external CSS) -->
+  <a href="https://www.titansurvival.com/?ref=GRITGEARHQ"
+     target="_blank" rel="sponsored noopener"
+     style="display:block;text-decoration:none;color:#e7ecef;background:#0f1217;border:1px solid #1e2530;border-radius:14px;overflow:hidden;">
+    <div style="display:flex;gap:16px;align-items:center;padding:16px;flex-wrap:wrap;">
+      <img src="./survivorcord-dragonscale-survivorcord-titan-survival-159076_400x.webp"
+           alt="TITAN SurvivorCord Dragonscale with exposed inner strands"
+           style="width:120px;height:120px;object-fit:cover;border-radius:12px;display:block;background:#0b0d11;flex:0 0 auto;">
+      <div style="flex:1;min-width:230px">
+        <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9aa4ad;margin-bottom:4px;">TITAN × GGHQ</div>
+        <h2 style="margin:0 0 6px 0;font-size:22px;line-height:1.25;color:#e7ecef;">SurvivorCord® that won’t quit.</h2>
+        <p style="margin:0 0 10px 0;color:#b7c0c7;font-size:14.5px;">
+          Real cordage with fire-starting strands and tough-as-nails sheathing—my go-to for shelter rigs and trail fixes.
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <span style="display:inline-block;padding:10px 14px;border-radius:10px;background:#151b22;border:1px solid #2b3641;color:#f1f5f9;font-weight:700;">Shop TITAN Deals →</span>
+          <a href="store.html#shelter" style="display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid #2b3641;color:#e7ecef;text-decoration:none;">See Shelter Picks</a>
+          <span style="margin-left:auto;font-size:12px;color:#a7b1ba;">Use code <strong>GRITGEARHQ</strong> for 10% off</span>
+        </div>
       </div>
+    </div>
+  </a>
+
+  <div class="gghq-foot" style="margin-top:12px">
+    <div class="wrap gghq-row" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+      <div class="gghq-badges" style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <span class="gghq-badge">Affiliate Supported</span>
+        <span class="gghq-badge">Field-Reviewed</span>
+        <span class="gghq-badge">Mobile-Ready</span>
+      </div>
+      <div class="gghq-note">Use code <strong>GRITGEARHQ</strong> at TITAN • JBL via eBay Brand Outlet</div>
     </div>
   </div>
-</a>
+</section>
 
-    <div class="gghq-foot">
-      <div class="wrap gghq-row">
-        <div class="gghq-badges">
-          <span class="gghq-badge">Affiliate Supported</span>
-          <span class="gghq-badge">Field-Reviewed</span>
-          <span class="gghq-badge">Mobile-Ready</span>
-        </div>
-        <div class="gghq-note">Use code <strong>GRITGEARHQ</strong> at TITAN • JBL via eBay Brand Outlet</div>
-      </div>
-    </div>
-  </section>
-<a href="/campfire-drop-biscuits-lodge-dutch-oven.html#campfire-drop-biscuits" style="display:block;text-decoration:none;border:1px solid #1e2530;border-radius:14px;padding:14px;background:#101319;color:#e7ecef;">
+<!-- Feature article card -->
+<a href="/campfire-drop-biscuits-lodge-dutch-oven.html#campfire-drop-biscuits"
+   style="display:block;text-decoration:none;border:1px solid #1e2530;border-radius:14px;padding:14px;background:#101319;color:#e7ecef;">
   <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
-    <img src="./biz1.jpeg" alt="Dutch oven over glowing coals" style="width:140px;height:90px;object-fit:cover;border-radius:10px;display:block;">
+    <img src="./biz1.jpeg" alt="Dutch oven over glowing coals"
+         style="width:140px;height:90px;object-fit:cover;border-radius:10px;display:block;">
     <div style="flex:1;min-width:220px;">
       <div style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#93a1aa;margin-bottom:4px;">Field Test</div>
       <div style="font-size:20px;line-height:1.25;margin:0 0 6px 0;">Campfire Drop Biscuits (Lodge Dutch Oven)</div>
@@ -223,171 +94,184 @@
     <span style="display:inline-block;padding:10px 14px;border:1px solid #2b3641;border-radius:10px;background:#151b22;color:#f1f5f9;font-weight:600;white-space:nowrap;">Read the Recipe →</span>
   </div>
 </a>
-</div>
 
-    <article class="card">
-      <figure class="media">
-        <img
-          src="tarp.jpg"
-          alt="Heavy-duty camping tarp rigged between trees for shelter"
-          loading="lazy" decoding="async">
-      </figure>
-      <div class="body">
-        <div class="eyebrow">Shelter</div>
-        <h3 class="title">Tarps, Cordage & Real Stakes</h3>
-        <p class="small">TITAN cordage and tarps that don’t quit. Save with code <strong>GRITGEARHQ</strong>.</p>
-        <div class="chipline">
-          <span class="chip">SurvivorCord®</span>
-          <span class="chip">Shock Cord</span>
-          <span class="chip">Cold-Rated</span>
-        </div>
+<!-- Product card (wrapped in its own section) -->
+<section class="wrap" style="margin-top:18px;">
+  <article class="card" style="border:1px solid #1e2530;border-radius:14px;overflow:hidden;background:#101319;display:grid;grid-template-columns:minmax(220px,420px) 1fr auto;">
+    <figure class="media" style="margin:0;border-right:1px solid #1e2530">
+      <img src="tarp.jpg" alt="Heavy-duty camping tarp rigged between trees for shelter" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </figure>
+
+    <div class="body" style="padding:14px">
+      <div class="eyebrow" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#93a1aa;margin-bottom:6px;">Shelter</div>
+      <h3 class="title" style="margin:0 0 6px 0;">Tarps, Cordage & Real Stakes</h3>
+      <p class="small" style="margin:0 0 10px 0;color:#b7c0c7;">
+        TITAN cordage and tarps that don’t quit. Save with code <strong>GRITGEARHQ</strong>.
+      </p>
+      <div class="chipline" style="display:flex;gap:.4rem;flex-wrap:wrap">
+        <span class="chip" style="border:1px solid #2b3641;border-radius:999px;padding:.25rem .6rem;">SurvivorCord®</span>
+        <span class="chip" style="border:1px solid #2b3641;border-radius:999px;padding:.25rem .6rem;">Shock Cord</span>
+        <span class="chip" style="border:1px solid #2b3641;border-radius:999px;padding:.25rem .6rem;">Cold-Rated</span>
       </div>
-      <div class="cta">
-        <a class="btn"
-           href="https://collabs.shop/apa2pp"
-           target="_blank"
-           rel="sponsored noopener noreferrer"
-           aria-label="Shop TITAN tarps and cordage via affiliate link">
-           TITAN Deals
-        </a>
-      </div>
-    </article>
-  </section>
-<p>Save <strong>10% off</strong> at TITAN Survival with code <strong>GRITGEARHQ</strong> at checkout: 
+    </div>
+
+    <div class="cta" style="display:flex;align-items:center;padding:14px;border-left:1px solid #1e2530">
+      <a class="btn"
+         href="https://collabs.shop/apa2pp"
+         target="_blank"
+         rel="sponsored noopener noreferrer"
+         aria-label="Shop TITAN tarps and cordage via affiliate link"
+         style="display:inline-block;padding:10px 14px;border-radius:10px;background:#151b22;border:1px solid #2b3641;color:#f1f5f9;font-weight:700;text-decoration:none;">
+        TITAN Deals
+      </a>
+    </div>
+  </article>
+</section>
+
+<p class="wrap" style="margin:18px auto 0;max-width:1000px;">
+  Save <strong>10% off</strong> at TITAN Survival with code <strong>GRITGEARHQ</strong> at checkout:
   <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="noopener sponsored">Shop TITAN × GGHQ</a>
 </p>
 
-
-  <!-- Newsletter & Disclosure -->
-  <section class="wrap" style="margin-top:30px">
-    <div class="newsletter">
-      <div>
-        <div class="eyebrow">Join the GGHQ Crew</div>
-        <h3 class="title" style="margin:4px 0 8px">Deals, tips & one solid pick — once a week.</h3>
-        <p class="small">No spam. Just quick hits and the best price I can find that day.</p>
-      </div>
-      <form action="https://YOUR_EMAIL_PROVIDER_ENDPOINT" method="post">
-        <input type="email" name="email" placeholder="you@proton.me" required>
-        <button class="btn primary" type="submit">Get Updates</button>
-      </form>
-      <div class="disclosure">
-        <strong>Affiliate Disclosure:</strong> I use affiliate links (Amazon, eBay Partner Network, TITAN Survival, etc.). If you buy through them, I may earn a commission at no extra cost to you. I only recommend gear I’d hand to family.
-      </div>
+<!-- Newsletter & Disclosure -->
+<section class="wrap" style="margin-top:30px">
+  <div class="newsletter" style="border:1px solid #1e2530;border-radius:14px;padding:16px;background:#101319">
+    <div>
+      <div class="eyebrow" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#93a1aa">Join the GGHQ Crew</div>
+      <h3 class="title" style="margin:4px 0 8px">Deals, tips & one solid pick — once a week.</h3>
+      <p class="small" style="margin:0 0 12px 0;color:#b7c0c7">No spam. Just quick hits and the best price I can find that day.</p>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="eyebrow">Grit Gear HQ</div>
-        <p class="small">Field-tested picks, honest write-ups, and deals that actually help. Built in Arkansas by the GGHQ family.</p>
-        <p class="small">Tip jar / contact: <a href="mailto:hello@gritgearhq.com">hello@gritgearhq.com</a></p>
-      </div>
-      <div>
-        <div class="eyebrow">Quick Links</div>
-        <ul class="small" style="list-style:none; padding:0; margin:.3rem 0 0; display:grid; gap:.3rem;">
-          <li><a href="store.html">Store</a></li>
-          <li><a href="blog/">Blog</a></li>
-          <li><a href="tips.html">Survival Tips</a></li>
-          <li><a href="titan-survival-collab.html">TITAN × GGHQ</a></li>
-        </ul>
-      </div>
-      <div class="legal">
-        <div class="eyebrow">Legal</div>
-        <ul class="small" style="list-style:none; padding:0; margin:.3rem 0 0; display:grid; gap:.3rem;">
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-          <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
-        </ul>
-        <p class="small" style="margin-top:.7rem;">© <span id="yr"></span> Serpico • All rights reserved.</p>
-      </div>
+    <form action="https://YOUR_EMAIL_PROVIDER_ENDPOINT" method="post" style="display:flex;gap:.6rem;flex-wrap:wrap">
+      <input type="email" name="email" placeholder="you@proton.me" required
+             style="flex:1;min-width:220px;padding:.7rem .9rem;border-radius:10px;border:1px solid #2b3641;background:#0f1217;color:#e7ecef">
+      <button class="btn primary" type="submit"
+              style="padding:.7rem 1rem;border-radius:10px;border:1px solid #2b3641;background:#1a8a56;color:#f1f5f9;font-weight:800">
+        Get Updates
+      </button>
+    </form>
+
+    <div class="disclosure" style="margin-top:10px;color:#aab3be;font-size:.9rem">
+      <strong>Affiliate Disclosure:</strong> I use affiliate links (Amazon, eBay Partner Network, TITAN Survival, etc.). If you buy through them, I may earn a commission at no extra cost to you. I only recommend gear I’d hand to family.
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Deal Rotator + Image Fallback -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const deals = [
-        {
-          eyebrow: 'Collab • Paracord',
-          title: 'TITAN SurvivorCord® (550 + Kevlar + Fishing Line)',
-          bullets: ['All-in-one cordage for shelter, fire & fixes.', 'Use code GRITGEARHQ to save at checkout.'],
-          price: '$19.98+',
-          link: 'https://www.titansurvival.com/?ref=GRITGEARHQ',
-          img: 'assets/feature-survivorcord.jpg',
-          tag:'Save with GRITGEARHQ'
-        },
-        {
-          eyebrow: 'Brand Outlet • Audio',
-          title: 'JBL Flip 6 Bluetooth Speaker (Refurb/Outlet)',
-          bullets: ['Camp-tough, water resistant, legit volume.', 'Brand Outlet pricing via eBay partner.'],
-          price: '$69–$89',
-          link: 'https://www.ebay.com/str/brandoutlet/jbl?_trkparms=campid%3D5339123670',
-          img: 'assets/feature-jbl.jpg',
-          tag:'Deal of the Day'
-        },
-        {
-          eyebrow: 'Everyday Carry • Fire',
-          title: 'Permanent Match Keychain Lighters (5-Pack)',
-          bullets: ['Refillable ferro striker. Great loaners for group kits.', 'Pocketable & reliable ignition.'],
-          price: '$6.99',
-          link: 'https://www.ebay.com/itm/384886016959?campid=5339123670',
-          img: 'assets/feature-match.jpg',
-          tag:'Steal'
-        }
-      ];
-      const slot = document.querySelector('#feature-slot');
-      function render(deal){
-        slot.innerHTML = `
-          <div class="feature">
-            <div class="copy">
-              <div class="eyebrow">${deal.eyebrow}</div>
-              <h2 class="title">${deal.title}</h2>
-              <ul>${deal.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
-              <div class="badges">
-                <span class="badge">Exclusive</span>
-                <span class="badge">Field-tested</span>
-                <span class="badge">Fast shipping</span>
-              </div>
-              <p class="section-sub" style="margin:.8rem 0 1rem;"><strong class="price">${deal.price}</strong></p>
-              <a class="btn primary" href="${deal.link}" target="_blank" rel="sponsored noopener noreferrer">Get the Deal</a>
+<!-- Footer -->
+<footer class="wrap" style="margin-top:30px">
+  <div class="footer-grid" style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-top:1px solid #1e2530;padding-top:16px">
+    <div>
+      <div class="eyebrow" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#93a1aa">Grit Gear HQ</div>
+      <p class="small" style="margin:.3rem 0;color:#b7c0c7">Field-tested picks, honest write-ups, and deals that actually help. Built in Arkansas by the GGHQ family.</p>
+      <p class="small" style="margin:.3rem 0;">Tip jar / contact: <a href="mailto:hello@gritgearhq.com">hello@gritgearhq.com</a></p>
+    </div>
+
+    <div>
+      <div class="eyebrow" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#93a1aa">Quick Links</div>
+      <ul class="small" style="list-style:none;padding:0;margin:.3rem 0 0;display:grid;gap:.3rem;">
+        <li><a href="store.html">Store</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="tips.html">Survival Tips</a></li>
+        <li><a href="titan-survival-collab.html">TITAN × GGHQ</a></li>
+      </ul>
+    </div>
+
+    <div class="legal">
+      <div class="eyebrow" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#93a1aa">Legal</div>
+      <ul class="small" style="list-style:none;padding:0;margin:.3rem 0 0;display:grid;gap:.3rem;">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+      </ul>
+      <p class="small" style="margin-top:.7rem;">© <span id="yr"></span> Serpico • All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Deal Rotator + Image Fallback -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const deals = [
+      {
+        eyebrow:'Collab • Paracord',
+        title:'TITAN SurvivorCord® (550 + Kevlar + Fishing Line)',
+        bullets:['All-in-one cordage for shelter, fire & fixes.','Use code GRITGEARHQ to save at checkout.'],
+        price:'$19.98+',
+        link:'https://www.titansurvival.com/?ref=GRITGEARHQ',
+        img:'assets/feature-survivorcord.jpg',
+        tag:'Save with GRITGEARHQ'
+      },
+      {
+        eyebrow:'Brand Outlet • Audio',
+        title:'JBL Flip 6 Bluetooth Speaker (Refurb/Outlet)',
+        bullets:['Camp-tough, water resistant, legit volume.','Brand Outlet pricing via eBay partner.'],
+        price:'$69–$89',
+        link:'https://www.ebay.com/str/brandoutlet/jbl?_trkparms=campid%3D5339123670',
+        img:'assets/feature-jbl.jpg',
+        tag:'Deal of the Day'
+      },
+      {
+        eyebrow:'Everyday Carry • Fire',
+        title:'Permanent Match Keychain Lighters (5-Pack)',
+        bullets:['Refillable ferro striker. Great loaners for group kits.','Pocketable & reliable ignition.'],
+        price:'$6.99',
+        link:'https://www.ebay.com/itm/384886016959?campid=5339123670',
+        img:'assets/feature-match.jpg',
+        tag:'Steal'
+      }
+    ];
+
+    const slot = document.querySelector('#feature-slot');
+    function render(deal){
+      if(!slot) return;
+      slot.innerHTML = `
+        <div class="feature">
+          <div class="copy">
+            <div class="eyebrow">${deal.eyebrow}</div>
+            <h2 class="title">${deal.title}</h2>
+            <ul>${deal.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+            <div class="badges">
+              <span class="badge">Exclusive</span>
+              <span class="badge">Field-tested</span>
+              <span class="badge">Fast shipping</span>
             </div>
-            <figure class="shot" style="border-left:1px solid var(--line);padding:0">
-              <img src="${deal.img}" alt="${deal.title}" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover">
-            </figure>
-            <span class="ribbon">${deal.tag}</span>
-          </div>`;
-      }
-      let i = 0; render(deals[i]);
-      setInterval(()=>{ i = (i+1) % deals.length; render(deals[i]); }, 9000);
+            <p class="section-sub" style="margin:.8rem 0 1rem;"><strong class="price">${deal.price}</strong></p>
+            <a class="btn primary" href="${deal.link}" target="_blank" rel="sponsored noopener noreferrer">Get the Deal</a>
+          </div>
+          <figure class="shot" style="border-left:1px solid var(--line);padding:0">
+            <img src="${deal.img}" alt="${deal.title}" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover">
+          </figure>
+          <span class="ribbon">${deal.tag}</span>
+        </div>`;
+    }
+    let i = 0; if(slot){ render(deals[i]); setInterval(()=>{ i=(i+1)%deals.length; render(deals[i]); }, 9000); }
 
-      // Image fallback so nothing looks broken
-      function placeholderSVG(text){
-        const t = encodeURIComponent(text || 'Grit Gear HQ');
-        return 'data:image/svg+xml;utf8,' + 
-          `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-            <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stop-color="#12161c"/><stop offset="100%" stop-color="#0e1116"/></linearGradient></defs>
-            <rect width="1200" height="800" fill="url(#g)"/>
-            <rect x="40" y="40" width="1120" height="720" rx="20" fill="none" stroke="#2a3038" stroke-width="4"/>
-            <text x="50%" y="50%" text-anchor="middle" fill="#a8b0bb" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="38">${t}</text>
-            <text x="50%" y="58%" text-anchor="middle" fill="#4bd37b" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="20">image placeholder</text>
-          </svg>`;
-      }
-      document.querySelectorAll('img').forEach(img => {
-        const alt = img.getAttribute('alt') || 'Grit Gear HQ';
-        img.addEventListener('error', function onErr(){
-          img.removeEventListener('error', onErr);
-          img.src = placeholderSVG(alt);
-          img.decoding = 'async'; img.loading = 'lazy';
-          img.style.objectFit = img.style.objectFit || 'cover';
-          img.style.background = img.style.background || '#0b0f14';
-        });
+    // Image fallback so nothing looks broken
+    function placeholderSVG(text){
+      const t = encodeURIComponent(text || 'Grit Gear HQ');
+      return 'data:image/svg+xml;utf8,' +
+        `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+           <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+             <stop offset="0%" stop-color="#12161c"/><stop offset="100%" stop-color="#0e1116"/></linearGradient></defs>
+           <rect width="1200" height="800" fill="url(#g)"/>
+           <rect x="40" y="40" width="1120" height="720" rx="20" fill="none" stroke="#2a3038" stroke-width="4"/>
+           <text x="50%" y="50%" text-anchor="middle" fill="#a8b0bb" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="38">${t}</text>
+           <text x="50%" y="58%" text-anchor="middle" fill="#4bd37b" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="20">image placeholder</text>
+         </svg>`;
+    }
+    document.querySelectorAll('img').forEach(img => {
+      const alt = img.getAttribute('alt') || 'Grit Gear HQ';
+      img.addEventListener('error', function onErr(){
+        img.removeEventListener('error', onErr);
+        img.src = placeholderSVG(alt);
+        img.decoding = 'async';
+        img.loading = 'lazy';
+        img.style.objectFit = img.style.objectFit || 'cover';
+        img.style.background = img.style.background || '#0b0f14';
       });
     });
-  </script>
+  });
 
-  <script>document.getElementById('yr').textContent = new Date().getFullYear()</script>
-</body>
-</html>
+  // Footer year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
