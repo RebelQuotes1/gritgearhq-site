@@ -23,6 +23,8 @@
     }
     *{box-sizing:border-box}
     html:focus-within{scroll-behavior:smooth}
+    /* keep anchors from tucking under sticky bits */
+    html{scroll-padding-top:16px}
     body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.7 system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
@@ -49,10 +51,20 @@
     }
 
     .sidebar{
-      position:sticky;top:16px;
+      /* mobile/tablet: NOT sticky so it can scroll away */
+      position:static;
       border:1px solid var(--line);border-radius:var(--rad);
       background:linear-gradient(180deg,#12161c,#0c0f14);
       padding:14px;
+    }
+    @media(min-width:980px){
+      .sidebar{
+        position:sticky; top:16px;
+        /* never trap the page: give it its own scroll */
+        max-height:calc(100vh - 32px);
+        overflow:auto;
+        overscroll-behavior:contain;
+      }
     }
     .sidebar h2{
       font-size:14px;margin:0 0 10px;color:var(--sub);letter-spacing:.12em;text-transform:uppercase
@@ -64,7 +76,7 @@
     }
 
     /* ===== Content ===== */
-    .section{padding:8px 0 2px;margin-top:28px;border-top:1px solid var(--line)}
+    .section{padding:8px 0 2px;margin-top:28px;border-top:1px solid var(--line);scroll-margin-top:18px}
     h2{font-size:30px;margin:16px 0 10px}
     h3{font-size:22px;margin:12px 0 8px}
     .tip{border:1px dashed #33404d;border-radius:10px;background:#0b0f15;padding:12px;margin:10px 0}
