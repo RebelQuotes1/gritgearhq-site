@@ -1,1 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camp Fuel Coffee — Grit Gear HQ</title>
+  <meta name="description" content="Camp Fuel Coffee by Grit Gear HQ: bold, campfire-finish coffee for rough mornings and real work.">
+  <meta name="theme-color" content="#0b0d11">
+  <style>
+    :root{
+      --bg:#0b0d11;
+      --panel:#10141a;
+      --panel2:#0f1217;
+      --txt:#e5e7eb;
+      --muted:#9aa4b2;
+      --line:#222831;
+      --brand:#8aa05a; /* olive trailhead */
+      --accent:#c7d2fe;
+      --rad:16px;
+      --wrap:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--txt);
+      background: var(--bg) url(assets/bg-grain.png) center/cover fixed;
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--wrap); margin:0 auto; padding:0 20px}
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter:saturate(140%) blur(6px);
+      background:linear-gradient(180deg, rgba(13,15,18,.9), rgba(13,15,18,.6));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .brand{display:flex; gap:.8rem; align-items:center; text-decoration:none}
+    .brand strong{font-weight:800; letter-spacing:.02em}
+    .tag{font-size:.8rem; color:var(--muted)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+      background:linear-gradient(180deg, #1b222b, #12161c);
+      border:1px solid var(--line);
+      color:var(--txt);
+      padding:12px 16px; border-radius:12px; text-decoration:none; font-weight:700;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.03);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.brand{background:linear-gradient(180deg, #90a66a, #738752); border-color:#5a6a3e; color:#0b0d11}
+    .hero{
+      position:relative; overflow:hidden; border-bottom:1px solid var(--line);
+      background: url(assets/hero-bg.svg) center/cover no-repeat;
+    }
+    .hero .wrap{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; padding:48px 20px 32px}
+    @media (max-width:900px){ .hero .wrap{grid-template-columns:1fr} }
+    .hero h1{font-size: clamp(34px, 7vw, 56px); line-height:1.05; margin:.2em 0 .4em; letter-spacing:.01em}
+    .hero p{color:var(--muted); font-size: clamp(16px, 2.2vw, 18px)}
+    .card{
+      background:linear-gradient(180deg, var(--panel), var(--panel2));
+      border:1px solid var(--line); border-radius:var(--rad);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    .bag{
+      display:flex; align-items:center; justify-content:center; padding:18px;
+    }
+    .bag img{width:100%; max-width:380px; height:auto; display:block; filter: drop-shadow(0 10px 40px rgba(0,0,0,.55));}
+    .pills{display:flex; gap:.5rem; flex-wrap:wrap; margin:16px 0 22px}
+    .pill{padding:6px 10px; border:1px solid var(--line); border-radius:999px; color:var(--muted); background:#0f1319}
+    .grid{display:grid; grid-template-columns: repeat(3,1fr); gap:16px}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+    .panel{padding:18px}
+    h2{font-size: clamp(20px, 4vw, 28px); margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .feature{display:flex; gap:14px; align-items:flex-start; padding:12px 0}
+    .feature .dot{width:10px; height:10px; background:var(--brand); border-radius:999px; margin-top:.5rem}
+    .reviews{display:grid; grid-template-columns: repeat(3,1fr); gap:14px}
+    @media (max-width:900px){ .reviews{grid-template-columns:1fr} }
+    blockquote{margin:0; padding:14px; border:1px solid var(--line); border-radius:12px; background:#0e1318}
+    footer{border-top:1px solid var(--line); margin-top:40px; padding:24px 0; color:var(--muted); font-size:.95rem}
+    .small{font-size:.9rem; color:var(--muted)}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 6px}
+    .kicker{color:#cbd5e1; letter-spacing:.15em; font-size:.8rem; text-transform:uppercase}
+    .form{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .form input[type="email"]{background:#0e1318; color:var(--txt); border:1px solid var(--line); padding:12px 12px; border-radius:10px; min-width:260px}
+    .form button{all:unset}
+    .form .submit{cursor:pointer}
+    .faq details{border:1px solid var(--line); border-radius:12px; padding:12px 14px; background:#0e1318}
+    .faq details+details{margin-top:10px}
+    .faq summary{cursor:pointer; font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <img src="assets/logo.svg" alt="Camp Fuel Coffee" width="180" height="40" loading="eager" decoding="async">
+        <div>
+          <strong>Camp Fuel Coffee</strong>
+          <div class="tag">For rough mornings & real work</div>
+        </div>
+      </a>
+      <nav>
+        <a class="btn" href="#buy">Buy</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="panel">
+          <span class="kicker">New • Small-Batch</span>
+          <h1>Bold, campfire-finish coffee that actually wakes you up.</h1>
+          <p>Camp Fuel by Grit Gear HQ. Built for early alarms, cold mornings, and heads-down grind. Dark roast, clean finish, zero nonsense.</p>
+          <div class="pills">
+            <span class="pill">Dark Roast</span>
+            <span class="pill">Whole Bean or Ground</span>
+            <span class="pill">12oz & 2lb Bags</span>
+            <span class="pill">Ships Fresh</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn brand" href="#buy">Get Camp Fuel</a>
+            <a class="btn" href="#about">Why Camp Fuel?</a>
+          </div>
+          <div class="small">No hype. Just a strong cup that hits like a cold river to the face.</div>
+        </div>
+        <div class="card bag">
+          <img src="assets/bag.svg" alt="Camp Fuel Coffee bag illustration" width="380" height="480" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="buy" class="wrap" style="padding:28px 0">
+      <div class="grid">
+        <article class="card panel">
+          <h2>12oz — Dark Roast</h2>
+          <p class="muted">Whole Bean or Ground. Smoky, bold, with a clean campfire finish.</p>
+          <div class="cta-row">
+            <a class="btn brand" href="#" aria-label="Buy 12oz Dark Roast">Buy Now</a>
+            <a class="btn" href="#notify">Notify Me</a>
+          </div>
+          <div class="small">Secure checkout. Ships fresh.</div>
+        </article>
+        <article class="card panel">
+          <h2>2lb — Dark Roast</h2>
+          <p class="muted">Bulk bag for daily grinders, crews, and early shift life.</p>
+          <div class="cta-row">
+            <a class="btn brand" href="#" aria-label="Buy 2lb Dark Roast">Buy Now</a>
+            <a class="btn" href="#notify">Notify Me</a>
+          </div>
+          <div class="small">Best value • Fresh roasted</div>
+        </article>
+        <article class="card panel">
+          <h2>Sampler — 3×4oz</h2>
+          <p class="muted">Try Camp Fuel + Trail Mix Medium + Night Watch Decaf.</p>
+          <div class="cta-row">
+            <a class="btn brand" href="#" aria-label="Buy Sampler">Buy Now</a>
+            <a class="btn" href="#notify">Notify Me</a>
+          </div>
+          <div class="small">Perfect gift • Limited runs</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="wrap" style="padding:6px 0 22px">
+      <div class="grid">
+        <article class="card panel">
+          <h2>Why it hits harder</h2>
+          <div class="feature"><span class="dot"></span><div><strong>Roasted fresh</strong><div class="muted">Shipped days off roast so you get the aroma and the punch.</div></div></div>
+          <div class="feature"><span class="dot"></span><div><strong>Built for work, not selfies</strong><div class="muted">Flavor-forward, no burnt rubber aftertaste, no sugar bombs.</div></div></div>
+          <div class="feature"><span class="dot"></span><div><strong>Campfire finish</strong><div class="muted">A clean, smoky finish that feels like dawn at the fire ring.</div></div></div>
+        </article>
+
+        <article class="card panel">
+          <h2>How we’ll sell it</h2>
+          <p class="muted">Until checkout is live, hit <em>Notify Me</em>. We’ll email you the second stock drops, plus launch deals.</p>
+          <div id="notify">
+            <form class="form" method="POST" action="mailto:gritgearhq@pm.me" enctype="text/plain">
+              <input type="email" name="email" placeholder="you@proton.me" required>
+              <button class="btn brand submit" type="submit">Notify Me</button>
+            </form>
+            <div class="small">Prefer DM? Message @gritgearhq on TikTok or Instagram.</div>
+          </div>
+        </article>
+
+        <article class="card panel">
+          <h2>Field Notes</h2>
+          <p class="muted">No fake vibes. Just a strong brew that gets your head clear and your hands moving.</p>
+          <blockquote>“For rough mornings and real work.”</blockquote>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" style="padding:0 0 12px">
+      <h2>What folks are saying</h2>
+      <div class="reviews">
+        <blockquote>“Tastes like someone lit a pine knot right as the sun hits the treeline. Perfect.” — <span class="muted">B.R.</span></blockquote>
+        <blockquote>“No jitters, just focus. It does the job without the crash.” — <span class="muted">A.M.</span></blockquote>
+        <blockquote>“Finally, a dark roast that isn’t burnt. Clean burn, clean finish.” — <span class="muted">K.J.</span></blockquote>
+      </div>
+    </section>
+
+    <section class="wrap faq" style="padding:2px 0 30px">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Is this ready to ship?</summary>
+        <div class="muted">We’re finalizing packaging and checkout. Hit <em>Notify Me</em> and you’ll get first dibs + launch pricing.</div>
+      </details>
+      <details>
+        <summary>Whole bean or ground?</summary>
+        <div class="muted">Both. Whole bean for max freshness; medium grind for drip, coarse for press.</div>
+      </details>
+      <details>
+        <summary>Where will I buy it?</summary>
+        <div class="muted">From our site via secure checkout (Stripe/Shopify). Until then, the <em>Buy Now</em> buttons can link to your live store the moment it’s ready.</div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="y"></span> Grit Gear HQ • Camp Fuel Coffee</div>
+      <div class="small">Built simple so it can ship fast and sell fast. No fluff, no bloat.</div>
+    </div>
+  </footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
