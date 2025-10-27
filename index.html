@@ -248,6 +248,90 @@
                  border-radius:10px;padding:10px 12px;cursor:pointer">
     Get Launch Email
   </button>
+<!-- Camp Fuel Launch Signup Form -->
+<form id="launch-form"
+      action="https://formspree.io/f/xldogyda"
+      method="POST"
+      style="display:flex;flex-direction:column;gap:12px;max-width:480px;margin-top:12px">
+
+  <!-- Name -->
+  <label for="name" style="color:var(--sub);font-size:.9rem">Your Name</label>
+  <input id="name" name="name" type="text" required
+         placeholder="John Doe"
+         style="padding:10px 12px;border-radius:10px;
+                border:1px solid var(--line);background:#0f1217;color:var(--ink)">
+
+  <!-- Project -->
+  <label for="project" style="color:var(--sub);font-size:.9rem">Project Name</label>
+  <input id="project" name="project" type="text"
+         placeholder="Camp Fuel Coffee Launch"
+         style="padding:10px 12px;border-radius:10px;
+                border:1px solid var(--line);background:#0f1217;color:var(--ink)">
+
+  <!-- Email -->
+  <label for="launch-email" style="color:var(--sub);font-size:.9rem">Email Address</label>
+  <input id="launch-email" name="email" type="email" required
+         placeholder="you@domain.com"
+         style="padding:10px 12px;border-radius:10px;
+                border:1px solid var(--line);background:#0f1217;color:var(--ink)">
+
+  <!-- Honeypot (spam trap) -->
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+         style="position:absolute;left:-9999px;height:1px;width:1px;opacity:0">
+
+  <!-- Hidden metadata -->
+  <input type="hidden" name="list" value="camp-fuel-launch">
+  <input type="hidden" name="source" value="coffee-coming-soon">
+
+  <!-- Submit Button -->
+  <button id="launch-submit" type="submit" class="btn"
+          style="display:inline-block;border:1px solid var(--line);
+                 background:#0f1217;color:#f1f5f9;font-weight:800;
+                 border-radius:10px;padding:10px 12px;cursor:pointer">
+    Get Launch Email
+  </button>
+
+  <!-- Status Message -->
+  <span id="launch-status" role="status" aria-live="polite"
+        style="color:var(--sub);font-size:.9rem;"></span>
+</form>
+
+<script>
+  (function(){
+    const form   = document.getElementById('launch-form');
+    const submit = document.getElementById('launch-submit');
+    const status = document.getElementById('launch-status');
+
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+      status.textContent = '';
+
+      try{
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept':'application/json' },
+          body: new FormData(form)
+        });
+
+        if(resp.ok){
+          form.reset();
+          submit.textContent = 'Added!';
+          status.textContent = 'You’re on the launch list.';
+        }else{
+          submit.textContent = 'Try Again';
+          status.textContent = 'Could not subscribe right now.';
+        }
+      }catch(err){
+        submit.textContent = 'Try Again';
+        status.textContent = 'Network issue. Please retry.';
+      }finally{
+        setTimeout(()=>{ submit.disabled = false; submit.textContent = 'Get Launch Email'; }, 2500);
+      }
+    });
+  })();
+</script>
 
   <!-- Status messages -->
   <span id="launch-status" role="status" aria-live="polite"
