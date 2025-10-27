@@ -217,16 +217,89 @@
           <a href="#cert-mold" class="gghq-badge" style="text-decoration:none">View Certification</a>
         </div>
       </details>
-      
-        <a href="#notify" class="btn" style="
-            display:inline-block;border:1px solid var(--line);
-            background:#0f1217;color:#f1f5f9;font-weight:800;border-radius:10px;padding:10px 12px;text-decoration:none">
-          Get Launch Email
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- Launch email capture -->
+<form id="launch-form"
+      action="https://formspree.io/f/XXXXYYYY"  <!-- REPLACE with your Formspree form ID -->
+      method="POST"
+      style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px">
+
+  <!-- Accessible label (visually hidden) -->
+  <label for="launch-email" style="
+    position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+    Email address
+  </label>
+
+  <input id="launch-email" name="email" type="email" required
+         placeholder="you@domain.com"
+         style="flex:1;min-width:220px;padding:10px 12px;border-radius:10px;
+                border:1px solid var(--line);background:#0f1217;color:var(--ink)">
+
+  <!-- Honeypot (spam trap) -->
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+         style="position:absolute;left:-9999px;height:1px;width:1px;opacity:0">
+
+  <!-- Optional metadata -->
+  <input type="hidden" name="list" value="camp-fuel-launch">
+  <input type="hidden" name="source" value="coffee-coming-soon">
+
+  <button id="launch-submit" type="submit" class="btn"
+          style="display:inline-block;border:1px solid var(--line);
+                 background:#0f1217;color:#f1f5f9;font-weight:800;
+                 border-radius:10px;padding:10px 12px;cursor:pointer">
+    Get Launch Email
+  </button>
+
+  <!-- Status messages -->
+  <span id="launch-status" role="status" aria-live="polite"
+        style="color:var(--sub);font-size:.9rem;"></span>
+</form>
+
+<script>
+  (function(){
+    const form   = document.getElementById('launch-form');
+    const email  = document.getElementById('launch-email');
+    const submit = document.getElementById('launch-submit');
+    const status = document.getElementById('launch-status');
+
+    form.addEventListener('submit', async (e)=>{
+      // If JS is disabled, Formspree handles it server-side.
+      e.preventDefault();
+
+      if(!email.checkValidity()){
+        status.textContent = 'Enter a valid email.';
+        email.focus();
+        return;
+      }
+
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+      status.textContent = '';
+
+      try{
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept':'application/json' },
+          body: new FormData(form)
+        });
+
+        if(resp.ok){
+          form.reset();
+          submit.textContent = 'Added!';
+          status.textContent = 'You’re on the launch list.';
+        }else{
+          submit.textContent = 'Try Again';
+          status.textContent = 'Could not subscribe right now.';
+        }
+      }catch(err){
+        submit.textContent = 'Try Again';
+        status.textContent = 'Network issue. Please retry.';
+      }finally{
+        setTimeout(()=>{ submit.disabled = false; submit.textContent = 'Get Launch Email'; }, 2400);
+      }
+    });
+  })();
+</script>
+
 
 <!-- =========================
      GRIT GEAR HQ — SHOP TABS
