@@ -106,6 +106,7 @@
     </div>
   </div>
 </section>
+
 <!-- COMING SOON — Camp Fuel Coffee (PNG Single Origin) -->
 <section id="coffee-coming-soon" class="wrap" aria-labelledby="mt-siyeh-title" style="margin-top:18px">
   <div class="cs-card" style="
@@ -204,108 +205,78 @@
         </div>
       </details>
 
-      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
-        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Certifications &amp; Compliance</summary>
-        <ul style="margin:6px 0 0 22px;color:#cbd5e1">
-          <li><strong>Certified Mycotoxin Free</strong> — third-party lab verified.</li>
-          <li><strong>Certified Heavy Metal Free</strong> — free of Lead, Mercury, Cadmium, and Arsenic.</li>
-          <li><strong>Certified Mold &amp; Yeast Free</strong> — independently tested.</li>
-        </ul>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 12px 12px">
-          <a href="#cert-mycotoxin" class="gghq-badge" style="text-decoration:none">View Certification</a>
-          <a href="#cert-heavy" class="gghq-badge" style="text-decoration:none">View Certification</a>
-          <a href="#cert-mold" class="gghq-badge" style="text-decoration:none">View Certification</a>
-        </div>
-      </details>
-      <!-- Launch email capture -->
-<form id="launch-form"
-      action="https://formspree.io/f/XXXXYYYY"  <!-- REPLACE with your Formspree form ID -->
-      method="POST"
-      style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px">
+      <!-- Launch email capture (fixed; single form) -->
+      <form id="launch-form"
+            action="https://formspree.io/f/xldogyda"
+            method="POST"
+            style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px">
 
-  <!-- Accessible label (visually hidden) -->
-  <label for="launch-email" style="
-    position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-    Email address
-  </label>
+        <label for="name" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Name</label>
+        <input id="name" name="name" type="text" required placeholder="Your name"
+               style="flex:1;min-width:160px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0f1217;color:var(--ink)">
 
-  <input id="launch-email" name="email" type="email" required
-         placeholder="you@domain.com"
-         style="flex:1;min-width:220px;padding:10px 12px;border-radius:10px;
-                border:1px solid var(--line);background:#0f1217;color:var(--ink)">
+        <label for="project" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Project</label>
+        <input id="project" name="project" type="text" placeholder="Project (optional)"
+               style="flex:1;min-width:180px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0f1217;color:var(--ink)">
 
-  <!-- Honeypot (spam trap) -->
-  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
-         style="position:absolute;left:-9999px;height:1px;width:1px;opacity:0">
+        <label for="launch-email" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Email</label>
+        <input id="launch-email" name="email" type="email" required placeholder="you@domain.com"
+               style="flex:1;min-width:220px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0f1217;color:var(--ink)">
 
-  <!-- Optional metadata -->
-  <input type="hidden" name="list" value="camp-fuel-launch">
-  <input type="hidden" name="source" value="coffee-coming-soon">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+               style="position:absolute;left:-9999px;height:1px;width:1px;opacity:0">
 
-  <button id="launch-submit" type="submit" class="btn"
-          style="display:inline-block;border:1px solid var(--line);
-                 background:#0f1217;color:#f1f5f9;font-weight:800;
-                 border-radius:10px;padding:10px 12px;cursor:pointer">
-    Get Launch Email
-  </button>
-<!-- Camp Fuel Launch Signup Form -->
-<form id="launch-form"
-      action="https://formspree.io/f/xldogyda"
-@@ -333,347 +83,195 @@
-  })();
-</script>
+        <input type="hidden" name="list" value="camp-fuel-launch">
+        <input type="hidden" name="source" value="coffee-coming-soon">
 
-  <!-- Status messages -->
-  <span id="launch-status" role="status" aria-live="polite"
-        style="color:var(--sub);font-size:.9rem;"></span>
-</form>
+        <button id="launch-submit" type="submit" class="btn"
+                style="display:inline-block;border:1px solid var(--line);background:#0f1217;color:#f1f5f9;font-weight:800;border-radius:10px;padding:10px 12px;cursor:pointer">
+          Get Launch Email
+        </button>
 
-<script>
-  (function(){
-    const form   = document.getElementById('launch-form');
-    const email  = document.getElementById('launch-email');
-    const submit = document.getElementById('launch-submit');
-    const status = document.getElementById('launch-status');
+        <span id="launch-status" role="status" aria-live="polite"
+              style="color:var(--sub);font-size:.9rem;"></span>
+      </form>
 
-    form.addEventListener('submit', async (e)=>{
-      // If JS is disabled, Formspree handles it server-side.
-      e.preventDefault();
+      <script>
+        (function(){
+          const form   = document.getElementById('launch-form');
+          const submit = document.getElementById('launch-submit');
+          const status = document.getElementById('launch-status');
 
-      if(!email.checkValidity()){
-        status.textContent = 'Enter a valid email.';
-        email.focus();
-        return;
-      }
+          form.addEventListener('submit', async (e)=>{
+            e.preventDefault();
+            submit.disabled = true;
+            submit.textContent = 'Sending…';
+            status.textContent = '';
 
-      submit.disabled = true;
-      submit.textContent = 'Sending…';
-      status.textContent = '';
+            try{
+              const resp = await fetch(form.action, {
+                method: 'POST',
+                headers: { 'Accept':'application/json' },
+                body: new FormData(form)
+              });
 
-      try{
-        const resp = await fetch(form.action, {
-          method: 'POST',
-          headers: { 'Accept':'application/json' },
-          body: new FormData(form)
-        });
-
-        if(resp.ok){
-          form.reset();
-          submit.textContent = 'Added!';
-          status.textContent = 'You’re on the launch list.';
-        }else{
-          submit.textContent = 'Try Again';
-          status.textContent = 'Could not subscribe right now.';
-        }
-      }catch(err){
-        submit.textContent = 'Try Again';
-        status.textContent = 'Network issue. Please retry.';
-      }finally{
-        setTimeout(()=>{ submit.disabled = false; submit.textContent = 'Get Launch Email'; }, 2400);
-      }
-    });
-  })();
-</script>
-
+              if(resp.ok){
+                form.reset();
+                submit.textContent = 'Added!';
+                status.textContent = 'You’re on the launch list.';
+              }else{
+                submit.textContent = 'Try Again';
+                status.textContent = 'Could not subscribe right now.';
+              }
+            }catch{
+              submit.textContent = 'Try Again';
+              status.textContent = 'Network issue. Please retry.';
+            }finally{
+              setTimeout(()=>{ submit.disabled = false; submit.textContent = 'Get Launch Email'; }, 2400);
+            }
+          });
+        })();
+      </script>
+    </div>
+  </div>
+</section>
 
 <!-- =========================
      GRIT GEAR HQ — SHOP TABS
@@ -599,3 +570,4 @@
       });
     });
   })();
+</script>
