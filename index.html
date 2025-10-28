@@ -1,47 +1,261 @@
-<!-- Camp Fuel Launch Signup Form -->
+<!-- QUICK THEME GUARD: bring back dark palette -->
+<style>
+  :root{
+    --ink:#e7ecef; --sub:#b7c0c7; --accent:#f8aa36;
+    --bg:#0b0d11; --panel:#101319; --line:#1e2530;
+  }
+  html,body{margin:0;background:var(--bg);color:var(--ink);}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1000px;margin:0 auto;padding:22px 18px}
+  .gghq-hero{
+    background:radial-gradient(1200px 400px at 50% -100px,#141a22 20%,var(--bg) 70%);
+    padding-bottom:12px;
+  }
+  /* tiny bits used by header */
+  .logo,.gghq-logo{
+    display:inline-grid;place-items:center;
+    width:34px;height:34px;border-radius:50%;
+    border:1px solid var(--line);background:#0f1217;color:#cbd5e1;font-weight:800;
+  }
+  .gghq-badge{
+    display:inline-block;padding:.35rem .6rem;border:1px solid var(--line);
+    border-radius:999px;background:#101319;color:#b7c0c7;font-size:.8rem
+  }
+</style>
+
+<!-- Header -->
+<header>
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
+    <a class="brand" href="./" style="display:flex;gap:.6rem;align-items:center;text-decoration:none;color:inherit">
+      <span class="logo">GG</span>
+      <div>
+        <strong>Grit Gear HQ</strong>
+        <div class="small" style="color:var(--sub)">Rough gear for rougher times</div>
+      </div>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul style="display:flex;gap:1rem;list-style:none;margin:0;padding:0">
+        <li><a class="active" href="./">Home</a></li>
+        <li>
+          <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="noopener sponsored">
+            Gear Store — 10% Off with code <strong>GRITGEARHQ</strong>
+          </a>
+        </li>
+        <li><a href="/gritgearhq-site/blog-index.html">Blog</a></li>
+        <li><a href="https://rebelquotes1.github.io/gritgearhq-site/survival-tips.html">Survival Tips</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Top section with big image + text -->
+<section class="gghq-hero" aria-label="SurvivorCord bundles on a workbench">
+  <div class="wrap gghq-top" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+    <div class="gghq-brand" style="display:flex;align-items:center;gap:.6rem">
+      <span class="gghq-logo">GG</span>
+      <strong>Grit Gear HQ</strong>
+    </div>
+    <nav class="gghq-nav" aria-label="Top navigation" style="display:flex;gap:1rem">
+      <a href="store.html">Store</a>
+      <a href="blog/">Blog</a>
+      <a href="tips.html">Tips</a>
+    </nav>
+  </div>
+
+  <!-- SurvivorCord® Promo -->
+  <a
+    href="https://www.titansurvival.com/?ref=GRITGEARHQ"
+    target="_blank" rel="sponsored noopener"
+    style="display:block;text-decoration:none;color:#e7ecef;background:#0f1217;border:1px solid var(--line);border-radius:14px;overflow:hidden;"
+  >
+    <div style="display:flex;gap:16px;align-items:center;padding:16px;flex-wrap:wrap;">
+      <img
+        src="./survivorcord-dragonscale-survivorcord-titan-survival-159076_400x.webp"
+        alt="TITAN SurvivorCord Dragonscale with exposed inner strands"
+        style="width:120px;height:120px;object-fit:cover;border-radius:12px;display:block;background:#0b0d11;flex:0 0 auto;"
+      >
+      <div style="flex:1;min-width:230px">
+        <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9aa4ad;margin-bottom:4px;">TITAN × GGHQ</div>
+        <h2 style="margin:0 0 6px 0;font-size:22px;line-height:1.25;color:#e7ecef;">SurvivorCord® that won’t quit.</h2>
+        <p style="margin:0 0 10px 0;color:#b7c0c7;font-size:14.5px;">
+          Real cordage with fire-starting strands and tough-as-nails sheathing—my go-to for shelter rigs and trail fixes.
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <span style="display:inline-block;padding:10px 14px;border-radius:10px;background:#151b22;border:1px solid var(--line);color:#f1f5f9;font-weight:700;">Shop TITAN Deals →</span>
+          <a href="store.html#shelter" style="display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--line);color:#e7ecef;text-decoration:none;">See Shelter Picks</a>
+          <span style="margin-left:auto;font-size:12px;color:#a7b1ba;">Use code <strong>GRITGEARHQ</strong> for 10% off</span>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <div class="gghq-foot" style="margin-top:12px">
+    <div class="wrap gghq-row" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+      <div class="gghq-badges" style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <span class="gghq-badge">Affiliate Supported</span>
+        <span class="gghq-badge">Field-Reviewed</span>
+        <span class="gghq-badge">Mobile-Ready</span>
+      </div>
+      <div class="gghq-note" style="color:var(--sub)">Use code <strong>GRITGEARHQ</strong> at TITAN • JBL via eBay Brand Outlet</div>
+    </div>
+  </div>
+</section>
+<!-- COMING SOON — Camp Fuel Coffee (PNG Single Origin) -->
+<section id="coffee-coming-soon" class="wrap" aria-labelledby="mt-siyeh-title" style="margin-top:18px">
+  <div class="cs-card" style="
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap:0;
+  ">
+    <!-- Left: Hero / Summary -->
+    <div class="cs-hero" style="padding:18px;border-right:1px solid var(--line);background:
+      radial-gradient(900px 300px at 50% -120px,#141a22 10%,var(--panel) 70%)">
+      <div class="cs-badge" style="display:inline-flex;gap:.5rem;align-items:center;
+           padding:.35rem .7rem;border:1px solid var(--line);border-radius:999px;
+           background:#101319;color:#9aa4ad;font-size:.85rem;letter-spacing:.06em">
+        <span>MT SIYEH — PNG Single Origin</span>
+      </div>
+
+      <h3 id="mt-siyeh-title" style="margin:10px 0 6px;font:800 26px/1.2 system-ui;color:var(--ink)">
+        Camp&nbsp;Fuel Coffee — Instant
+      </h3>
+
+      <p class="cs-sub" style="margin:0 0 10px;color:var(--sub)">
+        Experience the rich yet delicate flavors of carefully crafted coffee in an instant. This Papua New Guinea single origin delivers a perfect brew that tastes just as intended—smooth, aromatic, and satisfying with every cup.
+      </p>
+
+      <div class="cs-meta" style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0">
+        <span class="gghq-badge">Medium</span>
+        <span class="gghq-badge">Ratings: N/A</span>
+        <span class="gghq-badge">623 recent products created with this blend</span>
+      </div>
+
+      <div class="cs-cta" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px">
+        <a href="#notify" class="btn" style="
+            display:inline-block;border:1px solid var(--line);
+            background:linear-gradient(180deg,#212a33,#151b22);
+            color:#f1f5f9;font-weight:800;border-radius:10px;padding:10px 12px;text-decoration:none">
+          Notify Me at Launch
+        </a>
+        <span style="margin-left:auto;color:#9aa4ad;font-size:.9rem">Instant coffee that doesn't taste like canned ass.</span>
+      </div>
+
+      <!-- Coming Soon strip -->
+      <div style="margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px;
+                  display:flex;align-items:center;gap:10px;background:#0f1217">
+        <span style="display:inline-block;padding:6px 10px;border:1px solid var(--line);
+                     border-radius:999px;background:#151b22;color:#f8aa36;font-weight:800">
+          COMING SOON
+        </span>
+        <span style="color:var(--sub)">Freeze-dried PNG • Smooth • Aromatic • Satisfying</span>
+      </div>
+
+      <!-- Optional hero image (ad) -->
+      <figure style="margin:14px 0 0">
+        <img src="camp_fuel_coming_soon_gghq.png" alt="Camp Fuel Coffee by Grit Gear HQ — Coming Soon"
+             style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)">
+      </figure>
+    </div>
+
+    <!-- Right: Details -->
+    <div class="cs-details" style="padding:18px">
+      <details open style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
+        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Product Details</summary>
+        <div style="padding:0 12px 12px;color:#cbd5e1">
+          A smooth instant coffee with notes of toasted almond and berry-like acidity, complemented by sweet toffee undertones. The freeze-drying process preserves the distinctive Papua New Guinea character, delivering a satisfying cup that maintains the quality and complexity of the original beans.
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
+        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Tasting Profile — Medium</summary>
+        <div style="padding:0 12px 12px;color:#cbd5e1">
+          Toasted almond • Berry-like acidity • Sweet toffee • Smooth body
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
+        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Origin &amp; Region — Papua New Guinea</summary>
+        <div style="padding:0 12px 12px;color:#cbd5e1">
+          Single origin coffee from high-altitude growing regions with traditional farming and volcanic soils. The region’s unique terroir and careful processing produce distinctive flavors that translate beautifully into instant coffee.
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
+        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Altitude &amp; Processing — 1,400–1,800 MASL</summary>
+        <div style="padding:0 12px 12px;color:#cbd5e1">
+          Washed processing enhances the clean, bright flavors characteristic of high-altitude PNG coffees. Beans are fermented and washed to remove mucilage completely, resulting in a crisp cup profile that keeps its character through freeze-drying.
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
+        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Blend Composition — Typica, Bourbon, Arusha</summary>
+        <div style="padding:0 12px 12px;color:#cbd5e1">
+          Typica brings clean structure and sweetness; Bourbon adds depth and chocolate; Arusha contributes bright acidity and complexity—together creating a classic PNG profile that shines in instant form.
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
+        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Certifications &amp; Compliance</summary>
+        <ul style="margin:6px 0 0 22px;color:#cbd5e1">
+          <li><strong>Certified Mycotoxin Free</strong> — third-party lab verified.</li>
+          <li><strong>Certified Heavy Metal Free</strong> — free of Lead, Mercury, Cadmium, and Arsenic.</li>
+          <li><strong>Certified Mold &amp; Yeast Free</strong> — independently tested.</li>
+        </ul>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 12px 12px">
+          <a href="#cert-mycotoxin" class="gghq-badge" style="text-decoration:none">View Certification</a>
+          <a href="#cert-heavy" class="gghq-badge" style="text-decoration:none">View Certification</a>
+          <a href="#cert-mold" class="gghq-badge" style="text-decoration:none">View Certification</a>
+        </div>
+      </details>
+      <!-- Launch email capture -->
 <form id="launch-form"
-      action="https://formspree.io/f/xldogyda"
+      action="https://formspree.io/f/XXXXYYYY"  <!-- REPLACE with your Formspree form ID -->
       method="POST"
-      style="display:flex;flex-direction:column;gap:12px;max-width:480px;margin-top:12px">
+      style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px">
 
-  <!-- Name -->
-  <label for="name" style="color:var(--sub);font-size:.9rem">Your Name</label>
-  <input id="name" name="name" type="text" required
-         placeholder="John Doe"
-         style="padding:10px 12px;border-radius:10px;
-                border:1px solid var(--line);background:#0f1217;color:var(--ink)">
+  <!-- Accessible label (visually hidden) -->
+  <label for="launch-email" style="
+    position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+    Email address
+  </label>
 
-  <!-- Project -->
-  <label for="project" style="color:var(--sub);font-size:.9rem">Project Name</label>
-  <input id="project" name="project" type="text"
-         placeholder="Camp Fuel Coffee Launch"
-         style="padding:10px 12px;border-radius:10px;
-                border:1px solid var(--line);background:#0f1217;color:var(--ink)">
-
-  <!-- Email -->
-  <label for="launch-email" style="color:var(--sub);font-size:.9rem">Email Address</label>
   <input id="launch-email" name="email" type="email" required
          placeholder="you@domain.com"
-         style="padding:10px 12px;border-radius:10px;
+         style="flex:1;min-width:220px;padding:10px 12px;border-radius:10px;
                 border:1px solid var(--line);background:#0f1217;color:var(--ink)">
 
   <!-- Honeypot (spam trap) -->
   <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
          style="position:absolute;left:-9999px;height:1px;width:1px;opacity:0">
 
-  <!-- Hidden metadata -->
+  <!-- Optional metadata -->
   <input type="hidden" name="list" value="camp-fuel-launch">
   <input type="hidden" name="source" value="coffee-coming-soon">
 
-  <!-- Submit Button -->
   <button id="launch-submit" type="submit" class="btn"
           style="display:inline-block;border:1px solid var(--line);
                  background:#0f1217;color:#f1f5f9;font-weight:800;
                  border-radius:10px;padding:10px 12px;cursor:pointer">
     Get Launch Email
   </button>
+<!-- Camp Fuel Launch Signup Form -->
+<form id="launch-form"
+      action="https://formspree.io/f/xldogyda"
+@@ -333,347 +83,195 @@
+  })();
+</script>
 
-  <!-- Status Message -->
+  <!-- Status messages -->
   <span id="launch-status" role="status" aria-live="polite"
         style="color:var(--sub);font-size:.9rem;"></span>
 </form>
@@ -49,11 +263,20 @@
 <script>
   (function(){
     const form   = document.getElementById('launch-form');
+    const email  = document.getElementById('launch-email');
     const submit = document.getElementById('launch-submit');
     const status = document.getElementById('launch-status');
 
     form.addEventListener('submit', async (e)=>{
+      // If JS is disabled, Formspree handles it server-side.
       e.preventDefault();
+
+      if(!email.checkValidity()){
+        status.textContent = 'Enter a valid email.';
+        email.focus();
+        return;
+      }
+
       submit.disabled = true;
       submit.textContent = 'Sending…';
       status.textContent = '';
@@ -77,11 +300,112 @@
         submit.textContent = 'Try Again';
         status.textContent = 'Network issue. Please retry.';
       }finally{
-        setTimeout(()=>{ submit.disabled = false; submit.textContent = 'Get Launch Email'; }, 2500);
+        setTimeout(()=>{ submit.disabled = false; submit.textContent = 'Get Launch Email'; }, 2400);
       }
     });
   })();
 </script>
+
+
+<!-- =========================
+     GRIT GEAR HQ — SHOP TABS
+     ========================= -->
+<section id="gghq-shop" class="wrap">
+  <header class="shop-head">
+    <h2>Field Shop</h2>
+    <p class="sub">Built for campers, hikers, wanderers — and anyone who still earns their sunrise.</p>
+  </header>
+
+  <!-- Tabs -->
+  <nav class="tabs" role="tablist" aria-label="Shop categories">
+    <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tab-mugs" id="tabbtn-mugs">Mugs</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab-apparel" id="tabbtn-apparel">Apparel</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab-coffee" id="tabbtn-coffee">Camp Coffee</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab-trail" id="tabbtn-trail">Trail Tools</button>
+  </nav>
+
+  <!-- Panels -->
+  <section id="tab-mugs" class="panel is-active" role="tabpanel" aria-labelledby="tabbtn-mugs">
+    <div class="grid">
+      <!-- Woke is Dead Tank -->
+      <article class="card">
+        <figure class="media">
+          <img src="il_794xN.7287011771_7sf3.avif" alt="Kill the noise. The Woke Is Dead tank from Grit Gear HQ is built for those who have had enough.">
+          <span class="badge badge-verified">Verified Grit Gear</span>
+        </figure>
+        <div class="body">
+          <h3>Woke is Dead Tank-top</h3>
+          <p class="pitch">“Kill the noise. The Woke Is Dead tank from Grit Gear HQ is built for those who live raw and unapologetic.</p>
+          <div class="meta">
+            <div class="stars" aria-label="Rated 4.9 out of 5"><span>★★★★★</span><em>4.9 (213)</em></div>
+            <div class="chips"><span class="chip">Fast ship</span><span class="chip">Field-ready</span></div>
+          </div>
+          <div class="reviews">“Looks better in person.” • “Solid print.” • “Instant favorite.”</div>
+          <a class="btn" href="https://gritgearhq.etsy.com" target="_blank" rel="noopener">Grab Yours →</a>
+        </div>
+      </article>
+
+      <!-- Turning Point USA Men’s T-Shirt  -->
+      <article class="card">
+        <figure class="media">
+          <img src="il_794xN.7201928170_kokh.webp" alt="Woke Is Dead enamel mug">
+          <span class="badge badge-verified">Verified Grit Gear</span>
+        </figure>
+        <div class="body">
+          <h3>Turning Point USA Men’s T-Shirt </h3>
+          <p class="pitch">Stand your ground and wear your values. This Grit Gear HQ logo T-shirt combines rugged survival style with unapologetic conservative energy.</p>
+          <div class="meta">
+            <div class="stars" aria-label="Rated 5.0 out of 5"><span>★★★★★</span><em>5.0 (151)</em></div>
+            <div class="chips"><span class="chip">Dishwasher safe</span><span class="chip">Travel-proof</span></div>
+          </div>
+          <div class="reviews">“Conversation starter.” • “Print is sharp.”</div>
+          <a class="btn" href="https://gritgearhq.etsy.com" target="_blank" rel="noopener">Grab Yours →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="tab-apparel" class="panel" role="tabpanel" aria-labelledby="tabbtn-apparel">
+    <div class="grid">
+      <article class="card">
+        <figure class="media">
+          <img src="il_794xN.7262755758_bn9m.jpg" alt="This Is The Turning Point tee — back print">
+          <span class="badge">Top Pick</span>
+        </figure>
+        <div class="body">
+          <h3>Turning Point Tee</h3>
+          <p class="pitch">Soft, durable, and bold. Back-print that actually says something.</p>
+          <div class="meta">
+            <div class="stars" aria-label="Rated 4.9 out of 5"><span>★★★★★</span><em>4.9 (98)</em></div>
+            <div class="chips"><span class="chip">True to size</span><span class="chip">Soft feel</span></div>
+          </div>
+          <div class="reviews">“Fits perfect.” • “Print holds up after washes.”</div>
+          <a class="btn" href="https://gritgearhq.etsy.com" target="_blank" rel="noopener">Grab Yours →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="tab-coffee" class="panel" role="tabpanel" aria-labelledby="tabbtn-coffee">
+    <div class="grid">
+      <article class="card">
+        <figure class="media">
+          <img src="mockup-1 (1).png" alt="Campfire Fuel by Grit Gear HQ — Instant Light Roast">
+          <span class="badge badge-soon">COMING SOON</span>
+        </figure>
+        <div class="body">
+          <h3>Campfire Fuel — Instant Light Roast</h3>
+          <p class="pitch">Slightly sweet, nutty, toasted almond &amp; toffee. Scoop, stir, move.</p>
+          <div class="meta">
+            <div class="stars"><span>★★★★★</span><em>Pre-launch</em></div>
+            <div class="chips"><span class="chip">Single origin PNG</span><span class="chip">Freeze-dried</span></div>
+          </div>
+          <div class="reviews">Get early access + launch pricing when the first batch drops.</div>
+          <button class="btn btn-disabled" disabled>Notify Me at Launch</button>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <!-- TRAIL TOOLS / AFFILIATE — EXACT ORDER & IMAGE/LINK PAIRS -->
   <section id="tab-trail" class="panel" role="tabpanel" aria-labelledby="tabbtn-trail">
@@ -275,4 +599,3 @@
       });
     });
   })();
-</script>
