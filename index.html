@@ -1,349 +1,994 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Grit Gear HQ — Field-Tested Gear, Real Talk, Better Prep</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <title>Grit Gear HQ – Survival Field Guides & Real-World Preparedness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Grit Gear HQ is a survival blog focused on real-world preparedness, gritty mindset, and gear that actually holds up when life goes sideways." />
 
-  <!-- QUICK THEME GUARD: bring back dark palette -->
   <style>
-    :root{
-      --ink:#e7ecef; --sub:#b7c0c7; --accent:#f8aa36;
-      --bg:#0b0d11; --panel:#101319; --line:#1e2530;
-    }
-    html,body{margin:0;background:var(--bg);color:var(--ink);}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1000px;margin:0 auto;padding:22px 18px}
-    .gghq-hero{
-      background:radial-gradient(1200px 400px at 50% -100px,#141a22 20%,var(--bg) 70%);
-      padding-bottom:12px;
-    }
-    /* tiny bits used by header */
-    .logo,.gghq-logo{
-      display:inline-grid;place-items:center;
-      width:34px;height:34px;border-radius:50%;
-      border:1px solid var(--line);background:#0f1217;color:#cbd5e1;font-weight:800;
-    }
-    .gghq-badge{
-      display:inline-block;padding:.35rem .6rem;border:1px solid var(--line);
-      border-radius:999px;background:#101319;color:#b7c0c7;font-size:.8rem
+    :root {
+      --bg: #050608;
+      --bg-alt: #0b0f15;
+      --panel: #121823;
+      --panel-soft: #171f2b;
+      --accent: #f8aa36;
+      --accent-deep: #f1870a;
+      --ink: #e7ecef;
+      --ink-soft: #a3adbd;
+      --line: #272f3b;
+      --shadow: 0 20px 40px rgba(0,0,0,0.75);
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
     }
 
-    /* Shop/Tabs */
-    #gghq-shop .shop-head h2{margin:0 0 6px;font:800 30px/1.1 system-ui}
-    #gghq-shop .shop-head .sub{margin:0 0 16px;color:var(--sub)}
-    #gghq-shop .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
-    #gghq-shop .tab{
-      cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);
-      padding:10px 14px;border-radius:10px;font-weight:800
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(1200px 600px at 50% -200px, #1e2634 0%, #050608 60%) fixed;
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    #gghq-shop .tab.is-active, #gghq-shop .tab:hover{outline:2px solid #263040}
-    #gghq-shop .panel{display:none}
-    #gghq-shop .panel.is-active{display:block}
-    #gghq-shop .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    #gghq-shop .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-    #gghq-shop .media{position:relative;background:#0f1217}
-    #gghq-shop .media img{width:100%;height:220px;object-fit:cover;display:block}
-    #gghq-shop .badge{
-      position:absolute;left:10px;top:10px;background:linear-gradient(180deg,#212a33,#151b22);
-      border:1px solid var(--line);color:#e7ecef;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:800
+
+    body { line-height: 1.6; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
-    #gghq-shop .badge-verified{background:#0e2f25;border-color:#23483d}
-    #gghq-shop .badge-soon{background:#5a4210;border-color:#7a5a1a}
-    #gghq-shop .body{padding:14px}
-    #gghq-shop .pitch{color:#d6cfbf;margin:4px 0 10px}
-    #gghq-shop .meta{display:flex;align-items:center;justify-content:space-between;margin:6px 0 8px}
-    #gghq-shop .stars span{color:#ffe599;letter-spacing:.08em}
-    #gghq-shop .stars em{color:var(--sub);margin-left:6px;font-style:normal}
-    #gghq-shop .chips{display:flex;gap:6px}
-    #gghq-shop .chip{border:1px solid var(--line);border-radius:999px;padding:3px 8px;color:#cbd5e1;font-size:12px}
-    #gghq-shop .reviews{color:#b7c0c7;font-size:13px;margin-bottom:10px}
-    #gghq-shop .btn{
-      display:inline-block;border:1px solid var(--line);background:linear-gradient(180deg,#212a33,#151b22);
-      color:#f1f5f9;font-weight:800;border-radius:10px;padding:10px 12px;text-decoration:none
+
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 18px 18px 48px;
     }
-    #gghq-shop .btn:hover{transform:translateY(-1px)}
-    #gghq-shop .btn-disabled{opacity:.6;cursor:not-allowed}
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5,6,8,0.96),
+        rgba(5,6,8,0.8),
+        transparent
+      );
+      border-bottom: 1px solid rgba(255,255,255,0.02);
+    }
+
+    .nav-bar {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 12px 18px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 10%, #f9e2b4 0%, var(--accent-deep) 35%, #36210d 70%, #050608 100%);
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.8),
+        0 0 24px rgba(248,170,54,0.5);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-text span:first-child {
+      font-weight: 650;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.9rem;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg,var(--accent-deep),var(--accent));
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.83rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.16s ease-out;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background:
+        radial-gradient(circle at 20% 0%, #ffe4b0 0%, var(--accent-deep) 32%, var(--accent) 100%);
+      border-color: rgba(0,0,0,0.85);
+      color: #1b1207;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.8);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+      filter: brightness(1.03);
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      background: rgba(10,12,16,0.8);
+      color: var(--ink-soft);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(23,27,37,0.96);
+      color: var(--ink);
+      border-color: #353f51;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(8,10,14,0.96);
+      color: var(--ink);
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 780px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-open .nav-links,
+      .nav-open .nav-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #06080d;
+        border-radius: 0 0 16px 16px;
+        border: 1px solid var(--line);
+        padding: 10px 14px 12px;
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      .nav-open .nav-links {
+        gap: 10px;
+      }
+
+      .nav-open .nav-cta {
+        margin-top: 4px;
+        gap: 8px;
+      }
+
+      .nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 28px;
+      padding-bottom: 26px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(248,170,54,0.4);
+      background:
+        radial-gradient(circle at 0 0, rgba(248,170,54,0.25), transparent 55%),
+        rgba(7,9,13,0.9);
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      margin-bottom: 12px;
+    }
+
+    .hero-kicker span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #53d06b;
+      box-shadow: 0 0 10px rgba(83,208,107,0.8);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw + 1.2rem, 3rem);
+      line-height: 1.07;
+      margin: 0 0 10px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title span.accent {
+      background: linear-gradient(90deg, #ffe1a5, var(--accent-deep));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      max-width: 36rem;
+      margin-bottom: 14px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge {
+      font-size: 0.78rem;
+      padding: 5px 11px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(9,11,16,0.95);
+      color: var(--ink-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-badge-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 6px;
+      background:
+        radial-gradient(circle at 30% 0%, #ffe2b3 0, var(--accent-deep) 40%, #3b2712 100%);
+      display: grid;
+      place-items: center;
+      font-size: 0.68rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .hero-hint {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    .hero-hint span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* FEATURED POST CARD */
+    .hero-featured {
+      background:
+        radial-gradient(circle at 0 0, rgba(248,170,54,0.22), transparent 65%),
+        radial-gradient(circle at 120% 120%, rgba(103,185,255,0.18), transparent 70%),
+        var(--panel);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ink-soft);
+    }
+
+    .featured-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .featured-meta {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+    }
+
+    .featured-excerpt {
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+    }
+
+    .featured-link {
+      font-size: 0.82rem;
+      margin-top: 4px;
+    }
+
+    .featured-label {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 0.7rem;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(6,8,11,0.92);
+      color: var(--ink-soft);
+    }
+
+    .featured-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 0.76rem;
+      color: var(--ink-soft);
+      flex-wrap: wrap;
+    }
+
+    .featured-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .featured-pill {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(9,12,16,0.9);
+    }
+
+    /* SECTION WRAPPER */
+    .section {
+      margin-top: 36px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      max-width: 28rem;
+    }
+
+    /* CATEGORIES STRIP */
+    .category-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 10px;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .category-strip { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 540px) {
+      .category-strip { grid-template-columns: minmax(0,1fr); }
+    }
+
+    .category-pill {
+      border-radius: var(--radius-pill);
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.04);
+      background: rgba(8,10,15,0.96);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      cursor: pointer;
+      transition: background 0.18s ease-out, transform 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .category-pill:hover {
+      background: rgba(22,26,36,0.98);
+      border-color: rgba(248,170,54,0.45);
+      transform: translateY(-1px);
+    }
+
+    .category-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .category-label span.icon {
+      font-size: 1rem;
+    }
+
+    .category-arrow {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    /* LATEST POSTS GRID */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .blog-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 620px) {
+      .blog-grid { grid-template-columns: minmax(0,1fr); }
+    }
+
+    .blog-card {
+      border-radius: var(--radius-md);
+      background: var(--panel-soft);
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 11px 12px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.82rem;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.7);
+    }
+
+    .blog-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--ink-soft);
+    }
+
+    .blog-title {
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .blog-meta {
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+    }
+
+    .blog-excerpt {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    .blog-link {
+      margin-top: 4px;
+      font-size: 0.78rem;
+    }
+
+    /* SIDEBAR / ABOUT & NEWSLETTER */
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .two-column { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    .about-panel {
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 0 0, rgba(118,217,192,0.16), transparent 60%),
+        rgba(8,11,15,0.96);
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 14px 16px 12px;
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-panel-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .about-highlight {
+      font-size: 0.8rem;
+      color: #f4c474;
+      margin-top: 4px;
+    }
+
+    .newsletter-panel {
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 120% 0, rgba(248,170,54,0.24), transparent 60%),
+        var(--bg-alt);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 14px 16px 12px;
+      font-size: 0.84rem;
+      color: var(--ink-soft);
+    }
+
+    .newsletter-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .email-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .email-form input[type="email"] {
+      flex: 1 1 180px;
+      min-width: 0;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      background: rgba(7,9,13,0.96);
+      color: var(--ink);
+      font-size: 0.84rem;
+      outline: none;
+    }
+
+    .email-form input[type="email"]::placeholder {
+      color: #66707c;
+    }
+
+    .email-form input[type="email"]:focus {
+      border-color: rgba(248,170,54,0.75);
+      box-shadow: 0 0 0 1px rgba(248,170,54,0.35);
+    }
+
+    .newsletter-meta {
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      margin-top: 8px;
+    }
+
+    /* QUOTE PANEL */
+    .quote-panel {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.04);
+      background:
+        radial-gradient(circle at 0 0, rgba(118,217,192,0.18), transparent 60%),
+        rgba(8,11,15,0.96);
+      padding: 14px 16px 12px;
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-panel::before {
+      content: "“";
+      position: absolute;
+      top: -8px;
+      left: 10px;
+      font-size: 4rem;
+      color: rgba(255,255,255,0.04);
+    }
+
+    .quote-attrib {
+      margin-top: 4px;
+      font-size: 0.78rem;
+      color: #f4c474;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      margin-top: 34px;
+      padding-top: 12px;
+      padding-bottom: 14px;
+      font-size: 0.76rem;
+      color: var(--ink-soft);
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 0.76rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <!-- Google Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+    <div class="nav-bar" id="nav">
+      <div class="brand">
+        <div class="brand-mark">GG</div>
+        <div class="brand-text">
+          <span>GRIT GEAR HQ</span>
+          <span>Survival Field Notes & Gear Wisdom</span>
+        </div>
+      </div>
 
-    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
-      <a class="brand" href="./" style="display:flex;gap:.6rem;align-items:center;text-decoration:none;color:inherit">
-        <span class="logo">GG</span>
+      <button class="nav-toggle" aria-label="Toggle navigation"
+              onclick="document.getElementById('nav').classList.toggle('nav-open')">
+        ☰
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="blog-index.html">Field Guides</a>
+        <a href="store.html">Gear Picks</a>
+        <a href="grit-test.html">Grit Test</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="blog-index.html" class="btn btn-ghost">Browse Guides</a>
+        <a href="store.html" class="btn btn-primary">Gear Recommendations</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
         <div>
-          <strong>Grit Gear HQ</strong>
-          <div class="small" style="color:var(--sub)">Rough gear for rougher times</div>
-        </div>
-      </a>
+          <div class="hero-kicker">
+            <span class="dot"></span>
+            <span>Real-world survival • No fluff • No panic bait</span>
+          </div>
 
-      <nav aria-label="Primary">
-        <ul style="display:flex;gap:1rem;list-style:none;margin:0;padding:0">
-          <li><a class="active" href="./">Home</a></li>
-          <li>
-            <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="noopener sponsored">
-              Gear Store — 10% Off with code <strong>GRITGEARHQ</strong>
-            </a>
-          </li>
-          <li><a href="/gritgearhq-site/blog-index.html">Blog</a></li>
-          <li><a href="https://rebelquotes1.github.io/gritgearhq-site/survival-tips.html">Survival Tips</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+          <h1 class="hero-title">
+            Survival isn’t a fantasy.<br />
+            It’s <span class="accent">the way you live right now.</span>
+          </h1>
 
-  <!-- Top section with big image + text -->
-  <section class="gghq-hero" aria-label="SurvivorCord bundles on a workbench">
-    <div class="wrap gghq-top" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
-      <div class="gghq-brand" style="display:flex;align-items:center;gap:.6rem">
-        <span class="gghq-logo">GG</span>
-        <strong>Grit Gear HQ</strong>
-      </div>
-      <nav class="gghq-nav" aria-label="Top navigation" style="display:flex;gap:1rem">
-        <a href="store.html">Store</a>
-        <li><a href="https://rebelquotes1.github.io/gritgearhq-site/blog-index.html">Blog</a></li>
-        <a href="tips.html">Tips</a>
-      </nav>
-    </div>
-
-    <!-- SurvivorCord® Promo -->
-    <a
-      href="https://www.titansurvival.com/?ref=GRITGEARHQ"
-      target="_blank" rel="sponsored noopener"
-      style="display:block;text-decoration:none;color:#e7ecef;background:#0f1217;border:1px solid var(--line);border-radius:14px;overflow:hidden;"
-    >
-      <div style="display:flex;gap:16px;align-items:center;padding:16px;flex-wrap:wrap;">
-        <img
-          src="./survivorcord-dragonscale-survivorcord-titan-survival-159076_400x.webp"
-          alt="TITAN SurvivorCord Dragonscale with exposed inner strands"
-          style="width:120px;height:120px;object-fit:cover;border-radius:12px;display:block;background:#0b0d11;flex:0 0 auto;"
-        >
-        <div style="flex:1;min-width:230px">
-          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9aa4ad;margin-bottom:4px;">TITAN × GGHQ</div>
-          <h2 style="margin:0 0 6px 0;font-size:22px;line-height:1.25;color:#e7ecef;">SurvivorCord® that won’t quit.</h2>
-          <p style="margin:0 0 10px 0;color:#b7c0c7;font-size:14.5px;">
-            Real cordage with fire-starting strands and tough-as-nails sheathing—my go-to for shelter rigs and trail fixes.
+          <p class="hero-sub">
+            Grit Gear HQ is a survival blog for people who actually carry the weight —
+            the ones responsible for keeping their family safe, fed, warm, and calm when
+            the world starts glitching. No cosplay, no bunker porn. Just honest field notes
+            and gear that works.
           </p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-            <span style="display:inline-block;padding:10px 14px;border-radius:10px;background:#151b22;border:1px solid var(--line);color:#f1f5f9;font-weight:700;">Shop TITAN Deals →</span>
-            <a href="store.html#shelter" style="display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--line);color:#e7ecef;text-decoration:none;">See Shelter Picks</a>
-            <span style="margin-left:auto;font-size:12px;color:#a7b1ba;">Use code <strong>GRITGEARHQ</strong> for 10% off</span>
+
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <div class="hero-badge-icon">⛺</div>
+              <span>Cold weather, power loss & real-life emergencies</span>
+            </div>
+            <div class="hero-badge">
+              <div class="hero-badge-icon">🧠</div>
+              <span>Mindset, grit, and staying sharp under pressure</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="blog-index.html" class="btn btn-primary">Start with the Field Guides</a>
+            <a href="grit-test.html" class="btn btn-ghost">Take the Grit Test</a>
+          </div>
+
+          <div class="hero-hint">
+            New posts drop as life happens. <span>No clickbait, no sugarcoating.</span>
           </div>
         </div>
-      </div>
-    </a>
 
-    <div class="gghq-foot" style="margin-top:12px">
-      <div class="wrap gghq-row" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
-        <div class="gghq-badges" style="display:flex;gap:.5rem;flex-wrap:wrap">
-          <span class="gghq-badge">Affiliate Supported</span>
-          <span class="gghq-badge">Field-Reviewed</span>
-          <span class="gghq-badge">Mobile-Ready</span>
+        <!-- FEATURED POST -->
+        <aside class="hero-featured">
+          <div class="featured-label">Featured guide</div>
+          <div class="featured-tag">Cold Weather • Family Safety</div>
+          <h2 class="featured-title">
+            10 Items That Keep Your Family Warm When the Grid Goes Dark
+          </h2>
+          <div class="featured-meta">7-minute read • Field-tested loadout</div>
+          <p class="featured-excerpt">
+            When the power dies in the middle of a hard freeze, you don’t rise to the occasion —
+            you fall to your level of preparation. This guide walks through insulation, backup heat,
+            and the small overlooked items that keep kids calm instead of terrified.
+          </p>
+          <a href="blog-cold-weather-kit.html" class="featured-link">Read the full guide →</a>
+
+          <div class="featured-footer">
+            <div class="featured-tags">
+              <span class="featured-pill">#winter</span>
+              <span class="featured-pill">#power-outage</span>
+              <span class="featured-pill">#family-first</span>
+            </div>
+            <div>Part of the <strong>Everyday Collapse Series</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Choose your battlefield</h2>
+          <p class="section-sub">
+            Survival isn’t one skill — it’s a stack. Pick the area that keeps you up at night
+            and start there.
+          </p>
         </div>
-        <div class="gghq-note" style="color:var(--sub)">Use code <strong>GRITGEARHQ</strong> at TITAN • JBL via eBay Brand Outlet</div>
-      </div>
-    </div>
-  </section>
-
- <!-- RELEASE — Camp Fuel Coffee (PNG Single Origin) -->
-<section id="coffee-release" class="wrap" aria-labelledby="mt-siyeh-title" style="margin-top:18px">
-  <div class="cs-card" style="
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:14px;
-    overflow:hidden;
-    display:grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap:0;
-  ">
-    <!-- Left: Hero / Summary -->
-    <div class="cs-hero" style="padding:18px;border-right:1px solid var(--line);background:
-      radial-gradient(900px 300px at 50% -120px,#141a22 10%,var(--panel) 70%)">
-      <div class="cs-badge" style="display:inline-flex;gap:.5rem;align-items:center;
-           padding:.35rem .7rem;border:1px solid var(--line);border-radius:999px;
-           background:#101319;color:#9aa4ad;font-size:.85rem;letter-spacing:.06em">
-        <span>MT SIYEH — PNG Single Origin</span><span style="width:6px;height:6px;border-radius:999px;background:#16a34a;margin-left:.35rem"></span><span style="color:#cde8d7">In Stock</span>
       </div>
 
-      <h3 id="mt-siyeh-title" style="margin:10px 0 6px;font:800 26px/1.2 system-ui;color:var(--ink)">
-        Camp&nbsp;Fuel Coffee — Instant
-      </h3>
-
-      <p class="cs-sub" style="margin:0 0 10px;color:var(--sub)">
-        Smooth PNG single origin with toasted almond, light berry snap, and sweet toffee notes. Freeze-dried to lock in flavor. Scoop. Stir. Go.
-      </p>
-
-      <div class="cs-meta" style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0">
-        <span class="gghq-badge">Light–Medium</span>
-        <span class="gghq-badge">27 servings / 54g</span>
-        <span class="gghq-badge">Ships in 24–48h</span>
-      </div>
-
-      <div class="cs-cta" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px">
-        <!-- Update this href if you change the product URL -->
-        <a href="https://campfirefuelcoffee.com/products/campfire-fuel-coffee" class="btn" style="
-            display:inline-block;border:1px solid var(--line);
-            background:linear-gradient(180deg,#212a33,#151b22);
-            color:#f1f5f9;font-weight:800;border-radius:10px;padding:10px 12px;text-decoration:none">
-          Buy Campfire Fuel →
+      <div class="category-strip">
+        <a class="category-pill" href="blog-index.html#mindset">
+          <div class="category-label">
+            <span class="icon">🧠</span>
+            <span>Mindset & Grit</span>
+          </div>
+          <span class="category-arrow">→</span>
         </a>
-        <a href="#how-to-brew" style="color:#9aa4ad;font-size:.9rem;text-decoration:none;border-bottom:1px dashed var(--line)">How to brew</a>
-        <span style="margin-left:auto;color:#9aa4ad;font-size:.9rem">Instant coffee that won’t quit.</span>
-      </div>
 
-      <!-- Release strip -->
-      <div style="margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px;
-                  display:flex;align-items:center;gap:10px;background:#0f1217">
-        <span style="display:inline-block;padding:6px 10px;border:1px solid var(--line);
-                     border-radius:999px;background:#151b22;color:#f8aa36;font-weight:800">
-          NOW SHIPPING
-        </span>
-        <span style="color:var(--sub)">PNG • Freeze-dried • Clean finish</span>
-      </div>
-
-      <!-- Hero image (ad) -->
-      <figure style="margin:14px 0 0">
-        <img src="camp_fuel_coming_soon_gghq.png" alt="Camp Fuel Coffee by Grit Gear HQ — Now Shipping"
-             style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)">
-      </figure>
-    </div>
-
-    <!-- Right: Details -->
-    <div class="cs-details" style="padding:18px">
-      <details open style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
-        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Product Details</summary>
-        <div style="padding:0 12px 12px;color:#cbd5e1">
-          A smooth instant built from Papua New Guinea single-origin beans. Freeze-drying preserves the aroma and character—think toasted almond, a hint of berry brightness, and a toffee-sweet finish.
-        </div>
-      </details>
-
-      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
-        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Tasting Profile — Light/Medium</summary>
-        <div style="padding:0 12px 12px;color:#cbd5e1">
-          Toasted almond • Berry-like acidity • Sweet toffee • Clean finish
-        </div>
-      </details>
-
-      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
-        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Origin — Papua New Guinea</summary>
-        <div style="padding:0 12px 12px;color:#cbd5e1">
-          High-altitude lots grown in volcanic soils; washed process for clarity and brightness that carries through to instant.
-        </div>
-      </details>
-
-      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
-        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Varietals</summary>
-        <div style="padding:0 12px 12px;color:#cbd5e1">
-          Typica • Bourbon • Arusha
-        </div>
-      </details>
-
-      <details id="how-to-brew" style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
-        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">How to Brew (Anywhere)</summary>
-        <div style="padding:0 12px 12px;color:#cbd5e1">
-          1 tsp (2 g) per 8 oz hot water • Stir 8–10 sec • Adjust to taste. Cold? Shake with cold water + ice.
-        </div>
-      </details>
-
-      <details style="border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#0f1217">
-        <summary style="cursor:pointer;padding:10px 12px;color:var(--ink);font-weight:800">Quality &amp; Testing</summary>
-        <ul style="margin:6px 0 0 22px;color:#cbd5e1">
-          <li><strong>Mycotoxin screened</strong> (third-party lab).</li>
-          <li><strong>Heavy metal screened</strong> (Pb, Hg, Cd, As).</li>
-          <li><strong>Mold/yeast screened</strong>.</li>
-        </ul>
-      </details>
-
-      <!-- Second CTA -->
-      <a href="https://campfirefuelcoffee.com/products/campfire-fuel-coffee" class="btn" style="
-           display:inline-block;border:1px solid var(--line);width:100%;text-align:center;
-           background:#0f1217;color:#f1f5f9;font-weight:800;border-radius:10px;padding:10px 12px;text-decoration:none">
-        Get Campfire Fuel →
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- =========================
-     GRIT GEAR HQ — SHOP TABS
-     (Coffee tab switched to live Buy button)
-     ========================= -->
-<section id="gghq-shop" class="wrap">
-  <header class="shop-head">
-    <h2>Field Shop</h2>
-    <p class="sub">Built for campers, hikers, wanderers — and anyone who still earns their sunrise.</p>
-  </header>
-
-  <!-- Tabs -->
-  <nav class="tabs" role="tablist" aria-label="Shop categories">
-    <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tab-mugs" id="tabbtn-mugs">Mugs</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="tab-apparel" id="tabbtn-apparel">Apparel</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="tab-coffee" id="tabbtn-coffee">Camp Coffee</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="tab-trail" id="tabbtn-trail">Trail Tools</button>
-  </nav>
-
-  <!-- Panels (only the Coffee card changed to live) -->
-  <section id="tab-mugs" class="panel is-active" role="tabpanel" aria-labelledby="tabbtn-mugs">
-    <!-- … your existing mug cards … -->
-  </section>
-
-  <section id="tab-apparel" class="panel" role="tabpanel" aria-labelledby="tabbtn-apparel">
-    <!-- … your existing apparel cards … -->
-  </section>
-
-  <section id="tab-coffee" class="panel" role="tabpanel" aria-labelledby="tabbtn-coffee">
-    <div class="grid">
-      <article class="card">
-        <figure class="media">
-          <img src="mockup-1 (1).png" alt="Campfire Fuel by Grit Gear HQ — Instant Light Roast">
-          <span class="badge" style="background:#14532d">IN STOCK</span>
-        </figure>
-        <div class="body">
-          <h3>Campfire Fuel — Instant Light Roast</h3>
-          <p class="pitch">Single-origin PNG. Toasted almond, toffee, clean finish. 27 servings.</p>
-          <div class="meta">
-            <div class="stars"><span>★★★★★</span><em>Trail-tested</em></div>
-            <div class="chips"><span class="chip">Freeze-dried</span><span class="chip">Brew anywhere</span></div>
+        <a class="category-pill" href="blog-index.html#home">
+          <div class="category-label">
+            <span class="icon">🏠</span>
+            <span>Home & Family Preparedness</span>
           </div>
-          <a class="btn" href="https://campfirefuelcoffee.com/products/campfire-fuel-coffee" target="_blank" rel="noopener">Buy Now →</a>
+          <span class="category-arrow">→</span>
+        </a>
+
+        <a class="category-pill" href="blog-index.html#gear">
+          <div class="category-label">
+            <span class="icon">🧰</span>
+            <span>Gear & Tools That Last</span>
+          </div>
+          <span class="category-arrow">→</span>
+        </a>
+
+        <a class="category-pill" href="blog-index.html#stories">
+          <div class="category-label">
+            <span class="icon">🔥</span>
+            <span>Stories & Hard Lessons</span>
+          </div>
+          <span class="category-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- LATEST POSTS + ABOUT / NEWSLETTER -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Latest field notes</h2>
+          <p class="section-sub">
+            No theory. Every article here comes out of a real moment: a storm, a mistake,
+            a scare, or a lesson that finally clicked.
+          </p>
         </div>
-      </article>
-    </div>
-  </section>
+        <a href="blog-index.html" class="btn btn-ghost">View all posts</a>
+      </div>
 
-  <section id="tab-trail" class="panel" role="tabpanel" aria-labelledby="tabbtn-trail">
-    <!-- … your existing trail cards … -->
-  </section>
+      <div class="two-column">
+        <!-- LATEST POSTS GRID -->
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-tag">Mindset</div>
+            <h3 class="blog-title">Weakness Is a Luxury Your Family Can’t Afford</h3>
+            <div class="blog-meta">7-minute read • Tough love</div>
+            <p class="blog-excerpt">
+              Comfort culture tells you to take it easy. Reality says your kids, your partner,
+              and your future self are all counting on you to be harder to kill — mentally and physically.
+            </p>
+            <a href="blog-mindset-strong.html" class="blog-link">Read the guide →</a>
+          </article>
 
-  <p class="note" style="color:#9aa4ad;margin-top:10px;font-size:.9rem">
-    Some links are affiliate. It never changes your price — it helps keep the fires burning.
-  </p>
-</section>
+          <article class="blog-card">
+            <div class="blog-tag">Home Preparedness</div>
+            <h3 class="blog-title">The 24-Hour Blackout Checklist (You Can Build This Week)</h3>
+            <div class="blog-meta">6-minute read • Practical list</div>
+            <p class="blog-excerpt">
+              Before you dive into bunker fantasies, lock down the first 24 hours: light, heat, water,
+              food, and boredom control for kids. This is the baseline for everything else.
+            </p>
+            <a href="blog-blackout-checklist.html" class="blog-link">Read the guide →</a>
+          </article>
 
-<!-- Tabs + (no changes to your scripts below this line) -->
-<script>
-  (function(){
-    const root = document.getElementById('gghq-shop');
-    if(!root) return;
-    const tabs = root.querySelectorAll('.tab');
-    const panels = root.querySelectorAll('.panel');
-    tabs.forEach(tab=>{
-      tab.addEventListener('click', ()=>{
-        tabs.forEach(t=>{t.classList.remove('is-active'); t.setAttribute('aria-selected','false');});
-        panels.forEach(p=>p.classList.remove('is-active'));
-        tab.classList.add('is-active');
-        tab.setAttribute('aria-selected','true');
-        const panel = document.getElementById(tab.getAttribute('aria-controls'));
-        if(panel) panel.classList.add('is-active');
-        if (window.innerWidth < 640 && panel) panel.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-    });
-  })();
-</script>
+          <article class="blog-card">
+            <div class="blog-tag">Stories</div>
+            <h3 class="blog-title">The Night the Sirens Failed and the Sky Turned Green</h3>
+            <div class="blog-meta">8-minute read • True story</div>
+            <p class="blog-excerpt">
+              Tornado sirens, dead batteries, and a yard full of loose junk. Here’s exactly what went wrong,
+              what went right, and what changed at Grit Gear HQ after that storm.
+            </p>
+            <a href="blog-storm-story.html" class="blog-link">Read the story →</a>
+          </article>
+        </div>
+
+        <!-- ABOUT & NEWSLETTER -->
+        <div>
+          <div class="about-panel">
+            <div class="about-panel-title">What is Grit Gear HQ?</div>
+            <p>
+              A survival blog built by someone who actually had to grow up, toughen up,
+              and figure out how to be the person everyone looks at when things go bad.
+            </p>
+            <p>
+              You won’t find “10 best apocalypse gadgets” fluff here.
+              You’ll find the kind of writing you’d expect if a friend sat down across from you,
+              slid a mug across the table, and said:
+              “Here’s what really matters, and here’s what I learned the hard way.”
+            </p>
+            <p class="about-highlight">
+              The goal is simple: fewer victims, more people who can handle it.
+            </p>
+          </div>
+
+          <div class="newsletter-panel">
+            <div class="newsletter-title">Get the weekly HQ dispatch.</div>
+            <p>
+              One email with new posts, quick checklists, and the kind of reminders you need
+              when life starts to dull your edge.
+            </p>
+            <!-- Wire this up later to whatever form system you use -->
+            <form class="email-form" action="#" method="post" onsubmit="return false;">
+              <input type="email" name="email" placeholder="you@example.com" autocomplete="email" />
+              <button class="btn btn-primary" type="submit">Join the Dispatch</button>
+            </form>
+            <div class="newsletter-meta">
+              No spam. No inspirational quotes stolen from Instagram. Just practical signal.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE / CLOSER -->
+    <section class="section">
+      <div class="quote-panel">
+        Civilization is the thinnest coat of paint you’ll ever see. When it flakes,
+        the people around you will look for someone who isn’t panicking.
+        Grit Gear HQ exists to help you quietly become that person.
+        <div class="quote-attrib">– Grit Gear HQ</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Grit Gear HQ. Built for the ones who show up when it matters.</div>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
