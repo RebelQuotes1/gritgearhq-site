@@ -1,43 +1,4 @@
 <!DOCTYPE html>
-<!-- Grit Gear • Small CTA Band (self-contained) -->
-<div class="gg-mini-cta" role="region" aria-label="PTSD & Bud mini callout">
-  <style>
-    .gg-mini-cta{
-      --line:#2b2f3a; --ink:#e9ecf4; --muted:#a8afbd; --accent:#17e6a4;
-      max-width:520px; margin:14px auto; position:relative; isolation:isolate;
-      padding:10px 12px; text-align:center; color:var(--ink);
-      background:linear-gradient(180deg,#151a24,#0f121a);
-      border:1px solid var(--line); border-radius:12px; box-shadow:0 10px 26px rgba(0,0,0,.35);
-      font:600 .9rem/1.5 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
-    }
-    .gg-mini-cta:before{
-      /* subtle MOLLE/nylon texture */
-      content:""; position:absolute; inset:0; z-index:-1; border-radius:12px;
-      background:repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 2px, transparent 2px 9px);
-      pointer-events:none;
-    }
-    .gg-mini-cta .lead{letter-spacing:.15px}
-    .gg-mini-cta a{
-      color:var(--accent); text-decoration:none; font-weight:900; margin-left:6px;
-      padding:2px 4px; border-radius:6px; border:1px dashed rgba(23,230,164,.35);
-      background:rgba(23,230,164,.06);
-    }
-    .gg-mini-cta a:hover{filter:brightness(1.07); text-decoration:underline}
-    .gg-mini-cta .shine{
-      content:""; position:absolute; inset:0; border-radius:12px; pointer-events:none;
-      background:linear-gradient(110deg, transparent 0%, rgba(255,255,255,.06) 35%, transparent 65%);
-      mix-blend-mode:screen; animation:gg-sweep 5.5s linear infinite;
-    }
-    @keyframes gg-sweep{0%{transform:translateX(-80%)}100%{transform:translateX(80%)}}
-  </style>
-
-  <span class="lead">🍃 Ready to trade the bottle for control?</span>
-  <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
-    Stock up discreetly here
-  </a>
-  <i class="shine" aria-hidden="true"></i>
-</div>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -53,111 +14,186 @@
 
   <style>
     :root{
-      --accent:#ffa500;
+      --bg:#050608;
+      --bg-alt:#0b0f15;
+      --accent:#f8aa36;
+      --accent-deep:#f1870a;
       --ink:#e9eef4;
       --muted:#b9c2cc;
-      --panel:rgba(10,14,18,.82);
+      --panel:rgba(10,14,18,.9);
+      --panel-soft:#151b24;
       --line:rgba(255,165,0,.28);
+      --radius-lg:18px;
+      --radius-md:14px;
+      --radius-pill:999px;
     }
 
+    *{box-sizing:border-box;}
+
     /* ===== Base / Background ===== */
-    html,body{margin:0;padding:0;min-height:100%}
+    html,body{margin:0;padding:0;min-height:100%;}
     body{
       color:var(--ink);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      background:url('s-l1600.webp') center/cover fixed no-repeat;
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(255,165,0,.14), transparent 60%),
+        radial-gradient(1200px 700px at 80% 110%, rgba(108,154,255,.15), transparent 65%),
+        #050608;
     }
-    /* cinematic overlay + subtle glow */
     body::before{
       content:"";
       position:fixed; inset:0;
-      background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(255,165,0,.12), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.58), rgba(0,0,0,.86));
+      background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.92));
       z-index:-1;
-      backdrop-filter:saturate(115%) contrast(95%);
     }
 
-    /* ===== Header ===== */
+    .wrap{max-width:1180px;margin:0 auto;padding:0 16px;}
+
+    /* ===== Mini PTSD/Bud CTA (top) ===== */
+    .gg-mini-cta{
+      --line:#2b2f3a; --ink:#e9ecf4; --muted:#a8afbd; --accent:var(--accent);
+      max-width:520px; margin:14px auto 6px; position:relative; isolation:isolate;
+      padding:9px 12px; text-align:center; color:var(--ink);
+      background:linear-gradient(135deg,#151a24,#0f121a);
+      border:1px solid var(--line); border-radius:12px; box-shadow:0 10px 26px rgba(0,0,0,.4);
+      font:600 .88rem/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+    }
+    .gg-mini-cta:before{
+      content:""; position:absolute; inset:0; z-index:-1; border-radius:12px;
+      background:repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 2px, transparent 2px 9px);
+      pointer-events:none;
+    }
+    .gg-mini-cta .lead{letter-spacing:.15px;}
+    .gg-mini-cta a{
+      color:var(--accent); text-decoration:none; font-weight:800; margin-left:6px;
+      padding:2px 6px; border-radius:6px; border:1px dashed rgba(248,170,54,.45);
+      background:rgba(248,170,54,.06); font-size:.82rem;
+    }
+    .gg-mini-cta a:hover{filter:brightness(1.07); text-decoration:underline;}
+    .gg-mini-cta .shine{
+      content:""; position:absolute; inset:0; border-radius:12px; pointer-events:none;
+      background:linear-gradient(110deg, transparent 0%, rgba(255,255,255,.06) 35%, transparent 65%);
+      mix-blend-mode:screen; animation:gg-sweep 5.5s linear infinite;
+    }
+    @keyframes gg-sweep{0%{transform:translateX(-80%)}100%{transform:translateX(80%)}}
+
+    /* ===== Chips / Topbar ===== */
     .topbar{
       display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
-      padding:16px 12px 6px;
+      padding:14px 12px 6px;
     }
     .chip{
       display:inline-flex; align-items:center; gap:8px;
-      padding:10px 16px; border-radius:999px;
+      padding:8px 15px; border-radius:var(--radius-pill);
       background:linear-gradient(180deg,#222a33,#141b22);
-      border:1px solid var(--line); color:var(--ink);
-      text-decoration:none; font-weight:700; box-shadow:0 6px 24px rgba(0,0,0,.4)
+      border:1px solid rgba(255,255,255,.06); color:var(--ink);
+      text-decoration:none; font-weight:700; font-size:.85rem;
+      box-shadow:0 6px 24px rgba(0,0,0,.5);
     }
-    .chip.accent{background:linear-gradient(180deg,var(--accent),#e68112); color:#0b0f12}
+    .chip.accent{
+      background:linear-gradient(180deg,var(--accent),#e68112);
+      color:#0b0f12; border-color:rgba(0,0,0,.8);
+    }
+    .chip:hover{filter:brightness(1.05);}
 
+    /* ===== Header ===== */
+    header.wrap{padding-top:4px;padding-bottom:8px;}
     h1{
-      margin:4px 0 2px; text-align:center; letter-spacing:.6px;
+      margin:4px 0 2px; text-align:center; letter-spacing:.12em;
       color:var(--accent); font-family:Orbitron,Inter,sans-serif;
-      font-size:clamp(28px,4.2vw,44px);
-      text-shadow:0 8px 30px rgba(0,0,0,.8);
+      font-size:clamp(28px,4.2vw,42px); text-transform:uppercase;
+      text-shadow:0 8px 30px rgba(0,0,0,.85);
     }
-    .deck{margin:2px auto 16px; text-align:center; color:#cdd6df; max-width:800px}
+    .deck{
+      margin:4px auto 14px; text-align:center; color:var(--muted);
+      max-width:780px; font-size:.95rem;
+    }
 
-    /* ===== Grid of links ===== */
-    .wrap{max-width:1180px;margin:16px auto 26px;padding:0 16px}
+    /* ===== Button Grid ===== */
+    main.wrap{padding-bottom:28px;}
     .button-grid{
       display:grid; gap:16px;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     }
     .cta-button{
       display:block; text-decoration:none; color:var(--ink);
-      background:var(--panel); border:1px solid var(--line);
-      border-radius:14px; padding:14px 16px;
-      box-shadow:0 0 0 1px rgba(255,165,0,.12), 0 14px 42px rgba(0,0,0,.65);
-      transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
-      font-weight:800; letter-spacing:.2px;
+      background:var(--panel-soft); border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius-md); padding:14px 16px;
+      box-shadow:0 0 0 1px rgba(0,0,0,.8), 0 14px 42px rgba(0,0,0,.75);
+      transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:800; letter-spacing:.2px; font-size:.9rem;
     }
-    .cta-button:hover, .cta-button:focus-visible{
+    .cta-button:hover,
+    .cta-button:focus-visible{
       transform:translateY(-2px);
-      box-shadow:0 0 0 1px rgba(255,165,0,.22), 0 22px 60px rgba(0,0,0,.7);
+      box-shadow:0 0 0 1px rgba(255,165,0,.35), 0 22px 60px rgba(0,0,0,.85);
+      background:#1a222f;
       outline:none;
     }
     .cta-button .desc{
-      font-weight:600; color:var(--muted); margin-top:6px; line-height:1.45
+      font-weight:600; color:var(--muted); margin-top:6px; line-height:1.45;
+      font-size:.84rem;
     }
-    /* Featured tile variant */
     .cta-button.featured{
       border-color:var(--accent);
-      background:linear-gradient(180deg, rgba(255,165,0,.10), rgba(255,165,0,.02));
+      background:linear-gradient(180deg, rgba(255,165,0,.12), rgba(255,165,0,.02));
     }
 
     /* ===== Featured Gear ===== */
     .feature{
-      background:var(--panel); border:1px solid var(--line); border-radius:16px;
-      box-shadow:0 0 0 1px rgba(255,165,0,.12),0 16px 46px rgba(0,0,0,.65);
-      max-width:980px; margin:34px auto; padding:18px;
+      background:var(--panel-soft); border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--radius-lg);
+      box-shadow:0 0 0 1px rgba(0,0,0,.8),0 16px 46px rgba(0,0,0,.8);
+      max-width:980px; margin:30px auto 10px; padding:18px 18px 16px;
     }
-    .feature h3{margin:0 0 10px; color:var(--accent); font-family:Orbitron,Inter,sans-serif}
-    .feature a{color:inherit; text-decoration:none}
-    .feature .row{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
-    .feature img{width:260px;border-radius:10px;box-shadow:0 0 12px #000}
+    .feature h3{
+      margin:0 0 10px; color:var(--accent);
+      font-family:Orbitron,Inter,sans-serif; font-size:1.05rem; letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .feature a{color:inherit; text-decoration:none;}
+    .feature a:hover .cta{filter:brightness(1.05);}
+    .feature .row{
+      display:flex;flex-wrap:wrap;gap:18px;align-items:center;
+    }
+    .feature img{
+      width:260px;max-width:100%;border-radius:10px;
+      box-shadow:0 0 16px rgba(0,0,0,.9);
+    }
     .feature .cta{
-      display:inline-block; margin-top:12px; padding:10px 14px; border-radius:10px;
-      background:linear-gradient(180deg,var(--accent),#e68112); color:#0b0f12; font-weight:900
+      display:inline-block; margin-top:10px; padding:9px 14px; border-radius:10px;
+      background:linear-gradient(180deg,var(--accent),#e68112);
+      color:#0b0f12; font-weight:900; font-size:.86rem;
     }
 
     /* ===== Footer ===== */
     footer{
-      text-align:center; padding:18px; color:#aeb6bf;
-      background:linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.55));
-      border-top:1px solid rgba(255,165,0,.18);
+      text-align:center; padding:16px; color:#aeb6bf;
+      background:linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.6));
+      border-top:1px solid rgba(255,165,0,.22);
+      font-size:.78rem;
     }
-    footer a{color:var(--accent); text-decoration:none; font-weight:800}
+    footer a{color:var(--accent); text-decoration:none; font-weight:800; font-size:.78rem;}
+    footer a:hover{text-decoration:underline;}
 
     /* a11y */
-    .cta-button:focus-visible, .chip:focus-visible, .feature .cta:focus-visible{
-      outline:2px solid var(--accent); outline-offset:2px
+    .cta-button:focus-visible,
+    .chip:focus-visible,
+    .feature .cta:focus-visible{
+      outline:2px solid var(--accent); outline-offset:2px;
     }
   </style>
 </head>
 <body>
+
+  <!-- Mini PTSD / Bud CTA -->
+  <div class="gg-mini-cta" role="region" aria-label="PTSD & Bud mini callout">
+    <span class="lead">🍃 Ready to trade the bottle for control?</span>
+    <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
+      Stock up discreetly here
+    </a>
+    <i class="shine" aria-hidden="true"></i>
+  </div>
 
   <div class="topbar">
     <a class="chip" href="index.html">⬅️ Home</a>
@@ -166,53 +202,54 @@
 
   <header class="wrap">
     <h1>🪓 Grit Gear Blog Directory</h1>
-    <p class="deck">Field guides, rants, and real-world how-tos. Pick a card and dive in.</p>
+    <p class="deck">
+      Survival field guides, rants, and real-world how-tos from Grit Gear HQ.
+      Pick a card and dive in.
+    </p>
   </header>
 
   <main class="wrap">
-    <!-- SINGLE unified grid (no nesting) -->
     <div class="button-grid">
-
       <!-- Featured blog CTA -->
       <a href="/blog-turning-point.html#top" class="cta-button featured">
         📰 The Slaying of Charlie Kirk — Read the Post
         <div class="desc">They didn’t just kill a man — they sparked a movement. Draw the line in the sand.</div>
       </a>
 
-<!-- Featured blog CTA -->
-<a href="https://gritgearhq.com/cannabis-for-survival.html#top" class="cta-button featured">
-  📰 Bud Over Booze — Read the Post
-  <div class="desc">How I chose the plant that sharpened my edge—and how you can, too.</div>
-</a>
+      <a href="https://gritgearhq.com/cannabis-for-survival.html#top" class="cta-button featured">
+        📰 Bud Over Booze — Read the Post
+        <div class="desc">How I chose the plant that sharpened my edge—and how you can, too.</div>
+      </a>
 
-<a href="/grit-quiz.html#grit-quiz" class="cta-button">
-  🧪 Take the Grit Quiz
-  <div class="desc">10 fast questions. Get your score + tailored next steps.</div>
-</a>
+      <a href="/grit-quiz.html#grit-quiz" class="cta-button">
+        🧪 Take the Grit Quiz
+        <div class="desc">10 fast questions. Get your score + tailored next steps.</div>
+      </a>
 
-  <a class="btn primary" href="https://gritgearhq.com/titan-survival-collab.html#why-550">
-  Read the SurvivorCord® Guide →
-</a>
-    
-<a href="/turning-point-shirt.html#cta" class="cta-button">
-  👕 This Is The Turning Point Tee
-  <div class="desc">Premium fit. Bold message. 10% of profits to TPUSA.</div>
-</a>
+      <a href="https://gritgearhq.com/titan-survival-collab.html#why-550" class="cta-button">
+        🧵 Read the SurvivorCord® Guide →
+        <div class="desc">Why 550 cord isn’t enough anymore—and how SurvivorCord® upgrades your lifeline.</div>
+      </a>
 
-<a href="ant-grasshopper-locked-door.html#fable-start" class="cta-button">
-  🐜 The Ant, the Grasshopper &amp; the Locked Door
-  <div class="desc">Darker modern fable—boundaries, math, and no hard feelings.</div>
-</a>
+      <a href="/turning-point-shirt.html#cta" class="cta-button">
+        👕 This Is The Turning Point Tee
+        <div class="desc">Premium fit. Bold message. 10% of profits to TPUSA.</div>
+      </a>
 
-<a href="#seven-day-kit" class="cta-button">
-  🧰 Build Your 7-Day Kit
-  <div class="desc">Water, calories, heat &amp; light, hygiene, info — your don’t-knock baseline.</div>
-</a>
+      <a href="ant-grasshopper-locked-door.html#fable-start" class="cta-button">
+        🐜 The Ant, the Grasshopper &amp; the Locked Door
+        <div class="desc">Darker modern fable—boundaries, math, and no hard feelings.</div>
+      </a>
 
-<a href="amish-winter-heat.html#amish-winter-heat" class="cta-button">
-  🔥 How the Amish Stay Warm in Winter
-  <div class="desc">Stoves, window quilts, humidity, and a daily rhythm you can steal.</div>
-</a>
+      <a href="#seven-day-kit" class="cta-button">
+        🧰 Build Your 7-Day Kit
+        <div class="desc">Water, calories, heat &amp; light, hygiene, info — your don’t-knock baseline.</div>
+      </a>
+
+      <a href="amish-winter-heat.html#amish-winter-heat" class="cta-button">
+        🔥 How the Amish Stay Warm in Winter
+        <div class="desc">Stoves, window quilts, humidity, and a daily rhythm you can steal.</div>
+      </a>
 
       <a href="hugh-glass.html#hugh-glass" class="cta-button">
         🐻 Hugh Glass: The Man Who Wouldn’t Die
@@ -276,30 +313,34 @@
 
       <a href="manifesto.html#masculinity-blog" class="cta-button">
         💥 The Masculinity Manifesto
+        <div class="desc">Why they hate strong men—and why your family needs one.</div>
       </a>
 
       <a href="manifesto.html#ufo-distraction" class="cta-button">
         🛸 UFOs &amp; Government Deception
+        <div class="desc">Smoke, mirrors, and why you should watch the ground, not the sky.</div>
       </a>
 
       <a href="manifesto.html#stockpile-tested" class="cta-button">
         🎒 Survival Items That Earned Their Place
+        <div class="desc">Not theory—gear that made the cut after real use.</div>
       </a>
 
       <a href="manifesto.html#stay-cool" class="cta-button">
         🧊 How to Keep Cool During a Blackout
+        <div class="desc">Fans, airflow, hydration, and not losing your mind when the AC dies.</div>
       </a>
 
       <a href="i-should-be-dead.html" class="cta-button">
         🩸 I Should Be Dead: The Grit Story
+        <div class="desc">The long road from chaos to responsibility.</div>
       </a>
 
       <a href="goout_stove_review_FINAL_WITH_ANCHOR.html#goout-stove-review" class="cta-button">
         🔥 GoOut Stove Review
         <div class="desc">Boil water, cook meals, warm your hands.</div>
       </a>
-
-    </div><!-- /button-grid -->
+    </div>
 
     <!-- Featured Gear -->
     <section class="feature">
@@ -315,7 +356,7 @@
       </a>
     </section>
 
-    <div class="topbar">
+    <div class="topbar" style="padding-top:4px;padding-bottom:18px;">
       <a class="chip" href="index.html">← Return to Homepage</a>
     </div>
   </main>
@@ -329,10 +370,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
