@@ -1,996 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  
-  <!-- Google Ads -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <title>Grit Gear HQ – Survival Field Guides & Real-World Preparedness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Grit Gear HQ is a survival blog focused on real-world preparedness, gritty mindset, and gear that actually holds up when life goes sideways." />
-
-  <style>
-    :root {
-      --bg: #050608;
-      --bg-alt: #0b0f15;
-      --panel: #121823;
-      --panel-soft: #171f2b;
-      --accent: #f8aa36;
-      --accent-deep: #f1870a;
-      --ink: #e7ecef;
-      --ink-soft: #a3adbd;
-      --line: #272f3b;
-      --shadow: 0 20px 40px rgba(0,0,0,0.75);
-      --radius-lg: 18px;
-      --radius-md: 14px;
-      --radius-pill: 999px;
-      --max-width: 1120px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background:
-        radial-gradient(1200px 600px at 50% -200px, #1e2634 0%, #050608 60%) fixed;
-      color: var(--ink);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    body { line-height: 1.6; }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover { text-decoration: underline; }
-
-    .wrap {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 18px 18px 48px;
-    }
-
-    /* HEADER / NAV */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(
-        to bottom,
-        rgba(5,6,8,0.96),
-        rgba(5,6,8,0.8),
-        transparent
-      );
-      border-bottom: 1px solid rgba(255,255,255,0.02);
-    }
-
-    .nav-bar {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 12px 18px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background:
-        radial-gradient(circle at 30% 10%, #f9e2b4 0%, var(--accent-deep) 35%, #36210d 70%, #050608 100%);
-      box-shadow:
-        0 0 0 1px rgba(0,0,0,0.8),
-        0 0 24px rgba(248,170,54,0.5);
-      font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-text span:first-child {
-      font-weight: 650;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.9rem;
-    }
-
-    .brand-text span:last-child {
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 0.9rem;
-    }
-
-    .nav-links a {
-      color: var(--ink-soft);
-      text-decoration: none;
-      position: relative;
-      padding-bottom: 3px;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg,var(--accent-deep),var(--accent));
-      transition: width 0.2s ease-out;
-    }
-
-    .nav-links a:hover {
-      color: var(--ink);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      border: 1px solid transparent;
-      font-size: 0.83rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      cursor: pointer;
-      transition: all 0.16s ease-out;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background:
-        radial-gradient(circle at 20% 0%, #ffe4b0 0%, var(--accent-deep) 32%, var(--accent) 100%);
-      border-color: rgba(0,0,0,0.85);
-      color: #1b1207;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.8);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.9);
-      filter: brightness(1.03);
-    }
-
-    .btn-ghost {
-      border-color: var(--line);
-      background: rgba(10,12,16,0.8);
-      color: var(--ink-soft);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(23,27,37,0.96);
-      color: var(--ink);
-      border-color: #353f51;
-    }
-
-    .nav-toggle {
-      display: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(8,10,14,0.96);
-      color: var(--ink);
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-    @media (max-width: 780px) {
-      .nav-links,
-      .nav-cta {
-        display: none;
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-
-      .nav-open .nav-links,
-      .nav-open .nav-cta {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background: #06080d;
-        border-radius: 0 0 16px 16px;
-        border: 1px solid var(--line);
-        padding: 10px 14px 12px;
-        margin-top: 10px;
-        width: 100%;
-      }
-
-      .nav-open .nav-links {
-        gap: 10px;
-      }
-
-      .nav-open .nav-cta {
-        margin-top: 4px;
-        gap: 8px;
-      }
-
-      .nav-bar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-    }
-
-    /* HERO */
-    .hero {
-      padding-top: 28px;
-      padding-bottom: 26px;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 26px;
-      align-items: stretch;
-    }
-
-    @media (max-width: 880px) {
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(248,170,54,0.4);
-      background:
-        radial-gradient(circle at 0 0, rgba(248,170,54,0.25), transparent 55%),
-        rgba(7,9,13,0.9);
-      font-size: 0.75rem;
-      color: var(--ink-soft);
-      margin-bottom: 12px;
-    }
-
-    .hero-kicker span.dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #53d06b;
-      box-shadow: 0 0 10px rgba(83,208,107,0.8);
-    }
-
-    .hero-title {
-      font-size: clamp(2.1rem, 3vw + 1.2rem, 3rem);
-      line-height: 1.07;
-      margin: 0 0 10px;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-title span.accent {
-      background: linear-gradient(90deg, #ffe1a5, var(--accent-deep));
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-sub {
-      color: var(--ink-soft);
-      font-size: 0.98rem;
-      max-width: 36rem;
-      margin-bottom: 14px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .hero-badge {
-      font-size: 0.78rem;
-      padding: 5px 11px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255,255,255,0.05);
-      background: rgba(9,11,16,0.95);
-      color: var(--ink-soft);
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .hero-badge-icon {
-      width: 16px;
-      height: 16px;
-      border-radius: 6px;
-      background:
-        radial-gradient(circle at 30% 0%, #ffe2b3 0, var(--accent-deep) 40%, #3b2712 100%);
-      display: grid;
-      place-items: center;
-      font-size: 0.68rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .hero-hint {
-      font-size: 0.8rem;
-      color: var(--ink-soft);
-    }
-
-    .hero-hint span {
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    /* FEATURED POST CARD */
-    .hero-featured {
-      background:
-        radial-gradient(circle at 0 0, rgba(248,170,54,0.22), transparent 65%),
-        radial-gradient(circle at 120% 120%, rgba(103,185,255,0.18), transparent 70%),
-        var(--panel);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255,255,255,0.05);
-      padding: 16px 16px 14px;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .featured-tag {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ink-soft);
-    }
-
-    .featured-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .featured-meta {
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-    }
-
-    .featured-excerpt {
-      font-size: 0.86rem;
-      color: var(--ink-soft);
-    }
-
-    .featured-link {
-      font-size: 0.82rem;
-      margin-top: 4px;
-    }
-
-    .featured-label {
-      position: absolute;
-      top: 12px;
-      right: 14px;
-      font-size: 0.7rem;
-      padding: 3px 9px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(6,8,11,0.92);
-      color: var(--ink-soft);
-    }
-
-    .featured-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-      margin-top: 4px;
-      font-size: 0.76rem;
-      color: var(--ink-soft);
-      flex-wrap: wrap;
-    }
-
-    .featured-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .featured-pill {
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(9,12,16,0.9);
-    }
-
-    /* SECTION WRAPPER */
-    .section {
-      margin-top: 36px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 12px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-
-    .section-title {
-      font-size: 1.15rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .section-sub {
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-      max-width: 28rem;
-    }
-
-    /* CATEGORIES STRIP */
-    .category-strip {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 10px;
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 900px) {
-      .category-strip { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    }
-    @media (max-width: 540px) {
-      .category-strip { grid-template-columns: minmax(0,1fr); }
-    }
-
-    .category-pill {
-      border-radius: var(--radius-pill);
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,0.04);
-      background: rgba(8,10,15,0.96);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-      cursor: pointer;
-      transition: background 0.18s ease-out, transform 0.18s ease-out, border-color 0.18s ease-out;
-    }
-
-    .category-pill:hover {
-      background: rgba(22,26,36,0.98);
-      border-color: rgba(248,170,54,0.45);
-      transform: translateY(-1px);
-    }
-
-    .category-label {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .category-label span.icon {
-      font-size: 1rem;
-    }
-
-    .category-arrow {
-      font-size: 0.9rem;
-      color: var(--ink-soft);
-    }
-
-    /* LATEST POSTS GRID */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 18px;
-    }
-
-    @media (max-width: 900px) {
-      .blog-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    }
-    @media (max-width: 620px) {
-      .blog-grid { grid-template-columns: minmax(0,1fr); }
-    }
-
-    .blog-card {
-      border-radius: var(--radius-md);
-      background: var(--panel-soft);
-      border: 1px solid rgba(255,255,255,0.04);
-      padding: 11px 12px 11px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 0.82rem;
-      box-shadow: 0 14px 28px rgba(0,0,0,0.7);
-    }
-
-    .blog-tag {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--ink-soft);
-    }
-
-    .blog-title {
-      font-size: 0.94rem;
-      font-weight: 600;
-    }
-
-    .blog-meta {
-      font-size: 0.75rem;
-      color: var(--ink-soft);
-    }
-
-    .blog-excerpt {
-      font-size: 0.8rem;
-      color: var(--ink-soft);
-    }
-
-    .blog-link {
-      margin-top: 4px;
-      font-size: 0.78rem;
-    }
-
-    /* SIDEBAR / ABOUT & NEWSLETTER */
-    .two-column {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 22px;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .two-column { grid-template-columns: minmax(0, 1fr); }
-    }
-
-    .about-panel {
-      border-radius: var(--radius-lg);
-      background:
-        radial-gradient(circle at 0 0, rgba(118,217,192,0.16), transparent 60%),
-        rgba(8,11,15,0.96);
-      border: 1px solid rgba(255,255,255,0.04);
-      padding: 14px 16px 12px;
-      font-size: 0.86rem;
-      color: var(--ink-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-panel-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: var(--ink);
-    }
-
-    .about-highlight {
-      font-size: 0.8rem;
-      color: #f4c474;
-      margin-top: 4px;
-    }
-
-    .newsletter-panel {
-      border-radius: var(--radius-lg);
-      background:
-        radial-gradient(circle at 120% 0, rgba(248,170,54,0.24), transparent 60%),
-        var(--bg-alt);
-      border: 1px solid rgba(255,255,255,0.05);
-      padding: 14px 16px 12px;
-      font-size: 0.84rem;
-      color: var(--ink-soft);
-    }
-
-    .newsletter-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: var(--ink);
-    }
-
-    .email-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .email-form input[type="email"] {
-      flex: 1 1 180px;
-      min-width: 0;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--line);
-      padding: 8px 12px;
-      background: rgba(7,9,13,0.96);
-      color: var(--ink);
-      font-size: 0.84rem;
-      outline: none;
-    }
-
-    .email-form input[type="email"]::placeholder {
-      color: #66707c;
-    }
-
-    .email-form input[type="email"]:focus {
-      border-color: rgba(248,170,54,0.75);
-      box-shadow: 0 0 0 1px rgba(248,170,54,0.35);
-    }
-
-    .newsletter-meta {
-      font-size: 0.72rem;
-      color: var(--ink-soft);
-      margin-top: 8px;
-    }
-
-    /* QUOTE PANEL */
-    .quote-panel {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255,255,255,0.04);
-      background:
-        radial-gradient(circle at 0 0, rgba(118,217,192,0.18), transparent 60%),
-        rgba(8,11,15,0.96);
-      padding: 14px 16px 12px;
-      font-size: 0.86rem;
-      color: var(--ink-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .quote-panel::before {
-      content: "“";
-      position: absolute;
-      top: -8px;
-      left: 10px;
-      font-size: 4rem;
-      color: rgba(255,255,255,0.04);
-    }
-
-    .quote-attrib {
-      margin-top: 4px;
-      font-size: 0.78rem;
-      color: #f4c474;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.04);
-      margin-top: 34px;
-      padding-top: 12px;
-      padding-bottom: 14px;
-      font-size: 0.76rem;
-      color: var(--ink-soft);
-    }
-
-    footer .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--ink-soft);
-      text-decoration: none;
-      font-size: 0.76rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--ink);
-    }
-
-  </style>
-</head>
-<body>
-  <header>
-    <div class="nav-bar" id="nav">
-      <div class="brand">
-        <div class="brand-mark">GG</div>
-        <div class="brand-text">
-          <span>GRIT GEAR HQ</span>
-          <span>Survival Field Notes & Gear Wisdom</span>
-        </div>
-      </div>
-
-      <button class="nav-toggle" aria-label="Toggle navigation"
-              onclick="document.getElementById('nav').classList.toggle('nav-open')">
-        ☰
-      </button>
-
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="blog-index.html">Field Guides</a>
-        <a href="store.html">Gear Picks</a>
-        <a href="grit-test.html">Grit Test</a>
-        <a href="about.html">About</a>
-      </nav>
-
-      <div class="nav-cta">
-        <a href="blog-index.html" class="btn btn-ghost">Browse Guides</a>
-        <a href="store.html" class="btn btn-primary">Gear Recommendations</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-kicker">
-            <span class="dot"></span>
-            <span>Real-world survival • No fluff • No panic bait</span>
-          </div>
-
-          <h1 class="hero-title">
-            Survival isn’t a fantasy.<br />
-            It’s <span class="accent">the way you live right now.</span>
-          </h1>
-
-          <p class="hero-sub">
-            Grit Gear HQ is a survival blog for people who actually carry the weight —
-            the ones responsible for keeping their family safe, fed, warm, and calm when
-            the world starts glitching. No cosplay, no bunker porn. Just honest field notes
-            and gear that works.
-          </p>
-
-          <div class="hero-badges">
-            <div class="hero-badge">
-              <div class="hero-badge-icon">⛺</div>
-              <span>Cold weather, power loss & real-life emergencies</span>
-            </div>
-            <div class="hero-badge">
-              <div class="hero-badge-icon">🧠</div>
-              <span>Mindset, grit, and staying sharp under pressure</span>
-            </div>
-          </div>
-
-        <div class="hero-actions">
-  <a href="https://rebelquotes1.github.io/gritgearhq-site/blog-index.html" class="btn btn-primary">
-    Start with the blog
-  </a>
-  <a href="grit-test.html" class="btn btn-ghost">Take the Grit Test</a>
-</div>
-
-          <div class="hero-hint">
-            New posts drop as life happens. <span>No clickbait, no sugarcoating.</span>
-          </div>
-        </div>
-
-        <!-- FEATURED POST -->
-        <aside class="hero-featured">
-          <div class="featured-label">Featured guide</div>
-          <div class="featured-tag">Cold Weather • Family Safety</div>
-          <h2 class="featured-title">
-            10 Items That Keep Your Family Warm When the Grid Goes Dark
-          </h2>
-          <div class="featured-meta">7-minute read • Field-tested loadout</div>
-          <p class="featured-excerpt">
-            When the power dies in the middle of a hard freeze, you don’t rise to the occasion —
-            you fall to your level of preparation. This guide walks through insulation, backup heat,
-            and the small overlooked items that keep kids calm instead of terrified.
-          </p>
-          <a href="blog-cold-weather-kit.html" class="featured-link">Read the full guide →</a>
-
-          <div class="featured-footer">
-            <div class="featured-tags">
-              <span class="featured-pill">#winter</span>
-              <span class="featured-pill">#power-outage</span>
-              <span class="featured-pill">#family-first</span>
-            </div>
-            <div>Part of the <strong>Everyday Collapse Series</strong></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- CATEGORIES -->
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Choose your battlefield</h2>
-          <p class="section-sub">
-            Survival isn’t one skill — it’s a stack. Pick the area that keeps you up at night
-            and start there.
-          </p>
-        </div>
-      </div>
-
-      <div class="category-strip">
-        <a class="category-pill" href="blog-index.html#mindset">
-          <div class="category-label">
-            <span class="icon">🧠</span>
-            <span>Mindset & Grit</span>
-          </div>
-          <span class="category-arrow">→</span>
-        </a>
-
-        <a class="category-pill" href="blog-index.html#home">
-          <div class="category-label">
-            <span class="icon">🏠</span>
-            <span>Home & Family Preparedness</span>
-          </div>
-          <span class="category-arrow">→</span>
-        </a>
-
-        <a class="category-pill" href="blog-index.html#gear">
-          <div class="category-label">
-            <span class="icon">🧰</span>
-            <span>Gear & Tools That Last</span>
-          </div>
-          <span class="category-arrow">→</span>
-        </a>
-
-        <a class="category-pill" href="blog-index.html#stories">
-          <div class="category-label">
-            <span class="icon">🔥</span>
-            <span>Stories & Hard Lessons</span>
-          </div>
-          <span class="category-arrow">→</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- LATEST POSTS + ABOUT / NEWSLETTER -->
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Latest field notes</h2>
-          <p class="section-sub">
-            No theory. Every article here comes out of a real moment: a storm, a mistake,
-            a scare, or a lesson that finally clicked.
-          </p>
-        </div>
-        <a href="blog-index.html" class="btn btn-ghost">View all posts</a>
-      </div>
-
-      <div class="two-column">
-        <!-- LATEST POSTS GRID -->
-        <div class="blog-grid">
-          <article class="blog-card">
-            <div class="blog-tag">Mindset</div>
-            <h3 class="blog-title">Weakness Is a Luxury Your Family Can’t Afford</h3>
-            <div class="blog-meta">7-minute read • Tough love</div>
-            <p class="blog-excerpt">
-              Comfort culture tells you to take it easy. Reality says your kids, your partner,
-              and your future self are all counting on you to be harder to kill — mentally and physically.
-            </p>
-            <a href="blog-mindset-strong.html" class="blog-link">Read the guide →</a>
-          </article>
-
-          <article class="blog-card">
-            <div class="blog-tag">Home Preparedness</div>
-            <h3 class="blog-title">The 24-Hour Blackout Checklist (You Can Build This Week)</h3>
-            <div class="blog-meta">6-minute read • Practical list</div>
-            <p class="blog-excerpt">
-              Before you dive into bunker fantasies, lock down the first 24 hours: light, heat, water,
-              food, and boredom control for kids. This is the baseline for everything else.
-            </p>
-            <a href="blog-blackout-checklist.html" class="blog-link">Read the guide →</a>
-          </article>
-
-          <article class="blog-card">
-            <div class="blog-tag">Stories</div>
-            <h3 class="blog-title">The Night the Sirens Failed and the Sky Turned Green</h3>
-            <div class="blog-meta">8-minute read • True story</div>
-            <p class="blog-excerpt">
-              Tornado sirens, dead batteries, and a yard full of loose junk. Here’s exactly what went wrong,
-              what went right, and what changed at Grit Gear HQ after that storm.
-            </p>
-            <a href="blog-storm-story.html" class="blog-link">Read the story →</a>
-          </article>
-        </div>
-
-        <!-- ABOUT & NEWSLETTER -->
-        <div>
-          <div class="about-panel">
-            <div class="about-panel-title">What is Grit Gear HQ?</div>
-            <p>
-              A survival blog built by someone who actually had to grow up, toughen up,
-              and figure out how to be the person everyone looks at when things go bad.
-            </p>
-            <p>
-              You won’t find “10 best apocalypse gadgets” fluff here.
-              You’ll find the kind of writing you’d expect if a friend sat down across from you,
-              slid a mug across the table, and said:
-              “Here’s what really matters, and here’s what I learned the hard way.”
-            </p>
-            <p class="about-highlight">
-              The goal is simple: fewer victims, more people who can handle it.
-            </p>
-          </div>
-
-          <div class="newsletter-panel">
-            <div class="newsletter-title">Get the weekly HQ dispatch.</div>
-            <p>
-              One email with new posts, quick checklists, and the kind of reminders you need
-              when life starts to dull your edge.
-            </p>
-            <!-- Wire this up later to whatever form system you use -->
-            <form class="email-form" action="#" method="post" onsubmit="return false;">
-              <input type="email" name="email" placeholder="you@example.com" autocomplete="email" />
-              <button class="btn btn-primary" type="submit">Join the Dispatch</button>
-            </form>
-            <div class="newsletter-meta">
-              No spam. No inspirational quotes stolen from Instagram. Just practical signal.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUOTE / CLOSER -->
-    <section class="section">
-      <div class="quote-panel">
-        Civilization is the thinnest coat of paint you’ll ever see. When it flakes,
-        the people around you will look for someone who isn’t panicking.
-        Grit Gear HQ exists to help you quietly become that person.
-        <div class="quote-attrib">– Grit Gear HQ</div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-inner">
-        <div>© <span id="year"></span> Grit Gear HQ. Built for the ones who show up when it matters.</div>
-        <div class="footer-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+/* HEADER / NAV */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  /* default: simple solid bar that doesn't feel like an overlay */
+  background: rgba(5,6,8,0.96);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Only use the fancy blur + gradient on bigger screens */
+@media (min-width: 781px) {
+  header {
+    backdrop-filter: blur(14px);
+    background: linear-gradient(
+      to bottom,
+      rgba(5,6,8,0.96),
+      rgba(5,6,8,0.8),
+      transparent
+    );
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+  }
+}
+
+.nav-bar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 12px 18px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ... keep your existing brand-mark and brand-text styles ... */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 0.9rem;
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,var(--accent-deep),var(--accent));
+  transition: width 0.2s ease-out;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-toggle {
+  display: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(8,10,14,0.96);
+  color: var(--ink);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* MOBILE NAV BEHAVIOR */
+@media (max-width: 780px) {
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* When menu is open, drop a simple panel under the header,
+     not a huge blurry overlay */
+  .nav-open .nav-links,
+  .nav-open .nav-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #06080d;
+    border-radius: 0 0 16px 16px;
+    border: 1px solid var(--line);
+    padding: 10px 14px 12px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .nav-open .nav-links {
+    gap: 10px;
+  }
+
+  .nav-open .nav-cta {
+    margin-top: 4px;
+    gap: 8px;
+  }
+}
