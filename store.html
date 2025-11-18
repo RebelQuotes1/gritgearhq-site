@@ -1,0 +1,555 @@
+<!-- Save as: store.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Grit Gear HQ – Gear Picks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hand-picked survival gear from Grit Gear HQ – tested, realistic, and ready for when life goes sideways." />
+
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-alt: #0b0f15;
+      --panel: #121823;
+      --panel-soft: #171f2b;
+      --accent: #f8aa36;
+      --accent-deep: #f1870a;
+      --ink: #e7ecef;
+      --ink-soft: #a3adbd;
+      --line: #272f3b;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+      --shadow: 0 20px 40px rgba(0,0,0,0.75);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(1200px 600px at 50% -200px, #1e2634 0%, #050608 60%) fixed;
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body { line-height: 1.6; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 18px 18px 48px;
+    }
+
+    /* HEADER (match landing/blog) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5,6,8,0.96),
+        rgba(5,6,8,0.8),
+        transparent
+      );
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-bar {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 12px 18px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 10%, #f9e2b4 0%, var(--accent-deep) 35%, #36210d 70%, #050608 100%);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.8),
+        0 0 24px rgba(248,170,54,0.5);
+    }
+
+    .brand-text { display: flex; flex-direction: column; gap: 2px; }
+    .brand-text span:first-child {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.9rem;
+    }
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--ink-soft);
+      position: relative;
+      padding-bottom: 3px;
+      text-decoration: none;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg,var(--accent-deep),var(--accent));
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.83rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: all 0.16s ease-out;
+    }
+
+    .btn-primary {
+      background:
+        radial-gradient(circle at 20% 0%, #ffe4b0 0%, var(--accent-deep) 32%, var(--accent) 100%);
+      border-color: rgba(0,0,0,0.85);
+      color: #1b1207;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.8);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+      filter: brightness(1.03);
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      background: rgba(10,12,16,0.8);
+      color: var(--ink-soft);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(23,27,37,0.96);
+      color: var(--ink);
+      border-color: #353f51;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(8,10,14,0.96);
+      color: var(--ink);
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 780px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-open .nav-links,
+      .nav-open .nav-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #06080d;
+        border-radius: 0 0 16px 16px;
+        border: 1px solid var(--line);
+        padding: 10px 14px 12px;
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      .nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding-top: 26px;
+      padding-bottom: 10px;
+    }
+
+    .kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ink-soft);
+      margin-bottom: 4px;
+    }
+
+    .page-title {
+      font-size: clamp(2rem, 3vw + 1rem, 2.6rem);
+      margin: 0 0 6px;
+    }
+
+    .page-sub {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      max-width: 40rem;
+    }
+
+    /* GEAR GRID */
+    .gear-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    @media (max-width: 980px) {
+      .gear-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 640px) {
+      .gear-grid { grid-template-columns: minmax(0,1fr); }
+    }
+
+    .gear-card {
+      background: var(--panel-soft);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      padding: 10px 10px 12px;
+      font-size: 0.9rem;
+    }
+
+    .gear-image-wrap {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #050608;
+      margin-bottom: 8px;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gear-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ink-soft);
+      margin-bottom: 4px;
+    }
+
+    .gear-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .gear-note {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .gear-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+    }
+
+    .price-hint {
+      opacity: 0.85;
+    }
+
+    .gear-card .btn-primary {
+      font-size: 0.78rem;
+      padding: 7px 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 34px;
+      padding-top: 12px;
+      padding-bottom: 14px;
+      font-size: 0.76rem;
+      color: var(--ink-soft);
+    }
+
+    footer .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 0.76rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-bar" id="nav">
+      <div class="brand">
+        <div class="brand-mark">GG</div>
+        <div class="brand-text">
+          <span>GRIT GEAR HQ</span>
+          <span>Survival Field Notes & Gear Wisdom</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation"
+              onclick="document.getElementById('nav').classList.toggle('nav-open')">
+        ☰
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="blog-index.html">Field Guides</a>
+        <a href="store.html">Gear Picks</a>
+        <a href="grit-test.html">Grit Test</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="blog-index.html" class="btn btn-ghost">Read the Blog</a>
+        <a href="store.html" class="btn btn-primary">Gear Picks</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="page-header">
+      <div class="kicker">Curated Loadouts • Real-World Use</div>
+      <h1 class="page-title">Gear Picks from Grit Gear HQ</h1>
+      <p class="page-sub">
+        No toy gadgets. No “tactical” cosplay. Just the kind of gear that earns its place
+        in the truck, the kit, or the closet because it has actually been used, abused,
+        and trusted when it mattered.
+      </p>
+    </section>
+
+    <section aria-label="Gear Picks">
+      <div class="gear-grid">
+
+        <!-- 1. Wool Blanket – wool.jpg -->
+        <article class="gear-card">
+          <div class="gear-image-wrap">
+            <img src="wool.jpg" alt="Rolled wool blanket with leather straps">
+          </div>
+          <div class="tag">Warmth • Shelter</div>
+          <h2 class="gear-title">Heavy Wool Camp Blanket</h2>
+          <p class="gear-note">
+            Old-school warmth that doesn’t quit when it gets damp. Throw it on a bed,
+            keep it in the truck, or roll it with your cold-weather kit for power outages.
+          </p>
+          <div class="gear-footer">
+            <span class="price-hint">eBay • Affiliate pick</span>
+            <a class="btn btn-primary"
+               href="https://www.ebay.com/itm/296081975181?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+               target="_blank" rel="nofollow sponsored noopener">
+              View Blanket →
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Tent Stove – s-l1600 (61).jpg -->
+        <article class="gear-card">
+          <div class="gear-image-wrap">
+            <img src="s-l1600 (61).jpg" alt="Stainless portable tent stove with visible flames">
+          </div>
+          <div class="tag">Heat • Cooking</div>
+          <h2 class="gear-title">Portable Tent Stove</h2>
+          <p class="gear-note">
+            Steel box of controlled fire. Perfect for hot meals and serious heat in a wall tent,
+            hunting camp, or off-grid setup when temps nosedive.
+          </p>
+          <div class="gear-footer">
+            <span class="price-hint">eBay • Field-style stove</span>
+            <a class="btn btn-primary"
+               href="https://www.ebay.com/itm/146751239348?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cqbp4AHRUDSSEj%2BB7FDuyA0hrljpUE7Bru%2BMXf6J3k03kAWbfjXOavy8887cXx%2FXobeN%2BaYBYugEY2HHmCoEim01Im%2BdFFeLBUqiJecQi0qsXUqpKjTamBUFHLPg2Bq3k3yIIDPvVSxGWOSXd0yMbPkVlXoh3VgbEcLFJlDZb%2BjBi%2FjJPzLNsxXgLowKaC1Ns%3D"
+               target="_blank" rel="nofollow sponsored noopener">
+              View Stove →
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. Portable Tent – s-l1600 (63).jpg -->
+        <article class="gear-card">
+          <div class="gear-image-wrap">
+            <img src="s-l1600 (63).jpg" alt="4-person instant style portable tent">
+          </div>
+          <div class="tag">Shelter • Family</div>
+          <h2 class="gear-title">4-Person Instant Shelter Tent</h2>
+          <p class="gear-note">
+            Fast setup, real headroom, and enough space for the family to ride out a night,
+            a storm, or a camping trip without feeling like sardines.
+          </p>
+          <div class="gear-footer">
+            <span class="price-hint">eBay • 4-person shelter</span>
+            <a class="btn btn-primary"
+               href="https://www.ebay.com/itm/317378797151?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1caZFMHy9VKDW7m6V3s1udzgbKYXqRh7eRAXUr0Tf4Ht15cM8D9GMl9EHnzFnoxW92LPXp7mDxr%2BYY9Ueb8gFgaaB0nSj57mO6OrydZVd4AeJeq1iFajg7QfS6TddYQXPWaXnG%2BkpwI4NAbljG51iUiDVghC62Ir84cmrFYil6tTio9IkF9aT7LdgGjDDru1fo%3D"
+               target="_blank" rel="nofollow sponsored noopener">
+              View Tent →
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. Sopakco MRE Case – mre.jpg -->
+        <article class="gear-card">
+          <div class="gear-image-wrap">
+            <img src="mre.jpg" alt="Case of SOPAKCO emergency ration meals">
+          </div>
+          <div class="tag">Food • Backup Calories</div>
+          <h2 class="gear-title">Case of SOPAKCO Emergency Ration Meals</h2>
+          <p class="gear-note">
+            Shelf-stable calories that live in the closet, truck, or storm pantry until the day
+            you’re glad you bought them. Heat-and-eat or cold if you have to.
+          </p>
+          <div class="gear-footer">
+            <span class="price-hint">eBay • Long shelf life</span>
+            <a class="btn btn-primary"
+               href="https://www.ebay.com/itm/177570701786?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+               target="_blank" rel="nofollow sponsored noopener">
+              View Rations →
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. Water Filter Pump – s-l1600 (65).jpg -->
+        <article class="gear-card">
+          <div class="gear-image-wrap">
+            <img src="s-l1600 (65).jpg" alt="Green manual water filter pump with tubing">
+          </div>
+          <div class="tag">Water • Filtration</div>
+          <h2 class="gear-title">Compact Field Water Filter Pump</h2>
+          <p class="gear-note">
+            Pulls sketchy creek or puddle water through a filter so you’re not gambling with
+            your gut. Good for camping, bug-out bags, or backup at the house.
+          </p>
+          <div class="gear-footer">
+            <span class="price-hint">eBay • Portable filter</span>
+            <a class="btn btn-primary"
+               href="https://www.ebay.com/itm/405902904199?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFkggFvd1GGDu0w3yXCmi1cDmC0i8r6A9cVcAho1Hmznl8NcI272K12apsoUm6%2FkuwLesQVJlBIqOsFuZfjYybwcEfg%2B%2BTTXSkfn9TeJ5o49kPSHUo6QxdPCog%2BeSbKnI0wCKjgPUh0iX82PeS5%2FxspU8X1VfW7WB7Fl9K%2FDZdcDm9T2I5GuTrgd2dOocJpZA2bMVRpegSDy%2BaUTOWT68R4%3D"
+               target="_blank" rel="nofollow sponsored noopener">
+              View Filter →
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Grit Gear HQ · Some links are affiliate links, which help keep the lights on.</div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
