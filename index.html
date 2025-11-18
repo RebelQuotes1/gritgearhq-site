@@ -553,14 +553,15 @@
           <p>Everything here is real-world, tested, and written without bullshit.</p>
         </div>
 
-        <div class="newsletter-panel">
-          <h3>Get the weekly HQ Dispatch</h3>
-          <p>New posts, quick checklists, reminders to sharpen your edge.</p>
-          <form class="email-form" onsubmit="return false;">
-            <input type="email" placeholder="you@example.com">
-            <button class="btn btn-primary">Join</button>
-          </form>
-        </div>
+       <div class="newsletter-panel">
+  <h3>Get the weekly HQ Dispatch</h3>
+  <p>New posts, quick checklists, reminders to sharpen your edge.</p>
+
+  <form class="email-form" action="email-signup.html" method="GET">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button class="btn btn-primary" type="submit">Join</button>
+  </form>
+</div>
 
       </div>
     </section>
