@@ -50,6 +50,7 @@
     }
     .gear-block img {
       width: 100%;
+      max-width: 220px;
       border-radius: 10px;
       margin-bottom: 10px;
     }
@@ -64,172 +65,309 @@
       font-weight: bold;
       text-decoration: none;
     }
+
+    .article-image,
+    .image-grid img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 10px;
+      display: block;
+      margin: 14px auto;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin: 10px 0 20px;
+    }
+
+    .image-caption {
+      font-size: 0.8rem;
+      color: #9ba1aa;
+      text-align: center;
+      margin-top: -4px;
+    }
+
+    .gear-reco-section {
+      margin-top: 24px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background:
+        radial-gradient(circle at 0 0, rgba(248,170,54,0.16), transparent 55%),
+        rgba(8,11,15,0.95);
+      padding: 14px 14px 12px;
+      font-size: 0.9rem;
+    }
+    .gear-reco-section h2 {
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+    .gear-reco-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    @media (max-width: 780px) {
+      .gear-reco-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+    .gear-reco-item {
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(5,7,11,0.96);
+      padding: 10px 10px 9px;
+      font-size: 0.86rem;
+    }
+    .gear-reco-item h3 {
+      margin: 0 0 4px;
+      font-size: 0.92rem;
+    }
+    .gear-reco-item p {
+      margin: 0 0 6px;
+    }
+    .gear-reco-item a {
+      font-size: 0.8rem;
+    }
   </style>
 </head>
 
 <body>
 
-<p class="kicker">Mindset · Masculinity · Preparedness</p>
+<section class="wrap article-page">
+  <article class="article-body">
 
-<h1>Weakness Is a Luxury Your Family Can’t Afford</h1>
+    <p class="kicker">Mindset · Masculinity · Preparedness</p>
 
-<p class="article-sub">
-  Comfort culture tricks men into going soft. Modern life has turned strength into an optional hobby,
-  but danger is still mandatory. Here’s why weakness puts everyone you love at risk—and why the world
-  is quietly betting on you staying harmless, quiet, distracted, and tired.
-</p>
+    <h1>Weakness Is a Luxury Your Family Can’t Afford</h1>
 
-<div class="toc">
-  <strong>IN THIS GUIDE</strong>
-  <ul>
-    <li><a href="#comfort-trap">How Comfort Culture Turns Men Soft</a></li>
-    <li><a href="#family-cost">Your Family Feels Your Weakness First</a></li>
-    <li><a href="#modern-strength">What Real Strength Looks Like Today</a></li>
-    <li><a href="#warrior-role">From Passenger to Protector</a></li>
-    <li><a href="#gear-section">Gear That Backs Up Your Mindset</a></li>
-  </ul>
-</div>
+    <p class="article-sub">
+      Comfort culture tricks men into going soft. Modern life has turned strength into an optional hobby,
+      but danger is still mandatory. Here’s why weakness puts everyone you love at risk—and why the world
+      is quietly betting on you staying harmless, quiet, distracted, and tired.
+    </p>
 
-<hr/>
+    <div class="toc">
+      <strong>IN THIS GUIDE</strong>
+      <ul>
+        <li><a href="#comfort-trap">How Comfort Culture Turns Men Soft</a></li>
+        <li><a href="#family-cost">Your Family Feels Your Weakness First</a></li>
+        <li><a href="#modern-strength">What Real Strength Looks Like Today</a></li>
+        <li><a href="#warrior-role">From Passenger to Protector</a></li>
+        <li><a href="#gear-section">Gear That Backs Up Your Mindset</a></li>
+      </ul>
+    </div>
 
-<p>
-  Weakness used to be something a man couldn’t hide. If you were soft, the world exposed it
-  fast. Nature didn’t care about your excuses. Your tribe judged you by performance, not potential.
-  You either kept them safe, or they found someone who could.
-</p>
+    <hr/>
 
-<p>
-  Today? Men are told to “embrace softness,” “avoid struggle,” and “let someone else handle the hard parts.”
-  Society has made comfort a religion—scroll, snack, sedate, repeat. Every system around you profits
-  when you’re mentally dull, physically broken, spiritually numb, and too exhausted to notice.
-</p>
+    <p>
+      Weakness used to be something a man couldn’t hide. If you were soft, the world exposed it
+      fast. Nature didn’t care about your excuses. Your tribe judged you by performance, not potential.
+      You either kept them safe, or they found someone who could.
+    </p>
 
-<h2 id="comfort-trap">Comfort Culture Is a Trap</h2>
+    <p>
+      Today? Men are told to “embrace softness,” “avoid struggle,” and “let someone else handle the hard parts.”
+      Society has made comfort a religion—scroll, snack, sedate, repeat. Every system around you profits
+      when you’re mentally dull, physically broken, spiritually numb, and too exhausted to notice.
+    </p>
 
-<p>
-  The modern world is engineered to keep men compliant. Not strong. Not capable. Not dangerous in the
-  righteous sense—dangerous to corruption, chaos, decay.  
-</p>
+    <!-- WHY YOU FEEL WEAK IMAGE -->
+    <img src="/mnt/data/images (2).jfif" alt="Why you feel weak graphic" class="article-image">
+    <div class="image-caption">Modern fuel: sugar, screens, shortcuts. Then we wonder why we feel like wet cardboard.</div>
 
-<p>
-  Comfort culture creates men who panic when the WiFi drops, not when the power grid fails.  
-  Men who fear confrontation more than failure.  
-  Men who defend their ego but not their household.  
-</p>
+    <h2 id="comfort-trap">Comfort Culture Is a Trap</h2>
 
-<p>
-  Comfort asks for nothing.  
-  Reality demands everything.  
-</p>
+    <p>
+      The modern world is engineered to keep men compliant. Not strong. Not capable. Not dangerous in the
+      righteous sense—dangerous to corruption, chaos, decay.  
+    </p>
 
-<p>
-  And here’s the part no one says out loud:  
-  A system that wants obedient citizens can’t afford strong men.  
-  Strong men ask questions.  
-  Strong men resist.  
-  Strong men don’t fold under pressure.  
-</p>
+    <p>
+      Comfort culture creates men who panic when the WiFi drops, not when the power grid fails.  
+      Men who fear confrontation more than failure.  
+      Men who defend their ego but not their household.  
+    </p>
 
-<h2 id="family-cost">Your Family Feels Your Weakness Long Before You Do</h2>
+    <p>
+      Comfort asks for nothing.  
+      Reality demands everything.  
+    </p>
 
-<p>
-  Your woman may not tell you she’s worried—but she feels it.  
-  Your kids may not verbalize it—but they notice.  
-</p>
+    <p>
+      And here’s the part no one says out loud:  
+      A system that wants obedient citizens can’t afford strong men.  
+      Strong men ask questions.  
+      Strong men resist.  
+      Strong men don’t fold under pressure.  
+    </p>
 
-<p>
-  A man’s weakness doesn’t just belong to him.  
-  It bleeds into every corner of the home.  
-</p>
+    <!-- VIVEKANANDA QUOTE IMAGE -->
+    <img src="/mnt/data/1702413-Swami-Vivekananda-Quote-Anything-that-makes-you-weak-physically.jpg"
+         alt="Anything that makes you weak, reject it as poison quote"
+         class="article-image">
+    <div class="image-caption">Anything that makes you weak—physically, mentally, spiritually—treat it like poison.</div>
 
-<ul>
-  <li>If you’re out of breath walking up the stairs — your family pays for it.</li>
-  <li>If you lose your temper because your discipline sucks — your family pays for it.</li>
-  <li>If you can’t defend your home — your family pays for it.</li>
-  <li>If you mentally check out and avoid responsibility — your family carries your load.</li>
-</ul>
+    <h2 id="family-cost">Your Family Feels Your Weakness Long Before You Do</h2>
 
-<p>
-  Weakness is a debt they never agreed to take on.  
-  Strength is the only repayment.  
-</p>
+    <p>
+      Your woman may not tell you she’s worried—but she feels it.  
+      Your kids may not verbalize it—but they notice.  
+    </p>
 
-<h2 id="modern-strength">What Strength Looks Like Today</h2>
+    <p>
+      A man’s weakness doesn’t just belong to him.  
+      It bleeds into every corner of the home.  
+    </p>
 
-<p>
-  Strength isn’t just muscles or attitude.  
-  It’s composure under pressure, clarity during chaos, and the ability to stay dangerous without losing control.
-</p>
+    <ul>
+      <li>If you’re out of breath walking up the stairs — your family pays for it.</li>
+      <li>If you lose your temper because your discipline sucks — your family pays for it.</li>
+      <li>If you can’t defend your home — your family pays for it.</li>
+      <li>If you mentally check out and avoid responsibility — your family carries your load.</li>
+    </ul>
 
-<p>
-  Modern strength means:
-</p>
+    <p>
+      Weakness is a debt they never agreed to take on.  
+      Strength is the only repayment.  
+    </p>
 
-<ul>
-  <li>Doing what’s necessary, not what’s comfortable.</li>
-  <li>Keeping your head when everyone else is spiraling.</li>
-  <li>Training your body because one day it’ll be the only tool you have.</li>
-  <li>Managing your emotions instead of letting them manage you.</li>
-  <li>Leading your family through uncertainty without flinching.</li>
-</ul>
+    <h2 id="modern-strength">What Strength Looks Like Today</h2>
 
-<p>
-  Strength is not optional anymore.  
-  The world is too unstable for passive men.
-</p>
+    <p>
+      Strength isn’t just muscles or attitude.  
+      It’s composure under pressure, clarity during chaos, and the ability to stay dangerous without losing control.
+    </p>
 
-<h2 id="warrior-role">Your Family Needs a Warrior, Not a Passenger</h2>
+    <p>
+      Modern strength means:
+    </p>
 
-<p>
-  A warrior isn’t someone who goes looking for fights.  
-  He’s someone who refuses to lose one.  
-</p>
+    <ul>
+      <li>Doing what’s necessary, not what’s comfortable.</li>
+      <li>Keeping your head when everyone else is spiraling.</li>
+      <li>Training your body because one day it’ll be the only tool you have.</li>
+      <li>Managing your emotions instead of letting them manage you.</li>
+      <li>Leading your family through uncertainty without flinching.</li>
+    </ul>
 
-<p>
-  The role used to be understood. Now, modern men forget that a household without a protector becomes
-  a buffet for anything that wants to take, break, or destroy.
-</p>
+    <!-- MENTAL WEAKNESS / WEAK MINDSET GRID -->
+    <div class="image-grid">
+      <img src="/mnt/data/484571184_963312715919852_2614793433638333958_n.jpg"
+           alt="18 habits that keep you mentally weak infographic">
+      <img src="/mnt/data/8-SIGNS-OF-A-WEAK-MINDSET-INFOGRAPHICS-WWW.THEEASYWISDOM.COM_-1024x1024.webp"
+           alt="8 signs of a weak mindset infographic">
+    </div>
+    <div class="image-caption">
+      It’s not just bad luck. Weakness is usually a stack of tiny habits, repeated daily, defended fiercely.
+    </div>
 
-<ul>
-  <li>Owning your past and learning instead of hiding.</li>
-  <li>Fixing your body instead of explaining it away.</li>
-  <li>Learning basic medical, combat, and survival skills.</li>
-  <li>Building a home that can face storms—weather, financial, or societal.</li>
-</ul>
+    <p>
+      Strength is not optional anymore.  
+      The world is too unstable for passive men.
+    </p>
 
-<p>
-  The storms are coming.  
-  Weak men drown.  
-  Prepared men pull their families to higher ground.  
-</p>
+    <h2 id="warrior-role">Your Family Needs a Warrior, Not a Passenger</h2>
 
+    <p>
+      A warrior isn’t someone who goes looking for fights.  
+      He’s someone who refuses to lose one.  
+    </p>
 
-<!-- SURVIVAL KIT AFFILIATE BLOCK -->
-<div class="gear-block">
-  <img src="images/s-l1600 (73).jpg" alt="Survival Kit" style="width:100%;max-width:220px;border-radius:10px;margin-bottom:12px;">
-  <h3>14-in-1 Survival & Emergency Kit</h3>
-  <p>Everything you need for the worst day of your life — knife, compass, fire starter, wire saw, multitool, and more.</p>
-  <a href="https://www.ebay.com/itm/376555257716?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank">Buy on eBay →</a>
-</div>
+    <p>
+      The role used to be understood. Now, modern men forget that a household without a protector becomes
+      a buffet for anything that wants to take, break, or destroy.
+    </p>
 
-<ul>
-  <li>Building a home or sanctuary that can ride out storms—financial and literal.</li>
-</ul>
+    <ul>
+      <li>Owning your past and learning instead of hiding.</li>
+      <li>Fixing your body instead of explaining it away.</li>
+      <li>Learning basic medical, combat, and survival skills.</li>
+      <li>Building a home that can face storms—weather, financial, or societal.</li>
+    </ul>
 
-<!-- STAINLESS STEEL COOK KIT AFFILIATE BLOCK -->
-<div class="gear-block">
-  <img src="images/$_57 (8).jfif" alt="Stainless steel cook kit" style="width:100%;max-width:220px;border-radius:10px;margin-bottom:12px;">
-  <h3>Stainless Steel Camp Cook Kit</h3>
-  <p>Boils water fast, cooks real meals, and fits perfectly in any bug-out bag.</p>
-  <a href="https://www.ebay.com/itm/388786298227" target="_blank">Buy on eBay →</a>
-</div>
+    <p>
+      The storms are coming.  
+      Weak men drown.  
+      Prepared men pull their families to higher ground.  
+    </p>
 
+    <!-- SURVIVAL KIT AFFILIATE BLOCK -->
+    <div class="gear-block">
+      <img src="images/s-l1600 (73).jpg" alt="Survival Kit">
+      <h3>14-in-1 Survival & Emergency Kit</h3>
+      <p>Everything you need for the worst day of your life — knife, compass, fire starter, wire saw, multitool, and more.</p>
+      <a href="https://www.ebay.com/itm/376555257716?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank">Buy on eBay →</a>
+    </div>
 
-    <p>The world is shifting fast. The storms are coming...</p>
+    <ul>
+      <li>Building a home or sanctuary that can ride out storms—financial and literal.</li>
+    </ul>
 
-    <!-- already existing gear section preserved -->
+    <!-- STAINLESS STEEL COOK KIT AFFILIATE BLOCK -->
+    <div class="gear-block">
+      <img src="images/$_57 (8).jfif" alt="Stainless steel cook kit">
+      <h3>Stainless Steel Camp Cook Kit</h3>
+      <p>Boils water fast, cooks real meals, and fits perfectly in any bug-out bag.</p>
+      <a href="https://www.ebay.com/itm/388786298227" target="_blank">Buy on eBay →</a>
+    </div>
+
+    <p>
+      The world is shifting fast.  
+      The storms are coming.  
+      Softness is a hobby for kid-ults who have nothing to lose.
+    </p>
+
+    <p>
+      You?  
+      You’ve got people counting on you.
+    </p>
+
+    <!-- existing gear section -->
     <section id="gear-section" class="gear-reco-section">
-      ...
+      <h2>Gear That Backs Up Your Mindset</h2>
+      <p>
+        Mindset is the starting point, not the finish line. At some point, your decisions turn into
+        calories stored, water filtered, and relative safety secured.
+        Here are three gear lanes to tighten up next:
+      </p>
+
+      <div class="gear-reco-grid">
+        <div class="gear-reco-item">
+          <h3>Cold &amp; Blackout Readiness</h3>
+          <p>
+            Wool blankets, layered clothing, backup heat, and basic light sources are non-negotiable.
+            Cold breaks people faster than they expect—especially kids and the elderly.
+          </p>
+          <a href="store.html" class="text-link">Browse cold-weather &amp; power gear →</a>
+        </div>
+
+        <div class="gear-reco-item">
+          <h3>Information, Light &amp; Power</h3>
+          <p>
+            A rugged emergency radio, tea-light candles, headlamps, lanterns, and a small power bank keep you informed,
+            oriented, and effective when the grid goes down or the storm sirens fail.
+          </p>
+          <a href="store.html" class="text-link">See radios, lights &amp; backup power →</a>
+        </div>
+
+        <div class="gear-reco-item">
+          <h3>Deterrence &amp; Self-Defense</h3>
+          <p>
+            Your presence should make trouble think twice. Lethal and non-lethal tools, strong lighting,
+            and a hardened mindset with firm boundaries all stack together to make you and your home a bad target.
+          </p>
+          <a href="store.html" class="text-link">Check self-defense &amp; security picks →</a>
+        </div>
+      </div>
+
+      <p style="margin-top:10px;font-size:0.82rem;color:#a3adbd;">
+        All picks are curated in the <a href="store.html">Gear Picks section</a>—no toy gear, no fantasy loadouts.
+        Just practical survival tools I’d actually stand behind when it’s my family on the line.
+      </p>
     </section>
 
     <hr/>
