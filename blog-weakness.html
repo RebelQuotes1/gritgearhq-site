@@ -18,23 +18,159 @@
     html, body {
       background: #080b10;
       color: #c7cbd1;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    .article-page { max-width: 900px; margin: 0 auto; padding: 24px 18px 40px; }
-    .article-body h1 { margin-bottom: 6px; }
-    .article-sub { font-size: 0.96rem; color: #a3adbd; max-width: 38rem; margin-bottom: 14px; }
-    .article-body hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 18px 0; }
-    .article-body h2 { margin-top: 18px; margin-bottom: 6px; font-size: 1.25rem; }
-    .article-body ul { padding-left: 1.2rem; margin: 8px 0 12px; }
-    .article-body li { margin-bottom: 4px; }
+
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+
+    .article-hero {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: radial-gradient(circle at top, #151b25 0, #05070b 60%);
+      margin-bottom: 26px;
+    }
+
+    .hero-img-wrap {
+      position: relative;
+      max-height: 260px;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      filter: contrast(1.1) brightness(0.85);
+      display: block;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,7,11,0.9) 0, rgba(5,7,11,0.0) 55%);
+    }
+
+    .hero-content {
+      padding: 18px 20px 20px;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #f8aa36;
+      font-size: 0.72rem;
+      margin-bottom: 6px;
+    }
+
+    .article-body h1 {
+      margin: 0 0 4px;
+      font-size: 1.8rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem;
+      color: #9aa3b4;
+      margin-top: 6px;
+    }
+
+    .article-sub {
+      font-size: 0.96rem;
+      color: #a3adbd;
+      max-width: 38rem;
+      margin-top: 10px;
+    }
+
+    .article-body hr {
+      border: 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin: 22px 0;
+    }
+
+    .article-body h2 {
+      margin-top: 26px;
+      margin-bottom: 6px;
+      font-size: 1.25rem;
+    }
+
+    .article-body h3 {
+      margin-top: 26px;
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+    }
+
+    .article-body p {
+      line-height: 1.7;
+      margin: 10px 0;
+    }
+
+    .article-body ul {
+      padding-left: 1.2rem;
+      margin: 8px 0 12px;
+    }
+
+    .article-body li {
+      margin-bottom: 4px;
+    }
 
     .toc {
-      border-radius: 10px; border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(8,11,15,0.9); padding: 10px 12px; font-size: 0.86rem;
-      margin: 10px 0 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(8,11,15,0.9);
+      padding: 10px 12px;
+      font-size: 0.86rem;
+      margin: 16px 0 24px;
     }
-    .toc strong { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; color: #f8aa36; }
-    .toc a { color: #e7ecef; text-decoration: none; font-size: 0.86rem; }
-    .toc a:hover { text-decoration: underline; }
+
+    .toc strong {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      color: #f8aa36;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 4px 14px;
+    }
+
+    .toc a {
+      color: #e7ecef;
+      text-decoration: none;
+      font-size: 0.86rem;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .inline-img {
+      width: 100%;
+      max-width: 550px;
+      border-radius: 10px;
+      display: block;
+      margin: 22px auto;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+
+    .img-caption {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #949fb0;
+      margin-top: -16px;
+      margin-bottom: 16px;
+    }
 
     .gear-block {
       background: #0b0e14;
@@ -44,14 +180,24 @@
       margin: 24px 0;
       text-align: center;
     }
+
     .gear-block img {
       width: 100%;
       max-width: 220px;
       border-radius: 10px;
       margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
     }
-    .gear-block h3 { margin: 6px 0; color: #f8aa36; }
-    .gear-block p { margin: 4px 0 8px; }
+
+    .gear-block h3 {
+      margin: 6px 0;
+      color: #f8aa36;
+    }
+
+    .gear-block p {
+      margin: 4px 0 8px;
+    }
+
     .gear-block a {
       display: inline-block;
       padding: 8px 14px;
@@ -62,412 +208,508 @@
       text-decoration: none;
     }
 
-    .inline-img {
-      width: 100%;
-      max-width: 550px;
-      border-radius: 10px;
-      display: block;
-      margin: 22px auto;
+    .gear-block a:hover {
+      filter: brightness(0.92);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 18px 18px 30px;
+      margin-top: 24px;
+      font-size: 0.86rem;
+      color: #8f97a6;
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #aeb7c7;
+      text-decoration: none;
+      margin-left: 12px;
+      font-size: 0.86rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .hero-img {
+        height: 210px;
+      }
+      .article-body h1 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 
 <body>
-
-<p>
-  A warrior isn’t someone who goes looking for fights.  
-  But he's ready to neutralize a threat should one be unavoidable.  
-</p>
-
-<p>
-  And here’s the truth most men choke on:  
-  If you want to protect your family, earn their respect, and walk through the world with a spine instead of a question mark, you have to stop being a big ol’ lazy pussy about life.  
-</p>
-
-<p>
-  Not everything needs to feel good. Life is not about seeking hedonistic pleasure. Not everything needs to be easy. Stop feeling sorry for yourself, everyone has problems just as deep and complex as yours. 
-  And no one is coming to save you — not the government, not your job, not your parents, not your pastor, and sure as hell not some bullshit social media manufactured fantasy version of yourself that you cling 
-  to while scrolling TikTok and telling yourself “one day.”
-</p>
-
-<p>
-  Your woman doesn’t need a “one day” man.  
-  Your kids don’t need a “tried my best” man.  
-  They need a <strong>dangerous, disciplined, grown-ass man</strong> they can trust when the world stops pretending to be stable.
-</p>
-
-<p>
-  Men today are drowning in comfort and calling it “self-care.”  
-  Bro, that’s not self-care — that’s sedation. Self neutering. 
-</p>
-
-<p>
-  You want to know why you feel anxious, weak, depressed, unfocused, miserable, irritated, and lost?  
-  Because you were born for pressure and objectives, not Minecraft and Papa Johns.  
-  You were built for tests, not treats.  
-  Your biology is screaming at you to do something hard, and you keep shoving donuts and screens into that void.  
-</p>
-
-<p>
-  A man without challenge becomes a man without purpose.  
-  And a man without purpose becomes a burden — not a blessing — to everyone around him.
-</p>
-
-<hr/>
-
-<h3>The Modern Man’s Disease: Avoidance</h3>
-
-<p>
-  Most men today don’t have a weakness problem — they have an avoidance problem.  
-</p>
-
-<p>
-  They avoid conflict.  
-  They avoid responsibility.  
-  They avoid discipline.  
-  They avoid pain.  
-  They avoid accountability.  
-  And then they wonder why their life feels like a slow-motion car crash.
-</p>
-
-<p>
-  You know what builds men?  
-  Everything you keep running from.
-  Know what happens if you cut open a caterpillar's caccoon and remove the butterfly?
-  It dies... because the struggle to free itself from the caccoon is what strengthens the 
-  wings enough to fly.
-</p>
-
-<p>
-  You want to stop being a big ol’ pussy?  
-  Here’s how.
-</p>
-
-<hr/>
-
-<h2>1. <strong>Stop letting your feelings run the show</strong></h2>
-
-<p>
-  You are not your emotions.  
-  You are not your impulses.  
-  You are not the momentary flash of anger, fear, boredom, or frustration.  
-</p>
-
-<p>
-  Weak men react.  
-  Strong men respond.  
-</p>
-
-<p>
-  If your emotions can hijack your actions, you’re not a man — you're just a clone of your emotionally unhinged single mom.  
-  Gain control of your inner world, or you’ll never have control of anything outside of it. Thats a fact.
-</p>
-
-<p><strong>Try this starting today:</strong></p>
-<ul>
-  <li>When you’re angry — breathe before you speak. As my wife says "practice your pause".</li>
-  <li>When you’re anxious — take action instead of spiraling. Choose to view it as excitement.</li>
-  <li>When you’re sad — move your body instead of sulking. Get at least 20 minutes of sunshine, lift weights, go for a walk, or 
-  clean your room. yeah, I'm being serious. Because you will get a fat hit of dopamine once you finish transforming your room into a place
-  that is tidy and well organized. A cluttered house = a cluttered mind</li>
-  <li>When you’re overwhelmed — break tasks down and attack. I learned pretty late in life that I can do just about anything as long as I break it
-  down into small enough steps, and unless you are some low IQ Muslim or Sub-Saharan, you can too.</li>
-</ul>
-
-<p>
-  Discipline is doing what’s right even when your body screams for the opposite.  
-  That’s how you build a spine.
-</p>
-
-<hr/>
-
-<h2>2. <strong>Fix your body — it’s the engine of your entire life</strong></h2>
-
-<p>
-  If you’re always tired, always aching, always slow, always winded, always inflamed, always moody, always foggy — your body is waving a white flag while you pretend “this is just aging.”  
-</p>
-
-<p>
-  No.  
-  It’s neglect.  
-</p>
-
-<p>
-  Strong men are built, not born. And a weak body creates a weak mind, weak morals, weak decisions, and weak leadership.
-</p>
-
-<p>
-  You don’t need to become a bodybuilder — just stop living like a broken lawn chair. You really don't want to enter your late 30s
-  and 40s in poor shape. 
-</p>
-
-<p><strong>Simple rules to stop being soft:</strong></p>
-<ul>
-  <li>Walk 30–60 minutes every day.</li>
-  <li>Lift 3-5 sets of something heavy 2–4 times a week.</li>
-  <li>Drink water and milk instead of liquid candy.</li>
-  <li>Eat enough protein to support muscle.</li>
-  <li>Get 7–8 hours of sleep instead of doomscrolling. You need REM sleep to think sharp and have good reaction time, and your muscles need 
-      time to repair in order to grow.</li>
-</ul>
-
-<p> If you are in fact a punk ass bitch...
-  Your woman will notice.  
-  Your kids will notice. 
-  predators will notice.
-  Hell — <i>you</i> will notice.  
-</p>
-
-<hr/>
-
-<h2>3. <strong>Learn skills that make you hard to kill</strong></h2>
-
-<p>
-  Men today are experts at things that don’t matter — fantasy football, gaming stats, celebrity drama, obscure anime lore — but can’t fix a toilet, change a tire, start a fire, calm their own child, or kick anyone's ass. 
-</p>
-
-<p>
-  You don’t have to be Rambo.  
-  But you do have to be useful. 
-  You need to build muscle memory. So train, train, and train more. 
-  That might mean drawing from it's holster until it becomes second nature, so that you don't get brained by some Haitain thug while you are fumbling with the thumbstrap on your holster. Or simply practice a couple of 3 piece 
-  combos on a punching bag. That may not sound like much but 98% of people don't even do that, so you will have an edge on almost everybody in this soft-guy era.
-
-<p><strong>Every man should know:</strong></p>
-<ul>
-  <li>How to defend himself and his family physically.</li>
-  <li>How to handle most modern firearms.</li>
-  <li>How to handle basic medical situations.</li>
-  <li>How to read a physical paper map.</li>
-  <li>How to use tools without hurting himself.</li>
-  <li>How to build, repair, or rig solutions.</li>
-</ul>
-
-<p>
-  Competence creates confidence.  
-  Confidence creates calm.  
-  Calm creates leadership.  
-</p>
-
-<p>
-  Your family needs a leader — not a liability.
-</p>
-
-<hr/>
-
-<h2>4. <strong>Stop numbing yourself with bullshit</strong></h2>
-
-<p>
-  Weak men are always chasing a distraction.  
-  Strong men confront what’s in front of them and ask for more.
-</p>
-
-<p>
-  It’s easy to sedate yourself with:
-</p>
-
-<ul>
-  <li>Endless scrolling</li>
-  <li>Junk food</li>
-  <li>Alcohol</li>
-  <li>Porn</li>
-  <li>Video games</li>
-  <li>Complaining</li>
-  <li>Fantasy instead of reality</li>
-</ul>
-
-<p>
-  But the problem with comfort is it feels good while your life collapses silently in the background.
-</p>
-
-<p>
-  You can’t grow while anesthetized.  
-  Turn your brain back on. Unplug from social media and dopamine factories like "Candy Crush" and you will begin to see the circus for what it is.
-  Truth is that so many of us are afraid that if we turn off our devices we will be stuck with all of the things we have been avoiding, or pushing to the backs of our minds.
-  But in reality you will gain EVERYTHING back, and I really do mean everything. Because you have likely been putting on a performance to keep up with your online persona for so long that
-  you've forgotten who you really are. Remember as a kid when you used to walk up to another kid you've never met before in your life and just start playing together? That kid didn't die.
-  But he's buried underneath a ton of bullshit and needs room to breathe. Just try a 3 hour phone detox and if you find yourself fidgiting, annoyed, anxious, if your ears ring in the absense 
-  of constant noise ans stimulation, then it's time to be honest with yourself and do something differently. Because what kind of leader are you going to be if you are losing your shit because 
-  you can't check your instagram notifications?
-</p>
-
-<hr/>
-
-<h2>5. <strong>Set standards your family can be proud of</strong></h2>
-
-<p>
-  Weak men want comfort.  
-  Strong men want responsibility.  
-</p>
-
-<p>
-  A weak man lets his mood dictate his effort.  
-  A strong man shows up and performs regardless of how he feels.
-</p>
-
-<p>
-  Your family watches everything you do — they don't give a rats moose-knuckle what you say.  
-</p>
-
-<ul>
-  <li>If you’re disciplined, they feel safe.</li>
-  <li>If you’re calm, they trust you.</li>
-  <li>If you’re fit, they can rely on you.</li>
-  <li>If you’re capable, they lean on you.</li>
-</ul>
-
-<p>
-  The household’s emotional climate is built around the man’s strength or the man’s weakness.  
-  There is no neutral. By biological default, you are the pillar, like it or not. 
-  When the ship sinks, men go down with the boat while women and children jump on life rafts, 
-  because real masculine men understand duty and sacrifice to the highest level, even if it means stepping directly in the path of danger in order to protect the weakest and most valued members of our society.
-  I've got news for you sunshine, you're not special. You have value, but above all else you are a protector. And that may mean standing between them and imminent danger some-day. 
-</p>
-
-<hr/>
-
-<h2>6. <strong>Become the kind of man pressure respects</strong></h2>
-
-<p>
-  Life doesn’t care how you feel.  
-  Danger doesn’t care.  
-  Crisis doesn’t care.  
-  Your enemies don’t care.  
-</p>
-
-<p>
-  Pressure only respects preparation and adaptability.
-</p>
-
-<p>
-  If you don’t train for stress, stress will consume you — violently.
-</p>
-
-<p><strong>Start here:</strong></p>
-<ul>
-  <li>Gradually do things that scare you.</li>
-  <li>Do things that exhaust your muscles.</li>
-  <li>Do things that force you to think while uncomfortable.</li>
-  <li>Do things that demand discipline and routine instead of motivation.</li>
-</ul>
-
-<p>
-  When pressure hits — and it will — you’ll be ready instead of wrecked.
-</p>
-
-<hr/>
-
-<h2>7. <strong>Build a mission bigger than your comfort</strong></h2>
-
-<p>
-  Weakness thrives in meaningless lives.  
-  Men crack when they have nothing to fight for. Got no wife and kids? Start up a small business. 
-  Something to give you a reason to get out of bed in the morning. I started with dropshipping, 
-  back when a handful of people were making major coinage doing it. I personally never made a lot of money, 
-  but I did learn a lot about eccommerce and I inadvertently learned lots new skills I would never never imagined 
-  if I hadn't gone done this productive path. Find out what you are really good at and find a way to monetize it. 
-  If you already work a 9-5 then make your side-hustle be your 5-9, and watch it grow and evolve. You yourself 
-  will evolve into something a little more solid as well. 
-</p>
-
-<p>
-  Your mission is not to “be happy.”  
-  It’s to build, protect, lead, prepare, and leave a legacy.  
-</p>
-
-<p>
-  Happiness is a byproduct of living like a man, not a goal you chase like a lost dog. It's never meant to be a permanent 
-  state of being.
-</p>
-
-<p><strong>Your mission includes:</strong></p>
-<ul>
-  <li>Raising strong, stable kids that other people don't hate.</li>
-  <li>Protecting your woman physically, spiritually and emotionally.</li>
-  <li>Building a home that can withstand storms.</li>
-  <li>Mastering your body so you stay functional until old age.</li>
-  <li>Providing more security this year than last year.</li>
-</ul>
-
-<hr/>
-
-<h2>Bottom Line: Stop being a big ol’ pussy and start being the man your family deserves</h2>
-
-<p>
-  The world is not getting softer.  
-  The storms are not slowing down.  
-  Your comfort will not save you — it will drown you.  
-  The time to learn to swim is not while the boat is sinking.
-</p>
-
-<p>
-  But here’s the good news:  
-  Strength isn’t genetic.  
-  Strength is a choice repeated daily.  
-</p>
-
-<p>
-  Start today.  
-  Not tomorrow.  
-  Not “after things settle down.”  
-  Today. Right fucking now, make yourself a promise and follow through. Something you can actually accomplish.
-</p>
-
-<p>
-  Become the man who leans into difficult things.  
-  Become the man no one wants to bet against.  
-  Become the man your family can look at and quietly think:  
-  <strong>“We’re safe because he’s here.”</strong>
-</p>
-
-<p>
-  Weakness is a luxury your family cannot afford.  
-  Strength is a duty you can no longer ignore.
-</p>
-
-
-    <!-- SURVIVAL KIT AFFILIATE BLOCK -->
-    <div class="gear-block">
-      <img src="s-l1600 (73).jpg" alt="Survival Kit">
-      <h3>14-in-1 Survival & Emergency Kit</h3>
-      <p>Everything you need for the worst day of your life — knife, compass, fire starter, wire saw, multitool, and more.</p>
-      <a href="https://www.ebay.com/itm/376555257716" target="_blank">Buy on eBay →</a>
+  <div class="article-page">
+
+    <!-- HERO -->
+    <header class="article-hero">
+      <div class="hero-img-wrap">
+        <!-- Rope training / effort image -->
+        <img src="istockphoto-947316730-2048x2048.jpg" alt="Man training hard with battle rope" class="hero-img">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content article-body">
+        <div class="hero-eyebrow">Mindset · Strength · Responsibility</div>
+        <h1>Weakness Is a Luxury Your Family Can’t Afford</h1>
+        <p class="article-meta">Grit Gear HQ · For men who refuse to stay soft</p>
+        <p class="article-sub">
+          Comfort culture tricks men into going soft. Here’s why weakness is a luxury your family can’t afford,
+          and how to build the strength, mindset, and skill set your people actually need.
+        </p>
+      </div>
+    </header>
+
+    <!-- TOC -->
+    <div class="toc">
+      <strong>In this article</strong>
+      <ul>
+        <li><a href="#modern-avoidance">The Modern Man’s Disease: Avoidance</a></li>
+        <li><a href="#feelings">1. Stop letting your feelings run the show</a></li>
+        <li><a href="#body">2. Fix your body — it’s the engine of your entire life</a></li>
+        <li><a href="#skills">3. Learn skills that make you hard to kill</a></li>
+        <li><a href="#numbing">4. Stop numbing yourself with bullshit</a></li>
+        <li><a href="#standards">5. Set standards your family can be proud of</a></li>
+        <li><a href="#pressure">6. Become the kind of man pressure respects</a></li>
+        <li><a href="#mission">7. Build a mission bigger than your comfort</a></li>
+        <li><a href="#bottom-line">Bottom line</a></li>
+      </ul>
     </div>
 
-    <ul>
-      <li>Building a home or sanctuary that can ride out storms—financial and literal.</li>
-    </ul>
+    <article class="article-body">
 
-    <!-- STAINLESS STEEL COOK KIT -->
-    <div class="gear-block">
-      <img src="$_57 (8).jfif" alt="Cook Kit">
-      <h3>Stainless Steel Camp Cook Kit</h3>
-      <p>Boils water fast, cooks real meals, and fits perfectly in any bug-out bag.</p>
-      <a href="https://www.ebay.com/itm/388786298227" target="_blank">Buy on eBay →</a>
-    </div>
+      <p>
+        A warrior isn’t someone who goes looking for fights.  
+        But he's ready to neutralize a threat should one be unavoidable.  
+      </p>
 
-    <p>
-      The world is shifting fast. The storms are coming. Weak men drown. Prepared men pull their families to higher ground.
-    </p>
+      <p>
+        And here’s the truth most men choke on:  
+        If you want to protect your family, earn their respect, and walk through the world with a spine instead of a question mark, you have to stop being a big ol’ lazy pussy about life.  
+      </p>
 
-    <!-- KEEPING YOUR OLD GEAR SECTION -->
-    <section id="gear-section" class="gear-reco-section">
-      ...
-    </section>
+      <p>
+        Not everything needs to feel good. Life is not about seeking hedonistic pleasure. Not everything needs to be easy. Stop feeling sorry for yourself, everyone has problems just as deep and complex as yours. 
+        And no one is coming to save you — not the government, not your job, not your parents, not your pastor, and sure as hell not some bullshit social media manufactured fantasy version of yourself that you cling 
+        to while scrolling TikTok and telling yourself “one day.”
+      </p>
 
-  </article>
-</section>
+      <p>
+        Your woman doesn’t need a “one day” man.  
+        Your kids don’t need a “tried my best” man.  
+        They need a <strong>dangerous, disciplined, grown-ass man</strong> they can trust when the world stops pretending to be stable.
+      </p>
 
-<footer>
-  <div class="footer-inner">
-    <div>© 2025 Serpico — Grit Gear HQ</div>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="affiliate.html">Affiliate Disclosure</a>
-    </div>
+      <p>
+        Men today are drowning in comfort and calling it “self-care.”  
+        Bro, that’s not self-care — that’s sedation. Self neutering. 
+      </p>
+
+      <p>
+        You want to know why you feel anxious, weak, depressed, unfocused, miserable, irritated, and lost?  
+        Because you were born for pressure and objectives, not Minecraft and Papa Johns.  
+        You were built for tests, not treats.  
+        Your biology is screaming at you to do something hard, and you keep shoving donuts and screens into that void.  
+      </p>
+
+      <p>
+        A man without challenge becomes a man without purpose.  
+        And a man without purpose becomes a burden — not a blessing — to everyone around him.
+      </p>
+
+      <hr />
+
+      <!-- Avoidance section intro image: cowboy crossing fence -->
+      <img src="istockphoto-495762387-612x612.jpg" alt="Man climbing a fence in open country" class="inline-img">
+      <div class="img-caption">Most guys stay on the safe side of the fence. Your family needs the man who crosses it when he has to.</div>
+
+      <h3 id="modern-avoidance">The Modern Man’s Disease: Avoidance</h3>
+
+      <p>
+        Most men today don’t have a weakness problem — they have an avoidance problem.  
+      </p>
+
+      <p>
+        They avoid conflict.  
+        They avoid responsibility.  
+        They avoid discipline.  
+        They avoid pain.  
+        They avoid accountability.  
+        And then they wonder why their life feels like a slow-motion car crash.
+      </p>
+
+      <p>
+        You know what builds men?  
+        Everything you keep running from.
+        Know what happens if you cut open a caterpillar's caccoon and remove the butterfly?
+        It dies... because the struggle to free itself from the caccoon is what strengthens the 
+        wings enough to fly.
+      </p>
+
+      <p>
+        You want to stop being a big ol’ pussy?  
+        Here’s how.
+      </p>
+
+      <hr/>
+
+      <h2 id="feelings">1. <strong>Stop letting your feelings run the show</strong></h2>
+
+      <!-- Praying man image: inner battle / self-control -->
+      <img src="istockphoto-182455486-2048x2048.jpg" alt="Man deep in thought with hands clasped" class="inline-img">
+      <div class="img-caption">Winning the inner war always comes before winning anything in the outside world.</div>
+
+      <p>
+        You are not your emotions.  
+        You are not your impulses.  
+        You are not the momentary flash of anger, fear, boredom, or frustration.  
+      </p>
+
+      <p>
+        Weak men react.  
+        Strong men respond.  
+      </p>
+
+      <p>
+        If your emotions can hijack your actions, you’re not a man — you're just a clone of your emotionally unhinged single mom.  
+        Gain control of your inner world, or you’ll never have control of anything outside of it. Thats a fact.
+      </p>
+
+      <p><strong>Try this starting today:</strong></p>
+      <ul>
+        <li>When you’re angry — breathe before you speak. As my wife says "practice your pause".</li>
+        <li>When you’re anxious — take action instead of spiraling. Choose to view it as excitement.</li>
+        <li>When you’re sad — move your body instead of sulking. Get at least 20 minutes of sunshine, lift weights, go for a walk, or 
+          clean your room. yeah, I'm being serious. Because you will get a fat hit of dopamine once you finish transforming your room into a place
+          that is tidy and well organized. A cluttered house = a cluttered mind</li>
+        <li>When you’re overwhelmed — break tasks down and attack. I learned pretty late in life that I can do just about anything as long as I break it
+          down into small enough steps, and unless you are some low IQ Muslim or Sub-Saharan, you can too.</li>
+      </ul>
+
+      <p>
+        Discipline is doing what’s right even when your body screams for the opposite.  
+        That’s how you build a spine.
+      </p>
+
+      <hr/>
+
+      <h2 id="body">2. <strong>Fix your body — it’s the engine of your entire life</strong></h2>
+
+      <!-- Training rope image again, tighter framing: physical grind -->
+      <img src="istockphoto-947316730-2048x2048.jpg" alt="Man training with battle rope in gritty gym" class="inline-img">
+      <div class="img-caption">You don’t need a perfect plan. You just need to stop living like a broken lawn chair.</div>
+
+      <p>
+        If you’re always tired, always aching, always slow, always winded, always inflamed, always moody, always foggy — your body is waving a white flag while you pretend “this is just aging.”  
+      </p>
+
+      <p>
+        No.  
+        It’s neglect.  
+      </p>
+
+      <p>
+        Strong men are built, not born. And a weak body creates a weak mind, weak morals, weak decisions, and weak leadership.
+      </p>
+
+      <p>
+        You don’t need to become a bodybuilder — just stop living like a broken lawn chair. You really don't want to enter your late 30s
+        and 40s in poor shape. 
+      </p>
+
+      <p><strong>Simple rules to stop being soft:</strong></p>
+      <ul>
+        <li>Walk 30–60 minutes every day.</li>
+        <li>Lift 3-5 sets of something heavy 2–4 times a week.</li>
+        <li>Drink water and milk instead of liquid candy.</li>
+        <li>Eat enough protein to support muscle.</li>
+        <li>Get 7–8 hours of sleep instead of doomscrolling. You need REM sleep to think sharp and have good reaction time, and your muscles need 
+          time to repair in order to grow.</li>
+      </ul>
+
+      <p> If you are in fact a punk ass bitch...
+        Your woman will notice.  
+        Your kids will notice. 
+        predators will notice.
+        Hell — <i>you</i> will notice.  
+      </p>
+
+      <hr/>
+
+      <h2 id="skills">3. <strong>Learn skills that make you hard to kill</strong></h2>
+
+      <!-- Woodworking / hands image: competence & craft -->
+      <img src="istockphoto-635953242-612x612.jpg" alt="Man clapping dusty hands over a workbench" class="inline-img">
+      <div class="img-caption">Tools, skills, and calloused hands age a lot better than high scores and hot takes.</div>
+
+      <p>
+        Men today are experts at things that don’t matter — fantasy football, gaming stats, celebrity drama, obscure anime lore — but can’t fix a toilet, change a tire, start a fire, calm their own child, or kick anyone's ass. 
+      </p>
+
+      <p>
+        You don’t have to be Rambo.  
+        But you do have to be useful. 
+        You need to build muscle memory. So train, train, and train more. 
+        That might mean drawing from it's holster until it becomes second nature, so that you don't get brained by some Haitain thug while you are fumbling with the thumbstrap on your holster. Or simply practice a couple of 3 piece 
+        combos on a punching bag. That may not sound like much but 98% of people don't even do that, so you will have an edge on almost everybody in this soft-guy era.
+      </p>
+
+      <p><strong>Every man should know:</strong></p>
+      <ul>
+        <li>How to defend himself and his family physically.</li>
+        <li>How to handle most modern firearms.</li>
+        <li>How to handle basic medical situations.</li>
+        <li>How to read a physical paper map.</li>
+        <li>How to use tools without hurting himself.</li>
+        <li>How to build, repair, or rig solutions.</li>
+      </ul>
+
+      <p>
+        Competence creates confidence.  
+        Confidence creates calm.  
+        Calm creates leadership.  
+      </p>
+
+      <p>
+        Your family needs a leader — not a liability.
+      </p>
+
+      <hr/>
+
+      <h2 id="numbing">4. <strong>Stop numbing yourself with bullshit</strong></h2>
+
+      <!-- Campfire kettle image: unplugging, being present -->
+      <img src="Finding-And-Purifying-Water-10-22-1000x667.jpeg" alt="Kettle over a campfire in the woods" class="inline-img">
+      <div class="img-caption">Real life happens where the screens end and the firelight begins.</div>
+
+      <p>
+        Weak men are always chasing a distraction.  
+        Strong men confront what’s in front of them and ask for more.
+      </p>
+
+      <p>
+        It’s easy to sedate yourself with:
+      </p>
+
+      <ul>
+        <li>Endless scrolling</li>
+        <li>Junk food</li>
+        <li>Alcohol</li>
+        <li>Porn</li>
+        <li>Video games</li>
+        <li>Complaining</li>
+        <li>Fantasy instead of reality</li>
+      </ul>
+
+      <p>
+        But the problem with comfort is it feels good while your life collapses silently in the background.
+      </p>
+
+      <p>
+        You can’t grow while anesthetized.  
+        Turn your brain back on. Unplug from social media and dopamine factories like "Candy Crush" and you will begin to see the circus for what it is.
+        Truth is that so many of us are afraid that if we turn off our devices we will be stuck with all of the things we have been avoiding, or pushing to the backs of our minds.
+        But in reality you will gain EVERYTHING back, and I really do mean everything. Because you have likely been putting on a performance to keep up with your online persona for so long that
+        you've forgotten who you really are. Remember as a kid when you used to walk up to another kid you've never met before in your life and just start playing together? That kid didn't die.
+        But he's buried underneath a ton of bullshit and needs room to breathe. Just try a 3 hour phone detox and if you find yourself fidgiting, annoyed, anxious, if your ears ring in the absense 
+        of constant noise ans stimulation, then it's time to be honest with yourself and do something differently. Because what kind of leader are you going to be if you are losing your shit because 
+        you can't check your instagram notifications?
+      </p>
+
+      <hr/>
+
+      <h2 id="standards">5. <strong>Set standards your family can be proud of</strong></h2>
+
+      <!-- Another reflective image could fit here (reuse praying man if you want double) -->
+
+      <p>
+        Weak men want comfort.  
+        Strong men want responsibility.  
+      </p>
+
+      <p>
+        A weak man lets his mood dictate his effort.  
+        A strong man shows up and performs regardless of how he feels.
+      </p>
+
+      <p>
+        Your family watches everything you do — they don't give a rats moose-knuckle what you say.  
+      </p>
+
+      <ul>
+        <li>If you’re disciplined, they feel safe.</li>
+        <li>If you’re calm, they trust you.</li>
+        <li>If you’re fit, they can rely on you.</li>
+        <li>If you’re capable, they lean on you.</li>
+      </ul>
+
+      <p>
+        The household’s emotional climate is built around the man’s strength or the man’s weakness.  
+        There is no neutral. By biological default, you are the pillar, like it or not. 
+        When the ship sinks, men go down with the boat while women and children jump on life rafts, 
+        because real masculine men understand duty and sacrifice to the highest level, even if it means stepping directly in the path of danger in order to protect the weakest and most valued members of our society.
+        I've got news for you sunshine, you're not special. You have value, but above all else you are a protector. And that may mean standing between them and imminent danger some-day. 
+      </p>
+
+      <hr/>
+
+      <h2 id="pressure">6. <strong>Become the kind of man pressure respects</strong></h2>
+
+      <!-- Cowboy fence image echoes pressure & movement; reuse to keep weight low -->
+      <img src="istockphoto-495762387-612x612.jpg" alt="Cowboy moving over a fence line" class="inline-img">
+      <div class="img-caption">Pressure doesn’t care how you feel. It only respects preparation.</div>
+
+      <p>
+        Life doesn’t care how you feel.  
+        Danger doesn’t care.  
+        Crisis doesn’t care.  
+        Your enemies don’t care.  
+      </p>
+
+      <p>
+        Pressure only respects preparation and adaptability.
+      </p>
+
+      <p>
+        If you don’t train for stress, stress will consume you — violently.
+      </p>
+
+      <p><strong>Start here:</strong></p>
+      <ul>
+        <li>Gradually do things that scare you.</li>
+        <li>Do things that exhaust your muscles.</li>
+        <li>Do things that force you to think while uncomfortable.</li>
+        <li>Do things that demand discipline and routine instead of motivation.</li>
+      </ul>
+
+      <p>
+        When pressure hits — and it will — you’ll be ready instead of wrecked.
+      </p>
+
+      <hr/>
+
+      <h2 id="mission">7. <strong>Build a mission bigger than your comfort</strong></h2>
+
+      <p>
+        Weakness thrives in meaningless lives.  
+        Men crack when they have nothing to fight for. Got no wife and kids? Start up a small business. 
+        Something to give you a reason to get out of bed in the morning. I started with dropshipping, 
+        back when a handful of people were making major coinage doing it. I personally never made a lot of money, 
+        but I did learn a lot about eccommerce and I inadvertently learned lots new skills I would never never imagined 
+        if I hadn't gone done this productive path. Find out what you are really good at and find a way to monetize it. 
+        If you already work a 9-5 then make your side-hustle be your 5-9, and watch it grow and evolve. You yourself 
+        will evolve into something a little more solid as well. 
+      </p>
+
+      <p>
+        Your mission is not to “be happy.”  
+        It’s to build, protect, lead, prepare, and leave a legacy.  
+      </p>
+
+      <p>
+        Happiness is a byproduct of living like a man, not a goal you chase like a lost dog. It's never meant to be a permanent 
+        state of being.
+      </p>
+
+      <p><strong>Your mission includes:</strong></p>
+      <ul>
+        <li>Raising strong, stable kids that other people don't hate.</li>
+        <li>Protecting your woman physically, spiritually and emotionally.</li>
+        <li>Building a home that can withstand storms.</li>
+        <li>Mastering your body so you stay functional until old age.</li>
+        <li>Providing more security this year than last year.</li>
+      </ul>
+
+      <hr/>
+
+      <h2 id="bottom-line">Bottom Line: Stop being a big ol’ pussy and start being the man your family deserves</h2>
+
+      <p>
+        The world is not getting softer.  
+        The storms are not slowing down.  
+        Your comfort will not save you — it will drown you.  
+        The time to learn to swim is not while the boat is sinking.
+      </p>
+
+      <p>
+        But here’s the good news:  
+        Strength isn’t genetic.  
+        Strength is a choice repeated daily.  
+      </p>
+
+      <p>
+        Start today.  
+        Not tomorrow.  
+        Not “after things settle down.”  
+        Today. Right fucking now, make yourself a promise and follow through. Something you can actually accomplish.
+      </p>
+
+      <p>
+        Become the man who leans into difficult things.  
+        Become the man no one wants to bet against.  
+        Become the man your family can look at and quietly think:  
+        <strong>“We’re safe because he’s here.”</strong>
+      </p>
+
+      <p>
+        Weakness is a luxury your family cannot afford.  
+        Strength is a duty you can no longer ignore.
+      </p>
+
+      <!-- SURVIVAL KIT AFFILIATE BLOCK -->
+      <div class="gear-block">
+        <img src="s-l1600 (73).jpg" alt="Survival Kit">
+        <h3>14-in-1 Survival & Emergency Kit</h3>
+        <p>Everything you need for the worst day of your life — knife, compass, fire starter, wire saw, multitool, and more.</p>
+        <a href="https://www.ebay.com/itm/376555257716" target="_blank">Buy on eBay →</a>
+      </div>
+
+      <ul>
+        <li>Building a home or sanctuary that can ride out storms—financial and literal.</li>
+      </ul>
+
+      <!-- STAINLESS STEEL COOK KIT -->
+      <div class="gear-block">
+        <img src="$_57 (8).jfif" alt="Cook Kit">
+        <h3>Stainless Steel Camp Cook Kit</h3>
+        <p>Boils water fast, cooks real meals, and fits perfectly in any bug-out bag.</p>
+        <a href="https://www.ebay.com/itm/388786298227" target="_blank">Buy on eBay →</a>
+      </div>
+
+      <p>
+        The world is shifting fast. The storms are coming. Weak men drown. Prepared men pull their families to higher ground.
+      </p>
+
+      <!-- KEEPING YOUR OLD GEAR SECTION -->
+      <section id="gear-section" class="gear-reco-section">
+        ...
+      </section>
+
+    </article>
   </div>
-</footer>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 Serpico — Grit Gear HQ</div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="affiliate.html">Affiliate Disclosure</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
