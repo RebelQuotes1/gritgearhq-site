@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Google Ads -->
+  <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-  
+
   <meta charset="UTF-8" />
   <title>Weakness Is a Luxury Your Family Can’t Afford | Grit Gear HQ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,128 +11,286 @@
   <meta name="robots" content="index,follow" />
 
   <link rel="canonical" href="https://gritgearhq.com/blog-weakness.html" />
-
   <link rel="stylesheet" href="style.css">
 
   <style>
+    :root{
+      --bg:#070a10;
+      --panel:#0b0f16;
+      --panel2:#0e1420;
+      --text:#d0d6e0;
+      --muted:#a0a9bb;
+      --muted2:#8b95a9;
+      --line:rgba(255,255,255,0.10);
+      --line2:rgba(255,255,255,0.14);
+      --accent:#f8aa36;
+      --accent2:#ffd28a;
+      --shadow:0 18px 50px rgba(0,0,0,0.55);
+    }
+
+    * { box-sizing: border-box; }
+
     html, body {
-      background: #080b10;
-      color: #c7cbd1;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(248,170,54,0.08), transparent 60%),
+                  radial-gradient(900px 500px at 100% 10%, rgba(90,130,255,0.06), transparent 60%),
+                  var(--bg);
+      color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin:0;
     }
 
+    /* News-style page layout */
     .article-page {
-      max-width: 900px;
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 24px 18px 40px;
+      padding: 22px 16px 44px;
     }
 
-    .article-hero {
+    .news-shell{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap: 18px;
+      align-items:start;
+    }
+
+    .main-col{
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid var(--line);
       border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .side-col{
+      position: sticky;
+      top: 14px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+
+    /* Top newsbar */
+    .newsbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding: 12px 14px;
+      border-bottom:1px solid var(--line);
+      background: rgba(8,11,15,0.85);
+      backdrop-filter: blur(6px);
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand b{
+      font-size:0.95rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:#e9edf5;
+    }
+    .brand span{
+      font-size:0.78rem;
+      color: var(--muted2);
+    }
+
+    .newsbar .pill{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .tag{
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:0.78rem;
+      letter-spacing:0.02em;
+      white-space:nowrap;
+    }
+    .tag strong{ color: var(--accent2); font-weight:800; }
+
+    /* HERO becomes a news “lead” */
+    .article-hero {
+      margin: 0;
+      border:0;
+      border-radius: 0;
       background: radial-gradient(circle at top, #151b25 0, #05070b 60%);
-      margin-bottom: 26px;
     }
 
     .hero-img-wrap {
       position: relative;
-      max-height: 260px;
+      max-height: 360px;
       overflow: hidden;
     }
 
     .hero-img {
       width: 100%;
-      height: 260px;
+      height: 360px;
       object-fit: cover;
-      filter: contrast(1.1) brightness(0.85);
+      filter: contrast(1.08) brightness(0.82) saturate(1.03);
       display: block;
+      transform: scale(1.01);
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(5,7,11,0.9) 0, rgba(5,7,11,0.0) 55%);
+      background:
+        linear-gradient(to top, rgba(5,7,11,0.95) 0, rgba(5,7,11,0.10) 62%),
+        radial-gradient(700px 240px at 15% 100%, rgba(248,170,54,0.16), transparent 65%);
+      pointer-events:none;
     }
 
     .hero-content {
-      padding: 18px 20px 20px;
+      padding: 18px 20px 18px;
+      border-bottom:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(7,10,16,0.92), rgba(7,10,16,0.98));
     }
 
     .hero-eyebrow {
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #f8aa36;
+      letter-spacing: 0.18em;
+      color: var(--accent);
       font-size: 0.72rem;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .article-body h1 {
-      margin: 0 0 4px;
-      font-size: 1.8rem;
+      margin: 0 0 6px;
+      font-size: 2.05rem;
+      line-height:1.08;
+      letter-spacing:-0.02em;
+      color:#f3f6fb;
     }
 
     .article-meta {
-      font-size: 0.85rem;
-      color: #9aa3b4;
+      font-size: 0.88rem;
+      color: var(--muted);
       margin-top: 6px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .article-meta .dot{
+      width:4px; height:4px; border-radius:50%;
+      background: rgba(255,255,255,0.22);
+      display:inline-block;
     }
 
     .article-sub {
-      font-size: 0.96rem;
-      color: #a3adbd;
-      max-width: 38rem;
+      font-size: 1.02rem;
+      color: #b3bdd0;
+      max-width: 46rem;
       margin-top: 10px;
+      line-height:1.55;
+    }
+
+    /* Body typography like editorial */
+    .article-body{
+      padding: 0 22px 22px;
     }
 
     .article-body hr {
       border: 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid var(--line);
       margin: 22px 0;
     }
 
     .article-body h2 {
-      margin-top: 26px;
-      margin-bottom: 6px;
-      font-size: 1.25rem;
+      margin-top: 28px;
+      margin-bottom: 8px;
+      font-size: 1.28rem;
+      letter-spacing:-0.01em;
+      color:#eef2f8;
     }
 
     .article-body h3 {
       margin-top: 26px;
-      margin-bottom: 6px;
-      font-size: 1.1rem;
+      margin-bottom: 8px;
+      font-size: 1.12rem;
+      letter-spacing:-0.01em;
+      color:#e9edf5;
     }
 
     .article-body p {
-      line-height: 1.7;
-      margin: 10px 0;
+      line-height: 1.78;
+      margin: 12px 0;
+      font-size: 1.02rem;
+      color: var(--text);
     }
 
     .article-body ul {
       padding-left: 1.2rem;
-      margin: 8px 0 12px;
+      margin: 10px 0 14px;
     }
 
     .article-body li {
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      line-height:1.6;
+      color:#d7dce7;
     }
 
-    .toc {
+    /* Pullquote / news callout */
+    .pull{
+      margin: 18px 0 18px;
+      padding: 14px 14px 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: rgba(255,255,255,0.03);
       border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(8,11,15,0.9);
-      padding: 10px 12px;
-      font-size: 0.86rem;
-      margin: 16px 0 24px;
+      color:#e8edf6;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
     }
+    .pull strong{ color: var(--accent2); }
+
+    /* TOC now looks like an editorial “Contents” box */
+    .toc {
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(8,11,15,0.92), rgba(8,11,15,0.92));
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      margin: 16px 0 24px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .toc::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: url('brainrot.jpg') center/cover no-repeat;
+      opacity:0.26;
+      filter: contrast(1.05) brightness(0.8) saturate(0.95);
+      transform: scale(1.02);
+      pointer-events:none;
+    }
+
+    .toc::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(8,11,15,0.88), rgba(8,11,15,0.96));
+      pointer-events:none;
+    }
+
+    .toc > *{ position:relative; z-index:1; }
 
     .toc strong {
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.75rem;
-      color: #f8aa36;
+      letter-spacing: 0.14em;
+      font-size: 0.76rem;
+      color: var(--accent);
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .toc ul {
@@ -140,88 +298,164 @@
       margin: 0;
       padding-left: 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-      gap: 4px 14px;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 6px 16px;
     }
 
     .toc a {
-      color: #e7ecef;
+      color: #eef2f8;
       text-decoration: none;
-      font-size: 0.86rem;
+      font-size: 0.9rem;
+      display:inline-block;
+      padding: 4px 0;
     }
 
     .toc a:hover {
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .inline-img {
-      width: 100%;
-      max-width: 550px;
-      border-radius: 10px;
-      display: block;
+    /* Photo blocks look like news photos */
+    figure{
       margin: 22px auto;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+      max-width: 720px;
     }
 
-    .img-caption {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #949fb0;
-      margin-top: -16px;
-      margin-bottom: 16px;
-    }
-
-    .gear-block {
-      background: #0b0e14;
-      border: 1px solid rgba(255,255,255,0.12);
+    .inline-img,
+    .news-img{
+      width: 100%;
       border-radius: 12px;
+      display: block;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.52);
+      background:#000;
+    }
+
+    .img-caption,
+    figcaption{
+      text-align: left;
+      font-size: 0.84rem;
+      color: #9aa3b4;
+      margin-top: 10px;
+      line-height:1.45;
+    }
+
+    /* Small “news photo” (for brainrot section) */
+    .news-photo{
+      max-width: 860px;
+      margin: 16px auto 22px;
+      border-radius: 14px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      box-shadow: 0 16px 44px rgba(0,0,0,0.45);
+    }
+    .news-photo img{
+      width:100%;
+      display:block;
+      max-height: 340px;
+      object-fit: cover;
+      filter: contrast(1.06) brightness(0.92);
+    }
+    .news-photo .cap{
+      padding: 10px 12px 12px;
+      font-size:0.86rem;
+      color:#9aa3b4;
+      border-top:1px solid var(--line);
+    }
+
+    /* Gear blocks upgraded */
+    .gear-block {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
       padding: 16px;
       margin: 24px 0;
-      text-align: center;
+      text-align: left;
+      display:flex;
+      gap: 16px;
+      align-items:center;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.38);
     }
 
     .gear-block img {
-      width: 100%;
-      max-width: 220px;
-      border-radius: 10px;
-      margin-bottom: 12px;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.15);
+      flex: 0 0 auto;
+      background:#0a0d12;
     }
 
     .gear-block h3 {
-      margin: 6px 0;
-      color: #f8aa36;
+      margin: 0 0 6px;
+      color: var(--accent);
+      font-size: 1.06rem;
     }
 
     .gear-block p {
-      margin: 4px 0 8px;
+      margin: 0 0 10px;
+      color:#d5dbe6;
+      line-height:1.6;
+      font-size: 0.96rem;
     }
 
     .gear-block a {
       display: inline-block;
-      padding: 8px 14px;
-      background: #f8aa36;
+      padding: 10px 14px;
+      background: var(--accent);
       color: #000;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 10px;
+      font-weight: 900;
       text-decoration: none;
+      box-shadow: 0 10px 24px rgba(248,170,54,0.16);
     }
 
     .gear-block a:hover {
-      filter: brightness(0.92);
+      filter: brightness(0.93);
     }
 
+    /* Sidebar cards */
+    .side-card{
+      border:1px solid var(--line);
+      background: rgba(10,14,20,0.78);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.42);
+      overflow:hidden;
+    }
+    .side-card h4{
+      margin:0 0 10px;
+      font-size:0.9rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color: var(--accent);
+    }
+    .side-card p{
+      margin:0;
+      color: var(--muted);
+      font-size:0.9rem;
+      line-height:1.55;
+    }
+    .side-card a{
+      color:#eef2f8;
+      text-decoration:none;
+      font-weight:800;
+    }
+    .side-card a:hover{ text-decoration:underline; }
+
+    /* Footer stays, but a bit cleaner */
     footer {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 18px 18px 30px;
-      margin-top: 24px;
-      font-size: 0.86rem;
+      border-top: 1px solid var(--line);
+      padding: 18px 18px 34px;
+      margin-top: 22px;
+      font-size: 0.9rem;
       color: #8f97a6;
     }
 
     .footer-inner {
-      max-width: 900px;
+      max-width: 1160px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
@@ -233,20 +467,26 @@
       color: #aeb7c7;
       text-decoration: none;
       margin-left: 12px;
-      font-size: 0.86rem;
+      font-size: 0.9rem;
     }
 
     .footer-links a:hover {
       text-decoration: underline;
     }
 
+    /* Mobile */
+    @media (max-width: 980px){
+      .news-shell{ grid-template-columns: 1fr; }
+      .side-col{ position: static; }
+    }
+
     @media (max-width: 640px) {
-      .hero-img {
-        height: 210px;
-      }
-      .article-body h1 {
-        font-size: 1.6rem;
-      }
+      .hero-img { height: 240px; }
+      .article-body h1 { font-size: 1.7rem; }
+      .article-body{ padding: 0 16px 18px; }
+      .gear-block{ flex-direction:column; align-items:flex-start; }
+      .gear-block img{ width:100%; height:auto; }
+      .toc ul{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -254,732 +494,789 @@
 <body>
   <div class="article-page">
 
-    <!-- HERO -->
-    <header class="article-hero">
-      <div class="hero-img-wrap">
-        <!-- Grit road training image -->
-        <img src="alley.jpg" 
-             alt="Man walking down rural road with determination" 
-             class="hero-img">
-        <div class="hero-overlay"></div>
-      </div>
-      <div class="hero-content article-body">
-        <div class="hero-eyebrow">Mindset · Strength · Responsibility</div>
-        <h1>Weakness Is a Luxury Your Family Can’t Afford</h1>
-        <p class="article-meta">Grit Gear HQ · For men who refuse to stay soft</p>
-        <p class="article-sub">
-          Comfort culture tricks men into going soft. Here’s why weakness is a luxury your family can’t afford,
-          and how to build the strength, mindset, and skill set your people actually need.
-        </p>
-      </div>
-    </header>
+    <div class="news-shell">
 
-   <!-- TOC -->
-<div class="toc" style="
-    background: url('brainrot.jpg') center/cover no-repeat;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 10px;
-    padding: 10px 12px;
-">
-  <strong>In this article</strong>
-  <ul>
-    <li><a href="#modern-avoidance">The Modern Man’s Disease: Avoidance</a></li>
-    <li><a href="#feelings">1. Stop letting your feelings run the show</a></li>
-    <li><a href="#body">2. Fix your body — it’s the engine of your entire life</a></li>
-    <li><a href="#skills">3. Learn skills that make you hard to kill</a></li>
-    <li><a href="#numbing">4. Stop numbing yourself with bullshit</a></li>
-    <li><a href="#standards">5. Set standards your family can be proud of</a></li>
-    <li><a href="#pressure">6. Become the kind of man pressure respects</a></li>
-    <li><a href="#mission">7. Build a mission bigger than your comfort</a></li>
-    <li><a href="#bottom-line">Bottom line</a></li>
-  </ul>
-</div>
+      <!-- MAIN -->
+      <main class="main-col">
 
-    <article class="article-body">
-
-      <p>
-        A warrior isn’t the loudest guy in the room or the one starting fights with random strangers at a dive bar.  
-        A warrior is the man who’s boringly prepared when things go sideways. 
-      </p>
-
-      <p>
-        Here’s the part most men choke on:  
-        If you want your family to sleep well at night, you cannot live like a spectator with a phone addiction and a soft belly.
-      </p>
-
-      <p>
-        Not everything in your life is supposed to feel good.  
-        Not everything is supposed to be easy. You weren't put on this earth to be happy. happiness and fulfillment are not synonymous. 
-        Your problems aren’t special — they’re just loud because you stopped doing hard things that shut them up.
-      </p>
-
-      <p>
-        Your woman doesn’t need a “someday I’ll get my life together” man. 
-        Your kids don’t need a “well, at least I tried” man.  
-        They need a <strong>dangerous, disciplined, steady man</strong> who shows up when it counts.
-      </p>
-
-      <p>
-        The world keeps selling men purses, skincare and hedonism and calling it “self-care.”  
-        Most of it is just sedation brought on by a targeted attempt to neuter and pussify men. 
-      </p>
-
-      <p>
-        You feel anxious, weak, depressed, unfocused, irritated, and lost because you were built for pressure, responsibility and combat, not for DoorDash, infinite scroll, and arguing with strangers online.  
-        You were built for <strong>tests</strong>, not treats.
-      </p>
-
-      <p>
-        A man without challenge becomes a man without purpose.  
-        And a man without purpose slowly turns into dead weight. And deep down he knows it.
-      </p>
-
-      <hr />
-
-      <!-- Avoidance section intro image: cowboy crossing fence -->
-      <img src="istockphoto-495762387-612x612.jpg" alt="Man climbing a fence in open country" class="inline-img">
-      <div class="img-caption">Most guys stay on the safe side of the fence. Your family needs the man who can endure and stay sharp, and strength is NEVER found in a comfortable place.</div>
-
-      <h3 id="modern-avoidance">The Modern Man’s Disease: Avoidance and distraction</h3>
-
-      <p>
-        Most men don’t have a “feelings” problem, despite how much this modern feminist society tries to guilt men for not being emotionally unhinged like women. 
-        What they have is an <strong>avoidance</strong> problem. Always taking the path of least resistence. 
-      </p>
-
-      <p>
-        They avoid conflict.  
-        They avoid rejection.
-        They avoid hard conversations.  
-        They avoid discipline.  
-        They avoid pain.  
-        They avoid mirrors — the literal ones and the metaphorical ones.
-      </p>
-
-      <p>
-        Then they wonder why their life feels like a slow-motion car crash with them trapped in the passenger seat.
-      </p>
-
-      <p>
-        Everything that builds a man is found on the other side of discomfort.  
-        The barbell, the awkward conversation, the extra shift, the long walk, the lonely night where you actually sit with your thoughts instead of nuking them with content.
-      </p>
-
-      <p>
-        Think of a butterfly. If you cut the cocoon open to “help,” it dies.  
-        The struggle is literally what builds the wings.  
-        Same thing with you. You keep trying to cut yourself out of every hard thing and then wonder why you can’t fly.
-      </p>
-
-      <p>
-        You want out of the weak, avoidant version of yourself?  
-        Here’s where it starts.
-      </p>
-
-      <hr/>
-
-      <h2 id="feelings">1. <strong>Stop letting your feelings run the show. "Follow your heart" is terrible advice.</strong></h2>
-
-      <!-- Hard work / grit banner -->
-      <img src="getready.jpg" 
-           alt="Older man in the shop with hands clasped over a pack" 
-           class="inline-img">
-      <div class="img-caption">Win the inner war first. The outer world is just where you collect the trophies.</div>
-
-      <p>
-        You are not your feelings.  
-        You’re the one who decides what to do with them.
-      </p>
-
-      <p>
-        Anger, fear, boredom, loneliness — none of those make you a bad man.  
-        What you <em>do</em> with them is the whole story.
-      </p>
-
-      <p>
-        Weak men react.  
-        Strong men respond.
-      </p>
-
-   <!-- DISCIPLINE + FIRESTEEL AFFILIATE BLOCK -->
-<section style="margin:36px 0;">
-
-  <p>
-    If every spike of emotion pulls you around by the nose, you’re not in charge — your lizard brain is.
-    And that thing is only good at four moves: fight, run, fuck, or eat something.
-  </p>
-
-<p><strong>Try this starting today:</strong></p>
-<ul>
-  <li><strong>When you’re angry</strong> — shut your mouth for 10 seconds and breathe. You can’t take back words, but you can delay them. Most damage is done in moments where restraint was optional.</li>
-  <li><strong>When you’re anxious</strong> — do one small task that moves your life forward. Make the call. Send the email. Take the walk. Anxiety feeds on inaction and dissolves with movement.</li>
-  <li><strong>When you’re sad</strong> — move your body. Clean a room, lift something heavy, walk until your thoughts slow down. Sadness loves stillness; motion breaks its grip.</li>
-  <li><strong>When you’re overwhelmed</strong> — break the problem into stupid-small steps and attack step one. Momentum is a drug. Use it.</li>
-</ul>
-
-<p>
-  Discipline is doing what’s right even while your feelings scream for the opposite.
-  That’s how you grow a spine instead of a script full of excuses.
-</p>
-
-<p>
-  A lot of what people call “social anxiety” comes from living behind a mask you no longer believe in.
-  When your life is built on performance instead of substance, every interaction feels like exposure. 
-  You are trying to project a well curated, better-than-reality version of yourself and you know they 
- can see through the cracks, so you panic. The answer isn't Xanax, it's learning to be real without 
- performing, and understanding that you are enough as you are. And remember, you are a background 
- character in the view of others just as they are in yours. People are all insecure and all self absorbed,
- so nobody is thinking about you nearly as much as you think. 
-</p>
-
-<p>
-  I struggled with that well into my 40s. It didn’t ease because I learned better social tricks —
-  it eased when I stopped pretending and started living in a way I actually respected. A little bit of 
-  psylicibin mushroom fueled self realization certainly doesn't hurt either, but be careful if you don't
-  know what you are doing with psychedelics. 
-</p>
-
-<p>
-  A soul at rest with itself doesn’t manage impressions.
-  It knows who it is, knows it’s enough, and doesn’t worry about being seen.
-</p>
-
-  <!-- AFFILIATE PRODUCT INSERT (FERRO ROD + STRIKER) -->
-  <div style="
-    margin:32px auto;
-    padding:20px;
-    max-width:720px;
-    background:#0b0e14;
-    border:1px solid rgba(255,255,255,0.12);
-    border-radius:14px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:18px;
-    align-items:center;
-    box-shadow:0 12px 34px rgba(0,0,0,0.45);
-  ">
-
-    <a href="https://www.ebay.com/itm/356838859810?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-       target="_blank"
-       rel="nofollow sponsored"
-       style="text-decoration:none;">
-      <img src="uberl.jpg"
-           alt="Überleben ferro rod and striker fire starter kit heavy duty firesteel"
-           style="
-             width:210px;
-             max-width:100%;
-             border-radius:10px;
-             border:1px solid rgba(255,255,255,0.15);
-             display:block;
-           ">
-    </a>
-
-    <div style="flex:1; min-width:240px;">
-      <div style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:#9aa3b4; margin-bottom:6px;">
-        Firestarting · Survival · Preparedness
-      </div>
-
-      <h3 style="margin:0 0 6px; color:#f8aa36; font-size:1.08rem;">
-        Überleben Ferro Rod + Striker (Top-Tier Firesteel)
-      </h3>
-
-      <div style="color:#f5c16c; font-size:0.92rem; margin-bottom:8px;">
-        ★★★★★ <span style="color:#9aa3b4;">(Grit Gear HQ Approved)</span>
-      </div>
-
-      <p style="margin:0 0 10px; font-size:0.92rem; color:#c7cbd1; line-height:1.55;">
-        High-quality, heavy-duty firesteel built to throw aggressive sparks when you need it most.
-        This is the “quit making excuses” version of firestarting — dependable, simple, and made for real use.
-      </p>
-
-      <div style="
-        display:flex;
-        flex-wrap:wrap;
-        gap:10px;
-        align-items:center;
-        margin-bottom:12px;
-      ">
-        <div style="
-          font-size:0.82rem;
-          color:#9aa3b4;
-          padding:6px 10px;
-          border:1px solid rgba(255,255,255,0.10);
-          border-radius:999px;
-          background:rgba(255,255,255,0.03);
-        ">
-          Deal refreshes in <span id="countdown" style="color:#f8aa36; font-weight:800;">05:00</span>
+        <!-- NEWSBAR -->
+        <div class="newsbar">
+          <div class="brand">
+            <b>Grit Gear HQ</b>
+            <span>Opinion · Field Notes · Preparedness</span>
+          </div>
+          <div class="pill">
+            <span class="tag"><strong>FEATURE</strong></span>
+            <span class="tag">Mindset</span>
+            <span class="tag">Strength</span>
+            <span class="tag">Responsibility</span>
+          </div>
         </div>
 
-        <div style="
-          font-size:0.82rem;
-          color:#9aa3b4;
-          padding:6px 10px;
-          border:1px solid rgba(255,255,255,0.10);
-          border-radius:999px;
-          background:rgba(255,255,255,0.03);
-        ">
-          “Buy once, cry never.”
+        <!-- HERO -->
+        <header class="article-hero">
+          <div class="hero-img-wrap">
+            <!-- Grit road training image -->
+            <img src="alley.jpg"
+                 alt="Man walking down rural road with determination"
+                 class="hero-img">
+            <div class="hero-overlay"></div>
+          </div>
+          <div class="hero-content article-body">
+            <div class="hero-eyebrow">Mindset · Strength · Responsibility</div>
+            <h1>Weakness Is a Luxury Your Family Can’t Afford</h1>
+            <p class="article-meta">
+              <span>Grit Gear HQ · For men who refuse to stay soft</span>
+              <span class="dot"></span>
+              <span>Updated: <span id="updatedDate"></span></span>
+            </p>
+            <p class="article-sub">
+              Comfort culture tricks men into going soft. Here’s why weakness is a luxury your family can’t afford,
+              and how to build the strength, mindset, and skill set your people actually need.
+            </p>
+          </div>
+        </header>
+
+        <!-- BODY -->
+        <article class="article-body">
+
+          <!-- TOC (kept exactly, just already styled) -->
+          <div class="toc">
+            <strong>In this article</strong>
+            <ul>
+              <li><a href="#modern-avoidance">The Modern Man’s Disease: Avoidance</a></li>
+              <li><a href="#feelings">1. Stop letting your feelings run the show</a></li>
+              <li><a href="#body">2. Fix your body — it’s the engine of your entire life</a></li>
+              <li><a href="#skills">3. Learn skills that make you hard to kill</a></li>
+              <li><a href="#numbing">4. Stop numbing yourself with bullshit</a></li>
+              <li><a href="#standards">5. Set standards your family can be proud of</a></li>
+              <li><a href="#pressure">6. Become the kind of man pressure respects</a></li>
+              <li><a href="#mission">7. Build a mission bigger than your comfort</a></li>
+              <li><a href="#bottom-line">Bottom line</a></li>
+            </ul>
+          </div>
+
+          <p>
+            A warrior isn’t the loudest guy in the room or the one starting fights with random strangers at a dive bar.
+            A warrior is the man who’s boringly prepared when things go sideways.
+          </p>
+
+          <p>
+            Here’s the part most men choke on:
+            If you want your family to sleep well at night, you cannot live like a spectator with a phone addiction and a soft belly.
+          </p>
+
+          <p>
+            Not everything in your life is supposed to feel good.
+            Not everything is supposed to be easy. You weren't put on this earth to be happy. happiness and fulfillment are not synonymous.
+            Your problems aren’t special — they’re just loud because you stopped doing hard things that shut them up.
+          </p>
+
+          <div class="pull">
+            <strong>Headline truth:</strong> if you want respect, safety, and stability in your home, you don’t get to live like a spectator.
+          </div>
+
+          <p>
+            Your woman doesn’t need a “someday I’ll get my life together” man.
+            Your kids don’t need a “well, at least I tried” man.
+            They need a <strong>dangerous, disciplined, steady man</strong> who shows up when it counts.
+          </p>
+
+          <p>
+            The world keeps selling men purses, skincare and hedonism and calling it “self-care.”
+            Most of it is just sedation brought on by a targeted attempt to neuter and pussify men.
+          </p>
+
+          <p>
+            You feel anxious, weak, depressed, unfocused, irritated, and lost because you were built for pressure, responsibility and combat, not for DoorDash, infinite scroll, and arguing with strangers online.
+            You were built for <strong>tests</strong>, not treats.
+          </p>
+
+          <p>
+            A man without challenge becomes a man without purpose.
+            And a man without purpose slowly turns into dead weight. And deep down he knows it.
+          </p>
+
+          <hr />
+
+          <!-- Avoidance section intro image: cowboy crossing fence -->
+          <figure>
+            <img src="istockphoto-495762387-612x612.jpg" alt="Man climbing a fence in open country" class="inline-img">
+            <figcaption class="img-caption">
+              Most guys stay on the safe side of the fence. Your family needs the man who can endure and stay sharp, and strength is NEVER found in a comfortable place.
+            </figcaption>
+          </figure>
+
+          <h3 id="modern-avoidance">The Modern Man’s Disease: Avoidance and distraction</h3>
+
+          <p>
+            Most men don’t have a “feelings” problem, despite how much this modern feminist society tries to guilt men for not being emotionally unhinged like women.
+            What they have is an <strong>avoidance</strong> problem. Always taking the path of least resistence.
+          </p>
+
+          <p>
+            They avoid conflict.
+            They avoid rejection.
+            They avoid hard conversations.
+            They avoid discipline.
+            They avoid pain.
+            They avoid mirrors — the literal ones and the metaphorical ones.
+          </p>
+
+          <p>
+            Then they wonder why their life feels like a slow-motion car crash with them trapped in the passenger seat.
+          </p>
+
+          <p>
+            Everything that builds a man is found on the other side of discomfort.
+            The barbell, the awkward conversation, the extra shift, the long walk, the lonely night where you actually sit with your thoughts instead of nuking them with content.
+          </p>
+
+          <p>
+            Think of a butterfly. If you cut the cocoon open to “help,” it dies.
+            The struggle is literally what builds the wings.
+            Same thing with you. You keep trying to cut yourself out of every hard thing and then wonder why you can’t fly.
+          </p>
+
+          <p>
+            You want out of the weak, avoidant version of yourself?
+            Here’s where it starts.
+          </p>
+
+          <hr/>
+
+          <h2 id="feelings">1. <strong>Stop letting your feelings run the show. "Follow your heart" is terrible advice.</strong></h2>
+
+          <!-- Hard work / grit banner -->
+          <figure>
+            <img src="getready.jpg"
+                 alt="Older man in the shop with hands clasped over a pack"
+                 class="inline-img">
+            <figcaption class="img-caption">
+              Win the inner war first. The outer world is just where you collect the trophies.
+            </figcaption>
+          </figure>
+
+          <p>
+            You are not your feelings.
+            You’re the one who decides what to do with them.
+          </p>
+
+          <p>
+            Anger, fear, boredom, loneliness — none of those make you a bad man.
+            What you <em>do</em> with them is the whole story.
+          </p>
+
+          <p>
+            Weak men react.
+            Strong men respond.
+          </p>
+
+          <!-- DISCIPLINE + FIRESTEEL AFFILIATE BLOCK -->
+          <section style="margin:36px 0;">
+
+            <p>
+              If every spike of emotion pulls you around by the nose, you’re not in charge — your lizard brain is.
+              And that thing is only good at four moves: fight, run, fuck, or eat something.
+            </p>
+
+            <p><strong>Try this starting today:</strong></p>
+            <ul>
+              <li><strong>When you’re angry</strong> — shut your mouth for 10 seconds and breathe. You can’t take back words, but you can delay them. Most damage is done in moments where restraint was optional.</li>
+              <li><strong>When you’re anxious</strong> — do one small task that moves your life forward. Make the call. Send the email. Take the walk. Anxiety feeds on inaction and dissolves with movement.</li>
+              <li><strong>When you’re sad</strong> — move your body. Clean a room, lift something heavy, walk until your thoughts slow down. Sadness loves stillness; motion breaks its grip.</li>
+              <li><strong>When you’re overwhelmed</strong> — break the problem into stupid-small steps and attack step one. Momentum is a drug. Use it.</li>
+            </ul>
+
+            <p>
+              Discipline is doing what’s right even while your feelings scream for the opposite.
+              That’s how you grow a spine instead of a script full of excuses.
+            </p>
+
+            <p>
+              A lot of what people call “social anxiety” comes from living behind a mask you no longer believe in.
+              When your life is built on performance instead of substance, every interaction feels like exposure.
+              You are trying to project a well curated, better-than-reality version of yourself and you know they
+              can see through the cracks, so you panic. The answer isn't Xanax, it's learning to be real without
+              performing, and understanding that you are enough as you are. And remember, you are a background
+              character in the view of others just as they are in yours. People are all insecure and all self absorbed,
+              so nobody is thinking about you nearly as much as you think.
+            </p>
+
+            <p>
+              I struggled with that well into my 40s. It didn’t ease because I learned better social tricks —
+              it eased when I stopped pretending and started living in a way I actually respected. A little bit of
+              psylicibin mushroom fueled self realization certainly doesn't hurt either, but be careful if you don't
+              know what you are doing with psychedelics.
+            </p>
+
+            <p>
+              A soul at rest with itself doesn’t manage impressions.
+              It knows who it is, knows it’s enough, and doesn’t worry about being seen.
+            </p>
+
+            <!-- AFFILIATE PRODUCT INSERT (FERRO ROD + STRIKER) -->
+            <div style="
+              margin:32px auto;
+              padding:20px;
+              max-width:820px;
+              background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+              border:1px solid rgba(255,255,255,0.12);
+              border-radius:16px;
+              display:flex;
+              flex-wrap:wrap;
+              gap:18px;
+              align-items:center;
+              box-shadow:0 14px 46px rgba(0,0,0,0.50);
+            ">
+
+              <a href="https://www.ebay.com/itm/356838859810?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+                 target="_blank"
+                 rel="nofollow sponsored"
+                 style="text-decoration:none;">
+                <img src="uberl.jpg"
+                     alt="Überleben ferro rod and striker fire starter kit heavy duty firesteel"
+                     style="
+                       width:240px;
+                       max-width:100%;
+                       border-radius:12px;
+                       border:1px solid rgba(255,255,255,0.15);
+                       display:block;
+                       background:#0a0d12;
+                     ">
+              </a>
+
+              <div style="flex:1; min-width:260px;">
+                <div style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:#9aa3b4; margin-bottom:6px;">
+                  Firestarting · Survival · Preparedness
+                </div>
+
+                <h3 style="margin:0 0 6px; color:#f8aa36; font-size:1.12rem;">
+                  Überleben Ferro Rod + Striker (Top-Tier Firesteel)
+                </h3>
+
+                <div style="color:#f5c16c; font-size:0.95rem; margin-bottom:8px;">
+                  ★★★★★ <span style="color:#9aa3b4;">(Grit Gear HQ Approved)</span>
+                </div>
+
+                <p style="margin:0 0 10px; font-size:0.98rem; color:#c7cbd1; line-height:1.6;">
+                  High-quality, heavy-duty firesteel built to throw aggressive sparks when you need it most.
+                  This is the “quit making excuses” version of firestarting — dependable, simple, and made for real use.
+                </p>
+
+                <div style="
+                  display:flex;
+                  flex-wrap:wrap;
+                  gap:10px;
+                  align-items:center;
+                  margin-bottom:12px;
+                ">
+                  <div style="
+                    font-size:0.84rem;
+                    color:#9aa3b4;
+                    padding:7px 10px;
+                    border:1px solid rgba(255,255,255,0.10);
+                    border-radius:999px;
+                    background:rgba(255,255,255,0.03);
+                  ">
+                    Deal refreshes in <span id="countdown" style="color:#f8aa36; font-weight:900;">05:00</span>
+                  </div>
+
+                  <div style="
+                    font-size:0.84rem;
+                    color:#9aa3b4;
+                    padding:7px 10px;
+                    border:1px solid rgba(255,255,255,0.10);
+                    border-radius:999px;
+                    background:rgba(255,255,255,0.03);
+                  ">
+                    “Buy once, cry never.”
+                  </div>
+                </div>
+
+                <a href="https://www.ebay.com/itm/356838859810?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+                   target="_blank"
+                   rel="nofollow sponsored"
+                   style="
+                     display:inline-block;
+                     padding:10px 16px;
+                     background:#f8aa36;
+                     color:#000;
+                     font-weight:900;
+                     border-radius:10px;
+                     text-decoration:none;
+                     box-shadow: 0 12px 26px rgba(248,170,54,0.18);
+                   ">
+                  Buy Now →
+                </a>
+
+                <div style="margin-top:10px; font-size:0.8rem; color:#8f97a6;">
+                  Tip: Pair it with dry tinder + practice now — because the first time you need fire shouldn’t be the first time you try.
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- COUNTDOWN TIMER (kept, but de-duped so it doesn't double-run) -->
+          <script>
+            (function () {
+              let time = 300; // 5 minutes
+              const el = document.getElementById("countdown");
+              if (!el) return;
+
+              setInterval(() => {
+                if (time > 0) time--;
+                const m = String(Math.floor(time / 60)).padStart(2, "0");
+                const s = String(time % 60).padStart(2, "0");
+                el.textContent = `${m}:${s}`;
+              }, 1000);
+            })();
+          </script>
+
+          <hr/>
+
+          <h2 id="body">2. <strong>Fix your body — it’s the engine of your entire life</strong></h2>
+
+          <div style="width:50%; max-width:900px; margin:24px auto;">
+            <img src="gunz.jpg"
+                 alt="Lone man walking a cracked road — No self pity"
+                 style="width:100%; height:auto; display:block; border-radius:6px;">
+          </div>
+
+          <p style="text-align:center; font-size:0.9rem; margin-top:8px;">
+            You don’t need a perfect plan. You just need to stop living like a broken lawn chair.
+          </p>
+
+          <p>
+            I’ve been on both ends of the spectrum. I’ve been <strong>severely underweight</strong> — the kind of skinny where people ask if you’re sick.
+            I’ve also been <strong>obese</strong> — winded, inflamed, uncomfortable in my own skin, lying to myself about why I felt like trash.
+          </p>
+
+          <p>
+            Right now, thankfully, I’m somewhere in the middle. Not perfect. Not shredded. But functional.
+            I walk every night. I still strength train with weights. I move my body even when my mind tries to negotiate its way out of it.
+          </p>
+
+          <p>
+            And I didn’t get here by accident. I had to break out of lazy cycles — not just physically, but mentally.
+            Old habits. Old excuses. Old ways of thinking that told me comfort was the same thing as peace.
+          </p>
+
+          <p>
+            If you’re always tired, always aching, always slow, always winded, always inflamed,
+            always moody, always foggy — your body isn’t “old.” It’s <em>under-maintained</em>.
+          </p>
+
+          <p>
+            No, it’s not all genetics.
+            A lot of it is drive-thru food, no sunlight, and sitting like a question mark for twelve hours a day
+            while pretending your body isn’t keeping score.
+          </p>
+
+          <p>
+            At some point, I started borrowing discipline before I could generate my own.
+            I listened to people like <strong>David Goggins</strong> and <strong>Jordan Peterson</strong> until they became
+            fatherly voices in the back of my head.
+          </p>
+
+          <p>
+            If I tried to put something off, I’d hear Goggins calling me out for being lazy and comfortable.
+            If I tried to rationalize bad habits, I’d hear Peterson calmly dismantling my excuses
+            and reminding me that chaos grows wherever responsibility is avoided.
+          </p>
+
+          <p>
+            Over time, those voices stopped being external. They became internal.
+            That’s how standards are built.
+          </p>
+
+          <p>
+            Strong men are built, not born.
+            And a weak body doesn’t just create physical problems —
+            it creates a weak mind, weak decisions, and weak leadership.
+          </p>
+
+          <p>
+            You don’t have to be a bodybuilder.
+            You just can’t afford to be the guy who gets winded tying his boots
+            or needs a chair to recover from basic life.
+          </p>
+
+          <h3>Simple rules to stop being soft:</h3>
+          <ul>
+            <li>Walk 30–60 minutes every day. Non-negotiable.</li>
+            <li>Lift 3–5 sets of something heavy, 2–4 times a week.</li>
+            <li>Kill most processed sugar. Your joints and brain will thank you.</li>
+            <li>Sleep like it’s part of your job — because it is.</li>
+            <li>Stop treating food like a therapist and beer like a personality trait.</li>
+          </ul>
+
+          <p>
+            If you live like a wreck, everyone around you pays the price.
+            Your woman notices. Your kids notice. Predators notice.
+            And deep down — whether you admit it or not — <em>you</em> definitely notice.
+          </p>
+
+          <hr/>
+
+          <h2 id="skills">3. <strong>Learn skills that make you hard to replace by AI</strong></h2>
+
+          <!-- Woodworking / hands image: competence & craft -->
+          <figure>
+            <img src="istockphoto-635953242-612x612.jpg" alt="Man clapping dusty hands over a workbench" class="inline-img">
+            <figcaption class="img-caption">
+              Tools, skills, and calloused hands age a lot better than high scores and hot takes.
+            </figcaption>
+          </figure>
+
+          <p>
+            Modern men are walking encyclopedias of useless information.
+            They can name every character in three different universes but can’t shut off the water to their own house.
+          </p>
+
+          <p>
+            You don’t have to be Rambo.
+            But you do have to be <strong>useful</strong>.
+          </p>
+
+          <p><strong>Every man should know how to:</strong></p>
+          <ul>
+            <li>Defend himself and his family physically.</li>
+            <li>Handle common firearms safely and competently.</li>
+            <li>Deal with basic medical issues until help arrives.</li>
+            <li>Read a paper map and navigate without a phone.</li>
+            <li>Use hand tools without bleeding all over the project.</li>
+            <li>Build, repair, or rig basic solutions when something breaks.</li>
+            <li>Start and maintain a fire.</li>
+          </ul>
+
+          <p>
+            Competence creates confidence.
+            Confidence creates calm.
+            Calm creates leadership.
+          </p>
+
+          <p>
+            Your family doesn’t need a mascot.
+            They need a leader who can fix things when they break — including himself.
+          </p>
+
+          <hr/>
+
+          <h2 id="numbing">4. <strong>Stop numbing yourself with bullshit</strong></h2>
+
+          <!-- News-style photo treatment (keeps your exact image + caption text) -->
+          <div class="news-photo">
+            <img src="brainrot.jpg" alt="">
+            <div class="cap">You can’t wake up if you never step outside the dream.</div>
+          </div>
+
+          <p>
+            Most men today aren’t living a life — they’re performing one.
+            You’re not thinking your own thoughts. You’re reciting the algorithm’s script,
+            stitched together from TikTok brainrot, Instagram flexes, and Facebook reels designed to
+            fracture your attention span so badly you can’t even finish a sentence without checking your phone.
+          </p>
+
+          <p>
+            And here’s the cold truth:
+            <strong>You don’t even know who you are anymore — you only know who you’re pretending to be.</strong>
+          </p>
+
+          <p>
+            Every selfie you curate, every caption you polish, every “relatable” post you copy,
+            every filter you slide across your face…
+            it all becomes another layer of separation between you and the real you.
+          </p>
+
+          <p>
+            You built a digital avatar, and now you’re exhausted from trying to keep up with him.
+          </p>
+
+          <p>
+            No wonder you feel socially anxious —
+            you’re not scared of people…
+            <strong>you’re scared they’ll see the real you under the character you designed.</strong>
+          </p>
+
+          <p>
+            You want freedom, but you’re scrolling yourself deeper into a cage.
+          </p>
+
+          <h3>The digital simulation keeps you weak on purpose:</h3>
+
+          <ul>
+            <li>Brainrot TikToks that fry your ability to focus for more than 12 seconds</li>
+            <li>Reels engineered to reset your dopamine like a casino slot machine</li>
+            <li>Memes replacing your worldview with recycled opinions</li>
+            <li>Algorithms feeding you emotions you never earned</li>
+            <li>Constant stimulation keeping your mind too foggy to rebel</li>
+          </ul>
+
+          <p>
+            When was the last time you formed your <em>own</em> idea?
+            When was the last time you sat alone with your thoughts and didn’t feel twitchy?
+          </p>
+
+          <p>
+            That tension you feel when the phone is out of reach?
+            That isn’t boredom.
+            <strong>That is dependency.</strong>
+          </p>
+
+          <p>
+            You are withdrawing from the simulation, and it scares you.
+            Because if you unplug…
+            if you sit in silence…
+            if you delete the noise…
+            you might have to face the person you’ve been avoiding for years:
+            <strong>yourself.</strong>
+          </p>
+
+          <p>
+            But here’s the power in that:
+            you cannot become a strong man, a grounded man, a present man, a free man
+            while your mind is owned by corporations who profit when you stay distracted.
+          </p>
+
+          <p>
+            Real life — the life that makes you whole — happens in the conversations you actually remember,
+            the moments your phone didn’t steal,
+            the ideas that grow in silence,
+            the confidence that comes from <em>being instead of performing</em>.
+          </p>
+
+          <p>
+            You will never feel masculine, centered, or fulfilled inside the digital terrarium
+            built to farm your attention and sell you back your identity at $0.03 CPM.
+          </p>
+
+          <p>
+            <strong>Escape now, while you still remember how.</strong>
+            Before the simulation becomes the only reality your brain recognizes.
+          </p>
+
+          <p>
+            The firelight, the woods, the quiet, the face-to-face moments…
+            that’s where the real world lives.
+            That’s where your mind detoxes.
+            That’s where you find out who the hell you actually are.
+          </p>
+
+          <hr/>
+
+          <h2 id="standards">5. <strong>Set standards your family can be proud of</strong></h2>
+
+          <p>
+            Weak men chase numbing.
+            Strong men chase clarity.
+          </p>
+
+          <p>
+            A weak man lets the algorithm shape his identity.
+            A strong man builds his identity through discipline, silence, and action.
+          </p>
+
+          <p>
+            Your family doesn’t need a guy who knows every meme trend.
+            They need a man whose presence stabilizes the entire room.
+          </p>
+
+          <ul>
+            <li>If you’re disciplined, they feel safe.</li>
+            <li>If you’re mentally present, they trust you.</li>
+            <li>If you’re physically capable, they rely on you.</li>
+            <li>If you’re emotionally grounded, they lean on you.</li>
+          </ul>
+
+          <p>
+            The emotional climate of your home is shaped by the strength — or weakness — of your inner world.
+            And your inner world can’t grow inside a digital simulation.
+          </p>
+
+          <p>
+            Unplug.
+            Reclaim your attention.
+            Reclaim your identity.
+            Reclaim your life.
+          </p>
+
+          <hr/>
+
+          <h2 id="pressure">6. <strong>Become the kind of man pressure respects</strong></h2>
+
+          <!-- Cowboy fence image echoes pressure & movement; reuse to keep weight low -->
+          <figure>
+            <img src="istockphoto-495762387-612x612.jpg" alt="Cowboy moving over a fence line" class="inline-img">
+            <figcaption class="img-caption">Pressure doesn’t care how you feel. It only respects preparation.</figcaption>
+          </figure>
+
+          <p>
+            Life doesn’t care how you feel.
+            Danger doesn’t care.
+            Crisis doesn’t care.
+            The bill collector doesn’t care.
+          </p>
+
+          <p>
+            Pressure only respects preparation and adaptability.
+          </p>
+
+          <p>
+            If you don’t train under stress, stress will eat you alive the first time it really shows up.
+          </p>
+
+          <p><strong>Start here:</strong></p>
+          <ul>
+            <li>Regularly do things that scare you a little.</li>
+            <li>Do things that exhaust your muscles and lungs.</li>
+            <li>Practice thinking while uncomfortable — cold showers, hard hikes, timed workouts.</li>
+            <li>Build routines that don’t care whether you “feel motivated.”</li>
+          </ul>
+
+          <p>
+            When pressure hits — and it will — you’ll either be the calm one giving instructions,
+            or the guy in the corner looking for a place to sit down. You choose.
+          </p>
+
+          <hr/>
+
+          <h2 id="mission">7. <strong>Build a mission bigger than your comfort</strong></h2>
+
+          <p>
+            Weakness thrives in meaningless lives.
+            Men crack when they have nothing worth fighting for.
+          </p>
+
+          <p>
+            Your mission is not to “stay entertained until you die.”
+            Your mission is to build, protect, provide, and leave something behind that isn’t just debt and old screenshots.
+          </p>
+
+          <p>
+            Got a family? That’s your first mission.
+            No family yet? Build a life so solid that when you do, they’re stepping into a fortress, not a circus.
+          </p>
+
+          <p><strong>Your mission might include:</strong></p>
+          <ul>
+            <li>Raising kids who are strong, kind, and grounded.</li>
+            <li>Protecting your woman physically, emotionally, and spiritually.</li>
+            <li>Building a home that can ride out both financial storms and real ones.</li>
+            <li>Keeping your body functional and dangerous into old age.</li>
+            <li>Providing a little more security this year than you did last year.</li>
+          </ul>
+
+          <p>
+            Happiness isn’t the goal.
+            It’s a side effect of living like a man with a mission.
+          </p>
+
+          <hr/>
+
+          <h2 id="bottom-line">Bottom Line: Weakness is a luxury your family can’t afford</h2>
+
+          <p>
+            The world is not getting softer.
+            The storms are not slowing down.
+            Your comfort will not save you — it will drown you.
+          </p>
+
+          <p>
+            The time to learn to swim is <em>before</em> the boat starts sinking.
+          </p>
+
+          <p>
+            The good news? Strength isn’t genetic.
+            It’s a daily decision repeated until it becomes who you are.
+          </p>
+
+          <p>
+            Start today.
+            Not tomorrow.
+            Not “after things settle down.”
+            Today — with one small, brutally honest promise you actually keep.
+          </p>
+
+          <p>
+            Become the man who leans into difficult things.
+            Become the man no one wants to bet against.
+            Become the man your family can look at and quietly think:
+            <strong>“We’re safe because he’s here.”</strong>
+          </p>
+
+          <p>
+            Weakness is a luxury your family cannot afford.
+            Strength is a duty you can’t keep dodging.
+          </p>
+
+          <!-- SURVIVAL KIT AFFILIATE BLOCK -->
+          <div class="gear-block">
+            <img src="s-l1600 (73).jpg" alt="Survival Kit">
+            <div>
+              <h3>14-in-1 Survival & Emergency Kit</h3>
+              <p>Everything you need for the worst day of your life — knife, compass, fire starter, wire saw, multitool, and more.</p>
+              <a href="https://www.ebay.com/itm/376555257716" target="_blank" rel="nofollow sponsored">Buy on eBay →</a>
+            </div>
+          </div>
+
+          <ul>
+            <li>Building a home or sanctuary that can ride out storms—financial and literal.</li>
+          </ul>
+
+          <!-- STAINLESS STEEL COOK KIT -->
+          <div class="gear-block">
+            <img src="$_57 (8).jfif" alt="Cook Kit">
+            <div>
+              <h3>Stainless Steel Camp Cook Kit</h3>
+              <p>Boils water fast, cooks real meals, and fits perfectly in any bug-out bag.</p>
+              <a href="https://www.ebay.com/itm/388786298227" target="_blank" rel="nofollow sponsored">Buy on eBay →</a>
+            </div>
+          </div>
+
+          <p>
+            The world is shifting fast. The storms are coming. Weak men drown. Prepared men pull their families to higher ground.
+          </p>
+
+          <!-- KEEPING YOUR OLD GEAR SECTION -->
+          <section id="gear-section" class="gear-reco-section">
+            ...
+          </section>
+
+        </article>
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="side-col">
+        <div class="side-card">
+          <h4>Quick take</h4>
+          <p>
+            This page is styled like a <strong>news feature</strong>: a lead photo, captions, pullquote, and a sidebar.
+            You didn’t lose or replace any of your text — only the layout and styling changed.
+          </p>
         </div>
-      </div>
 
-      <a href="https://www.ebay.com/itm/356838859810?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-         target="_blank"
-         rel="nofollow sponsored"
-         style="
-           display:inline-block;
-           padding:10px 16px;
-           background:#f8aa36;
-           color:#000;
-           font-weight:900;
-           border-radius:8px;
-           text-decoration:none;
-         ">
-        Buy Now →
-      </a>
+        <div class="side-card">
+          <h4>Most shared line</h4>
+          <p>
+            “<strong>You built a digital avatar, and now you’re exhausted from trying to keep up with him.</strong>”
+          </p>
+        </div>
 
-      <div style="margin-top:10px; font-size:0.78rem; color:#8f97a6;">
-        Tip: Pair it with dry tinder + practice now — because the first time you need fire shouldn’t be the first time you try.
-      </div>
+        <div class="side-card">
+          <h4>Jump to</h4>
+          <p>
+            <a href="#feelings">Section 1</a> ·
+            <a href="#body">Section 2</a> ·
+            <a href="#skills">Section 3</a> ·
+            <a href="#numbing">Section 4</a> ·
+            <a href="#bottom-line">Bottom line</a>
+          </p>
+        </div>
+      </aside>
+
     </div>
-  </div>
-
-</section>
-
-<!-- COUNTDOWN TIMER -->
-<script>
-  (function () {
-    let time = 300; // 5 minutes
-    const el = document.getElementById("countdown");
-    if (!el) return;
-
-    setInterval(() => {
-      if (time > 0) time--;
-      const m = String(Math.floor(time / 60)).padStart(2, "0");
-      const s = String(time % 60).padStart(2, "0");
-      el.textContent = `${m}:${s}`;
-    }, 1000);
-  })();
-</script>
-
-
-</section>
-
-<!-- COUNTDOWN TIMER -->
-<script>
-  let time = 300;
-  const countdown = document.getElementById("countdown");
-  setInterval(() => {
-    if (time > 0) {
-      time--;
-      const minutes = String(Math.floor(time / 60)).padStart(2, '0');
-      const seconds = String(time % 60).padStart(2, '0');
-      countdown.textContent = `${minutes}:${seconds}`;
-    }
-  }, 1000);
-</script>
-
-
-      <hr/>
-
-      <h2 id="body">2. <strong>Fix your body — it’s the engine of your entire life</strong></h2>
-<div style="width:50%; max-width:900px; margin:24px auto;">
-  <img src="gunz.jpg"
-       alt="Lone man walking a cracked road — No self pity"
-       style="width:100%; height:auto; display:block; border-radius:6px;">
-</div>
-
-
-      <p style="text-align:center; font-size:0.9rem; margin-top:8px;">
-  You don’t need a perfect plan. You just need to stop living like a broken lawn chair.
-</p>
-
-<p>
-  I’ve been on both ends of the spectrum. I’ve been <strong>severely underweight</strong> — the kind of skinny where people ask if you’re sick. 
-  I’ve also been <strong>obese</strong> — winded, inflamed, uncomfortable in my own skin, lying to myself about why I felt like trash.
-</p>
-
-<p>
-  Right now, thankfully, I’m somewhere in the middle. Not perfect. Not shredded. But functional. 
-  I walk every night. I still strength train with weights. I move my body even when my mind tries to negotiate its way out of it.
-</p>
-
-<p>
-  And I didn’t get here by accident. I had to break out of lazy cycles — not just physically, but mentally.
-  Old habits. Old excuses. Old ways of thinking that told me comfort was the same thing as peace.
-</p>
-
-<p>
-  If you’re always tired, always aching, always slow, always winded, always inflamed,
-  always moody, always foggy — your body isn’t “old.” It’s <em>under-maintained</em>.
-</p>
-
-<p>
-  No, it’s not all genetics.  
-  A lot of it is drive-thru food, no sunlight, and sitting like a question mark for twelve hours a day
-  while pretending your body isn’t keeping score.
-</p>
-
-<p>
-  At some point, I started borrowing discipline before I could generate my own.
-  I listened to people like <strong>David Goggins</strong> and <strong>Jordan Peterson</strong> until they became
-  fatherly voices in the back of my head.
-</p>
-
-<p>
-  If I tried to put something off, I’d hear Goggins calling me out for being lazy and comfortable.
-  If I tried to rationalize bad habits, I’d hear Peterson calmly dismantling my excuses
-  and reminding me that chaos grows wherever responsibility is avoided.
-</p>
-
-<p>
-  Over time, those voices stopped being external. They became internal.
-  That’s how standards are built.
-</p>
-
-<p>
-  Strong men are built, not born.  
-  And a weak body doesn’t just create physical problems —
-  it creates a weak mind, weak decisions, and weak leadership.
-</p>
-
-<p>
-  You don’t have to be a bodybuilder.  
-  You just can’t afford to be the guy who gets winded tying his boots
-  or needs a chair to recover from basic life.
-</p>
-
-<h3>Simple rules to stop being soft:</h3>
-<ul>
-  <li>Walk 30–60 minutes every day. Non-negotiable.</li>
-  <li>Lift 3–5 sets of something heavy, 2–4 times a week.</li>
-  <li>Kill most processed sugar. Your joints and brain will thank you.</li>
-  <li>Sleep like it’s part of your job — because it is.</li>
-  <li>Stop treating food like a therapist and beer like a personality trait.</li>
-</ul>
-
-<p>
-  If you live like a wreck, everyone around you pays the price.  
-  Your woman notices. Your kids notice. Predators notice.  
-  And deep down — whether you admit it or not — <em>you</em> definitely notice.
-</p>
-
-      <hr/>
-
-      <h2 id="skills">3. <strong>Learn skills that make you hard to replace by AI</strong></h2>
-
-      <!-- Woodworking / hands image: competence & craft -->
-      <img src="istockphoto-635953242-612x612.jpg" alt="Man clapping dusty hands over a workbench" class="inline-img">
-      <div class="img-caption">Tools, skills, and calloused hands age a lot better than high scores and hot takes.</div>
-
-      <p>
-        Modern men are walking encyclopedias of useless information.  
-        They can name every character in three different universes but can’t shut off the water to their own house.
-      </p>
-
-      <p>
-        You don’t have to be Rambo.  
-        But you do have to be <strong>useful</strong>.
-      </p>
-
-      <p><strong>Every man should know how to:</strong></p>
-      <ul>
-        <li>Defend himself and his family physically.</li>
-        <li>Handle common firearms safely and competently.</li>
-        <li>Deal with basic medical issues until help arrives.</li>
-        <li>Read a paper map and navigate without a phone.</li>
-        <li>Use hand tools without bleeding all over the project.</li>
-        <li>Build, repair, or rig basic solutions when something breaks.</li>
-        <li>Start and maintain a fire.
-      </ul>
-
-      <p>
-        Competence creates confidence.  
-        Confidence creates calm.  
-        Calm creates leadership.
-      </p>
-
-      <p>
-        Your family doesn’t need a mascot.  
-        They need a leader who can fix things when they break — including himself.
-      </p>
-
-      <hr/>
-
-      <h2 id="numbing">4. <strong>Stop numbing yourself with bullshit</strong></h2>
-
-    <!-- Brainrot image: the digital simulation eating your mind -->
-<img src="brainrot.jpg" alt="">
-
-<div class="img-caption">You can’t wake up if you never step outside the dream.</div>
-
-<p>
-  Most men today aren’t living a life — they’re performing one.  
-  You’re not thinking your own thoughts. You’re reciting the algorithm’s script, 
-  stitched together from TikTok brainrot, Instagram flexes, and Facebook reels designed to
-  fracture your attention span so badly you can’t even finish a sentence without checking your phone.
-</p>
-
-<p>
-  And here’s the cold truth:
-  <strong>You don’t even know who you are anymore — you only know who you’re pretending to be.</strong>
-</p>
-
-<p>
-  Every selfie you curate, every caption you polish, every “relatable” post you copy,  
-  every filter you slide across your face…  
-  it all becomes another layer of separation between you and the real you.
-</p>
-
-<p>
-  You built a digital avatar, and now you’re exhausted from trying to keep up with him.
-</p>
-
-<p>
-  No wonder you feel socially anxious —  
-  you’re not scared of people…  
-  <strong>you’re scared they’ll see the real you under the character you designed.</strong>
-</p>
-
-<p>
-  You want freedom, but you’re scrolling yourself deeper into a cage.
-</p>
-
-<h3>The digital simulation keeps you weak on purpose:</h3>
-
-<ul>
-  <li>Brainrot TikToks that fry your ability to focus for more than 12 seconds</li>
-  <li>Reels engineered to reset your dopamine like a casino slot machine</li>
-  <li>Memes replacing your worldview with recycled opinions</li>
-  <li>Algorithms feeding you emotions you never earned</li>
-  <li>Constant stimulation keeping your mind too foggy to rebel</li>
-</ul>
-
-<p>
-  When was the last time you formed your <em>own</em> idea?  
-  When was the last time you sat alone with your thoughts and didn’t feel twitchy?
-</p>
-
-<p>
-  That tension you feel when the phone is out of reach?  
-  That isn’t boredom.  
-  <strong>That is dependency.</strong>
-</p>
-
-<p>
-  You are withdrawing from the simulation, and it scares you.  
-  Because if you unplug…  
-  if you sit in silence…  
-  if you delete the noise…  
-  you might have to face the person you’ve been avoiding for years:  
-  <strong>yourself.</strong>
-</p>
-
-<p>
-  But here’s the power in that:
-  you cannot become a strong man, a grounded man, a present man, a free man  
-  while your mind is owned by corporations who profit when you stay distracted.
-</p>
-
-<p>
-  Real life — the life that makes you whole — happens in the conversations you actually remember,
-  the moments your phone didn’t steal,  
-  the ideas that grow in silence,  
-  the confidence that comes from <em>being instead of performing</em>.
-</p>
-
-<p>
-  You will never feel masculine, centered, or fulfilled inside the digital terrarium
-  built to farm your attention and sell you back your identity at $0.03 CPM.
-</p>
-
-<p>
-  <strong>Escape now, while you still remember how.</strong>  
-  Before the simulation becomes the only reality your brain recognizes.
-</p>
-
-<p>
-  The firelight, the woods, the quiet, the face-to-face moments…  
-  that’s where the real world lives.  
-  That’s where your mind detoxes.  
-  That’s where you find out who the hell you actually are.
-</p>
-
-<hr/>
-
-<h2 id="standards">5. <strong>Set standards your family can be proud of</strong></h2>
-
-<p>
-  Weak men chase numbing.  
-  Strong men chase clarity.
-</p>
-
-<p>
-  A weak man lets the algorithm shape his identity.  
-  A strong man builds his identity through discipline, silence, and action.
-</p>
-
-<p>
-  Your family doesn’t need a guy who knows every meme trend.  
-  They need a man whose presence stabilizes the entire room.
-</p>
-
-<ul>
-  <li>If you’re disciplined, they feel safe.</li>
-  <li>If you’re mentally present, they trust you.</li>
-  <li>If you’re physically capable, they rely on you.</li>
-  <li>If you’re emotionally grounded, they lean on you.</li>
-</ul>
-
-<p>
-  The emotional climate of your home is shaped by the strength — or weakness — of your inner world.  
-  And your inner world can’t grow inside a digital simulation.
-</p>
-
-<p>
-  Unplug.  
-  Reclaim your attention.  
-  Reclaim your identity.  
-  Reclaim your life.
-</p>
-
-
-      <hr/>
-
-      <h2 id="pressure">6. <strong>Become the kind of man pressure respects</strong></h2>
-
-      <!-- Cowboy fence image echoes pressure & movement; reuse to keep weight low -->
-      <img src="istockphoto-495762387-612x612.jpg" alt="Cowboy moving over a fence line" class="inline-img">
-      <div class="img-caption">Pressure doesn’t care how you feel. It only respects preparation.</div>
-
-      <p>
-        Life doesn’t care how you feel.  
-        Danger doesn’t care.  
-        Crisis doesn’t care.  
-        The bill collector doesn’t care.
-      </p>
-
-      <p>
-        Pressure only respects preparation and adaptability.
-      </p>
-
-      <p>
-        If you don’t train under stress, stress will eat you alive the first time it really shows up.
-      </p>
-
-      <p><strong>Start here:</strong></p>
-      <ul>
-        <li>Regularly do things that scare you a little.</li>
-        <li>Do things that exhaust your muscles and lungs.</li>
-        <li>Practice thinking while uncomfortable — cold showers, hard hikes, timed workouts.</li>
-        <li>Build routines that don’t care whether you “feel motivated.”</li>
-      </ul>
-
-      <p>
-        When pressure hits — and it will — you’ll either be the calm one giving instructions,  
-        or the guy in the corner looking for a place to sit down. You choose.
-      </p>
-
-      <hr/>
-
-      <h2 id="mission">7. <strong>Build a mission bigger than your comfort</strong></h2>
-
-      <p>
-        Weakness thrives in meaningless lives.  
-        Men crack when they have nothing worth fighting for.
-      </p>
-
-      <p>
-        Your mission is not to “stay entertained until you die.”  
-        Your mission is to build, protect, provide, and leave something behind that isn’t just debt and old screenshots.
-      </p>
-
-      <p>
-        Got a family? That’s your first mission.  
-        No family yet? Build a life so solid that when you do, they’re stepping into a fortress, not a circus.
-      </p>
-
-      <p><strong>Your mission might include:</strong></p>
-      <ul>
-        <li>Raising kids who are strong, kind, and grounded.</li>
-        <li>Protecting your woman physically, emotionally, and spiritually.</li>
-        <li>Building a home that can ride out both financial storms and real ones.</li>
-        <li>Keeping your body functional and dangerous into old age.</li>
-        <li>Providing a little more security this year than you did last year.</li>
-      </ul>
-
-      <p>
-        Happiness isn’t the goal.  
-        It’s a side effect of living like a man with a mission.
-      </p>
-
-      <hr/>
-
-      <h2 id="bottom-line">Bottom Line: Weakness is a luxury your family can’t afford</h2>
-
-      <p>
-        The world is not getting softer.  
-        The storms are not slowing down.  
-        Your comfort will not save you — it will drown you.
-      </p>
-
-      <p>
-        The time to learn to swim is <em>before</em> the boat starts sinking.
-      </p>
-
-      <p>
-        The good news? Strength isn’t genetic.  
-        It’s a daily decision repeated until it becomes who you are.
-      </p>
-
-      <p>
-        Start today.  
-        Not tomorrow.  
-        Not “after things settle down.”  
-        Today — with one small, brutally honest promise you actually keep.
-      </p>
-
-      <p>
-        Become the man who leans into difficult things.  
-        Become the man no one wants to bet against.  
-        Become the man your family can look at and quietly think:  
-        <strong>“We’re safe because he’s here.”</strong>
-      </p>
-
-      <p>
-        Weakness is a luxury your family cannot afford.  
-        Strength is a duty you can’t keep dodging.
-      </p>
-
-      <!-- SURVIVAL KIT AFFILIATE BLOCK -->
-      <div class="gear-block">
-        <img src="s-l1600 (73).jpg" alt="Survival Kit">
-        <h3>14-in-1 Survival & Emergency Kit</h3>
-        <p>Everything you need for the worst day of your life — knife, compass, fire starter, wire saw, multitool, and more.</p>
-        <a href="https://www.ebay.com/itm/376555257716" target="_blank">Buy on eBay →</a>
-      </div>
-
-      <ul>
-        <li>Building a home or sanctuary that can ride out storms—financial and literal.</li>
-      </ul>
-
-      <!-- STAINLESS STEEL COOK KIT -->
-      <div class="gear-block">
-        <img src="$_57 (8).jfif" alt="Cook Kit">
-        <h3>Stainless Steel Camp Cook Kit</h3>
-        <p>Boils water fast, cooks real meals, and fits perfectly in any bug-out bag.</p>
-        <a href="https://www.ebay.com/itm/388786298227" target="_blank">Buy on eBay →</a>
-      </div>
-
-      <p>
-        The world is shifting fast. The storms are coming. Weak men drown. Prepared men pull their families to higher ground.
-      </p>
-
-      <!-- KEEPING YOUR OLD GEAR SECTION -->
-      <section id="gear-section" class="gear-reco-section">
-        ...
-      </section>
-
-    </article>
   </div>
 
   <footer>
@@ -992,6 +1289,17 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Simple "Updated" date (looks newsy, doesn't change your content)
+    (function(){
+      const el = document.getElementById("updatedDate");
+      if(!el) return;
+      const d = new Date();
+      const opts = { year:'numeric', month:'short', day:'numeric' };
+      el.textContent = d.toLocaleDateString(undefined, opts);
+    })();
+  </script>
 
 </body>
 </html>
