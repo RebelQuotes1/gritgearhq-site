@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Ads -->
+  <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-<!-- TITAN SURVIVAL COLLAB HEADER -->
+
+  <!-- TITAN SURVIVAL COLLAB HEADER (kept verbatim; stored safely in template for valid HTML) -->
+  <script type="text/template" id="titan-strip-template">
 <section class="titan-strip" aria-label="Titan Survival Collab">
   <div class="titan-inner">
     <div class="titan-badge">
@@ -34,8 +36,9 @@
     </div>
   </div>
 </section>
+  </script>
 
-<style>
+  <style>
 /* TITAN SURVIVAL STRIP */
 .titan-strip {
   margin-top: 14px;
@@ -103,9 +106,8 @@
   color: var(--ink-soft);
   opacity: 0.9;
 }
-</style>
+  </style>
 
-  
   <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
@@ -147,6 +149,20 @@
     a:hover { text-decoration: underline; }
 
     .wrap { max-width: var(--max-width); margin: 0 auto; padding: 18px 18px 48px; }
+
+    /* Accessibility + polish */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 10px;
+      padding: 10px 12px;
+      background: #0b0e14;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--ink);
+      z-index: 9999;
+    }
+    .skip-link:focus { left: 12px; }
 
     /* ---------------- HEADER (FIXED VERSION) ---------------- */
     header {
@@ -268,15 +284,45 @@
       .nav-bar { flex-direction: column; align-items: stretch; }
     }
 
+    /* Quick-nav bar (clean, not cheesy) */
+    .quick-nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 18px 14px;
+    }
+    .quick-nav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(8,10,14,0.72);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+    }
+    .quick-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(10,12,16,0.75);
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    .quick-pill:hover { color: var(--ink); text-decoration: none; border-color: rgba(248,170,54,0.35); }
+
     /* --------------------------------------------------------- */
     /* HERO */
-
     .hero { padding-top: 28px; padding-bottom: 26px; }
 
     .hero-inner {
       display: grid;
       grid-template-columns: 1.4fr 1.1fr;
       gap: 26px;
+      align-items: start;
     }
 
     @media (max-width: 880px) {
@@ -295,7 +341,7 @@
       color: var(--ink-soft);
     }
 
-    .hero-title { font-size: clamp(2.3rem, 3vw + 1rem, 3rem); line-height: 1.1; }
+    .hero-title { font-size: clamp(2.3rem, 3vw + 1rem, 3rem); line-height: 1.1; margin: 12px 0 12px; }
 
     .accent {
       background: linear-gradient(90deg, #ffe1a5, var(--accent-deep));
@@ -307,6 +353,7 @@
       color: var(--ink-soft);
       font-size: 1rem;
       max-width: 36rem;
+      margin: 0;
     }
 
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
@@ -320,6 +367,19 @@
       border: 1px solid rgba(255,255,255,0.05);
       padding: 20px;
       box-shadow: 0 14px 28px rgba(0,0,0,0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-featured:before {
+      content: "";
+      position: absolute;
+      inset: -40px -80px auto auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 30% 30%, rgba(248,170,54,0.28), transparent 60%);
+      pointer-events: none;
+      filter: blur(0.5px);
     }
 
     .featured-label {
@@ -329,6 +389,77 @@
       border-radius: var(--radius-pill);
       display: inline-block;
       margin-bottom: 10px;
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--ink-soft);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .featured-tag {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .featured-title {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .featured-meta {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      opacity: 0.95;
+      margin-bottom: 10px;
+    }
+
+    .featured-excerpt {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin: 0 0 12px;
+    }
+
+    .featured-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(248,170,54,0.35);
+      background: rgba(10,12,16,0.65);
+    }
+
+    .featured-link:hover { text-decoration: none; border-color: rgba(248,170,54,0.55); }
+
+    .featured-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+    }
+
+    .featured-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .featured-pill {
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(6,8,11,0.6);
+      color: var(--ink-soft);
+      font-size: 0.78rem;
     }
 
     /* SECTION HEADER */
@@ -338,13 +469,17 @@
       font-size: 1.2rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
+      margin: 0 0 8px;
     }
+
+    .section p { color: var(--ink-soft); margin-top: 0; }
 
     /* CATEGORY GRID */
     .category-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
+      margin-top: 10px;
     }
 
     @media (max-width: 900px) { .category-strip { grid-template-columns: repeat(2, 1fr); } }
@@ -359,6 +494,13 @@
       align-items: center;
       justify-content: space-between;
       color: var(--ink-soft);
+      transition: transform 120ms ease, border-color 120ms ease;
+    }
+    .category-pill:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      border-color: rgba(248,170,54,0.25);
+      color: var(--ink);
     }
 
     /* BLOG GRID */
@@ -381,6 +523,9 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.7);
     }
 
+    .blog-card h3 { margin: 8px 0 6px; color: var(--ink); }
+    .blog-card p { margin: 0 0 10px; color: var(--ink-soft); }
+
     /* ABOUT + NEWSLETTER */
     .two-column {
       display: grid;
@@ -399,6 +544,52 @@
       border: 1px solid rgba(255,255,255,0.05);
     }
 
+    /* Email form cleanup */
+    .email-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .email-form input[type="email"]{
+      flex: 1;
+      min-width: 220px;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(6,8,11,0.65);
+      color: var(--ink);
+      outline: none;
+    }
+    .email-form input[type="email"]::placeholder { color: rgba(163,173,189,0.75); }
+    .email-form button { padding: 10px 18px; }
+
+    /* Quote panel polish */
+    .quote-panel{
+      color: var(--ink);
+      font-weight: 600;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(248,170,54,0.10), transparent 55%),
+        rgba(18,24,35,0.95);
+    }
+
+    /* Back to top button */
+    .to-top {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 999;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(10,12,16,0.78);
+      color: var(--ink-soft);
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.5);
+    }
+    .to-top:hover { color: var(--ink); border-color: rgba(248,170,54,0.25); }
+
     /* FOOTER */
     footer {
       margin-top: 40px;
@@ -411,6 +602,7 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- HEADER -->
   <header>
@@ -423,9 +615,9 @@
         </div>
       </div>
 
-      <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('nav-open')">☰</button>
+      <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('nav-open')" aria-label="Toggle navigation">☰</button>
 
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="blog-index.html">Field Guides</a>
         <a href="store.html">Gear Picks</a>
@@ -438,10 +630,56 @@
         <a href="store.html" class="btn btn-primary">Gear Recommendations</a>
       </div>
     </div>
+
+    <!-- Quick navigation (easy to scan, looks intentional) -->
+    <div class="quick-nav">
+      <div class="quick-nav-inner" aria-label="Quick navigation">
+        <a class="quick-pill" href="#featured-guide">⭐ Featured Guide</a>
+        <a class="quick-pill" href="#choose">🎯 Choose Your Battlefield</a>
+        <a class="quick-pill" href="#latest">📝 Latest Field Notes</a>
+        <a class="quick-pill" href="#dispatch">📩 HQ Dispatch</a>
+        <a class="quick-pill" href="#gear">🧰 Gear Tabs</a>
+        <a class="quick-pill" href="#quote">🔥 Reminder</a>
+      </div>
+    </div>
   </header>
 
+  <!-- TITAN SURVIVAL COLLAB HEADER (rendered here so it looks like part of the page, not dropped in) -->
+  <div class="wrap" style="padding-top: 10px;">
+    <section class="titan-strip" aria-label="Titan Survival Collab">
+      <div class="titan-inner">
+        <div class="titan-badge">
+          <span class="dot"></span>
+          <span>Official Collab • Titan Survival</span>
+        </div>
+
+        <h2 class="titan-title">
+          SurvivorCord®, real cordage, and field-tested gear — now part of the Grit Gear loadout.
+        </h2>
+
+        <p class="titan-copy">
+          I don’t slap my name on junk. Titan Survival makes the cord, line, and emergency gear I actually trust
+          when I’m cold, wet, hungry, and out of options. Upgrade your kit with gear that won’t fail when your
+          family is counting on you.
+        </p>
+
+        <div class="titan-actions">
+          <a href="https://www.titansurvival.com/GRITGEARHQ"
+             class="btn btn-primary"
+             target="_blank"
+             rel="nofollow sponsored noopener">
+            Shop Titan Survival →
+          </a>
+          <span class="titan-note">
+            Use code <strong>GRITGEARHQ</strong> when available.
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <!-- MAIN -->
-  <main class="wrap">
+  <main class="wrap" id="main">
 
     <!-- HERO -->
     <section class="hero">
@@ -469,172 +707,176 @@
           <div class="hero-hint">New posts drop as life happens. No clickbait.</div>
         </div>
 
-       <!-- FEATURED POST -->
-<aside class="hero-featured">
-  <div class="featured-label">Featured Guide</div>
+        <!-- FEATURED POST -->
+        <aside class="hero-featured" id="featured-guide">
+          <div class="featured-label">Featured Guide</div>
 
-  <div class="featured-tag">Cold Weather • Family Safety</div>
+          <div class="featured-tag">Cold Weather • Family Safety</div>
 
-  <h2 class="featured-title">
-    10 Items That Keep Your Family Warm When the Grid Goes Dark
-  </h2>
+          <h2 class="featured-title">
+            10 Items That Keep Your Family Warm When the Grid Goes Dark
+          </h2>
 
-  <div class="featured-meta">7-minute read • Field-tested loadout</div>
+          <div class="featured-meta">7-minute read • Field-tested loadout</div>
 
-  <p class="featured-excerpt">
-    When the power dies in the middle of a hard freeze, you don’t rise to the occasion —
-    you fall to your level of preparation. This guide covers insulation, backup heat,
-    and overlooked items that keep your kids calm instead of terrified.
-  </p>
+          <p class="featured-excerpt">
+            When the power dies in the middle of a hard freeze, you don’t rise to the occasion —
+            you fall to your level of preparation. This guide covers insulation, backup heat,
+            and overlooked items that keep your kids calm instead of terrified.
+          </p>
 
-  <a href="blog-cold-weather-kit.html" class="featured-link">
-    Read the full guide →
-  </a>
+          <a href="blog-cold-weather-kit.html" class="featured-link">
+            Read the full guide →
+          </a>
 
-  <div class="featured-footer">
-    <div class="featured-tags">
-      <span class="featured-pill">#winter</span>
-      <span class="featured-pill">#power-outage</span>
-      <span class="featured-pill">#family-first</span>
-    </div>
-    <div>Part of the <strong>Everyday Collapse Series</strong></div>
-  </div>
-</aside>
+          <div class="featured-footer">
+            <div class="featured-tags">
+              <span class="featured-pill">#winter</span>
+              <span class="featured-pill">#power-outage</span>
+              <span class="featured-pill">#family-first</span>
+            </div>
+            <div>Part of the <strong>Everyday Collapse Series</strong></div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
 
     <!-- CATEGORIES -->
-    <section class="section">
+    <section class="section" id="choose">
       <h2 class="section-title">Choose your battlefield</h2>
       <p>Pick the area that keeps you up at night and start there.</p>
-<!-- FEATURED BOOK : HOW TO UNF*CK YOUR LIFE -->
-<section style="
-  margin:40px auto;
-  padding:24px 26px;
-  max-width:820px;
-  background:#0b0e14;
-  border-left:5px solid #f8aa36;
-  border-radius:12px;
-  box-shadow:0 14px 40px rgba(0,0,0,0.6);
-">
 
-  <div style="
-    font-size:0.75rem;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:#9aa3b4;
-    margin-bottom:10px;
-  ">
-    Featured Book · Personal Responsibility · Discipline
-  </div>
-
-  <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start;">
-
-    <!-- Book Cover -->
-    <div style="flex:0 0 140px;">
-      <img src="61KphIP9y9L._SY466_.jpg"
-           alt="How to Unf*ck Your Life by Christopher Serpico"
-           style="
-             width:100%;
-             border-radius:6px;
-             box-shadow:0 10px 30px rgba(0,0,0,0.6);
-           ">
-    </div>
-
-    <!-- Book Info -->
-    <div style="flex:1; min-width:240px;">
-
-      <h3 style="
-        margin:0 0 6px;
-        font-size:1.45rem;
-        color:#e7ecef;
-        line-height:1.25;
-      ">
-        How to Unf*ck Your Life
-      </h3>
-
-      <div style="
-        font-size:0.85rem;
-        color:#9aa3b4;
-        margin-bottom:10px;
-      ">
-        by Christopher Serpico
-      </div>
-
-      <p style="
-        margin:0 0 12px;
-        font-size:1rem;
-        line-height:1.55;
-        color:#c7cbd1;
-      ">
-        This isn’t self-help fluff. It’s a blunt, honest field manual for men who are tired
-        of excuses, tired of drifting, and tired of living below their potential.
-        No platitudes. No victimhood. Just responsibility, discipline, and forward motion.
-      </p>
-
-      <div style="
-        color:#f5c16c;
-        font-size:0.95rem;
-        margin-bottom:8px;
-      ">
-        ★★★★★ <span style="color:#9aa3b4;">(Reader Rated)</span>
-      </div>
-
-      <ul style="
-        margin:0 0 14px;
-        padding-left:18px;
-        color:#c7cbd1;
-        font-size:0.95rem;
-        line-height:1.5;
-      ">
-        <li>Short, hard-hitting chapters</li>
-        <li>No-nonsense accountability</li>
-        <li>Written for men who are done lying to themselves</li>
-      </ul>
-
-      <div style="
-        display:flex;
-        align-items:center;
-        gap:16px;
-        flex-wrap:wrap;
+      <!-- FEATURED BOOK : HOW TO UNF*CK YOUR LIFE -->
+      <section style="
+        margin:40px auto;
+        padding:24px 26px;
+        max-width:820px;
+        background:#0b0e14;
+        border-left:5px solid #f8aa36;
+        border-radius:12px;
+        box-shadow:0 14px 40px rgba(0,0,0,0.6);
       ">
 
         <div style="
-          font-size:1.2rem;
-          font-weight:900;
-          color:#f8aa36;
+          font-size:0.75rem;
+          letter-spacing:0.18em;
+          text-transform:uppercase;
+          color:#9aa3b4;
+          margin-bottom:10px;
         ">
-          $9.75
+          Featured Book · Personal Responsibility · Discipline
         </div>
 
-        <a href="https://www.amazon.com/How-unf-ck-your-life/dp/B0F1K5KPH5"
-           target="_blank"
-           rel="nofollow sponsored"
-           style="
-             display:inline-block;
-             padding:12px 22px;
-             background:#f8aa36;
-             color:#000;
-             font-weight:900;
-             border-radius:8px;
-             text-decoration:none;
-             letter-spacing:0.02em;
-           ">
-          Buy on Amazon →
-        </a>
+        <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start;">
 
-      </div>
+          <!-- Book Cover -->
+          <div style="flex:0 0 140px;">
+            <img src="61KphIP9y9L._SY466_.jpg"
+                 alt="How to Unf*ck Your Life by Christopher Serpico"
+                 style="
+                   width:100%;
+                   border-radius:6px;
+                   box-shadow:0 10px 30px rgba(0,0,0,0.6);
+                 ">
+          </div>
 
-    </div>
-  </div>
+          <!-- Book Info -->
+          <div style="flex:1; min-width:240px;">
 
-  <p style="
-    margin-top:14px;
-    font-size:0.8rem;
-    color:#8f97a6;
-  ">
-    “Die a legend. Not a cautionary tale.”
-  </p>
+            <h3 style="
+              margin:0 0 6px;
+              font-size:1.45rem;
+              color:#e7ecef;
+              line-height:1.25;
+            ">
+              How to Unf*ck Your Life
+            </h3>
 
-</section>
+            <div style="
+              font-size:0.85rem;
+              color:#9aa3b4;
+              margin-bottom:10px;
+            ">
+              by Christopher Serpico
+            </div>
+
+            <p style="
+              margin:0 0 12px;
+              font-size:1rem;
+              line-height:1.55;
+              color:#c7cbd1;
+            ">
+              This isn’t self-help fluff. It’s a blunt, honest field manual for men who are tired
+              of excuses, tired of drifting, and tired of living below their potential.
+              No platitudes. No victimhood. Just responsibility, discipline, and forward motion.
+            </p>
+
+            <div style="
+              color:#f5c16c;
+              font-size:0.95rem;
+              margin-bottom:8px;
+            ">
+              ★★★★★ <span style="color:#9aa3b4;">(Reader Rated)</span>
+            </div>
+
+            <ul style="
+              margin:0 0 14px;
+              padding-left:18px;
+              color:#c7cbd1;
+              font-size:0.95rem;
+              line-height:1.5;
+            ">
+              <li>Short, hard-hitting chapters</li>
+              <li>No-nonsense accountability</li>
+              <li>Written for men who are done lying to themselves</li>
+            </ul>
+
+            <div style="
+              display:flex;
+              align-items:center;
+              gap:16px;
+              flex-wrap:wrap;
+            ">
+
+              <div style="
+                font-size:1.2rem;
+                font-weight:900;
+                color:#f8aa36;
+              ">
+                $9.75
+              </div>
+
+              <a href="https://www.amazon.com/How-unf-ck-your-life/dp/B0F1K5KPH5"
+                 target="_blank"
+                 rel="nofollow sponsored"
+                 style="
+                   display:inline-block;
+                   padding:12px 22px;
+                   background:#f8aa36;
+                   color:#000;
+                   font-weight:900;
+                   border-radius:8px;
+                   text-decoration:none;
+                   letter-spacing:0.02em;
+                 ">
+                Buy on Amazon →
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <p style="
+          margin-top:14px;
+          font-size:0.8rem;
+          color:#8f97a6;
+        ">
+          “Die a legend. Not a cautionary tale.”
+        </p>
+
+      </section>
 
       <div class="category-strip">
         <a href="blog-index.html#mindset" class="category-pill">🧠 Mindset & Grit →</a>
@@ -644,18 +886,18 @@
       </div>
     </section>
 
-          <!-- LATEST POSTS -->
-<section class="section">
-  <h2 class="section-title">Latest field notes</h2>
+    <!-- LATEST POSTS -->
+    <section class="section" id="latest">
+      <h2 class="section-title">Latest field notes</h2>
 
-  <div class="blog-grid">
+      <div class="blog-grid">
 
-    <article class="blog-card">
-      <div>Mindset</div>
-      <h3>Weakness Is a Luxury Your Family Can’t Afford</h3>
-      <p>Comfort culture tricks men into going soft. Here’s why that puts everyone at risk.</p>
-      <a href="blog-weakness.html">Read →</a>
-    </article>
+        <article class="blog-card">
+          <div>Mindset</div>
+          <h3>Weakness Is a Luxury Your Family Can’t Afford</h3>
+          <p>Comfort culture tricks men into going soft. Here’s why that puts everyone at risk.</p>
+          <a href="blog-weakness.html">Read →</a>
+        </article>
 
         <article class="blog-card">
           <div>Home Preparedness</div>
@@ -675,7 +917,7 @@
     </section>
 
     <!-- ABOUT + NEWSLETTER -->
-    <section class="section">
+    <section class="section" id="dispatch">
       <div class="two-column">
 
         <div class="about-panel">
@@ -685,231 +927,238 @@
           <p>Everything here is real-world, tested, and written without bullshit.</p>
         </div>
 
-       <div class="newsletter-panel">
-  <h3>Get the weekly HQ Dispatch</h3>
-  <p>New posts, quick checklists, reminders to sharpen your edge.</p>
+        <div class="newsletter-panel">
+          <h3>Get the weekly HQ Dispatch</h3>
+          <p>New posts, quick checklists, reminders to sharpen your edge.</p>
 
-<form class="email-form" action="https://formspree.io/f/xldogyda" method="POST">
-  <input type="email" name="email" placeholder="you@example.com" required>
-  <button class="btn btn-primary" type="submit">Join</button>
-</form>
-      </div>
-<!-- AFFILIATE FEATURE : HOT TENT / WINTER SHELTER -->
-<section style="
-  margin:42px auto;
-  padding:26px 28px;
-  max-width:820px;
-  background:#0b0e14;
-  border-left:5px solid #3f7f4f;
-  border-radius:12px;
-  box-shadow:0 14px 42px rgba(0,0,0,0.6);
-">
-
-  <div style="
-    font-size:0.75rem;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:#9aa3b4;
-    margin-bottom:10px;
-  ">
-    Shelter · Cold Weather · Field Tested
-  </div>
-
-  <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:flex-start;">
-
-    <!-- Product Image -->
-    <div style="flex:0 0 200px;">
-      <img src="s-l1600 (81).jpg"
-           alt="Winter hot tent with stove in snowy forest"
-           style="
-             width:100%;
-             border-radius:8px;
-             box-shadow:0 10px 32px rgba(0,0,0,0.6);
-           ">
-    </div>
-
-    <!-- Product Description -->
-    <div style="flex:1; min-width:260px;">
-
-      <h3 style="
-        margin:0 0 8px;
-        font-size:1.4rem;
-        color:#e7ecef;
-        line-height:1.25;
-      ">
-        Cold-Weather Hot Tent (Stove-Ready)
-      </h3>
-
-      <p style="
-        margin:0 0 12px;
-        font-size:1rem;
-        line-height:1.55;
-        color:#c7cbd1;
-      ">
-        This is real shelter — not a nylon coffin you freeze inside.
-        A proper hot tent lets you dry gear, warm your body, cook food,
-        and actually rest when temperatures drop below comfort.
-      </p>
-
-      <p style="
-        margin:0 0 12px;
-        font-size:0.95rem;
-        line-height:1.55;
-        color:#c7cbd1;
-      ">
-      </p>
-
-      <ul style="
-        margin:0 0 14px;
-        padding-left:18px;
-        color:#c7cbd1;
-        font-size:0.95rem;
-        line-height:1.5;
-      ">
-
-      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-
-        <a href="https://www.ebay.com/itm/389175901580?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-           target="_blank"
-           rel="nofollow sponsored"
-           style="
-             display:inline-block;
-             padding:12px 22px;
-             background:#3f7f4f;
-             color:#fff;
-             font-weight:900;
-             border-radius:8px;
-             text-decoration:none;
-             letter-spacing:0.02em;
-           ">
-          View Shelter →
-        </a>
+          <form class="email-form" action="https://formspree.io/f/xldogyda" method="POST">
+            <input type="email" name="email" placeholder="you@example.com" required>
+            <button class="btn btn-primary" type="submit">Join</button>
+          </form>
+        </div>
 
       </div>
 
-    </div>
-  </div>
+      <!-- AFFILIATE FEATURE : HOT TENT / WINTER SHELTER -->
+      <section style="
+        margin:42px auto;
+        padding:26px 28px;
+        max-width:820px;
+        background:#0b0e14;
+        border-left:5px solid #3f7f4f;
+        border-radius:12px;
+        box-shadow:0 14px 42px rgba(0,0,0,0.6);
+      ">
 
-  <p style="
-    margin-top:14px;
-    font-size:0.8rem;
-    color:#8f97a6;
-  ">
-    Cold doesn’t care how tough you feel. It respects preparation.
-  </p>
+        <div style="
+          font-size:0.75rem;
+          letter-spacing:0.18em;
+          text-transform:uppercase;
+          color:#9aa3b4;
+          margin-bottom:10px;
+        ">
+          Shelter · Cold Weather · Field Tested
+        </div>
 
-</section>
+        <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:flex-start;">
 
-      </div>
+          <!-- Product Image -->
+          <div style="flex:0 0 200px;">
+            <img src="s-l1600 (81).jpg"
+                 alt="Winter hot tent with stove in snowy forest"
+                 style="
+                   width:100%;
+                   border-radius:8px;
+                   box-shadow:0 10px 32px rgba(0,0,0,0.6);
+                 ">
+          </div>
+
+          <!-- Product Description -->
+          <div style="flex:1; min-width:260px;">
+
+            <h3 style="
+              margin:0 0 8px;
+              font-size:1.4rem;
+              color:#e7ecef;
+              line-height:1.25;
+            ">
+              Cold-Weather Hot Tent (Stove-Ready)
+            </h3>
+
+            <p style="
+              margin:0 0 12px;
+              font-size:1rem;
+              line-height:1.55;
+              color:#c7cbd1;
+            ">
+              This is real shelter — not a nylon coffin you freeze inside.
+              A proper hot tent lets you dry gear, warm your body, cook food,
+              and actually rest when temperatures drop below comfort.
+            </p>
+
+            <p style="
+              margin:0 0 12px;
+              font-size:0.95rem;
+              line-height:1.55;
+              color:#c7cbd1;
+            ">
+            </p>
+
+            <ul style="
+              margin:0 0 14px;
+              padding-left:18px;
+              color:#c7cbd1;
+              font-size:0.95rem;
+              line-height:1.5;
+            ">
+            </ul>
+
+            <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+
+              <a href="https://www.ebay.com/itm/389175901580?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+                 target="_blank"
+                 rel="nofollow sponsored"
+                 style="
+                   display:inline-block;
+                   padding:12px 22px;
+                   background:#3f7f4f;
+                   color:#fff;
+                   font-weight:900;
+                   border-radius:8px;
+                   text-decoration:none;
+                   letter-spacing:0.02em;
+                 ">
+                View Shelter →
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <p style="
+          margin-top:14px;
+          font-size:0.8rem;
+          color:#8f97a6;
+        ">
+          Cold doesn’t care how tough you feel. It respects preparation.
+        </p>
+
+      </section>
+
     </section>
-<!-- PRODUCT TAB: Chicken Burrito Bowl -->
-<section class="gear-tab">
 
-  <h3 class="gear-title">Chicken Burrito Bowl (Ready-to-Eat)</h3>
+    <!-- GEAR -->
+    <div id="gear"></div>
 
-  <div class="gear-content">
-    <img
-      src="hghghghg.jpg"
-      alt="Chicken Burrito Bowl pouch with nutrition label"
-      class="gear-img"
-    >
+    <!-- PRODUCT TAB: Chicken Burrito Bowl -->
+    <section class="gear-tab">
 
-    <div class="gear-text">
-      <p>
-        This isn’t influencer food and it isn’t gourmet. It’s the kind of thing you keep around
-        because life doesn’t always give you time, energy, or options.
-      </p>
+      <h3 class="gear-title">Chicken Burrito Bowl (Ready-to-Eat)</h3>
 
-      <p>
-        When the day runs long, plans fall apart, or you just need calories without thinking,
-        this pouch does its job quietly and reliably.
-      </p>
+      <div class="gear-content">
+        <img
+          src="hghghghg.jpg"
+          alt="Chicken Burrito Bowl pouch with nutrition label"
+          class="gear-img"
+        >
 
-      <ul>
-        <li>Compact and easy to store</li>
-        <li>No prep, no cleanup</li>
-        <li>Actual food — not just empty calories</li>
-        <li>Good backup for work bags, vehicles, or emergency kits</li>
-      </ul>
+        <div class="gear-text">
+          <p>
+            This isn’t influencer food and it isn’t gourmet. It’s the kind of thing you keep around
+            because life doesn’t always give you time, energy, or options.
+          </p>
 
-      <a
-        href="https://ebay.us/m/hmyUnT"
-        target="_blank"
-        rel="nofollow sponsored"
-        class="gear-link"
-      >
-        $10 OBO!→
-      </a>
-    </div>
-  </div>
+          <p>
+            When the day runs long, plans fall apart, or you just need calories without thinking,
+            this pouch does its job quietly and reliably.
+          </p>
 
-</section>
+          <ul>
+            <li>Compact and easy to store</li>
+            <li>No prep, no cleanup</li>
+            <li>Actual food — not just empty calories</li>
+            <li>Good backup for work bags, vehicles, or emergency kits</li>
+          </ul>
 
-<style>
-  .gear-tab{
-    margin:28px auto;
-    max-width:820px;
-    padding:22px;
-    background:#0b0e14;
-    border-radius:10px;
-    border:1px solid rgba(255,255,255,0.08);
-    box-shadow:0 12px 36px rgba(0,0,0,0.5);
-  }
+          <a
+            href="https://ebay.us/m/hmyUnT"
+            target="_blank"
+            rel="nofollow sponsored"
+            class="gear-link"
+          >
+            View Listing →
+          </a>
+        </div>
+      </div>
 
-  .gear-title{
-    margin:0 0 14px;
-    font-size:1.3rem;
-    color:#e7ecef;
-  }
+    </section>
 
-  .gear-content{
-    display:grid;
-    grid-template-columns:220px 1fr;
-    gap:18px;
-  }
+    <style>
+      .gear-tab{
+        margin:28px auto;
+        max-width:820px;
+        padding:22px;
+        background:#0b0e14;
+        border-radius:10px;
+        border:1px solid rgba(255,255,255,0.08);
+        box-shadow:0 12px 36px rgba(0,0,0,0.5);
+      }
 
-  @media (max-width:700px){
-    .gear-content{
-      grid-template-columns:1fr;
-    }
-  }
+      .gear-title{
+        margin:0 0 14px;
+        font-size:1.3rem;
+        color:#e7ecef;
+      }
 
-  .gear-img{
-    width:100%;
-    border-radius:8px;
-    border:1px solid rgba(255,255,255,0.1);
-  }
+      .gear-content{
+        display:grid;
+        grid-template-columns:220px 1fr;
+        gap:18px;
+      }
 
-  .gear-text p{
-    color:#c7cbd1;
-    line-height:1.55;
-    margin:0 0 10px;
-  }
+      @media (max-width:700px){
+        .gear-content{
+          grid-template-columns:1fr;
+        }
+      }
 
-  .gear-text ul{
-    margin:10px 0 14px 18px;
-    color:#cfd6df;
-  }
+      .gear-img{
+        width:100%;
+        border-radius:8px;
+        border:1px solid rgba(255,255,255,0.1);
+      }
 
-  .gear-text li{
-    margin:6px 0;
-  }
+      .gear-text p{
+        color:#c7cbd1;
+        line-height:1.55;
+        margin:0 0 10px;
+      }
 
-  .gear-link{
-    display:inline-block;
-    padding:10px 16px;
-    background:#c03221;
-    color:#fff;
-    text-decoration:none;
-    font-weight:800;
-    border-radius:6px;
-    text-transform:uppercase;
-    letter-spacing:0.03em;
-  }
-</style>
+      .gear-text ul{
+        margin:10px 0 14px 18px;
+        color:#cfd6df;
+      }
+
+      .gear-text li{
+        margin:6px 0;
+      }
+
+      .gear-link{
+        display:inline-block;
+        padding:10px 16px;
+        background:#c03221;
+        color:#fff;
+        text-decoration:none;
+        font-weight:800;
+        border-radius:6px;
+        text-transform:uppercase;
+        letter-spacing:0.03em;
+      }
+    </style>
 
     <!-- QUOTE -->
-    <section class="section">
+    <section class="section" id="quote">
       <div class="quote-panel">
         Civilization is a thin coat of paint. When it flakes, people look for someone who
         isn't panicking. Become that person.
@@ -923,8 +1172,18 @@
 
   </main>
 
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Back-to-top (subtle, useful)
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) toTop.style.display = 'inline-flex';
+      else toTop.style.display = 'none';
+    });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 
 </body>
