@@ -746,7 +746,434 @@
 
           <div class="hero-hint">New posts drop as life happens. No clickbait.</div>
         </div>
+<!-- ===== ROUGH GEAR DAD HAT: FRONT-PAGE FEATURE TAB (ROTATING IMAGES) ===== -->
+<section class="rg-feature" aria-label="Featured Gear: Rough Gear Distressed Dad Hat">
+  <div class="rg-wrap">
+    <!-- LEFT: ROTATING GALLERY -->
+    <div class="rg-gallery" data-rotate="true" data-interval="3200">
+      <div class="rg-badge-row">
+        <span class="rg-badge">FEATURED GEAR</span>
+        <span class="rg-badge rg-badge--muted">Print-on-demand • Limited runs</span>
+      </div>
 
+      <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Rough Gear Dad Hat images">
+        <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+        <div class="rg-slides">
+          <!-- Use your provided images (edit filenames/paths if needed) -->
+          <figure class="rg-slide is-active">
+            <img
+              src="distressed-dad-hat-black-front-6945b97aea14a.png"
+              alt="Rough Gear Distressed Dad Hat - Black (front view)"
+              loading="lazy"
+            />
+            <figcaption class="rg-cap">Black — clean, low-key, everyday grit.</figcaption>
+          </figure>
+
+          <figure class="rg-slide">
+            <img
+              src="distressed-dad-hat-charcoal-grey-front-6945b97b05443.png"
+              alt="Rough Gear Distressed Dad Hat - Charcoal (front view)"
+              loading="lazy"
+            />
+            <figcaption class="rg-cap">Charcoal — looks earned, not bought.</figcaption>
+          </figure>
+
+          <figure class="rg-slide">
+            <img
+              src="distressed-dad-hat-khaki-front-6945b97b0c120.png"
+              alt="Rough Gear Distressed Dad Hat - Khaki (front view)"
+              loading="lazy"
+            />
+            <figcaption class="rg-cap">Khaki — sun, sweat, and miles approved.</figcaption>
+          </figure>
+
+          <figure class="rg-slide">
+            <img
+              src="distressed-dad-hat-black-front-6945b97ae919f.png"
+              alt="Rough Gear Distressed Dad Hat - Black on model"
+              loading="lazy"
+            />
+            <figcaption class="rg-cap">Built for rougher times. Worn like you mean it.</figcaption>
+          </figure>
+        </div>
+
+        <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
+
+        <div class="rg-dots" aria-label="Choose image">
+          <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
+          <button class="rg-dot" type="button" aria-label="Image 2"></button>
+          <button class="rg-dot" type="button" aria-label="Image 3"></button>
+          <button class="rg-dot" type="button" aria-label="Image 4"></button>
+        </div>
+      </div>
+
+      <div class="rg-trust">
+        <div class="rg-stars" aria-label="Rating">★★★★★</div>
+        <div class="rg-trusttext">
+          <strong>Grit Gear HQ Pick</strong> • Low-profile • Distressed edge • Daily-wear comfort
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: SALES COPY + CTA -->
+    <div class="rg-copy">
+      <div class="rg-kicker">ROUGH GEAR</div>
+
+      <h2 class="rg-title">
+        Distressed Dad Hat
+        <span class="rg-sub">Built for Rougher Times</span>
+      </h2>
+
+      <p class="rg-lede">
+        Not a “fashion statement.” A <strong>signal</strong>. This hat is for men who don’t need to
+        talk about grit—they wear it. Distressed cotton twill, low profile, soft crown. No hype.
+      </p>
+
+      <ul class="rg-bullets">
+        <li><strong>Looks earned</strong> — subtle distressing that doesn’t try too hard</li>
+        <li><strong>Everyday comfort</strong> — broken-in feel without the wait</li>
+        <li><strong>Low-key branding</strong> — recognized by the right people</li>
+        <li><strong>Goes with anything</strong> — work boots, jeans, hoodie, range day</li>
+      </ul>
+
+      <div class="rg-urgency" role="note">
+        <strong>Heads up:</strong> This is made when you order. No big warehouse stock.
+        <span class="rg-urgency2">When a color/run disappears, it can stay gone.</span>
+      </div>
+
+      <div class="rg-ctaRow">
+        <a
+          class="rg-cta"
+          href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times"
+          target="_blank"
+          rel="nofollow sponsored noopener"
+        >
+          Grab Yours →
+        </a>
+        <div class="rg-mini">
+          <span class="rg-pill">Limited-run</span>
+          <span class="rg-pill">Fast checkout</span>
+          <span class="rg-pill">Secure</span>
+        </div>
+      </div>
+
+      <p class="rg-note">
+        <em>Leadership isn’t loud. It’s consistent.</em> This is the hat you reach for when you’re
+        not performing—just showing up.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ===== Rough Gear Feature Tab Styles (lightweight, no dependencies) ===== */
+  .rg-feature {
+    --bg: #0b0e14;
+    --card: rgba(255,255,255,0.04);
+    --stroke: rgba(255,255,255,0.10);
+    --text: #e7ecef;
+    --muted: #9aa3b4;
+    --accent: #f8aa36;
+    --shadow: 0 14px 40px rgba(0,0,0,0.55);
+    margin: 34px auto;
+    max-width: 1120px;
+    padding: 18px;
+  }
+
+  .rg-wrap{
+    background: var(--bg);
+    border: 1px solid var(--stroke);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  @media (max-width: 900px){
+    .rg-wrap{ grid-template-columns: 1fr; }
+    .rg-copy{ border-left: none !important; border-top: 1px solid var(--stroke); }
+  }
+
+  /* LEFT (Gallery) */
+  .rg-gallery{
+    padding: 18px 18px 14px;
+    background:
+      radial-gradient(700px 300px at 20% 10%, rgba(248,170,54,0.10), transparent 55%),
+      radial-gradient(600px 240px at 90% 30%, rgba(255,255,255,0.06), transparent 60%),
+      linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+  }
+
+  .rg-badge-row{
+    display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+    margin-bottom: 12px;
+  }
+  .rg-badge{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    padding: 6px 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    background: rgba(248,170,54,0.16);
+    color: var(--text);
+    border: 1px solid rgba(248,170,54,0.22);
+  }
+  .rg-badge--muted{
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.10);
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .rg-stage{
+    position: relative;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid var(--stroke);
+    border-radius: 14px;
+    padding: 10px 10px 36px;
+    overflow: hidden;
+  }
+
+  .rg-slides{
+    position: relative;
+    min-height: 380px;
+  }
+
+  .rg-slide{
+    position:absolute;
+    inset: 0;
+    display:grid;
+    place-items:center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .35s ease, transform .35s ease;
+    pointer-events:none;
+    margin: 0;
+  }
+  .rg-slide.is-active{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events:auto;
+  }
+
+  .rg-slide img{
+    width: 100%;
+    height: 360px;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 22px rgba(0,0,0,0.55));
+  }
+
+  .rg-cap{
+    margin-top: 6px;
+    font-size: 0.86rem;
+    color: var(--muted);
+    text-align:center;
+  }
+
+  .rg-nav{
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--stroke);
+    background: rgba(0,0,0,0.45);
+    color: var(--text);
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor:pointer;
+    z-index: 5;
+    display:grid; place-items:center;
+  }
+  .rg-nav:hover{ border-color: rgba(248,170,54,0.35); }
+  .rg-prev{ left: 10px; }
+  .rg-next{ right: 10px; }
+
+  .rg-dots{
+    position:absolute;
+    bottom: 10px;
+    left: 0; right: 0;
+    display:flex;
+    justify-content:center;
+    gap: 8px;
+    z-index: 6;
+  }
+  .rg-dot{
+    width: 10px; height: 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.08);
+    cursor:pointer;
+  }
+  .rg-dot.is-active{
+    background: var(--accent);
+    border-color: rgba(248,170,54,0.75);
+  }
+
+  .rg-trust{
+    display:flex; gap:10px; align-items:center;
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--stroke);
+    border-radius: 12px;
+  }
+  .rg-stars{ color: var(--accent); letter-spacing: 0.06em; }
+  .rg-trusttext{ color: var(--muted); font-size: 0.9rem; }
+
+  /* RIGHT (Copy) */
+  .rg-copy{
+    padding: 20px 20px 18px;
+    border-left: 1px solid var(--stroke);
+    background:
+      radial-gradient(600px 260px at 20% 0%, rgba(248,170,54,0.08), transparent 55%),
+      linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+    color: var(--text);
+  }
+  .rg-kicker{
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .rg-title{
+    font-size: 1.6rem;
+    margin: 0 0 10px;
+    line-height: 1.15;
+  }
+  .rg-sub{
+    display:block;
+    margin-top: 4px;
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .rg-lede{
+    margin: 0 0 12px;
+    color: #c7cbd1;
+    line-height: 1.55;
+  }
+  .rg-bullets{
+    margin: 0 0 14px;
+    padding-left: 18px;
+    color: #c7cbd1;
+    line-height: 1.55;
+  }
+  .rg-bullets li{ margin: 8px 0; }
+  .rg-bullets strong{ color: var(--text); }
+
+  .rg-urgency{
+    margin: 12px 0 14px;
+    padding: 12px 12px;
+    border-left: 4px solid var(--accent);
+    background: rgba(0,0,0,0.25);
+    border-radius: 10px;
+    color: #cfd4db;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-right: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .rg-urgency2{
+    display:block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .rg-ctaRow{
+    display:flex; flex-wrap:wrap; gap: 12px; align-items:center;
+  }
+  .rg-cta{
+    display:inline-block;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #000;
+    font-weight: 900;
+    text-decoration:none;
+    letter-spacing: 0.02em;
+    box-shadow: 0 10px 26px rgba(248,170,54,0.22);
+  }
+  .rg-cta:hover{ filter: brightness(1.03); transform: translateY(-1px); }
+
+  .rg-mini{ display:flex; gap: 8px; flex-wrap:wrap; }
+  .rg-pill{
+    font-size: 0.78rem;
+    color: var(--muted);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--stroke);
+    padding: 6px 10px;
+    border-radius: 999px;
+  }
+
+  .rg-note{
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+</style>
+
+<script>
+  // ===== Tiny carousel: auto-rotate, dots, prev/next, pause on hover =====
+  (function () {
+    const root = document.querySelector(".rg-gallery");
+    if (!root) return;
+
+    const slides = Array.from(root.querySelectorAll(".rg-slide"));
+    const dots = Array.from(root.querySelectorAll(".rg-dot"));
+    const prev = root.querySelector(".rg-prev");
+    const next = root.querySelector(".rg-next");
+    const stage = root.querySelector(".rg-stage");
+
+    let idx = 0;
+    let timer = null;
+    const interval = parseInt(root.getAttribute("data-interval") || "3200", 10);
+
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => s.classList.toggle("is-active", n === idx));
+      dots.forEach((d, n) => d.classList.toggle("is-active", n === idx));
+    }
+
+    function start() {
+      stop();
+      if (root.getAttribute("data-rotate") !== "true") return;
+      timer = setInterval(() => show(idx + 1), interval);
+    }
+
+    function stop() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+
+    prev?.addEventListener("click", () => { show(idx - 1); start(); });
+    next?.addEventListener("click", () => { show(idx + 1); start(); });
+
+    dots.forEach((d, n) => d.addEventListener("click", () => { show(n); start(); }));
+
+    // pause on hover/focus
+    stage?.addEventListener("mouseenter", stop);
+    stage?.addEventListener("mouseleave", start);
+    stage?.addEventListener("focusin", stop);
+    stage?.addEventListener("focusout", start);
+
+    // basic keyboard support
+    stage?.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { show(idx - 1); start(); }
+      if (e.key === "ArrowRight") { show(idx + 1); start(); }
+    });
+
+    show(0);
+    start();
+  })();
+</script>
+        </div>
         <!-- FEATURED POST -->
         <aside class="hero-featured" id="featured-guide">
           <div class="featured-label">Featured Guide</div>
