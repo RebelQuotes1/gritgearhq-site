@@ -1475,6 +1475,302 @@
             </div>
           </div>
         </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grit Gear HQ – Survival Field Guides & Real-World Preparedness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Grit Gear HQ is a survival blog focused on real-world preparedness, gritty mindset, and gear that actually holds up when life goes sideways." />
+
+  <!-- Google Ads (keep only ONE instance) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+
+  <style>
+    /* =========================================================
+       GLOBAL TOKENS + BASE
+    ========================================================= */
+    :root {
+      --bg: #050608;
+      --bg-alt: #0b0f15;
+      --panel: #121823;
+      --panel-soft: #171f2b;
+      --accent: #f8aa36;
+      --accent-deep: #f1870a;
+      --ink: #e7ecef;
+      --ink-soft: #a3adbd;
+      --line: #272f3b;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+
+      /* mobile safe area */
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(1200px 600px at 50% -200px, #1e2634 0%, #050608 60%) fixed;
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      width: 100%;
+      overflow-x: hidden; /* hard stop mobile sideways scroll */
+    }
+
+    body { line-height: 1.6; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* make ALL media behave on mobile */
+    img, video, canvas, svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 18px 18px 48px;
+    }
+
+    @media (max-width: 540px){
+      .wrap { padding: 14px 14px 44px; }
+    }
+
+    /* Accessibility + polish */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 10px;
+      padding: 10px 12px;
+      background: #0b0e14;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--ink);
+      z-index: 9999;
+    }
+    .skip-link:focus { left: 12px; }
+
+    /* =========================================================
+       HEADER / NAV
+    ========================================================= */
+    header {
+      z-index: 20;
+      background: #050608;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-top: var(--safe-top);
+    }
+
+    @media (min-width: 900px) {
+      header { position: sticky; top: 0; }
+    }
+
+    .nav-bar {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 12px 18px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap; /* important for mobile */
+    }
+
+    @media (max-width: 780px){
+      .nav-bar { padding: 10px 14px 10px; }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 30% 10%, #f9e2b4 0%, var(--accent-deep) 35%, #36210d 70%, #050608 100%);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .brand-text span:first-child {
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 72vw;
+    }
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 72vw;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a { color: var(--ink-soft); }
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta { display: flex; gap: 10px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px; /* better tap size */
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.83rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      white-space: nowrap;
+      min-height: 44px; /* mobile tap target */
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 20% 0%, #ffe4b0 0%, var(--accent-deep) 32%, var(--accent) 100%);
+      border-color: rgba(0,0,0,0.85);
+      color: #1b1207;
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      background: rgba(10,12,16,0.8);
+      color: var(--ink-soft);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(8,10,14,0.96);
+      color: var(--ink);
+      font-size: 1.25rem;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    /* Mobile nav becomes a proper dropdown panel */
+    @media (max-width: 780px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: inline-flex; margin-left: auto; }
+
+      .nav-open .nav-links,
+      .nav-open .nav-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        background: #06080d;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        padding: 12px 12px;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .nav-open .nav-links a {
+        padding: 10px 10px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.06);
+        background: rgba(10,12,16,0.55);
+      }
+      .nav-open .nav-links a:hover { text-decoration: none; border-color: rgba(248,170,54,0.25); }
+
+      .nav-open .nav-cta a { width: 100%; }
+    }
+
+    /* Quick-nav: on mobile make it horizontal scroll (no wrapping mess) */
+    .quick-nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 18px 14px;
+    }
+    .quick-nav-inner {
+      display: flex;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(8,10,14,0.72);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+      flex-wrap: wrap;
+    }
+    .quick-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(10,12,16,0.75);
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+      white-space: nowrap;
+      min-height: 40px;
+    }
+    .quick-pill:hover {
+      color: var(--ink);
+      text-decoration: none;
+      border-color: rgba(248,170,54,0.35);
+    }
+
+    @media (max-width: 780px){
+      .quick-nav { padding: 0 14px 12px; }
+      .quick-nav-inner {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      }
+      .quick-pill { scroll-snap-align: start; }
+      .quick-nav-inner::-webkit-scrollbar { height: 0; }
+    }
+
+    /* =========================================================
+       TITAN SURVIVAL STRIP
+    ========================================================= */
+    .titan-strip { margin-top: 14px; margin-bottom: 28px; }
+
+    .titan-inner {
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 0 0, rgba(248,170,54,0.22), transparent 60%
 
       </div>
     </section>
