@@ -1275,169 +1275,39 @@
 
           <div class="hero-hint">New posts drop as life happens. No clickbait.</div>
 
-          <!-- ===== ROUGH GEAR DAD HAT: FRONT-PAGE FEATURE TAB (ROTATING IMAGES) ===== -->
-          <section class="rg-feature" aria-label="Featured Gear: Rough Gear Distressed Dad Hat">
-            <div class="rg-wrap">
-              <!-- LEFT: ROTATING GALLERY -->
-              <div class="rg-gallery" data-rotate="true" data-interval="3200">
-                <div class="rg-badge-row">
-                  <span class="rg-badge">FEATURED GEAR</span>
-                  <span class="rg-badge rg-badge--muted">Print-on-demand • Limited runs</span>
-                </div>
+        <script>
+(function () {
+  document.querySelectorAll(".rg-gallery").forEach(root => {
+    const slides = [...root.querySelectorAll(".rg-slide")];
+    const dots = [...root.querySelectorAll(".rg-dot")];
+    const prev = root.querySelector(".rg-prev");
+    const next = root.querySelector(".rg-next");
+    let i = 0;
+    let timer;
 
-                <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Rough Gear Dad Hat images" tabindex="0">
-                  <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button
+    function show(n){
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s,x)=>s.classList.toggle("is-active",x===i));
+      dots.forEach((d,x)=>d.classList.toggle("is-active",x===i));
+    }
 
-                    <figure class="rg-slide">
-                      <img
-                        src="distressed-dad-hat-charcoal-grey-front-6945b97b05443.png"
-                        alt="Rough Gear Distressed Dad Hat - Charcoal (front view)"
-                        loading="lazy"
-                      />
-                      <figcaption class="rg-cap">Charcoal — looks earned, not bought.</figcaption>
-                    </figure>
+    function start(){
+      stop();
+      timer = setInterval(()=>show(i+1), +root.dataset.interval || 3200);
+    }
+    function stop(){ if(timer) clearInterval(timer); }
 
-                    <figure class="rg-slide">
-                      <img
-                        src="kakifront.jpg"
-                        alt="Rough Gear Distressed Dad Hat - Khaki (front view)"
-                        loading="lazy"
-                      />
-                      <figcaption class="rg-cap">Khaki — sun, sweat, and miles approved.</figcaption>
-                    </figure>
+    prev.onclick = ()=>{ show(i-1); start(); };
+    next.onclick = ()=>{ show(i+1); start(); };
+    dots.forEach((d,x)=>d.onclick=()=>{ show(x); start(); });
 
-                    <figure class="rg-slide">
-                      <img src="refront.jpg"
-                        alt="Rough Gear Distressed Dad Hat - Black on model"
-                        loading="lazy"
-                      />
-                      <figcaption class="rg-cap">Built for rougher times. Worn like you mean it.</figcaption>
-                    </figure>
-                  </div>
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
 
-                  <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
-
-                  <div class="rg-dots" aria-label="Choose image">
-                    <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
-                    <button class="rg-dot" type="button" aria-label="Image 2"></button>
-                    <button class="rg-dot" type="button" aria-label="Image 3"></button>
-                    <button class="rg-dot" type="button" aria-label="Image 4"></button>
-                  </div>
-                </div>
-
-                <div class="rg-trust">
-                  <div class="rg-stars" aria-label="Rating">★★★★★</div>
-                  <div class="rg-trusttext">
-                    <strong>Grit Gear HQ Pick</strong> • Low-profile • Distressed edge • Daily-wear comfort
-                  </div>
-                </div>
-              </div>
-
-              <!-- RIGHT: SALES COPY + CTA -->
-              <div class="rg-copy">
-                <div class="rg-kicker">ROUGH GEAR</div>
-
-                <h2 class="rg-title">
-                  Distressed Dad Hat
-                  <span class="rg-sub">Built for Rougher Times</span>
-                </h2>
-
-                <p class="rg-lede">
-                  Not a “fashion statement.” A <strong>signal</strong>. This hat is for men who don’t need to
-                  talk about grit—they wear it. Distressed cotton twill, low profile, soft crown. No hype.
-                </p>
-
-                <ul class="rg-bullets">
-                  <li><strong>Looks earned</strong> — subtle distressing that doesn’t try too hard</li>
-                  <li><strong>Everyday comfort</strong> — broken-in feel without the wait</li>
-                  <li><strong>Low-key branding</strong> — recognized by the right people</li>
-                  <li><strong>Goes with anything</strong> — work boots, jeans, hoodie, range day</li>
-                </ul>
-
-                <div class="rg-urgency" role="note">
-                  <strong>Heads up:</strong> This is made when you order. No big warehouse stock.
-                  <span class="rg-urgency2">When a color/run disappears, it can stay gone.</span>
-                </div>
-
-                <div class="rg-ctaRow">
-                  <a
-                    class="rg-cta"
-                    href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times"
-                    target="_blank"
-                    rel="nofollow sponsored noopener"
-                  >
-                    Grab Yours →
-                  </a>
-                  <div class="rg-mini">
-                    <span class="rg-pill">Limited-run</span>
-                    <span class="rg-pill">Fast checkout</span>
-                    <span class="rg-pill">Secure</span>
-                  </div>
-                </div>
-
-                <p class="rg-note">
-                  <em>Leadership isn’t loud. It’s consistent.</em> This is the hat you reach for when you’re
-                  not performing—just showing up.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <script>
-            // ===== Tiny carousel: auto-rotate, dots, prev/next, pause on hover =====
-            (function () {
-              const root = document.querySelector(".rg-gallery");
-              if (!root) return;
-
-              const slides = Array.from(root.querySelectorAll(".rg-slide"));
-              const dots = Array.from(root.querySelectorAll(".rg-dot"));
-              const prev = root.querySelector(".rg-prev");
-              const next = root.querySelector(".rg-next");
-              const stage = root.querySelector(".rg-stage");
-
-              let idx = 0;
-              let timer = null;
-              const interval = parseInt(root.getAttribute("data-interval") || "3200", 10);
-
-              function show(i) {
-                idx = (i + slides.length) % slides.length;
-                slides.forEach((s, n) => s.classList.toggle("is-active", n === idx));
-                dots.forEach((d, n) => d.classList.toggle("is-active", n === idx));
-              }
-
-              function start() {
-                stop();
-                if (root.getAttribute("data-rotate") !== "true") return;
-                timer = setInterval(() => show(idx + 1), interval);
-              }
-
-              function stop() {
-                if (timer) clearInterval(timer);
-                timer = null;
-              }
-
-              prev?.addEventListener("click", () => { show(idx - 1); start(); });
-              next?.addEventListener("click", () => { show(idx + 1); start(); });
-
-              dots.forEach((d, n) => d.addEventListener("click", () => { show(n); start(); }));
-
-              // pause on hover/focus
-              stage?.addEventListener("mouseenter", stop);
-              stage?.addEventListener("mouseleave", start);
-              stage?.addEventListener("focusin", stop);
-              stage?.addEventListener("focusout", start);
-
-              // basic keyboard support
-              stage?.addEventListener("keydown", (e) => {
-                if (e.key === "ArrowLeft") { show(idx - 1); start(); }
-                if (e.key === "ArrowRight") { show(idx + 1); start(); }
-              });
-
-              show(0);
-              start();
-            })();
-          </script>
-        </div>
+    show(0); start();
+  });
+})();
+</script>
 
         <!-- FEATURED POST -->
         <aside class="hero-featured" id="featured-guide">
