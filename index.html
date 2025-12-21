@@ -6,44 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Grit Gear HQ is a survival blog focused on real-world preparedness, gritty mindset, and gear that actually holds up when life goes sideways." />
 
-  <!-- Google Ads (kept; appears twice in your original) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
-
-  <!-- TITAN SURVIVAL COLLAB HEADER (kept verbatim; stored safely in template for valid HTML) -->
-  <script type="text/template" id="titan-strip-template">
-<section class="titan-strip" aria-label="Titan Survival Collab">
-  <div class="titan-inner">
-    <div class="titan-badge">
-      <span class="dot"></span>
-      <span>Official Collab • Titan Survival</span>
-    </div>
-
-    <h2 class="titan-title">
-      SurvivorCord®, real cordage, and field-tested gear — now part of the Grit Gear loadout.
-    </h2>
-
-    <p class="titan-copy">
-      I don’t slap my name on junk. Titan Survival makes the cord, line, and emergency gear I actually trust
-      when I’m cold, wet, hungry, and out of options. Upgrade your kit with gear that won’t fail when your
-      family is counting on you.
-    </p>
-
-    <div class="titan-actions">
-      <a href="https://www.titansurvival.com/GRITGEARHQ"
-         class="btn btn-primary"
-         target="_blank"
-         rel="nofollow sponsored noopener">
-        Shop Titan Survival →
-      </a>
-      <span class="titan-note">
-        Use code <strong>GRITGEARHQ</strong> when available.
-      </span>
-    </div>
-  </div>
-</section>
-  </script>
-
-  <!-- Google Ads (second instance kept; your original included it twice) -->
+  <!-- Google Ads (keep only ONE instance) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
   <style>
@@ -254,7 +217,7 @@
     }
 
     /* =========================================================
-       TITAN SURVIVAL STRIP (your original, unchanged)
+       TITAN SURVIVAL STRIP
     ========================================================= */
     .titan-strip { margin-top: 14px; margin-bottom: 28px; }
 
@@ -321,7 +284,7 @@
     }
 
     /* =========================================================
-       HERO BANNER (was in <head> originally; now valid in body)
+       HERO BANNER
     ========================================================= */
     .hero-banner{
       margin: 10px auto 18px;
@@ -628,7 +591,7 @@
     }
 
     /* =========================================================
-       ROUGH GEAR FEATURE TAB (your original styles, unchanged)
+       ROUGH GEAR FEATURE TAB (carousel module)
     ========================================================= */
     .rg-feature {
       --bg: #0b0e14;
@@ -638,9 +601,8 @@
       --muted: #9aa3b4;
       --accent: #f8aa36;
       --shadow: 0 14px 40px rgba(0,0,0,0.55);
-      margin: 34px auto;
-      max-width: 1120px;
-      padding: 18px;
+      margin: 0;
+      padding: 0;
     }
 
     .rg-wrap{
@@ -651,6 +613,7 @@
       overflow: hidden;
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
+      height: 100%;
     }
 
     @media (max-width: 900px){
@@ -859,7 +822,7 @@
       letter-spacing: 0.02em;
       box-shadow: 0 10px 26px rgba(248,170,54,0.22);
     }
-    .rg-cta:hover{ filter: brightness(1.03); transform: translateY(-1px); }
+    .rg-cta:hover{ filter: brightness(1.03); transform: translateY(-1px); text-decoration:none; }
 
     .rg-mini{ display:flex; gap: 8px; flex-wrap:wrap; }
     .rg-pill{
@@ -879,7 +842,26 @@
     }
 
     /* =========================================================
-       BOOK DUO (your original styles, unchanged)
+       FRONT PAGE: TWO FEATURE CARDS SIDE BY SIDE
+    ========================================================= */
+    .front-features {
+      max-width: var(--max-width);
+      margin: 34px auto 0;
+      padding: 0 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    @media (max-width: 980px){
+      .front-features { grid-template-columns: 1fr; }
+    }
+
+    .front-features .rg-feature { margin: 0; padding: 0; }
+    .front-features .rg-wrap { border-radius: 16px; }
+
+    /* =========================================================
+       BOOK DUO
     ========================================================= */
     .book-duo{
       display:grid;
@@ -1003,158 +985,6 @@
       font-size:0.8rem;
       color:#8f97a6;
     }
-
-    /* =========================================================
-       GEAR DUO + OPTIONAL TAB (your original styles, unchanged)
-    ========================================================= */
-    .gear-duo{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
-      margin:42px auto;
-      max-width:1120px;
-    }
-
-    @media (max-width:900px){
-      .gear-duo{ grid-template-columns:1fr; }
-    }
-
-    .gear-card{
-      background:#0b0e14;
-      padding:26px 28px;
-      border-radius:12px;
-      box-shadow:0 14px 42px rgba(0,0,0,0.6);
-      border:1px solid rgba(255,255,255,0.07);
-    }
-
-    .gear-card--green{ border-left:5px solid #3f7f4f; }
-    .gear-card--red{ border-left:5px solid #c03221; }
-
-    .gear-kicker{
-      font-size:0.75rem;
-      letter-spacing:0.18em;
-      text-transform:uppercase;
-      color:#9aa3b4;
-      margin-bottom:12px;
-    }
-
-    .gear-body{
-      display:flex;
-      gap:20px;
-      align-items:flex-start;
-      flex-wrap:wrap;
-    }
-
-    .gear-image{ flex:0 0 200px; }
-
-    .gear-image img{
-      width:100%;
-      border-radius:8px;
-      box-shadow:0 10px 32px rgba(0,0,0,0.6);
-      border:1px solid rgba(255,255,255,0.08);
-    }
-
-    .gear-info{
-      flex:1;
-      min-width:260px;
-    }
-
-    .gear-name{
-      margin:0 0 8px;
-      font-size:1.4rem;
-      color:#e7ecef;
-      line-height:1.25;
-    }
-
-    .gear-info p{
-      color:#c7cbd1;
-      line-height:1.55;
-      margin:0 0 10px;
-    }
-
-    .gear-info ul{
-      margin:10px 0 14px 18px;
-      color:#cfd6df;
-    }
-
-    .gear-info li{ margin:6px 0; }
-
-    .gear-actions{ margin-top:6px; }
-
-    .gear-btn{
-      display:inline-block;
-      padding:12px 22px;
-      font-weight:900;
-      border-radius:8px;
-      text-decoration:none;
-      letter-spacing:0.02em;
-    }
-
-    .gear-btn--green{ background:#3f7f4f; color:#fff; }
-    .gear-btn--red{ background:#c03221; color:#fff; }
-
-    .gear-footer{
-      margin-top:14px;
-      font-size:0.8rem;
-      color:#8f97a6;
-    }
-
-    .gear-tab{
-      margin:28px auto;
-      max-width:820px;
-      padding:22px;
-      background:#0b0e14;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 12px 36px rgba(0,0,0,0.5);
-    }
-
-    .gear-title{
-      margin:0 0 14px;
-      font-size:1.3rem;
-      color:#e7ecef;
-    }
-
-    .gear-content{
-      display:grid;
-      grid-template-columns:220px 1fr;
-      gap:18px;
-    }
-
-    @media (max-width:700px){
-      .gear-content{ grid-template-columns:1fr; }
-    }
-
-    .gear-img{
-      width:100%;
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,0.1);
-    }
-
-    .gear-text p{
-      color:#c7cbd1;
-      line-height:1.55;
-      margin:0 0 10px;
-    }
-
-    .gear-text ul{
-      margin:10px 0 14px 18px;
-      color:#cfd6df;
-    }
-
-    .gear-text li{ margin:6px 0; }
-
-    .gear-link{
-      display:inline-block;
-      padding:10px 16px;
-      background:#c03221;
-      color:#fff;
-      text-decoration:none;
-      font-weight:800;
-      border-radius:6px;
-      text-transform:uppercase;
-      letter-spacing:0.03em;
-    }
   </style>
 </head>
 
@@ -1188,20 +1018,20 @@
       </div>
     </div>
 
-    <!-- Quick navigation (easy to scan, looks intentional) -->
+    <!-- Quick navigation -->
     <div class="quick-nav">
       <div class="quick-nav-inner" aria-label="Quick navigation">
         <a class="quick-pill" href="#featured-guide">⭐ Featured Guide</a>
         <a class="quick-pill" href="#choose">🎯 Choose Your Battlefield</a>
         <a class="quick-pill" href="#latest">📝 Latest Field Notes</a>
         <a class="quick-pill" href="#dispatch">📩 HQ Dispatch</a>
-        <a class="quick-pill" href="#gear">🧰 Gear Tabs</a>
+        <a class="quick-pill" href="#gear">🧰 Featured Gear</a>
         <a class="quick-pill" href="#quote">🔥 Reminder</a>
       </div>
     </div>
   </header>
 
-  <!-- TITAN SURVIVAL COLLAB HEADER (rendered here so it looks like part of the page, not dropped in) -->
+  <!-- TITAN SURVIVAL COLLAB HEADER -->
   <div class="wrap" style="padding-top: 10px;">
     <section class="titan-strip" aria-label="Titan Survival Collab">
       <div class="titan-inner">
@@ -1235,7 +1065,7 @@
     </section>
   </div>
 
-  <!-- BANNER (was inside <head> in your original; now valid here under Titan strip) -->
+  <!-- BANNER -->
   <section class="hero-banner" aria-label="Grit Gear HQ banner">
     <div class="hero-banner__inner">
       <img
@@ -1254,6 +1084,7 @@
     <section class="hero">
       <div class="hero-inner">
 
+        <!-- LEFT HERO COLUMN -->
         <div>
           <div class="hero-kicker"><span>Real-world survival • No fluff • No panic bait</span></div>
 
@@ -1274,40 +1105,7 @@
           </div>
 
           <div class="hero-hint">New posts drop as life happens. No clickbait.</div>
-
-        <script>
-(function () {
-  document.querySelectorAll(".rg-gallery").forEach(root => {
-    const slides = [...root.querySelectorAll(".rg-slide")];
-    const dots = [...root.querySelectorAll(".rg-dot")];
-    const prev = root.querySelector(".rg-prev");
-    const next = root.querySelector(".rg-next");
-    let i = 0;
-    let timer;
-
-    function show(n){
-      i = (n + slides.length) % slides.length;
-      slides.forEach((s,x)=>s.classList.toggle("is-active",x===i));
-      dots.forEach((d,x)=>d.classList.toggle("is-active",x===i));
-    }
-
-    function start(){
-      stop();
-      timer = setInterval(()=>show(i+1), +root.dataset.interval || 3200);
-    }
-    function stop(){ if(timer) clearInterval(timer); }
-
-    prev.onclick = ()=>{ show(i-1); start(); };
-    next.onclick = ()=>{ show(i+1); start(); };
-    dots.forEach((d,x)=>d.onclick=()=>{ show(x); start(); });
-
-    root.addEventListener("mouseenter", stop);
-    root.addEventListener("mouseleave", start);
-
-    show(0); start();
-  });
-})();
-</script>
+        </div>
 
         <!-- FEATURED POST -->
         <aside class="hero-featured" id="featured-guide">
@@ -1344,6 +1142,257 @@
       </div>
     </section>
 
+    <!-- FEATURED GEAR (HAT + TENT) -->
+    <section class="section" id="gear">
+      <h2 class="section-title">Featured gear</h2>
+      <p>Two solid picks. One for daily wear. One for real shelter.</p>
+
+      <div class="front-features">
+
+        <!-- ===== HAT FEATURE (ROTATING IMAGES) ===== -->
+        <section class="rg-feature" aria-label="Featured Gear: Rough Gear Distressed Dad Hat">
+          <div class="rg-wrap">
+            <!-- LEFT: ROTATING GALLERY -->
+            <div class="rg-gallery" data-rotate="true" data-interval="3200">
+              <div class="rg-badge-row">
+                <span class="rg-badge">FEATURED GEAR</span>
+                <span class="rg-badge rg-badge--muted">Print-on-demand • Limited runs</span>
+              </div>
+
+              <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Rough Gear Dad Hat images" tabindex="0">
+                <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+                <div class="rg-slides">
+                  <figure class="rg-slide is-active">
+                    <img
+                      src="distressed-dad-hat-black-front-6945b97aea14a.png"
+                      alt="Rough Gear Distressed Dad Hat - Black (front view)"
+                      loading="lazy"
+                    />
+                    <figcaption class="rg-cap">Black — clean, low-key, everyday grit.</figcaption>
+                  </figure>
+
+                  <figure class="rg-slide">
+                    <img
+                      src="distressed-dad-hat-charcoal-grey-front-6945b97b05443.png"
+                      alt="Rough Gear Distressed Dad Hat - Charcoal (front view)"
+                      loading="lazy"
+                    />
+                    <figcaption class="rg-cap">Charcoal — looks earned, not bought.</figcaption>
+                  </figure>
+
+                  <figure class="rg-slide">
+                    <img
+                      src="kakifront.jpg"
+                      alt="Rough Gear Distressed Dad Hat - Khaki (front view)"
+                      loading="lazy"
+                    />
+                    <figcaption class="rg-cap">Khaki — sun, sweat, and miles approved.</figcaption>
+                  </figure>
+
+                  <figure class="rg-slide">
+                    <img
+                      src="refront.jpg"
+                      alt="Rough Gear Distressed Dad Hat - Black on model"
+                      loading="lazy"
+                    />
+                    <figcaption class="rg-cap">Built for rougher times. Worn like you mean it.</figcaption>
+                  </figure>
+                </div>
+
+                <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
+
+                <div class="rg-dots" aria-label="Choose image">
+                  <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
+                  <button class="rg-dot" type="button" aria-label="Image 2"></button>
+                  <button class="rg-dot" type="button" aria-label="Image 3"></button>
+                  <button class="rg-dot" type="button" aria-label="Image 4"></button>
+                </div>
+              </div>
+
+              <div class="rg-trust">
+                <div class="rg-stars" aria-label="Rating">★★★★★</div>
+                <div class="rg-trusttext">
+                  <strong>Grit Gear HQ Pick</strong> • Low-profile • Distressed edge • Daily-wear comfort
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: SALES COPY + CTA -->
+            <div class="rg-copy">
+              <div class="rg-kicker">ROUGH GEAR</div>
+
+              <h3 class="rg-title">
+                Distressed Dad Hat
+                <span class="rg-sub">Built for Rougher Times</span>
+              </h3>
+
+              <p class="rg-lede">
+                Not a “fashion statement.” A <strong>signal</strong>. This hat is for men who don’t need to
+                talk about grit—they wear it. Distressed cotton twill, low profile, soft crown. No hype.
+              </p>
+
+              <ul class="rg-bullets">
+                <li><strong>Looks earned</strong> — subtle distressing that doesn’t try too hard</li>
+                <li><strong>Everyday comfort</strong> — broken-in feel without the wait</li>
+                <li><strong>Low-key branding</strong> — recognized by the right people</li>
+                <li><strong>Goes with anything</strong> — work boots, jeans, hoodie, range day</li>
+              </ul>
+
+              <div class="rg-urgency" role="note">
+                <strong>Heads up:</strong> This is made when you order. No big warehouse stock.
+                <span class="rg-urgency2">When a color/run disappears, it can stay gone.</span>
+              </div>
+
+              <div class="rg-ctaRow">
+                <a
+                  class="rg-cta"
+                  href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times"
+                  target="_blank"
+                  rel="nofollow sponsored noopener"
+                >
+                  Grab Yours →
+                </a>
+                <div class="rg-mini">
+                  <span class="rg-pill">Limited-run</span>
+                  <span class="rg-pill">Fast checkout</span>
+                  <span class="rg-pill">Secure</span>
+                </div>
+              </div>
+
+              <p class="rg-note">
+                <em>Leadership isn’t loud. It’s consistent.</em> This is the hat you reach for when you’re
+                not performing—just showing up.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== TENT FEATURE (ROTATING IMAGES) ===== -->
+        <section class="rg-feature" aria-label="Featured Gear: Teepee Tent Shelter">
+          <div class="rg-wrap">
+            <!-- LEFT: ROTATING GALLERY -->
+            <div class="rg-gallery" data-rotate="true" data-interval="3400">
+              <div class="rg-badge-row">
+                <span class="rg-badge">FEATURED GEAR</span>
+                <span class="rg-badge rg-badge--muted">Shelter • Camp base • Bug-out ready</span>
+              </div>
+
+              <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Teepee tent images" tabindex="0">
+                <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+                <div class="rg-slides">
+                  <!-- IMPORTANT:
+                       Put these three image files in the same folder as this HTML and name them exactly:
+                       tent-1.jpg, tent-2.jpg, tent-3.jpg
+                       (Use your provided images: $_57 (11).jfif, $_57 (10).jfif, s-l1600 (82).jpg) -->
+                  <figure class="rg-slide is-active">
+                    <img
+                      src="tent-1.jpg"
+                      alt="Teepee style tent with rainfly (front view)"
+                      loading="lazy"
+                    />
+                    <figcaption class="rg-cap">Weather cover on — simple, clean, low-profile.</figcaption>
+                  </figure>
+
+                  <figure class="rg-slide">
+                    <img
+                      src="tent-2.jpg"
+                      alt="Teepee style tent mesh interior view"
+                      loading="lazy"
+                    />
+                    <figcaption class="rg-cap">Mesh setup — airflow and bug control.</figcaption>
+                  </figure>
+
+                  <figure class="rg-slide">
+                    <img
+                      src="tent-3.jpg"
+                      alt="Teepee style tent with awning setup"
+                      loading="lazy"
+                    />
+                    <figcaption class="rg-cap">Awning out — shaded work area, dry entry.</figcaption>
+                  </figure>
+
+                  <figure class="rg-slide">
+                    <img
+                      src="tent-1.jpg"
+                      alt="Teepee style tent alternate view"
+                      loading="lazy"
+                    />
+                    <figcaption class="rg-cap">A solid “base camp” shelter that doesn’t feel flimsy.</figcaption>
+                  </figure>
+                </div>
+
+                <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
+
+                <div class="rg-dots" aria-label="Choose image">
+                  <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
+                  <button class="rg-dot" type="button" aria-label="Image 2"></button>
+                  <button class="rg-dot" type="button" aria-label="Image 3"></button>
+                  <button class="rg-dot" type="button" aria-label="Image 4"></button>
+                </div>
+              </div>
+
+              <div class="rg-trust">
+                <div class="rg-stars" aria-label="Rating">★★★★★</div>
+                <div class="rg-trusttext">
+                  <strong>Shelter Pick</strong> • Roomy • Quick setup • Real camp utility
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: SALES COPY + CTA -->
+            <div class="rg-copy">
+              <div class="rg-kicker">FIELD SHELTER</div>
+
+              <h3 class="rg-title">
+                Teepee-Style Tent
+                <span class="rg-sub">Roomy Shelter That Sets Up Fast</span>
+              </h3>
+
+              <p class="rg-lede">
+                If you want a tent that feels like a <strong>base</strong> instead of a plastic bag,
+                this style is the move. Plenty of headroom, usable space, and options (mesh / cover / awning).
+              </p>
+
+              <ul class="rg-bullets">
+                <li><strong>More livable space</strong> — you can actually move around</li>
+                <li><strong>Ventilation + bug control</strong> — mesh mode when it’s hot</li>
+                <li><strong>Awning option</strong> — dry entry and shaded gear zone</li>
+                <li><strong>Good for real trips</strong> — not just “one weekend then it dies”</li>
+              </ul>
+
+              <div class="rg-urgency" role="note">
+                <strong>Reality check:</strong> shelter is the first domino.
+                <span class="rg-urgency2">If you can’t stay dry, the rest of your plan turns into suffering.</span>
+              </div>
+
+              <div class="rg-ctaRow">
+                <a
+                  class="rg-cta"
+                  href="https://www.ebay.com/itm/388632792988?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFu2GTm2ZGNVXFEsdeNYg5JPtLCx6Uf1p2JcrZvdP3mAWKKjQN8PjdaYW02yucNRr06UFfVzswKD08CeMBWJ0nd2uwyIYzEZYu1rAmjjT6Rrbw4BdazY3c9m6JYjT4Pc3hI2QtkVZR3%2FuSybTjdzrfHzXVS6sMlF0%2BEI%2F1JAxTEi1glwmoLTYumPr7j5D4KzG3EOWVEjDjbGjHXv2CUpg60%3D"
+                  target="_blank"
+                  rel="nofollow sponsored noopener"
+                >
+                  View on eBay →
+                </a>
+                <div class="rg-mini">
+                  <span class="rg-pill">Shelter</span>
+                  <span class="rg-pill">Camp</span>
+                  <span class="rg-pill">Preparedness</span>
+                </div>
+              </div>
+
+              <p class="rg-note">
+                <em>Comfort matters.</em> Not because you’re soft — because fatigue makes dumb decisions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
     <!-- CATEGORIES -->
     <section class="section" id="choose">
       <h2 class="section-title">Choose your battlefield</h2>
@@ -1352,7 +1401,7 @@
       <!-- FEATURED BOOKS (SIDE BY SIDE) -->
       <div class="book-duo">
 
-        <!-- BOOK 1 : HOW TO UNF*CK YOUR LIFE -->
+        <!-- BOOK 1 -->
         <section class="book-card book-card--gold">
           <div class="book-kicker">Featured Book · Personal Responsibility · Discipline</div>
 
@@ -1361,6 +1410,7 @@
               <img
                 src="61KphIP9y9L._SY466_.jpg"
                 alt="How to Unf*ck Your Life by Christopher Serpico"
+                loading="lazy"
               >
             </div>
 
@@ -1400,7 +1450,7 @@
           <p class="book-quote">“Die a legend. Not a cautionary tale.”</p>
         </section>
 
-        <!-- BOOK 2 : THOUGHT CRIMES -->
+        <!-- BOOK 2 -->
         <section class="book-card book-card--red">
           <div class="book-kicker">Featured Notebook · Truth · Clarity · Unfiltered</div>
 
@@ -1409,6 +1459,7 @@
               <img
                 src="817QZz2GkHL._SY466_.jpg"
                 alt="Thought Crimes: A Notebook for Dangerous Ideas"
+                loading="lazy"
               >
             </div>
 
@@ -1450,7 +1501,6 @@
 
       </div>
 
-      <!-- your category strip stays exactly where it was -->
       <div class="category-strip">
         <a href="blog-index.html#mindset" class="category-pill">🧠 Mindset & Grit →</a>
         <a href="blog-index.html#home" class="category-pill">🏠 Home Preparedness →</a>
@@ -1458,10 +1508,6 @@
         <a href="blog-index.html#stories" class="category-pill">🔥 Stories & Lessons →</a>
       </div>
     </section>
-
-    <!-- This tag existed in your original as a stray closing section.
-         Keeping it without breaking the page by preserving it as literal text: -->
-    <!-- </section> -->
 
     <!-- LATEST POSTS -->
     <section class="section" id="latest">
@@ -1534,14 +1580,69 @@
 
   <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
+  <!-- ===== Tiny carousel: auto-rotate, dots, prev/next, pause on hover, keyboard ===== -->
   <script>
+  (function () {
+    const galleries = document.querySelectorAll(".rg-gallery");
+    if (!galleries.length) return;
+
+    galleries.forEach(root => {
+      const slides = Array.from(root.querySelectorAll(".rg-slide"));
+      const dots   = Array.from(root.querySelectorAll(".rg-dot"));
+      const prev   = root.querySelector(".rg-prev");
+      const next   = root.querySelector(".rg-next");
+      const stage  = root.querySelector(".rg-stage");
+
+      if (!slides.length) return;
+
+      let idx = 0;
+      let timer = null;
+
+      function show(i) {
+        idx = (i + slides.length) % slides.length;
+        slides.forEach((s, n) => s.classList.toggle("is-active", n === idx));
+        dots.forEach((d, n) => d.classList.toggle("is-active", n === idx));
+      }
+
+      function start() {
+        stop();
+        if (root.getAttribute("data-rotate") === "false") return;
+        const interval = parseInt(root.getAttribute("data-interval") || "3200", 10);
+        timer = setInterval(() => show(idx + 1), interval);
+      }
+
+      function stop() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      }
+
+      prev && prev.addEventListener("click", () => { show(idx - 1); start(); });
+      next && next.addEventListener("click", () => { show(idx + 1); start(); });
+      dots.forEach((d, n) => d.addEventListener("click", () => { show(n); start(); }));
+
+      stage && stage.addEventListener("mouseenter", stop);
+      stage && stage.addEventListener("mouseleave", start);
+      stage && stage.addEventListener("focusin", stop);
+      stage && stage.addEventListener("focusout", start);
+
+      stage && stage.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") { show(idx - 1); start(); }
+        if (e.key === "ArrowRight") { show(idx + 1); start(); }
+      });
+
+      show(0);
+      start();
+    });
+  })();
+  </script>
+
+  <script>
+    // Footer year + back-to-top
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Back-to-top (subtle, useful)
     const toTop = document.getElementById('toTop');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 600) toTop.style.display = 'inline-flex';
-      else toTop.style.display = 'none';
+      toTop.style.display = (window.scrollY > 600) ? 'inline-flex' : 'none';
     });
     toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
