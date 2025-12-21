@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Grit Gear HQ – Survival Field Guides & Real-World Preparedness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Grit Gear HQ is a survival blog focused on real-world preparedness, gritty mindset, and gear that actually holds up when life goes sideways." />
 
   <!-- Google Ads (keep only ONE instance) -->
@@ -27,6 +27,10 @@
       --radius-md: 14px;
       --radius-pill: 999px;
       --max-width: 1120px;
+
+      /* mobile safe area */
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
 
     * { box-sizing: border-box; }
@@ -37,11 +41,12 @@
       background: radial-gradient(1200px 600px at 50% -200px, #1e2634 0%, #050608 60%) fixed;
       color: var(--ink);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      width: 100%;
       overflow-x: hidden; /* kills accidental mobile side-scroll */
     }
 
     body { line-height: 1.6; }
-    img { max-width: 100%; height: auto; display: block; }
+    img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
@@ -70,6 +75,7 @@
       z-index: 20;
       background: #050608;
       border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-top: var(--safe-top);
     }
     @media (min-width: 900px) {
       header { position: sticky; top: 0; }
@@ -83,7 +89,9 @@
       align-items: center;
       justify-content: space-between;
       gap: 14px;
+      flex-wrap: wrap;
     }
+    @media (max-width: 780px){ .nav-bar { padding: 10px 14px 10px; } }
 
     .brand {
       display: flex;
@@ -114,7 +122,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 44vw; /* prevents mobile overflow */
+      max-width: 72vw;
     }
     .brand-text span:last-child {
       font-size: 0.78rem;
@@ -122,7 +130,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 44vw;
+      max-width: 72vw;
     }
 
     .nav-links {
@@ -145,13 +153,14 @@
       border-radius: var(--radius-pill);
       border: 1px solid transparent;
       font-size: 0.83rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       cursor: pointer;
       white-space: nowrap;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
+      min-height: 44px;
     }
 
     .btn-primary {
@@ -168,8 +177,8 @@
 
     .nav-toggle {
       display: none;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 999px;
       border: 1px solid var(--line);
       background: rgba(8,10,14,0.96);
@@ -177,13 +186,12 @@
       font-size: 1.25rem;
       align-items: center;
       justify-content: center;
+      flex: 0 0 auto;
     }
 
     @media (max-width: 780px) {
       .nav-links, .nav-cta { display: none; }
-      .nav-toggle { display: flex; }
-
-      .nav-bar { flex-direction: column; align-items: stretch; }
+      .nav-toggle { display: inline-flex; margin-left: auto; }
 
       .nav-open .nav-links,
       .nav-open .nav-cta {
@@ -191,9 +199,9 @@
         flex-direction: column;
         align-items: stretch;
         background: #06080d;
-        border-radius: 0 0 16px 16px;
+        border-radius: 16px;
         border: 1px solid var(--line);
-        padding: 12px 14px;
+        padding: 12px 12px;
         width: 100%;
         gap: 10px;
       }
@@ -203,6 +211,11 @@
         border-radius: 12px;
         background: rgba(10,12,16,0.55);
         border: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .nav-open .nav-links a:hover {
+        text-decoration: none;
+        border-color: rgba(248,170,54,0.25);
       }
 
       .nav-open .nav-cta a { width: 100%; }
@@ -235,13 +248,15 @@
       color: var(--ink-soft);
       font-size: 0.82rem;
       white-space: nowrap;
+      min-height: 40px;
     }
     .quick-pill:hover {
       color: var(--ink);
       text-decoration: none;
       border-color: rgba(248,170,54,0.35);
     }
-    @media (max-width: 480px){
+    @media (max-width: 780px){
+      .quick-nav { padding: 0 14px 12px; }
       .quick-nav-inner{
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -612,7 +627,7 @@
     .to-top {
       position: fixed;
       right: 14px;
-      bottom: 14px;
+      bottom: calc(14px + var(--safe-bottom));
       z-index: 999;
       padding: 12px 14px;
       border-radius: 999px;
@@ -707,7 +722,7 @@
       border-radius: 14px;
       padding: 10px 10px 40px;
       overflow: hidden;
-      touch-action: pan-y; /* lets vertical scroll work while still allowing swipe logic */
+      touch-action: pan-y;
     }
 
     .rg-slides{
@@ -715,7 +730,7 @@
       min-height: 340px;
     }
     @media (max-width: 520px){
-      .rg-slides{ min-height: 240px; } /* HUGE mobile fix */
+      .rg-slides{ min-height: 240px; }
     }
 
     .rg-slide{
@@ -909,7 +924,7 @@
     }
 
     /* =========================================================
-       FRONT PAGE: TWO FEATURE CARDS SIDE BY SIDE
+       FRONT PAGE: FEATURES GRID (AUTO FIT)
     ========================================================= */
     .front-features {
       max-width: var(--max-width);
@@ -918,12 +933,11 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
+      align-items: stretch;
     }
-
     @media (max-width: 980px){
       .front-features { grid-template-columns: 1fr; padding: 0 14px; }
     }
-
     .front-features .rg-feature { margin: 0; padding: 0; }
     .front-features .rg-wrap { border-radius: 16px; }
 
@@ -1140,7 +1154,7 @@
         </p>
 
         <div class="titan-actions">
-          <a href="https://www.titansurvival.com/GRITGEARHQ"
+          <a href="https://collabs.shop/5uhjlj"
              class="btn btn-primary"
              target="_blank"
              rel="nofollow sponsored noopener">
@@ -1231,10 +1245,10 @@
       </div>
     </section>
 
-    <!-- FEATURED GEAR (HAT + TENT) -->
+    <!-- FEATURED GEAR -->
     <section class="section" id="gear">
       <h2 class="section-title">Featured gear</h2>
-      <p>Two solid picks. One for daily wear. One for real shelter.</p>
+      <p>Real picks that solve real problems — comfort, shelter, calories, and cordage.</p>
 
       <div class="front-features">
 
@@ -1252,40 +1266,23 @@
                 <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
 
                 <div class="rg-slides">
-                  <!-- FIXED: the first slide in your original was broken/missing -->
                   <figure class="rg-slide is-active">
-                    <img
-                      src="blackfront.jpg"
-                      alt="Rough Gear Distressed Dad Hat - Black (front view)"
-                      loading="lazy"
-                    />
+                    <img src="blackfront.jpg" alt="Rough Gear Distressed Dad Hat - Black (front view)" loading="lazy" />
                     <figcaption class="rg-cap">Black — clean, low-key, everyday grit.</figcaption>
                   </figure>
 
                   <figure class="rg-slide">
-                    <img
-                      src="distressed-dad-hat-charcoal-grey-front-6945b97b05443.png"
-                      alt="Rough Gear Distressed Dad Hat - Charcoal (front view)"
-                      loading="lazy"
-                    />
+                    <img src="distressed-dad-hat-charcoal-grey-front-6945b97b05443.png" alt="Rough Gear Distressed Dad Hat - Charcoal (front view)" loading="lazy" />
                     <figcaption class="rg-cap">Charcoal — looks earned, not bought.</figcaption>
                   </figure>
 
                   <figure class="rg-slide">
-                    <img
-                      src="kakifront.jpg"
-                      alt="Rough Gear Distressed Dad Hat - Khaki (front view)"
-                      loading="lazy"
-                    />
+                    <img src="kakifront.jpg" alt="Rough Gear Distressed Dad Hat - Khaki (front view)" loading="lazy" />
                     <figcaption class="rg-cap">Khaki — sun, sweat, and miles approved.</figcaption>
                   </figure>
 
                   <figure class="rg-slide">
-                    <img
-                      src="refront.jpg"
-                      alt="Rough Gear Distressed Dad Hat - Black on model"
-                      loading="lazy"
-                    />
+                    <img src="refront.jpg" alt="Rough Gear Distressed Dad Hat - Black on model" loading="lazy" />
                     <figcaption class="rg-cap">Built for rougher times. Worn like you mean it.</figcaption>
                   </figure>
                 </div>
@@ -1335,12 +1332,10 @@
               </div>
 
               <div class="rg-ctaRow">
-                <a
-                  class="rg-cta"
+                <a class="rg-cta"
                   href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times"
                   target="_blank"
-                  rel="nofollow sponsored noopener"
-                >
+                  rel="nofollow sponsored noopener">
                   $20 →
                 </a>
                 <div class="rg-mini">
@@ -1373,38 +1368,22 @@
 
                 <div class="rg-slides">
                   <figure class="rg-slide is-active">
-                    <img
-                      src="tent-5.jpg"
-                      alt="Teepee style tent with rainfly (front view)"
-                      loading="lazy"
-                    />
+                    <img src="tent-5.jpg" alt="Teepee style tent with rainfly (front view)" loading="lazy" />
                     <figcaption class="rg-cap">Weather cover on — simple, clean, low-profile.</figcaption>
                   </figure>
 
                   <figure class="rg-slide">
-                    <img
-                      src="tent-2.jpg"
-                      alt="Teepee style tent mesh interior view"
-                      loading="lazy"
-                    />
+                    <img src="tent-2.jpg" alt="Teepee style tent mesh interior view" loading="lazy" />
                     <figcaption class="rg-cap">Mesh setup — airflow and bug control.</figcaption>
                   </figure>
 
                   <figure class="rg-slide">
-                    <img
-                      src="tent-3.jpg"
-                      alt="Teepee style tent with awning setup"
-                      loading="lazy"
-                    />
+                    <img src="tent-3.jpg" alt="Teepee style tent with awning setup" loading="lazy" />
                     <figcaption class="rg-cap">Awning out — shaded work area, dry entry.</figcaption>
                   </figure>
 
                   <figure class="rg-slide">
-                    <img
-                      src="tent-4.jpg"
-                      alt="Teepee style tent alternate view"
-                      loading="lazy"
-                    />
+                    <img src="tent-4.jpg" alt="Teepee style tent alternate view" loading="lazy" />
                     <figcaption class="rg-cap">A solid “base camp” shelter that doesn’t feel flimsy.</figcaption>
                   </figure>
                 </div>
@@ -1454,12 +1433,10 @@
               </div>
 
               <div class="rg-ctaRow">
-                <a
-                  class="rg-cta"
+                <a class="rg-cta"
                   href="https://www.ebay.com/itm/388632792988?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFu2GTm2ZGNVXFEsdeNYg5JPtLCx6Uf1p2JcrZvdP3mAWKKjQN8PjdaYW02yucNRr06UFfVzswKD08CeMBWJ0nd2uwyIYzEZYu1rAmjjT6Rrbw4BdazY3c9m6JYjT4Pc3hI2QtkVZR3%2FuSybTjdzrfHzXVS6sMlF0%2BEI%2F1JAxTEi1glwmoLTYumPr7j5D4KzG3EOWVEjDjbGjHXv2CUpg60%3D"
                   target="_blank"
-                  rel="nofollow sponsored noopener"
-                >
+                  rel="nofollow sponsored noopener">
                   $69.99 →
                 </a>
                 <div class="rg-mini">
@@ -1475,302 +1452,152 @@
             </div>
           </div>
         </section>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Grit Gear HQ – Survival Field Guides & Real-World Preparedness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Grit Gear HQ is a survival blog focused on real-world preparedness, gritty mindset, and gear that actually holds up when life goes sideways." />
 
-  <!-- Google Ads (keep only ONE instance) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
+        <!-- ===== MRE FEATURE (NEW) ===== -->
+        <section class="rg-feature" aria-label="Featured Gear: Military MRE Entree">
+          <div class="rg-wrap">
+            <div class="rg-gallery">
+              <div class="rg-badge-row">
+                <span class="rg-badge">FIELD FOOD</span>
+                <span class="rg-badge rg-badge--muted">Calories • Shelf-stable • No prep</span>
+              </div>
 
-  <style>
-    /* =========================================================
-       GLOBAL TOKENS + BASE
-    ========================================================= */
-    :root {
-      --bg: #050608;
-      --bg-alt: #0b0f15;
-      --panel: #121823;
-      --panel-soft: #171f2b;
-      --accent: #f8aa36;
-      --accent-deep: #f1870a;
-      --ink: #e7ecef;
-      --ink-soft: #a3adbd;
-      --line: #272f3b;
-      --radius-lg: 18px;
-      --radius-md: 14px;
-      --radius-pill: 999px;
-      --max-width: 1120px;
+              <div class="rg-stage" role="region" aria-label="MRE image">
+                <div class="rg-slides">
+                  <figure class="rg-slide is-active">
+                    <!-- Use your own filename here -->
+                    <img src="mre-chicken-burrito-bowl.jpg" alt="U.S. military contract MRE entree — Chicken Burrito Bowl" loading="lazy" />
+                    <figcaption class="rg-cap">Chicken Burrito Bowl — eat hot or cold. Fuel beats comfort.</figcaption>
+                  </figure>
+                </div>
+              </div>
 
-      /* mobile safe area */
-      --safe-top: env(safe-area-inset-top, 0px);
-      --safe-bottom: env(safe-area-inset-bottom, 0px);
-    }
+              <div class="rg-trust">
+                <div class="rg-stars" aria-label="Rating">★★★★★</div>
+                <div class="rg-trusttext">
+                  <strong>Grab-and-Go Fuel</strong> • Factory sealed • Long shelf life
+                </div>
+              </div>
+            </div>
 
-    * { box-sizing: border-box; }
+            <div class="rg-copy">
+              <div class="rg-kicker">SUSTENANCE</div>
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(1200px 600px at 50% -200px, #1e2634 0%, #050608 60%) fixed;
-      color: var(--ink);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      width: 100%;
-      overflow-x: hidden; /* hard stop mobile sideways scroll */
-    }
+              <h3 class="rg-title">
+                MRE Entrée
+                <span class="rg-sub">Calories When Cooking Isn’t an Option</span>
+              </h3>
 
-    body { line-height: 1.6; }
+              <p class="rg-lede">
+                When things go sideways, you don’t need “snacks.” You need <strong>fuel</strong>.
+                This is a genuine U.S. military contract entrée — simple, sealed, and built for stress.
+              </p>
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+              <ul class="rg-bullets">
+                <li><strong>Factory-sealed</strong> entrée pouch (no heater included)</li>
+                <li><strong>Long shelf life</strong> when stored cool and dry</li>
+                <li><strong>Perfect for</strong> camping, preparedness, hunting, emergency kits</li>
+              </ul>
 
-    /* make ALL media behave on mobile */
-    img, video, canvas, svg {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+              <div class="rg-urgency" role="note">
+                <strong>Quick note:</strong> Hunger turns small problems into emergencies.
+                <span class="rg-urgency2">Keep calories on hand before you “need” them.</span>
+              </div>
 
-    .wrap {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 18px 18px 48px;
-    }
+              <div class="rg-ctaRow">
+                <a class="rg-cta"
+                   href="https://ebay.us/m/hmyUnT"
+                   target="_blank"
+                   rel="nofollow sponsored noopener">
+                  Buy on eBay →
+                </a>
+                <div class="rg-mini">
+                  <span class="rg-pill">Emergency food</span>
+                  <span class="rg-pill">Shelf-stable</span>
+                  <span class="rg-pill">Simple</span>
+                </div>
+              </div>
 
-    @media (max-width: 540px){
-      .wrap { padding: 14px 14px 44px; }
-    }
+              <p class="rg-note">
+                <em>“Food is morale.”</em> Don’t let your brain run on empty when you need it sharp.
+              </p>
+            </div>
+          </div>
+        </section>
 
-    /* Accessibility + polish */
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 10px;
-      padding: 10px 12px;
-      background: #0b0e14;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      color: var(--ink);
-      z-index: 9999;
-    }
-    .skip-link:focus { left: 12px; }
+        <!-- ===== SURVIVORCORD FEATURE (NEW) ===== -->
+        <section class="rg-feature" aria-label="Featured Gear: Titan Survival SurvivorCord">
+          <div class="rg-wrap">
+            <div class="rg-gallery">
+              <div class="rg-badge-row">
+                <span class="rg-badge">CORDAGE</span>
+                <span class="rg-badge rg-badge--muted">Titan Survival • Patented</span>
+              </div>
 
-    /* =========================================================
-       HEADER / NAV
-    ========================================================= */
-    header {
-      z-index: 20;
-      background: #050608;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding-top: var(--safe-top);
-    }
+              <div class="rg-stage" role="region" aria-label="SurvivorCord image">
+                <div class="rg-slides">
+                  <figure class="rg-slide is-active">
+                    <!-- Use your own filename here -->
+                    <img src="survivorcord-bronze.jpg" alt="Titan Survival SurvivorCord bronze paracord with integrated survival strands" loading="lazy" />
+                    <figcaption class="rg-cap">Paracord + snare wire + fishing line + fire tinder in one.</figcaption>
+                  </figure>
+                </div>
+              </div>
 
-    @media (min-width: 900px) {
-      header { position: sticky; top: 0; }
-    }
+              <div class="rg-trust">
+                <div class="rg-stars" aria-label="Rating">★★★★★</div>
+                <div class="rg-trusttext">
+                  <strong>Multi-Use Lifeline</strong> • Snare • Fish • Fire • Shelter
+                </div>
+              </div>
+            </div>
 
-    .nav-bar {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 12px 18px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap; /* important for mobile */
-    }
+            <div class="rg-copy">
+              <div class="rg-kicker">MULTI-USE</div>
 
-    @media (max-width: 780px){
-      .nav-bar { padding: 10px 14px 10px; }
-    }
+              <h3 class="rg-title">
+                SurvivorCord®
+                <span class="rg-sub">The Only Paracord You’ll Ever Need</span>
+              </h3>
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
+              <p class="rg-lede">
+                This is Titan’s patented cord built from real-world needs — paracord with three
+                survival strands baked in: <strong>utility wire</strong>, <strong>25 lb fishing line</strong>,
+                and <strong>waterproof tinder</strong>.
+              </p>
 
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: radial-gradient(circle at 30% 10%, #f9e2b4 0%, var(--accent-deep) 35%, #36210d 70%, #050608 100%);
-      font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      flex: 0 0 auto;
-    }
+              <ul class="rg-bullets">
+                <li><strong>620 lb tensile</strong> strength paracord</li>
+                <li><strong>30 AWG wire</strong> for snares / repairs / antenna tricks</li>
+                <li><strong>Waxed jute tinder</strong> that lights fast</li>
+                <li><strong>100 ft hank</strong> — throw it in every kit</li>
+              </ul>
 
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      min-width: 0;
-    }
-    .brand-text span:first-child {
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 72vw;
-    }
-    .brand-text span:last-child {
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 72vw;
-    }
+              <div class="rg-urgency" role="note">
+                <strong>Why it matters:</strong> single-use gear is dead weight.
+                <span class="rg-urgency2">Cordage is shelter, repairs, traps, and fire — all the basics.</span>
+              </div>
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 0.9rem;
-    }
+              <div class="rg-ctaRow">
+                <a class="rg-cta"
+                   href="https://collabs.shop/5uhjlj"
+                   target="_blank"
+                   rel="nofollow sponsored noopener">
+                  Shop Titan →
+                </a>
+                <div class="rg-mini">
+                  <span class="rg-pill">Patented</span>
+                  <span class="rg-pill">Veteran-owned</span>
+                  <span class="rg-pill">Lifetime guarantee</span>
+                </div>
+              </div>
 
-    .nav-links a { color: var(--ink-soft); }
-    .nav-links a:hover { color: var(--ink); }
-
-    .nav-cta { display: flex; gap: 10px; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px; /* better tap size */
-      border-radius: var(--radius-pill);
-      border: 1px solid transparent;
-      font-size: 0.83rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      cursor: pointer;
-      white-space: nowrap;
-      min-height: 44px; /* mobile tap target */
-    }
-
-    .btn-primary {
-      background: radial-gradient(circle at 20% 0%, #ffe4b0 0%, var(--accent-deep) 32%, var(--accent) 100%);
-      border-color: rgba(0,0,0,0.85);
-      color: #1b1207;
-    }
-
-    .btn-ghost {
-      border-color: var(--line);
-      background: rgba(10,12,16,0.8);
-      color: var(--ink-soft);
-    }
-
-    .nav-toggle {
-      display: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(8,10,14,0.96);
-      color: var(--ink);
-      font-size: 1.25rem;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 auto;
-    }
-
-    /* Mobile nav becomes a proper dropdown panel */
-    @media (max-width: 780px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-toggle { display: inline-flex; margin-left: auto; }
-
-      .nav-open .nav-links,
-      .nav-open .nav-cta {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        background: #06080d;
-        border-radius: 16px;
-        border: 1px solid var(--line);
-        padding: 12px 12px;
-        width: 100%;
-        gap: 10px;
-      }
-
-      .nav-open .nav-links a {
-        padding: 10px 10px;
-        border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.06);
-        background: rgba(10,12,16,0.55);
-      }
-      .nav-open .nav-links a:hover { text-decoration: none; border-color: rgba(248,170,54,0.25); }
-
-      .nav-open .nav-cta a { width: 100%; }
-    }
-
-    /* Quick-nav: on mobile make it horizontal scroll (no wrapping mess) */
-    .quick-nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 18px 14px;
-    }
-    .quick-nav-inner {
-      display: flex;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(8,10,14,0.72);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
-      flex-wrap: wrap;
-    }
-    .quick-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(10,12,16,0.75);
-      color: var(--ink-soft);
-      font-size: 0.82rem;
-      white-space: nowrap;
-      min-height: 40px;
-    }
-    .quick-pill:hover {
-      color: var(--ink);
-      text-decoration: none;
-      border-color: rgba(248,170,54,0.35);
-    }
-
-    @media (max-width: 780px){
-      .quick-nav { padding: 0 14px 12px; }
-      .quick-nav-inner {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-      }
-      .quick-pill { scroll-snap-align: start; }
-      .quick-nav-inner::-webkit-scrollbar { height: 0; }
-    }
-
-    /* =========================================================
-       TITAN SURVIVAL STRIP
-    ========================================================= */
-    .titan-strip { margin-top: 14px; margin-bottom: 28px; }
-
-    .titan-inner {
-      border-radius: 18px;
-      background:
-        radial-gradient(circle at 0 0, rgba(248,170,54,0.22), transparent 60%
+              <p class="rg-note">
+                <em>Prepared men don’t carry single-use gear.</em> This replaces three items with one.
+              </p>
+            </div>
+          </div>
+        </section>
 
       </div>
     </section>
@@ -1975,7 +1802,8 @@
       const next   = root.querySelector(".rg-next");
       const stage  = root.querySelector(".rg-stage");
 
-      if (!slides.length) return;
+      // Only wire carousel behavior when there are multiple slides + dots
+      const isCarousel = slides.length > 1 && dots.length === slides.length;
 
       let idx = 0;
       let timer = null;
@@ -1988,6 +1816,7 @@
 
       function start() {
         stop();
+        if (!isCarousel) return;
         if (root.getAttribute("data-rotate") === "false") return;
         const interval = parseInt(root.getAttribute("data-interval") || "3200", 10);
         timer = setInterval(() => show(idx + 1), interval);
@@ -1998,71 +1827,67 @@
         timer = null;
       }
 
-      // Click controls
-      prev && prev.addEventListener("click", () => { show(idx - 1); start(); });
-      next && next.addEventListener("click", () => { show(idx + 1); start(); });
-      dots.forEach((d, n) => d.addEventListener("click", () => { show(n); start(); }));
+      if (isCarousel) {
+        prev && prev.addEventListener("click", () => { show(idx - 1); start(); });
+        next && next.addEventListener("click", () => { show(idx + 1); start(); });
+        dots.forEach((d, n) => d.addEventListener("click", () => { show(n); start(); }));
 
-      // Pause on hover/focus
-      stage && stage.addEventListener("mouseenter", stop);
-      stage && stage.addEventListener("mouseleave", start);
-      stage && stage.addEventListener("focusin", stop);
-      stage && stage.addEventListener("focusout", start);
+        stage && stage.addEventListener("mouseenter", stop);
+        stage && stage.addEventListener("mouseleave", start);
+        stage && stage.addEventListener("focusin", stop);
+        stage && stage.addEventListener("focusout", start);
 
-      // Keyboard
-      stage && stage.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowLeft") { show(idx - 1); start(); }
-        if (e.key === "ArrowRight") { show(idx + 1); start(); }
-      });
+        stage && stage.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowLeft") { show(idx - 1); start(); }
+          if (e.key === "ArrowRight") { show(idx + 1); start(); }
+        });
 
-      // Swipe (mobile)
-      let startX = 0, startY = 0, tracking = false;
+        let startX = 0, startY = 0, tracking = false;
 
-      function onStart(x, y){
-        tracking = true;
-        startX = x; startY = y;
-        stop();
-      }
-      function onEnd(x, y){
-        if (!tracking) return;
-        tracking = false;
-
-        const dx = x - startX;
-        const dy = y - startY;
-
-        // Only treat as swipe if mostly horizontal and big enough
-        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
-          if (dx < 0) show(idx + 1);
-          else show(idx - 1);
+        function onStart(x, y){
+          tracking = true;
+          startX = x; startY = y;
+          stop();
         }
+        function onEnd(x, y){
+          if (!tracking) return;
+          tracking = false;
+
+          const dx = x - startX;
+          const dy = y - startY;
+
+          if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+            if (dx < 0) show(idx + 1);
+            else show(idx - 1);
+          }
+          start();
+        }
+
+        if (stage){
+          stage.addEventListener("touchstart", (e) => {
+            const t = e.touches[0];
+            onStart(t.clientX, t.clientY);
+          }, { passive: true });
+
+          stage.addEventListener("touchend", (e) => {
+            const t = e.changedTouches[0];
+            onEnd(t.clientX, t.clientY);
+          }, { passive: true });
+
+          stage.addEventListener("pointerdown", (e) => {
+            if (e.pointerType === "mouse") return;
+            onStart(e.clientX, e.clientY);
+          });
+          stage.addEventListener("pointerup", (e) => {
+            if (e.pointerType === "mouse") return;
+            onEnd(e.clientX, e.clientY);
+          });
+          stage.addEventListener("pointercancel", () => { tracking = false; start(); });
+        }
+
+        show(0);
         start();
       }
-
-      if (stage){
-        stage.addEventListener("touchstart", (e) => {
-          const t = e.touches[0];
-          onStart(t.clientX, t.clientY);
-        }, { passive: true });
-
-        stage.addEventListener("touchend", (e) => {
-          const t = e.changedTouches[0];
-          onEnd(t.clientX, t.clientY);
-        }, { passive: true });
-
-        // Pointer events for modern browsers
-        stage.addEventListener("pointerdown", (e) => {
-          if (e.pointerType === "mouse") return; // avoid weird desktop drag
-          onStart(e.clientX, e.clientY);
-        });
-        stage.addEventListener("pointerup", (e) => {
-          if (e.pointerType === "mouse") return;
-          onEnd(e.clientX, e.clientY);
-        });
-        stage.addEventListener("pointercancel", () => { tracking = false; start(); });
-      }
-
-      show(0);
-      start();
     });
   })();
   </script>
