@@ -1783,104 +1783,40 @@
 
   </div>
 </section>
-<!-- ===== TURNING POINT TEE (BLACK + WHITE) ===== -->
-<section class="rg-feature" aria-label="Turning Point T-Shirts">
-  <div class="rg-wrap">
+/* ===== TURNING POINT TEE GRID FIX ===== */
+.rg-grid {
+  display: grid;
+  gap: 2.5rem;
+}
 
-    <div class="rg-header">
-      <span class="rg-badge">APPAREL</span>
-      <h2 class="rg-title-lg">
-        This Is the Turning Point
-        <span class="rg-sub">Choose Your Line in the Sand</span>
-      </h2>
-    </div>
+.rg-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
 
-    <div class="rg-grid rg-grid--2">
+/* Card layout stays vertical inside each column */
+.rg-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
 
-      <!-- BLACK SHIRT -->
-      <article class="rg-card">
-        <div class="rg-card-media">
-          <img
-            src="940029368c890f8752a6__825.webp"
-            alt="This Is the Turning Point T-Shirt – Black"
-            loading="lazy"
-          />
-        </div>
+/* Image control */
+.rg-card-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-        <div class="rg-card-copy">
-          <h3 class="rg-title">
-            Turning Point Tee
-            <span class="rg-sub">Black Edition</span>
-          </h3>
-
-          <p class="rg-lede">
-            Dark. Direct. Final.  
-            This shirt is for the moment you stopped negotiating and started deciding.
-          </p>
-
-          <ul class="rg-bullets">
-            <li>Bold back graphic, clean front branding</li>
-            <li>Built for real wear — not social approval</li>
-            <li>Signals resolve without saying a word</li>
-          </ul>
-
-          <a
-            class="rg-cta"
-            href="https://grit-gear-hq.printful.me/product/short-sleeve-t-shirt-68c890f809b6a"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            Buy Black →
-          </a>
-        </div>
-      </article>
-
-      <!-- WHITE SHIRT -->
-      <article class="rg-card">
-        <div class="rg-card-media">
-          <img
-            src="tpw.jpg"
-            alt="This Is the Turning Point T-Shirt – White"
-            loading="lazy"
-          />
-        </div>
-
-        <div class="rg-card-copy">
-          <h3 class="rg-title">
-            Turning Point Tee
-            <span class="rg-sub">White Edition</span>
-          </h3>
-
-          <p class="rg-lede">
-            Clean. Sharp. Unmistakable.  
-            For the rebuild phase — after the excuses are gone.
-          </p>
-
-          <ul class="rg-bullets">
-            <li>High-contrast statement graphic</li>
-            <li>Lightweight, breathable daily wear</li>
-            <li>Minimal front, message on the back</li>
-          </ul>
-
-          <a
-            class="rg-cta rg-cta--alt"
-            href="https://grit-gear-hq.printful.me/product/short-sleeve-t-shirt"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-          >
-            Buy White →
-          </a>
-        </div>
-      </article>
-
-    </div>
-
-    <p class="rg-note">
-      <em>This isn’t merch.</em> It’s the moment everything changed.
-    </p>
-
-  </div>
-</section>
+/* Mobile fallback */
+@media (max-width: 768px) {
+  .rg-grid--2 {
+    grid-template-columns: 1fr;
+  }
+}
 
   </div>
 </section>
