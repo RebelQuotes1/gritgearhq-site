@@ -1656,6 +1656,8 @@
             </div>
           </div>
 
+          </div>
+
           <p class="book-quote">“Die a legend. Not a cautionary tale.”</p>
         </section>
 
@@ -1703,6 +1705,174 @@
                 </a>
               </div>
             </div>
+            <!-- =======================
+ FEATURED GEAR: BACKPACK + SLING (FRONT PAGE)
+======================= -->
+<section class="section" id="featured-carry">
+
+  <h2 class="section-title">Featured Carry Gear</h2>
+  <p>Field-tested carry options — built for workdays, movement, and moments that don’t go to plan.</p>
+
+  <div class="gg-duo">
+
+    <!-- BACKPACK -->
+    <article class="gg-card">
+      <div class="gg-top">
+        <span class="gg-badge">BEST SELLER</span>
+        <span class="gg-rating">
+          <span class="gg-stars">★★★★★</span> 4.8 (112)
+        </span>
+      </div>
+
+      <img
+        src="rugged-utility-backpack.webp"
+        alt="Rugged utility backpack with laptop compartment"
+        class="gg-img"
+        loading="lazy"
+      >
+
+      <div class="gg-body">
+        <h3 class="gg-title">Rugged Utility Backpack</h3>
+
+        <p class="gg-desc">
+          A clean, durable backpack built for everyday responsibility — work, travel,
+          gym, and the unexpected. No gimmicks. Just smart storage and dependable carry.
+        </p>
+
+        <ul class="gg-list">
+          <li>Padded laptop compartment</li>
+          <li>Hidden rear security pocket</li>
+          <li>Comfortable straps for long days</li>
+          <li>Structured without feeling bulky</li>
+        </ul>
+
+        <div class="gg-trust">
+          <span class="gg-chip">Secure checkout</span>
+          <span class="gg-chip">Made on demand</span>
+          <span class="gg-chip">Daily-use durable</span>
+        </div>
+
+        <div class="gg-actions">
+          <a
+            href="https://grit-gear-hq.printful.me/product/rugged-utility-backpack-durable-everyday-carry-pack-with-laptop-compartment"
+            class="gg-btn primary"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            View Backpack →
+          </a>
+
+          <button class="gg-btn secondary" onclick="openSpecs('backpack')">
+            Quick Specs
+          </button>
+        </div>
+
+        <div class="gg-note">
+          Designed for men who carry responsibility, not trends.
+        </div>
+      </div>
+    </article>
+
+    <!-- SLING -->
+    <article class="gg-card">
+      <div class="gg-top">
+        <span class="gg-badge">EVERYDAY CARRY</span>
+        <span class="gg-rating">
+          <span class="gg-stars">★★★★★</span> 4.7 (89)
+        </span>
+      </div>
+
+      <img
+        src="everyday-carry-sling.webp"
+        alt="Minimal everyday carry sling bag"
+        class="gg-img"
+        loading="lazy"
+      >
+
+      <div class="gg-body">
+        <h3 class="gg-title">Everyday Carry Sling</h3>
+
+        <p class="gg-desc">
+          Slim, low-profile, and out of the way. Built for movement, errands,
+          travel, and days you don’t want extra bulk slowing you down.
+        </p>
+
+        <ul class="gg-list">
+          <li>Minimal footprint, practical storage</li>
+          <li>Fast-access zip compartments</li>
+          <li>Comfortable cross-body carry</li>
+        </ul>
+
+        <div class="gg-trust">
+          <span class="gg-chip">Lightweight</span>
+          <span class="gg-chip">Durable build</span>
+          <span class="gg-chip">Ships direct</span>
+        </div>
+
+        <div class="gg-actions">
+          <a
+            href="https://grit-gear-hq.printful.me/product/rough-gear-everyday-carry-sling-minimal-durable-ready"
+            class="gg-btn primary"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            View Sling →
+          </a>
+
+          <button class="gg-btn secondary" onclick="openSpecs('sling')">
+            Quick Specs
+          </button>
+        </div>
+
+        <div class="gg-note">
+          Grab-and-go carry without the backpack commitment.
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== QUICK SPECS MODAL ===== -->
+<div class="gg-modal" id="ggModal">
+  <div class="gg-modal-box">
+    <span class="gg-close" onclick="closeSpecs()">✕</span>
+    <h3 id="ggModalTitle"></h3>
+    <div id="ggModalBody"></div>
+  </div>
+</div>
+
+<script>
+function openSpecs(type){
+  const modal=document.getElementById("ggModal");
+  const title=document.getElementById("ggModalTitle");
+  const body=document.getElementById("ggModalBody");
+
+  if(type==="backpack"){
+    title.innerText="Rugged Utility Backpack – Specifications";
+    body.innerHTML=`<ul>
+      <li>100% polyester (330 g/m²)</li>
+      <li>Capacity: 16.1 L (4.3 gal)</li>
+      <li>Multiple compartments + laptop sleeve</li>
+      <li>Hidden rear pocket</li>
+      <li>Max recommended load: 11 lbs</li>
+    </ul>`;
+  } else {
+    title.innerText="Everyday Carry Sling – Specifications";
+    body.innerHTML=`<ul>
+      <li>Lightweight, low-profile design</li>
+      <li>Durable zippers and stitching</li>
+      <li>Comfortable cross-body fit</li>
+      <li>Ideal for travel and daily errands</li>
+    </ul>`;
+  }
+  modal.classList.add("active");
+}
+function closeSpecs(){
+  document.getElementById("ggModal").classList.remove("active");
+}
+</script>
+
           </div>
 
           <p class="book-quote">“If it’s worth thinking… it’s worth writing down.”</p>
