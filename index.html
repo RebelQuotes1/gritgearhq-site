@@ -903,6 +903,7 @@
       letter-spacing: 0.02em;
       box-shadow: 0 10px 26px rgba(248,170,54,0.22);
       -webkit-tap-highlight-color: transparent;
+      transition: transform .12s ease, filter .12s ease;
     }
     .rg-cta:hover{ filter: brightness(1.03); transform: translateY(-1px); text-decoration:none; }
 
@@ -1069,8 +1070,9 @@
       letter-spacing:0.02em;
       border:1px solid rgba(0,0,0,0.45);
       -webkit-tap-highlight-color: transparent;
+      transition: filter .12s ease, transform .12s ease;
     }
-    .book-btn:hover{ text-decoration:none; filter:brightness(1.03); }
+    .book-btn:hover{ text-decoration:none; filter:brightness(1.03); transform: translateY(-1px); }
 
     .book-btn--gold{ background:#f8aa36; color:#000; }
     .book-btn--red{ background:#c03221; color:#fff; }
@@ -1100,7 +1102,6 @@
       <button
         class="nav-toggle"
         type="button"
-        onclick="document.getElementById('nav').classList.toggle('nav-open')"
         aria-label="Toggle navigation"
         aria-controls="primaryNav"
         aria-expanded="false"
@@ -1597,7 +1598,7 @@
           </div>
         </section>
 
-        <!-- ===== BACKPACK FEATURE (FIXED: uses YOUR actual filenames) ===== -->
+        <!-- ===== BACKPACK FEATURE (FIXED) ===== -->
         <section class="rg-feature" aria-label="Featured Gear: Rugged Utility Backpack">
           <div class="rg-wrap">
             <div class="rg-gallery" data-rotate="true" data-interval="3200">
@@ -1609,7 +1610,8 @@
               <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Backpack images" tabindex="0">
                 <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
 
-                  <figure class="rg-slide">
+                <div class="rg-slides">
+                  <figure class="rg-slide is-active">
                     <img src="newbp.jpg" alt="Rugged utility backpack cutout (rear view)" loading="lazy" />
                     <figcaption class="rg-cap">Comfort straps + practical structure for long days.</figcaption>
                   </figure>
@@ -1625,8 +1627,6 @@
                 <div class="rg-dots" aria-label="Choose image">
                   <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
                   <button class="rg-dot" type="button" aria-label="Image 2"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 3"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 4"></button>
                 </div>
               </div>
 
@@ -1686,7 +1686,7 @@
           </div>
         </section>
 
-        <!-- ===== FANNY PACK FEATURE (FIXED: uses YOUR actual filename) ===== -->
+        <!-- ===== FANNY PACK FEATURE ===== -->
         <section class="rg-feature" aria-label="Featured Gear: Rough Gear Everyday Carry Sling">
           <div class="rg-wrap">
             <div class="rg-gallery">
@@ -2054,7 +2054,7 @@
   </script>
 
   <script>
-    // Footer year + back-to-top + nav aria-expanded sync
+    // Footer year + back-to-top + mobile nav toggle
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const toTop = document.getElementById('toTop');
@@ -2065,8 +2065,10 @@
 
     const nav = document.getElementById('nav');
     const navBtn = document.getElementById('navToggleBtn');
-    if (nav && navBtn){
+
+    if (nav && navBtn) {
       navBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
         const open = nav.classList.contains('nav-open');
         navBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
