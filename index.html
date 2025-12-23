@@ -1783,360 +1783,398 @@
 
   </div>
 </section>
+<style>
 /* ===== TURNING POINT TEE GRID FIX ===== */
-.rg-grid {
-  display: grid;
-  gap: 2.5rem;
+.rg-grid{
+  display:grid;
+  gap:2.5rem;
 }
 
-.rg-grid--2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
+.rg-grid--2{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:stretch;
 }
 
+.rg-card{
+  display:flex;
+  flex-direction:column;
+  background:rgba(10,10,10,.6);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.rg-card-media img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.rg-card-copy{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+  padding:1.25rem;
+}
+
+.rg-card-copy .rg-cta{
+  margin-top:auto;
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .rg-grid--2{ grid-template-columns:1fr; }
+}
+</style>
+
+/* ===== TURNING POINT TEE GRID FIX ===== */
+.rg-grid{
+  display:grid;
+  gap:2.5rem;
+}
+.rg-grid--2{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:stretch;
+}
 /* Card layout stays vertical inside each column */
-.rg-card {
-  display: flex;
-  flex-direction: column;
-  background: rgba(10, 10, 10, 0.6);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  overflow: hidden;
+.rg-card{
+  display:flex;
+  flex-direction:column;
+  background:rgba(10,10,10,.6);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  overflow:hidden;
 }
-
 /* Image control */
-.rg-card-media img {
-  width: 100%;
-  height: auto;
-  display: block;
+.rg-card-media img{
+  width:100%;
+  height:auto;
+  display:block;
 }
-
 /* Mobile fallback */
-@media (max-width: 768px) {
-  .rg-grid--2 {
-    grid-template-columns: 1fr;
-  }
+@media (max-width:768px){
+  .rg-grid--2{ grid-template-columns:1fr; }
 }
 
+/* ====== (END FIX) ====== */
+/* NOTE: The stray </div></section> tags you had here were breaking the page.
+   They are intentionally removed. */
+
+/* --------------------------------------------- */
+/* ------------------- HTML -------------------- */
+/* --------------------------------------------- */
+
+<!-- CATEGORIES -->
+<section class="section" id="choose">
+  <h2 class="section-title">Choose your battlefield</h2>
+  <p>Pick the area that keeps you up at night and start there.</p>
+
+  <!-- FEATURED BOOKS (SIDE BY SIDE) -->
+  <div class="book-duo">
+
+    <!-- BOOK 1 -->
+    <section class="book-card book-card--gold">
+      <div class="book-kicker">Featured Book · Personal Responsibility · Discipline</div>
+
+      <div class="book-row">
+        <div class="book-cover">
+          <img
+            src="61KphIP9y9L._SY466_.jpg"
+            alt="How to Unf*ck Your Life by Christopher Serpico"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="book-body">
+          <h3 class="book-title">How to Unf*ck Your Life</h3>
+          <div class="book-author">by Christopher Serpico</div>
+
+          <p class="book-desc">
+            This isn’t self-help fluff. It’s a blunt, honest field manual for men who are tired
+            of excuses, tired of drifting, and tired of living below their potential.
+            No platitudes. No victimhood. Just responsibility, discipline, and forward motion.
+          </p>
+
+          <div class="book-stars">★★★★★ <span>(Reader Rated)</span></div>
+
+          <ul class="book-bullets">
+            <li>Short, hard-hitting chapters</li>
+            <li>No-nonsense accountability</li>
+            <li>Written for men who are done lying to themselves</li>
+          </ul>
+
+          <div class="book-actions">
+            <div class="book-price">$9.75</div>
+
+            <a
+              href="https://www.amazon.com/How-unf-ck-your-life/dp/B0F1K5KPH5"
+              target="_blank"
+              rel="nofollow sponsored noopener"
+              class="book-btn book-btn--gold"
+            >
+              Buy on Amazon →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="book-quote">“Die a legend. Not a cautionary tale.”</p>
+    </section>
+
+    <!-- BOOK 2 -->
+    <section class="book-card book-card--red">
+      <div class="book-kicker">Featured Notebook · Truth · Clarity · Unfiltered</div>
+
+      <div class="book-row">
+        <div class="book-cover">
+          <img
+            src="817QZz2GkHL._SY466_.jpg"
+            alt="Thought Crimes: A Notebook for Dangerous Ideas"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="book-body">
+          <h3 class="book-title">Thought Crimes</h3>
+          <div class="book-author">A Notebook for Dangerous Ideas</div>
+
+          <p class="book-desc">
+            A place to write what you actually think — before the world tells you what you’re “allowed” to think.
+            Use it for plans, hard truths, uncomfortable questions, business moves, or the kind of ideas that
+            don’t belong in polite company.
+          </p>
+
+          <div class="book-stars">★★★★★ <span>(Reader Rated)</span></div>
+
+          <ul class="book-bullets">
+            <li>Clean layout for real writing (not “inspo quotes”)</li>
+            <li>Perfect for planning, journaling, and building conviction</li>
+            <li>For people who refuse to be mentally domesticated</li>
+          </ul>
+
+          <div class="book-actions">
+            <div class="book-price book-price--muted">Price on Amazon</div>
+
+            <a
+              href="https://www.amazon.com/Thought-Crimes-Notebook-Dangerous-Ideas/dp/B0F4JWTDR1/"
+              target="_blank"
+              rel="nofollow sponsored noopener"
+              class="book-btn book-btn--red"
+            >
+              $5.99 on Amazon →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="book-quote">“If it’s worth thinking… it’s worth writing down.”</p>
+    </section>
+
+  </div>
+
+  <div class="category-strip">
+    <a href="blog-index.html#mindset" class="category-pill">🧠 Mindset &amp; Grit →</a>
+    <a href="blog-index.html#home" class="category-pill">🏠 Home Preparedness →</a>
+    <a href="store.html" class="category-pill">🧰 Gear That Lasts →</a>
+    <a href="blog-index.html#stories" class="category-pill">🔥 Stories &amp; Lessons →</a>
   </div>
 </section>
 
+<!-- LATEST POSTS -->
+<section class="section" id="latest">
+  <h2 class="section-title">Latest field notes</h2>
+
+  <div class="blog-grid">
+
+    <article class="blog-card">
+      <div>Mindset</div>
+      <h3>Weakness Is a Luxury Your Family Can’t Afford</h3>
+      <p>Comfort culture tricks men into going soft. Here’s why that puts everyone at risk.</p>
+      <a href="blog-weakness.html">Read →</a>
+    </article>
+
+    <article class="blog-card">
+      <div>Home Preparedness</div>
+      <h3>The 24-Hour Blackout Checklist</h3>
+      <p>The first 24 hours are the difference between control and chaos.</p>
+      <a href="blog-blackout-checklist.html">Read →</a>
+    </article>
+
+    <article class="blog-card">
+      <div>Stories</div>
+      <h3>The Night the Sky Turned Green</h3>
+      <p>Tornado sirens failed. Power died. Here’s what happened next.</p>
+      <a href="blog-storm-story.html">Read →</a>
+    </article>
+
   </div>
 </section>
 
-      </div>
-    </section>
+<!-- ABOUT + NEWSLETTER -->
+<section class="section" id="dispatch">
+  <div class="two-column">
 
-    <!-- CATEGORIES -->
-    <section class="section" id="choose">
-      <h2 class="section-title">Choose your battlefield</h2>
-      <p>Pick the area that keeps you up at night and start there.</p>
+    <div class="about-panel">
+      <h3>What is Grit Gear HQ?</h3>
+      <p>It’s a survival blog built by someone who’s actually lived through hard times,
+      made mistakes, and learned from them without the luxury of theory.</p>
+      <p>Everything here is real-world, tested, and written without bullshit.</p>
+    </div>
 
-      <!-- FEATURED BOOKS (SIDE BY SIDE) -->
-      <div class="book-duo">
+    <div class="newsletter-panel">
+      <h3>Get the weekly HQ Dispatch</h3>
+      <p>New posts, quick checklists, reminders to sharpen your edge.</p>
 
-        <!-- BOOK 1 -->
-        <section class="book-card book-card--gold">
-          <div class="book-kicker">Featured Book · Personal Responsibility · Discipline</div>
+      <form class="email-form" action="https://formspree.io/f/xldogyda" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required>
+        <button class="btn btn-primary" type="submit">Join</button>
+      </form>
+    </div>
 
-          <div class="book-row">
-            <div class="book-cover">
-              <img
-                src="61KphIP9y9L._SY466_.jpg"
-                alt="How to Unf*ck Your Life by Christopher Serpico"
-                loading="lazy"
-              >
-            </div>
+  </div>
+</section>
 
-            <div class="book-body">
-              <h3 class="book-title">How to Unf*ck Your Life</h3>
-              <div class="book-author">by Christopher Serpico</div>
+<!-- QUOTE -->
+<section class="section" id="quote">
+  <div class="quote-panel">
+    Civilization is a thin coat of paint. When it flakes, people look for someone who
+    isn't panicking. Become that person.
+  </div>
+</section>
 
-              <p class="book-desc">
-                This isn’t self-help fluff. It’s a blunt, honest field manual for men who are tired
-                of excuses, tired of drifting, and tired of living below their potential.
-                No platitudes. No victimhood. Just responsibility, discipline, and forward motion.
-              </p>
+<!-- FOOTER -->
+<footer>
+  <div>© <span id="year"></span> Grit Gear HQ — Built for the ones who show up when it matters.</div>
+</footer>
 
-              <div class="book-stars">★★★★★ <span>(Reader Rated)</span></div>
+</main>
 
-              <ul class="book-bullets">
-                <li>Short, hard-hitting chapters</li>
-                <li>No-nonsense accountability</li>
-                <li>Written for men who are done lying to themselves</li>
-              </ul>
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
-              <div class="book-actions">
-                <div class="book-price">$9.75</div>
+<!-- ===== Carousel: auto-rotate, dots, prev/next, pause on hover/focus, keyboard, SWIPE ===== -->
+<script>
+(function () {
+  const galleries = document.querySelectorAll(".rg-gallery");
+  if (!galleries.length) return;
 
-                <a
-                  href="https://www.amazon.com/How-unf-ck-your-life/dp/B0F1K5KPH5"
-                  target="_blank"
-                  rel="nofollow sponsored noopener"
-                  class="book-btn book-btn--gold"
-                >
-                  Buy on Amazon →
-                </a>
-              </div>
-            </div>
-          </div>
+  galleries.forEach(root => {
+    const slides = Array.from(root.querySelectorAll(".rg-slide"));
+    const dots   = Array.from(root.querySelectorAll(".rg-dot"));
+    const prev   = root.querySelector(".rg-prev");
+    const next   = root.querySelector(".rg-next");
+    const stage  = root.querySelector(".rg-stage");
 
-          <p class="book-quote">“Die a legend. Not a cautionary tale.”</p>
-        </section>
+    // Only wire carousel behavior when there are multiple slides + dots
+    const isCarousel = slides.length > 1 && dots.length === slides.length;
 
-        <!-- BOOK 2 -->
-        <section class="book-card book-card--red">
-          <div class="book-kicker">Featured Notebook · Truth · Clarity · Unfiltered</div>
+    let idx = 0;
+    let timer = null;
 
-          <div class="book-row">
-            <div class="book-cover">
-              <img
-                src="817QZz2GkHL._SY466_.jpg"
-                alt="Thought Crimes: A Notebook for Dangerous Ideas"
-                loading="lazy"
-              >
-            </div>
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => s.classList.toggle("is-active", n === idx));
+      dots.forEach((d, n) => d.classList.toggle("is-active", n === idx));
+    }
 
-            <div class="book-body">
-              <h3 class="book-title">Thought Crimes</h3>
-              <div class="book-author">A Notebook for Dangerous Ideas</div>
+    function start() {
+      stop();
+      if (!isCarousel) return;
+      if (root.getAttribute("data-rotate") === "false") return;
+      const interval = parseInt(root.getAttribute("data-interval") || "3200", 10);
+      timer = setInterval(() => show(idx + 1), interval);
+    }
 
-              <p class="book-desc">
-                A place to write what you actually think — before the world tells you what you’re “allowed” to think.
-                Use it for plans, hard truths, uncomfortable questions, business moves, or the kind of ideas that
-                don’t belong in polite company.
-              </p>
+    function stop() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
 
-              <div class="book-stars">★★★★★ <span>(Reader Rated)</span></div>
+    if (isCarousel) {
+      prev && prev.addEventListener("click", () => { show(idx - 1); start(); });
+      next && next.addEventListener("click", () => { show(idx + 1); start(); });
+      dots.forEach((d, n) => d.addEventListener("click", () => { show(n); start(); }));
 
-              <ul class="book-bullets">
-                <li>Clean layout for real writing (not “inspo quotes”)</li>
-                <li>Perfect for planning, journaling, and building conviction</li>
-                <li>For people who refuse to be mentally domesticated</li>
-              </ul>
+      stage && stage.addEventListener("mouseenter", stop);
+      stage && stage.addEventListener("mouseleave", start);
+      stage && stage.addEventListener("focusin", stop);
+      stage && stage.addEventListener("focusout", start);
 
-              <div class="book-actions">
-                <div class="book-price book-price--muted">Price on Amazon</div>
+      stage && stage.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft")  { show(idx - 1); start(); }
+        if (e.key === "ArrowRight") { show(idx + 1); start(); }
+      });
 
-                <a
-                  href="https://www.amazon.com/Thought-Crimes-Notebook-Dangerous-Ideas/dp/B0F4JWTDR1/"
-                  target="_blank"
-                  rel="nofollow sponsored noopener"
-                  class="book-btn book-btn--red"
-                >
-                  $5.99 on Amazon →
-                </a>
-              </div>
-            </div>
-          </div>
+      let startX = 0, startY = 0, tracking = false;
 
-          <p class="book-quote">“If it’s worth thinking… it’s worth writing down.”</p>
-        </section>
-
-      </div>
-
-      <div class="category-strip">
-        <a href="blog-index.html#mindset" class="category-pill">🧠 Mindset & Grit →</a>
-        <a href="blog-index.html#home" class="category-pill">🏠 Home Preparedness →</a>
-        <a href="store.html" class="category-pill">🧰 Gear That Lasts →</a>
-        <a href="blog-index.html#stories" class="category-pill">🔥 Stories & Lessons →</a>
-      </div>
-    </section>
-
-    <!-- LATEST POSTS -->
-    <section class="section" id="latest">
-      <h2 class="section-title">Latest field notes</h2>
-
-      <div class="blog-grid">
-
-        <article class="blog-card">
-          <div>Mindset</div>
-          <h3>Weakness Is a Luxury Your Family Can’t Afford</h3>
-          <p>Comfort culture tricks men into going soft. Here’s why that puts everyone at risk.</p>
-          <a href="blog-weakness.html">Read →</a>
-        </article>
-
-        <article class="blog-card">
-          <div>Home Preparedness</div>
-          <h3>The 24-Hour Blackout Checklist</h3>
-          <p>The first 24 hours are the difference between control and chaos.</p>
-          <a href="blog-blackout-checklist.html">Read →</a>
-        </article>
-
-        <article class="blog-card">
-          <div>Stories</div>
-          <h3>The Night the Sky Turned Green</h3>
-          <p>Tornado sirens failed. Power died. Here’s what happened next.</p>
-          <a href="blog-storm-story.html">Read →</a>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ABOUT + NEWSLETTER -->
-    <section class="section" id="dispatch">
-      <div class="two-column">
-
-        <div class="about-panel">
-          <h3>What is Grit Gear HQ?</h3>
-          <p>It’s a survival blog built by someone who’s actually lived through hard times,
-          made mistakes, and learned from them without the luxury of theory.</p>
-          <p>Everything here is real-world, tested, and written without bullshit.</p>
-        </div>
-
-        <div class="newsletter-panel">
-          <h3>Get the weekly HQ Dispatch</h3>
-          <p>New posts, quick checklists, reminders to sharpen your edge.</p>
-
-          <form class="email-form" action="https://formspree.io/f/xldogyda" method="POST">
-            <input type="email" name="email" placeholder="you@example.com" required>
-            <button class="btn btn-primary" type="submit">Join</button>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- QUOTE -->
-    <section class="section" id="quote">
-      <div class="quote-panel">
-        Civilization is a thin coat of paint. When it flakes, people look for someone who
-        isn't panicking. Become that person.
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div>© <span id="year"></span> Grit Gear HQ — Built for the ones who show up when it matters.</div>
-    </footer>
-
-  </main>
-
-  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
-
-  <!-- ===== Carousel: auto-rotate, dots, prev/next, pause on hover/focus, keyboard, SWIPE ===== -->
-  <script>
-  (function () {
-    const galleries = document.querySelectorAll(".rg-gallery");
-    if (!galleries.length) return;
-
-    galleries.forEach(root => {
-      const slides = Array.from(root.querySelectorAll(".rg-slide"));
-      const dots   = Array.from(root.querySelectorAll(".rg-dot"));
-      const prev   = root.querySelector(".rg-prev");
-      const next   = root.querySelector(".rg-next");
-      const stage  = root.querySelector(".rg-stage");
-
-      // Only wire carousel behavior when there are multiple slides + dots
-      const isCarousel = slides.length > 1 && dots.length === slides.length;
-
-      let idx = 0;
-      let timer = null;
-
-      function show(i) {
-        idx = (i + slides.length) % slides.length;
-        slides.forEach((s, n) => s.classList.toggle("is-active", n === idx));
-        dots.forEach((d, n) => d.classList.toggle("is-active", n === idx));
-      }
-
-      function start() {
+      function onStart(x, y){
+        tracking = true;
+        startX = x; startY = y;
         stop();
-        if (!isCarousel) return;
-        if (root.getAttribute("data-rotate") === "false") return;
-        const interval = parseInt(root.getAttribute("data-interval") || "3200", 10);
-        timer = setInterval(() => show(idx + 1), interval);
       }
+      function onEnd(x, y){
+        if (!tracking) return;
+        tracking = false;
 
-      function stop() {
-        if (timer) clearInterval(timer);
-        timer = null;
-      }
+        const dx = x - startX;
+        const dy = y - startY;
 
-      if (isCarousel) {
-        prev && prev.addEventListener("click", () => { show(idx - 1); start(); });
-        next && next.addEventListener("click", () => { show(idx + 1); start(); });
-        dots.forEach((d, n) => d.addEventListener("click", () => { show(n); start(); }));
-
-        stage && stage.addEventListener("mouseenter", stop);
-        stage && stage.addEventListener("mouseleave", start);
-        stage && stage.addEventListener("focusin", stop);
-        stage && stage.addEventListener("focusout", start);
-
-        stage && stage.addEventListener("keydown", (e) => {
-          if (e.key === "ArrowLeft") { show(idx - 1); start(); }
-          if (e.key === "ArrowRight") { show(idx + 1); start(); }
-        });
-
-        let startX = 0, startY = 0, tracking = false;
-
-        function onStart(x, y){
-          tracking = true;
-          startX = x; startY = y;
-          stop();
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < 0) show(idx + 1);
+          else show(idx - 1);
         }
-        function onEnd(x, y){
-          if (!tracking) return;
-          tracking = false;
-
-          const dx = x - startX;
-          const dy = y - startY;
-
-          if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
-            if (dx < 0) show(idx + 1);
-            else show(idx - 1);
-          }
-          start();
-        }
-
-        if (stage){
-          stage.addEventListener("touchstart", (e) => {
-            const t = e.touches[0];
-            onStart(t.clientX, t.clientY);
-          }, { passive: true });
-
-          stage.addEventListener("touchend", (e) => {
-            const t = e.changedTouches[0];
-            onEnd(t.clientX, t.clientY);
-          }, { passive: true });
-
-          stage.addEventListener("pointerdown", (e) => {
-            if (e.pointerType === "mouse") return;
-            onStart(e.clientX, e.clientY);
-          });
-          stage.addEventListener("pointerup", (e) => {
-            if (e.pointerType === "mouse") return;
-            onEnd(e.clientX, e.clientY);
-          });
-          stage.addEventListener("pointercancel", () => { tracking = false; start(); });
-        }
-
-        show(0);
         start();
       }
-    });
-  })();
-  </script>
 
-  <script>
-    // Footer year + back-to-top + mobile nav toggle
-    document.getElementById('year').textContent = new Date().getFullYear();
+      if (stage){
+        stage.addEventListener("touchstart", (e) => {
+          const t = e.touches[0];
+          onStart(t.clientX, t.clientY);
+        }, { passive: true });
 
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => {
-      toTop.style.display = (window.scrollY > 600) ? 'inline-flex' : 'none';
-    });
-    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        stage.addEventListener("touchend", (e) => {
+          const t = e.changedTouches[0];
+          onEnd(t.clientX, t.clientY);
+        }, { passive: true });
 
-    const nav = document.getElementById('nav');
-    const navBtn = document.getElementById('navToggleBtn');
+        stage.addEventListener("pointerdown", (e) => {
+          if (e.pointerType === "mouse") return;
+          onStart(e.clientX, e.clientY);
+        });
+        stage.addEventListener("pointerup", (e) => {
+          if (e.pointerType === "mouse") return;
+          onEnd(e.clientX, e.clientY);
+        });
+        stage.addEventListener("pointercancel", () => { tracking = false; start(); });
+      }
 
-    if (nav && navBtn) {
-      navBtn.addEventListener('click', () => {
-        nav.classList.toggle('nav-open');
-        const open = nav.classList.contains('nav-open');
-        navBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
+      show(0);
+      start();
     }
-  </script>
+  });
+})();
+</script>
+
+<script>
+// Footer year + back-to-top + mobile nav toggle
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', () => {
+  toTop.style.display = (window.scrollY > 600) ? 'inline-flex' : 'none';
+});
+toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+const nav = document.getElementById('nav');
+const navBtn = document.getElementById('navToggleBtn');
+
+if (nav && navBtn) {
+  navBtn.addEventListener('click', () => {
+    nav.classList.toggle('nav-open');
+    const open = nav.classList.contains('nav-open');
+    navBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+}
+</script>
+
 </body>
 </html>
