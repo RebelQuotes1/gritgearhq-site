@@ -351,8 +351,107 @@
       margin-bottom: 0.8rem;
     }
 
-    /* FOOTER */
+    /* Affiliate / image modules */
+    .img-card {
+      border-radius: var(--radius-lg);
+      background: rgba(10,12,18,0.9);
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      margin: 0.9rem 0 1.2rem;
+    }
+    .img-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #0b0f15;
+    }
+    .img-card .cap {
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      color: #9aa5b9;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
 
+    .gear-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin: 12px 0 18px;
+    }
+    @media (max-width: 780px) {
+      .gear-grid { grid-template-columns: 1fr; }
+    }
+
+    .gear-card {
+      border-radius: var(--radius-lg);
+      background: rgba(10,12,18,0.9);
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    .gear-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #0b0f15;
+    }
+    .gear-body {
+      padding: 12px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .gear-title {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .gear-desc {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+    .gear-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 2px;
+    }
+    .tag {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #9fb0c7;
+      background: rgba(18,24,35,0.65);
+    }
+    .gear-cta {
+      margin-top: 6px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .mini {
+      font-size: 0.78rem;
+      color: #8f98aa;
+    }
+
+    .disclosure {
+      border-radius: var(--radius-md);
+      background: rgba(10,12,18,0.9);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 12px 14px;
+      margin: 0 0 1.2rem;
+      font-size: 0.88rem;
+      color: #9aa5b9;
+    }
+    .disclosure strong { color: #f7c779; }
+
+    /* FOOTER */
     footer {
       margin-top: 40px;
       padding: 16px 18px 20px;
@@ -425,13 +524,18 @@
       <div class="kicker">Cold Weather • Family Safety</div>
       <h1 class="article-title">10 Items That Keep Your Family Warm When the Grid Goes Dark</h1>
       <div class="article-meta">
-        <span>7-minute read</span>
-        <span>Field-tested winter loadout</span>
+        <span>Field guide</span>
+        <span>Real-world winter loadout</span>
         <span>Updated 2025</span>
       </div>
     </header>
 
     <article class="article">
+      <div class="disclosure">
+        <strong>Affiliate note:</strong> Some links below are affiliate links. If you buy through them, it helps support Grit Gear HQ at no extra cost to you.
+        I only feature stuff that fits the “works when life gets ugly” standard.
+      </div>
+
       <div class="callout quick-list">
         <div class="callout-title">Quick List — The 10 Warmth Anchors</div>
         <ol>
@@ -454,6 +558,7 @@
           <li><a href="#mindset">Why warmth is priority one</a></li>
           <li><a href="#principles">How to think about cold the right way</a></li>
           <li><a href="#items">The 10 warmth items (field-tested)</a></li>
+          <li><a href="#affiliate-gear">Affiliate gear that makes this easier</a></li>
           <li><a href="#setups">Sample family setups (kids vs no kids)</a></li>
           <li><a href="#next">What to do this week</a></li>
         </ul>
@@ -462,13 +567,18 @@
       <p>
         When the power goes out in the middle of summer, it’s annoying. When it dies in a hard
         freeze, it gets serious fast. Pipes burst, fingers go numb, and kids who were whining
-        about screen time suddenly just want to burrow into you like you’re a human furnace.
+        about screen time suddenly want to burrow into you like you’re a human space heater.
       </p>
 
       <p>
-        The fantasy version of preparedness is ammo cans and bunker blueprints. The real version is
-        your family sitting in a dim living room, wrapped up, warm enough, calm enough, eating
-        something hot while the storm does whatever it wants outside.
+        The fantasy version of preparedness is ammo cans, bunker blueprints, and a thousand “tactical”
+        doodads that look cool on the internet. The real version is your family sitting in a dim living room,
+        wrapped up, warm enough, calm enough, sipping something hot while the storm does whatever it wants outside.
+      </p>
+
+      <p>
+        This guide is about building that “we’re okay” moment. Not a movie scene. Not a cosplay loadout.
+        Just the stuff that actually works when you’re tired, it’s dark, and you don’t feel like being heroic.
       </p>
 
       <h2 id="mindset">Why warmth is priority one</h2>
@@ -480,38 +590,53 @@
       </p>
 
       <p>
-        Warmth buys you time. Time to think, to fix, to call, to make the next move. When people
-        are shivering and scared, their brain collapses down to one thought: <em>“I hate this.
-        Make it stop.”</em> Your job is to keep everyone far away from that point.
+        Warmth buys you time. Time to troubleshoot. Time to make a plan. Time to wait for the utility crew
+        to do their thing. When people are shivering and scared, their brain collapses down to one thought:
+        <em>“I hate this. Make it stop.”</em> That’s when dumb decisions happen—like “let’s burn random stuff indoors”
+        or “let’s drive somewhere stupid in icy roads because I’m over it.”
+      </p>
+
+      <p>
+        If you’ve ever watched a family meltdown in a cold house, you know the truth:
+        cold is a multiplier. It multiplies arguments. It multiplies fear. It multiplies the sense that everything is falling apart.
+        And it does it quietly, like a thief that doesn’t kick the door—just slowly takes your comfort until you’re mad at everyone.
       </p>
 
       <h2 id="principles">How to think about cold the right way</h2>
 
-      <p>Three rules that keep this simple:</p>
+      <p>Three rules that keep this simple and prevent “panic shopping”:</p>
 
       <p>
         <strong>1. Heat the humans, not the house.</strong><br>
-        In an outage, forget the idea of keeping the whole house at 72°F.
-        You shrink your world down: one or two rooms, lots of layers, lots of blankets.
+        In an outage, forget the idea of keeping the whole house at 72°F. You shrink your world down:
+        one or two rooms, doors closed, drafts blocked, people layered up. You’re building a little warm cave.
+        The rest of the house is “storage.” Let it be cold.
       </p>
 
       <p>
         <strong>2. Insulation first, heat source second.</strong><br>
-        A powerful heater in a drafty, uninsulated room is a money bonfire. Insulation is the
-        boring superhero that turns a basic heater into a beast.
+        A powerful heater in a drafty room is a money bonfire. Insulation is the boring superhero that turns
+        a basic heater into a beast. Block drafts and you’ll be shocked how “not miserable” things get.
       </p>
 
       <p>
         <strong>3. Safety is part of warmth.</strong><br>
-        Carbon monoxide, open flames, kids, pets, and sleepy adults do not mix. If your warm
-        solution quietly tries to kill you, it’s not a solution.
+        Carbon monoxide, open flames, kids, pets, and sleepy adults do not mix. If your warm solution quietly tries to kill you,
+        it’s not a solution. Ventilation, CO alarms, and common sense are not optional accessories.
       </p>
+
+      <div class="callout">
+        <div class="callout-title">The honest goal</div>
+        You’re not trying to turn your living room into a tropical resort. You’re trying to keep it
+        <strong>livable</strong>: warm enough for sleep, warm enough for hands/feet, warm enough that people don’t spiral.
+        Livable wins.
+      </div>
 
       <h2 id="items">The 10 items that actually keep your family warm</h2>
 
       <p>
-        Here’s the loadout. This isn’t theory. It’s the stuff that earns its place after real
-        outages, cabin trips, and “we didn’t plan for this” moments.
+        Here’s the loadout. This isn’t theory. It’s the stuff that earns its place after real outages, cabin trips,
+        and those “we didn’t plan for this” moments where the weather reminds you who’s in charge.
       </p>
 
       <ol class="gear-list">
@@ -519,17 +644,25 @@
           <div class="gear-meta">Item 1</div>
           <h3>Layered base clothing for everyone</h3>
           <p>
-            You can’t control the grid, but you can control what’s on your skin.
-            Each person in the house should be able to stack:
-            <strong>base layer shirt + mid layer + hoodie or sweater.</strong>
+            You can’t control the grid, but you can control what’s on your skin. Each person should be able to stack:
+            <strong>base layer shirt + mid layer + hoodie/sweater + outer layer as needed.</strong>
           </p>
           <p>
-            If you’re sitting around in a t-shirt and complaining about the cold,
+            The most common failure I see is “we have coats.” Cool. Great. Coats are for outside. Inside, you want layers
+            that trap warm air without turning you into a stiff, crunchy marshmallow man.
+          </p>
+          <p>
+            Here’s the simple version:
+            <strong>one layer that wicks</strong> (thermal/long sleeve), then <strong>one layer that insulates</strong> (fleece/hoodie),
+            and if needed <strong>one layer that blocks wind</strong> (jacket). If you’re sitting around in a t-shirt complaining about the cold,
             that’s not the storm’s fault. That’s a wardrobe failure.
           </p>
+          <p>
+            Humor test: if your “emergency warm clothes” are your good church outfit you’re afraid to wrinkle, you don’t have emergency warm clothes.
+            You have “outfit anxiety.” Fix that.
+          </p>
           <p class="inline-link">
-            Checklist: long-sleeve base tops, long johns/thermal pants, at least one warm hoodie or
-            sweater per person that isn’t “nice” clothes you’re afraid to beat up.
+            Checklist: long-sleeve base tops, thermal bottoms, at least one warm hoodie per person, and one “beater” jacket you can abuse.
           </p>
         </li>
 
@@ -537,28 +670,41 @@
           <div class="gear-meta">Item 2</div>
           <h3>Wool socks, slippers & head coverage</h3>
           <p>
-            If feet are cold, everyone is miserable. That’s just how humans work.
-            Cotton socks get damp and stay cold; <strong>wool stays warm when it’s damp</strong>.
+            If feet are cold, everyone is miserable. That’s just how humans work. Cotton socks get damp and stay cold.
+            <strong>Wool stays warm when it’s damp</strong>. That’s why hikers love it. That’s why your grandpa was right.
           </p>
           <p>
-            Add cheap house slippers or insulated booties on top, and some kind of hat or beanie.
-            Yes, even inside. You’re not on a fashion show, you’re in survival mode.
+            Your goal is not “thick socks.” Your goal is <strong>dry and insulated.</strong>
+            Two tricks:
+          </p>
+          <ul>
+            <li><strong>Rotate socks</strong> — dry pair for sleeping, “day pair” for moving around.</li>
+            <li><strong>Keep a barrier</strong> — slippers, insulated booties, or even loose shoes you only wear inside.</li>
+          </ul>
+          <p>
+            And yes, hats inside. People act like wearing a beanie in the house is embarrassing.
+            Meanwhile the house is 45°F and you’re trying to be cool. Congratulations—your fashion sense is freezing to death.
           </p>
           <p class="inline-link">
-            Minimum: 2–3 pairs of thick wool socks per person + a beanie they can actually stand wearing.
+            Minimum: 2–3 pairs of wool socks per person + a beanie they’ll actually wear without whining.
           </p>
         </li>
 
         <li id="item-3">
           <div class="gear-meta">Item 3</div>
-          <h3>Serious blankets & one “warm room” plan</h3>
+          <h3>Serious blankets & a “warm room” plan</h3>
           <p>
-            Decide ahead of time what room becomes the “warm room.” Usually a smaller living room
-            or bedroom you can close off. Stack <strong>heavy blankets</strong> and throws in there.
+            Decide ahead of time what room becomes the warm room. Usually a smaller living room or bedroom you can close off.
+            The warm room is your winter headquarters: blankets, snacks, lighting, games, and everyone’s “keep warm” stuff in one spot.
           </p>
           <p>
-            Cheap fleece throw blankets are fine layered. A couple of legit heavy comforters or wool
-            blankets turn the room into a den instead of a meat locker.
+            Cheap fleece throws are fine layered. But the real magic happens when you add one or two legit heavy hitters:
+            thick comforters, wool blankets, or even moving blankets (yes, those cheap ugly ones) to block drafts.
+          </p>
+          <p>
+            Pro tip: put a blanket down <em>under</em> you. Cold floors steal heat like they have a personal grudge.
+            If you’re sitting on a couch, you’re fine. If you’re on the floor, create a “nest”:
+            blanket or foam pad on bottom, then sleeping bag, then blanket on top.
           </p>
         </li>
 
@@ -566,29 +712,46 @@
           <div class="gear-meta">Item 4</div>
           <h3>A safe, non-electric heat source</h3>
           <p>
-            This is where a lot of people either overdo it or freeze. You want a heater that:
+            This is where people either overdo it (danger) or do nothing (misery). You want a heater that:
           </p>
           <ul>
-            <li>Is made for indoor or tent use (not “maybe it’s fine in the living room”).</li>
-            <li>Has oxygen/tilt shutoff safety features.</li>
-            <li>Has clear instructions you’ve actually read while the lights are still on.</li>
+            <li>Is rated for indoor/emergency use (not “probably fine in the living room”).</li>
+            <li>Has tip-over/low-oxygen shutoff features.</li>
+            <li>Has instructions you’ve read while the lights are still on.</li>
           </ul>
           <p>
-            Propane heaters rated for indoor/emergency/tent use are common options.
-            The key is <strong>proper ventilation and common sense</strong>. No running a gas grill in the kitchen.
+            Keep it simple. A small indoor-safe propane heater on low can keep a warm room comfortable.
+            But the heater is only half the story. The other half is <strong>ventilation and CO safety</strong>.
+          </p>
+          <p>
+            If you take one thing from this whole article, take this:
+            <strong>Warmth that creates carbon monoxide is not “cozy.” It’s a silent emergency.</strong>
+            Get a working CO detector, crack a window per the heater’s instructions, and never improvise.
+          </p>
+          <p>
+            And no—running a grill in the kitchen is not a hack. It’s a headline.
           </p>
         </li>
 
         <li id="item-5">
           <div class="gear-meta">Item 5</div>
-          <h3>Fuel & a simple rotation plan</h3>
+          <h3>Fuel & a rotation plan</h3>
           <p>
-            A heater without fuel is a decoration. Track how long a single can or tank lasts at
-            the lowest setting that keeps the room livable.
+            A heater without fuel is a decoration. Same with a camp stove. Same with anything that burns.
+            The game is: <strong>know your burn rate</strong>.
           </p>
           <p>
-            You’re aiming for at least a couple of days’ worth of runtime at that low level.
-            That doesn’t mean 24/7 blazing—just enough to cycle heat and keep everyone safe.
+            Do a calm test run on a normal day:
+            set your heater on the lowest effective setting for one hour in your warm room, note how it performs,
+            and read the manual so you know what it expects for ventilation.
+          </p>
+          <p>
+            Your goal is not “run heat 24/7.” Your goal is controlled cycles:
+            warm up the room, coast with insulation, warm it again.
+            That stretches fuel, keeps things safe, and reduces the “we’re gonna run out” panic.
+          </p>
+          <p>
+            Bonus rule: store fuel responsibly. If you don’t know how, learn it now—not at 2AM when you’re holding a propane cylinder and regretting everything.
           </p>
         </li>
 
@@ -596,27 +759,39 @@
           <div class="gear-meta">Item 6</div>
           <h3>Window & door insulation kits</h3>
           <p>
-            If your warm room has big, drafty windows, you’re fighting a losing battle.
-            Plastic window film kits, draft stoppers, and rolled-up towels at the base of
-            doors are cheap and powerful.
+            A warm room with leaky windows is like trying to fill a bathtub with the drain open.
+            You can throw heat at it, but you’ll still be annoyed and cold.
           </p>
           <p>
-            The difference between “we’re slowly freezing” and “hey this is actually okay”
-            is often just plugging the leaks.
+            Cheap fixes that work:
+          </p>
+          <ul>
+            <li><strong>Plastic window film kits</strong> to create an air barrier</li>
+            <li><strong>Draft stoppers</strong> under doors</li>
+            <li><strong>Rolled towels</strong> for emergency draft blocking</li>
+            <li><strong>Moving blankets</strong> over big windows (temporary, but effective)</li>
+          </ul>
+          <p>
+            You’ll know it’s working when the room stops feeling “windy” even though you’re indoors.
+            Drafts are what turn “cold” into “miserable.”
           </p>
         </li>
 
         <li id="item-7">
           <div class="gear-meta">Item 7</div>
-          <h3>Sleeping bags or sleep system per person</h3>
+          <h3>Sleeping bags / sleep system per person</h3>
           <p>
-            Night is when people really lose their will to tough it out. Shivering under
-            a thin blanket is a good way to get zero sleep and a nasty mood the next day.
+            Night is when the willpower dies. Shivering under a thin blanket is a good way to get zero sleep and a nasty mood the next day.
+            When adults don’t sleep, they become dumb. When kids don’t sleep, they become tiny chaos engines.
           </p>
           <p>
-            You want <strong>one good sleeping bag or layered sleep system per person</strong>.
-            Even basic, car-camping style bags stacked with blankets will keep people much warmer
-            than loose sheets.
+            A sleeping bag is basically a portable “warmth tube.” Even cheap car-camping bags are a huge upgrade over loose sheets.
+            If you want to go next-level, build a <strong>sleep system</strong>:
+            something under you (pad/blanket), sleeping bag, blanket on top, beanie on head.
+          </p>
+          <p>
+            If you only buy one “preparedness” item this year, buying sleeping bags for the family is a strong contender.
+            It’s useful in outages, travel, camping, kids sleepovers, you name it.
           </p>
         </li>
 
@@ -628,11 +803,15 @@
           </p>
           <ul>
             <li>A way to boil water (camp stove, gas stove, or backup burner used safely).</li>
-            <li>Instant coffee, cocoa, tea, broths, and simple “just add hot water” foods.</li>
+            <li>Instant coffee, cocoa, tea, broths, and “just add hot water” foods.</li>
           </ul>
           <p>
-            Hot drinks do double duty: they warm people and calm them down.
-            A cup of cocoa in a cold room is worth more than a dozen inspirational quotes.
+            Hot drinks do double duty: they warm people and calm them down. A cup of cocoa in a cold room is worth more than a dozen inspirational quotes.
+            It’s also a psychological trick: your brain goes “okay… we’re still doing normal human things.”
+          </p>
+          <p>
+            Practical advice: build a “hot water station” in your warm room. A small table, a kettle or pot, mugs, spoons,
+            drink mixes, and a towel. When it’s organized, you don’t have to rummage through a cold kitchen like a raccoon.
           </p>
         </li>
 
@@ -640,16 +819,20 @@
           <div class="gear-meta">Item 9</div>
           <h3>Hand/foot warmers & kid morale gear</h3>
           <p>
-            Chemical hand warmers, thick mittens, and extra socks are tiny morale machines.
-            Throw in a dedicated “kid comfort kit”:
+            Chemical hand warmers, thick mittens, and extra socks are tiny morale machines. They’re also “quiet helpers”:
+            you don’t realize how much comfort they provide until you don’t have them.
+          </p>
+          <p>
+            For kids, add a dedicated comfort kit:
           </p>
           <ul>
-            <li>Glow sticks or small battery lights.</li>
-            <li>Card games, coloring stuff, or a small toy stash.</li>
+            <li>Glow sticks or small battery lights (kids love these like it’s magic)</li>
+            <li>Card games, coloring stuff, or a small toy stash</li>
+            <li>A “campout rule” (blanket fort allowed, whining not allowed)</li>
           </ul>
           <p>
-            Your job isn’t to create a perfect experience. Your job is to make it just
-            cozy enough that this becomes a story they tell later, not a trauma they carry.
+            Your job isn’t to create a perfect experience. Your job is to make it cozy enough that this becomes a story they tell later,
+            not a trauma they carry.
           </p>
         </li>
 
@@ -657,38 +840,187 @@
           <div class="gear-meta">Item 10</div>
           <h3>Lighting & “we’re okay” atmosphere</h3>
           <p>
-            Cold + dark = panic. Cold + <strong>dim, warm light</strong> and calm adults = “this kind of sucks,
-            but we’re okay.”
+            Cold + dark = panic. Cold + <strong>dim, warm light</strong> and calm adults = “this kind of sucks, but we’re okay.”
           </p>
           <p>
-            LED lanterns, headlamps, and a string of battery-powered lights in the warm room
-            change the whole vibe. You want to see faces, read labels, and move without
-            whacking your shin on a coffee table.
+            LED lanterns, headlamps, and a string of battery-powered lights in the warm room change the whole vibe.
+            You want to see faces, read labels, and move around without whacking your shin on a coffee table.
+          </p>
+          <p>
+            Humor warning: the worst time to learn your flashlight batteries are dead is when your kid asks, “Is the house gonna stay like this forever?”
+            Prep the lights and you prep the mood.
           </p>
         </li>
       </ol>
 
       <div class="divider"></div>
 
+      <h2 id="affiliate-gear">Affiliate gear that makes this easier (and gets used for real)</h2>
+
+      <p>
+        Below are a few “shortcut” items that help cover multiple warmth anchors at once—especially if you’re building your kit piece by piece.
+        Think of this section like: <strong>buy once, cry once… then sleep warm.</strong>
+      </p>
+
+      <div class="gear-grid">
+        <div class="gear-card">
+          <img src="hottent.jpg" alt="Hot tent with stove jack and stovepipe (warmth shelter option)" loading="lazy" />
+          <div class="gear-body">
+            <p class="gear-title"><strong>Hot Tent Concept</strong> (Warm shelter strategy)</p>
+            <p class="gear-desc">
+              If you ever get into true off-grid winter camping or want a “backup warm zone” option outside the home,
+              a hot-tent setup can be a game-changer. Not for everyone, but it shows the principle: <em>small space + insulation + controlled heat</em>.
+            </p>
+            <div class="gear-tags">
+              <span class="tag">Warm room idea</span>
+              <span class="tag">Shelter-first</span>
+              <span class="tag">Winter-ready</span>
+            </div>
+            <div class="gear-cta">
+              <a class="btn btn-ghost" href="store.html" rel="nofollow sponsored">See gear picks →</a>
+              <span class="mini">Use this as inspiration: shrink space, seal drafts, control heat.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gear-card">
+          <img src="s-l1600%20%2884%29.jpg" alt="Ice packs set (cooler / injury / temperature control support)" loading="lazy" />
+          <div class="gear-body">
+            <p class="gear-title"><strong>Ice Packs</strong> (injury + food safety support)</p>
+            <p class="gear-desc">
+              Not “warmth” by itself, but part of staying sane in an outage: protect food, handle bumps/bruises, and manage comfort.
+              When stress is high, small comforts matter.
+            </p>
+            <div class="gear-tags">
+              <span class="tag">Medical comfort</span>
+              <span class="tag">Food safety</span>
+              <span class="tag">Multi-use</span>
+            </div>
+            <div class="gear-cta">
+              <a class="btn btn-primary" href="https://www.ebay.com/itm/135922891575?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFu2GTm2ZGNVXFEsdeNYg5If29dUJBh5Hms909%2BIg8lruJFHSRl3x%2FZyWbHe1HZK0ZrG8YppZAuHvcTW6MbkQn2cIlSaYu%2FZ%2FJ3A3TL6y4cZ%2Fc6VKN1gCE7HeL0riG3L84OJWqrWX1OLojJnxa1NragYTHVF5cQQCO19f%2FS5urOMCtStG2rIhKr%2FnrDVQLKqvJ4bjxG9jhRjCSRqAIUf56c%3D"
+                 target="_blank" rel="nofollow sponsored noopener">
+                View on eBay →
+              </a>
+              <span class="mini">Cold packs = comfort + control when chaos is annoying.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gear-card">
+          <img src="%24_10%20%281%29.jfif" alt="Compact camping spice container (multi spice)" loading="lazy" />
+          <div class="gear-body">
+            <p class="gear-title"><strong>Camp Spices</strong> (morale booster)</p>
+            <p class="gear-desc">
+              Sounds silly until you’re eating “hot food” that tastes like wet cardboard. A tiny spice kit upgrades
+              soup, rice, beans, and anything you’re heating in a pot. Comfort food isn’t luxury—it's stability.
+            </p>
+            <div class="gear-tags">
+              <span class="tag">Morale</span>
+              <span class="tag">Hot meals</span>
+              <span class="tag">Tiny & useful</span>
+            </div>
+            <div class="gear-cta">
+              <a class="btn btn-primary" href="https://www.ebay.com/itm/355769117557?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFu2GTm2ZGNVXFEsdeNYg5JqedqO2MtURbeeJXvHj76kVEWvXIYYNGZMrUvLxqog1Dss23EnkeZiNda3HWDiWF9H2oIjrGcsb2g8pq0gjn1Uk%2BDOwmpElXbQoaY4kceBz9iXw5wAe9fil28k4DFxRyYIXSTlOa30YKCpQgZcrlhqgSQ0PRYqpNCKEvdPUrNJH5innY4tmN%2BCd3K3NvHfcBg%3D"
+                 target="_blank" rel="nofollow sponsored noopener">
+                View on eBay →
+              </a>
+              <span class="mini">Hot drinks + warm meals + flavor = calmer humans.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gear-card">
+          <img src="s-l1600%20%2885%29.jpg" alt="Pop up tent with fan/light (shelter and heat retention idea)" loading="lazy" />
+          <div class="gear-body">
+            <p class="gear-title"><strong>Pop-Up Tent</strong> (warm-room inside a warm-room)</p>
+            <p class="gear-desc">
+              Weird trick that works: putting a small tent <em>inside</em> your warm room for kids (or even adults) creates a microclimate.
+              It holds heat, blocks drafts, and turns “this sucks” into “campout night.”
+            </p>
+            <div class="gear-tags">
+              <span class="tag">Kid morale</span>
+              <span class="tag">Microclimate</span>
+              <span class="tag">Draft blocker</span>
+            </div>
+            <div class="gear-cta">
+              <a class="btn btn-primary" href="https://www.ebay.com/itm/136191361284?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFu2GTm2ZGNVXFEsdeNYg5J1to92oYblsiCRPFpXkyGxKUzGr8Eglep911ygX1cKIxrRxLI9%2F8GNTdZsY9TsGuU6GZWo2DuKKEgH6EeXsyCD4jLyXf0hWUur2EbVG87mQkgfhntwNS5f2mDE7McTgpee%2FNpSHIlarty%2B5x8Hei%2FxydXjiNoK3wJgwk3%2FzfSVhSQl2PE%2F4a04W1rv4ydK3Ew%3D"
+                 target="_blank" rel="nofollow sponsored noopener">
+                View on eBay →
+              </a>
+              <span class="mini">Tent-in-room = instant warmth + instant “fun.”</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-card">
+        <img src="s-l1600%20%2819%29.webp" alt="Freeze-dried / pouch meal (hot food option)" loading="lazy" />
+        <div class="cap">
+          Hot food matters. Even simple pouch meals become “morale medicine” when it’s cold and annoying.
+          If you can heat water safely, you can feed people and keep their mood from collapsing.
+          <a href="https://www.ebay.com/itm/145136982768?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1&amdata=enc%3AAQAKAAAAoFu2GTm2ZGNVXFEsdeNYg5IWmuidZY6xDcARxwng3Qh7cxGggYBWBtJGqhsoX1Pu6sJMFZ5VxY%2FuiI9xqyqna2lTVhqGmBIhYB3pHApy9AOr1Z3tqR55N2KQQgb%2F8T0MZXmCZtMTDBYrNNACgn--8iGZ0q%2F%2B81bHlGQAOhtHiZGCwlJT7zDNEqjZqRCnqPjH5LDAscAZZ898KeihJwEAC1I%3D"
+             target="_blank" rel="nofollow sponsored noopener">
+            (affiliate link)
+          </a>
+        </div>
+      </div>
+
+      <p>
+        One more quick note: if you like the “build a kit over time” approach, use your eBay hub link to round up the odds and ends
+        in one place. It’s easier to do small wins (socks + lights + food) than one big shopping spree you regret later:
+        <a href="https://ebay.us/m/hmyUnT" target="_blank" rel="nofollow sponsored noopener">Gear link hub →</a>
+      </p>
+
+      <div class="divider"></div>
+
       <h2 id="setups">Sample family setups (so you’re not guessing)</h2>
 
-      <p><strong>Scenario 1: Two adults, no kids, small house</strong></p>
+      <p>
+        Let’s make this concrete. Because “just prepare” is the advice equivalent of “just be rich.”
+        You want a setup that works in your actual house, with your actual family, on your actual budget.
+      </p>
+
+      <h3>Scenario 1: Two adults, no kids, small house</h3>
       <ul>
-        <li>Warm room: small living room with doorways mostly closed off.</li>
-        <li>Heat: small indoor-safe propane heater on low near the safest spot.</li>
-        <li>Insulation: window film on main window, draft stopper at door.</li>
-        <li>Sleep: both adults in sleeping bags on the couch/floor with extra blankets.</li>
-        <li>Food/drink: camp stove or gas stove for hot drinks and simple one-pot meals.</li>
+        <li><strong>Warm room:</strong> small living room or bedroom with the least draft.</li>
+        <li><strong>Insulation:</strong> window film + towel/draft stopper under door.</li>
+        <li><strong>Heat:</strong> indoor-safe heater used carefully (low setting, ventilate properly, CO detector).</li>
+        <li><strong>Sleep:</strong> sleeping bags or layered blankets; pad/blanket under you if you’re on the floor.</li>
+        <li><strong>Food/drink:</strong> hot water station (coffee/tea/broth). You’ll be shocked how much better you feel.</li>
       </ul>
 
-      <p><strong>Scenario 2: Two adults, two kids</strong></p>
+      <p>
+        The biggest win here is avoiding “we’re adults so we’ll tough it out.” That’s how you end up grumpy and dumb.
+        You’re not proving anything to anyone. You’re running a household.
+      </p>
+
+      <h3>Scenario 2: Two adults, two kids</h3>
       <ul>
-        <li>Warm room: whichever room feels most like “family room” already.</li>
-        <li>Rule: nobody goes off alone to “tough it out” in their cold bedroom.</li>
-        <li>Kids: matching blankets or sleeping bags so they feel like it’s a “campout.”</li>
-        <li>Morale: glow sticks, games, story time, and hot cocoa rotation.</li>
-        <li>Adult job: act like you expected this. Because now you do.</li>
+        <li><strong>Warm room:</strong> whichever room feels most like “family room” already.</li>
+        <li><strong>Rule:</strong> nobody goes off alone to freeze in their bedroom “because they’re mad.” Stay together.</li>
+        <li><strong>Kids:</strong> sleeping bags + blanket fort or tent-in-room. It turns stress into an adventure.</li>
+        <li><strong>Morale:</strong> glow sticks, games, story time, hot cocoa rotation, “campout rules.”</li>
+        <li><strong>Adult job:</strong> act like you expected this. Because now you do.</li>
       </ul>
+
+      <p>
+        Here’s a real trick: give kids small jobs. Not “carry water in a blizzard” jobs—small jobs.
+        “You’re the blanket captain.” “You’re in charge of the flashlight basket.” “You’re the hot cocoa assistant.”
+        Kids hate feeling powerless. A job turns fear into purpose.
+      </p>
+
+      <h3>Scenario 3: “We have heat but the house is still cold”</h3>
+      <ul>
+        <li>Pick one warm room anyway.</li>
+        <li>Seal drafts first, then add heat.</li>
+        <li>Use rugs/blankets on the floor to stop heat loss.</li>
+        <li>Get everyone into socks + hats. It’s not negotiable.</li>
+      </ul>
+
+      <p>
+        Translation: even if you have “some heat,” you still win by concentrating warmth and reducing loss.
+        Most households leak heat like a cracked cooler. Plug the cracks and you stop wasting fuel and patience.
+      </p>
 
       <h2 id="next">What to do this week (not someday)</h2>
 
@@ -700,33 +1032,32 @@
       <p>
         <strong>1. Pick your warm room.</strong><br>
         Decide right now which room becomes home base in a winter outage.
-        Mentally move the family in there.
+        Mentally move the family in there. If you need to rearrange furniture so it feels livable, do it once and be done.
       </p>
 
       <p>
         <strong>2. Audit what you already own.</strong><br>
-        Pile up every blanket, hoodie, sleeping bag, and beanie you have.
-        You’ll probably realize you’re not starting from zero.
+        Pile up every blanket, hoodie, sleeping bag, beanie, and flashlight. Put them in one place.
+        You’ll probably realize you’re not starting from zero—you’re starting from “unorganized.”
       </p>
 
       <p>
         <strong>3. Build your warmth kit on purpose.</strong><br>
-        Make a short list of the missing pieces: maybe it’s a real heater, maybe it’s just wool
-        socks and window film. Knock them out one paycheck at a time.
+        Make a short list of missing pieces: maybe it’s wool socks and a CO detector. Maybe it’s window film.
+        Maybe it’s sleeping bags. Knock them out one paycheck at a time and you’ll be “winter outage ready” faster than you think.
       </p>
 
       <p>
-        When the grid goes dark and the temp drops, you don’t need heroics.
-        You need a plan, a warm room, and the quiet confidence that comes from
-        knowing you didn’t leave this to chance.
+        And here’s the gritty truth: when the grid goes dark and the temp drops, you don’t need heroics.
+        You need a plan, a warm room, and the quiet confidence that comes from knowing you didn’t leave this to chance.
       </p>
 
       <div class="bottom-cta">
         <div class="panel">
           <h3>Next: Lock in the rest of your 7-day kit</h3>
           <p>
-            Warmth is one pillar. The next step is building out water, light, and food
-            so a week-long disruption is an inconvenience, not a crisis.
+            Warmth is one pillar. Next step is water, light, and food so a week-long disruption is an inconvenience, not a crisis.
+            If you can do “7 days at home” calmly, you’re ahead of most people.
           </p>
           <a href="blog-index.html#home" class="btn btn-ghost">Browse home prep guides →</a>
         </div>
@@ -734,8 +1065,8 @@
         <div class="panel">
           <h3>Test your grit under pressure</h3>
           <p>
-            Take the Grit Test and see where you actually stand when it comes to
-            mindset, preparation, and follow-through.
+            Take the Grit Test and see where you actually stand when it comes to mindset, preparation, and follow-through.
+            No judgment—just clarity.
           </p>
           <a href="grit-test.html" class="btn btn-primary">Take the Grit Test →</a>
         </div>
