@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download Ready — Grit Gear HQ</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    :root{
+      --bg:#050608;
+      --panel:#121823;
+      --ink:#e7ecef;
+      --muted:rgba(231,236,239,.72);
+      --accent:#f8aa36;
+    }
+    body{
+      margin:0;
+      background: radial-gradient(1000px 600px at 20% 0%, rgba(248,170,54,.14), transparent 60%),
+                  radial-gradient(900px 600px at 80% 30%, rgba(248,170,54,.08), transparent 55%),
+                  var(--bg);
+      color:var(--ink);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:18px;
+    }
+    .card{
+      width:min(720px, 100%);
+      background: rgba(18,24,35,.85);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:18px;
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+    }
+    h1{ margin:0 0 8px; font-size: clamp(22px, 3vw, 30px); }
+    p{ margin:0 0 12px; color:var(--muted); line-height:1.45; }
+    .btn{
+      display:inline-block;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid rgba(248,170,54,.45);
+      background: rgba(248,170,54,.12);
+      color: rgba(248,170,54,.95);
+      font-weight:900;
+      text-decoration:none;
+    }
+    .btn:hover{ background: rgba(248,170,54,.18); }
+    .small{ font-size:12px; color: rgba(231,236,239,.55); margin-top:10px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Your checklist is ready.</h1>
+    <p>
+      If the download didn’t start automatically, hit the button below.
+    </p>
+
+    <!-- KEEP THIS FILENAME EXACTLY -->
+    <a class="btn" id="dl" href="GritGearHQ_Free_Checklist_Blackout_72hr.pdf" download>
+      Download the PDF →
+    </a>
+
+    <p class="small">
+      Tip: On iPhone/Safari, it may open in a new tab — use “Share” → “Save to Files.”
+    </p>
+  </main>
+
+  <script>
+    // Try to auto-start the download after Formspree redirect
+    window.addEventListener('load', () => {
+      const a = document.getElementById('dl');
+      // small delay helps on some mobile browsers
+      setTimeout(() => a.click(), 450);
+    });
+  </script>
+</body>
+</html>
