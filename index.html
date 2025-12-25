@@ -1364,283 +1364,157 @@
     })();
   </script>
 </section>
-<!-- =========================
-     EMAIL GRAB (BOTTOM)
-     Drop this near the bottom of your page (above </body>)
-========================= -->
-<section class="rg-email" id="email">
-  <div class="rg-email__wrap">
-    <div class="rg-email__panel">
-      <div class="rg-email__left">
-        <div class="rg-email__kicker">FREE DOWNLOAD</div>
-        <h2 class="rg-email__title">Get the “72-Hour Calm Kit” Checklist</h2>
-        <p class="rg-email__lede">
-          One page. No doom. Just the essentials to stay warm, hydrated, fed, and thinking straight when the lights go out.
-        </p>
+<!-- =========================================================
+     EMAIL GRAB + INSTANT DOWNLOAD (Formspree -> /thanks.html)
+========================================================= -->
+<section class="rg-email" id="free-checklist" aria-label="Get the free 72-hour checklist">
+  <div class="rg-email__inner">
+    <div class="rg-email__copy">
+      <div class="rg-email__kicker">FREE DOWNLOAD</div>
+      <h2 class="rg-email__title">72-Hour Blackout + Bug-Out Checklist (PDF)</h2>
+      <p class="rg-email__lede">
+        Print it. Mark it. Restock it. <strong>Calm beats chaos.</strong>
+      </p>
 
-        <ul class="rg-email__bullets">
-          <li><strong>Exact starter list</strong> (with sane budget ranges)</li>
-          <li><strong>Simple packing order</strong> so you don’t forget the important stuff</li>
-          <li><strong>Cold-weather add-ons</strong> that matter</li>
-          <li><strong>My “don’t buy junk” rules</strong> to avoid wasted money</li>
-        </ul>
-
-        <p class="rg-email__micro">
-          No spam. No cringe. Just practical gear picks + survival tips when I post them.
-        </p>
-      </div>
-
-      <div class="rg-email__right">
-        <div class="rg-email__box">
-          <div class="rg-email__badge">Instant download</div>
-          <p class="rg-email__boxTitle">Send it to my email</p>
-
-          <form class="rg-email__form" action="https://formspree.io/f/mjgvbvpw" method="POST">
-            <!-- Optional: change to your real email if Formspree requires -->
-            <!-- <input type="hidden" name="_replyto" value="you@yourdomain.com"> -->
-
-            <label class="sr-only" for="rgEmail">Email address</label>
-            <input
-              id="rgEmail"
-              name="email"
-              type="email"
-              inputmode="email"
-              autocomplete="email"
-              placeholder="you@email.com"
-              required
-            />
-
-            <!-- Honeypot (spam trap) -->
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-            <!-- Where to go after submit (optional) -->
-            <!-- <input type="hidden" name="_redirect" value="https://gritgearhq.com/thanks.html"> -->
-
-            <button type="submit" class="rg-email__btn">
-              Send the checklist →
-            </button>
-
-            <p class="rg-email__fine">
-              By subscribing you agree to receive emails from Grit Gear HQ. Unsubscribe anytime.
-            </p>
-          </form>
-        </div>
-
-        <div class="rg-email__proof">
-          <div class="rg-email__stars" aria-label="Rating">★★★★★</div>
-          <div class="rg-email__proofText">
-            <strong>Low-noise list.</strong> I only email when it’s useful.
-          </div>
-        </div>
-      </div>
+      <ul class="rg-email__bullets">
+        <li>Water + food targets for 72 hours</li>
+        <li>Power, light, warmth, comms, meds</li>
+        <li>Quick “pack it the same way” rule</li>
+      </ul>
     </div>
+
+    <form class="rg-email__form" action="https://formspree.io/f/mjgvbvpw" method="POST">
+      <!-- Formspree options -->
+      <input type="hidden" name="_subject" value="New checklist request — Grit Gear HQ" />
+      <input type="hidden" name="_next" value="/thanks.html" />
+      <!-- Optional spam trap (bots fill it, humans won't) -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <label class="rg-email__label" for="rg-email-input">Email address</label>
+      <div class="rg-email__row">
+        <input
+          id="rg-email-input"
+          class="rg-email__input"
+          type="email"
+          name="email"
+          inputmode="email"
+          autocomplete="email"
+          placeholder="you@example.com"
+          required
+        />
+        <button class="rg-email__btn" type="submit">Send it →</button>
+      </div>
+
+      <p class="rg-email__fineprint">
+        No spam. No weirdness. Just gear picks + occasional survival notes.
+      </p>
+    </form>
   </div>
 </section>
 
 <style>
-  /* =========================
-     EMAIL GRAB STYLES
-     Works standalone even if you "don't have CSS"
-     Uses your gritty palette and stays readable.
-  ========================= */
+  /* =========================================================
+     EMAIL GRAB STYLES (self-contained)
+  ========================================================= */
   .rg-email{
-    padding: 44px 16px 56px;
-    margin-top: 28px;
+    margin-top: 34px;
+    padding: 18px 0 8px;
   }
-  .rg-email__wrap{
+  .rg-email__inner{
     max-width: 1100px;
     margin: 0 auto;
-  }
-  .rg-email__panel{
+    padding: 16px 16px;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 18px;
     border-radius: 18px;
-    background: radial-gradient(1200px 500px at 30% -10%, rgba(248,170,54,.18), transparent 55%),
-                linear-gradient(180deg, rgba(18,24,35,.92), rgba(11,15,21,.92));
+    background: linear-gradient(180deg, rgba(248,170,54,.10), rgba(18,24,35,.96));
     border: 1px solid rgba(248,170,54,.18);
-    box-shadow: 0 16px 50px rgba(0,0,0,.55);
-    overflow: hidden;
-  }
-  .rg-email__left{
-    padding: 22px 22px 18px;
+    box-shadow: 0 18px 55px rgba(0,0,0,.35);
   }
   .rg-email__kicker{
     display: inline-block;
     font-weight: 800;
-    letter-spacing: .14em;
-    font-size: 12px;
+    letter-spacing: .12em;
     text-transform: uppercase;
-    color: #f8aa36;
-    background: rgba(248,170,54,.10);
-    border: 1px solid rgba(248,170,54,.20);
-    padding: 7px 10px;
-    border-radius: 999px;
-    margin-bottom: 10px;
+    font-size: 12px;
+    color: rgba(248,170,54,.95);
+    margin-bottom: 8px;
   }
   .rg-email__title{
-    margin: 6px 0 8px;
-    font-size: clamp(22px, 2.4vw, 30px);
-    line-height: 1.1;
-    color: #e7ecef;
+    margin: 0 0 8px;
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1.15;
   }
   .rg-email__lede{
-    margin: 0 0 12px;
-    color: rgba(231,236,239,.82);
-    font-size: 15.5px;
-    line-height: 1.45;
-    max-width: 60ch;
+    margin: 0 0 10px;
+    color: rgba(231,236,239,.90);
   }
   .rg-email__bullets{
-    list-style: none;
-    padding: 0;
-    margin: 12px 0 12px;
-    display: grid;
-    gap: 9px;
-  }
-  .rg-email__bullets li{
-    position: relative;
-    padding-left: 26px;
+    margin: 0;
+    padding-left: 18px;
     color: rgba(231,236,239,.86);
-    line-height: 1.35;
-    font-size: 14.5px;
   }
-  .rg-email__bullets li:before{
-    content: "✓";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #f8aa36;
-    font-weight: 900;
-  }
-  .rg-email__micro{
-    margin: 12px 0 0;
-    font-size: 13px;
-    color: rgba(231,236,239,.70);
-  }
-
-  .rg-email__right{
-    padding: 18px;
-    display: grid;
-    gap: 12px;
-    align-content: start;
-    background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.30));
-    border-left: 1px solid rgba(248,170,54,.12);
-  }
-
-  .rg-email__box{
-    border-radius: 16px;
-    background: rgba(5,6,8,.62);
-    border: 1px solid rgba(248,170,54,.18);
-    padding: 16px;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
-  }
-  .rg-email__badge{
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 800;
-    color: rgba(231,236,239,.90);
-    background: rgba(248,170,54,.10);
-    border: 1px solid rgba(248,170,54,.20);
-    padding: 6px 10px;
-    border-radius: 999px;
-    margin-bottom: 10px;
-  }
-  .rg-email__boxTitle{
-    margin: 4px 0 10px;
-    color: #e7ecef;
-    font-weight: 800;
-    font-size: 16px;
-  }
+  .rg-email__bullets li{ margin: 6px 0; }
 
   .rg-email__form{
+    align-self: center;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(18,24,35,.75);
+    border: 1px solid rgba(255,255,255,.08);
+  }
+  .rg-email__label{
+    display: block;
+    font-size: 12px;
+    color: rgba(231,236,239,.75);
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: .04em;
+  }
+  .rg-email__row{
     display: grid;
+    grid-template-columns: 1fr auto;
     gap: 10px;
   }
-  .rg-email__form input[type="email"]{
+  .rg-email__input{
     width: 100%;
-    border-radius: 12px;
-    border: 1px solid rgba(231,236,239,.18);
-    background: rgba(11,15,21,.75);
-    color: #e7ecef;
     padding: 12px 12px;
-    font-size: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(5,6,8,.55);
+    color: rgba(231,236,239,.95);
     outline: none;
   }
-  .rg-email__form input[type="email"]::placeholder{
-    color: rgba(231,236,239,.55);
-  }
-  .rg-email__form input[type="email"]:focus{
+  .rg-email__input:focus{
     border-color: rgba(248,170,54,.55);
-    box-shadow: 0 0 0 4px rgba(248,170,54,.12);
+    box-shadow: 0 0 0 3px rgba(248,170,54,.18);
   }
-
   .rg-email__btn{
-    appearance: none;
-    border: none;
-    border-radius: 12px;
     padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(248,170,54,.35);
+    background: rgba(248,170,54,.12);
+    color: rgba(248,170,54,.95);
     font-weight: 900;
     cursor: pointer;
-    color: #0b0f15;
-    background: linear-gradient(180deg, #f8aa36, #f1870a);
-    box-shadow: 0 10px 28px rgba(248,170,54,.18);
-    transition: transform .12s ease, filter .12s ease;
-  }
-  .rg-email__btn:hover{
-    filter: brightness(1.04);
-    transform: translateY(-1px);
-  }
-  .rg-email__btn:active{
-    transform: translateY(0);
-  }
-  .rg-email__fine{
-    margin: 2px 0 0;
-    font-size: 12px;
-    color: rgba(231,236,239,.60);
-    line-height: 1.35;
-  }
-
-  .rg-email__proof{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 12px;
-    border-radius: 999px;
-    background: rgba(18,24,35,.65);
-    border: 1px solid rgba(231,236,239,.10);
-  }
-  .rg-email__stars{
-    color: #f8aa36;
-    letter-spacing: .12em;
-    font-size: 14px;
-  }
-  .rg-email__proofText{
-    color: rgba(231,236,239,.82);
-    font-size: 13px;
-  }
-
-  /* SR-only label */
-  .sr-only{
-    position: absolute !important;
-    height: 1px; width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
   }
+  .rg-email__btn:hover{
+    background: rgba(248,170,54,.18);
+    border-color: rgba(248,170,54,.55);
+  }
+  .rg-email__fineprint{
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: rgba(231,236,239,.65);
+  }
 
-  /* Responsive */
-  @media (max-width: 900px){
-    .rg-email__panel{
-      grid-template-columns: 1fr;
-    }
-    .rg-email__right{
-      border-left: none;
-      border-top: 1px solid rgba(248,170,54,.12);
-    }
+  @media (max-width: 880px){
+    .rg-email__inner{ grid-template-columns: 1fr; }
   }
 </style>
+
 
       </div>
     </section>
