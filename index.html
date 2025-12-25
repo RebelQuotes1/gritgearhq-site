@@ -758,379 +758,598 @@
       </div>
     </section>
 
-    <!-- FEATURED GEAR -->
-    <section class="section" id="gear">
-      <h2 class="section-title">Featured gear</h2>
-      <p>Real picks that solve real problems — comfort, shelter, calories, and cordage.</p>
+   <!-- FEATURED GEAR (UPDATED + CLEANER, DROP-IN) -->
+<section class="section" id="gear">
+  <style>
+    /* ================================
+       FEATURED GEAR — CLEAN LAYOUT PATCH
+       (safe: only targets #gear + gear-* classes)
+    ================================ */
+    #gear { scroll-margin-top: 120px; }
 
-      <div class="category-strip" style="margin: 14px 0 6px;">
-        <a href="#gear-apparel" class="category-pill">🧥 Apparel →</a>
-        <a href="#gear-shelter" class="category-pill">🏕️ Shelter →</a>
-        <a href="#gear-carry" class="category-pill">🎒 Carry →</a>
-        <a href="#gear-food" class="category-pill">🍲 Food →</a>
-      </div>
+    #gear .gear-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom: 10px;
+    }
+    #gear .gear-head .section-title{ margin:0; }
+    #gear .gear-sub{
+      margin:6px 0 0;
+      color: var(--ink-soft, rgba(231,236,239,.75));
+      max-width: 62ch;
+    }
 
-      <div class="front-features">
+    /* Replace inline margin on old strip with real spacing */
+    #gear .category-strip{ margin: 14px 0 0 !important; }
 
-        <!-- APPAREL: HAT -->
-        <div id="gear-apparel" style="height:1px;"></div>
-        <section class="rg-feature" aria-label="Featured Gear: Rough Gear Distressed Dad Hat">
-          <div class="rg-wrap">
+    /* Toolbar look (uses your existing pills but improves layout) */
+    #gear .gear-toolbar{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(8,10,14,0.72);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+    }
+    @media (min-width: 900px){
+      #gear .gear-toolbar{
+        position: sticky;
+        top: 86px;
+        z-index: 10;
+        backdrop-filter: blur(8px);
+      }
+    }
 
-            <div class="rg-gallery" data-rotate="true" data-interval="3200">
-              <div class="rg-badge-row">
-                <span class="rg-badge">FEATURED GEAR</span>
-                <span class="rg-badge rg-badge--muted">Print-on-demand • Limited runs</span>
+    #gear .gear-tools{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    #gear .gear-select{
+      appearance:none;
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(10,12,16,0.75);
+      color: var(--ink, #e7ecef);
+      font-weight:600;
+      min-height:40px;
+    }
+    #gear .gear-count{
+      font-size:0.84rem;
+      color: var(--ink-soft, rgba(231,236,239,.75));
+      padding: 8px 10px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,0.06);
+      background: rgba(10,12,16,0.55);
+    }
+
+    /* Make your existing category pills cleaner + consistent */
+    #gear .category-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius: 999px;
+      min-height:40px;
+      white-space:nowrap;
+      text-decoration:none;
+    }
+    #gear .category-pill.is-active{
+      background: radial-gradient(circle at 20% 0%, rgba(248,170,54,0.24), rgba(10,12,16,0.85));
+      border-color: rgba(248,170,54,0.45);
+      color: var(--ink, #e7ecef);
+    }
+
+    /* Clean spacing between big cards */
+    #gear .front-features{ margin-top: 16px; gap: 18px; }
+
+    /* Section footer CTA */
+    #gear .gear-footer{
+      margin-top: 18px;
+      display:flex;
+      justify-content:center;
+    }
+  </style>
+
+  <div class="gear-head">
+    <div>
+      <h2 class="section-title">Featured Gear</h2>
+      <p class="gear-sub">Real picks that solve real problems — comfort, shelter, calories, and cordage.</p>
+    </div>
+    <div class="gear-headActions">
+      <!-- If you have a store section id, keep this. If not, it harmlessly scrolls nowhere. -->
+      <a class="rg-cta" href="#store">Shop All →</a>
+    </div>
+  </div>
+
+  <!-- Toolbar: categories + sort + count -->
+  <div class="gear-toolbar">
+    <div class="category-strip" aria-label="Jump to categories">
+      <a href="#gear-apparel" class="category-pill is-active" data-filter="all">⭐ All picks</a>
+      <a href="#gear-apparel" class="category-pill" data-filter="apparel">🧥 Apparel</a>
+      <a href="#gear-shelter" class="category-pill" data-filter="shelter">🏕️ Shelter</a>
+      <a href="#gear-carry" class="category-pill" data-filter="carry">🎒 Carry</a>
+      <a href="#gear-food" class="category-pill" data-filter="food">🍲 Food</a>
+    </div>
+
+    <div class="gear-tools">
+      <select class="gear-select" id="gearSort" aria-label="Sort featured gear">
+        <option value="featured">Sort: Featured</option>
+        <option value="priceLow">Price: Low → High</option>
+        <option value="priceHigh">Price: High → Low</option>
+      </select>
+      <div class="gear-count" id="gearCount">Showing 5</div>
+    </div>
+  </div>
+
+  <div class="front-features" id="gearGrid">
+
+    <!-- APPAREL: HAT -->
+    <article class="gear-item" data-cat="apparel" data-price="20">
+      <div id="gear-apparel" style="height:1px;"></div>
+      <section class="rg-feature" aria-label="Featured Gear: Rough Gear Distressed Dad Hat">
+        <div class="rg-wrap">
+
+          <div class="rg-gallery" data-rotate="true" data-interval="3200">
+            <div class="rg-badge-row">
+              <span class="rg-badge">FEATURED GEAR</span>
+              <span class="rg-badge rg-badge--muted">Print-on-demand • Limited runs</span>
+            </div>
+
+            <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Rough Gear Dad Hat images" tabindex="0">
+              <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+              <div class="rg-slides">
+                <figure class="rg-slide is-active">
+                  <img src="blackfront.jpg" alt="Rough Gear Distressed Dad Hat - Black (front view)" loading="lazy" />
+                  <figcaption class="rg-cap">Black — clean, low-key, everyday grit.</figcaption>
+                </figure>
+                <figure class="rg-slide">
+                  <img src="distressed-dad-hat-charcoal-grey-front-6945b97b05443.png" alt="Rough Gear Distressed Dad Hat - Charcoal (front view)" loading="lazy" />
+                  <figcaption class="rg-cap">Charcoal — looks earned, not bought.</figcaption>
+                </figure>
+                <figure class="rg-slide">
+                  <img src="kakifront.jpg" alt="Rough Gear Distressed Dad Hat - Khaki (front view)" loading="lazy" />
+                  <figcaption class="rg-cap">Khaki — sun, sweat, and miles approved.</figcaption>
+                </figure>
+                <figure class="rg-slide">
+                  <img src="refront.jpg" alt="Rough Gear Distressed Dad Hat - Black on model" loading="lazy" />
+                  <figcaption class="rg-cap">Built for rougher times. Worn like you mean it.</figcaption>
+                </figure>
               </div>
 
-              <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Rough Gear Dad Hat images" tabindex="0">
-                <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+              <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
 
-                <div class="rg-slides">
-                  <figure class="rg-slide is-active">
-                    <img src="blackfront.jpg" alt="Rough Gear Distressed Dad Hat - Black (front view)" loading="lazy" />
-                    <figcaption class="rg-cap">Black — clean, low-key, everyday grit.</figcaption>
-                  </figure>
-                  <figure class="rg-slide">
-                    <img src="distressed-dad-hat-charcoal-grey-front-6945b97b05443.png" alt="Rough Gear Distressed Dad Hat - Charcoal (front view)" loading="lazy" />
-                    <figcaption class="rg-cap">Charcoal — looks earned, not bought.</figcaption>
-                  </figure>
-                  <figure class="rg-slide">
-                    <img src="kakifront.jpg" alt="Rough Gear Distressed Dad Hat - Khaki (front view)" loading="lazy" />
-                    <figcaption class="rg-cap">Khaki — sun, sweat, and miles approved.</figcaption>
-                  </figure>
-                  <figure class="rg-slide">
-                    <img src="refront.jpg" alt="Rough Gear Distressed Dad Hat - Black on model" loading="lazy" />
-                    <figcaption class="rg-cap">Built for rougher times. Worn like you mean it.</figcaption>
-                  </figure>
-                </div>
-
-                <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
-
-                <div class="rg-dots" aria-label="Choose image">
-                  <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 2"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 3"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 4"></button>
-                </div>
-              </div>
-
-              <div class="rg-trust">
-                <div class="rg-stars" aria-label="Rating">★★★★★</div>
-                <div class="rg-trusttext"><strong>Grit Gear HQ Pick</strong> • Low-profile • Distressed edge • Daily comfort</div>
+              <div class="rg-dots" aria-label="Choose image">
+                <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
+                <button class="rg-dot" type="button" aria-label="Image 2"></button>
+                <button class="rg-dot" type="button" aria-label="Image 3"></button>
+                <button class="rg-dot" type="button" aria-label="Image 4"></button>
               </div>
             </div>
 
-            <div class="rg-copy">
-              <div class="rg-kicker">ROUGH GEAR</div>
-              <h3 class="rg-title">Distressed Dad Hat <span class="rg-sub">Built for Rougher Times</span></h3>
-              <p class="rg-lede">
-                Not a “fashion statement.” A <strong>signal</strong>. Distressed cotton twill, low profile, soft crown.
-                No hype.
-              </p>
-              <ul class="rg-bullets">
-                <li><strong>Looks earned</strong> — subtle distressing that doesn’t try too hard</li>
-                <li><strong>Everyday comfort</strong> — broken-in feel without the wait</li>
-                <li><strong>Low-key branding</strong> — recognized by the right people</li>
-                <li><strong>Goes with anything</strong> — work, errands, range day</li>
-              </ul>
-              <div class="rg-urgency" role="note">
-                <strong>Heads up:</strong> Made when you order. No warehouse stock.
-                <span class="rg-urgency2">When a color/run disappears, it can stay gone.</span>
-              </div>
-              <div class="rg-ctaRow">
-                <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times" target="_blank" rel="nofollow sponsored noopener">$20 →</a>
-                <div class="rg-mini">
-                  <span class="rg-pill">Limited-run</span>
-                  <span class="rg-pill">Fast checkout</span>
-                  <span class="rg-pill">Secure</span>
-                </div>
-              </div>
-              <p class="rg-note"><em>Leadership isn’t loud. It’s consistent.</em></p>
+            <div class="rg-trust">
+              <div class="rg-stars" aria-label="Rating">★★★★★</div>
+              <div class="rg-trusttext"><strong>Grit Gear HQ Pick</strong> • Low-profile • Distressed edge • Daily comfort</div>
             </div>
-
           </div>
-        </section>
 
-        <!-- APPAREL: HOODIE -->
-        <section class="rg-feature" aria-label="Featured Gear: Prepared Not Paranoid Hoodie">
-          <div class="rg-wrap">
-
-            <div class="rg-gallery" data-rotate="true" data-interval="3400">
-              <div class="rg-badge-row">
-                <span class="rg-badge">APPAREL</span>
-                <span class="rg-badge rg-badge--muted">Warmth • Daily wear • No cringe</span>
-              </div>
-
-              <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Prepared Not Paranoid hoodie images" tabindex="0">
-                <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
-
-                <div class="rg-slides">
-                  <figure class="rg-slide is-active">
-                    <img src="hoodie-front.jpg" alt="Prepared Not Paranoid hoodie front view" loading="lazy" />
-                    <figcaption class="rg-cap">Front — clean, understated, daily wear.</figcaption>
-                  </figure>
-                  <figure class="rg-slide">
-                    <img src="ChatGPT Image Dec 23, 2025, 06_38_32 PM.png" alt="Prepared Not Paranoid American flag graphic" loading="lazy" />
-                    <figcaption class="rg-cap">Back — Prepared, Not Paranoid. When it all fails, be ready.</figcaption>
-                  </figure>
-                  <figure class="rg-slide">
-                    <img src="ChatGPT Image Dec 23, 2025, 08_55_08 PM.png" alt="Prepared Not Paranoid hoodie lifestyle flatlay" loading="lazy" />
-                    <figcaption class="rg-cap">Heavy feel. Real-world wear. No costume energy.</figcaption>
-                  </figure>
-                </div>
-
-                <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
-
-                <div class="rg-dots" aria-label="Choose image">
-                  <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 2"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 3"></button>
-                </div>
-              </div>
-
-              <div class="rg-trust">
-                <div class="rg-stars" aria-label="Rating">★★★★★</div>
-                <div class="rg-trusttext"><strong>Cold-Weather Staple</strong> • Heavy feel • Daily wear • No gimmicks</div>
+          <div class="rg-copy">
+            <div class="rg-kicker">ROUGH GEAR</div>
+            <h3 class="rg-title">Distressed Dad Hat <span class="rg-sub">Built for Rougher Times</span></h3>
+            <p class="rg-lede">
+              Not a “fashion statement.” A <strong>signal</strong>. Distressed cotton twill, low profile, soft crown.
+              No hype.
+            </p>
+            <ul class="rg-bullets">
+              <li><strong>Looks earned</strong> — subtle distressing that doesn’t try too hard</li>
+              <li><strong>Everyday comfort</strong> — broken-in feel without the wait</li>
+              <li><strong>Low-key branding</strong> — recognized by the right people</li>
+              <li><strong>Goes with anything</strong> — work, errands, range day</li>
+            </ul>
+            <div class="rg-urgency" role="note">
+              <strong>Heads up:</strong> Made when you order. No warehouse stock.
+              <span class="rg-urgency2">When a color/run disappears, it can stay gone.</span>
+            </div>
+            <div class="rg-ctaRow">
+              <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times" target="_blank" rel="nofollow sponsored noopener">$20 →</a>
+              <div class="rg-mini">
+                <span class="rg-pill">Limited-run</span>
+                <span class="rg-pill">Fast checkout</span>
+                <span class="rg-pill">Secure</span>
               </div>
             </div>
-
-            <div class="rg-copy">
-              <div class="rg-kicker">ROUGH GEAR</div>
-              <h3 class="rg-title">Prepared Not Paranoid Hoodie <span class="rg-sub">Comfort for People Who Think Ahead</span></h3>
-              <p class="rg-lede">
-                Warm, durable, and made for everyday wear — errands, woodpile, shop nights.
-                <strong>Prepared beats panicked.</strong>
-              </p>
-              <ul class="rg-bullets">
-                <li><strong>Soft heavyweight feel</strong> — warmth without sloppy</li>
-                <li><strong>Durable print</strong> — holds up to real use</li>
-                <li><strong>Relaxed fit</strong> — easy layering</li>
-                <li><strong>Statement without shouting</strong></li>
-              </ul>
-              <div class="rg-urgency" role="note">
-                <strong>Mindset matters:</strong> preparation is calm.
-                <span class="rg-urgency2">This hoodie says what you already live.</span>
-              </div>
-              <div class="rg-ctaRow">
-                <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/prepared-not-panicked-unisex-hoodie" target="_blank" rel="nofollow sponsored noopener">$45 →</a>
-                <div class="rg-mini">
-                  <span class="rg-pill">Cold weather</span>
-                  <span class="rg-pill">Everyday wear</span>
-                  <span class="rg-pill">Statement</span>
-                </div>
-              </div>
-              <p class="rg-note"><em>Prepared isn’t paranoid.</em> It’s responsible.</p>
-            </div>
-
+            <p class="rg-note"><em>Leadership isn’t loud. It’s consistent.</em></p>
           </div>
-        </section>
 
-        <!-- SHELTER: TENT -->
-        <div id="gear-shelter" style="height:1px;"></div>
-        <section class="rg-feature" aria-label="Featured Gear: Teepee Tent Shelter">
-          <div class="rg-wrap">
+        </div>
+      </section>
+    </article>
 
-            <div class="rg-gallery" data-rotate="true" data-interval="3400">
-              <div class="rg-badge-row">
-                <span class="rg-badge">FEATURED GEAR</span>
-                <span class="rg-badge rg-badge--muted">Shelter • Camp base • Bug-out ready</span>
+    <!-- APPAREL: HOODIE -->
+    <article class="gear-item" data-cat="apparel" data-price="45">
+      <section class="rg-feature" aria-label="Featured Gear: Prepared Not Paranoid Hoodie">
+        <div class="rg-wrap">
+
+          <div class="rg-gallery" data-rotate="true" data-interval="3400">
+            <div class="rg-badge-row">
+              <span class="rg-badge">APPAREL</span>
+              <span class="rg-badge rg-badge--muted">Warmth • Daily wear • No cringe</span>
+            </div>
+
+            <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Prepared Not Paranoid hoodie images" tabindex="0">
+              <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+              <div class="rg-slides">
+                <figure class="rg-slide is-active">
+                  <img src="hoodie-front.jpg" alt="Prepared Not Paranoid hoodie front view" loading="lazy" />
+                  <figcaption class="rg-cap">Front — clean, understated, daily wear.</figcaption>
+                </figure>
+                <figure class="rg-slide">
+                  <img src="ChatGPT Image Dec 23, 2025, 06_38_32 PM.png" alt="Prepared Not Paranoid American flag graphic" loading="lazy" />
+                  <figcaption class="rg-cap">Back — Prepared, Not Paranoid. When it all fails, be ready.</figcaption>
+                </figure>
+                <figure class="rg-slide">
+                  <img src="ChatGPT Image Dec 23, 2025, 08_55_08 PM.png" alt="Prepared Not Paranoid hoodie lifestyle flatlay" loading="lazy" />
+                  <figcaption class="rg-cap">Heavy feel. Real-world wear. No costume energy.</figcaption>
+                </figure>
               </div>
 
-              <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Teepee tent images" tabindex="0">
-                <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+              <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
 
-                <div class="rg-slides">
-                  <figure class="rg-slide is-active">
-                    <img src="tent-5.jpg" alt="Teepee style tent with rainfly (front view)" loading="lazy" />
-                    <figcaption class="rg-cap">Weather cover on — simple, clean, low-profile.</figcaption>
-                  </figure>
-                  <figure class="rg-slide">
-                    <img src="tent-2.jpg" alt="Teepee style tent mesh interior view" loading="lazy" />
-                    <figcaption class="rg-cap">Mesh setup — airflow and bug control.</figcaption>
-                  </figure>
-                  <figure class="rg-slide">
-                    <img src="tent-4.jpg" alt="Teepee style tent alternate view" loading="lazy" />
-                    <figcaption class="rg-cap">A solid base-camp shelter that doesn’t feel flimsy.</figcaption>
-                  </figure>
-                </div>
-
-                <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
-
-                <div class="rg-dots" aria-label="Choose image">
-                  <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 2"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 3"></button>
-                </div>
-              </div>
-
-              <div class="rg-trust">
-                <div class="rg-stars" aria-label="Rating">★★★★★</div>
-                <div class="rg-trusttext"><strong>Shelter Pick</strong> • Roomy • Quick setup • Real camp utility</div>
+              <div class="rg-dots" aria-label="Choose image">
+                <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
+                <button class="rg-dot" type="button" aria-label="Image 2"></button>
+                <button class="rg-dot" type="button" aria-label="Image 3"></button>
               </div>
             </div>
 
-            <div class="rg-copy">
-              <div class="rg-kicker">FIELD SHELTER</div>
-              <h3 class="rg-title">Teepee-Style Tent <span class="rg-sub">Roomy Shelter That Sets Up Fast</span></h3>
-              <p class="rg-lede">
-                If you want a tent that feels like a <strong>base</strong> instead of a plastic bag, this style is the move.
-              </p>
-              <ul class="rg-bullets">
-                <li><strong>More livable space</strong> — you can actually move around</li>
-                <li><strong>Ventilation + bug control</strong> — mesh mode when it’s hot</li>
-                <li><strong>Awning option</strong> — dry entry + shaded gear zone</li>
-                <li><strong>Good for real trips</strong> — not “one weekend then it dies”</li>
-              </ul>
-              <div class="rg-urgency" role="note">
-                <strong>Reality check:</strong> shelter is the first domino.
-                <span class="rg-urgency2">If you can’t stay dry, the rest of your plan turns into suffering.</span>
-              </div>
-              <div class="rg-ctaRow">
-                <a class="rg-cta" href="https://www.ebay.com/itm/388632792988?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
-                   target="_blank" rel="nofollow sponsored noopener">$69.99 →</a>
-                <div class="rg-mini">
-                  <span class="rg-pill">Shelter</span>
-                  <span class="rg-pill">Camp</span>
-                  <span class="rg-pill">Preparedness</span>
-                </div>
-              </div>
-              <p class="rg-note"><em>Comfort matters.</em> Fatigue makes dumb decisions.</p>
+            <div class="rg-trust">
+              <div class="rg-stars" aria-label="Rating">★★★★★</div>
+              <div class="rg-trusttext"><strong>Cold-Weather Staple</strong> • Heavy feel • Daily wear • No gimmicks</div>
             </div>
-
           </div>
-        </section>
 
-        <!-- CARRY: BACKPACK -->
-        <div id="gear-carry" style="height:1px;"></div>
-        <section class="rg-feature" aria-label="Featured Gear: Rugged Utility Backpack">
-          <div class="rg-wrap">
-
-            <div class="rg-gallery" data-rotate="true" data-interval="3200">
-              <div class="rg-badge-row">
-                <span class="rg-badge">CARRY SYSTEM</span>
-                <span class="rg-badge rg-badge--muted">Work • Travel • Range • “Be ready” days</span>
-              </div>
-
-              <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Backpack images" tabindex="0">
-                <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
-
-                <div class="rg-slides">
-                  <figure class="rg-slide is-active">
-                    <img src="newbp.jpg" alt="Rugged utility backpack front view showing structure and pockets" loading="lazy" />
-                    <figcaption class="rg-cap">Comfort carry: wide straps + balanced load for long days.</figcaption>
-                  </figure>
-                  <figure class="rg-slide">
-                    <img src="ChatGPT Image Dec 22, 2025, 06_27_22 PM.png" alt="Rugged utility backpack in everyday lifestyle use" loading="lazy" />
-                    <figcaption class="rg-cap">Low-key profile. Serious function. Doesn’t scream “tactical.”</figcaption>
-                  </figure>
-                  <figure class="rg-slide">
-                    <img src="backp.jpg.png" alt="Rugged utility backpack field-tested front view" loading="lazy" />
-                    <figcaption class="rg-cap">Field-tested look — built for uncertain times and daily punishment.</figcaption>
-                  </figure>
-                </div>
-
-                <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
-
-                <div class="rg-dots" aria-label="Choose image">
-                  <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 2"></button>
-                  <button class="rg-dot" type="button" aria-label="Image 3"></button>
-                </div>
-              </div>
-
-              <div class="rg-trust">
-                <div class="rg-stars" aria-label="Rating">★★★★★</div>
-                <div class="rg-trusttext"><strong>Everyday Workhorse</strong> • Organized storage • Comfortable carry • Durable build</div>
+          <div class="rg-copy">
+            <div class="rg-kicker">ROUGH GEAR</div>
+            <h3 class="rg-title">Prepared Not Paranoid Hoodie <span class="rg-sub">Comfort for People Who Think Ahead</span></h3>
+            <p class="rg-lede">
+              Warm, durable, and made for everyday wear — errands, woodpile, shop nights.
+              <strong>Prepared beats panicked.</strong>
+            </p>
+            <ul class="rg-bullets">
+              <li><strong>Soft heavyweight feel</strong> — warmth without sloppy</li>
+              <li><strong>Durable print</strong> — holds up to real use</li>
+              <li><strong>Relaxed fit</strong> — easy layering</li>
+              <li><strong>Statement without shouting</strong></li>
+            </ul>
+            <div class="rg-urgency" role="note">
+              <strong>Mindset matters:</strong> preparation is calm.
+              <span class="rg-urgency2">This hoodie says what you already live.</span>
+            </div>
+            <div class="rg-ctaRow">
+              <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/prepared-not-panicked-unisex-hoodie" target="_blank" rel="nofollow sponsored noopener">$45 →</a>
+              <div class="rg-mini">
+                <span class="rg-pill">Cold weather</span>
+                <span class="rg-pill">Everyday wear</span>
+                <span class="rg-pill">Statement</span>
               </div>
             </div>
-
-            <div class="rg-copy">
-              <div class="rg-kicker">ROUGH GEAR</div>
-              <h3 class="rg-title">Rugged Utility Backpack <span class="rg-sub">Workday to Weekender</span></h3>
-              <p class="rg-lede">
-                Structured. Practical. Dependable. If your gear can’t handle normal life, it won’t handle chaos.
-              </p>
-              <ul class="rg-bullets">
-                <li><strong>Structured carry</strong> — keeps its shape</li>
-                <li><strong>Organized storage</strong> — smart daily layout</li>
-                <li><strong>Comfort straps</strong> — balanced feel</li>
-                <li><strong>Low-key design</strong> — function-first</li>
-              </ul>
-              <div class="rg-urgency" role="note">
-                <strong>Field rule:</strong> your bag is your mobile insurance policy.
-                <span class="rg-urgency2">Pack it the same way every time.</span>
-              </div>
-              <div class="rg-ctaRow">
-                <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rugged-utility-backpack-durable-everyday-carry-pack-with-laptop-compartment"
-                   target="_blank" rel="nofollow sponsored noopener">$55.99 →</a>
-                <div class="rg-mini">
-                  <span class="rg-pill">Work</span>
-                  <span class="rg-pill">Travel</span>
-                  <span class="rg-pill">Everyday carry</span>
-                </div>
-              </div>
-              <p class="rg-note"><em>You don’t need more stuff.</em> You need the right stuff.</p>
-            </div>
-
+            <p class="rg-note"><em>Prepared isn’t paranoid.</em> It’s responsible.</p>
           </div>
-        </section>
 
-        <!-- FOOD: MRE -->
-        <div id="gear-food" style="height:1px;"></div>
-        <section class="rg-feature" aria-label="Featured Gear: Military MRE Entree">
-          <div class="rg-wrap">
+        </div>
+      </section>
+    </article>
 
-            <div class="rg-gallery" data-rotate="false">
-              <div class="rg-badge-row">
-                <span class="rg-badge">FIELD FOOD</span>
-                <span class="rg-badge rg-badge--muted">Calories • Shelf-stable • No prep</span>
+    <!-- SHELTER: TENT -->
+    <article class="gear-item" data-cat="shelter" data-price="69.99">
+      <div id="gear-shelter" style="height:1px;"></div>
+      <section class="rg-feature" aria-label="Featured Gear: Teepee Tent Shelter">
+        <div class="rg-wrap">
+
+          <div class="rg-gallery" data-rotate="true" data-interval="3400">
+            <div class="rg-badge-row">
+              <span class="rg-badge">FEATURED GEAR</span>
+              <span class="rg-badge rg-badge--muted">Shelter • Camp base • Bug-out ready</span>
+            </div>
+
+            <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Teepee tent images" tabindex="0">
+              <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+              <div class="rg-slides">
+                <figure class="rg-slide is-active">
+                  <img src="tent-5.jpg" alt="Teepee style tent with rainfly (front view)" loading="lazy" />
+                  <figcaption class="rg-cap">Weather cover on — simple, clean, low-profile.</figcaption>
+                </figure>
+                <figure class="rg-slide">
+                  <img src="tent-2.jpg" alt="Teepee style tent mesh interior view" loading="lazy" />
+                  <figcaption class="rg-cap">Mesh setup — airflow and bug control.</figcaption>
+                </figure>
+                <figure class="rg-slide">
+                  <img src="tent-4.jpg" alt="Teepee style tent alternate view" loading="lazy" />
+                  <figcaption class="rg-cap">A solid base-camp shelter that doesn’t feel flimsy.</figcaption>
+                </figure>
               </div>
 
-              <div class="rg-stage" role="region" aria-label="MRE image" tabindex="0">
-                <div class="rg-slides" style="min-height: 280px;">
-                  <figure class="rg-slide is-active" style="position:relative; opacity:1; transform:none; pointer-events:auto;">
-                    <img src="mre-chicken-burrito-bowl.jpg" alt="U.S. military contract MRE entree — Chicken Burrito Bowl" loading="lazy" />
-                    <figcaption class="rg-cap">Chicken Burrito Bowl — eat hot or cold. Fuel beats comfort.</figcaption>
-                  </figure>
-                </div>
-              </div>
+              <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
 
-              <div class="rg-trust">
-                <div class="rg-stars" aria-label="Rating">★★★★★</div>
-                <div class="rg-trusttext"><strong>Grab-and-Go Fuel</strong> • Factory sealed • Long shelf life</div>
+              <div class="rg-dots" aria-label="Choose image">
+                <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
+                <button class="rg-dot" type="button" aria-label="Image 2"></button>
+                <button class="rg-dot" type="button" aria-label="Image 3"></button>
               </div>
             </div>
 
-            <div class="rg-copy">
-              <div class="rg-kicker">SUSTENANCE</div>
-              <h3 class="rg-title">MRE Entrée <span class="rg-sub">Calories When Cooking Isn’t an Option</span></h3>
-              <p class="rg-lede">
-                When things go sideways, you don’t need “snacks.” You need <strong>fuel</strong>.
-                Genuine contract entrée — sealed, simple, stress-proof.
-              </p>
-              <ul class="rg-bullets">
-                <li><strong>Factory-sealed</strong> entrée pouch (no heater included)</li>
-                <li><strong>Long shelf life</strong> stored cool + dry</li>
-                <li><strong>Perfect for</strong> kits, camping, hunting, outages</li>
-              </ul>
-              <div class="rg-urgency" role="note">
-                <strong>Quick note:</strong> hunger turns small problems into emergencies.
-                <span class="rg-urgency2">Keep calories on hand before you “need” them.</span>
-              </div>
-              <div class="rg-ctaRow">
-                <a class="rg-cta" href="https://ebay.us/m/hmyUnT" target="_blank" rel="nofollow sponsored noopener">Just $9.10 →</a>
-                <div class="rg-mini">
-                  <span class="rg-pill">Emergency food</span>
-                  <span class="rg-pill">Shelf-stable</span>
-                  <span class="rg-pill">Simple</span>
-                </div>
-              </div>
-              <p class="rg-note"><em>Food is morale.</em> Don’t let your brain run on empty.</p>
+            <div class="rg-trust">
+              <div class="rg-stars" aria-label="Rating">★★★★★</div>
+              <div class="rg-trusttext"><strong>Shelter Pick</strong> • Roomy • Quick setup • Real camp utility</div>
             </div>
-
           </div>
-        </section>
+
+          <div class="rg-copy">
+            <div class="rg-kicker">FIELD SHELTER</div>
+            <h3 class="rg-title">Teepee-Style Tent <span class="rg-sub">Roomy Shelter That Sets Up Fast</span></h3>
+            <p class="rg-lede">
+              If you want a tent that feels like a <strong>base</strong> instead of a plastic bag, this style is the move.
+            </p>
+            <ul class="rg-bullets">
+              <li><strong>More livable space</strong> — you can actually move around</li>
+              <li><strong>Ventilation + bug control</strong> — mesh mode when it’s hot</li>
+              <li><strong>Awning option</strong> — dry entry + shaded gear zone</li>
+              <li><strong>Good for real trips</strong> — not “one weekend then it dies”</li>
+            </ul>
+            <div class="rg-urgency" role="note">
+              <strong>Reality check:</strong> shelter is the first domino.
+              <span class="rg-urgency2">If you can’t stay dry, the rest of your plan turns into suffering.</span>
+            </div>
+            <div class="rg-ctaRow">
+              <a class="rg-cta" href="https://www.ebay.com/itm/388632792988?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1"
+                 target="_blank" rel="nofollow sponsored noopener">$69.99 →</a>
+              <div class="rg-mini">
+                <span class="rg-pill">Shelter</span>
+                <span class="rg-pill">Camp</span>
+                <span class="rg-pill">Preparedness</span>
+              </div>
+            </div>
+            <p class="rg-note"><em>Comfort matters.</em> Fatigue makes dumb decisions.</p>
+          </div>
+
+        </div>
+      </section>
+    </article>
+
+    <!-- CARRY: BACKPACK -->
+    <article class="gear-item" data-cat="carry" data-price="55.99">
+      <div id="gear-carry" style="height:1px;"></div>
+      <section class="rg-feature" aria-label="Featured Gear: Rugged Utility Backpack">
+        <div class="rg-wrap">
+
+          <div class="rg-gallery" data-rotate="true" data-interval="3200">
+            <div class="rg-badge-row">
+              <span class="rg-badge">CARRY SYSTEM</span>
+              <span class="rg-badge rg-badge--muted">Work • Travel • Range • “Be ready” days</span>
+            </div>
+
+            <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Backpack images" tabindex="0">
+              <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+              <div class="rg-slides">
+                <figure class="rg-slide is-active">
+                  <img src="newbp.jpg" alt="Rugged utility backpack front view showing structure and pockets" loading="lazy" />
+                  <figcaption class="rg-cap">Comfort carry: wide straps + balanced load for long days.</figcaption>
+                </figure>
+                <figure class="rg-slide">
+                  <img src="ChatGPT Image Dec 22, 2025, 06_27_22 PM.png" alt="Rugged utility backpack in everyday lifestyle use" loading="lazy" />
+                  <figcaption class="rg-cap">Low-key profile. Serious function. Doesn’t scream “tactical.”</figcaption>
+                </figure>
+                <figure class="rg-slide">
+                  <img src="backp.jpg.png" alt="Rugged utility backpack field-tested front view" loading="lazy" />
+                  <figcaption class="rg-cap">Field-tested look — built for uncertain times and daily punishment.</figcaption>
+                </figure>
+              </div>
+
+              <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
+
+              <div class="rg-dots" aria-label="Choose image">
+                <button class="rg-dot is-active" type="button" aria-label="Image 1"></button>
+                <button class="rg-dot" type="button" aria-label="Image 2"></button>
+                <button class="rg-dot" type="button" aria-label="Image 3"></button>
+              </div>
+            </div>
+
+            <div class="rg-trust">
+              <div class="rg-stars" aria-label="Rating">★★★★★</div>
+              <div class="rg-trusttext"><strong>Everyday Workhorse</strong> • Organized storage • Comfortable carry • Durable build</div>
+            </div>
+          </div>
+
+          <div class="rg-copy">
+            <div class="rg-kicker">ROUGH GEAR</div>
+            <h3 class="rg-title">Rugged Utility Backpack <span class="rg-sub">Workday to Weekender</span></h3>
+            <p class="rg-lede">
+              Structured. Practical. Dependable. If your gear can’t handle normal life, it won’t handle chaos.
+            </p>
+            <ul class="rg-bullets">
+              <li><strong>Structured carry</strong> — keeps its shape</li>
+              <li><strong>Organized storage</strong> — smart daily layout</li>
+              <li><strong>Comfort straps</strong> — balanced feel</li>
+              <li><strong>Low-key design</strong> — function-first</li>
+            </ul>
+            <div class="rg-urgency" role="note">
+              <strong>Field rule:</strong> your bag is your mobile insurance policy.
+              <span class="rg-urgency2">Pack it the same way every time.</span>
+            </div>
+            <div class="rg-ctaRow">
+              <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rugged-utility-backpack-durable-everyday-carry-pack-with-laptop-compartment"
+                 target="_blank" rel="nofollow sponsored noopener">$55.99 →</a>
+              <div class="rg-mini">
+                <span class="rg-pill">Work</span>
+                <span class="rg-pill">Travel</span>
+                <span class="rg-pill">Everyday carry</span>
+              </div>
+            </div>
+            <p class="rg-note"><em>You don’t need more stuff.</em> You need the right stuff.</p>
+          </div>
+
+        </div>
+      </section>
+    </article>
+
+    <!-- FOOD: MRE -->
+    <article class="gear-item" data-cat="food" data-price="9.10">
+      <div id="gear-food" style="height:1px;"></div>
+      <section class="rg-feature" aria-label="Featured Gear: Military MRE Entree">
+        <div class="rg-wrap">
+
+          <div class="rg-gallery" data-rotate="false">
+            <div class="rg-badge-row">
+              <span class="rg-badge">FIELD FOOD</span>
+              <span class="rg-badge rg-badge--muted">Calories • Shelf-stable • No prep</span>
+            </div>
+
+            <div class="rg-stage" role="region" aria-label="MRE image" tabindex="0">
+              <div class="rg-slides" style="min-height: 280px;">
+                <figure class="rg-slide is-active" style="position:relative; opacity:1; transform:none; pointer-events:auto;">
+                  <img src="mre-chicken-burrito-bowl.jpg" alt="U.S. military contract MRE entree — Chicken Burrito Bowl" loading="lazy" />
+                  <figcaption class="rg-cap">Chicken Burrito Bowl — eat hot or cold. Fuel beats comfort.</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="rg-trust">
+              <div class="rg-stars" aria-label="Rating">★★★★★</div>
+              <div class="rg-trusttext"><strong>Grab-and-Go Fuel</strong> • Factory sealed • Long shelf life</div>
+            </div>
+          </div>
+
+          <div class="rg-copy">
+            <div class="rg-kicker">SUSTENANCE</div>
+            <h3 class="rg-title">MRE Entrée <span class="rg-sub">Calories When Cooking Isn’t an Option</span></h3>
+            <p class="rg-lede">
+              When things go sideways, you don’t need “snacks.” You need <strong>fuel</strong>.
+              Genuine contract entrée — sealed, simple, stress-proof.
+            </p>
+            <ul class="rg-bullets">
+              <li><strong>Factory-sealed</strong> entrée pouch (no heater included)</li>
+              <li><strong>Long shelf life</strong> stored cool + dry</li>
+              <li><strong>Perfect for</strong> kits, camping, hunting, outages</li>
+            </ul>
+            <div class="rg-urgency" role="note">
+              <strong>Quick note:</strong> hunger turns small problems into emergencies.
+              <span class="rg-urgency2">Keep calories on hand before you “need” them.</span>
+            </div>
+            <div class="rg-ctaRow">
+              <a class="rg-cta" href="https://ebay.us/m/hmyUnT" target="_blank" rel="nofollow sponsored noopener">Just $9.10 →</a>
+              <div class="rg-mini">
+                <span class="rg-pill">Emergency food</span>
+                <span class="rg-pill">Shelf-stable</span>
+                <span class="rg-pill">Simple</span>
+              </div>
+            </div>
+            <p class="rg-note"><em>Food is morale.</em> Don’t let your brain run on empty.</p>
+          </div>
+
+        </div>
+      </section>
+    </article>
+
+  </div>
+
+  <div class="gear-footer">
+    <a class="rg-cta" href="#store">View the Store →</a>
+  </div>
+
+  <script>
+    /* ================================
+       FEATURED GEAR — filter + sort
+       (safe: only affects #gear)
+    ================================ */
+    (function(){
+      const gear = document.getElementById('gear');
+      if(!gear) return;
+
+      const grid = gear.querySelector('#gearGrid');
+      const items = Array.from(gear.querySelectorAll('.gear-item'));
+      const pills = Array.from(gear.querySelectorAll('.category-pill[data-filter]'));
+      const sortSel = gear.querySelector('#gearSort');
+      const countEl = gear.querySelector('#gearCount');
+
+      if(!grid || !items.length) return;
+
+      // Save original order
+      items.forEach((el, i) => el.dataset.idx = i);
+
+      function visibleItems(){
+        return items.filter(el => el.style.display !== 'none');
+      }
+
+      function updateCount(){
+        if(!countEl) return;
+        countEl.textContent = `Showing ${visibleItems().length}`;
+      }
+
+      function setActive(filter){
+        pills.forEach(p=>{
+          const is = p.dataset.filter === filter;
+          p.classList.toggle('is-active', is);
+        });
+      }
+
+      function filter(cat){
+        items.forEach(el=>{
+          const ok = (cat === 'all') || (el.dataset.cat === cat);
+          el.style.display = ok ? '' : 'none';
+        });
+        updateCount();
+      }
+
+      function sort(mode){
+        const vis = visibleItems();
+        let sorted = vis.slice();
+
+        const price = (el) => parseFloat(el.dataset.price || '0') || 0;
+        const idx = (el) => parseInt(el.dataset.idx || '0', 10) || 0;
+
+        if(mode === 'priceLow') sorted.sort((a,b)=> price(a) - price(b));
+        else if(mode === 'priceHigh') sorted.sort((a,b)=> price(b) - price(a));
+        else sorted.sort((a,b)=> idx(a) - idx(b)); // featured
+
+        sorted.forEach(el => grid.appendChild(el));
+      }
+
+      pills.forEach(pill=>{
+        pill.addEventListener('click', (e)=>{
+          // keep anchor jump working, but also filter
+          const cat = pill.dataset.filter || 'all';
+          setActive(cat);
+          filter(cat);
+          if(sortSel) sort(sortSel.value);
+        });
+      });
+
+      if(sortSel){
+        sortSel.addEventListener('change', ()=> sort(sortSel.value));
+      }
+
+      // Init
+      setActive('all');
+      filter('all');
+      if(sortSel) sort(sortSel.value);
+      updateCount();
+    })();
+  </script>
+</section>
 
       </div>
     </section>
