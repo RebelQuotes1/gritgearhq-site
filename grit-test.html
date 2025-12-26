@@ -1,212 +1,747 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google Ads -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grit Test – Grit Gear HQ</title>
+  <meta name="description" content="Take the Grit Test, get a ruthless result, and grab field-proven gear picks from Grit Gear HQ." />
+
+  <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
-  <!-- Grit Gear • Small CTA Band (self-contained) -->
-<div class="gg-mini-cta" role="region" aria-label="PTSD & Bud mini callout">
-  <style>
-    .gg-mini-cta{
-      --line:#2b2f3a; --ink:#e9ecf4; --muted:#a8afbd; --accent:#17e6a4;
-      max-width:520px; margin:14px auto; position:relative; isolation:isolate;
-      padding:10px 12px; text-align:center; color:var(--ink);
-      background:linear-gradient(180deg,#151a24,#0f121a);
-      border:1px solid var(--line); border-radius:12px; box-shadow:0 10px 26px rgba(0,0,0,.35);
-      font:600 .9rem/1.5 system-ui,-apple-system,Segoe UI,Inter,Arial,sans-serif;
-    }
-    .gg-mini-cta:before{
-      content:""; position:absolute; inset:0; z-index:-1; border-radius:12px;
-      background:repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 2px, transparent 2px 9px);
-      pointer-events:none;
-    }
-    .gg-mini-cta .lead{letter-spacing:.15px}
-    .gg-mini-cta a{
-      color:var(--accent); text-decoration:none; font-weight:900; margin-left:6px;
-      padding:2px 4px; border-radius:6px; border:1px dashed rgba(23,230,164,.35);
-      background:rgba(23,230,164,.06);
-    }
-    .gg-mini-cta a:hover{filter:brightness(1.07); text-decoration:underline}
-    .gg-mini-cta .shine{
-      content:""; position:absolute; inset:0; border-radius:12px; pointer-events:none;
-      background:linear-gradient(110deg, transparent 0%, rgba(255,255,255,.06) 35%, transparent 65%);
-      mix-blend-mode:screen; animation:gg-sweep 5.5s linear infinite;
-    }
-    @keyframes gg-sweep{0%{transform:translateX(-80%)}100%{transform:translateX(80%)}}
-  </style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <span class="lead">🍃 Ready to trade the bottle for control?</span>
-  <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
-    Stock up discreetly here
-  </a>
-  <i class="shine" aria-hidden="true"></i>
-</div>
-
-  <meta charset="UTF-8">
-  <title>Grit Test – Grit Gear HQ</title>
   <style>
-    body {
-      background: #111;
-      color: #eee;
-      font-family: 'Orbitron', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root{
+      --bg:#07080b;
+      --bg2:#0b0f15;
+      --panel:#111623;
+      --panel2:#0f141f;
+      --line:rgba(255,255,255,.10);
+      --line2:rgba(255,255,255,.07);
+      --ink:#e9ecf4;
+      --muted:#a8afbd;
+      --muted2:#7e8797;
+
+      --accent:#f8aa36;
+      --accent2:#ff7a18;
+      --hot:#ff2d2d;
+
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --shadow2: 0 10px 28px rgba(0,0,0,.45);
+
+      --radius: 18px;
+      --radius2: 14px;
+      --wrap: 1150px;
     }
-    h1 {
-      color: #ffa500;
-      text-shadow: 0 0 10px #000;
-      margin-top: 40px;
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(248,170,54,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 0%, rgba(255,45,45,.10), transparent 55%),
+        radial-gradient(900px 700px at 50% 110%, rgba(23,230,164,.08), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      text-align:left;
     }
-    h2 {
-      color: #ffa500;
-      font-size: 28px;
-      text-shadow: 0 0 10px #000;
-      margin-bottom: 10px;
+
+    a{ color:inherit; }
+    .wrap{ max-width:var(--wrap); margin:0 auto; padding:0 18px; }
+
+    /* Topbar */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,8,11,.70);
+      border-bottom: 1px solid var(--line2);
     }
-    .section {
-      padding: 40px 20px;
+    .topbar__inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 12px 0;
     }
-    .gear-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width: 220px;
+      text-decoration:none;
     }
-    .item-box {
-      background: #1a1a1a;
-      border: 2px solid #ffa500;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #000;
-      width: 280px;
-      padding: 16px;
+    .brand__mark{
+      width:38px; height:38px; border-radius:12px;
+      background:
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.18), transparent 60%),
+        linear-gradient(135deg, rgba(248,170,54,.28), rgba(248,170,54,.08));
+      border: 1px solid rgba(248,170,54,.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,.45);
+      display:grid; place-items:center;
+      font-family: Orbitron, Inter, sans-serif;
+      font-weight: 900;
+      color: rgba(248,170,54,.95);
     }
-    .item-box img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .item-box h3 {
-      color: #ffa500;
-      margin: 10px 0 5px;
-    }
-    .item-box p {
+    .brand__txt{ line-height:1.05; }
+    .brand__name{
+      font-family: Orbitron, Inter, sans-serif;
+      font-weight: 900;
+      letter-spacing: .06em;
       font-size: 14px;
-      color: #ccc;
+      text-transform: uppercase;
     }
-    .item-box a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
-      background: #ffa500;
-      color: #000;
-      font-weight: bold;
-      border-radius: 6px;
-      text-decoration: none;
-      box-shadow: 0 0 12px #ffa500;
+    .brand__sub{
+      font-size: 12px;
+      color: var(--muted2);
+      margin-top: 2px;
     }
-    .grit-button {
-      font-size: 18px;
-      margin: 50px auto;
-      padding: 16px 32px;
-      background: linear-gradient(45deg, #ff0000, #ffa500, #ff0000);
+
+    .nav{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(17,22,35,.55);
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing:.02em;
+      color: rgba(233,236,244,.92);
+    }
+    .pill:hover{ border-color: rgba(248,170,54,.35); background: rgba(17,22,35,.72); }
+    .pill--accent{
+      border-color: rgba(248,170,54,.35);
+      background: rgba(248,170,54,.10);
+      color: rgba(248,170,54,.95);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 34px 0 16px;
+    }
+    .hero__grid{
+      display:grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(17,22,35,.92), rgba(10,12,18,.90));
+      border: 1px solid var(--line2);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(800px 250px at 10% 0%, rgba(248,170,54,.16), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 2px, transparent 2px 10px);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .card__inner{ position:relative; padding: 18px; }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-family: Orbitron, Inter, sans-serif;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(248,170,54,.92);
+    }
+    .kicker .dot{
+      width:9px; height:9px; border-radius: 50%;
+      background: rgba(248,170,54,.85);
+      box-shadow: 0 0 18px rgba(248,170,54,.35);
+    }
+
+    h1{
+      margin: 10px 0 10px;
+      font-family: Orbitron, Inter, sans-serif;
+      font-weight: 900;
+      letter-spacing: .02em;
+      font-size: clamp(26px, 3.2vw, 40px);
+      line-height: 1.1;
+      text-shadow: 0 12px 24px rgba(0,0,0,.55);
+    }
+    .lead{
+      margin: 0 0 14px;
+      color: rgba(233,236,244,.88);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .tiny{
+      color: rgba(168,175,189,.85);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .ctaRow{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(248,170,54,.35);
+      background: rgba(248,170,54,.10);
+      color: rgba(248,170,54,.96);
+      text-decoration:none;
+      font-weight: 900;
+      letter-spacing: .02em;
+      box-shadow: 0 10px 26px rgba(0,0,0,.45);
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{ background: rgba(248,170,54,.16); border-color: rgba(248,170,54,.55); }
+    .btn:active{ transform: translateY(1px); }
+
+    .btn--hot{
       border: none;
-      border-radius: 8px;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 20px #ffa500;
+      color:#090909;
+      background: linear-gradient(45deg, var(--hot), var(--accent), var(--hot));
+      box-shadow: 0 0 24px rgba(248,170,54,.28), 0 16px 45px rgba(0,0,0,.55);
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      50% { transform: scale(1.04); }
       100% { transform: scale(1); }
     }
-    .result-box {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #ffa500;
+
+    /* Result */
+    .result{
+      margin-top: 14px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(5,6,8,.30);
+      padding: 12px 12px;
     }
-    footer {
-      background: #000;
-      padding: 20px;
-      font-size: 14px;
-      color: #777;
-      margin-top: 60px;
+    .result__label{
+      font-size: 12px;
+      letter-spacing:.12em;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: rgba(168,175,189,.85);
+      margin-bottom: 6px;
+      font-family: Orbitron, Inter, sans-serif;
     }
-    footer p {
-      margin: 5px 0;
+    .result__txt{
+      font-size: 18px;
+      font-weight: 900;
+      color: rgba(248,170,54,.95);
+      line-height: 1.35;
+    }
+
+    /* Mini CTA (your bud link) */
+    .gg-mini-cta{
+      --line:#2b2f3a; --ink:#e9ecf4; --muted:#a8afbd; --accent:#17e6a4;
+      max-width: 100%;
+      margin: 0;
+      position:relative; isolation:isolate;
+      padding: 12px 12px;
+      text-align:left;
+      color:var(--ink);
+      background:linear-gradient(180deg,#151a24,#0f121a);
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow2);
+      font:600 .92rem/1.55 Inter, system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+    }
+    .gg-mini-cta:before{
+      content:""; position:absolute; inset:0; z-index:-1; border-radius: var(--radius2);
+      background:repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 2px, transparent 2px 9px);
+      pointer-events:none;
+    }
+    .gg-mini-cta .leadline{ letter-spacing:.1px; color: rgba(233,236,244,.90); }
+    .gg-mini-cta a{
+      color:var(--accent); text-decoration:none; font-weight:900; margin-left:6px;
+      padding:2px 6px; border-radius:10px; border:1px dashed rgba(23,230,164,.35);
+      background:rgba(23,230,164,.06);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
+    }
+    .gg-mini-cta a:hover{ filter:brightness(1.07); text-decoration:underline; }
+    .gg-mini-cta .shine{
+      content:""; position:absolute; inset:0; border-radius: var(--radius2); pointer-events:none;
+      background:linear-gradient(110deg, transparent 0%, rgba(255,255,255,.06) 35%, transparent 65%);
+      mix-blend-mode:screen; animation:gg-sweep 5.5s linear infinite;
+    }
+    @keyframes gg-sweep{0%{transform:translateX(-80%)}100%{transform:translateX(80%)}}
+
+    .heroRight{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+
+    .quickStats{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .stat{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(17,22,35,.55);
+      padding: 12px;
+      box-shadow: var(--shadow2);
+    }
+    .stat .n{
+      font-family: Orbitron, Inter, sans-serif;
+      font-weight: 900;
+      color: rgba(248,170,54,.95);
+      font-size: 16px;
+      letter-spacing:.06em;
+    }
+    .stat .t{
+      font-size: 12px;
+      color: rgba(168,175,189,.82);
+      margin-top: 4px;
+      line-height: 1.35;
+    }
+
+    /* Gear section */
+    .section{
+      padding: 22px 0 40px;
+    }
+    .sectionTitle{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 14px;
+      margin: 14px 0 12px;
+    }
+    h2{
+      margin:0;
+      font-family: Orbitron, Inter, sans-serif;
+      font-weight: 900;
+      letter-spacing: .02em;
+      font-size: clamp(18px, 2.2vw, 28px);
+      color: rgba(248,170,54,.95);
+      text-shadow: 0 12px 24px rgba(0,0,0,.55);
+    }
+    .sub{
+      margin: 0;
+      color: rgba(233,236,244,.78);
+      font-size: 13px;
+      line-height: 1.5;
+      max-width: 62ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .gearCard{
+      grid-column: span 6;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(17,22,35,.86), rgba(10,12,18,.86));
+      border: 1px solid rgba(255,255,255,.09);
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+      position:relative;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .gearCard:hover{
+      transform: translateY(-2px);
+      border-color: rgba(248,170,54,.30);
+    }
+    .gearCard__media{
+      position:relative;
+      aspect-ratio: 16 / 10;
+      background: rgba(0,0,0,.25);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      overflow:hidden;
+    }
+    .gearCard__media img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      filter: contrast(1.03) saturate(1.03);
+      transform: scale(1.01);
+    }
+    .tagRow{
+      position:absolute;
+      top: 10px;
+      left: 10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .02em;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(7,8,11,.62);
+      color: rgba(233,236,244,.92);
+      backdrop-filter: blur(6px);
+    }
+    .tag--accent{
+      border-color: rgba(248,170,54,.28);
+      background: rgba(248,170,54,.10);
+      color: rgba(248,170,54,.95);
+    }
+
+    .gearCard__body{
+      padding: 14px 14px 12px;
+    }
+    .gearCard h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 900;
+      color: rgba(248,170,54,.95);
+      letter-spacing: .01em;
+    }
+    .gearCard p{
+      margin: 0 0 12px;
+      font-size: 13px;
+      color: rgba(233,236,244,.78);
+      line-height: 1.55;
+    }
+
+    .gearCard__foot{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 0 14px 14px;
+    }
+    .stars{
+      color: rgba(248,170,54,.95);
+      letter-spacing:.1em;
+      font-size: 12px;
+      opacity: .95;
+    }
+    .buy{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(248,170,54,.35);
+      background: rgba(248,170,54,.10);
+      color: rgba(248,170,54,.96);
+      text-decoration:none;
+      font-weight: 900;
+      white-space:nowrap;
+    }
+    .buy:hover{ background: rgba(248,170,54,.16); border-color: rgba(248,170,54,.55); }
+
+    /* Footer */
+    footer{
+      margin-top: 26px;
+      padding: 22px 0 34px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: rgba(168,175,189,.8);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .footGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .disclosure{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(17,22,35,.45);
+      padding: 12px;
+    }
+    .footLinks a{
+      color: rgba(233,236,244,.78);
+      text-decoration:none;
+      border-bottom: 1px dashed rgba(255,255,255,.18);
+    }
+    .footLinks a:hover{
+      color: rgba(248,170,54,.95);
+      border-bottom-color: rgba(248,170,54,.35);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero__grid{ grid-template-columns: 1fr; }
+      .quickStats{ grid-template-columns: 1fr; }
+      .gearCard{ grid-column: span 12; }
+      .footGrid{ grid-template-columns: 1fr; }
+      .brand{ min-width: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .btn--hot{ animation:none; }
+      .gg-mini-cta .shine{ animation:none; }
     }
   </style>
 </head>
+
 <body>
-  <h1>💀 Take the Grit Test 💀</h1>
 
-  <button class="grit-button" onclick="showJoke()">🧠 Click to Reveal Your Grit Test Result</button>
+  <!-- TOPBAR -->
+  <header class="topbar" role="banner">
+    <div class="wrap">
+      <div class="topbar__inner">
+        <a class="brand" href="/" aria-label="Grit Gear HQ Home">
+          <div class="brand__mark" aria-hidden="true">GG</div>
+          <div class="brand__txt">
+            <div class="brand__name">Grit Gear HQ</div>
+            <div class="brand__sub">Real-world picks • No fluff</div>
+          </div>
+        </a>
 
-  <div class="result-box" id="grit-result">Are you ready?</div>
+        <nav class="nav" aria-label="Page navigation">
+          <a class="pill" href="#test">💀 Grit Test</a>
+          <a class="pill" href="#gear">🔥 Gear Picks</a>
+          <a class="pill pill--accent" href="https://gritgearhq.com/" target="_blank" rel="noopener">Main Site →</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-<script>
-const jokes = [
-  "You thought MREs were a rap group. You're done.",
-  "You bartered your last match for a vape cartridge.",
-  "You asked a survivalist if they take Venmo. They took your boots instead.",
-  "You screamed 'Alexa, help!' and a wild boar showed up. He wasn't feeling it.",
-  "You brought a yoga mat to a bug-out camp. You used it... once.",
-  "You packed 7 phone chargers, but forgot water.",
-  "You took Bear Grylls’ advice and drank elephant pee. On day one.",
-  "Your bug-out bag had Pop-Tarts, a hoodie, and nothing else.",
-  "You tried to purify water with a Brita pitcher. In the woods."
-];
-function showJoke() {
-  const result = document.getElementById('grit-result');
-  result.textContent = jokes[Math.floor(Math.random() * jokes.length)];
-}
-</script>
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="test">
+      <div class="wrap">
+        <div class="hero__grid">
 
-<h2>🔥 Gear That Proves You’re Not Completely Hopeless</h2>
+          <!-- Left: Grit Test -->
+          <article class="card" aria-label="Grit Test">
+            <div class="card__inner">
+              <div class="kicker"><span class="dot"></span>GRIT TEST</div>
+              <h1>💀 Take the Grit Test</h1>
+              <p class="lead">
+                Click the button. Get judged. Then grab gear that keeps “bad day” from turning into “long week.”
+              </p>
 
-<div class="gear-grid">
+              <div class="ctaRow">
+                <button class="btn btn--hot" type="button" onclick="showJoke()">
+                  🧠 Reveal Your Result
+                </button>
+                <a class="btn" href="#gear">Skip to Gear →</a>
+              </div>
 
-  <!-- Pop-up Tent 1 -->
-  <div class="item-box">
-    <img src="images/$_57 (5).jfif" alt="60 second pop up tent">
-    <h3>60-Second Pop-Up Tent (Square)</h3>
-    <p>Instant shelter when weather or trouble rolls in. One pull and it snaps into place.</p>
-    <a href="https://www.ebay.com/itm/317378797151?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank">Buy →</a>
-  </div>
+              <div class="result" aria-live="polite" aria-atomic="true">
+                <div class="result__label">Your result</div>
+                <div class="result__txt" id="grit-result">Are you ready?</div>
+              </div>
 
-  <!-- Pop-up Tent 2 -->
-  <div class="item-box">
-    <img src="images/$_57 (7).jfif" alt="60 second large tent">
-    <h3>XL 60-Second Quick-Set Tent</h3>
-    <p>Big family-sized instant tent — wind-resistant, waterproof, and ready in under a minute.</p>
-    <a href="https://www.ebay.com/itm/317506450676?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank">Buy →</a>
-  </div>
+              <p class="tiny" style="margin-top:10px;">
+                Tip: hit it a few times until you find the one that hurts your feelings the most.
+              </p>
+            </div>
+          </article>
 
-  <!-- Large Camouflage Backpack -->
-  <div class="item-box">
-    <img src="images/$_12.png" alt="Large military camouflage backpack">
-    <h3>100L Military Rucksack</h3>
-    <p>Huge storage. Rugged stitching. Perfect for bug-out loadouts and long-range trips.</p>
-    <a href="https://www.ebay.com/itm/374921010743?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank">Buy →</a>
-  </div>
+          <!-- Right: Quick value + mini CTA -->
+          <aside class="heroRight" aria-label="Quick callouts">
+            <div class="quickStats" role="list">
+              <div class="stat" role="listitem">
+                <div class="n">DRY</div>
+                <div class="t">Shelter first. Wet gear turns plans into suffering.</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="n">FUEL</div>
+                <div class="t">Calories stop stupid decisions and keep morale alive.</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="n">CARRY</div>
+                <div class="t">If you can’t move it, you don’t own it in a crisis.</div>
+              </div>
+            </div>
 
-  <!-- Tactical Day Pack -->
-  <div class="item-box">
-    <img src="images/s-l1600 (72).jpg" alt="Tactical day pack">
-    <h3>MOLLE Tactical Day Pack</h3>
-    <p>Your everyday carry workhorse. Hydration-ready, durable, and built for real-world use.</p>
-    <a href="https://www.ebay.com/itm/387338620030?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank">Buy →</a>
-  </div>
+            <!-- Your existing mini CTA (moved into BODY where it belongs) -->
+            <div class="gg-mini-cta" role="region" aria-label="PTSD & Bud mini callout">
+              <span class="leadline">🍃 Ready to trade the bottle for control?</span>
+              <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
+                Stock up discreetly here →
+              </a>
+              <i class="shine" aria-hidden="true"></i>
+              <div class="tiny" style="margin-top:8px; color: rgba(168,175,189,.8);">
+                (If you’re already good, ignore this. If you’re not, it’s an exit ramp.)
+              </div>
+            </div>
 
-</div>
+          </aside>
 
-<footer>
-  <p>&copy; 2025 Grit Gear HQ – All Rights Reserved.</p>
-</footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- GEAR PICKS -->
+    <section class="section" id="gear">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <div>
+            <h2>🔥 Gear That Proves You’re Not Completely Hopeless</h2>
+            <p class="sub">Fast shelter, real carry capacity, and dependable grab-and-go options. These are your “don’t make it worse” picks.</p>
+          </div>
+          <div class="tiny" style="text-align:right;">
+            Curated links may be affiliate links.
+          </div>
+        </div>
+
+        <div class="grid">
+
+          <!-- Pop-up Tent 1 -->
+          <article class="gearCard">
+            <div class="gearCard__media">
+              <img src="images/$_57 (5).jfif" alt="60 second pop up tent" loading="lazy" />
+              <div class="tagRow">
+                <span class="tag tag--accent">🏕️ SHELTER</span>
+                <span class="tag">⚡ Fast setup</span>
+              </div>
+            </div>
+            <div class="gearCard__body">
+              <h3>60-Second Pop-Up Tent (Square)</h3>
+              <p>Instant shelter when weather or trouble rolls in. One pull and it snaps into place. If you’re tired, cold, or mad — this helps.</p>
+            </div>
+            <div class="gearCard__foot">
+              <div class="stars" aria-label="Rating">★★★★★</div>
+              <a class="buy" href="https://www.ebay.com/itm/317378797151?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Buy →</a>
+            </div>
+          </article>
+
+          <!-- Pop-up Tent 2 -->
+          <article class="gearCard">
+            <div class="gearCard__media">
+              <img src="images/$_57 (7).jfif" alt="60 second large tent" loading="lazy" />
+              <div class="tagRow">
+                <span class="tag tag--accent">🏕️ SHELTER</span>
+                <span class="tag">👨‍👩‍👧‍👦 Bigger</span>
+              </div>
+            </div>
+            <div class="gearCard__body">
+              <h3>XL 60-Second Quick-Set Tent</h3>
+              <p>Family-sized instant tent — quick, roomy, and ready in under a minute. If you’ve got kids, this saves your sanity.</p>
+            </div>
+            <div class="gearCard__foot">
+              <div class="stars" aria-label="Rating">★★★★★</div>
+              <a class="buy" href="https://www.ebay.com/itm/317506450676?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Buy →</a>
+            </div>
+          </article>
+
+          <!-- Large Camouflage Backpack -->
+          <article class="gearCard">
+            <div class="gearCard__media">
+              <img src="images/$_12.png" alt="Large military camouflage backpack" loading="lazy" />
+              <div class="tagRow">
+                <span class="tag tag--accent">🎒 CARRY</span>
+                <span class="tag">100L</span>
+              </div>
+            </div>
+            <div class="gearCard__body">
+              <h3>100L Military Rucksack</h3>
+              <p>Huge storage. Rugged stitching. If you’re building a real bug-out loadout (not a “Pinterest kit”), this is the backbone.</p>
+            </div>
+            <div class="gearCard__foot">
+              <div class="stars" aria-label="Rating">★★★★★</div>
+              <a class="buy" href="https://www.ebay.com/itm/374921010743?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Buy →</a>
+            </div>
+          </article>
+
+          <!-- Tactical Day Pack -->
+          <article class="gearCard">
+            <div class="gearCard__media">
+              <img src="images/s-l1600 (72).jpg" alt="Tactical day pack" loading="lazy" />
+              <div class="tagRow">
+                <span class="tag tag--accent">🎒 CARRY</span>
+                <span class="tag">Daily</span>
+              </div>
+            </div>
+            <div class="gearCard__body">
+              <h3>MOLLE Tactical Day Pack</h3>
+              <p>Your everyday carry workhorse. Hydration-ready, durable, and built for real-world use — without needing a “tactical costume.”</p>
+            </div>
+            <div class="gearCard__foot">
+              <div class="stars" aria-label="Rating">★★★★★</div>
+              <a class="buy" href="https://www.ebay.com/itm/387338620030?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Buy →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="wrap">
+        <div class="footGrid">
+          <div>
+            <div style="font-family:Orbitron,Inter,sans-serif; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:rgba(248,170,54,.92);">
+              Grit Gear HQ
+            </div>
+            <div class="tiny" style="margin-top:6px;">
+              Real-world preparedness, gear picks, and field logic for regular people who don’t want to panic when things get weird.
+            </div>
+            <div class="footLinks" style="margin-top:10px;">
+              <a href="#test">Grit Test</a> ·
+              <a href="#gear">Gear Picks</a> ·
+              <a href="https://gritgearhq.com/" target="_blank" rel="noopener">Main Site</a>
+            </div>
+          </div>
+
+          <div class="disclosure">
+            <strong style="color:rgba(233,236,244,.9);">Affiliate disclosure:</strong>
+            <span class="tiny">
+              Some links on this page may be affiliate links. If you buy through them, Grit Gear HQ may earn a small commission at no extra cost to you. We only link things we’d actually recommend.
+            </span>
+          </div>
+        </div>
+
+        <div class="tiny" style="margin-top:12px;">
+          &copy; 2025 Grit Gear HQ – All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const jokes = [
+      "You thought MREs were a rap group. You're done.",
+      "You bartered your last match for a vape cartridge.",
+      "You asked a survivalist if they take Venmo. They took your boots instead.",
+      "You screamed 'Alexa, help!' and a wild boar showed up. He wasn't feeling it.",
+      "You brought a yoga mat to a bug-out camp. You used it... once.",
+      "You packed 7 phone chargers, but forgot water.",
+      "You took Bear Grylls’ advice and drank elephant pee. On day one.",
+      "Your bug-out bag had Pop-Tarts, a hoodie, and nothing else.",
+      "You tried to purify water with a Brita pitcher. In the woods."
+    ];
+
+    function showJoke() {
+      const result = document.getElementById('grit-result');
+      result.textContent = jokes[Math.floor(Math.random() * jokes.length)];
+    }
+  </script>
 
 </body>
 </html>
