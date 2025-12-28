@@ -1062,6 +1062,490 @@
           </div>
           <a class="bundle-cta" href="#digital-guides">Get Both Guides →</a>
         </div>
+<!-- =========================
+     UPGRADED DROP-IN MESSAGE BOARD (PUBLIC + PERSISTENT)
+     ✅ One block. ✅ No external CSS. ✅ Keeps working even if you don’t configure the backend yet.
+     
+     HOW IT WORKS:
+     - If you set SUPABASE_URL + SUPABASE_ANON_KEY below, comments become PUBLIC + persistent (shared by all visitors).
+     - If you don’t, it automatically falls back to localStorage (your current “works instantly” behavior).
+
+     SUPABASE SETUP (5 minutes):
+     1) Create a free Supabase project.
+     2) Create a table named: gg_posts
+     3) Run this SQL in Supabase SQL editor:
+
+        create table if not exists public.gg_posts (
+          id uuid primary key default gen_random_uuid(),
+          created_at timestamptz not null default now(),
+          name text,
+          message text not null,
+          topic text,
+          honeypot text,
+          ip_hint text
+        );
+
+        alter table public.gg_posts enable row level security;
+
+        -- Allow reading for everyone:
+        create policy "public read"
+          on public.gg_posts
+          for select
+          using (true);
+
+        -- Allow inserting for everyone, but block obvious spam (honeypot):
+        create policy "public insert"
+          on public.gg_posts
+          for insert
+          with check (
+            (coalesce(honeypot,'') = '')
+            and (char_length(message) between 2 and 1400)
+          );
+
+     4) Copy Project URL + anon public key into the config below.
+========================= -->
+
+<div id="gg-board" style="
+  margin:34px auto 0;
+  max-width:1120px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  background:
+    radial-gradient(700px 260px at 15% 0%, rgba(248,170,54,.12), transparent 55%),
+    rgba(9,12,18,.86);
+  box-shadow:0 20px 50px rgba(0,0,0,.6);
+  color:#e7ecef;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+">
+
+  <!-- Header -->
+  <div style="
+    padding:14px 16px;
+    border-bottom:1px solid rgba(255,255,255,.10);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    flex-wrap:wrap;
+  ">
+    <div style="min-width:260px;">
+      <div style="font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:.95rem;">
+        Message Board — Survival Stories & Knowledge
+      </div>
+      <div style="margin-top:6px;font-size:.9rem;color:rgba(231,236,239,.75);max-width:72ch;line-height:1.35;">
+        Drop a real lesson, mistake, or field tip. No threats. No doxxing. No illegal instructions.
+      </div>
+      <div id="gg-mode" style="margin-top:6px;font-size:.8rem;font-weight:800;color:rgba(231,236,239,.65);">
+        Mode: Initializing…
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;">
+      <button id="gg-refresh" type="button" style="
+        padding:9px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);
+        background:rgba(0,0,0,.4);color:#e7ecef;font-weight:800;cursor:pointer;white-space:nowrap;
+      ">Refresh</button>
+
+      <button id="gg-sort" type="button" style="
+        padding:9px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);
+        background:rgba(0,0,0,.4);color:#e7ecef;font-weight:800;cursor:pointer;white-space:nowrap;
+      ">Sort: Newest</button>
+
+      <button id="gg-compact" type="button" style="
+        padding:9px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);
+        background:rgba(0,0,0,.4);color:#e7ecef;font-weight:800;cursor:pointer;white-space:nowrap;
+      ">View: Full</button>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div id="gg-grid" style="
+    display:grid;
+    grid-template-columns:1fr 1.15fr;
+    gap:14px;
+    padding:16px;
+    align-items:start;
+  ">
+
+    <!-- Post Form -->
+    <form id="gg-form" style="
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+      padding:14px;
+      background:rgba(0,0,0,.25);
+      display:grid;
+      gap:10px;
+    ">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <label style="font-weight:800;font-size:.85rem;">
+          Name (optional)
+          <input id="gg-name" maxlength="40" placeholder="Call sign / name"
+            style="width:100%;margin-top:6px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(15,18,26,.9);color:#e7ecef;">
+        </label>
+
+        <label style="font-weight:800;font-size:.85rem;">
+          Topic
+          <select id="gg-topic"
+            style="width:100%;margin-top:6px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(15,18,26,.9);color:#e7ecef;">
+            <option value="Story">Story</option>
+            <option value="Tip">Tip</option>
+            <option value="Gear">Gear</option>
+            <option value="Food/Water">Food/Water</option>
+            <option value="Medical">Medical</option>
+            <option value="Security">Security</option>
+            <option value="Mindset">Mindset</option>
+            <option value="Weather">Weather</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+      </div>
+
+      <label style="font-weight:800;font-size:.85rem;">
+        Comment
+        <textarea id="gg-body" required maxlength="1400"
+          placeholder="What happened, what you learned, what you’d do differently…"
+          style="width:100%;margin-top:6px;padding:10px 12px;min-height:140px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(15,18,26,.9);color:#e7ecef;resize:vertical;"></textarea>
+      </label>
+
+      <!-- Honeypot: bots fill this, humans won’t see it -->
+      <input id="gg-honey" tabindex="-1" autocomplete="off" aria-hidden="true"
+        style="position:absolute;left:-9999px;opacity:0;height:1px;width:1px;"
+        placeholder="leave blank">
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+        <button id="gg-submit" type="submit" style="
+          padding:10px 16px;border-radius:12px;border:1px solid rgba(0,0,0,.4);
+          background:linear-gradient(180deg,#f8aa36,#f1870a);color:#0b0f15;font-weight:900;cursor:pointer;
+        ">Post →</button>
+
+        <div id="gg-status" style="font-size:.82rem;color:rgba(231,236,239,.7);font-weight:700;">
+          Posting rules: be useful. Keep it legal.
+        </div>
+      </div>
+
+      <div style="margin-top:2px;font-size:.78rem;color:rgba(231,236,239,.6);font-weight:700;line-height:1.35;">
+        Anti-spam: 1 post / 45 seconds per browser. Public mode requires Supabase config.
+      </div>
+    </form>
+
+    <!-- Feed -->
+    <div style="
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+      padding:14px;
+      background:rgba(0,0,0,.2);
+      max-height:520px;
+      overflow:auto;
+    ">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:10px;">
+        <div id="gg-count" style="font-size:.8rem;font-weight:900;color:rgba(231,236,239,.75);">0 posts</div>
+
+        <input id="gg-search" placeholder="Search…"
+          style="min-width:180px;flex:1;max-width:320px;
+            padding:9px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);
+            background:rgba(15,18,26,.9);color:#e7ecef;font-weight:700;">
+      </div>
+
+      <div id="gg-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Supabase client (only used if you configure keys below) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+(function(){
+  /* =========================
+     CONFIG — paste your Supabase keys here
+  ========================= */
+  const SUPABASE_URL = "";       // e.g. "https://xxxx.supabase.co"
+  const SUPABASE_ANON_KEY = "";  // anon public key
+
+  const TABLE = "gg_posts";
+  const LOCAL_KEY = "gg_board_posts_v2";
+  const RATE_KEY = "gg_board_last_post_ts";
+  const RATE_MS  = 45 * 1000;
+
+  const el = (id) => document.getElementById(id);
+  const grid = el("gg-grid");
+  const modeEl = el("gg-mode");
+  const form = el("gg-form");
+  const submitBtn = el("gg-submit");
+  const status = el("gg-status");
+  const list = el("gg-list");
+  const count = el("gg-count");
+  const sortBtn = el("gg-sort");
+  const refreshBtn = el("gg-refresh");
+  const compactBtn = el("gg-compact");
+  const searchEl = el("gg-search");
+
+  // Responsive stack (no CSS file)
+  function applyResponsive(){
+    if(!grid) return;
+    grid.style.gridTemplateColumns = (window.innerWidth < 900) ? "1fr" : "1fr 1.15fr";
+  }
+  applyResponsive();
+  window.addEventListener("resize", applyResponsive, {passive:true});
+
+  let sort = "newest";
+  let compact = false;
+  let supabase = null;
+  let usePublic = false;
+  let cache = []; // current posts
+
+  function esc(s){
+    return (s||"").replace(/[&<>"']/g, m => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+    })[m]);
+  }
+  function fmt(t){
+    const d = new Date(t);
+    return d.toLocaleString([], {year:"numeric",month:"short",day:"2-digit",hour:"2-digit",minute:"2-digit"});
+  }
+  function setStatus(msg, ok){
+    if(!status) return;
+    status.textContent = msg;
+    status.style.color = ok ? "rgba(185,255,207,.95)" : "rgba(255,180,180,.95)";
+    window.setTimeout(()=> {
+      status.textContent = "Posting rules: be useful. Keep it legal.";
+      status.style.color = "rgba(231,236,239,.7)";
+    }, 2400);
+  }
+
+  function rateLimitOK(){
+    const last = parseInt(localStorage.getItem(RATE_KEY) || "0", 10);
+    const now = Date.now();
+    if(now - last < RATE_MS){
+      const sec = Math.ceil((RATE_MS - (now-last))/1000);
+      setStatus("Slow down — try again in " + sec + "s.", false);
+      return false;
+    }
+    localStorage.setItem(RATE_KEY, String(now));
+    return true;
+  }
+
+  function localLoad(){
+    try{ return JSON.parse(localStorage.getItem(LOCAL_KEY)) || []; }
+    catch(e){ return []; }
+  }
+  function localSave(items){
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(items));
+  }
+
+  function normalize(items){
+    return (items || []).map(p => ({
+      id: p.id || (p.created_at || Date.now()) + "_" + Math.random().toString(16).slice(2),
+      created_at: p.created_at || p.ts || new Date().toISOString(),
+      name: p.name || "",
+      message: p.message || p.body || "",
+      topic: p.topic || "Other"
+    }));
+  }
+
+  function filterAndSort(items){
+    let out = items.slice();
+    const q = (searchEl && searchEl.value || "").trim().toLowerCase();
+    if(q){
+      out = out.filter(p =>
+        (p.name||"").toLowerCase().includes(q) ||
+        (p.message||"").toLowerCase().includes(q) ||
+        (p.topic||"").toLowerCase().includes(q)
+      );
+    }
+    out.sort((a,b)=>{
+      const at = new Date(a.created_at).getTime();
+      const bt = new Date(b.created_at).getTime();
+      return (sort==="newest") ? (bt - at) : (at - bt);
+    });
+    return out;
+  }
+
+  function render(){
+    const items = filterAndSort(cache);
+    if(count) count.textContent = items.length + " post" + (items.length===1 ? "" : "s");
+
+    if(!items.length){
+      list.innerHTML = '<div style="opacity:.7;font-size:.92rem;">No posts yet. Be the first.</div>';
+      return;
+    }
+
+    list.innerHTML = items.map(p => {
+      const name = esc(p.name) || "Anonymous";
+      const topic = esc(p.topic || "Other");
+      const when = fmt(p.created_at);
+      const msg = esc(p.message || "");
+
+      return `
+        <div style="
+          border:1px solid rgba(255,255,255,.08);
+          border-radius:14px;
+          padding:${compact ? "10px" : "12px"};
+          margin-bottom:10px;
+          background:rgba(9,12,18,.6);
+          box-shadow:0 10px 20px rgba(0,0,0,.35);
+        ">
+          <div style="
+            display:flex;gap:10px;flex-wrap:wrap;
+            align-items:center;justify-content:space-between;
+            margin-bottom:${compact ? "6px" : "8px"};
+          ">
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <span style="font-size:.82rem;font-weight:900;color:rgba(231,236,239,.85);">${name}</span>
+              <span style="
+                font-size:.72rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;
+                padding:4px 8px;border-radius:999px;
+                border:1px solid rgba(248,170,54,.25);
+                background:rgba(248,170,54,.12);
+                color:rgba(248,170,54,.95);
+              ">${topic}</span>
+            </div>
+            <span style="font-size:.78rem;font-weight:800;color:rgba(231,236,239,.65);">${when}</span>
+          </div>
+
+          <div style="
+            font-size:${compact ? ".88rem" : ".92rem"};
+            line-height:1.45;
+            color:rgba(231,236,239,.82);
+            white-space:pre-wrap;
+          ">${msg}</div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  async function initMode(){
+    usePublic = !!(SUPABASE_URL && SUPABASE_ANON_KEY);
+    if(usePublic){
+      try{
+        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+          auth: { persistSession: false }
+        });
+        modeEl.textContent = "Mode: PUBLIC board (Supabase)";
+        modeEl.style.color = "rgba(185,255,207,.85)";
+      }catch(e){
+        usePublic = false;
+        supabase = null;
+      }
+    }
+    if(!usePublic){
+      modeEl.textContent = "Mode: Local board (browser only) — add Supabase keys to make it public";
+      modeEl.style.color = "rgba(231,236,239,.65)";
+    }
+  }
+
+  async function fetchPosts(){
+    if(usePublic && supabase){
+      const { data, error } = await supabase
+        .from(TABLE)
+        .select("id, created_at, name, message, topic")
+        .order("created_at", { ascending: false })
+        .limit(100);
+
+      if(error){
+        setStatus("Public fetch failed — falling back local.", false);
+        usePublic = false;
+        cache = normalize(localLoad());
+      }else{
+        cache = normalize(data);
+      }
+    }else{
+      cache = normalize(localLoad());
+    }
+    render();
+  }
+
+  async function postPublic(payload){
+    const { error } = await supabase.from(TABLE).insert(payload);
+    if(error) throw error;
+  }
+
+  async function postLocal(payload){
+    const items = localLoad();
+    items.push({
+      id: payload.id || (Date.now() + "_" + Math.random().toString(16).slice(2)),
+      ts: Date.now(),
+      name: payload.name || "",
+      body: payload.message || "",
+      topic: payload.topic || "Other"
+    });
+    localSave(items);
+  }
+
+  function clampLen(s, max){ s = (s||"").trim(); return s.length > max ? s.slice(0,max) : s; }
+
+  form.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    if(!rateLimitOK()) return;
+
+    const name = clampLen(el("gg-name").value, 40);
+    const topic = el("gg-topic").value || "Other";
+    const message = clampLen(el("gg-body").value, 1400);
+    const honeypot = (el("gg-honey").value || "").trim();
+
+    if(message.length < 2){
+      setStatus("Write a real comment first.", false);
+      return;
+    }
+
+    // Simple “don’t be a bot” guard
+    if(honeypot){
+      setStatus("Blocked (spam).", false);
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Posting…";
+
+    const payload = {
+      name: name || null,
+      topic: topic || "Other",
+      message,
+      honeypot: "",
+      ip_hint: null
+    };
+
+    try{
+      if(usePublic && supabase){
+        await postPublic(payload);
+        setStatus("Posted to public board.", true);
+      }else{
+        await postLocal(payload);
+        setStatus("Posted locally (browser).", true);
+      }
+
+      form.reset();
+      await fetchPosts();
+    }catch(err){
+      setStatus("Post failed. Try again.", false);
+    }finally{
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Post →";
+    }
+  });
+
+  sortBtn.addEventListener("click", ()=>{
+    sort = (sort === "newest") ? "oldest" : "newest";
+    sortBtn.textContent = "Sort: " + (sort === "newest" ? "Newest" : "Oldest");
+    render();
+  });
+
+  compactBtn.addEventListener("click", ()=>{
+    compact = !compact;
+    compactBtn.textContent = "View: " + (compact ? "Compact" : "Full");
+    render();
+  });
+
+  refreshBtn.addEventListener("click", fetchPosts);
+  searchEl.addEventListener("input", ()=> render());
+
+  // Boot
+  (async function(){
+    await initMode();
+    await fetchPosts();
+  })();
+})();
+</script>
 
         <!-- Quote Box -->
         <div class="quote-box">
