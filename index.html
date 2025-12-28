@@ -19,10 +19,14 @@
       --accent-deep:#f1870a;
       --ink:#e7ecef;
       --ink-soft:#a3adbd;
+
       --radius-lg:18px;
       --radius-md:14px;
       --radius-pill:999px;
-      --max-width:1180px;
+
+      --max-width:1320px;
+      --main-width: 760px;
+
       --safe-top: env(safe-area-inset-top, 0px);
       --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
@@ -170,87 +174,63 @@
       .hero-banner__inner{ border-radius:14px; }
     }
 
-    /* SECTIONS */
-    .section{ margin-top: 28px; }
-    .section-title{ font-size:1.05rem; text-transform:uppercase; letter-spacing:0.12em; margin:0 0 8px; }
-    .section p{ color: var(--ink-soft); margin-top:0; }
-
-    /* =========================================================
-       NEW PAGE STRUCTURE: SIDEBAR ADS + CENTERPIECE DIGITAL
-       ========================================================= */
-    .layout{
+    /* LAYOUT */
+    .shell{
       display:grid;
-      grid-template-columns: 300px 1fr 300px;
-      gap:18px;
+      grid-template-columns: 300px minmax(0, var(--main-width)) 300px;
+      gap: 18px;
       align-items:start;
-      margin-top: 10px;
     }
-    @media (max-width:1100px){
-      .layout{ grid-template-columns: 280px 1fr 280px; }
+    @media (max-width:1180px){
+      .shell{ grid-template-columns: 260px minmax(0, 1fr) 260px; }
     }
     @media (max-width:980px){
-      .layout{ grid-template-columns: 1fr; }
+      .shell{ grid-template-columns:1fr; }
+      .sidebar{ position:static !important; top:auto !important; }
     }
 
     .sidebar{
       position: sticky;
-      top: calc(78px + var(--safe-top));
-      align-self:start;
-      display:grid;
-      gap:14px;
+      top: calc(64px + var(--safe-top));
+      max-height: calc(100vh - (84px + var(--safe-top) + var(--safe-bottom)));
+      overflow:auto;
+      padding-right: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(248,170,54,0.35) rgba(255,255,255,0.06);
     }
-    @media (max-width:980px){
-      .sidebar{
-        position: static;
-        top:auto;
-        order: 2;
-      }
-      .center-col{ order:1; }
-      .sidebar.right{ order:3; }
-    }
+    .sidebar::-webkit-scrollbar{ width:10px; }
+    .sidebar::-webkit-scrollbar-track{ background: rgba(255,255,255,0.06); border-radius:999px; }
+    .sidebar::-webkit-scrollbar-thumb{ background: rgba(248,170,54,0.25); border-radius:999px; border:2px solid rgba(0,0,0,0); background-clip:padding-box; }
 
     .ad-rail-title{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:10px;
-      padding:10px 12px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin: 0 0 10px;
+      padding: 10px 12px;
       border-radius: 14px;
-      background: rgba(9,12,18,0.70);
+      background: rgba(10,12,16,0.75);
       border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 14px 28px rgba(0,0,0,0.45);
+      box-shadow:0 12px 26px rgba(0,0,0,0.55);
     }
     .ad-rail-title strong{
-      font-size:0.82rem;
+      font-size:0.80rem;
       letter-spacing:0.14em;
       text-transform:uppercase;
-      color: rgba(248,170,54,.95);
     }
     .ad-rail-title span{
-      font-size:0.78rem;
       color: var(--ink-soft);
-      font-weight:650;
+      font-size:0.78rem;
       white-space:nowrap;
     }
-
-    .center-col{
-      min-width:0;
+    .ad-stack{ display:flex; flex-direction:column; gap:12px; padding-bottom: 14px; }
+    @media (max-width:980px){
+      .sidebar{ max-height:none; overflow:visible; padding-right:0; }
+      .ad-stack{ gap:14px; }
     }
 
-    /* HERO (CENTER) */
-    .hero{
-      background: rgba(9,12,18,0.55);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      box-shadow:0 18px 40px rgba(0,0,0,0.65);
-      overflow:hidden;
-    }
-    .hero-inner{
-      display:grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap:18px;
-      padding: 18px;
-      align-items:start;
-    }
-    @media (max-width:980px){ .hero-inner{ grid-template-columns: 1fr; } }
+    /* CENTER HERO */
+    .hero{ padding-top: 8px; padding-bottom: 8px; }
+    .hero-inner{ display:grid; grid-template-columns: 1.35fr 1.15fr; gap:22px; align-items:start; }
+    @media (max-width:880px){ .hero-inner{ grid-template-columns:1fr; } }
 
     .hero-kicker{
       display:inline-flex; align-items:center; gap:8px;
@@ -261,14 +241,13 @@
       font-size:0.75rem;
       color: var(--ink-soft);
     }
-    .hero-title{ font-size: clamp(1.9rem, 4.0vw + 1rem, 2.8rem); line-height:1.1; margin:12px 0 12px; }
+    .hero-title{ font-size: clamp(2.0rem, 4.2vw + 1rem, 3rem); line-height:1.1; margin:12px 0 12px; }
     .accent{ background: linear-gradient(90deg, #ffe1a5, var(--accent-deep)); -webkit-background-clip:text; color:transparent; }
     .hero-sub{ color: var(--ink-soft); font-size:1rem; max-width:46rem; margin:0; line-height:1.5; }
     .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
     @media (max-width:420px){ .hero-actions a{ width:100%; } }
     .hero-hint{ margin-top:10px; font-size:0.82rem; color: var(--ink-soft); }
 
-    /* DIGITAL STAR PANEL */
     .hero-featured{
       background: var(--panel);
       border-radius: var(--radius-lg);
@@ -331,9 +310,12 @@
       font-weight:700;
     }
 
-    /* =========================================================
-       RG FEATURE MODULE (your existing module)
-       ========================================================= */
+    /* SECTIONS */
+    .section{ margin-top: 24px; }
+    .section-title{ font-size:1.05rem; text-transform:uppercase; letter-spacing:0.12em; margin:0 0 8px; }
+    .section p{ color: var(--ink-soft); margin-top:0; line-height:1.5; }
+
+    /* RG FEATURE MODULE */
     .rg-feature{
       --bg: #0b0e14;
       --card: rgba(255,255,255,0.04);
@@ -361,7 +343,7 @@
       .rg-copy{ border-left:none !important; border-top:1px solid var(--stroke); }
     }
     .rg-gallery{
-      padding:16px 16px 14px;
+      padding:18px 18px 14px;
       background:
         radial-gradient(700px 300px at 20% 10%, rgba(248,170,54,0.10), transparent 55%),
         radial-gradient(600px 240px at 90% 30%, rgba(255,255,255,0.06), transparent 60%),
@@ -398,7 +380,7 @@
       overflow:hidden;
       touch-action: pan-y;
     }
-    .rg-slides{ position:relative; min-height:300px; }
+    .rg-slides{ position:relative; min-height:340px; }
     @media (max-width:520px){ .rg-slides{ min-height:240px; } }
 
     .rg-slide{
@@ -420,7 +402,7 @@
     .rg-slide img{
       width:100%;
       height:auto;
-      max-height:285px;
+      max-height:320px;
       object-fit: contain;
       filter: drop-shadow(0 18px 22px rgba(0,0,0,0.55));
     }
@@ -494,7 +476,7 @@
     .rg-trusttext{ color: var(--muted); font-size:0.9rem; min-width:0; font-weight:700; }
 
     .rg-copy{
-      padding:18px 18px 16px;
+      padding:20px 20px 18px;
       border-left:1px solid var(--stroke);
       background:
         radial-gradient(600px 260px at 20% 0%, rgba(248,170,54,0.08), transparent 55%),
@@ -510,7 +492,7 @@
       margin-bottom:8px;
       font-weight:900;
     }
-    .rg-title{ font-size:1.35rem; margin:0 0 10px; line-height:1.15; }
+    .rg-title{ font-size:1.5rem; margin:0 0 10px; line-height:1.15; }
     .rg-sub{ display:block; margin-top:4px; font-size:1.02rem; color: var(--muted); font-weight:650; }
     .rg-lede{ margin:0 0 12px; color:#c7cbd1; line-height:1.55; font-weight:650; }
     .rg-bullets{ margin:0 0 14px; padding-left:18px; color:#c7cbd1; line-height:1.55; font-weight:650; }
@@ -542,7 +524,6 @@
       box-shadow: 0 10px 26px rgba(248,170,54,0.22);
       -webkit-tap-highlight-color: transparent;
       transition: transform .12s ease, filter .12s ease;
-      white-space:nowrap;
     }
     .rg-cta:hover{ filter: brightness(1.03); transform: translateY(-1px); text-decoration:none; }
     .rg-mini{ display:flex; gap:8px; flex-wrap:wrap; }
@@ -557,28 +538,18 @@
     }
     .rg-note{ margin:12px 0 0; color: var(--muted); font-size:0.92rem; line-height:1.55; font-weight:650; }
 
-    /* Sidebar “ad” tightening (keeps ALL content, just more compact) */
-    .sidebar .rg-wrap{ grid-template-columns: 1fr; }
-    .sidebar .rg-copy{
-      border-left: none !important;
-      border-top:1px solid rgba(255,255,255,0.10);
-      padding: 14px 14px 12px;
+    /* CENTER GRID (digital guides) */
+    .center-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      align-items:stretch;
     }
-    .sidebar .rg-gallery{ padding: 14px 14px 12px; }
-    .sidebar .rg-slides{ min-height: 210px; }
-    .sidebar .rg-slide img{ max-height: 200px; }
-    .sidebar .rg-title{ font-size:1.1rem; }
-    .sidebar .rg-lede{ margin-bottom:10px; }
-    .sidebar .rg-bullets{ margin-bottom:12px; }
+    @media (max-width:980px){ .center-grid{ grid-template-columns:1fr; } }
 
-    /* =========================================================
-       DIGITAL CENTERPIECE GRID
-       ========================================================= */
-    .center-stack{ display:grid; gap:18px; }
-    .digital-grid{ display:grid; gap:18px; }
-
-    /* Quote block */
+    /* QUOTE */
     .quote-box{
+      margin-top: 18px;
       border-radius: 16px;
       border:1px solid rgba(255,255,255,0.08);
       background: rgba(9,12,18,0.70);
@@ -588,128 +559,15 @@
     .quote-box h3{ margin:0 0 6px; font-size:.90rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(248,170,54,.95); }
     .quote-box p{ margin:0; color:var(--ink-soft); font-weight:650; }
 
-    /* =========================================================
-       EMAIL GRAB (center)
-       ========================================================= */
-    .email-card{
-      background: radial-gradient(650px 260px at 15% 0%, rgba(248,170,54,0.18), transparent 55%),
-                  rgba(0,0,0,0.28);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 16px;
-      padding: 16px 16px 14px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
-      position: relative;
-      overflow: hidden;
+    /* FOOTER */
+    footer{
+      margin-top: 28px;
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      text-align:center;
     }
-    .email-card:before{
-      content:"";
-      position:absolute;
-      inset:-80px -90px auto auto;
-      width:240px; height:240px;
-      background: radial-gradient(circle at 35% 35%, rgba(248,170,54,0.20), transparent 60%);
-      pointer-events:none;
-      filter: blur(0.4px);
-    }
-    .email-card__kicker{
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(231,236,239,0.72);
-      margin-bottom: 6px;
-      font-weight:900;
-    }
-    .email-card__title{
-      margin: 0 0 6px;
-      font-size: 1.15rem;
-      line-height: 1.15;
-      color: var(--ink, #e7ecef);
-    }
-    .email-card__sub{
-      margin: 0 0 12px;
-      color: rgba(231,236,239,0.75);
-      line-height: 1.45;
-      max-width: 56ch;
-      font-weight:650;
-    }
-    .email-form{ display: grid; gap: 10px; position: relative; }
-    .email-label{
-      font-weight: 800;
-      letter-spacing: .3px;
-      color: var(--ink, #e7ecef);
-      font-size: 0.92rem;
-    }
-    .email-row{
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px;
-      align-items: stretch;
-    }
-    @media (max-width:520px){
-      .email-row{ grid-template-columns: 1fr; }
-    }
-    .email-input{
-      width: 100%;
-      padding: 12px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(15,18,26,.85);
-      color: var(--ink, #e7ecef);
-      outline: none;
-      min-height: 44px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-    }
-    .email-input::placeholder{ color: rgba(231,236,239,0.55); }
-    .email-input:focus{
-      border-color: rgba(248,170,54,0.55);
-      box-shadow: 0 0 0 3px rgba(248,170,54,0.14);
-    }
-    .email-btn{
-      min-height: 44px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(0,0,0,.45);
-      background: linear-gradient(180deg,#f8aa36,#f1870a);
-      color: #0b0f15;
-      font-weight: 1000;
-      letter-spacing: .4px;
-      cursor: pointer;
-      box-shadow: 0 12px 26px rgba(0,0,0,.35);
-      white-space: nowrap;
-      transition: transform .12s ease, filter .12s ease;
-    }
-    .email-btn:hover{ filter: brightness(1.03); transform: translateY(-1px); }
-    .email-btn:active{ transform: translateY(0); }
-    .email-btn:disabled{
-      opacity: 0.72;
-      cursor: not-allowed;
-      transform: none;
-      filter: none;
-    }
-    .email-trust{
-      display: flex;
-      gap: 10px 14px;
-      flex-wrap: wrap;
-      color: rgba(231,236,239,.72);
-      font-size: .92rem;
-      line-height: 1.35;
-      margin-top: 4px;
-      font-weight:650;
-    }
-    .email-trust strong{ color: rgba(231,236,239,.92); }
-    .email-fineprint{
-      margin: 0;
-      font-size: 0.82rem;
-      color: rgba(231,236,239,0.62);
-      line-height: 1.35;
-      font-weight:650;
-    }
-    .email-status{
-      margin: 0;
-      font-size: 0.86rem;
-      color: rgba(231,236,239,0.78);
-      font-weight:650;
-    }
-    .email-status.is-error{ color: rgba(255,120,120,0.9); }
 
     /* BACK TO TOP */
     .to-top{
@@ -733,13 +591,146 @@
     }
     .to-top:hover{ color: var(--ink); border-color: rgba(248,170,54,0.25); }
 
-    footer{
-      margin-top: 28px;
-      padding: 16px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      font-size: 0.78rem;
-      color: var(--ink-soft);
+    /* =========================================================
+       MAKE SIDEBARS FEEL LIKE REAL "ADS" (COMPRESSED VIEW)
+       - Image stays big, copy collapses to tight teaser
+       - Full copy is still there (in <details>)
+       - Hover/focus shows a stronger "ad" punch
+    ========================================================= */
+
+    .ad-card .rg-wrap{ grid-template-columns:1fr; }
+
+    .ad-card .rg-gallery{
+      padding: 10px 10px 10px;
+    }
+    .ad-card .rg-stage{
+      padding: 10px 10px 38px;
+      border-radius: 14px;
+      background:
+        radial-gradient(500px 220px at 30% 0%, rgba(248,170,54,0.10), transparent 58%),
+        rgba(0,0,0,0.38);
+    }
+    .ad-card .rg-slides{ min-height: 220px; }
+    .ad-card .rg-slide img{ max-height: 200px; }
+
+    .ad-card .rg-copy{
+      padding: 12px 12px 12px;
+      border-left:none;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      background: rgba(6,8,11,0.45);
+    }
+
+    /* Tight typography for "ad" feel */
+    .ad-card .rg-kicker{
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      margin-bottom: 6px;
+    }
+    .ad-card .rg-title{
+      font-size: 1.02rem;
+      margin: 0 0 6px;
+    }
+    .ad-card .rg-sub{ font-size: 0.90rem; }
+
+    /* Show a short teaser always (not longwinded) */
+    .ad-card .rg-lede{
+      font-size: 0.90rem;
+      margin: 0 0 8px;
+      color: rgba(231,236,239,0.92);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    /* Hide bullets + urgency in compressed view (they live in details) */
+    .ad-card .rg-bullets,
+    .ad-card .rg-urgency,
+    .ad-card .rg-note{ display:none; }
+
+    /* Make CTA look like an ad button */
+    .ad-card .rg-ctaRow{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items:stretch;
+    }
+    .ad-card .rg-cta{
+      width:100%;
       text-align:center;
+      justify-content:center;
+      font-weight: 950;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 14px;
+      box-shadow: 0 12px 28px rgba(248,170,54,0.18);
+    }
+    .ad-card .rg-mini{ justify-content:flex-start; }
+
+    .ad-mini{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+      margin-top:6px;
+      color: var(--ink-soft);
+      font-size:0.80rem;
+    }
+    .ad-mini strong{ color: var(--ink); }
+
+    /* Full copy is preserved under details */
+    details.ad-details{
+      margin-top:10px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.18);
+      overflow:hidden;
+    }
+    details.ad-details > summary{
+      cursor:pointer;
+      list-style:none;
+      padding:10px 12px;
+      font-weight:900;
+      letter-spacing:0.10em;
+      text-transform:uppercase;
+      font-size:0.72rem;
+      color: var(--ink-soft);
+      display:flex; align-items:center; justify-content:space-between;
+      -webkit-tap-highlight-color: transparent;
+    }
+    details.ad-details > summary::-webkit-details-marker{ display:none; }
+    details.ad-details > summary:after{
+      content:"＋";
+      font-size:1rem;
+      color: rgba(248,170,54,0.9);
+    }
+    details.ad-details[open] > summary:after{ content:"–"; }
+    .ad-details-body{
+      padding: 10px 12px 12px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+    /* In details, restore bullets */
+    .ad-details-body .rg-bullets{
+      display:block;
+      margin: 0;
+      padding-left: 18px;
+      color:#c7cbd1;
+      font-weight:650;
+      line-height:1.55;
+    }
+
+    /* Make the whole ad feel clickable */
+    .ad-card{
+      transition: transform .12s ease, border-color .12s ease, filter .12s ease;
+      border-radius: 14px;
+    }
+    .ad-card:hover{
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+    }
+    .ad-card:focus-within{
+      outline: 2px solid rgba(248,170,54,0.25);
+      outline-offset: 2px;
+      border-radius: 14px;
     }
   </style>
 </head>
@@ -775,32 +766,37 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="#digital-grid" class="btn btn-ghost">Digital Guides</a>
-        <a href="#gear" class="btn btn-primary">Gear Picks</a>
+        <a href="#digital" class="btn btn-ghost">Digital Guides</a>
+        <a href="#gear-ads" class="btn btn-primary">Gear Picks</a>
       </div>
     </div>
   </header>
 
   <section class="hero-banner" aria-label="Grit Gear HQ banner">
     <div class="hero-banner__inner">
-      <img src="respon.jpg" alt="Survival banner" class="hero-banner__img" loading="eager" />
+      <img
+        src="respon.jpg"
+        alt="Survival banner"
+        class="hero-banner__img"
+        loading="eager"
+      />
     </div>
   </section>
 
   <main id="main" class="wrap">
+    <div class="shell" id="gear-ads">
 
-    <div class="layout">
-
-      <!-- LEFT SIDEBAR ADS -->
-      <aside class="sidebar left" aria-label="Left gear sidebar">
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar" aria-label="Left sidebar gear ads">
         <div class="ad-rail-title">
-          <strong>Gear Picks</strong>
-          <span>Side-bar “ads”</span>
+          <strong>Gear Ads</strong>
+          <span>Supporting cast</span>
         </div>
 
-        <!-- TENT (carousel) -->
-        <article class="gear-item" data-cat="shelter" data-price="69.99">
-          <section class="rg-feature" aria-label="Teepee-Style Tent">
+        <div class="ad-stack">
+
+          <!-- TENT -->
+          <article class="ad-card rg-feature gear-item" data-cat="shelter" data-price="69.99" aria-label="Teepee-Style Tent ad">
             <div class="rg-wrap">
               <div class="rg-gallery" data-rotate="true" data-interval="3400">
                 <div class="rg-badge-row">
@@ -840,22 +836,37 @@
                 <div class="rg-kicker">FIELD SHELTER</div>
                 <h3 class="rg-title">Teepee-Style Tent <span class="rg-sub">Roomy shelter that sets up fast</span></h3>
                 <p class="rg-lede">If you can’t stay dry, the rest becomes suffering.</p>
-                <ul class="rg-bullets">
-                  <li><strong>More livable space</strong> than typical cheap tents</li>
-                  <li><strong>Ventilation</strong> keeps it usable in warmer weather</li>
-                  <li><strong>Better morale</strong> = better decisions</li>
-                </ul>
-                <div class="rg-ctaRow">
-                  <a class="rg-cta" href="https://www.ebay.com/itm/388632792988?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">$69.99 →</a>
+
+                <div class="ad-mini">
+                  <span><strong>$69.99</strong></span>
+                  <span>Quick setup</span>
                 </div>
+
+                <div class="rg-ctaRow">
+                  <a class="rg-cta" href="https://www.ebay.com/itm/388632792988?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Open Deal →</a>
+                  <div class="rg-mini">
+                    <span class="rg-pill">Roomy</span>
+                    <span class="rg-pill">Ventilated</span>
+                    <span class="rg-pill">Low profile</span>
+                  </div>
+                </div>
+
+                <details class="ad-details">
+                  <summary>Full description</summary>
+                  <div class="ad-details-body">
+                    <ul class="rg-bullets">
+                      <li><strong>More livable space</strong> than typical cheap tents</li>
+                      <li><strong>Ventilation</strong> keeps it usable in warmer weather</li>
+                      <li><strong>Better morale</strong> = better decisions</li>
+                    </ul>
+                  </div>
+                </details>
               </div>
             </div>
-          </section>
-        </article>
+          </article>
 
-        <!-- BACKPACK (carousel) -->
-        <article class="gear-item" data-cat="carry" data-price="55.99">
-          <section class="rg-feature" aria-label="Rugged Utility Backpack">
+          <!-- BACKPACK -->
+          <article class="ad-card rg-feature gear-item" data-cat="carry" data-price="55.99" aria-label="Rugged Utility Backpack ad">
             <div class="rg-wrap">
               <div class="rg-gallery" data-rotate="true" data-interval="3200">
                 <div class="rg-badge-row">
@@ -895,280 +906,233 @@
                 <div class="rg-kicker">ROUGH GEAR</div>
                 <h3 class="rg-title">Rugged Utility Backpack <span class="rg-sub">Durable everyday carry</span></h3>
                 <p class="rg-lede">Your mobile insurance policy — pack it the same way every time.</p>
-                <ul class="rg-bullets">
-                  <li><strong>Structured carry</strong> that keeps its shape</li>
-                  <li><strong>Organized storage</strong> for daily loadouts</li>
-                  <li><strong>Comfort</strong> for long days</li>
-                </ul>
-                <div class="rg-ctaRow">
-                  <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rugged-utility-backpack-durable-everyday-carry-pack-with-laptop-compartment" target="_blank" rel="nofollow sponsored noopener">$55.99 →</a>
+
+                <div class="ad-mini">
+                  <span><strong>$55.99</strong></span>
+                  <span>Daily workhorse</span>
                 </div>
+
+                <div class="rg-ctaRow">
+                  <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rugged-utility-backpack-durable-everyday-carry-pack-with-laptop-compartment" target="_blank" rel="nofollow sponsored noopener">Open Product →</a>
+                  <div class="rg-mini">
+                    <span class="rg-pill">Structured</span>
+                    <span class="rg-pill">Organized</span>
+                    <span class="rg-pill">Durable</span>
+                  </div>
+                </div>
+
+                <details class="ad-details">
+                  <summary>Full description</summary>
+                  <div class="ad-details-body">
+                    <ul class="rg-bullets">
+                      <li><strong>Structured carry</strong> that keeps its shape</li>
+                      <li><strong>Organized storage</strong> for daily loadouts</li>
+                      <li><strong>Comfort</strong> for long days</li>
+                    </ul>
+                  </div>
+                </details>
               </div>
             </div>
-          </section>
-        </article>
+          </article>
+
+        </div>
       </aside>
 
-      <!-- CENTERPIECE: DIGITAL FILES -->
-      <section class="center-col" aria-label="Center content">
-        <div class="center-stack">
+      <!-- CENTER -->
+      <section aria-label="Center content">
+        <section class="hero" aria-label="Hero">
+          <div class="hero-inner">
+            <div>
+              <div class="hero-kicker">Digital-first • real-world readiness • no panic bait</div>
 
-          <!-- HERO: DIGITAL FILES ARE THE STAR -->
-          <section class="hero" aria-label="Hero">
-            <div class="hero-inner">
-              <div>
-                <div class="hero-kicker">Digital-first • real-world readiness • no panic bait</div>
+              <h1 class="hero-title">
+                Learn it once.<br />
+                Use it when it <span class="accent">counts.</span>
+              </h1>
 
-                <h1 class="hero-title">
-                  Learn it once.<br />
-                  Use it when it <span class="accent">counts.</span>
-                </h1>
+              <p class="hero-sub">
+                Your gear is only as good as your decisions. These two digital guides are built for the moment
+                your brain wants to freeze — and you don’t have time to “figure it out.”
+              </p>
 
-                <p class="hero-sub">
-                  Your gear is only as good as your decisions. These two digital guides are built for the moment
-                  your brain wants to freeze — and you don’t have time to “figure it out.”
-                </p>
-
-                <div class="hero-actions">
-                  <a href="#digital-grid" class="btn btn-primary">Get the Guides</a>
-                  <a href="#gear" class="btn btn-ghost">See the Gear Picks</a>
-                </div>
-
-                <div class="hero-hint">Instant download. Printable. Focused. No fluff.</div>
+              <div class="hero-actions">
+                <a href="#digital" class="btn btn-primary">Get the Guides</a>
+                <a href="#gear-ads" class="btn btn-ghost">See the Gear Ads</a>
               </div>
 
-              <aside class="hero-featured" id="digital">
-                <div class="featured-label">Digital Guides (Featured)</div>
+              <div class="hero-hint">Instant download. Printable. Focused. No fluff.</div>
+            </div>
 
-                <h2 class="featured-title">Two guides that cover what most “prep” content ignores:</h2>
-                <p class="featured-excerpt">
-                  <strong>Mindset, hesitation, and decision-making under pressure.</strong> Read them now so you don’t pay for the lesson later.
-                </p>
+            <aside class="hero-featured" id="digital">
+              <div class="featured-label">Digital Guides (Featured)</div>
 
-                <a class="featured-link" href="#digital-grid">Jump to the two digital guides →</a>
+              <h2 class="featured-title">Two guides that cover what most “prep” content ignores:</h2>
+              <p class="featured-excerpt">
+                <strong>Mindset, hesitation, and decision-making under pressure.</strong> Read them now so you don’t pay for the lesson later.
+              </p>
 
-                <div class="featured-footer">
-                  <div class="featured-tags">
-                    <span class="featured-pill">Instant download</span>
-                    <span class="featured-pill">Printable</span>
-                    <span class="featured-pill">Real-world</span>
-                  </div>
-                  <div>Start here. Gear comes second.</div>
+              <a class="featured-link" href="#digital-grid">Jump to the two digital guides →</a>
+
+              <div class="featured-footer">
+                <div class="featured-tags">
+                  <span class="featured-pill">Instant download</span>
+                  <span class="featured-pill">Printable</span>
+                  <span class="featured-pill">Real-world</span>
                 </div>
-              </aside>
-            </div>
-          </section>
-
-          <!-- DIGITAL GUIDES (CENTERPIECE) -->
-          <section class="section" id="digital-grid">
-            <h2 class="section-title">Digital Field Guides</h2>
-            <p>These are the main product. Everything else is supporting cast.</p>
-
-            <div class="digital-grid">
-
-              <!-- GUIDE 1 -->
-              <article class="gear-item" data-cat="guide" data-price="3.00">
-                <section class="rg-feature" aria-label="When Violence Is the Only Answer">
-                  <div class="rg-wrap">
-                    <div class="rg-gallery">
-                      <div class="rg-badge-row">
-                        <span class="rg-badge">DIGITAL GUIDE</span>
-                        <span class="rg-badge rg-badge--muted">Decision-Making • Psychology</span>
-                      </div>
-
-                      <div class="rg-stage" role="region" aria-label="When Violence guide cover">
-                        <div class="rg-slides">
-                          <figure class="rg-slide is-active">
-                            <img src="ChatGPT Image Dec 26, 2025, 12_56_48 AM.png" alt="When Violence Is the Only Answer cover" loading="lazy" />
-                            <figcaption class="rg-cap">Recognition, hesitation, and the cost of delay.</figcaption>
-                          </figure>
-                        </div>
-                      </div>
-
-                      <div class="rg-trust">
-                        <div class="rg-stars">★★★★★</div>
-                        <div class="rg-trusttext"><strong>Reader Rated</strong> • Focused • No hype</div>
-                      </div>
-                    </div>
-
-                    <div class="rg-copy">
-                      <div class="rg-kicker">GRIT GEAR HQ DIGITAL</div>
-                      <h3 class="rg-title">
-                        When Violence Is the Only Answer
-                        <span class="rg-sub">Decision-Making at the Edge of Survival</span>
-                      </h3>
-
-                      <p class="rg-lede">Not tactics — the mind. Why people freeze, how hesitation forms, and what it costs.</p>
-
-                      <ul class="rg-bullets">
-                        <li><strong>Recognition delay</strong> and cognitive friction</li>
-                        <li><strong>Rules conditioning</strong> that slows response</li>
-                        <li><strong>Why observers</strong> judge moments wrong later</li>
-                      </ul>
-
-                      <div class="rg-urgency">
-                        <strong>Bottom line:</strong> most failures happen before the “decision point.”
-                        <span class="rg-urgency2">This guide sharpens the part that actually saves lives.</span>
-                      </div>
-
-                      <div class="rg-ctaRow">
-                        <a class="rg-cta" href="https://cserpico.gumroad.com/l/xrvwpt" target="_blank" rel="nofollow noopener">Buy Digital Guide — $3 →</a>
-                        <div class="rg-mini">
-                          <span class="rg-pill">Instant</span>
-                          <span class="rg-pill">Printable</span>
-                          <span class="rg-pill">No fluff</span>
-                        </div>
-                      </div>
-
-                      <p class="rg-note"><em>Read it once and you’ll spot hesitation everywhere.</em></p>
-                    </div>
-                  </div>
-                </section>
-              </article>
-
-              <!-- GUIDE 2 -->
-              <article class="gear-item" data-cat="guide" data-price="5.00">
-                <section class="rg-feature" aria-label="Prepared Not Paranoid">
-                  <div class="rg-wrap">
-                    <div class="rg-gallery">
-                      <div class="rg-badge-row">
-                        <span class="rg-badge">DIGITAL GUIDE</span>
-                        <span class="rg-badge rg-badge--muted">Readiness • Discernment</span>
-                      </div>
-
-                      <div class="rg-stage" role="region" aria-label="Prepared Not Paranoid guide cover">
-                        <div class="rg-slides">
-                          <figure class="rg-slide is-active">
-                            <img src="dm9iiqoyyg5d3ymdirfk4td4hei1 (1).png" alt="Prepared, Not Paranoid cover" loading="lazy" />
-                            <figcaption class="rg-cap">Think clearly when it matters most.</figcaption>
-                          </figure>
-                        </div>
-                      </div>
-
-                      <div class="rg-trust">
-                        <div class="rg-stars">★★★★★</div>
-                        <div class="rg-trusttext"><strong>Reader Favorite</strong> • Practical • Grounded</div>
-                      </div>
-                    </div>
-
-                    <div class="rg-copy">
-                      <div class="rg-kicker">GRIT GEAR HQ DIGITAL</div>
-                      <h3 class="rg-title">
-                        Prepared, Not Paranoid
-                        <span class="rg-sub">A Field Manual for Uncertain Times</span>
-                      </h3>
-
-                      <p class="rg-lede">Most people fail from bad decisions, not bad luck. This keeps you calm and functional under pressure.</p>
-
-                      <ul class="rg-bullets">
-                        <li><strong>Know what matters</strong> (and what doesn’t)</li>
-                        <li><strong>Avoid panic mistakes</strong> that compound problems</li>
-                        <li><strong>Focus money + energy</strong> where it actually helps</li>
-                      </ul>
-
-                      <div class="rg-urgency">
-                        <strong>Truth:</strong> gear is useless if your head isn’t right.
-                        <span class="rg-urgency2">This is the guide you re-read before storms, outages, and uncertainty.</span>
-                      </div>
-
-                      <div class="rg-ctaRow">
-                        <a class="rg-cta" href="https://cserpico.gumroad.com/l/ckmnum" target="_blank" rel="nofollow sponsored noopener">Buy Digital Guide — $5 →</a>
-                        <div class="rg-mini">
-                          <span class="rg-pill">Instant</span>
-                          <span class="rg-pill">Grounded</span>
-                          <span class="rg-pill">Mindset</span>
-                        </div>
-                      </div>
-
-                      <p class="rg-note"><em>Food fuels the body. This protects the mind.</em></p>
-                    </div>
-                  </div>
-                </section>
-              </article>
-
-            </div>
-          </section>
-
-          <!-- EMAIL GRAB (CENTER, SUPPORTS DIGITAL) -->
-          <section class="section" id="email-grab" aria-label="Email signup">
-            <h2 class="section-title">Get the Free Checklist</h2>
-            <p>Instant download page after signup (thanks2.html).</p>
-
-            <div class="email-card" aria-label="HQ Dispatch email signup">
-              <div class="email-card__top">
-                <div class="email-card__kicker">HQ DISPATCH</div>
-                <h3 class="email-card__title">Get the 72-Hour Blackout Checklist</h3>
-                <p class="email-card__sub">
-                  One printable PDF. No panic bait. Just the exact basics that keep a family steady when the lights go out.
-                </p>
+                <div>Start here. Gear comes second.</div>
               </div>
+            </aside>
+          </div>
+        </section>
 
-              <form
-                id="ggEmailForm"
-                class="email-form"
-                action="https://formspree.io/f/mjgvbvpw"
-                method="POST"
-                novalidate
-              >
-                <label class="email-label" for="ggEmail">Email address</label>
+        <section class="section" id="digital-grid">
+          <h2 class="section-title">Digital Field Guides</h2>
+          <p>These are the main product. Everything else is supporting cast (now living in the sidebars like ads).</p>
 
-                <div class="email-row">
-                  <input
-                    id="ggEmail"
-                    class="email-input"
-                    type="email"
-                    name="email"
-                    required
-                    autocomplete="email"
-                    inputmode="email"
-                    placeholder="you@example.com"
-                    aria-label="Email address"
-                  />
-                  <button class="email-btn" type="submit">Send My Free Checklist →</button>
+          <div class="center-grid">
+            <!-- GUIDE 1 -->
+            <article class="gear-item" data-cat="guide" data-price="3.00">
+              <section class="rg-feature" aria-label="When Violence Is the Only Answer">
+                <div class="rg-wrap">
+                  <div class="rg-gallery">
+                    <div class="rg-badge-row">
+                      <span class="rg-badge">DIGITAL GUIDE</span>
+                      <span class="rg-badge rg-badge--muted">Decision-Making • Psychology</span>
+                    </div>
+
+                    <div class="rg-stage" role="region" aria-label="When Violence guide cover">
+                      <div class="rg-slides">
+                        <figure class="rg-slide is-active">
+                          <img src="ChatGPT Image Dec 26, 2025, 12_56_48 AM.png" alt="When Violence Is the Only Answer cover" loading="lazy" />
+                          <figcaption class="rg-cap">Recognition, hesitation, and the cost of delay.</figcaption>
+                        </figure>
+                      </div>
+                    </div>
+
+                    <div class="rg-trust">
+                      <div class="rg-stars">★★★★★</div>
+                      <div class="rg-trusttext"><strong>Reader Rated</strong> • Focused • No hype</div>
+                    </div>
+                  </div>
+
+                  <div class="rg-copy">
+                    <div class="rg-kicker">GRIT GEAR HQ DIGITAL</div>
+                    <h3 class="rg-title">
+                      When Violence Is the Only Answer
+                      <span class="rg-sub">Decision-Making at the Edge of Survival</span>
+                    </h3>
+
+                    <p class="rg-lede">Not tactics — the mind. Why people freeze, how hesitation forms, and what it costs.</p>
+
+                    <ul class="rg-bullets">
+                      <li><strong>Recognition delay</strong> and cognitive friction</li>
+                      <li><strong>Rules conditioning</strong> that slows response</li>
+                      <li><strong>Why observers</strong> judge moments wrong later</li>
+                    </ul>
+
+                    <div class="rg-urgency">
+                      <strong>Bottom line:</strong> most failures happen before the “decision point.”
+                      <span class="rg-urgency2">This guide sharpens the part that actually saves lives.</span>
+                    </div>
+
+                    <div class="rg-ctaRow">
+                      <a class="rg-cta" href="https://cserpico.gumroad.com/l/xrvwpt" target="_blank" rel="nofollow noopener">Buy Digital Guide — $3 →</a>
+                      <div class="rg-mini">
+                        <span class="rg-pill">Instant</span>
+                        <span class="rg-pill">Printable</span>
+                        <span class="rg-pill">No fluff</span>
+                      </div>
+                    </div>
+
+                    <p class="rg-note"><em>Read it once and you’ll spot hesitation everywhere.</em></p>
+                  </div>
                 </div>
+              </section>
+            </article>
 
-                <input type="hidden" name="source" value="site-email-grab" />
-                <input type="hidden" name="incentive" value="GritGearHQ_Free_Checklist_Blackout_72hr.pdf" />
+            <!-- GUIDE 2 -->
+            <article class="gear-item" data-cat="guide" data-price="5.00">
+              <section class="rg-feature" aria-label="Prepared Not Paranoid">
+                <div class="rg-wrap">
+                  <div class="rg-gallery">
+                    <div class="rg-badge-row">
+                      <span class="rg-badge">DIGITAL GUIDE</span>
+                      <span class="rg-badge rg-badge--muted">Readiness • Discernment</span>
+                    </div>
 
-                <div class="email-trust" role="note">
-                  <span>🔒 <strong>Private</strong></span>
-                  <span>⚡ <strong>Instant</strong> download</span>
-                  <span>🧾 <strong>Printable</strong> PDF</span>
+                    <div class="rg-stage" role="region" aria-label="Prepared Not Paranoid guide cover">
+                      <div class="rg-slides">
+                        <figure class="rg-slide is-active">
+                          <img src="dm9iiqoyyg5d3ymdirfk4td4hei1 (1).png" alt="Prepared, Not Paranoid cover" loading="lazy" />
+                          <figcaption class="rg-cap">Think clearly when it matters most.</figcaption>
+                        </figure>
+                      </div>
+                    </div>
+
+                    <div class="rg-trust">
+                      <div class="rg-stars">★★★★★</div>
+                      <div class="rg-trusttext"><strong>Reader Favorite</strong> • Practical • Grounded</div>
+                    </div>
+                  </div>
+
+                  <div class="rg-copy">
+                    <div class="rg-kicker">GRIT GEAR HQ DIGITAL</div>
+                    <h3 class="rg-title">
+                      Prepared, Not Paranoid
+                      <span class="rg-sub">A Field Manual for Uncertain Times</span>
+                    </h3>
+
+                    <p class="rg-lede">Most people fail from bad decisions, not bad luck. This keeps you calm and functional under pressure.</p>
+
+                    <ul class="rg-bullets">
+                      <li><strong>Know what matters</strong> (and what doesn’t)</li>
+                      <li><strong>Avoid panic mistakes</strong> that compound problems</li>
+                      <li><strong>Focus money + energy</strong> where it actually helps</li>
+                    </ul>
+
+                    <div class="rg-urgency">
+                      <strong>Truth:</strong> gear is useless if your head isn’t right.
+                      <span class="rg-urgency2">This is the guide you re-read before storms, outages, and uncertainty.</span>
+                    </div>
+
+                    <div class="rg-ctaRow">
+                      <a class="rg-cta" href="https://cserpico.gumroad.com/l/ckmnum" target="_blank" rel="nofollow sponsored noopener">Buy Digital Guide — $5 →</a>
+                      <div class="rg-mini">
+                        <span class="rg-pill">Instant</span>
+                        <span class="rg-pill">Grounded</span>
+                        <span class="rg-pill">Mindset</span>
+                      </div>
+                    </div>
+
+                    <p class="rg-note"><em>Food fuels the body. This protects the mind.</em></p>
+                  </div>
                 </div>
+              </section>
+            </article>
+          </div>
 
-                <p class="email-fineprint">No spam. No daily “buy now” nonsense. You can unsubscribe anytime.</p>
-                <p class="email-status" id="ggEmailStatus" aria-live="polite"></p>
-              </form>
-            </div>
-          </section>
-
-          <!-- Gear anchor (kept for nav CTA) -->
-          <section class="section" id="gear" aria-label="Gear Picks anchor">
-            <h2 class="section-title">Supporting Cast: Gear Picks</h2>
-            <p>They live in the sidebars like ads. Digital files stay center stage.</p>
-
-            <div class="quote-box" id="quote">
-              <h3>Reminder</h3>
-              <p><strong>Civilization is a rumor.</strong> Your habits are what’s real.</p>
-            </div>
-          </section>
+          <div class="quote-box" id="quote">
+            <h3>Reminder</h3>
+            <p><strong>Civilization is a rumor.</strong> Your habits are what’s real.</p>
+          </div>
 
           <footer>
             © <span id="year"></span> Serpico • GritGearHQ.com • <span style="opacity:.85;">Built for the rough stuff.</span>
           </footer>
-        </div>
+        </section>
       </section>
 
-      <!-- RIGHT SIDEBAR ADS -->
-      <aside class="sidebar right" aria-label="Right gear sidebar">
+      <!-- RIGHT SIDEBAR -->
+      <aside class="sidebar" aria-label="Right sidebar gear ads">
         <div class="ad-rail-title">
           <strong>More Gear</strong>
-          <span>Rotating images</span>
+          <span>Supporting cast</span>
         </div>
 
-        <!-- HAT (carousel) -->
-        <article class="gear-item" data-cat="apparel" data-price="20">
-          <section class="rg-feature" aria-label="Rough Gear Distressed Dad Hat">
+        <div class="ad-stack">
+
+          <!-- HAT -->
+          <article class="ad-card rg-feature gear-item" data-cat="apparel" data-price="20" aria-label="Distressed Dad Hat ad">
             <div class="rg-wrap">
               <div class="rg-gallery" data-rotate="true" data-interval="3200">
                 <div class="rg-badge-row">
@@ -1212,22 +1176,37 @@
                 <div class="rg-kicker">ROUGH GEAR</div>
                 <h3 class="rg-title">Distressed Dad Hat <span class="rg-sub">Built for rougher times</span></h3>
                 <p class="rg-lede">Not a costume. Just clean, low-profile grit.</p>
-                <ul class="rg-bullets">
-                  <li><strong>Broken-in feel</strong> without the wait</li>
-                  <li><strong>Low profile</strong> and easy fit</li>
-                  <li><strong>Subtle branding</strong></li>
-                </ul>
-                <div class="rg-ctaRow">
-                  <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times" target="_blank" rel="nofollow sponsored noopener">$20 →</a>
+
+                <div class="ad-mini">
+                  <span><strong>$20</strong></span>
+                  <span>Low-profile</span>
                 </div>
+
+                <div class="rg-ctaRow">
+                  <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times" target="_blank" rel="nofollow sponsored noopener">Open Product →</a>
+                  <div class="rg-mini">
+                    <span class="rg-pill">Comfort</span>
+                    <span class="rg-pill">Subtle</span>
+                    <span class="rg-pill">Everyday</span>
+                  </div>
+                </div>
+
+                <details class="ad-details">
+                  <summary>Full description</summary>
+                  <div class="ad-details-body">
+                    <ul class="rg-bullets">
+                      <li><strong>Broken-in feel</strong> without the wait</li>
+                      <li><strong>Low profile</strong> and easy fit</li>
+                      <li><strong>Subtle branding</strong></li>
+                    </ul>
+                  </div>
+                </details>
               </div>
             </div>
-          </section>
-        </article>
+          </article>
 
-        <!-- HOODIE (carousel) -->
-        <article class="gear-item" data-cat="apparel" data-price="45">
-          <section class="rg-feature" aria-label="Prepared Not Paranoid Hoodie">
+          <!-- HOODIE -->
+          <article class="ad-card rg-feature gear-item" data-cat="apparel" data-price="45" aria-label="Prepared Not Paranoid Hoodie ad">
             <div class="rg-wrap">
               <div class="rg-gallery" data-rotate="true" data-interval="3400">
                 <div class="rg-badge-row">
@@ -1267,22 +1246,37 @@
                 <div class="rg-kicker">ROUGH GEAR</div>
                 <h3 class="rg-title">Prepared Not Paranoid Hoodie <span class="rg-sub">Comfort for people who think ahead</span></h3>
                 <p class="rg-lede">Warm, durable, and made for everyday wear. Prepared beats panicked.</p>
-                <ul class="rg-bullets">
-                  <li><strong>Heavy feel</strong> for cold nights</li>
-                  <li><strong>Durable print</strong> that holds up</li>
-                  <li><strong>Relaxed fit</strong> for layering</li>
-                </ul>
-                <div class="rg-ctaRow">
-                  <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/prepared-not-panicked-unisex-hoodie" target="_blank" rel="nofollow sponsored noopener">$45 →</a>
+
+                <div class="ad-mini">
+                  <span><strong>$45</strong></span>
+                  <span>Warmth</span>
                 </div>
+
+                <div class="rg-ctaRow">
+                  <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/prepared-not-panicked-unisex-hoodie" target="_blank" rel="nofollow sponsored noopener">Open Product →</a>
+                  <div class="rg-mini">
+                    <span class="rg-pill">Warm</span>
+                    <span class="rg-pill">Durable</span>
+                    <span class="rg-pill">Layering</span>
+                  </div>
+                </div>
+
+                <details class="ad-details">
+                  <summary>Full description</summary>
+                  <div class="ad-details-body">
+                    <ul class="rg-bullets">
+                      <li><strong>Heavy feel</strong> for cold nights</li>
+                      <li><strong>Durable print</strong> that holds up</li>
+                      <li><strong>Relaxed fit</strong> for layering</li>
+                    </ul>
+                  </div>
+                </details>
               </div>
             </div>
-          </section>
-        </article>
+          </article>
 
-        <!-- MRE (single image) -->
-        <article class="gear-item" data-cat="food" data-price="9.10">
-          <section class="rg-feature" aria-label="MRE Entrée">
+          <!-- MRE -->
+          <article class="ad-card rg-feature gear-item" data-cat="food" data-price="9.10" aria-label="MRE Entrée ad">
             <div class="rg-wrap">
               <div class="rg-gallery">
                 <div class="rg-badge-row">
@@ -1291,7 +1285,7 @@
                 </div>
 
                 <div class="rg-stage" role="region" aria-label="MRE image">
-                  <div class="rg-slides" style="min-height:210px;">
+                  <div class="rg-slides" style="min-height:220px;">
                     <figure class="rg-slide is-active">
                       <img src="mre-chicken-burrito-bowl.jpg" alt="U.S. military contract MRE entree — Chicken Burrito Bowl" loading="lazy" />
                       <figcaption class="rg-cap">Fuel first, comfort second.</figcaption>
@@ -1309,22 +1303,39 @@
                 <div class="rg-kicker">FIELD FOOD</div>
                 <h3 class="rg-title">MRE Entrée <span class="rg-sub">Chicken Burrito Bowl</span></h3>
                 <p class="rg-lede">One in the truck. One in the kit. One for “oh crap.”</p>
-                <ul class="rg-bullets">
-                  <li><strong>Factory sealed</strong> entrée pouch</li>
-                  <li><strong>Easy storage</strong> — cool and dry</li>
-                  <li><strong>Works anywhere</strong> — no kitchen needed</li>
-                </ul>
-                <div class="rg-ctaRow">
-                  <a class="rg-cta" href="https://ebay.us/m/hmyUnT" target="_blank" rel="nofollow sponsored noopener">Just $9.10 →</a>
+
+                <div class="ad-mini">
+                  <span><strong>$9.10</strong></span>
+                  <span>Sealed</span>
                 </div>
+
+                <div class="rg-ctaRow">
+                  <a class="rg-cta" href="https://ebay.us/m/hmyUnT" target="_blank" rel="nofollow sponsored noopener">Open Deal →</a>
+                  <div class="rg-mini">
+                    <span class="rg-pill">Shelf-stable</span>
+                    <span class="rg-pill">Simple</span>
+                    <span class="rg-pill">Grab-and-go</span>
+                  </div>
+                </div>
+
+                <details class="ad-details">
+                  <summary>Full description</summary>
+                  <div class="ad-details-body">
+                    <ul class="rg-bullets">
+                      <li><strong>Factory sealed</strong> entrée pouch</li>
+                      <li><strong>Easy storage</strong> — cool and dry</li>
+                      <li><strong>Works anywhere</strong> — no kitchen needed</li>
+                    </ul>
+                  </div>
+                </details>
               </div>
             </div>
-          </section>
-        </article>
+          </article>
+
+        </div>
       </aside>
 
-    </div><!-- /layout -->
-
+    </div>
   </main>
 
   <button class="to-top" id="toTopBtn" type="button" aria-label="Back to top">Top</button>
@@ -1342,7 +1353,6 @@
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
 
-      // close on link click (mobile)
       nav.addEventListener('click', (e) => {
         if(e.target && e.target.matches('a') && header.classList.contains('nav-open')){
           header.classList.remove('nav-open');
@@ -1371,68 +1381,7 @@
       if(y) y.textContent = new Date().getFullYear();
     })();
 
-    /* EMAIL FORM (Formspree → thanks2.html) */
-    (function(){
-      const form = document.getElementById('ggEmailForm');
-      if(!form) return;
-
-      const statusEl = document.getElementById('ggEmailStatus');
-
-      form.addEventListener('submit', async function(e){
-        e.preventDefault();
-
-        const btn = form.querySelector('button[type="submit"]');
-        const input = form.querySelector('input[name="email"]');
-        const originalText = btn ? btn.textContent : 'Send My Free Checklist →';
-
-        if(input && !input.checkValidity()){
-          input.focus();
-          if(statusEl){
-            statusEl.className = 'email-status is-error';
-            statusEl.textContent = 'Enter a valid email address.';
-          }
-          return;
-        }
-
-        if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
-        if(statusEl){
-          statusEl.className = 'email-status';
-          statusEl.textContent = 'Submitting…';
-        }
-
-        try{
-          const formData = new FormData(form);
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if(res.ok){
-            window.location.href = 'thanks2.html';
-          } else {
-            if(statusEl){
-              statusEl.className = 'email-status is-error';
-              statusEl.textContent = 'Something went wrong. Please try again.';
-            }
-            if(btn){ btn.disabled = false; btn.textContent = originalText; }
-          }
-        } catch(err){
-          if(statusEl){
-            statusEl.className = 'email-status is-error';
-            statusEl.textContent = 'Network error. Please try again.';
-          }
-          if(btn){ btn.disabled = false; btn.textContent = originalText; }
-        }
-      });
-    })();
-
-    /* ===========================
-       CAROUSEL ENGINE (NEW STYLE)
-       - Uses your existing HTML + image file names
-       - Auto-builds dots based on how many .rg-slide exist
-       - Works anywhere on the page (sidebars + center)
-       =========================== */
+    /* Carousel Engine */
     (function(){
       function initGallery(gallery){
         const stage = gallery.querySelector('.rg-stage');
@@ -1443,7 +1392,6 @@
         const nextBtn = stage.querySelector('.rg-next');
         const dotsWrap = stage.querySelector('.rg-dots');
 
-        // (Re)build dots from slides
         if(dotsWrap){
           dotsWrap.innerHTML = '';
           slides.forEach((_, i) => {
@@ -1502,6 +1450,64 @@
 
       document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.rg-gallery').forEach(initGallery);
+      });
+    })();
+  </script>
+
+  <!-- Keep your existing Formspree handler (harmless if form isn't present yet) -->
+  <script>
+    (function(){
+      const form = document.getElementById('ggEmailForm');
+      if(!form) return;
+
+      const statusEl = document.getElementById('ggEmailStatus');
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        const btn = form.querySelector('button[type="submit"]');
+        const input = form.querySelector('input[name="email"]');
+        const originalText = btn ? btn.textContent : 'Send My Checklist →';
+
+        if(input && !input.checkValidity()){
+          input.focus();
+          if(statusEl){
+            statusEl.className = 'email-status is-error';
+            statusEl.textContent = 'Enter a valid email address.';
+          }
+          return;
+        }
+
+        if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+        if(statusEl){
+          statusEl.className = 'email-status';
+          statusEl.textContent = 'Submitting…';
+        }
+
+        try{
+          const formData = new FormData(form);
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if(res.ok){
+            window.location.href = 'thanks2.html';
+          } else {
+            if(statusEl){
+              statusEl.className = 'email-status is-error';
+              statusEl.textContent = 'Something went wrong. Please try again.';
+            }
+            if(btn){ btn.disabled = false; btn.textContent = originalText; }
+          }
+        } catch(err){
+          if(statusEl){
+            statusEl.className = 'email-status is-error';
+            statusEl.textContent = 'Network error. Please try again.';
+          }
+          if(btn){ btn.disabled = false; btn.textContent = originalText; }
+        }
       });
     })();
   </script>
