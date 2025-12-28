@@ -11,13 +11,13 @@
   <meta property="og:description" content="Instant-download field guides + practical gear picks that actually hold up when life gets real." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gritgearhq.com/" />
-  <!-- <meta property="og:image" content="https://gritgearhq.com/og.jpg" /> -->
+
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Ads (keep only ONE instance) -->
+  <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
-  <!-- Performance hint for hero image (optional) -->
+  <!-- Performance hint for hero image -->
   <link rel="preload" as="image" href="respon.jpg" />
 
   <style>
@@ -33,7 +33,7 @@
       --radius-lg:18px;
       --radius-md:14px;
       --radius-pill:999px;
-      --max-width:1320px;
+      --max-width:1400px;
       --safe-top: env(safe-area-inset-top, 0px);
       --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
@@ -50,9 +50,8 @@
     a:hover{ text-decoration:underline; }
     img{ max-width:100%; display:block; height:auto; }
     .wrap{ max-width: var(--max-width); margin:0 auto; padding: 14px 18px 56px; }
-    @media (max-width:780px){ .wrap{ padding: 10px 14px 92px; } } /* extra bottom room for sticky bar */
+    @media (max-width:780px){ .wrap{ padding: 10px 14px 50px; } }
 
-    /* Prevent weird “PC layout all over” caused by long filenames/URLs */
     .wrap, .center, .sidebar, .rg-wrap, .rg-copy, .rg-gallery, .ad-shell, .bundle-bar, .email-card {
       min-width: 0;
     }
@@ -186,10 +185,8 @@
     }
 
     /* HERO */
-    .hero{ padding-top: 16px; padding-bottom: 10px; }
-    .hero-inner{ display:grid; grid-template-columns: 1.35fr 1.15fr; gap:22px; align-items:start; }
-    @media (max-width:980px){ .hero-inner{ grid-template-columns:1fr; } }
-
+    .hero{ padding-top: 16px; padding-bottom: 20px; text-align:center; }
+    
     .hero-kicker{
       display:inline-flex; align-items:center; gap:8px;
       padding:4px 10px;
@@ -198,438 +195,411 @@
       background: rgba(7,9,13,0.9);
       font-size:0.75rem;
       color: var(--ink-soft);
+      margin-bottom:16px;
     }
-    .hero-title{ font-size: clamp(2.0rem, 4.2vw + 1rem, 3rem); line-height:1.1; margin:12px 0 12px; }
+    .hero-title{ 
+      font-size: clamp(2.2rem, 5vw + 1rem, 3.5rem); 
+      line-height:1.1; 
+      margin:0 0 16px; 
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
     .accent{ background: linear-gradient(90deg, #ffe1a5, var(--accent-deep)); -webkit-background-clip:text; color:transparent; }
-    .hero-sub{ color: var(--ink-soft); font-size:1rem; max-width:46rem; margin:0; line-height:1.5; }
-    .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .hero-sub{ 
+      color: var(--ink-soft); 
+      font-size:1.1rem; 
+      max-width:700px; 
+      margin:0 auto 24px; 
+      line-height:1.6; 
+    }
+    .hero-actions{ 
+      display:flex; 
+      flex-wrap:wrap; 
+      gap:12px; 
+      justify-content:center;
+      margin-bottom:12px;
+    }
     @media (max-width:420px){ .hero-actions a{ width:100%; } }
-    .hero-hint{ margin-top:10px; font-size:0.82rem; color: var(--ink-soft); }
-
-    /* DIGITAL STAR PANEL */
-    .hero-featured{
-      background: var(--panel);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255,255,255,0.05);
-      padding:16px;
-      box-shadow:0 14px 28px rgba(0,0,0,0.70);
-      position:relative;
-      overflow:hidden;
-    }
-    .hero-featured:before{
-      content:"";
-      position:absolute;
-      inset:-40px -80px auto auto;
-      width:220px; height:220px;
-      background: radial-gradient(circle at 30% 30%, rgba(248,170,54,0.28), transparent 60%);
-      pointer-events:none;
-    }
-    .featured-label{
-      font-size:0.72rem;
-      padding:3px 8px;
-      background: rgba(6,8,11,0.92);
-      border-radius: var(--radius-pill);
-      display:inline-block;
-      margin-bottom:10px;
-      border:1px solid rgba(255,255,255,0.06);
-      color: var(--ink-soft);
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      font-weight:900;
-    }
-    .featured-title{ margin:0 0 6px; font-size:1.15rem; line-height:1.25; color: var(--ink); }
-    .featured-excerpt{ font-size:0.92rem; color: var(--ink-soft); line-height:1.5; margin:0 0 12px; }
-    .featured-link{
-      display:inline-flex; align-items:center; gap:8px;
-      font-weight:900; letter-spacing:0.02em; text-transform:uppercase;
-      font-size:0.82rem;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(248,170,54,0.35);
-      background: rgba(10,12,16,0.65);
-      color:var(--ink);
-    }
-    .featured-link:hover{ text-decoration:none; border-color: rgba(248,170,54,0.55); }
-    .featured-footer{
-      display:flex; flex-wrap:wrap; gap:10px 14px;
-      align-items:center; justify-content:space-between;
-      margin-top:12px; padding-top:12px;
-      border-top:1px solid rgba(255,255,255,0.06);
-      color: var(--ink-soft);
-      font-size:0.82rem;
-    }
-    .featured-tags{ display:flex; flex-wrap:wrap; gap:8px; }
-    .featured-pill{
-      padding:6px 10px;
-      border-radius: var(--radius-pill);
-      border:1px solid rgba(255,255,255,0.06);
-      background: rgba(6,8,11,0.6);
-      color: var(--ink-soft);
-      font-size:0.78rem;
-      font-weight:700;
+    .hero-hint{ 
+      font-size:0.82rem; 
+      color: var(--ink-soft); 
     }
 
-    /* PAGE GRID */
-    .page-grid{
+    /* MAIN LAYOUT - Digital Guides Featured */
+    .main-layout{
       display:grid;
-      grid-template-columns: 320px minmax(0, 1fr) 320px;
-      gap:18px;
+      grid-template-columns: 260px 1fr 260px;
+      gap:24px;
       align-items:start;
-      margin-top: 10px;
+      margin-top: 30px;
+      position:relative;
     }
     @media (max-width:1280px){
-      .page-grid{ grid-template-columns: 300px minmax(0, 1fr) 300px; }
+      .main-layout{ grid-template-columns: 240px 1fr 240px; gap:20px; }
     }
     @media (max-width:1120px){
-      .page-grid{ grid-template-columns: 1fr; gap:16px; }
+      .main-layout{ 
+        grid-template-columns: 1fr; 
+        gap:20px;
+      }
     }
 
-    .sidebar{ align-self:start; }
+    /* SIDEBAR AD STYLING - Subtle, background feel */
+    .ad-sidebar{
+      align-self:start;
+    }
     @media (min-width:1121px){
-      .sidebar{
+      .ad-sidebar{
         position: sticky;
         top: calc(72px + var(--safe-top));
       }
     }
-    .sidebar-stack{ display:flex; flex-direction:column; gap:14px; }
 
-    /* Sidebar “ad” cards */
-    .ad-shell{
-      background: rgba(9,12,18,0.72);
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius: 16px;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.55);
+    .ad-stack{ display:flex; flex-direction:column; gap:18px; }
+
+    .gear-ad-card{
+      background: rgba(9,12,18,0.50);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
       overflow:hidden;
+      transition: all 0.3s ease;
+      opacity:0.85;
     }
-    .ad-head{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px 12px;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00));
-    }
-    .ad-head .tag{
-      font-size:.72rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:900;
-      color: rgba(248,170,54,.95);
-    }
-    .ad-head .hint{
-      font-size:.78rem;
-      color: rgba(231,236,239,.70);
-      font-weight:700;
-    }
-    .ad-body{ padding:12px; }
-
-    .center{ min-width:0; }
-
-    .section{ margin-top: 24px; }
-    .section-title{ font-size:1.15rem; text-transform:uppercase; letter-spacing:0.12em; margin:0 0 8px; }
-    .section p{ color: var(--ink-soft); margin-top:0; line-height:1.5; }
-
-    .gear-item{
-      display:block;
-      background: transparent;
-      border-radius: 16px;
-      min-width:0;
-    }
-
-    /* RG FEATURE MODULE */
-    .rg-feature{
-      --bg: #0b0e14;
-      --card: rgba(255,255,255,0.04);
-      --stroke: rgba(255,255,255,0.10);
-      --text: #e7ecef;
-      --muted: #9aa3b4;
-      --accent: #f8aa36;
-      --shadow: 0 14px 40px rgba(0,0,0,0.55);
-      margin: 0;
-      padding: 0;
-    }
-    .rg-wrap{
-      background: var(--bg);
-      border:1px solid var(--stroke);
-      border-radius:14px;
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      display:grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      height:100%;
-      min-width:0;
-    }
-    @media (max-width:980px){
-      .rg-wrap{ grid-template-columns:1fr; }
-      .rg-copy{ border-left:none !important; border-top:1px solid var(--stroke); }
-    }
-    .rg-gallery{
-      padding:18px 18px 14px;
-      background:
-        radial-gradient(700px 300px at 20% 10%, rgba(248,170,54,0.10), transparent 55%),
-        radial-gradient(600px 240px at 90% 30%, rgba(255,255,255,0.06), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
-      min-width:0;
-    }
-    .rg-badge-row{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px; }
-    .rg-badge{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:6px 10px;
-      font-size:0.72rem;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      border-radius:999px;
-      background: rgba(248,170,54,0.16);
-      color: var(--text);
-      border:1px solid rgba(248,170,54,0.22);
-      font-weight:900;
-    }
-    .rg-badge--muted{
-      background: rgba(255,255,255,0.03);
-      border-color: rgba(255,255,255,0.10);
-      color: var(--muted);
-      letter-spacing:0.08em;
-      font-weight:800;
-    }
-
-    .rg-stage{
-      position:relative;
-      background: rgba(0,0,0,0.35);
-      border:1px solid var(--stroke);
-      border-radius:14px;
-      padding:10px 10px 44px;
-      overflow:hidden;
-      touch-action: pan-y;
-    }
-    .rg-slides{ position:relative; min-height:340px; }
-    @media (max-width:520px){ .rg-slides{ min-height:240px; } }
-
-    .rg-slide{
-      position:absolute;
-      inset:0;
-      display:grid;
-      place-items:center;
-      opacity:0;
-      transform: translateY(10px);
-      transition: opacity .35s ease, transform .35s ease;
-      pointer-events:none;
-      margin:0;
-    }
-    .rg-slide.is-active{
+    .gear-ad-card:hover{
       opacity:1;
-      transform: translateY(0);
-      pointer-events:auto;
-    }
-    .rg-slide img{
-      width:100%;
-      height:auto;
-      max-height:320px;
-      object-fit: contain;
-      filter: drop-shadow(0 18px 22px rgba(0,0,0,0.55));
-    }
-    @media (max-width:520px){ .rg-slide img{ max-height:220px; } }
-
-    .rg-cap{
-      margin-top:6px;
-      font-size:0.86rem;
-      color: var(--muted);
-      text-align:center;
-      padding: 0 6px;
+      border-color: rgba(248,170,54,0.15);
+      transform: translateY(-2px);
     }
 
-    .rg-nav{
-      position:absolute;
-      top:50%;
-      transform: translateY(-50%);
-      width:44px; height:44px;
-      border-radius:12px;
-      border:1px solid var(--stroke);
-      background: rgba(0,0,0,0.45);
-      color: var(--text);
-      font-size:1.6rem;
-      line-height:1;
-      cursor:pointer;
-      z-index:5;
-      display:grid; place-items:center;
-      -webkit-tap-highlight-color: transparent;
-      user-select:none;
-    }
-    .rg-nav:hover{ border-color: rgba(248,170,54,0.35); }
-    .rg-prev{ left:10px; }
-    .rg-next{ right:10px; }
-    @media (max-width:520px){
-      .rg-nav{ width:40px; height:40px; }
-      .rg-prev{ left:8px; }
-      .rg-next{ right:8px; }
-    }
-
-    .rg-dots{
-      position:absolute;
-      bottom:10px; left:0; right:0;
-      display:flex;
-      justify-content:center;
-      gap:8px;
-      z-index:6;
-    }
-    .rg-dot{
-      width:12px; height:12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.25);
-      background: rgba(255,255,255,0.08);
-      cursor:pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .rg-dot.is-active{
-      background: var(--accent);
-      border-color: rgba(248,170,54,0.75);
-    }
-
-    .rg-trust{
-      display:flex; gap:10px; align-items:center;
-      margin-top:12px;
-      padding:10px 12px;
-      background: rgba(255,255,255,0.03);
-      border:1px solid var(--stroke);
-      border-radius:12px;
-      min-width:0;
-    }
-    .rg-stars{ color: var(--accent); letter-spacing:0.06em; flex:0 0 auto; font-weight:900; }
-    .rg-trusttext{ color: var(--muted); font-size:0.9rem; min-width:0; font-weight:700; }
-
-    .rg-copy{
-      padding:20px 20px 18px;
-      border-left:1px solid var(--stroke);
-      background:
-        radial-gradient(600px 260px at 20% 0%, rgba(248,170,54,0.08), transparent 55%),
-        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
-      color: var(--text);
-      min-width:0;
-    }
-    .rg-kicker{
-      font-size:0.8rem;
+    .gear-ad-label{
+      padding:8px 12px;
+      background: rgba(0,0,0,0.35);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      font-size:0.65rem;
       letter-spacing:0.18em;
       text-transform:uppercase;
-      color: var(--muted);
-      margin-bottom:8px;
+      color: var(--ink-soft);
       font-weight:900;
+      text-align:center;
     }
-    .rg-title{ font-size:1.5rem; margin:0 0 10px; line-height:1.15; }
-    .rg-sub{ display:block; margin-top:4px; font-size:1.02rem; color: var(--muted); font-weight:650; }
-    .rg-lede{ margin:0 0 12px; color:#c7cbd1; line-height:1.55; font-weight:650; }
-    .rg-bullets{ margin:0 0 14px; padding-left:18px; color:#c7cbd1; line-height:1.55; font-weight:650; }
-    .rg-bullets li{ margin:8px 0; }
-    .rg-bullets strong{ color: var(--text); }
 
-    .rg-urgency{
-      margin:12px 0 14px;
+    .gear-ad-content{
       padding:12px;
-      border-left:4px solid var(--accent);
+    }
+
+    .gear-ad-image{
+      position:relative;
       background: rgba(0,0,0,0.25);
       border-radius:10px;
-      color:#cfd4db;
-      border:1px solid rgba(255,255,255,0.06);
-      font-weight:650;
+      padding:16px;
+      margin-bottom:10px;
+      min-height:180px;
+      display:grid;
+      place-items:center;
     }
-    .rg-urgency2{ display:block; margin-top:6px; color: var(--muted); font-size:0.92rem; }
+    .gear-ad-image img{
+      max-height:160px;
+      object-fit:contain;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+    }
 
-    .rg-ctaRow{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
-    .rg-cta{
+    .gear-ad-title{
+      font-size:0.92rem;
+      font-weight:800;
+      margin:0 0 4px;
+      color:var(--ink);
+    }
+    .gear-ad-subtitle{
+      font-size:0.78rem;
+      color:var(--ink-soft);
+      margin:0 0 10px;
+    }
+
+    .gear-ad-price{
+      display:inline-block;
+      padding:6px 12px;
+      background: rgba(248,170,54,0.12);
+      border:1px solid rgba(248,170,54,0.20);
+      border-radius:8px;
+      font-size:0.85rem;
+      font-weight:900;
+      color:var(--accent);
+      margin-bottom:10px;
+    }
+
+    .gear-ad-cta{
+      display:block;
+      text-align:center;
+      padding:8px 12px;
+      background: rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:8px;
+      color:var(--ink-soft);
+      font-size:0.8rem;
+      font-weight:700;
+      transition: all 0.2s ease;
+    }
+    .gear-ad-cta:hover{
+      background: rgba(248,170,54,0.08);
+      border-color: rgba(248,170,54,0.25);
+      color:var(--ink);
+      text-decoration:none;
+    }
+
+    /* CENTER - DIGITAL GUIDES SHOWCASE */
+    .guides-showcase{
+      min-width:0;
+    }
+
+    .showcase-header{
+      text-align:center;
+      margin-bottom:30px;
+    }
+    .showcase-label{
+      display:inline-block;
+      padding:6px 14px;
+      background: rgba(248,170,54,0.18);
+      border:1px solid rgba(248,170,54,0.30);
+      border-radius:999px;
+      font-size:0.72rem;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      font-weight:900;
+      color:var(--accent);
+      margin-bottom:12px;
+    }
+    .showcase-title{
+      font-size: clamp(1.6rem, 3vw + 1rem, 2.2rem);
+      margin:0 0 10px;
+      line-height:1.2;
+    }
+    .showcase-subtitle{
+      color:var(--ink-soft);
+      font-size:1rem;
+      max-width:600px;
+      margin:0 auto;
+      line-height:1.5;
+    }
+
+    .guides-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:24px;
+      margin-bottom:30px;
+    }
+    @media (max-width:980px){ 
+      .guides-grid{ grid-template-columns:1fr; }
+    }
+
+    /* PREMIUM GUIDE CARD */
+    .guide-card{
+      background: 
+        radial-gradient(800px 400px at 50% -100px, rgba(248,170,54,0.12), transparent 60%),
+        rgba(18,24,35,0.95);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:18px;
+      padding:24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.60);
+      transition: all 0.3s ease;
+    }
+    .guide-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.75);
+      border-color: rgba(248,170,54,0.25);
+    }
+
+    .guide-badge{
       display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:6px 12px;
+      background: rgba(248,170,54,0.15);
+      border:1px solid rgba(248,170,54,0.25);
+      border-radius:999px;
+      font-size:0.7rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      font-weight:900;
+      color:var(--accent);
+      margin-bottom:16px;
+    }
+
+    .guide-image-wrapper{
+      position:relative;
+      background: rgba(0,0,0,0.40);
+      border-radius:14px;
+      padding:20px;
+      margin-bottom:20px;
+      border:1px solid rgba(255,255,255,0.08);
+      min-height:320px;
+      display:grid;
+      place-items:center;
+    }
+    .guide-image-wrapper img{
+      max-height:300px;
+      object-fit:contain;
+      filter: drop-shadow(0 12px 28px rgba(0,0,0,0.60));
+    }
+
+    .guide-title{
+      font-size:1.5rem;
+      font-weight:900;
+      margin:0 0 8px;
+      line-height:1.2;
+      color:var(--ink);
+    }
+    .guide-subtitle{
+      font-size:1rem;
+      color:var(--ink-soft);
+      margin:0 0 14px;
+      font-weight:600;
+    }
+
+    .guide-description{
+      color:var(--ink-soft);
+      line-height:1.6;
+      margin:0 0 16px;
+      font-weight:600;
+    }
+
+    .guide-features{
+      list-style:none;
+      padding:0;
+      margin:0 0 20px;
+    }
+    .guide-features li{
+      padding:8px 0 8px 28px;
+      position:relative;
+      color:var(--ink-soft);
+      line-height:1.5;
+      font-weight:600;
+    }
+    .guide-features li:before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--accent);
+      font-weight:900;
+      font-size:1.1rem;
+    }
+
+    .guide-highlight{
+      background: rgba(0,0,0,0.30);
+      border-left:3px solid var(--accent);
+      padding:14px 16px;
+      border-radius:10px;
+      margin:0 0 20px;
+      border:1px solid rgba(255,255,255,0.06);
+      border-left:3px solid var(--accent);
+    }
+    .guide-highlight strong{
+      color:var(--ink);
+      display:block;
+      margin-bottom:6px;
+    }
+    .guide-highlight p{
+      margin:0;
+      color:var(--ink-soft);
+      font-size:0.92rem;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .guide-cta-row{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .guide-cta-primary{
+      display:flex;
       align-items:center;
       justify-content:center;
-      padding:12px 16px;
-      border-radius:12px;
-      background: var(--accent);
-      color:#000;
-      font-weight:950;
-      text-decoration:none;
-      letter-spacing:0.02em;
-      box-shadow: 0 10px 26px rgba(248,170,54,0.22);
-      -webkit-tap-highlight-color: transparent;
-      transition: transform .12s ease, filter .12s ease;
       gap:10px;
-      white-space:nowrap;
-      cursor:pointer;
-      border: 0;
+      padding:14px 20px;
+      background: linear-gradient(180deg, #f8aa36, #f1870a);
+      border:1px solid rgba(0,0,0,0.50);
+      border-radius:12px;
+      color:#0b0f15;
+      font-weight:950;
+      font-size:1rem;
+      letter-spacing:0.02em;
+      box-shadow: 0 12px 30px rgba(248,170,54,0.25);
+      transition: all 0.2s ease;
     }
-    .rg-cta:hover{ filter: brightness(1.03); transform: translateY(-1px); text-decoration:none; }
-    .rg-cta.secondary{
-      background: rgba(10,12,16,0.65);
-      color: var(--ink);
-      border: 1px solid rgba(248,170,54,0.35);
-      box-shadow:none;
+    .guide-cta-primary:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(248,170,54,0.35);
+      filter:brightness(1.05);
+      text-decoration:none;
     }
-    .rg-cta.secondary:hover{ border-color: rgba(248,170,54,0.55); }
-    .rg-mini{ display:flex; gap:8px; flex-wrap:wrap; }
-    .rg-pill{
-      font-size:0.78rem;
-      color: var(--muted);
-      background: rgba(255,255,255,0.03);
-      border:1px solid var(--stroke);
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:750;
-    }
-    .rg-note{ margin:12px 0 0; color: var(--muted); font-size:0.92rem; line-height:1.55; font-weight:650; }
 
-    .pay-trust{
-      margin-top:10px;
-      font-size:.86rem;
-      color: rgba(231,236,239,.72);
+    .guide-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+    }
+    .guide-pill{
+      padding:6px 10px;
+      background: rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:999px;
+      font-size:0.75rem;
+      color:var(--ink-soft);
       font-weight:700;
     }
 
-    /* Sidebar “ad” compact adjustments */
-    .ad-card .rg-wrap{ grid-template-columns: 1fr; }
-    .ad-card .rg-gallery{ padding:12px; }
-    .ad-card .rg-copy{
+    .guide-trust{
+      display:flex;
+      align-items:center;
+      gap:10px;
       padding:12px;
-      border-left:none;
-      border-top:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:10px;
+      margin-top:16px;
     }
-    .ad-card .rg-slides{ min-height: 200px; }
-    .ad-card .rg-slide img{ max-height: 180px; }
-    .ad-card .rg-title{ font-size:1.08rem; }
-    .ad-card .rg-lede{ font-size:.92rem; }
-    .ad-card .rg-bullets{ display:none; }
-    .ad-card .rg-trust{ margin-top:10px; }
-    .ad-card .rg-cta{ width:100%; }
-
-    /* Center grids */
-    .front-features{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:18px;
-      align-items:stretch;
+    .guide-stars{
+      color:var(--accent);
+      font-weight:900;
+      letter-spacing:0.04em;
     }
-    @media (max-width:980px){ .front-features{ grid-template-columns:1fr; } }
+    .guide-trust-text{
+      color:var(--ink-soft);
+      font-size:0.88rem;
+      font-weight:700;
+    }
 
-    /* Bundle bar */
+    /* BUNDLE BAR */
     .bundle-bar{
-      margin-top:14px;
+      margin-top:24px;
       border-radius:16px;
       border:1px solid rgba(255,255,255,0.10);
       background: rgba(9,12,18,0.78);
       box-shadow: 0 14px 28px rgba(0,0,0,0.55);
-      padding:12px 14px;
+      padding:16px 18px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
+      gap:16px;
       flex-wrap:wrap;
     }
     .bundle-left{ min-width:0; }
-    .bundle-title{ margin:0; font-weight:950; letter-spacing:.04em; font-size:1rem; }
+    .bundle-title{ margin:0; font-weight:950; letter-spacing:.04em; font-size:1.1rem; }
     .bundle-sub{
-      margin:4px 0 0;
+      margin:6px 0 0;
       color:rgba(231,236,239,.72);
       font-weight:650;
-      font-size:.92rem;
-      line-height:1.35;
+      font-size:.95rem;
+      line-height:1.4;
     }
     .bundle-cta{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:12px 14px;
+      padding:12px 16px;
       border-radius:12px;
       background: linear-gradient(180deg,#f8aa36,#f1870a);
       color:#0b0f15;
@@ -643,7 +613,7 @@
 
     /* EMAIL CAPTURE */
     .email-card{
-      margin-top:14px;
+      margin-top:24px;
       border-radius:16px;
       border:1px solid rgba(255,255,255,0.10);
       background:
@@ -653,18 +623,18 @@
       overflow:hidden;
     }
     .email-card__inner{
-      padding:14px 14px;
+      padding:20px;
       display:grid;
       grid-template-columns: 1.2fr 1fr;
-      gap:14px;
+      gap:20px;
       align-items:center;
     }
     @media (max-width:900px){
       .email-card__inner{ grid-template-columns:1fr; }
     }
     .email-copy h3{
-      margin:0 0 6px;
-      font-size:1.05rem;
+      margin:0 0 8px;
+      font-size:1.15rem;
       font-weight:950;
       letter-spacing:.02em;
     }
@@ -672,38 +642,38 @@
       margin:0;
       color:rgba(231,236,239,.74);
       font-weight:650;
-      line-height:1.45;
-      font-size:.95rem;
+      line-height:1.5;
+      font-size:.98rem;
     }
     .email-points{
       display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap:wrap;
-      margin-top:10px;
+      margin-top:12px;
       color:rgba(231,236,239,.72);
-      font-size:.88rem;
+      font-size:.90rem;
       font-weight:700;
     }
     .email-points span{ display:inline-flex; align-items:center; gap:6px; }
 
     .email-form{
       display:grid;
-      gap:10px;
+      gap:12px;
       text-align:left;
       background: rgba(0,0,0,.24);
       border:1px solid rgba(255,255,255,.10);
       border-radius:14px;
-      padding:12px;
+      padding:14px;
     }
     .email-form label{
       font-weight:900;
       letter-spacing:.3px;
       color:rgba(231,236,239,.90);
-      font-size:.92rem;
+      font-size:.94rem;
     }
     .email-form input[type="email"]{
       width:100%;
-      margin-top:6px;
+      margin-top:8px;
       padding:12px 12px;
       border-radius:12px;
       border:1px solid rgba(255,255,255,.14);
@@ -730,7 +700,7 @@
     }
     .email-btn:disabled{ opacity:.7; cursor:not-allowed; }
     .email-status{
-      font-size:.88rem;
+      font-size:.90rem;
       color: rgba(231,236,239,.72);
       font-weight:700;
       line-height:1.35;
@@ -740,21 +710,34 @@
 
     /* Quote box */
     .quote-box{
-      margin-top: 18px;
+      margin-top: 20px;
       border-radius: 16px;
       border:1px solid rgba(255,255,255,0.08);
       background: rgba(9,12,18,0.70);
       box-shadow:0 14px 28px rgba(0,0,0,0.55);
-      padding:16px;
+      padding:18px;
+      text-align:center;
     }
-    .quote-box h3{ margin:0 0 6px; font-size:.90rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(248,170,54,.95); }
-    .quote-box p{ margin:0; color:var(--ink-soft); font-weight:650; }
+    .quote-box h3{ 
+      margin:0 0 8px; 
+      font-size:.92rem; 
+      letter-spacing:.12em; 
+      text-transform:uppercase; 
+      color:rgba(248,170,54,.95); 
+    }
+    .quote-box p{ 
+      margin:0; 
+      color:var(--ink-soft); 
+      font-weight:650;
+      font-size:1.05rem;
+      line-height:1.5;
+    }
 
     /* Back to top */
     .to-top{
       position: fixed;
       right: 14px;
-      bottom: calc(14px + var(--safe-bottom) + 70px);
+      bottom: calc(14px + var(--safe-bottom));
       z-index: 999;
       padding: 12px 14px;
       border-radius: 999px;
@@ -773,57 +756,19 @@
     .to-top:hover{ color: var(--ink); border-color: rgba(248,170,54,0.25); }
 
     footer{
-      margin-top: 40px;
-      padding: 16px 0;
+      margin-top: 50px;
+      padding: 20px 0;
       border-top: 1px solid rgba(255,255,255,0.06);
-      font-size: 0.78rem;
+      font-size: 0.80rem;
       color: var(--ink-soft);
       text-align:center;
     }
 
-    /* Mobile Sticky CTA Bar (conversion booster) */
-    .sticky-cta{
-      position: fixed;
-      left: 0; right: 0;
-      bottom: 0;
-      padding-bottom: var(--safe-bottom);
-      z-index: 1000;
-      display:none;
-      background: rgba(5,6,8,0.92);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(8px);
-    }
-    .sticky-cta__inner{
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 10px 14px;
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
-    .sticky-cta__text{
-      min-width:0;
-      color: rgba(231,236,239,.78);
-      font-weight:800;
-      font-size:.88rem;
-    }
-    .sticky-cta__actions{
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-    .sticky-cta__actions a, .sticky-cta__actions button{
-      min-height:44px;
-    }
-    @media (min-width: 981px){
-      .sticky-cta{ display:none !important; }
-    }
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      *{ scroll-behavior:auto !important; }
-      .rg-slide{ transition:none !important; }
-      .bundle-cta:hover, .rg-cta:hover{ transform:none !important; }
+    /* Mobile responsive adjustments */
+    @media (max-width:1120px){
+      .ad-sidebar{
+        display:none;
+      }
     }
   </style>
 </head>
@@ -859,8 +804,8 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="#digital-grid" class="btn btn-ghost">Digital Guides</a>
-        <a href="#gear" class="btn btn-primary">Gear Picks</a>
+        <a href="#digital-guides" class="btn btn-primary">Digital Guides</a>
+        <a href="#gear" class="btn btn-ghost">Gear Picks</a>
       </div>
     </div>
   </header>
@@ -881,415 +826,248 @@
 
     <!-- HERO -->
     <section class="hero" aria-label="Hero">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-kicker">Digital-first • real-world readiness • no panic bait</div>
+      <div class="hero-kicker">Digital-first • real-world readiness • no panic bait</div>
 
-          <h1 class="hero-title">
-            Learn it once.<br />
-            Use it when it <span class="accent">counts.</span>
-          </h1>
+      <h1 class="hero-title">
+        Learn it once.<br />
+        Use it when it <span class="accent">counts.</span>
+      </h1>
 
-          <p class="hero-sub">
-            Two short digital guides built for pressure moments — when your brain wants to freeze and you don’t have time to “figure it out.”
-          </p>
+      <p class="hero-sub">
+        Two short digital guides built for pressure moments — when your brain wants to freeze and you don't have time to "figure it out."
+      </p>
 
-          <div class="hero-actions">
-            <a href="#digital-grid" class="btn btn-primary">Get the Guides</a>
-            <a href="#gear" class="btn btn-ghost">See the Gear Picks</a>
-          </div>
-
-          <div class="hero-hint">Instant download • Printable • Focused • No fluff</div>
-        </div>
-
-        <aside class="hero-featured" id="digital">
-          <div class="featured-label">Digital Guides (Featured)</div>
-
-          <h2 class="featured-title">Most “prep content” ignores the real problem:</h2>
-          <p class="featured-excerpt">
-            <strong>Hesitation, decision-making, and mental clarity under stress.</strong> These guides hit that directly.
-          </p>
-
-          <a class="featured-link" href="#digital-grid">Jump to the two digital guides →</a>
-
-          <div class="featured-footer">
-            <div class="featured-tags">
-              <span class="featured-pill">Instant</span>
-              <span class="featured-pill">Printable</span>
-              <span class="featured-pill">Practical</span>
-            </div>
-            <div>Start here. Gear comes second.</div>
-          </div>
-        </aside>
+      <div class="hero-actions">
+        <a href="#digital-guides" class="btn btn-primary">Get the Guides</a>
+        <a href="#gear" class="btn btn-ghost">See Gear Picks</a>
       </div>
 
-      <div class="bundle-bar" aria-label="Bundle offer">
-        <div class="bundle-left">
-          <p class="bundle-title">Start with mindset.</p>
-          <p class="bundle-sub">Buy the guides first. Then build the kit around decisions that won’t collapse under stress.</p>
-        </div>
-        <a class="bundle-cta" href="#digital-grid">Buy the guides →</a>
-      </div>
+      <div class="hero-hint">Instant download • Printable • Focused • No fluff</div>
+    </section>
 
-      <section class="email-card" aria-label="Email signup">
-        <div class="email-card__inner">
-          <div class="email-copy">
-            <h3>Get the <span class="accent">72-Hour Blackout Checklist</span> (Printable PDF)</h3>
-            <p>Short, useful, and calm. The stuff you actually use when lights go out and your brain starts negotiating.</p>
-            <div class="email-points">
-              <span>🔒 <strong>Private</strong></span>
-              <span>⚡ <strong>Instant</strong></span>
-              <span>🧾 <strong>Printable</strong></span>
-            </div>
+    <!-- EMAIL SIGNUP -->
+    <section class="email-card" aria-label="Email signup">
+      <div class="email-card__inner">
+        <div class="email-copy">
+          <h3>Get the <span class="accent">72-Hour Blackout Checklist</span> (Printable PDF)</h3>
+          <p>Short, useful, and calm. The stuff you actually use when lights go out and your brain starts negotiating.</p>
+          <div class="email-points">
+            <span>🔒 <strong>Private</strong></span>
+            <span>⚡ <strong>Instant</strong></span>
+            <span>🧾 <strong>Printable</strong></span>
           </div>
-
-          <form id="ggEmailForm"
-                class="email-form"
-                action="https://formspree.io/f/mjgvbvpw"
-                method="POST">
-            <label>
-              Email address
-              <input type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
-            </label>
-
-            <input type="hidden" name="source" value="site-email-grab" />
-            <input type="hidden" name="incentive" value="GritGearHQ_Free_Checklist_Blackout_72hr.pdf" />
-
-            <button class="email-btn" type="submit">Send My Free Checklist →</button>
-            <div id="ggEmailStatus" class="email-status">No spam. If it sucks, unsubscribe in one click.</div>
-
-            <noscript>
-              <div class="email-status is-error" style="margin-top:8px;">
-                JavaScript is off. Submitting may still work, but the redirect won’t.
-              </div>
-            </noscript>
-          </form>
         </div>
-      </section>
+
+        <form id="ggEmailForm"
+              class="email-form"
+              action="https://formspree.io/f/mjgvbvpw"
+              method="POST">
+          <label>
+            Email address
+            <input type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+          </label>
+
+          <input type="hidden" name="source" value="site-email-grab" />
+          <input type="hidden" name="incentive" value="GritGearHQ_Free_Checklist_Blackout_72hr.pdf" />
+
+          <button class="email-btn" type="submit">Send My Free Checklist →</button>
+          <div id="ggEmailStatus" class="email-status">No spam. If it sucks, unsubscribe in one click.</div>
+        </form>
+      </div>
     </section>
 
     <!-- MAIN LAYOUT -->
-    <section class="page-grid" aria-label="Main layout">
+    <section class="main-layout" aria-label="Main content">
 
-      <!-- LEFT SIDEBAR -->
-      <aside class="sidebar" aria-label="Left gear sidebar">
-        <div class="sidebar-stack">
+      <!-- LEFT SIDEBAR - Gear Ads -->
+      <aside class="ad-sidebar" aria-label="Left gear ads">
+        <div class="ad-stack">
 
-          <div class="ad-shell">
-            <div class="ad-head">
-              <span class="tag">GEAR PICK</span>
-              <span class="hint">Rotating</span>
+          <!-- Tent Ad -->
+          <article class="gear-ad-card">
+            <div class="gear-ad-label">Gear Pick • Shelter</div>
+            <div class="gear-ad-content">
+              <div class="gear-ad-image">
+                <img src="tent-5.jpg" alt="Teepee tent" loading="lazy" />
+              </div>
+              <h3 class="gear-ad-title">Teepee-Style Tent</h3>
+              <p class="gear-ad-subtitle">Sets up fast. Roomy utility.</p>
+              <div class="gear-ad-price">$69.99</div>
+              <a href="https://www.ebay.com/itm/388632792988?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" 
+                 class="gear-ad-cta" 
+                 target="_blank" 
+                 rel="nofollow sponsored noopener">
+                View Details →
+              </a>
             </div>
-            <div class="ad-body">
+          </article>
 
-              <!-- TENT -->
-              <section class="rg-feature ad-card" aria-label="Teepee-Style Tent ad">
-                <div class="rg-wrap">
-                  <div class="rg-gallery" data-rotate="true" data-interval="3400">
-                    <div class="rg-badge-row">
-                      <span class="rg-badge">SHELTER</span>
-                      <span class="rg-badge rg-badge--muted">Roomy • Quick setup</span>
-                    </div>
-
-                    <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Teepee tent images" tabindex="0">
-                      <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
-
-                      <div class="rg-slides">
-                        <figure class="rg-slide is-active">
-                          <img src="tent-5.jpg" alt="Teepee tent front view" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Simple, clean, low-profile.</figcaption>
-                        </figure>
-                        <figure class="rg-slide">
-                          <img src="tent-2.jpg" alt="Teepee tent mesh interior" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Airflow + bug control.</figcaption>
-                        </figure>
-                        <figure class="rg-slide">
-                          <img src="tent-4.jpg" alt="Teepee tent alternate view" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Base-camp utility.</figcaption>
-                        </figure>
-                      </div>
-
-                      <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
-                      <div class="rg-dots" aria-label="Choose image"></div>
-                    </div>
-
-                    <div class="rg-trust">
-                      <div class="rg-stars">★★★★★</div>
-                      <div class="rg-trusttext"><strong>Shelter Pick</strong> • Roomy • Real utility</div>
-                    </div>
-                  </div>
-
-                  <div class="rg-copy">
-                    <div class="rg-kicker">FIELD SHELTER</div>
-                    <h3 class="rg-title">Teepee-Style Tent <span class="rg-sub">Sets up fast</span></h3>
-                    <p class="rg-lede">If you can’t stay dry, the rest becomes suffering.</p>
-                    <div class="rg-ctaRow">
-                      <a class="rg-cta" href="https://www.ebay.com/itm/388632792988?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Shop — $69.99 →</a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
+          <!-- Backpack Ad -->
+          <article class="gear-ad-card">
+            <div class="gear-ad-label">Gear Pick • Carry</div>
+            <div class="gear-ad-content">
+              <div class="gear-ad-image">
+                <img src="newbp.jpg" alt="Utility backpack" loading="lazy" />
+              </div>
+              <h3 class="gear-ad-title">Utility Backpack</h3>
+              <p class="gear-ad-subtitle">Everyday carry. Built tough.</p>
+              <div class="gear-ad-price">$55.99</div>
+              <a href="https://grit-gear-hq.printful.me/product/rugged-utility-backpack-durable-everyday-carry-pack-with-laptop-compartment" 
+                 class="gear-ad-cta" 
+                 target="_blank" 
+                 rel="nofollow sponsored noopener">
+                View Details →
+              </a>
             </div>
-          </div>
+          </article>
 
-          <div class="ad-shell">
-            <div class="ad-head">
-              <span class="tag">GEAR PICK</span>
-              <span class="hint">Rotating</span>
+          <!-- MRE Ad -->
+          <article class="gear-ad-card">
+            <div class="gear-ad-label">Gear Pick • Food</div>
+            <div class="gear-ad-content">
+              <div class="gear-ad-image">
+                <img src="mre-chicken-burrito-bowl.jpg" alt="MRE meal" loading="lazy" />
+              </div>
+              <h3 class="gear-ad-title">MRE Entrée</h3>
+              <p class="gear-ad-subtitle">Field food. Sealed. Ready.</p>
+              <div class="gear-ad-price">$9.10</div>
+              <a href="https://ebay.us/m/hmyUnT" 
+                 class="gear-ad-cta" 
+                 target="_blank" 
+                 rel="nofollow sponsored noopener">
+                View Details →
+              </a>
             </div>
-            <div class="ad-body">
-
-              <!-- BACKPACK -->
-              <section class="rg-feature ad-card" aria-label="Rugged Utility Backpack ad">
-                <div class="rg-wrap">
-                  <div class="rg-gallery" data-rotate="true" data-interval="3200">
-                    <div class="rg-badge-row">
-                      <span class="rg-badge">CARRY</span>
-                      <span class="rg-badge rg-badge--muted">Work • Travel</span>
-                    </div>
-
-                    <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Backpack images" tabindex="0">
-                      <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
-
-                      <div class="rg-slides">
-                        <figure class="rg-slide is-active">
-                          <img src="newbp.jpg" alt="Rugged utility backpack front view" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Low-key profile. Serious function.</figcaption>
-                        </figure>
-                        <figure class="rg-slide">
-                          <!-- URL-encoded spaces/commas for safer hosting -->
-                          <img src="ChatGPT%20Image%20Dec%2022%2C%202025%2C%2006_27_22%20PM.png" alt="Backpack lifestyle use" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Doesn’t scream “tactical.”</figcaption>
-                        </figure>
-                        <figure class="rg-slide">
-                          <img src="backp.jpg.png" alt="Backpack field view" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Built for daily punishment.</figcaption>
-                        </figure>
-                      </div>
-
-                      <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
-                      <div class="rg-dots" aria-label="Choose image"></div>
-                    </div>
-
-                    <div class="rg-trust">
-                      <div class="rg-stars">★★★★★</div>
-                      <div class="rg-trusttext"><strong>Workhorse</strong> • Organized • Durable</div>
-                    </div>
-                  </div>
-
-                  <div class="rg-copy">
-                    <div class="rg-kicker">ROUGH GEAR</div>
-                    <h3 class="rg-title">Utility Backpack <span class="rg-sub">Everyday carry</span></h3>
-                    <p class="rg-lede">Pack it the same way every time. Muscle memory saves time.</p>
-                    <div class="rg-ctaRow">
-                      <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rugged-utility-backpack-durable-everyday-carry-pack-with-laptop-compartment" target="_blank" rel="nofollow sponsored noopener">Shop — $55.99 →</a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-            </div>
-          </div>
+          </article>
 
         </div>
       </aside>
 
-      <!-- CENTER -->
-      <div class="center" aria-label="Center digital content">
+      <!-- CENTER - Digital Guides Showcase -->
+      <div class="guides-showcase" id="digital-guides">
+        
+        <div class="showcase-header">
+          <span class="showcase-label">★ Digital Field Guides ★</span>
+          <h2 class="showcase-title">Built for Moments When <span class="accent">Hesitation Costs</span></h2>
+          <p class="showcase-subtitle">Not gear lists. Not tactics. The psychology and decision-making framework that determines whether you freeze or act.</p>
+        </div>
 
-        <!-- DIGITAL GUIDES -->
-        <section class="section" id="digital-grid">
-          <h2 class="section-title">Digital Field Guides</h2>
-          <p>These are the main product. The sidebars are supporting cast.</p>
+        <div class="guides-grid">
 
-          <div class="front-features">
+          <!-- Guide 1: When Violence -->
+          <article class="guide-card">
+            <span class="guide-badge">⚡ Digital Guide</span>
+            
+            <div class="guide-image-wrapper">
+              <img src="ChatGPT Image Dec 26, 2025, 12_56_48 AM.png" 
+                   alt="When Violence Is the Only Answer cover" 
+                   loading="lazy" />
+            </div>
 
-            <!-- GUIDE 1 -->
-            <article class="gear-item" data-cat="guide" data-price="3.00">
-              <section class="rg-feature" aria-label="When Violence Is the Only Answer">
-                <div class="rg-wrap">
-                  <div class="rg-gallery">
-                    <div class="rg-badge-row">
-                      <span class="rg-badge">DIGITAL GUIDE</span>
-                      <span class="rg-badge rg-badge--muted">Decision-Making • Psychology</span>
-                    </div>
+            <h3 class="guide-title">When Violence Is the Only Answer</h3>
+            <p class="guide-subtitle">Decision-Making at the Edge of Survival</p>
 
-                    <div class="rg-stage" role="region" aria-label="When Violence guide cover">
-                      <div class="rg-slides">
-                        <figure class="rg-slide is-active">
-                          <img src="ChatGPT%20Image%20Dec%2026%2C%202025%2C%2012_56_48%20AM.png" alt="When Violence Is the Only Answer cover" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Recognition, hesitation, and the cost of delay.</figcaption>
-                        </figure>
-                      </div>
-                    </div>
+            <p class="guide-description">
+              Not tactics — the mind. Why people freeze, how hesitation forms, and what it costs in real scenarios.
+            </p>
 
-                    <div class="rg-trust">
-                      <div class="rg-stars">★★★★★</div>
-                      <div class="rg-trusttext"><strong>Reader Rated</strong> • Focused • No hype</div>
-                    </div>
-                  </div>
+            <ul class="guide-features">
+              <li><strong>Recognition delay</strong> and cognitive friction</li>
+              <li><strong>Rules conditioning</strong> that slows response</li>
+              <li><strong>Why observers</strong> judge moments wrong later</li>
+            </ul>
 
-                  <div class="rg-copy">
-                    <div class="rg-kicker">GRIT GEAR HQ DIGITAL</div>
-                    <h3 class="rg-title">
-                      When Violence Is the Only Answer
-                      <span class="rg-sub">Decision-Making at the Edge of Survival</span>
-                    </h3>
+            <div class="guide-highlight">
+              <strong>Bottom line:</strong>
+              <p>Most failures happen before the "decision point." This guide sharpens the part that actually saves lives.</p>
+            </div>
 
-                    <p class="rg-lede">Not tactics — the mind. Why people freeze, how hesitation forms, and what it costs.</p>
-
-                    <ul class="rg-bullets">
-                      <li><strong>Recognition delay</strong> and cognitive friction</li>
-                      <li><strong>Rules conditioning</strong> that slows response</li>
-                      <li><strong>Why observers</strong> judge moments wrong later</li>
-                    </ul>
-
-                    <div class="rg-urgency">
-                      <strong>Bottom line:</strong> most failures happen before the “decision point.”
-                      <span class="rg-urgency2">This guide sharpens the part that actually saves lives.</span>
-                    </div>
-
-                    <div class="rg-ctaRow">
-                      <a class="rg-cta" href="https://cserpico.gumroad.com/l/xrvwpt" target="_blank" rel="nofollow noopener">Buy Digital Guide — $3 →</a>
-                      <button class="rg-cta secondary" type="button" id="buyBothBtn1" aria-label="Buy both guides">Buy Both Guides →</button>
-                      <div class="rg-mini">
-                        <span class="rg-pill">Instant</span>
-                        <span class="rg-pill">Printable</span>
-                        <span class="rg-pill">No fluff</span>
-                      </div>
-                    </div>
-
-                    <div class="pay-trust">Secure checkout via Gumroad • Instant download after purchase</div>
-                    <p class="rg-note"><em>Read it once and you’ll spot hesitation everywhere.</em></p>
-                  </div>
-                </div>
-              </section>
-            </article>
-
-            <!-- GUIDE 2 -->
-            <article class="gear-item" data-cat="guide" data-price="5.00">
-              <section class="rg-feature" aria-label="Prepared Not Paranoid">
-                <div class="rg-wrap">
-                  <div class="rg-gallery">
-                    <div class="rg-badge-row">
-                      <span class="rg-badge">DIGITAL GUIDE</span>
-                      <span class="rg-badge rg-badge--muted">Readiness • Discernment</span>
-                    </div>
-
-                    <div class="rg-stage" role="region" aria-label="Prepared Not Paranoid guide cover">
-                      <div class="rg-slides">
-                        <figure class="rg-slide is-active">
-                          <img src="dm9iiqoyyg5d3ymdirfk4td4hei1%20(1).png" alt="Prepared, Not Paranoid cover" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Think clearly when it matters most.</figcaption>
-                        </figure>
-                      </div>
-                    </div>
-
-                    <div class="rg-trust">
-                      <div class="rg-stars">★★★★★</div>
-                      <div class="rg-trusttext"><strong>Reader Favorite</strong> • Practical • Grounded</div>
-                    </div>
-                  </div>
-
-                  <div class="rg-copy">
-                    <div class="rg-kicker">GRIT GEAR HQ DIGITAL</div>
-                    <h3 class="rg-title">
-                      Prepared, Not Paranoid
-                      <span class="rg-sub">A Field Manual for Uncertain Times</span>
-                    </h3>
-
-                    <p class="rg-lede">Most people fail from bad decisions, not bad luck. This keeps you calm and functional under pressure.</p>
-
-                    <ul class="rg-bullets">
-                      <li><strong>Know what matters</strong> (and what doesn’t)</li>
-                      <li><strong>Avoid panic mistakes</strong> that compound problems</li>
-                      <li><strong>Focus money + energy</strong> where it actually helps</li>
-                    </ul>
-
-                    <div class="rg-urgency">
-                      <strong>Truth:</strong> gear is useless if your head isn’t right.
-                      <span class="rg-urgency2">This is the guide you re-read before storms, outages, and uncertainty.</span>
-                    </div>
-
-                    <div class="rg-ctaRow">
-                      <a class="rg-cta" href="https://cserpico.gumroad.com/l/ckmnum" target="_blank" rel="nofollow sponsored noopener">Buy Digital Guide — $5 →</a>
-                      <button class="rg-cta secondary" type="button" id="buyBothBtn2" aria-label="Buy both guides">Buy Both Guides →</button>
-                      <div class="rg-mini">
-                        <span class="rg-pill">Instant</span>
-                        <span class="rg-pill">Grounded</span>
-                        <span class="rg-pill">Mindset</span>
-                      </div>
-                    </div>
-
-                    <div class="pay-trust">Secure checkout via Gumroad • Instant download after purchase</div>
-                    <p class="rg-note"><em>Food fuels the body. This protects the mind.</em></p>
-                  </div>
-                </div>
-              </section>
-            </article>
-
-          </div>
-        </section>
-
-        <!-- SUPPORTING CAST -->
-        <section class="section" id="gear">
-          <h2 class="section-title">Supporting Cast: Gear Picks</h2>
-          <p>Same items, displayed as “ads” in the sidebars so your digital guides stay the star.</p>
-
-          <div class="front-features" style="grid-template-columns:1fr; margin-top:14px;">
-
-            <!-- MRE -->
-            <article class="gear-item" data-cat="food" data-price="9.10">
-              <section class="rg-feature" aria-label="MRE Entrée">
-                <div class="rg-wrap">
-                  <div class="rg-gallery">
-                    <div class="rg-badge-row">
-                      <span class="rg-badge">FIELD FOOD</span>
-                      <span class="rg-badge rg-badge--muted">Calories • Shelf-stable</span>
-                    </div>
-
-                    <div class="rg-stage" role="region" aria-label="MRE image">
-                      <div class="rg-slides" style="min-height:260px;">
-                        <figure class="rg-slide is-active">
-                          <img src="mre-chicken-burrito-bowl.jpg" alt="U.S. military contract MRE entree — Chicken Burrito Bowl" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Fuel first, comfort second.</figcaption>
-                        </figure>
-                      </div>
-                    </div>
-
-                    <div class="rg-trust">
-                      <div class="rg-stars">★★★★★</div>
-                      <div class="rg-trusttext"><strong>Grab-and-Go</strong> • Sealed • Simple</div>
-                    </div>
-                  </div>
-
-                  <div class="rg-copy">
-                    <div class="rg-kicker">FIELD FOOD</div>
-                    <h3 class="rg-title">MRE Entrée <span class="rg-sub">Chicken Burrito Bowl</span></h3>
-                    <p class="rg-lede">One in the truck. One in the kit. One for “oh crap.”</p>
-                    <ul class="rg-bullets">
-                      <li><strong>Factory sealed</strong> entrée pouch</li>
-                      <li><strong>Easy storage</strong> — cool and dry</li>
-                      <li><strong>Works anywhere</strong> — no kitchen needed</li>
-                    </ul>
-                    <div class="rg-ctaRow">
-                      <a class="rg-cta" href="https://ebay.us/m/hmyUnT" target="_blank" rel="nofollow sponsored noopener">Just $9.10 →</a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </article>
-
-            <article class="gear-item" aria-label="Gear note">
-              <div class="quote-box" id="quote">
-                <h3>Reminder</h3>
-                <p><strong>Civilization is a rumor.</strong> Your habits are what’s real.</p>
+            <div class="guide-cta-row">
+              <a href="https://cserpico.gumroad.com/l/xrvwpt" 
+                 class="guide-cta-primary" 
+                 target="_blank" 
+                 rel="nofollow noopener">
+                Buy Digital Guide — $3 →
+              </a>
+              
+              <div class="guide-meta">
+                <span class="guide-pill">Instant Download</span>
+                <span class="guide-pill">Printable</span>
+                <span class="guide-pill">No Fluff</span>
               </div>
-            </article>
+            </div>
 
+            <div class="guide-trust">
+              <div class="guide-stars">★★★★★</div>
+              <div class="guide-trust-text">Reader Rated • Focused • No Hype</div>
+            </div>
+          </article>
+
+          <!-- Guide 2: Prepared Not Paranoid -->
+          <article class="guide-card">
+            <span class="guide-badge">⚡ Digital Guide</span>
+            
+            <div class="guide-image-wrapper">
+              <img src="dm9iiqoyyg5d3ymdirfk4td4hei1 (1).png" 
+                   alt="Prepared Not Paranoid cover" 
+                   loading="lazy" />
+            </div>
+
+            <h3 class="guide-title">Prepared, Not Paranoid</h3>
+            <p class="guide-subtitle">A Field Manual for Uncertain Times</p>
+
+            <p class="guide-description">
+              Most people fail from bad decisions, not bad luck. This keeps you calm and functional under pressure.
+            </p>
+
+            <ul class="guide-features">
+              <li><strong>Know what matters</strong> (and what doesn't)</li>
+              <li><strong>Avoid panic mistakes</strong> that compound problems</li>
+              <li><strong>Focus money + energy</strong> where it actually helps</li>
+            </ul>
+
+            <div class="guide-highlight">
+              <strong>Truth:</strong>
+              <p>Gear is useless if your head isn't right. This is the guide you re-read before storms, outages, and uncertainty.</p>
+            </div>
+
+            <div class="guide-cta-row">
+              <a href="https://cserpico.gumroad.com/l/ckmnum" 
+                 class="guide-cta-primary" 
+                 target="_blank" 
+                 rel="nofollow sponsored noopener">
+                Buy Digital Guide — $5 →
+              </a>
+              
+              <div class="guide-meta">
+                <span class="guide-pill">Instant Download</span>
+                <span class="guide-pill">Grounded</span>
+                <span class="guide-pill">Mindset</span>
+              </div>
+            </div>
+
+            <div class="guide-trust">
+              <div class="guide-stars">★★★★★</div>
+              <div class="guide-trust-text">Reader Favorite • Practical • Grounded</div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Bundle Bar -->
+        <div class="bundle-bar">
+          <div class="bundle-left">
+            <p class="bundle-title">Start with mindset.</p>
+            <p class="bundle-sub">Buy the guides first. Then build the kit around decisions that won't collapse under stress.</p>
           </div>
-        </section>
+          <a class="bundle-cta" href="#digital-guides">Get Both Guides →</a>
+        </div>
+
+        <!-- Quote Box -->
+        <div class="quote-box">
+          <h3>Reminder</h3>
+          <p><strong>Civilization is a rumor.</strong> Your habits are what's real.</p>
+        </div>
 
         <footer>
           © <span id="year"></span> Serpico • GritGearHQ.com • <span style="opacity:.85;">Built for the rough stuff.</span>
@@ -1297,148 +1075,54 @@
 
       </div>
 
-      <!-- RIGHT SIDEBAR -->
-      <aside class="sidebar" aria-label="Right gear sidebar">
-        <div class="sidebar-stack">
+      <!-- RIGHT SIDEBAR - Gear Ads -->
+      <aside class="ad-sidebar" aria-label="Right gear ads">
+        <div class="ad-stack">
 
-          <div class="ad-shell">
-            <div class="ad-head">
-              <span class="tag">APPAREL</span>
-              <span class="hint">Rotating</span>
+          <!-- Hat Ad -->
+          <article class="gear-ad-card">
+            <div class="gear-ad-label">Gear Pick • Apparel</div>
+            <div class="gear-ad-content">
+              <div class="gear-ad-image">
+                <img src="blackfront.jpg" alt="Distressed dad hat" loading="lazy" />
+              </div>
+              <h3 class="gear-ad-title">Distressed Dad Hat</h3>
+              <p class="gear-ad-subtitle">Clean. Low-key. Built to last.</p>
+              <div class="gear-ad-price">$20</div>
+              <a href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times" 
+                 class="gear-ad-cta" 
+                 target="_blank" 
+                 rel="nofollow sponsored noopener">
+                View Details →
+              </a>
             </div>
-            <div class="ad-body">
+          </article>
 
-              <!-- HAT -->
-              <section class="rg-feature ad-card" aria-label="Distressed Dad Hat ad">
-                <div class="rg-wrap">
-                  <div class="rg-gallery" data-rotate="true" data-interval="3200">
-                    <div class="rg-badge-row">
-                      <span class="rg-badge">APPAREL</span>
-                      <span class="rg-badge rg-badge--muted">Low-profile • Distressed</span>
-                    </div>
-
-                    <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Dad hat images" tabindex="0">
-                      <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
-
-                      <div class="rg-slides">
-                        <figure class="rg-slide is-active">
-                          <img src="blackfront.jpg" alt="Dad hat black front" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Black — low-key grit.</figcaption>
-                        </figure>
-                        <figure class="rg-slide">
-                          <img src="distressed-dad-hat-charcoal-grey-front-6945b97b05443.png" alt="Dad hat charcoal front" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Charcoal — looks earned.</figcaption>
-                        </figure>
-                        <figure class="rg-slide">
-                          <img src="kakifront.jpg" alt="Dad hat khaki front" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Khaki — sun approved.</figcaption>
-                        </figure>
-                        <figure class="rg-slide">
-                          <img src="refront.jpg" alt="Dad hat model photo" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Built for rougher times.</figcaption>
-                        </figure>
-                      </div>
-
-                      <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
-                      <div class="rg-dots" aria-label="Choose image"></div>
-                    </div>
-
-                    <div class="rg-trust">
-                      <div class="rg-stars">★★★★★</div>
-                      <div class="rg-trusttext"><strong>Daily Wear</strong> • Comfortable • Subtle</div>
-                    </div>
-                  </div>
-
-                  <div class="rg-copy">
-                    <div class="rg-kicker">ROUGH GEAR</div>
-                    <h3 class="rg-title">Distressed Dad Hat <span class="rg-sub">Clean + low-key</span></h3>
-                    <p class="rg-lede">Not a costume. Just grit you can wear.</p>
-                    <div class="rg-ctaRow">
-                      <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times" target="_blank" rel="nofollow sponsored noopener">Shop — $20 →</a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
+          <!-- Hoodie Ad -->
+          <article class="gear-ad-card">
+            <div class="gear-ad-label">Gear Pick • Apparel</div>
+            <div class="gear-ad-content">
+              <div class="gear-ad-image">
+                <img src="hoodie-front.jpg" alt="Prepared hoodie" loading="lazy" />
+              </div>
+              <h3 class="gear-ad-title">Prepared Hoodie</h3>
+              <p class="gear-ad-subtitle">Warmth + mindset. Daily wear.</p>
+              <div class="gear-ad-price">$45</div>
+              <a href="https://grit-gear-hq.printful.me/product/prepared-not-panicked-unisex-hoodie" 
+                 class="gear-ad-cta" 
+                 target="_blank" 
+                 rel="nofollow sponsored noopener">
+                View Details →
+              </a>
             </div>
-          </div>
-
-          <div class="ad-shell">
-            <div class="ad-head">
-              <span class="tag">APPAREL</span>
-              <span class="hint">Rotating</span>
-            </div>
-            <div class="ad-body">
-
-              <!-- HOODIE -->
-              <section class="rg-feature ad-card" aria-label="Prepared Not Paranoid Hoodie ad">
-                <div class="rg-wrap">
-                  <div class="rg-gallery" data-rotate="true" data-interval="3400">
-                    <div class="rg-badge-row">
-                      <span class="rg-badge">APPAREL</span>
-                      <span class="rg-badge rg-badge--muted">Warmth • Daily wear</span>
-                    </div>
-
-                    <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Hoodie images" tabindex="0">
-                      <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
-
-                      <div class="rg-slides">
-                        <figure class="rg-slide is-active">
-                          <img src="hoodie-front.jpg" alt="Prepared Not Paranoid hoodie front" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Front — clean, daily wear.</figcaption>
-                        </figure>
-                        <figure class="rg-slide">
-                          <img src="ChatGPT%20Image%20Dec%2023%2C%202025%2C%2006_38_32%20PM.png" alt="Prepared Not Paranoid back graphic" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Back — Prepared, Not Paranoid.</figcaption>
-                        </figure>
-                        <figure class="rg-slide">
-                          <img src="ChatGPT%20Image%20Dec%2023%2C%202025%2C%2008_55_08%20PM.png" alt="Hoodie lifestyle" loading="lazy" decoding="async" />
-                          <figcaption class="rg-cap">Heavy feel. Real wear.</figcaption>
-                        </figure>
-                      </div>
-
-                      <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
-                      <div class="rg-dots" aria-label="Choose image"></div>
-                    </div>
-
-                    <div class="rg-trust">
-                      <div class="rg-stars">★★★★★</div>
-                      <div class="rg-trusttext"><strong>Cold Staple</strong> • Durable • No gimmicks</div>
-                    </div>
-                  </div>
-
-                  <div class="rg-copy">
-                    <div class="rg-kicker">ROUGH GEAR</div>
-                    <h3 class="rg-title">Prepared Hoodie <span class="rg-sub">Comfort + mindset</span></h3>
-                    <p class="rg-lede">Warm, durable, and built for everyday.</p>
-                    <div class="rg-ctaRow">
-                      <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/prepared-not-panicked-unisex-hoodie" target="_blank" rel="nofollow sponsored noopener">Shop — $45 →</a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-            </div>
-          </div>
+          </article>
 
         </div>
       </aside>
 
     </section>
-  </main>
 
-  <!-- Mobile Sticky CTA -->
-  <div class="sticky-cta" id="stickyCta" aria-label="Sticky call to action">
-    <div class="sticky-cta__inner">
-      <div class="sticky-cta__text">
-        Grab the guides → <span style="color:rgba(248,170,54,.95); font-weight:900;">$3 + $5</span> • Instant download
-      </div>
-      <div class="sticky-cta__actions">
-        <a class="btn btn-primary" href="#digital-grid">Get Guides</a>
-        <button class="btn btn-ghost" type="button" id="buyBothSticky">Buy Both</button>
-      </div>
-    </div>
-  </div>
+  </main>
 
   <button class="to-top" id="toTopBtn" type="button" aria-label="Back to top">Top</button>
 
@@ -1483,7 +1167,7 @@
       if(y) y.textContent = new Date().getFullYear();
     })();
 
-    /* Email submit (Formspree -> thanks2.html) */
+    /* Email submit */
     (function(){
       const form = document.getElementById('ggEmailForm');
       if(!form) return;
@@ -1540,110 +1224,6 @@
           }
           if(btn){ btn.disabled = false; btn.textContent = originalText; }
         }
-      });
-    })();
-
-    /* Buy both (opens both Gumroad links) */
-    (function(){
-      const guide1 = 'https://cserpico.gumroad.com/l/xrvwpt';
-      const guide2 = 'https://cserpico.gumroad.com/l/ckmnum';
-
-      function buyBoth(){
-        // user gesture required for popup blockers: keep it to two opens
-        window.open(guide1, '_blank', 'noopener');
-        window.open(guide2, '_blank', 'noopener');
-      }
-
-      ['buyBothBtn1','buyBothBtn2','buyBothSticky'].forEach(id => {
-        const el = document.getElementById(id);
-        if(el) el.addEventListener('click', buyBoth);
-      });
-    })();
-
-    /* Sticky CTA visibility (mobile only) */
-    (function(){
-      const sticky = document.getElementById('stickyCta');
-      if(!sticky) return;
-
-      function toggle(){
-        const isMobile = window.matchMedia('(max-width: 980px)').matches;
-        sticky.style.display = (isMobile && window.scrollY > 420) ? 'block' : 'none';
-      }
-      window.addEventListener('scroll', toggle, { passive:true });
-      window.addEventListener('resize', toggle);
-      toggle();
-    })();
-
-    /* Carousel engine */
-    (function(){
-      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      function initGallery(gallery){
-        const stage = gallery.querySelector('.rg-stage');
-        const slides = Array.from(gallery.querySelectorAll('.rg-slide'));
-        if(!stage || slides.length < 2) return;
-
-        const prevBtn = stage.querySelector('.rg-prev');
-        const nextBtn = stage.querySelector('.rg-next');
-        const dotsWrap = stage.querySelector('.rg-dots');
-
-        if(dotsWrap){
-          dotsWrap.innerHTML = '';
-          slides.forEach((_, i) => {
-            const b = document.createElement('button');
-            b.type = 'button';
-            b.className = 'rg-dot' + (i === 0 ? ' is-active' : '');
-            b.setAttribute('aria-label', 'Image ' + (i+1));
-            dotsWrap.appendChild(b);
-          });
-        }
-        const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll('.rg-dot')) : [];
-
-        let idx = slides.findIndex(s => s.classList.contains('is-active'));
-        if(idx < 0) idx = 0;
-
-        function show(i){
-          idx = (i + slides.length) % slides.length;
-          slides.forEach((s, n) => s.classList.toggle('is-active', n === idx));
-          dots.forEach((d, n) => d.classList.toggle('is-active', n === idx));
-        }
-
-        function next(){ show(idx + 1); }
-        function prev(){ show(idx - 1); }
-
-        if(nextBtn) nextBtn.addEventListener('click', () => { stop(); next(); start(); });
-        if(prevBtn) prevBtn.addEventListener('click', () => { stop(); prev(); start(); });
-        dots.forEach((d, n) => d.addEventListener('click', () => { stop(); show(n); start(); }));
-
-        stage.addEventListener('keydown', (e) => {
-          if(e.key === 'ArrowRight'){ e.preventDefault(); stop(); next(); start(); }
-          if(e.key === 'ArrowLeft'){ e.preventDefault(); stop(); prev(); start(); }
-        });
-
-        const rotate = !reduceMotion && (gallery.getAttribute('data-rotate') || '').toLowerCase() === 'true';
-        const interval = parseInt(gallery.getAttribute('data-interval') || '3200', 10);
-        let timer = null;
-
-        function start(){
-          if(!rotate) return;
-          stop();
-          timer = setInterval(next, Math.max(1200, interval));
-        }
-        function stop(){
-          if(timer){ clearInterval(timer); timer = null; }
-        }
-
-        gallery.addEventListener('mouseenter', stop);
-        gallery.addEventListener('mouseleave', start);
-        gallery.addEventListener('focusin', stop);
-        gallery.addEventListener('focusout', start);
-
-        show(idx);
-        start();
-      }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.rg-gallery').forEach(initGallery);
       });
     })();
   </script>
