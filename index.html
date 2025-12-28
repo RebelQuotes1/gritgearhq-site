@@ -4,977 +4,1648 @@
   <meta charset="UTF-8" />
   <title>Grit Gear HQ – Survival Field Guides & Real-World Preparedness</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Digital-first survival field guides + practical gear picks that hold up when life gets real. Readiness without paranoia." />
-  <meta name="theme-color" content="#050608" />
+  <meta name="description" content="Digital survival field guides + practical gear picks. Built for real life, not fear porn." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Grit Gear HQ – Prepared, Not Paranoid" />
-  <meta property="og:description" content="Digital-first survival field guides + practical gear picks that hold up when life gets real." />
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Grit Gear HQ – Digital Survival Field Guides" />
+  <meta property="og:description" content="Instant-download field guides + practical gear picks that actually hold up when life gets real." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gritgearhq.com/" />
+  <!-- <meta property="og:image" content="https://gritgearhq.com/og.jpg" /> -->
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Ads (keep only ONE instance – keep your client id) -->
+  <!-- Google Ads (keep only ONE instance) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
+  <!-- Performance hint for hero image (optional) -->
+  <link rel="preload" as="image" href="respon.jpg" />
+
   <style>
-    /* =========================================================
-       TOKENS
-    ========================================================= */
     :root{
       --bg:#050608;
-      --bg2:#0b0f15;
+      --bg-alt:#0b0f15;
       --panel:#121823;
-      --panel2:#171f2b;
-      --stroke:rgba(255,255,255,.08);
-      --ink:#e7ecef;
-      --muted:rgba(231,236,239,.72);
-      --soft:rgba(231,236,239,.12);
-
+      --panel-soft:#171f2b;
       --accent:#f8aa36;
-      --accent2:#f1870a;
-
-      --r:18px;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --shadow2: 0 8px 30px rgba(0,0,0,.45);
-
-      --max: 1280px;
-      --gap: 18px;
+      --accent-deep:#f1870a;
+      --ink:#e7ecef;
+      --ink-soft:#a3adbd;
+      --radius-lg:18px;
+      --radius-md:14px;
+      --radius-pill:999px;
+      --max-width:1320px;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:
-        radial-gradient(900px 450px at 20% -10%, rgba(248,170,54,.10), transparent 65%),
-        radial-gradient(900px 450px at 80% 0%, rgba(241,135,10,.08), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
+    *{ box-sizing:border-box; }
+    html,body{
+      margin:0; padding:0;
+      background: radial-gradient(1200px 600px at 50% -200px, #1e2634 0%, #050608 60%) fixed;
       color:var(--ink);
-      line-height:1.35;
+      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+      overflow-x:hidden;
+    }
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    img{ max-width:100%; display:block; height:auto; }
+    .wrap{ max-width: var(--max-width); margin:0 auto; padding: 14px 18px 56px; }
+    @media (max-width:780px){ .wrap{ padding: 10px 14px 92px; } } /* extra bottom room for sticky bar */
+
+    /* Prevent weird “PC layout all over” caused by long filenames/URLs */
+    .wrap, .center, .sidebar, .rg-wrap, .rg-copy, .rg-gallery, .ad-shell, .bundle-bar, .email-card {
+      min-width: 0;
     }
 
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 40px;}
+    .skip-link{ position:absolute; left:-999px; top:10px; padding:10px 12px; background:#0b0e14; border:1px solid rgba(255,255,255,0.10); border-radius:10px; color:var(--ink); z-index:9999; }
+    .skip-link:focus{ left:12px; }
 
-    /* =========================================================
-       TOP BAR
-    ========================================================= */
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(5,6,8,.72);
-      border-bottom: 1px solid var(--stroke);
+    /* HEADER */
+    header{
+      z-index: 50;
+      background: rgba(5,6,8,0.96);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-top: var(--safe-top);
+      backdrop-filter: blur(8px);
     }
-    .topbar-inner{
-      max-width:var(--max);
+    @media (min-width:900px){ header{ position:sticky; top:0; } }
+
+    .nav-bar{
+      max-width: var(--max-width);
       margin:0 auto;
-      padding:12px 16px;
-      display:flex; align-items:center; gap:12px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      min-width: 220px;
-    }
-    .logo{
-      width:36px; height:36px; border-radius:12px;
-      background:
-        radial-gradient(12px 12px at 30% 25%, rgba(255,255,255,.18), transparent 60%),
-        linear-gradient(135deg, rgba(248,170,54,.85), rgba(241,135,10,.55));
-      box-shadow: 0 10px 35px rgba(248,170,54,.14);
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .brand h1{
-      margin:0; font-size:14px; letter-spacing:.4px;
-      text-transform:uppercase;
-    }
-    .brand .tag{
-      margin:2px 0 0; font-size:12px; color:var(--muted);
-    }
-
-    .nav{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-left:auto;
+      padding: 10px 18px 8px;
+      display:flex;
       align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
     }
-    .pill{
-      font-size:12px;
-      padding:9px 10px;
-      border-radius:999px;
-      border:1px solid var(--stroke);
-      background: rgba(255,255,255,.03);
+    @media (max-width:780px){ .nav-bar{ padding: 8px 14px 8px; } }
+
+    .brand{ display:flex; align-items:center; gap:10px; min-width:0; }
+    .brand-mark{
+      width:34px; height:34px; border-radius:50%;
+      display:grid; place-items:center;
+      background: radial-gradient(circle at 30% 10%, #f9e2b4 0%, var(--accent-deep) 35%, #36210d 70%, #050608 100%);
+      font-weight:900; font-size:0.82rem; letter-spacing:0.10em;
+      flex:0 0 auto;
     }
-    .pill:hover{border-color: rgba(248,170,54,.35)}
-    .cta{
-      font-weight:700;
-      border-color: rgba(248,170,54,.45);
-      background: linear-gradient(180deg, rgba(248,170,54,.18), rgba(255,255,255,.04));
+    .brand-text{ display:flex; flex-direction:column; gap:1px; min-width:0; }
+    .brand-text span:first-child{
+      font-weight:900; text-transform:uppercase; letter-spacing:0.14em;
+      font-size:0.88rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      max-width:72vw;
+    }
+    .brand-text span:last-child{
+      font-size:0.78rem; color:var(--ink-soft);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      max-width:72vw;
     }
 
-    /* =========================================================
-       DESKTOP HIERARCHY LAYOUT
-       LEFT (gear wall) | CENTER (brain) | RIGHT (lifestyle proof)
-    ========================================================= */
-    .grid{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns: 320px 1fr 320px;
-      gap: var(--gap);
-      align-items:start;
-    }
+    .nav-links{ display:flex; align-items:center; gap:18px; font-size:0.92rem; }
+    .nav-links a{ color:var(--ink-soft); }
+    .nav-links a:hover{ color:var(--ink); text-decoration:none; }
 
-    /* Side columns: sticky scroll wells on desktop */
-    .side{
-      position: sticky;
-      top: 76px;
-      max-height: calc(100vh - 96px);
-      overflow:auto;
-      padding-right: 6px;
-    }
-    .side::-webkit-scrollbar{width:8px}
-    .side::-webkit-scrollbar-thumb{background: rgba(255,255,255,.08); border-radius:999px}
-    .side::-webkit-scrollbar-track{background: transparent}
-
-    .center{
-      min-height: 65vh;
-    }
-
-    /* =========================================================
-       CARD + MODULES
-    ========================================================= */
-    .card{
-      background: linear-gradient(180deg, rgba(18,24,35,.95), rgba(11,15,21,.92));
-      border: 1px solid var(--stroke);
-      border-radius: var(--r);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-    }
-    .card + .card{margin-top: var(--gap)}
-    .card-h{
-      padding:12px 14px;
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      border-bottom:1px solid rgba(255,255,255,.06);
-      background: rgba(255,255,255,.02);
-    }
-    .kicker{
-      display:inline-flex; align-items:center; gap:8px;
-      font-size:11px;
-      letter-spacing:.9px;
-      text-transform:uppercase;
-      color: rgba(248,170,54,.9);
-    }
-    .kdot{
-      width:8px; height:8px; border-radius:999px;
-      background: rgba(248,170,54,.9);
-      box-shadow: 0 0 16px rgba(248,170,54,.35);
-    }
-    .meta{
-      font-size:11px;
-      color: var(--muted);
-    }
-    .card-b{padding:14px}
+    .nav-cta{ display:flex; gap:10px; }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:11px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(248,170,54,.35);
-      background: linear-gradient(180deg, rgba(248,170,54,.20), rgba(241,135,10,.10));
-      color: var(--ink);
-      font-weight:800;
+      padding:10px 16px;
+      border-radius: var(--radius-pill);
+      border:1px solid transparent;
+      font-size:0.83rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
       cursor:pointer;
+      white-space:nowrap;
       user-select:none;
+      -webkit-tap-highlight-color: transparent;
+      min-height:44px;
     }
-    .btn:hover{transform: translateY(-1px)}
-    .btn:active{transform: translateY(0px)}
-    .btn.secondary{
-      border-color: rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
+    .btn-primary{
+      background: radial-gradient(circle at 20% 0%, #ffe4b0 0%, var(--accent-deep) 32%, var(--accent) 100%);
+      border-color: rgba(0,0,0,0.85);
+      color:#1b1207;
+    }
+    .btn-ghost{
+      border-color: rgba(255,255,255,0.10);
+      background: rgba(10,12,16,0.80);
+      color: var(--ink-soft);
+    }
+
+    .nav-toggle{
+      display:none;
+      width:44px; height:44px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(8,10,14,0.96);
+      color: var(--ink);
+      font-size:1.25rem;
+      align-items:center; justify-content:center;
+      flex:0 0 auto;
+    }
+    @media (max-width:780px){
+      .nav-links, .nav-cta{ display:none; }
+      .nav-toggle{ display:inline-flex; margin-left:auto; }
+      .nav-open .nav-links,
+      .nav-open .nav-cta{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        background:#06080d;
+        border-radius:16px;
+        border:1px solid rgba(255,255,255,0.10);
+        padding:12px;
+        width:100%;
+        gap:10px;
+      }
+      .nav-open .nav-links a{
+        padding:10px;
+        border-radius:12px;
+        background: rgba(10,12,16,0.55);
+        border: 1px solid rgba(255,255,255,0.06);
+      }
+      .nav-open .nav-links a:hover{ text-decoration:none; border-color: rgba(248,170,54,0.25); }
+      .nav-open .nav-cta a{ width:100%; }
+    }
+
+    /* HERO BANNER */
+    .hero-banner{ margin: 10px auto 18px; max-width: var(--max-width); padding: 0 18px; }
+    .hero-banner__inner{
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.07);
+      box-shadow:0 18px 40px rgba(0,0,0,0.70);
+      background: rgba(10,12,16,0.92);
+    }
+    .hero-banner__img{ width:100%; height:auto; display:block; }
+    @media (max-width:780px){
+      .hero-banner{ margin:8px auto 14px; padding: 0 14px; }
+      .hero-banner__inner{ border-radius:14px; }
+    }
+
+    /* HERO */
+    .hero{ padding-top: 16px; padding-bottom: 10px; }
+    .hero-inner{ display:grid; grid-template-columns: 1.35fr 1.15fr; gap:22px; align-items:start; }
+    @media (max-width:980px){ .hero-inner{ grid-template-columns:1fr; } }
+
+    .hero-kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:4px 10px;
+      border-radius: var(--radius-pill);
+      border:1px solid rgba(248,170,54,0.4);
+      background: rgba(7,9,13,0.9);
+      font-size:0.75rem;
+      color: var(--ink-soft);
+    }
+    .hero-title{ font-size: clamp(2.0rem, 4.2vw + 1rem, 3rem); line-height:1.1; margin:12px 0 12px; }
+    .accent{ background: linear-gradient(90deg, #ffe1a5, var(--accent-deep)); -webkit-background-clip:text; color:transparent; }
+    .hero-sub{ color: var(--ink-soft); font-size:1rem; max-width:46rem; margin:0; line-height:1.5; }
+    .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    @media (max-width:420px){ .hero-actions a{ width:100%; } }
+    .hero-hint{ margin-top:10px; font-size:0.82rem; color: var(--ink-soft); }
+
+    /* DIGITAL STAR PANEL */
+    .hero-featured{
+      background: var(--panel);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding:16px;
+      box-shadow:0 14px 28px rgba(0,0,0,0.70);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-featured:before{
+      content:"";
+      position:absolute;
+      inset:-40px -80px auto auto;
+      width:220px; height:220px;
+      background: radial-gradient(circle at 30% 30%, rgba(248,170,54,0.28), transparent 60%);
+      pointer-events:none;
+    }
+    .featured-label{
+      font-size:0.72rem;
+      padding:3px 8px;
+      background: rgba(6,8,11,0.92);
+      border-radius: var(--radius-pill);
+      display:inline-block;
+      margin-bottom:10px;
+      border:1px solid rgba(255,255,255,0.06);
+      color: var(--ink-soft);
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+    .featured-title{ margin:0 0 6px; font-size:1.15rem; line-height:1.25; color: var(--ink); }
+    .featured-excerpt{ font-size:0.92rem; color: var(--ink-soft); line-height:1.5; margin:0 0 12px; }
+    .featured-link{
+      display:inline-flex; align-items:center; gap:8px;
+      font-weight:900; letter-spacing:0.02em; text-transform:uppercase;
+      font-size:0.82rem;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(248,170,54,0.35);
+      background: rgba(10,12,16,0.65);
+      color:var(--ink);
+    }
+    .featured-link:hover{ text-decoration:none; border-color: rgba(248,170,54,0.55); }
+    .featured-footer{
+      display:flex; flex-wrap:wrap; gap:10px 14px;
+      align-items:center; justify-content:space-between;
+      margin-top:12px; padding-top:12px;
+      border-top:1px solid rgba(255,255,255,0.06);
+      color: var(--ink-soft);
+      font-size:0.82rem;
+    }
+    .featured-tags{ display:flex; flex-wrap:wrap; gap:8px; }
+    .featured-pill{
+      padding:6px 10px;
+      border-radius: var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.06);
+      background: rgba(6,8,11,0.6);
+      color: var(--ink-soft);
+      font-size:0.78rem;
       font-weight:700;
     }
 
-    /* =========================================================
-       HERO (CENTERPIECE ABOVE FOLD)
-    ========================================================= */
-    .hero{
-      padding:22px 18px;
+    /* PAGE GRID */
+    .page-grid{
+      display:grid;
+      grid-template-columns: 320px minmax(0, 1fr) 320px;
+      gap:18px;
+      align-items:start;
+      margin-top: 10px;
+    }
+    @media (max-width:1280px){
+      .page-grid{ grid-template-columns: 300px minmax(0, 1fr) 300px; }
+    }
+    @media (max-width:1120px){
+      .page-grid{ grid-template-columns: 1fr; gap:16px; }
+    }
+
+    .sidebar{ align-self:start; }
+    @media (min-width:1121px){
+      .sidebar{
+        position: sticky;
+        top: calc(72px + var(--safe-top));
+      }
+    }
+    .sidebar-stack{ display:flex; flex-direction:column; gap:14px; }
+
+    /* Sidebar “ad” cards */
+    .ad-shell{
+      background: rgba(9,12,18,0.72);
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.55);
+      overflow:hidden;
+    }
+    .ad-head{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 12px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00));
+    }
+    .ad-head .tag{
+      font-size:.72rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:900;
+      color: rgba(248,170,54,.95);
+    }
+    .ad-head .hint{
+      font-size:.78rem;
+      color: rgba(231,236,239,.70);
+      font-weight:700;
+    }
+    .ad-body{ padding:12px; }
+
+    .center{ min-width:0; }
+
+    .section{ margin-top: 24px; }
+    .section-title{ font-size:1.15rem; text-transform:uppercase; letter-spacing:0.12em; margin:0 0 8px; }
+    .section p{ color: var(--ink-soft); margin-top:0; line-height:1.5; }
+
+    .gear-item{
+      display:block;
+      background: transparent;
+      border-radius: 16px;
+      min-width:0;
+    }
+
+    /* RG FEATURE MODULE */
+    .rg-feature{
+      --bg: #0b0e14;
+      --card: rgba(255,255,255,0.04);
+      --stroke: rgba(255,255,255,0.10);
+      --text: #e7ecef;
+      --muted: #9aa3b4;
+      --accent: #f8aa36;
+      --shadow: 0 14px 40px rgba(0,0,0,0.55);
+      margin: 0;
+      padding: 0;
+    }
+    .rg-wrap{
+      background: var(--bg);
+      border:1px solid var(--stroke);
+      border-radius:14px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      height:100%;
+      min-width:0;
+    }
+    @media (max-width:980px){
+      .rg-wrap{ grid-template-columns:1fr; }
+      .rg-copy{ border-left:none !important; border-top:1px solid var(--stroke); }
+    }
+    .rg-gallery{
+      padding:18px 18px 14px;
       background:
-        radial-gradient(700px 240px at 50% 0%, rgba(248,170,54,.14), transparent 70%),
-        linear-gradient(180deg, rgba(255,255,255,.03), transparent 55%);
+        radial-gradient(700px 300px at 20% 10%, rgba(248,170,54,0.10), transparent 55%),
+        radial-gradient(600px 240px at 90% 30%, rgba(255,255,255,0.06), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+      min-width:0;
     }
-    .hero h2{
-      margin:0 0 8px;
-      font-size: 28px;
-      letter-spacing:.2px;
-    }
-    .hero p{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-      max-width: 62ch;
-    }
-    .hero-actions{
-      margin-top:14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .hero-strip{
-      margin-top:14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      color: rgba(231,236,239,.76);
-      font-size:12px;
-    }
-    .chip{
-      padding:8px 10px;
+    .rg-badge-row{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px; }
+    .rg-badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px;
+      font-size:0.72rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
+      background: rgba(248,170,54,0.16);
+      color: var(--text);
+      border:1px solid rgba(248,170,54,0.22);
+      font-weight:900;
+    }
+    .rg-badge--muted{
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.10);
+      color: var(--muted);
+      letter-spacing:0.08em;
+      font-weight:800;
     }
 
-    /* =========================================================
-       CONTENT STACK (CENTER)
-    ========================================================= */
-    .stack{display:grid; gap: var(--gap); margin-top: var(--gap);}
-    .two{
-      display:grid; gap: var(--gap);
-      grid-template-columns: 1fr 1fr;
+    .rg-stage{
+      position:relative;
+      background: rgba(0,0,0,0.35);
+      border:1px solid var(--stroke);
+      border-radius:14px;
+      padding:10px 10px 44px;
+      overflow:hidden;
+      touch-action: pan-y;
+    }
+    .rg-slides{ position:relative; min-height:340px; }
+    @media (max-width:520px){ .rg-slides{ min-height:240px; } }
+
+    .rg-slide{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      opacity:0;
+      transform: translateY(10px);
+      transition: opacity .35s ease, transform .35s ease;
+      pointer-events:none;
+      margin:0;
+    }
+    .rg-slide.is-active{
+      opacity:1;
+      transform: translateY(0);
+      pointer-events:auto;
+    }
+    .rg-slide img{
+      width:100%;
+      height:auto;
+      max-height:320px;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 22px rgba(0,0,0,0.55));
+    }
+    @media (max-width:520px){ .rg-slide img{ max-height:220px; } }
+
+    .rg-cap{
+      margin-top:6px;
+      font-size:0.86rem;
+      color: var(--muted);
+      text-align:center;
+      padding: 0 6px;
     }
 
-    .truth{
-      border-left: 3px solid rgba(248,170,54,.75);
-      padding-left:12px;
-      margin: 10px 0;
-      color: rgba(231,236,239,.9);
+    .rg-nav{
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      width:44px; height:44px;
+      border-radius:12px;
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,0.45);
+      color: var(--text);
+      font-size:1.6rem;
+      line-height:1;
+      cursor:pointer;
+      z-index:5;
+      display:grid; place-items:center;
+      -webkit-tap-highlight-color: transparent;
+      user-select:none;
+    }
+    .rg-nav:hover{ border-color: rgba(248,170,54,0.35); }
+    .rg-prev{ left:10px; }
+    .rg-next{ right:10px; }
+    @media (max-width:520px){
+      .rg-nav{ width:40px; height:40px; }
+      .rg-prev{ left:8px; }
+      .rg-next{ right:8px; }
+    }
+
+    .rg-dots{
+      position:absolute;
+      bottom:10px; left:0; right:0;
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      z-index:6;
+    }
+    .rg-dot{
+      width:12px; height:12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.08);
+      cursor:pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .rg-dot.is-active{
+      background: var(--accent);
+      border-color: rgba(248,170,54,0.75);
+    }
+
+    .rg-trust{
+      display:flex; gap:10px; align-items:center;
+      margin-top:12px;
+      padding:10px 12px;
+      background: rgba(255,255,255,0.03);
+      border:1px solid var(--stroke);
+      border-radius:12px;
+      min-width:0;
+    }
+    .rg-stars{ color: var(--accent); letter-spacing:0.06em; flex:0 0 auto; font-weight:900; }
+    .rg-trusttext{ color: var(--muted); font-size:0.9rem; min-width:0; font-weight:700; }
+
+    .rg-copy{
+      padding:20px 20px 18px;
+      border-left:1px solid var(--stroke);
+      background:
+        radial-gradient(600px 260px at 20% 0%, rgba(248,170,54,0.08), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+      color: var(--text);
+      min-width:0;
+    }
+    .rg-kicker{
+      font-size:0.8rem;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color: var(--muted);
+      margin-bottom:8px;
+      font-weight:900;
+    }
+    .rg-title{ font-size:1.5rem; margin:0 0 10px; line-height:1.15; }
+    .rg-sub{ display:block; margin-top:4px; font-size:1.02rem; color: var(--muted); font-weight:650; }
+    .rg-lede{ margin:0 0 12px; color:#c7cbd1; line-height:1.55; font-weight:650; }
+    .rg-bullets{ margin:0 0 14px; padding-left:18px; color:#c7cbd1; line-height:1.55; font-weight:650; }
+    .rg-bullets li{ margin:8px 0; }
+    .rg-bullets strong{ color: var(--text); }
+
+    .rg-urgency{
+      margin:12px 0 14px;
+      padding:12px;
+      border-left:4px solid var(--accent);
+      background: rgba(0,0,0,0.25);
+      border-radius:10px;
+      color:#cfd4db;
+      border:1px solid rgba(255,255,255,0.06);
       font-weight:650;
     }
-    .muted{color:var(--muted)}
-    .bullets{margin:10px 0 0; padding-left:18px; color: rgba(231,236,239,.86)}
-    .bullets li{margin:6px 0}
+    .rg-urgency2{ display:block; margin-top:6px; color: var(--muted); font-size:0.92rem; }
 
-    /* =========================================================
-       ROTATOR (for your existing rotating cards)
-       This is a simple "slot" system.
-    ========================================================= */
-    .slot-note{
-      margin:8px 0 0;
-      padding:10px 12px;
-      border-radius: 12px;
-      border: 1px dashed rgba(248,170,54,.35);
-      color: rgba(231,236,239,.70);
-      font-size: 12px;
-      background: rgba(255,255,255,.02);
+    .rg-ctaRow{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .rg-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      background: var(--accent);
+      color:#000;
+      font-weight:950;
+      text-decoration:none;
+      letter-spacing:0.02em;
+      box-shadow: 0 10px 26px rgba(248,170,54,0.22);
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .12s ease, filter .12s ease;
+      gap:10px;
+      white-space:nowrap;
+      cursor:pointer;
+      border: 0;
     }
-
-    /* =========================================================
-       FIELD NOTES BOARD (MESSAGE BOARD)
-    ========================================================= */
-    .board-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--gap);
-    }
-    .form-row{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    label{
-      display:block;
-      font-size:12px;
-      color: rgba(231,236,239,.78);
-      margin: 10px 0 6px;
-    }
-    input, select, textarea{
-      width:100%;
-      padding: 11px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.25);
+    .rg-cta:hover{ filter: brightness(1.03); transform: translateY(-1px); text-decoration:none; }
+    .rg-cta.secondary{
+      background: rgba(10,12,16,0.65);
       color: var(--ink);
-      outline:none;
+      border: 1px solid rgba(248,170,54,0.35);
+      box-shadow:none;
     }
-    textarea{min-height: 120px; resize: vertical;}
-    input:focus, select:focus, textarea:focus{
-      border-color: rgba(248,170,54,.45);
-      box-shadow: 0 0 0 4px rgba(248,170,54,.10);
+    .rg-cta.secondary:hover{ border-color: rgba(248,170,54,0.55); }
+    .rg-mini{ display:flex; gap:8px; flex-wrap:wrap; }
+    .rg-pill{
+      font-size:0.78rem;
+      color: var(--muted);
+      background: rgba(255,255,255,0.03);
+      border:1px solid var(--stroke);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:750;
+    }
+    .rg-note{ margin:12px 0 0; color: var(--muted); font-size:0.92rem; line-height:1.55; font-weight:650; }
+
+    .pay-trust{
+      margin-top:10px;
+      font-size:.86rem;
+      color: rgba(231,236,239,.72);
+      font-weight:700;
     }
 
-    .board-list{
+    /* Sidebar “ad” compact adjustments */
+    .ad-card .rg-wrap{ grid-template-columns: 1fr; }
+    .ad-card .rg-gallery{ padding:12px; }
+    .ad-card .rg-copy{
+      padding:12px;
+      border-left:none;
+      border-top:1px solid rgba(255,255,255,0.10);
+    }
+    .ad-card .rg-slides{ min-height: 200px; }
+    .ad-card .rg-slide img{ max-height: 180px; }
+    .ad-card .rg-title{ font-size:1.08rem; }
+    .ad-card .rg-lede{ font-size:.92rem; }
+    .ad-card .rg-bullets{ display:none; }
+    .ad-card .rg-trust{ margin-top:10px; }
+    .ad-card .rg-cta{ width:100%; }
+
+    /* Center grids */
+    .front-features{
       display:grid;
-      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      align-items:stretch;
     }
-    .post{
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-    }
-    .post-top{
+    @media (max-width:980px){ .front-features{ grid-template-columns:1fr; } }
+
+    /* Bundle bar */
+    .bundle-bar{
+      margin-top:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(9,12,18,0.78);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.55);
+      padding:12px 14px;
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       justify-content:space-between;
-      gap: 10px;
-      margin-bottom: 6px;
+      gap:12px;
+      flex-wrap:wrap;
     }
-    .post h4{margin:0; font-size: 14px}
-    .badge{
-      font-size: 11px;
-      padding: 6px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(248,170,54,.30);
-      color: rgba(248,170,54,.95);
-      background: rgba(248,170,54,.08);
+    .bundle-left{ min-width:0; }
+    .bundle-title{ margin:0; font-weight:950; letter-spacing:.04em; font-size:1rem; }
+    .bundle-sub{
+      margin:4px 0 0;
+      color:rgba(231,236,239,.72);
+      font-weight:650;
+      font-size:.92rem;
+      line-height:1.35;
+    }
+    .bundle-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:12px;
+      background: linear-gradient(180deg,#f8aa36,#f1870a);
+      color:#0b0f15;
+      font-weight:1000;
+      letter-spacing:.4px;
+      border:1px solid rgba(0,0,0,.45);
+      box-shadow:0 10px 20px rgba(0,0,0,.35);
       white-space:nowrap;
     }
-    .post .small{
-      font-size: 12px;
-      color: rgba(231,236,239,.76);
-      margin: 6px 0 0;
+    .bundle-cta:hover{ text-decoration:none; filter:brightness(1.03); transform: translateY(-1px); }
+
+    /* EMAIL CAPTURE */
+    .email-card{
+      margin-top:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.10);
+      background:
+        radial-gradient(700px 300px at 15% 0%, rgba(248,170,54,0.14), transparent 55%),
+        rgba(9,12,18,0.78);
+      box-shadow:0 18px 40px rgba(0,0,0,0.60);
+      overflow:hidden;
     }
-    .post .body{
-      margin-top: 8px;
-      color: rgba(231,236,239,.86);
-      font-size: 13px;
-      white-space: pre-wrap;
+    .email-card__inner{
+      padding:14px 14px;
+      display:grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap:14px;
+      align-items:center;
     }
-    .post-actions{
-      display:flex; gap: 8px; flex-wrap:wrap;
-      margin-top: 10px;
+    @media (max-width:900px){
+      .email-card__inner{ grid-template-columns:1fr; }
     }
-    .tiny{
-      font-size: 12px;
-      padding: 9px 10px;
-      border-radius: 12px;
+    .email-copy h3{
+      margin:0 0 6px;
+      font-size:1.05rem;
+      font-weight:950;
+      letter-spacing:.02em;
+    }
+    .email-copy p{
+      margin:0;
+      color:rgba(231,236,239,.74);
+      font-weight:650;
+      line-height:1.45;
+      font-size:.95rem;
+    }
+    .email-points{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+      color:rgba(231,236,239,.72);
+      font-size:.88rem;
+      font-weight:700;
+    }
+    .email-points span{ display:inline-flex; align-items:center; gap:6px; }
+
+    .email-form{
+      display:grid;
+      gap:10px;
+      text-align:left;
+      background: rgba(0,0,0,.24);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px;
+      padding:12px;
+    }
+    .email-form label{
+      font-weight:900;
+      letter-spacing:.3px;
+      color:rgba(231,236,239,.90);
+      font-size:.92rem;
+    }
+    .email-form input[type="email"]{
+      width:100%;
+      margin-top:6px;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(15,18,26,.85);
+      color:#e7ecef;
+      outline:none;
+      font-weight:700;
+    }
+    .email-form input[type="email"]:focus{
+      border-color: rgba(248,170,54,0.45);
+      box-shadow: 0 0 0 3px rgba(248,170,54,0.12);
+    }
+    .email-btn{
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.45);
+      background:linear-gradient(180deg,#f8aa36,#f1870a);
+      color:#0b0f15;
+      font-weight:1000;
+      letter-spacing:.4px;
+      cursor:pointer;
+      box-shadow:0 10px 20px rgba(0,0,0,.35);
+      min-height:44px;
+    }
+    .email-btn:disabled{ opacity:.7; cursor:not-allowed; }
+    .email-status{
+      font-size:.88rem;
+      color: rgba(231,236,239,.72);
+      font-weight:700;
+      line-height:1.35;
+    }
+    .email-status.is-error{ color: #ffb4b4; }
+    .email-status.is-ok{ color: #b9ffcf; }
+
+    /* Quote box */
+    .quote-box{
+      margin-top: 18px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,0.08);
+      background: rgba(9,12,18,0.70);
+      box-shadow:0 14px 28px rgba(0,0,0,0.55);
+      padding:16px;
+    }
+    .quote-box h3{ margin:0 0 6px; font-size:.90rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(248,170,54,.95); }
+    .quote-box p{ margin:0; color:var(--ink-soft); font-weight:650; }
+
+    /* Back to top */
+    .to-top{
+      position: fixed;
+      right: 14px;
+      bottom: calc(14px + var(--safe-bottom) + 70px);
+      z-index: 999;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(10,12,16,0.78);
+      color: var(--ink-soft);
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.5);
+      -webkit-tap-highlight-color: transparent;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.75rem;
+    }
+    .to-top:hover{ color: var(--ink); border-color: rgba(248,170,54,0.25); }
+
+    footer{
+      margin-top: 40px;
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      text-align:center;
     }
 
-    .divider{
-      height:1px; background: rgba(255,255,255,.06);
-      margin: 12px 0;
+    /* Mobile Sticky CTA Bar (conversion booster) */
+    .sticky-cta{
+      position: fixed;
+      left: 0; right: 0;
+      bottom: 0;
+      padding-bottom: var(--safe-bottom);
+      z-index: 1000;
+      display:none;
+      background: rgba(5,6,8,0.92);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+    .sticky-cta__inner{
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 10px 14px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .sticky-cta__text{
+      min-width:0;
+      color: rgba(231,236,239,.78);
+      font-weight:800;
+      font-size:.88rem;
+    }
+    .sticky-cta__actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .sticky-cta__actions a, .sticky-cta__actions button{
+      min-height:44px;
+    }
+    @media (min-width: 981px){
+      .sticky-cta{ display:none !important; }
     }
 
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-    @media (max-width: 1080px){
-      .grid{grid-template-columns: 300px 1fr 300px;}
-    }
-    @media (max-width: 980px){
-      .grid{grid-template-columns: 1fr;}
-      .side{
-        position: relative;
-        top:auto;
-        max-height:none;
-        overflow: visible;
-        padding-right:0;
-      }
-      .two{grid-template-columns: 1fr;}
-      .board-grid{grid-template-columns: 1fr;}
-      .brand{min-width: 0}
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto !important; }
+      .rg-slide{ transition:none !important; }
+      .bundle-cta:hover, .rg-cta:hover{ transform:none !important; }
     }
   </style>
 </head>
 
 <body>
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand" aria-label="Grit Gear HQ">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>GRIT GEAR HQ</h1>
-          <div class="tag">Prepared, not paranoid.</div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="nav-bar" id="nav">
+      <div class="brand">
+        <div class="brand-mark">GG</div>
+        <div class="brand-text">
+          <span>GRIT GEAR HQ</span>
+          <span>Digital Field Guides + Practical Gear Picks</span>
         </div>
       </div>
 
-      <nav class="nav" aria-label="Site">
-        <a class="pill" href="#guides">Field Guides</a>
-        <a class="pill" href="#gear">Gear Picks</a>
-        <a class="pill" href="#apparel">Apparel</a>
-        <a class="pill cta" href="#field-notes">Field Notes</a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-controls="primaryNav"
+        aria-expanded="false"
+        id="navToggleBtn"
+      >☰</button>
+
+      <nav class="nav-links" aria-label="Primary" id="primaryNav">
+        <a href="index.html">Home</a>
+        <a href="blog-index.html">Field Guides</a>
+        <a href="store.html">Gear Picks</a>
+        <a href="grit-test.html">Grit Test</a>
+        <a href="about.html">About</a>
       </nav>
+
+      <div class="nav-cta">
+        <a href="#digital-grid" class="btn btn-ghost">Digital Guides</a>
+        <a href="#gear" class="btn btn-primary">Gear Picks</a>
+      </div>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="grid">
+  <section class="hero-banner" aria-label="Grit Gear HQ banner">
+    <div class="hero-banner__inner">
+      <img
+        src="respon.jpg"
+        alt="Survival banner"
+        class="hero-banner__img"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  </section>
 
-      <!-- ======================================================
-           LEFT: PRACTICAL GEAR WALL (affiliate/visual-first)
-           KEEP 100% of your existing gear content by pasting
-           your current gear cards/rotators into #leftGearSlot
-      ======================================================= -->
-      <aside class="side" aria-label="Gear picks" id="gear">
-        <div class="card">
-          <div class="card-h">
-            <div class="kicker"><span class="kdot"></span> Gear Picks</div>
-            <div class="meta">Practical • Tested vibe</div>
-          </div>
-          <div class="card-b">
-            <!-- PASTE YOUR EXISTING LEFT COLUMN GEAR ROTATORS/CARDS HERE -->
-            <div id="leftGearSlot">
-              <div class="slot-note">
-                <b>Paste your existing Gear cards here.</b><br>
-                Keep them exactly as-is. This layout makes them behave like a "gear wall" on desktop.
-              </div>
-            </div>
-          </div>
-        </div>
+  <main id="main" class="wrap">
 
-        <!-- OPTIONAL: ad container styled like a card (won't feel like an interrupt) -->
-        <div class="card">
-          <div class="card-h">
-            <div class="kicker"><span class="kdot"></span> Sponsor</div>
-            <div class="meta">Styled placement</div>
-          </div>
-          <div class="card-b">
-            <!-- If you use AdSense display ads, place the INS block here. -->
-            <div class="slot-note">
-              Optional: place an AdSense display unit here so it looks native, not like an interruption.
-            </div>
-          </div>
-        </div>
-      </aside>
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker">Digital-first • real-world readiness • no panic bait</div>
 
+          <h1 class="hero-title">
+            Learn it once.<br />
+            Use it when it <span class="accent">counts.</span>
+          </h1>
 
-      <!-- ======================================================
-           CENTER: THE BRAIN (hero + digital guides + philosophy + community)
-      ======================================================= -->
-      <section class="center" aria-label="Main content">
-
-        <!-- HERO ABOVE THE FOLD -->
-        <div class="card hero" role="region" aria-label="Prepared, not paranoid">
-          <h2>Prepared, Not Paranoid.</h2>
-          <p>
-            Digital-first survival field guides + gear picks for people who want calm, functional readiness
-            when life gets real. No theatrics. No cosplay. Just practical.
+          <p class="hero-sub">
+            Two short digital guides built for pressure moments — when your brain wants to freeze and you don’t have time to “figure it out.”
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#guides">Start with a Field Guide →</a>
-            <a class="btn secondary" href="#field-notes">Read Field Notes →</a>
+            <a href="#digital-grid" class="btn btn-primary">Get the Guides</a>
+            <a href="#gear" class="btn btn-ghost">See the Gear Picks</a>
           </div>
 
-          <div class="hero-strip">
-            <span class="chip">Decision-making under pressure</span>
-            <span class="chip">Low-drama preparedness</span>
-            <span class="chip">Gear that holds up</span>
-          </div>
+          <div class="hero-hint">Instant download • Printable • Focused • No fluff</div>
         </div>
 
-        <div class="stack">
-          <!-- DIGITAL GUIDES (PRIMARY SALE) -->
-          <div class="card" id="guides">
-            <div class="card-h">
-              <div class="kicker"><span class="kdot"></span> Field Guides</div>
-              <div class="meta">Digital • High margin • Your centerpiece</div>
+        <aside class="hero-featured" id="digital">
+          <div class="featured-label">Digital Guides (Featured)</div>
+
+          <h2 class="featured-title">Most “prep content” ignores the real problem:</h2>
+          <p class="featured-excerpt">
+            <strong>Hesitation, decision-making, and mental clarity under stress.</strong> These guides hit that directly.
+          </p>
+
+          <a class="featured-link" href="#digital-grid">Jump to the two digital guides →</a>
+
+          <div class="featured-footer">
+            <div class="featured-tags">
+              <span class="featured-pill">Instant</span>
+              <span class="featured-pill">Printable</span>
+              <span class="featured-pill">Practical</span>
             </div>
-            <div class="card-b">
-              <!-- PASTE YOUR EXISTING DIGITAL GUIDE CARDS/SECTIONS HERE -->
-              <div id="digitalGuidesSlot">
-                <div class="slot-note">
-                  <b>Paste your existing Digital Guides content here.</b><br>
-                  Keep 100% of it. This center column is now the hero on desktop (wider, calmer).
-                </div>
-              </div>
+            <div>Start here. Gear comes second.</div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="bundle-bar" aria-label="Bundle offer">
+        <div class="bundle-left">
+          <p class="bundle-title">Start with mindset.</p>
+          <p class="bundle-sub">Buy the guides first. Then build the kit around decisions that won’t collapse under stress.</p>
+        </div>
+        <a class="bundle-cta" href="#digital-grid">Buy the guides →</a>
+      </div>
+
+      <section class="email-card" aria-label="Email signup">
+        <div class="email-card__inner">
+          <div class="email-copy">
+            <h3>Get the <span class="accent">72-Hour Blackout Checklist</span> (Printable PDF)</h3>
+            <p>Short, useful, and calm. The stuff you actually use when lights go out and your brain starts negotiating.</p>
+            <div class="email-points">
+              <span>🔒 <strong>Private</strong></span>
+              <span>⚡ <strong>Instant</strong></span>
+              <span>🧾 <strong>Printable</strong></span>
             </div>
           </div>
 
-          <!-- TRUTH / PHILOSOPHY (short blocks, not essays) -->
-          <div class="two">
-            <div class="card">
-              <div class="card-h">
-                <div class="kicker"><span class="kdot"></span> The Mind</div>
-                <div class="meta">Readiness first</div>
+          <form id="ggEmailForm"
+                class="email-form"
+                action="https://formspree.io/f/mjgvbvpw"
+                method="POST">
+            <label>
+              Email address
+              <input type="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+            </label>
+
+            <input type="hidden" name="source" value="site-email-grab" />
+            <input type="hidden" name="incentive" value="GritGearHQ_Free_Checklist_Blackout_72hr.pdf" />
+
+            <button class="email-btn" type="submit">Send My Free Checklist →</button>
+            <div id="ggEmailStatus" class="email-status">No spam. If it sucks, unsubscribe in one click.</div>
+
+            <noscript>
+              <div class="email-status is-error" style="margin-top:8px;">
+                JavaScript is off. Submitting may still work, but the redirect won’t.
               </div>
-              <div class="card-b">
-                <div class="truth">Truth: Most people fail before the “decision point.”</div>
-                <p class="muted" style="margin:0">
-                  Gear is backup. Judgment is primary. If your head locks up, your pack doesn’t matter.
-                </p>
-                <ul class="bullets">
-                  <li>Recognize delay + cognitive friction</li>
-                  <li>Stop “perfect plan” paralysis</li>
-                  <li>Choose the next right move</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-h">
-                <div class="kicker"><span class="kdot"></span> The Rule</div>
-                <div class="meta">Simple, repeatable</div>
-              </div>
-              <div class="card-b">
-                <div class="truth">Truth: Calm is a skill — not a personality.</div>
-                <p class="muted" style="margin:0">
-                  You don’t rise to the occasion. You fall to your training.
-                </p>
-                <ul class="bullets">
-                  <li>Keep your decisions small & fast</li>
-                  <li>Prevent compounding mistakes</li>
-                  <li>Spend energy where it actually helps</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- ======================================================
-               FIELD NOTES (MESSAGE BOARD)
-               WORKS NOW: submit -> pending queue -> approve -> publish
-               (stored in visitor browser localStorage)
-               For real multi-user publishing, see "Backend Upgrade" note below
-          ======================================================= -->
-          <div class="card" id="field-notes">
-            <div class="card-h">
-              <div class="kicker"><span class="kdot"></span> Field Notes</div>
-              <div class="meta">Survival stories • Lessons learned • What actually worked</div>
-            </div>
-            <div class="card-b">
-
-              <p class="muted" style="margin:0 0 10px">
-                This is a field notebook, not social media. Keep it useful. No politics. No macho fantasies.
-                Real experiences or practical knowledge only.
-              </p>
-
-              <div class="board-grid">
-                <!-- SUBMIT -->
-                <div>
-                  <h3 style="margin:0 0 8px; font-size:16px;">Submit a Field Note</h3>
-
-                  <label for="fnType">Post type</label>
-                  <select id="fnType">
-                    <option>Survival Story</option>
-                    <option>Mistake Made</option>
-                    <option>Lesson Learned</option>
-                    <option>Gear That Failed</option>
-                    <option>What Actually Worked</option>
-                  </select>
-
-                  <div class="form-row">
-                    <div>
-                      <label for="fnName">Name (or call sign)</label>
-                      <input id="fnName" placeholder="e.g., RidgeRunner" maxlength="32" />
-                    </div>
-                    <div>
-                      <label for="fnLocation">Location (optional)</label>
-                      <input id="fnLocation" placeholder="e.g., Rural Arkansas" maxlength="40" />
-                    </div>
-                  </div>
-
-                  <label for="fnTitle">Title</label>
-                  <input id="fnTitle" placeholder="Short + specific (what happened?)" maxlength="70" />
-
-                  <label for="fnBody">Field Note (use this format)</label>
-                  <textarea id="fnBody" placeholder=
-"Scenario:
-What went wrong:
-What worked:
-Lesson:"
-                  ></textarea>
-
-                  <div class="form-row">
-                    <button class="btn tiny" id="submitNoteBtn" type="button">Submit for approval →</button>
-                    <button class="btn secondary tiny" id="clearFormBtn" type="button">Clear</button>
-                  </div>
-
-                  <div class="slot-note" style="margin-top:12px;">
-                    <b>Moderation:</b> Submissions go to a <i>Pending</i> queue. Approve them with the Admin button (below).
-                    <br><br>
-                    <b>Note:</b> This version stores posts in the visitor’s browser (localStorage). For true site-wide posts,
-                    use the backend upgrade notes in the footer.
-                  </div>
-                </div>
-
-                <!-- READ -->
-                <div>
-                  <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-                    <h3 style="margin:0; font-size:16px;">Published Notes</h3>
-                    <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                      <button class="btn secondary tiny" id="filterAllBtn" type="button">All</button>
-                      <button class="btn secondary tiny" id="filterUsefulBtn" type="button">Most useful</button>
-                      <button class="btn secondary tiny" id="openAdminBtn" type="button">Admin</button>
-                    </div>
-                  </div>
-
-                  <div class="divider"></div>
-
-                  <div class="board-list" id="publishedList" aria-live="polite"></div>
-
-                  <div class="divider"></div>
-
-                  <h3 style="margin:0 0 8px; font-size:16px;">Pending (approval queue)</h3>
-                  <div class="board-list" id="pendingList"></div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- CENTER EXTRA SLOT (KEEP 100% OF YOUR EXISTING CENTER CONTENT) -->
-          <div class="card">
-            <div class="card-h">
-              <div class="kicker"><span class="kdot"></span> More from Grit Gear HQ</div>
-              <div class="meta">Keep everything — just organized</div>
-            </div>
-            <div class="card-b">
-              <!-- PASTE ANY OTHER EXISTING CENTER CONTENT SECTIONS HERE -->
-              <div id="centerExtrasSlot">
-                <div class="slot-note">
-                  Paste any additional center content you already have (quotes, features, sections, etc.) here.
-                  Nothing gets deleted — this is where the “extra” center pieces live without cluttering the hero.
-                </div>
-              </div>
-            </div>
-          </div>
-
+            </noscript>
+          </form>
         </div>
       </section>
+    </section>
 
+    <!-- MAIN LAYOUT -->
+    <section class="page-grid" aria-label="Main layout">
 
-      <!-- ======================================================
-           RIGHT: LIFESTYLE PROOF (apparel, what we wear)
-           Keep 100% of existing apparel cards by pasting into #rightApparelSlot
-      ======================================================= -->
-      <aside class="side" aria-label="Apparel" id="apparel">
-        <div class="card">
-          <div class="card-h">
-            <div class="kicker"><span class="kdot"></span> Apparel</div>
-            <div class="meta">Lifestyle proof</div>
-          </div>
-          <div class="card-b">
-            <!-- PASTE YOUR EXISTING APPAREL ROTATORS/CARDS HERE -->
-            <div id="rightApparelSlot">
-              <div class="slot-note">
-                <b>Paste your existing Apparel cards here.</b><br>
-                This column stays clean: apparel only. It reinforces identity and trust.
-              </div>
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar" aria-label="Left gear sidebar">
+        <div class="sidebar-stack">
+
+          <div class="ad-shell">
+            <div class="ad-head">
+              <span class="tag">GEAR PICK</span>
+              <span class="hint">Rotating</span>
+            </div>
+            <div class="ad-body">
+
+              <!-- TENT -->
+              <section class="rg-feature ad-card" aria-label="Teepee-Style Tent ad">
+                <div class="rg-wrap">
+                  <div class="rg-gallery" data-rotate="true" data-interval="3400">
+                    <div class="rg-badge-row">
+                      <span class="rg-badge">SHELTER</span>
+                      <span class="rg-badge rg-badge--muted">Roomy • Quick setup</span>
+                    </div>
+
+                    <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Teepee tent images" tabindex="0">
+                      <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+                      <div class="rg-slides">
+                        <figure class="rg-slide is-active">
+                          <img src="tent-5.jpg" alt="Teepee tent front view" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Simple, clean, low-profile.</figcaption>
+                        </figure>
+                        <figure class="rg-slide">
+                          <img src="tent-2.jpg" alt="Teepee tent mesh interior" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Airflow + bug control.</figcaption>
+                        </figure>
+                        <figure class="rg-slide">
+                          <img src="tent-4.jpg" alt="Teepee tent alternate view" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Base-camp utility.</figcaption>
+                        </figure>
+                      </div>
+
+                      <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
+                      <div class="rg-dots" aria-label="Choose image"></div>
+                    </div>
+
+                    <div class="rg-trust">
+                      <div class="rg-stars">★★★★★</div>
+                      <div class="rg-trusttext"><strong>Shelter Pick</strong> • Roomy • Real utility</div>
+                    </div>
+                  </div>
+
+                  <div class="rg-copy">
+                    <div class="rg-kicker">FIELD SHELTER</div>
+                    <h3 class="rg-title">Teepee-Style Tent <span class="rg-sub">Sets up fast</span></h3>
+                    <p class="rg-lede">If you can’t stay dry, the rest becomes suffering.</p>
+                    <div class="rg-ctaRow">
+                      <a class="rg-cta" href="https://www.ebay.com/itm/388632792988?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339123670&toolid=80006&mkevt=1" target="_blank" rel="nofollow sponsored noopener">Shop — $69.99 →</a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
             </div>
           </div>
+
+          <div class="ad-shell">
+            <div class="ad-head">
+              <span class="tag">GEAR PICK</span>
+              <span class="hint">Rotating</span>
+            </div>
+            <div class="ad-body">
+
+              <!-- BACKPACK -->
+              <section class="rg-feature ad-card" aria-label="Rugged Utility Backpack ad">
+                <div class="rg-wrap">
+                  <div class="rg-gallery" data-rotate="true" data-interval="3200">
+                    <div class="rg-badge-row">
+                      <span class="rg-badge">CARRY</span>
+                      <span class="rg-badge rg-badge--muted">Work • Travel</span>
+                    </div>
+
+                    <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Backpack images" tabindex="0">
+                      <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+                      <div class="rg-slides">
+                        <figure class="rg-slide is-active">
+                          <img src="newbp.jpg" alt="Rugged utility backpack front view" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Low-key profile. Serious function.</figcaption>
+                        </figure>
+                        <figure class="rg-slide">
+                          <!-- URL-encoded spaces/commas for safer hosting -->
+                          <img src="ChatGPT%20Image%20Dec%2022%2C%202025%2C%2006_27_22%20PM.png" alt="Backpack lifestyle use" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Doesn’t scream “tactical.”</figcaption>
+                        </figure>
+                        <figure class="rg-slide">
+                          <img src="backp.jpg.png" alt="Backpack field view" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Built for daily punishment.</figcaption>
+                        </figure>
+                      </div>
+
+                      <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
+                      <div class="rg-dots" aria-label="Choose image"></div>
+                    </div>
+
+                    <div class="rg-trust">
+                      <div class="rg-stars">★★★★★</div>
+                      <div class="rg-trusttext"><strong>Workhorse</strong> • Organized • Durable</div>
+                    </div>
+                  </div>
+
+                  <div class="rg-copy">
+                    <div class="rg-kicker">ROUGH GEAR</div>
+                    <h3 class="rg-title">Utility Backpack <span class="rg-sub">Everyday carry</span></h3>
+                    <p class="rg-lede">Pack it the same way every time. Muscle memory saves time.</p>
+                    <div class="rg-ctaRow">
+                      <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rugged-utility-backpack-durable-everyday-carry-pack-with-laptop-compartment" target="_blank" rel="nofollow sponsored noopener">Shop — $55.99 →</a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
         </div>
+      </aside>
 
-        <!-- OPTIONAL: any existing right-column extras (keep 100%) -->
-        <div class="card">
-          <div class="card-h">
-            <div class="kicker"><span class="kdot"></span> Extras</div>
-            <div class="meta">Keep 100% content</div>
+      <!-- CENTER -->
+      <div class="center" aria-label="Center digital content">
+
+        <!-- DIGITAL GUIDES -->
+        <section class="section" id="digital-grid">
+          <h2 class="section-title">Digital Field Guides</h2>
+          <p>These are the main product. The sidebars are supporting cast.</p>
+
+          <div class="front-features">
+
+            <!-- GUIDE 1 -->
+            <article class="gear-item" data-cat="guide" data-price="3.00">
+              <section class="rg-feature" aria-label="When Violence Is the Only Answer">
+                <div class="rg-wrap">
+                  <div class="rg-gallery">
+                    <div class="rg-badge-row">
+                      <span class="rg-badge">DIGITAL GUIDE</span>
+                      <span class="rg-badge rg-badge--muted">Decision-Making • Psychology</span>
+                    </div>
+
+                    <div class="rg-stage" role="region" aria-label="When Violence guide cover">
+                      <div class="rg-slides">
+                        <figure class="rg-slide is-active">
+                          <img src="ChatGPT%20Image%20Dec%2026%2C%202025%2C%2012_56_48%20AM.png" alt="When Violence Is the Only Answer cover" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Recognition, hesitation, and the cost of delay.</figcaption>
+                        </figure>
+                      </div>
+                    </div>
+
+                    <div class="rg-trust">
+                      <div class="rg-stars">★★★★★</div>
+                      <div class="rg-trusttext"><strong>Reader Rated</strong> • Focused • No hype</div>
+                    </div>
+                  </div>
+
+                  <div class="rg-copy">
+                    <div class="rg-kicker">GRIT GEAR HQ DIGITAL</div>
+                    <h3 class="rg-title">
+                      When Violence Is the Only Answer
+                      <span class="rg-sub">Decision-Making at the Edge of Survival</span>
+                    </h3>
+
+                    <p class="rg-lede">Not tactics — the mind. Why people freeze, how hesitation forms, and what it costs.</p>
+
+                    <ul class="rg-bullets">
+                      <li><strong>Recognition delay</strong> and cognitive friction</li>
+                      <li><strong>Rules conditioning</strong> that slows response</li>
+                      <li><strong>Why observers</strong> judge moments wrong later</li>
+                    </ul>
+
+                    <div class="rg-urgency">
+                      <strong>Bottom line:</strong> most failures happen before the “decision point.”
+                      <span class="rg-urgency2">This guide sharpens the part that actually saves lives.</span>
+                    </div>
+
+                    <div class="rg-ctaRow">
+                      <a class="rg-cta" href="https://cserpico.gumroad.com/l/xrvwpt" target="_blank" rel="nofollow noopener">Buy Digital Guide — $3 →</a>
+                      <button class="rg-cta secondary" type="button" id="buyBothBtn1" aria-label="Buy both guides">Buy Both Guides →</button>
+                      <div class="rg-mini">
+                        <span class="rg-pill">Instant</span>
+                        <span class="rg-pill">Printable</span>
+                        <span class="rg-pill">No fluff</span>
+                      </div>
+                    </div>
+
+                    <div class="pay-trust">Secure checkout via Gumroad • Instant download after purchase</div>
+                    <p class="rg-note"><em>Read it once and you’ll spot hesitation everywhere.</em></p>
+                  </div>
+                </div>
+              </section>
+            </article>
+
+            <!-- GUIDE 2 -->
+            <article class="gear-item" data-cat="guide" data-price="5.00">
+              <section class="rg-feature" aria-label="Prepared Not Paranoid">
+                <div class="rg-wrap">
+                  <div class="rg-gallery">
+                    <div class="rg-badge-row">
+                      <span class="rg-badge">DIGITAL GUIDE</span>
+                      <span class="rg-badge rg-badge--muted">Readiness • Discernment</span>
+                    </div>
+
+                    <div class="rg-stage" role="region" aria-label="Prepared Not Paranoid guide cover">
+                      <div class="rg-slides">
+                        <figure class="rg-slide is-active">
+                          <img src="dm9iiqoyyg5d3ymdirfk4td4hei1%20(1).png" alt="Prepared, Not Paranoid cover" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Think clearly when it matters most.</figcaption>
+                        </figure>
+                      </div>
+                    </div>
+
+                    <div class="rg-trust">
+                      <div class="rg-stars">★★★★★</div>
+                      <div class="rg-trusttext"><strong>Reader Favorite</strong> • Practical • Grounded</div>
+                    </div>
+                  </div>
+
+                  <div class="rg-copy">
+                    <div class="rg-kicker">GRIT GEAR HQ DIGITAL</div>
+                    <h3 class="rg-title">
+                      Prepared, Not Paranoid
+                      <span class="rg-sub">A Field Manual for Uncertain Times</span>
+                    </h3>
+
+                    <p class="rg-lede">Most people fail from bad decisions, not bad luck. This keeps you calm and functional under pressure.</p>
+
+                    <ul class="rg-bullets">
+                      <li><strong>Know what matters</strong> (and what doesn’t)</li>
+                      <li><strong>Avoid panic mistakes</strong> that compound problems</li>
+                      <li><strong>Focus money + energy</strong> where it actually helps</li>
+                    </ul>
+
+                    <div class="rg-urgency">
+                      <strong>Truth:</strong> gear is useless if your head isn’t right.
+                      <span class="rg-urgency2">This is the guide you re-read before storms, outages, and uncertainty.</span>
+                    </div>
+
+                    <div class="rg-ctaRow">
+                      <a class="rg-cta" href="https://cserpico.gumroad.com/l/ckmnum" target="_blank" rel="nofollow sponsored noopener">Buy Digital Guide — $5 →</a>
+                      <button class="rg-cta secondary" type="button" id="buyBothBtn2" aria-label="Buy both guides">Buy Both Guides →</button>
+                      <div class="rg-mini">
+                        <span class="rg-pill">Instant</span>
+                        <span class="rg-pill">Grounded</span>
+                        <span class="rg-pill">Mindset</span>
+                      </div>
+                    </div>
+
+                    <div class="pay-trust">Secure checkout via Gumroad • Instant download after purchase</div>
+                    <p class="rg-note"><em>Food fuels the body. This protects the mind.</em></p>
+                  </div>
+                </div>
+              </section>
+            </article>
+
           </div>
-          <div class="card-b">
-            <div id="rightExtrasSlot">
-              <div class="slot-note">
-                Paste any existing right-side sections here (as-is).
+        </section>
+
+        <!-- SUPPORTING CAST -->
+        <section class="section" id="gear">
+          <h2 class="section-title">Supporting Cast: Gear Picks</h2>
+          <p>Same items, displayed as “ads” in the sidebars so your digital guides stay the star.</p>
+
+          <div class="front-features" style="grid-template-columns:1fr; margin-top:14px;">
+
+            <!-- MRE -->
+            <article class="gear-item" data-cat="food" data-price="9.10">
+              <section class="rg-feature" aria-label="MRE Entrée">
+                <div class="rg-wrap">
+                  <div class="rg-gallery">
+                    <div class="rg-badge-row">
+                      <span class="rg-badge">FIELD FOOD</span>
+                      <span class="rg-badge rg-badge--muted">Calories • Shelf-stable</span>
+                    </div>
+
+                    <div class="rg-stage" role="region" aria-label="MRE image">
+                      <div class="rg-slides" style="min-height:260px;">
+                        <figure class="rg-slide is-active">
+                          <img src="mre-chicken-burrito-bowl.jpg" alt="U.S. military contract MRE entree — Chicken Burrito Bowl" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Fuel first, comfort second.</figcaption>
+                        </figure>
+                      </div>
+                    </div>
+
+                    <div class="rg-trust">
+                      <div class="rg-stars">★★★★★</div>
+                      <div class="rg-trusttext"><strong>Grab-and-Go</strong> • Sealed • Simple</div>
+                    </div>
+                  </div>
+
+                  <div class="rg-copy">
+                    <div class="rg-kicker">FIELD FOOD</div>
+                    <h3 class="rg-title">MRE Entrée <span class="rg-sub">Chicken Burrito Bowl</span></h3>
+                    <p class="rg-lede">One in the truck. One in the kit. One for “oh crap.”</p>
+                    <ul class="rg-bullets">
+                      <li><strong>Factory sealed</strong> entrée pouch</li>
+                      <li><strong>Easy storage</strong> — cool and dry</li>
+                      <li><strong>Works anywhere</strong> — no kitchen needed</li>
+                    </ul>
+                    <div class="rg-ctaRow">
+                      <a class="rg-cta" href="https://ebay.us/m/hmyUnT" target="_blank" rel="nofollow sponsored noopener">Just $9.10 →</a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </article>
+
+            <article class="gear-item" aria-label="Gear note">
+              <div class="quote-box" id="quote">
+                <h3>Reminder</h3>
+                <p><strong>Civilization is a rumor.</strong> Your habits are what’s real.</p>
               </div>
+            </article>
+
+          </div>
+        </section>
+
+        <footer>
+          © <span id="year"></span> Serpico • GritGearHQ.com • <span style="opacity:.85;">Built for the rough stuff.</span>
+        </footer>
+
+      </div>
+
+      <!-- RIGHT SIDEBAR -->
+      <aside class="sidebar" aria-label="Right gear sidebar">
+        <div class="sidebar-stack">
+
+          <div class="ad-shell">
+            <div class="ad-head">
+              <span class="tag">APPAREL</span>
+              <span class="hint">Rotating</span>
+            </div>
+            <div class="ad-body">
+
+              <!-- HAT -->
+              <section class="rg-feature ad-card" aria-label="Distressed Dad Hat ad">
+                <div class="rg-wrap">
+                  <div class="rg-gallery" data-rotate="true" data-interval="3200">
+                    <div class="rg-badge-row">
+                      <span class="rg-badge">APPAREL</span>
+                      <span class="rg-badge rg-badge--muted">Low-profile • Distressed</span>
+                    </div>
+
+                    <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Dad hat images" tabindex="0">
+                      <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+                      <div class="rg-slides">
+                        <figure class="rg-slide is-active">
+                          <img src="blackfront.jpg" alt="Dad hat black front" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Black — low-key grit.</figcaption>
+                        </figure>
+                        <figure class="rg-slide">
+                          <img src="distressed-dad-hat-charcoal-grey-front-6945b97b05443.png" alt="Dad hat charcoal front" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Charcoal — looks earned.</figcaption>
+                        </figure>
+                        <figure class="rg-slide">
+                          <img src="kakifront.jpg" alt="Dad hat khaki front" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Khaki — sun approved.</figcaption>
+                        </figure>
+                        <figure class="rg-slide">
+                          <img src="refront.jpg" alt="Dad hat model photo" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Built for rougher times.</figcaption>
+                        </figure>
+                      </div>
+
+                      <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
+                      <div class="rg-dots" aria-label="Choose image"></div>
+                    </div>
+
+                    <div class="rg-trust">
+                      <div class="rg-stars">★★★★★</div>
+                      <div class="rg-trusttext"><strong>Daily Wear</strong> • Comfortable • Subtle</div>
+                    </div>
+                  </div>
+
+                  <div class="rg-copy">
+                    <div class="rg-kicker">ROUGH GEAR</div>
+                    <h3 class="rg-title">Distressed Dad Hat <span class="rg-sub">Clean + low-key</span></h3>
+                    <p class="rg-lede">Not a costume. Just grit you can wear.</p>
+                    <div class="rg-ctaRow">
+                      <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/rough-gear-distressed-dad-hat-built-for-rougher-times" target="_blank" rel="nofollow sponsored noopener">Shop — $20 →</a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
             </div>
           </div>
+
+          <div class="ad-shell">
+            <div class="ad-head">
+              <span class="tag">APPAREL</span>
+              <span class="hint">Rotating</span>
+            </div>
+            <div class="ad-body">
+
+              <!-- HOODIE -->
+              <section class="rg-feature ad-card" aria-label="Prepared Not Paranoid Hoodie ad">
+                <div class="rg-wrap">
+                  <div class="rg-gallery" data-rotate="true" data-interval="3400">
+                    <div class="rg-badge-row">
+                      <span class="rg-badge">APPAREL</span>
+                      <span class="rg-badge rg-badge--muted">Warmth • Daily wear</span>
+                    </div>
+
+                    <div class="rg-stage" role="region" aria-roledescription="carousel" aria-label="Hoodie images" tabindex="0">
+                      <button class="rg-nav rg-prev" type="button" aria-label="Previous image">‹</button>
+
+                      <div class="rg-slides">
+                        <figure class="rg-slide is-active">
+                          <img src="hoodie-front.jpg" alt="Prepared Not Paranoid hoodie front" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Front — clean, daily wear.</figcaption>
+                        </figure>
+                        <figure class="rg-slide">
+                          <img src="ChatGPT%20Image%20Dec%2023%2C%202025%2C%2006_38_32%20PM.png" alt="Prepared Not Paranoid back graphic" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Back — Prepared, Not Paranoid.</figcaption>
+                        </figure>
+                        <figure class="rg-slide">
+                          <img src="ChatGPT%20Image%20Dec%2023%2C%202025%2C%2008_55_08%20PM.png" alt="Hoodie lifestyle" loading="lazy" decoding="async" />
+                          <figcaption class="rg-cap">Heavy feel. Real wear.</figcaption>
+                        </figure>
+                      </div>
+
+                      <button class="rg-nav rg-next" type="button" aria-label="Next image">›</button>
+                      <div class="rg-dots" aria-label="Choose image"></div>
+                    </div>
+
+                    <div class="rg-trust">
+                      <div class="rg-stars">★★★★★</div>
+                      <div class="rg-trusttext"><strong>Cold Staple</strong> • Durable • No gimmicks</div>
+                    </div>
+                  </div>
+
+                  <div class="rg-copy">
+                    <div class="rg-kicker">ROUGH GEAR</div>
+                    <h3 class="rg-title">Prepared Hoodie <span class="rg-sub">Comfort + mindset</span></h3>
+                    <p class="rg-lede">Warm, durable, and built for everyday.</p>
+                    <div class="rg-ctaRow">
+                      <a class="rg-cta" href="https://grit-gear-hq.printful.me/product/prepared-not-panicked-unisex-hoodie" target="_blank" rel="nofollow sponsored noopener">Shop — $45 →</a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
         </div>
       </aside>
 
     </section>
-
-    <footer style="margin-top:22px; color:rgba(231,236,239,.65); font-size:12px;">
-      <div class="divider"></div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
-        <div>© <span id="year"></span> Serpico • Grit Gear HQ</div>
-        <div class="muted">“Civilization is an illusion. Grit is currency.”</div>
-      </div>
-
-      <div style="margin-top:10px; padding:12px 14px; border:1px solid rgba(255,255,255,.08); border-radius:14px; background:rgba(255,255,255,.03);">
-        <b>Backend upgrade for true public Field Notes (site-wide):</b><br>
-        This demo uses browser storage. To make Field Notes shared across all visitors, plug the same UI into:
-        <ul class="bullets">
-          <li><b>Fastest “no-server” approach:</b> Netlify Forms (submit to your email) + you manually post curated notes.</li>
-          <li><b>Best scalable approach:</b> Supabase or Firebase (store posts + admin approval + public feed).</li>
-        </ul>
-      </div>
-    </footer>
   </main>
 
-  <script>
-    // =========================================================
-    // BASIC UTIL
-    // =========================================================
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- Mobile Sticky CTA -->
+  <div class="sticky-cta" id="stickyCta" aria-label="Sticky call to action">
+    <div class="sticky-cta__inner">
+      <div class="sticky-cta__text">
+        Grab the guides → <span style="color:rgba(248,170,54,.95); font-weight:900;">$3 + $5</span> • Instant download
+      </div>
+      <div class="sticky-cta__actions">
+        <a class="btn btn-primary" href="#digital-grid">Get Guides</a>
+        <button class="btn btn-ghost" type="button" id="buyBothSticky">Buy Both</button>
+      </div>
+    </div>
+  </div>
 
-    const LS_KEYS = {
-      published: "grit_fieldnotes_published_v1",
-      pending: "grit_fieldnotes_pending_v1",
-      usefulSort: "grit_fieldnotes_sort_useful_v1",
-      admin: "grit_fieldnotes_admin_ok_v1"
-    };
+  <button class="to-top" id="toTopBtn" type="button" aria-label="Back to top">Top</button>
 
-    const nowISO = () => new Date().toISOString();
-    const uid = () => Math.random().toString(16).slice(2) + "-" + Date.now().toString(16);
+  <script defer>
+    /* Mobile nav toggle */
+    (function(){
+      const header = document.querySelector('header');
+      const btn = document.getElementById('navToggleBtn');
+      const nav = document.getElementById('primaryNav');
+      if(!btn || !header || !nav) return;
 
-    function loadLS(key, fallback){
-      try{
-        const raw = localStorage.getItem(key);
-        if(!raw) return fallback;
-        return JSON.parse(raw);
-      }catch(e){
-        return fallback;
-      }
-    }
-    function saveLS(key, value){
-      localStorage.setItem(key, JSON.stringify(value));
-    }
+      btn.addEventListener('click', () => {
+        const open = header.classList.toggle('nav-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
 
-    // Seed with a couple example posts (you can delete these later)
-    function ensureSeed(){
-      const pub = loadLS(LS_KEYS.published, []);
-      const pen = loadLS(LS_KEYS.pending, []);
-      if(pub.length === 0 && pen.length === 0){
-        const seed = [
-          {
-            id: uid(),
-            type: "Lesson Learned",
-            name: "RidgeRunner",
-            location: "Ozarks",
-            title: "I lost 30 minutes to indecision in a storm",
-            body: "Scenario:\nUnexpected storm hit while I was 'almost ready.'\n\nWhat went wrong:\nI kept optimizing instead of moving. I wanted perfect.\n\nWhat worked:\nI forced a 2-minute decision rule: shelter first, then heat.\n\nLesson:\nSmall fast decisions beat perfect plans.",
-            createdAt: nowISO(),
-            useful: 6
-          },
-          {
-            id: uid(),
-            type: "Gear That Failed",
-            name: "LowDramaPrep",
-            location: "",
-            title: "Cheap headlamp died at the worst time",
-            body: "Scenario:\nPower out for 8 hours.\n\nWhat went wrong:\nBargain batteries + cold.\n\nWhat worked:\nBackup light + lithium AAs.\n\nLesson:\nTest gear in the conditions you expect, not in your living room.",
-            createdAt: nowISO(),
-            useful: 4
-          }
-        ];
-        saveLS(LS_KEYS.published, seed);
-      }
-    }
-
-    // =========================================================
-    // RENDER
-    // =========================================================
-    const publishedList = document.getElementById("publishedList");
-    const pendingList = document.getElementById("pendingList");
-
-    function escapeHTML(str){
-      return (str || "").replace(/[&<>"']/g, m => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-      }[m]));
-    }
-
-    function fmtDate(iso){
-      try{
-        const d = new Date(iso);
-        return d.toLocaleDateString(undefined, {year:"numeric", month:"short", day:"numeric"});
-      }catch(e){
-        return "";
-      }
-    }
-
-    function isAdmin(){
-      return localStorage.getItem(LS_KEYS.admin) === "1";
-    }
-
-    function render(){
-      const published = loadLS(LS_KEYS.published, []);
-      const pending = loadLS(LS_KEYS.pending, []);
-      const sortUseful = loadLS(LS_KEYS.usefulSort, false);
-
-      // Sort published
-      const pubs = [...published].sort((a,b)=>{
-        if(sortUseful){
-          return (b.useful||0) - (a.useful||0);
+      nav.addEventListener('click', (e) => {
+        if(e.target && e.target.matches('a') && header.classList.contains('nav-open')){
+          header.classList.remove('nav-open');
+          btn.setAttribute('aria-expanded','false');
         }
-        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       });
+    })();
 
-      // Render published
-      publishedList.innerHTML = pubs.length ? pubs.map(p => `
-        <article class="post">
-          <div class="post-top">
-            <div>
-              <h4>${escapeHTML(p.title)}</h4>
-              <div class="small">
-                <b>${escapeHTML(p.name || "Anonymous")}</b>
-                ${p.location ? ` • ${escapeHTML(p.location)}` : ""}
-                • ${fmtDate(p.createdAt)}
-              </div>
-            </div>
-            <div class="badge">${escapeHTML(p.type)}</div>
-          </div>
+    /* Back to top */
+    (function(){
+      const toTop = document.getElementById('toTopBtn');
+      if(!toTop) return;
 
-          <div class="body">${escapeHTML(p.body)}</div>
+      function onScroll(){
+        toTop.style.display = (window.scrollY > 800) ? 'block' : 'none';
+      }
+      window.addEventListener('scroll', onScroll, { passive:true });
+      onScroll();
 
-          <div class="post-actions">
-            <button class="btn secondary tiny" type="button" onclick="voteUseful('${p.id}')">Useful • <span>${p.useful||0}</span></button>
-            ${isAdmin() ? `<button class="btn secondary tiny" type="button" onclick="removePublished('${p.id}')">Remove</button>` : ``}
-          </div>
-        </article>
-      `).join("") : `<div class="muted">No published notes yet. Be the first to submit one.</div>`;
+      toTop.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+    })();
 
-      // Render pending
-      pendingList.innerHTML = pending.length ? pending.map(p => `
-        <article class="post" style="opacity:.95">
-          <div class="post-top">
-            <div>
-              <h4>${escapeHTML(p.title)}</h4>
-              <div class="small">
-                <b>${escapeHTML(p.name || "Anonymous")}</b>
-                ${p.location ? ` • ${escapeHTML(p.location)}` : ""}
-                • ${fmtDate(p.createdAt)}
-              </div>
-            </div>
-            <div class="badge">${escapeHTML(p.type)}</div>
-          </div>
+    /* Year */
+    (function(){
+      const y = document.getElementById('year');
+      if(y) y.textContent = new Date().getFullYear();
+    })();
 
-          <div class="body">${escapeHTML(p.body)}</div>
+    /* Email submit (Formspree -> thanks2.html) */
+    (function(){
+      const form = document.getElementById('ggEmailForm');
+      if(!form) return;
 
-          <div class="post-actions">
-            ${isAdmin()
-              ? `<button class="btn tiny" type="button" onclick="approvePost('${p.id}')">Approve → Publish</button>
-                 <button class="btn secondary tiny" type="button" onclick="rejectPost('${p.id}')">Reject</button>`
-              : `<div class="muted">Pending moderation.</div>`
+      const statusEl = document.getElementById('ggEmailStatus');
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        const btn = form.querySelector('button[type="submit"]');
+        const input = form.querySelector('input[name="email"]');
+        const originalText = btn ? btn.textContent : 'Send My Free Checklist →';
+
+        if(input && !input.checkValidity()){
+          input.focus();
+          if(statusEl){
+            statusEl.className = 'email-status is-error';
+            statusEl.textContent = 'Enter a valid email address.';
+          }
+          return;
+        }
+
+        if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+        if(statusEl){
+          statusEl.className = 'email-status';
+          statusEl.textContent = 'Submitting…';
+        }
+
+        try{
+          const formData = new FormData(form);
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if(res.ok){
+            if(statusEl){
+              statusEl.className = 'email-status is-ok';
+              statusEl.textContent = 'Success. Redirecting…';
             }
-          </div>
-        </article>
-      `).join("") : `<div class="muted">No pending submissions right now.</div>`;
-    }
-
-    // =========================================================
-    // ACTIONS
-    // =========================================================
-    window.voteUseful = function(id){
-      const published = loadLS(LS_KEYS.published, []);
-      const idx = published.findIndex(p => p.id === id);
-      if(idx >= 0){
-        published[idx].useful = (published[idx].useful || 0) + 1;
-        saveLS(LS_KEYS.published, published);
-        render();
-      }
-    }
-
-    window.approvePost = function(id){
-      const pending = loadLS(LS_KEYS.pending, []);
-      const published = loadLS(LS_KEYS.published, []);
-      const idx = pending.findIndex(p => p.id === id);
-      if(idx >= 0){
-        published.unshift(pending[idx]);
-        pending.splice(idx, 1);
-        saveLS(LS_KEYS.pending, pending);
-        saveLS(LS_KEYS.published, published);
-        render();
-      }
-    }
-
-    window.rejectPost = function(id){
-      const pending = loadLS(LS_KEYS.pending, []);
-      const idx = pending.findIndex(p => p.id === id);
-      if(idx >= 0){
-        pending.splice(idx, 1);
-        saveLS(LS_KEYS.pending, pending);
-        render();
-      }
-    }
-
-    window.removePublished = function(id){
-      const published = loadLS(LS_KEYS.published, []);
-      const idx = published.findIndex(p => p.id === id);
-      if(idx >= 0){
-        published.splice(idx, 1);
-        saveLS(LS_KEYS.published, published);
-        render();
-      }
-    }
-
-    // =========================================================
-    // SUBMIT
-    // =========================================================
-    const fnType = document.getElementById("fnType");
-    const fnName = document.getElementById("fnName");
-    const fnLocation = document.getElementById("fnLocation");
-    const fnTitle = document.getElementById("fnTitle");
-    const fnBody = document.getElementById("fnBody");
-
-    document.getElementById("submitNoteBtn").addEventListener("click", () => {
-      const title = (fnTitle.value || "").trim();
-      const body = (fnBody.value || "").trim();
-
-      if(title.length < 6){
-        alert("Give it a real title (at least 6 characters).");
-        return;
-      }
-      if(body.length < 40){
-        alert("Give enough detail to be useful (at least ~40 characters).");
-        return;
-      }
-
-      const pending = loadLS(LS_KEYS.pending, []);
-      pending.unshift({
-        id: uid(),
-        type: fnType.value,
-        name: (fnName.value || "").trim(),
-        location: (fnLocation.value || "").trim(),
-        title,
-        body,
-        createdAt: nowISO(),
-        useful: 0
+            window.location.href = 'thanks2.html';
+          } else {
+            if(statusEl){
+              statusEl.className = 'email-status is-error';
+              statusEl.textContent = 'Something went wrong. Please try again.';
+            }
+            if(btn){ btn.disabled = false; btn.textContent = originalText; }
+          }
+        } catch(err){
+          if(statusEl){
+            statusEl.className = 'email-status is-error';
+            statusEl.textContent = 'Network error. Please try again.';
+          }
+          if(btn){ btn.disabled = false; btn.textContent = originalText; }
+        }
       });
-      saveLS(LS_KEYS.pending, pending);
+    })();
 
-      fnTitle.value = "";
-      fnBody.value = "";
-      alert("Submitted. It will appear after approval.");
-      render();
-    });
+    /* Buy both (opens both Gumroad links) */
+    (function(){
+      const guide1 = 'https://cserpico.gumroad.com/l/xrvwpt';
+      const guide2 = 'https://cserpico.gumroad.com/l/ckmnum';
 
-    document.getElementById("clearFormBtn").addEventListener("click", () => {
-      fnType.value = "Survival Story";
-      fnName.value = "";
-      fnLocation.value = "";
-      fnTitle.value = "";
-      fnBody.value = "Scenario:\nWhat went wrong:\nWhat worked:\nLesson:";
-    });
-
-    // =========================================================
-    // FILTER + ADMIN
-    // =========================================================
-    document.getElementById("filterAllBtn").addEventListener("click", () => {
-      saveLS(LS_KEYS.usefulSort, false);
-      render();
-    });
-    document.getElementById("filterUsefulBtn").addEventListener("click", () => {
-      saveLS(LS_KEYS.usefulSort, true);
-      render();
-    });
-
-    document.getElementById("openAdminBtn").addEventListener("click", () => {
-      // Simple admin gate for local moderation demo
-      // Replace this with real auth when you upgrade backend.
-      const key = prompt("Admin key (local demo). Leave blank to cancel.");
-      if(!key) return;
-
-      // Change this to your own private string
-      const ADMIN_KEY = "GRIT-ADMIN-KEY-CHANGE-ME";
-
-      if(key === ADMIN_KEY){
-        localStorage.setItem(LS_KEYS.admin, "1");
-        alert("Admin enabled on this browser.");
-      }else{
-        alert("Wrong key.");
+      function buyBoth(){
+        // user gesture required for popup blockers: keep it to two opens
+        window.open(guide1, '_blank', 'noopener');
+        window.open(guide2, '_blank', 'noopener');
       }
-      render();
-    });
 
-    // Init
-    ensureSeed();
-    // Pre-fill form body
-    if(!fnBody.value){
-      fnBody.value = "Scenario:\nWhat went wrong:\nWhat worked:\nLesson:";
-    }
-    render();
+      ['buyBothBtn1','buyBothBtn2','buyBothSticky'].forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.addEventListener('click', buyBoth);
+      });
+    })();
+
+    /* Sticky CTA visibility (mobile only) */
+    (function(){
+      const sticky = document.getElementById('stickyCta');
+      if(!sticky) return;
+
+      function toggle(){
+        const isMobile = window.matchMedia('(max-width: 980px)').matches;
+        sticky.style.display = (isMobile && window.scrollY > 420) ? 'block' : 'none';
+      }
+      window.addEventListener('scroll', toggle, { passive:true });
+      window.addEventListener('resize', toggle);
+      toggle();
+    })();
+
+    /* Carousel engine */
+    (function(){
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function initGallery(gallery){
+        const stage = gallery.querySelector('.rg-stage');
+        const slides = Array.from(gallery.querySelectorAll('.rg-slide'));
+        if(!stage || slides.length < 2) return;
+
+        const prevBtn = stage.querySelector('.rg-prev');
+        const nextBtn = stage.querySelector('.rg-next');
+        const dotsWrap = stage.querySelector('.rg-dots');
+
+        if(dotsWrap){
+          dotsWrap.innerHTML = '';
+          slides.forEach((_, i) => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'rg-dot' + (i === 0 ? ' is-active' : '');
+            b.setAttribute('aria-label', 'Image ' + (i+1));
+            dotsWrap.appendChild(b);
+          });
+        }
+        const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll('.rg-dot')) : [];
+
+        let idx = slides.findIndex(s => s.classList.contains('is-active'));
+        if(idx < 0) idx = 0;
+
+        function show(i){
+          idx = (i + slides.length) % slides.length;
+          slides.forEach((s, n) => s.classList.toggle('is-active', n === idx));
+          dots.forEach((d, n) => d.classList.toggle('is-active', n === idx));
+        }
+
+        function next(){ show(idx + 1); }
+        function prev(){ show(idx - 1); }
+
+        if(nextBtn) nextBtn.addEventListener('click', () => { stop(); next(); start(); });
+        if(prevBtn) prevBtn.addEventListener('click', () => { stop(); prev(); start(); });
+        dots.forEach((d, n) => d.addEventListener('click', () => { stop(); show(n); start(); }));
+
+        stage.addEventListener('keydown', (e) => {
+          if(e.key === 'ArrowRight'){ e.preventDefault(); stop(); next(); start(); }
+          if(e.key === 'ArrowLeft'){ e.preventDefault(); stop(); prev(); start(); }
+        });
+
+        const rotate = !reduceMotion && (gallery.getAttribute('data-rotate') || '').toLowerCase() === 'true';
+        const interval = parseInt(gallery.getAttribute('data-interval') || '3200', 10);
+        let timer = null;
+
+        function start(){
+          if(!rotate) return;
+          stop();
+          timer = setInterval(next, Math.max(1200, interval));
+        }
+        function stop(){
+          if(timer){ clearInterval(timer); timer = null; }
+        }
+
+        gallery.addEventListener('mouseenter', stop);
+        gallery.addEventListener('mouseleave', start);
+        gallery.addEventListener('focusin', stop);
+        gallery.addEventListener('focusout', start);
+
+        show(idx);
+        start();
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.rg-gallery').forEach(initGallery);
+      });
+    })();
   </script>
 </body>
 </html>
