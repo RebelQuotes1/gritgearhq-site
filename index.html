@@ -1064,45 +1064,12 @@
         </div>
 <!-- =========================
      UPGRADED DROP-IN MESSAGE BOARD (PUBLIC + PERSISTENT)
-     ✅ One block. ✅ No external CSS. ✅ Keeps working even if you don’t configure the backend yet.
+     ✅ One block. ✅ No external CSS.
+     This version already has YOUR Supabase URL + publishable key inserted.
      
-     HOW IT WORKS:
-     - If you set SUPABASE_URL + SUPABASE_ANON_KEY below, comments become PUBLIC + persistent (shared by all visitors).
-     - If you don’t, it automatically falls back to localStorage (your current “works instantly” behavior).
-
-     SUPABASE SETUP (5 minutes):
-     1) Create a free Supabase project.
-     2) Create a table named: gg_posts
-     3) Run this SQL in Supabase SQL editor:
-
-        create table if not exists public.gg_posts (
-          id uuid primary key default gen_random_uuid(),
-          created_at timestamptz not null default now(),
-          name text,
-          message text not null,
-          topic text,
-          honeypot text,
-          ip_hint text
-        );
-
-        alter table public.gg_posts enable row level security;
-
-        -- Allow reading for everyone:
-        create policy "public read"
-          on public.gg_posts
-          for select
-          using (true);
-
-        -- Allow inserting for everyone, but block obvious spam (honeypot):
-        create policy "public insert"
-          on public.gg_posts
-          for insert
-          with check (
-            (coalesce(honeypot,'') = '')
-            and (char_length(message) between 2 and 1400)
-          );
-
-     4) Copy Project URL + anon public key into the config below.
+     IMPORTANT:
+     You STILL must run the Supabase SQL (table + RLS policies) in Supabase → SQL Editor,
+     or posts won’t save publicly.
 ========================= -->
 
 <div id="gg-board" style="
@@ -1118,7 +1085,6 @@
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 ">
 
-  <!-- Header -->
   <div style="
     padding:14px 16px;
     border-bottom:1px solid rgba(255,255,255,.10);
@@ -1158,7 +1124,6 @@
     </div>
   </div>
 
-  <!-- Body -->
   <div id="gg-grid" style="
     display:grid;
     grid-template-columns:1fr 1.15fr;
@@ -1167,7 +1132,6 @@
     align-items:start;
   ">
 
-    <!-- Post Form -->
     <form id="gg-form" style="
       border:1px solid rgba(255,255,255,.12);
       border-radius:14px;
@@ -1207,7 +1171,6 @@
           style="width:100%;margin-top:6px;padding:10px 12px;min-height:140px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(15,18,26,.9);color:#e7ecef;resize:vertical;"></textarea>
       </label>
 
-      <!-- Honeypot: bots fill this, humans won’t see it -->
       <input id="gg-honey" tabindex="-1" autocomplete="off" aria-hidden="true"
         style="position:absolute;left:-9999px;opacity:0;height:1px;width:1px;"
         placeholder="leave blank">
@@ -1224,11 +1187,10 @@
       </div>
 
       <div style="margin-top:2px;font-size:.78rem;color:rgba(231,236,239,.6);font-weight:700;line-height:1.35;">
-        Anti-spam: 1 post / 45 seconds per browser. Public mode requires Supabase config.
+        Anti-spam: 1 post / 45 seconds per browser.
       </div>
     </form>
 
-    <!-- Feed -->
     <div style="
       border:1px solid rgba(255,255,255,.12);
       border-radius:14px;
@@ -1251,16 +1213,15 @@
   </div>
 </div>
 
-<!-- Supabase client (only used if you configure keys below) -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 (function(){
   /* =========================
-     CONFIG — paste your Supabase keys here
+     CONFIG — YOUR SUPABASE KEYS (already inserted)
   ========================= */
-  const SUPABASE_URL = "";       // e.g. "https://xxxx.supabase.co"
-  const SUPABASE_ANON_KEY = "";  // anon public key
+  const SUPABASE_URL = "https://lrelqrjbrhqiaklnfotp.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_eizsShFQvX6jpBrjU5ccpg_q4cY03HN";
 
   const TABLE = "gg_posts";
   const LOCAL_KEY = "gg_board_posts_v2";
@@ -1280,7 +1241,6 @@
   const compactBtn = el("gg-compact");
   const searchEl = el("gg-search");
 
-  // Responsive stack (no CSS file)
   function applyResponsive(){
     if(!grid) return;
     grid.style.gridTemplateColumns = (window.innerWidth < 900) ? "1fr" : "1fr 1.15fr";
@@ -1292,7 +1252,7 @@
   let compact = false;
   let supabase = null;
   let usePublic = false;
-  let cache = []; // current posts
+  let cache = [];
 
   function esc(s){
     return (s||"").replace(/[&<>"']/g, m => ({
@@ -1429,7 +1389,7 @@
       }
     }
     if(!usePublic){
-      modeEl.textContent = "Mode: Local board (browser only) — add Supabase keys to make it public";
+      modeEl.textContent = "Mode: Local board (browser only)";
       modeEl.style.color = "rgba(231,236,239,.65)";
     }
   }
@@ -1487,8 +1447,6 @@
       setStatus("Write a real comment first.", false);
       return;
     }
-
-    // Simple “don’t be a bot” guard
     if(honeypot){
       setStatus("Blocked (spam).", false);
       return;
@@ -1517,7 +1475,7 @@
       form.reset();
       await fetchPosts();
     }catch(err){
-      setStatus("Post failed. Try again.", false);
+      setStatus("Post failed. If your Supabase table/RLS isn’t set up yet, run the SQL first.", false);
     }finally{
       submitBtn.disabled = false;
       submitBtn.textContent = "Post →";
@@ -1539,13 +1497,13 @@
   refreshBtn.addEventListener("click", fetchPosts);
   searchEl.addEventListener("input", ()=> render());
 
-  // Boot
   (async function(){
     await initMode();
     await fetchPosts();
   })();
 })();
 </script>
+
 
         <!-- Quote Box -->
         <div class="quote-box">
