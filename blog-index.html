@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Grit Gear HQ – Blog Directory</title>
 
   <!-- Fonts -->
@@ -22,329 +22,805 @@
       --muted:#b9c2cc;
       --panel:rgba(10,14,18,.9);
       --panel-soft:#151b24;
-      --line:rgba(255,165,0,.28);
+      --line:rgba(248,170,54,.22);
+      --line2:rgba(255,255,255,.08);
       --radius-lg:18px;
       --radius-md:14px;
       --radius-pill:999px;
+
+      --shadow: 0 0 0 1px rgba(0,0,0,.85), 0 18px 60px rgba(0,0,0,.70);
+      --shadow2: 0 0 0 1px rgba(0,0,0,.85), 0 12px 40px rgba(0,0,0,.60);
     }
 
     *{box-sizing:border-box;}
-
-    /* ===== Base / Background ===== */
     html,body{margin:0;padding:0;min-height:100%;}
     body{
       color:var(--ink);
       font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
       background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(255,165,0,.14), transparent 60%),
-        radial-gradient(1200px 700px at 80% 110%, rgba(108,154,255,.15), transparent 65%),
+        radial-gradient(1200px 700px at 18% -10%, rgba(248,170,54,.16), transparent 60%),
+        radial-gradient(1200px 700px at 85% 115%, rgba(108,154,255,.14), transparent 65%),
         #050608;
     }
     body::before{
       content:"";
       position:fixed; inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.92));
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.90)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 2px, transparent 2px 10px);
       z-index:-1;
+      pointer-events:none;
     }
 
     .wrap{max-width:1180px;margin:0 auto;padding:0 16px;}
 
-    /* ===== Mini PTSD/Bud CTA (top) ===== */
-    .gg-mini-cta{
-      --line:#2b2f3a; --ink:#e9ecf4; --muted:#a8afbd; --accent:var(--accent);
-      max-width:520px; margin:14px auto 6px; position:relative; isolation:isolate;
-      padding:9px 12px; text-align:center; color:var(--ink);
-      background:linear-gradient(135deg,#151a24,#0f121a);
-      border:1px solid var(--line); border-radius:12px; box-shadow:0 10px 26px rgba(0,0,0,.4);
-      font:600 .88rem/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+    /* ===== Sticky Utility Bar ===== */
+    .utility{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(6,8,12,.88), rgba(6,8,12,.62));
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
-    .gg-mini-cta:before{
-      content:""; position:absolute; inset:0; z-index:-1; border-radius:12px;
-      background:repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 2px, transparent 2px 9px);
-      pointer-events:none;
+    .utility-inner{
+      max-width:1180px; margin:0 auto; padding:10px 16px;
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
     }
-    .gg-mini-cta .lead{letter-spacing:.15px;}
-    .gg-mini-cta a{
-      color:var(--accent); text-decoration:none; font-weight:800; margin-left:6px;
-      padding:2px 6px; border-radius:6px; border:1px dashed rgba(248,170,54,.45);
-      background:rgba(248,170,54,.06); font-size:.82rem;
+    .logo{
+      display:flex; align-items:center; gap:10px; min-width:220px;
     }
-    .gg-mini-cta a:hover{filter:brightness(1.07); text-decoration:underline;}
-    .gg-mini-cta .shine{
-      content:""; position:absolute; inset:0; border-radius:12px; pointer-events:none;
-      background:linear-gradient(110deg, transparent 0%, rgba(255,255,255,.06) 35%, transparent 65%);
-      mix-blend-mode:screen; animation:gg-sweep 5.5s linear infinite;
+    .badge{
+      width:38px; height:38px; border-radius:12px;
+      display:grid; place-items:center;
+      background:
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.10), transparent 60%),
+        linear-gradient(180deg, rgba(248,170,54,.18), rgba(0,0,0,.15));
+      border:1px solid rgba(248,170,54,.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,.55);
+      font-weight:900;
+      color:rgba(248,170,54,.95);
     }
-    @keyframes gg-sweep{0%{transform:translateX(-80%)}100%{transform:translateX(80%)}}
+    .title{
+      line-height:1.05;
+    }
+    .title .kicker{
+      font-family:Orbitron,Inter,sans-serif;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:800;
+      font-size:.9rem;
+      color:rgba(248,170,54,.95);
+    }
+    .title .sub{
+      margin-top:2px;
+      font-size:.78rem;
+      color:rgba(231,236,239,.70);
+      font-weight:700;
+      letter-spacing:.02em;
+    }
 
-    /* ===== Chips / Topbar ===== */
-    .topbar{
-      display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
-      padding:14px 12px 6px;
-    }
+    .chiprow{display:flex; gap:10px; flex-wrap:wrap; margin-left:auto;}
     .chip{
       display:inline-flex; align-items:center; gap:8px;
-      padding:8px 15px; border-radius:var(--radius-pill);
+      padding:8px 14px; border-radius:var(--radius-pill);
       background:linear-gradient(180deg,#222a33,#141b22);
-      border:1px solid rgba(255,255,255,.06); color:var(--ink);
-      text-decoration:none; font-weight:700; font-size:.85rem;
-      box-shadow:0 6px 24px rgba(0,0,0,.5);
+      border:1px solid rgba(255,255,255,.06);
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:800;
+      font-size:.84rem;
+      box-shadow: 0 10px 26px rgba(0,0,0,.45);
+      transition: transform .12s ease, filter .12s ease, border-color .12s ease;
+      white-space:nowrap;
     }
     .chip.accent{
       background:linear-gradient(180deg,var(--accent),#e68112);
-      color:#0b0f12; border-color:rgba(0,0,0,.8);
+      color:#0b0f12;
+      border-color:rgba(0,0,0,.75);
     }
     .chip:hover{filter:brightness(1.05);}
+    .chip:active{transform:translateY(1px);}
 
-    /* ===== Header ===== */
-    header.wrap{padding-top:4px;padding-bottom:8px;}
-    h1{
-      margin:4px 0 2px; text-align:center; letter-spacing:.12em;
-      color:var(--accent); font-family:Orbitron,Inter,sans-serif;
-      font-size:clamp(28px,4.2vw,42px); text-transform:uppercase;
-      text-shadow:0 8px 30px rgba(0,0,0,.85);
+    /* ===== Hero ===== */
+    header.wrap{padding:18px 16px 10px;}
+    .hero{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius-lg);
+      background:
+        radial-gradient(900px 260px at 15% 0%, rgba(248,170,54,.16), transparent 55%),
+        rgba(9,12,18,.78);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-inner{
+      padding:18px 18px 14px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:center;
+    }
+    .hero h1{
+      margin:0;
+      font-family:Orbitron,Inter,sans-serif;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:clamp(26px,3.8vw,42px);
+      color:var(--accent);
+      text-shadow:0 10px 40px rgba(0,0,0,.85);
     }
     .deck{
-      margin:4px auto 14px; text-align:center; color:var(--muted);
-      max-width:780px; font-size:.95rem;
+      margin:10px 0 0;
+      max-width:72ch;
+      color:rgba(231,236,239,.75);
+      font-weight:600;
+      line-height:1.45;
+      font-size:.96rem;
     }
 
-    /* ===== Button Grid ===== */
-    main.wrap{padding-bottom:28px;}
-    .button-grid{
-      display:grid; gap:16px;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    /* Mini CTA (top) — improved placement */
+    .gg-mini-cta{
+      margin-top:12px;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      background:linear-gradient(135deg,#141a24,#0f121a);
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
     }
-    .cta-button{
-      display:block; text-decoration:none; color:var(--ink);
-      background:var(--panel-soft); border:1px solid rgba(255,255,255,.08);
-      border-radius:var(--radius-md); padding:14px 16px;
-      box-shadow:0 0 0 1px rgba(0,0,0,.8), 0 14px 42px rgba(0,0,0,.75);
-      transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
-      font-weight:800; letter-spacing:.2px; font-size:.9rem;
+    .gg-mini-cta .lead{
+      font-weight:800;
+      color:rgba(231,236,239,.88);
+      font-size:.9rem;
+      letter-spacing:.01em;
     }
-    .cta-button:hover,
-    .cta-button:focus-visible{
-      transform:translateY(-2px);
-      box-shadow:0 0 0 1px rgba(255,165,0,.35), 0 22px 60px rgba(0,0,0,.85);
-      background:#1a222f;
-      outline:none;
-    }
-    .cta-button .desc{
-      font-weight:600; color:var(--muted); margin-top:6px; line-height:1.45;
+    .gg-mini-cta a{
+      color:#0b0f12;
+      text-decoration:none;
+      font-weight:900;
+      padding:8px 12px;
+      border-radius:12px;
+      background:linear-gradient(180deg,var(--accent),#e68112);
+      border:1px solid rgba(0,0,0,.75);
+      box-shadow:0 10px 26px rgba(0,0,0,.45);
       font-size:.84rem;
+      white-space:nowrap;
     }
-    .cta-button.featured{
-      border-color:var(--accent);
-      background:linear-gradient(180deg, rgba(255,165,0,.12), rgba(255,165,0,.02));
+    .gg-mini-cta a:hover{filter:brightness(1.05);}
+    .gg-mini-cta::after{
+      content:"";
+      position:absolute; inset:-40% -60%;
+      background:linear-gradient(110deg, transparent 0%, rgba(255,255,255,.06) 35%, transparent 65%);
+      transform:translateX(-35%);
+      animation:sweep 7s linear infinite;
+      pointer-events:none;
+      mix-blend-mode:screen;
+    }
+    @keyframes sweep{0%{transform:translateX(-55%)}100%{transform:translateX(55%)}}
+
+    /* Right side: Search + quick filters */
+    .tools{
+      display:grid;
+      gap:10px;
+      justify-items:stretch;
+    }
+    .search{
+      display:flex; gap:10px; align-items:center;
+      padding:10px 12px;
+      border-radius:14px;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .search input{
+      width:100%;
+      border:none;
+      outline:none;
+      background:transparent;
+      color:var(--ink);
+      font-weight:700;
+      font-size:.92rem;
+    }
+    .search input::placeholder{color:rgba(231,236,239,.55); font-weight:700;}
+    .kbtn{
+      border:none;
+      cursor:pointer;
+      color:#0b0f12;
+      font-weight:900;
+      padding:8px 10px;
+      border-radius:12px;
+      background:linear-gradient(180deg,var(--accent),#e68112);
+      border:1px solid rgba(0,0,0,.75);
+      white-space:nowrap;
+    }
+    .kbtn.ghost{
+      background:rgba(0,0,0,.25);
+      color:rgba(231,236,239,.86);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .kbtn:hover{filter:brightness(1.05);}
+
+    .filters{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-start;
+    }
+    .pill{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(0,0,0,.22);
+      color:rgba(231,236,239,.80);
+      font-weight:900;
+      font-size:.74rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      cursor:pointer;
+      user-select:none;
+      transition:filter .12s ease, transform .12s ease, border-color .12s ease;
+    }
+    .pill:hover{filter:brightness(1.06);}
+    .pill.active{
+      color:#0b0f12;
+      background:linear-gradient(180deg,var(--accent),#e68112);
+      border-color:rgba(0,0,0,.75);
     }
 
-    /* ===== Featured Gear ===== */
+    .meta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      color:rgba(231,236,239,.62);
+      font-size:.82rem;
+      font-weight:800;
+      margin-top:10px;
+      padding:0 18px 16px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .meta span{display:inline-flex; align-items:center; gap:8px; padding-top:10px;}
+
+    /* ===== Featured Row (top picks) ===== */
+    main.wrap{padding:10px 16px 22px;}
+    .featured-row{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      margin:14px auto 18px;
+      align-items:stretch;
+    }
     .feature{
-      background:var(--panel-soft); border:1px solid rgba(255,255,255,.1);
+      border:1px solid rgba(248,170,54,.30);
+      background:
+        radial-gradient(800px 240px at 15% 0%, rgba(248,170,54,.18), transparent 55%),
+        rgba(9,12,18,.74);
       border-radius:var(--radius-lg);
-      box-shadow:0 0 0 1px rgba(0,0,0,.8),0 16px 46px rgba(0,0,0,.8);
-      max-width:980px; margin:30px auto 10px; padding:18px 18px 16px;
+      box-shadow: var(--shadow);
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
     }
     .feature h3{
-      margin:0 0 10px; color:var(--accent);
-      font-family:Orbitron,Inter,sans-serif; font-size:1.05rem; letter-spacing:.08em;
+      margin:0;
+      font-family:Orbitron,Inter,sans-serif;
+      color:var(--accent);
+      letter-spacing:.10em;
       text-transform:uppercase;
+      font-size:1rem;
     }
-    .feature a{color:inherit; text-decoration:none;}
-    .feature a:hover .cta{filter:brightness(1.05);}
-    .feature .row{
-      display:flex;flex-wrap:wrap;gap:18px;align-items:center;
+    .feature .headline{
+      font-weight:900;
+      font-size:1.02rem;
+      line-height:1.25;
+      margin-top:6px;
+      color:rgba(231,236,239,.92);
     }
-    .feature img{
-      width:260px;max-width:100%;border-radius:10px;
-      box-shadow:0 0 16px rgba(0,0,0,.9);
+    .feature .desc{
+      margin-top:8px;
+      color:rgba(231,236,239,.72);
+      font-weight:700;
+      line-height:1.45;
+      font-size:.9rem;
+      max-width:75ch;
     }
     .feature .cta{
-      display:inline-block; margin-top:10px; padding:9px 14px; border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:10px;
+      align-self:flex-start;
+      padding:10px 14px;
+      border-radius:14px;
       background:linear-gradient(180deg,var(--accent),#e68112);
-      color:#0b0f12; font-weight:900; font-size:.86rem;
+      border:1px solid rgba(0,0,0,.75);
+      color:#0b0f12;
+      font-weight:900;
+      text-decoration:none;
+    }
+    .feature .cta:hover{filter:brightness(1.05);}
+    .secondary{
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(9,12,18,.62);
+    }
+    .secondary .cta{
+      background:rgba(0,0,0,.22);
+      color:rgba(231,236,239,.88);
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    /* ===== Directory Grid ===== */
+    .section-title{
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:12px; flex-wrap:wrap;
+      margin:10px 0 10px;
+    }
+    .section-title h2{
+      margin:0;
+      font-family:Orbitron,Inter,sans-serif;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-size:1.02rem;
+      color:rgba(231,236,239,.92);
+    }
+    .section-title .hint{
+      color:rgba(231,236,239,.60);
+      font-weight:800;
+      font-size:.82rem;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .card{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      text-decoration:none;
+      color:var(--ink);
+      background:rgba(9,12,18,.62);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius-md);
+      padding:14px 14px 12px;
+      box-shadow: var(--shadow2);
+      transition: transform .12s ease, filter .12s ease, border-color .12s ease, background .12s ease;
+      position:relative;
+      overflow:hidden;
+      min-height:148px;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:0;
+      background:radial-gradient(520px 160px at 30% -10%, rgba(248,170,54,.12), transparent 60%);
+      opacity:.85;
+      pointer-events:none;
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
+      border-color:rgba(248,170,54,.22);
+      background:rgba(12,16,24,.72);
+    }
+    .tagrow{display:flex; gap:8px; flex-wrap:wrap; align-items:center; position:relative;}
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:5px 9px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.22);
+      font-weight:900;
+      font-size:.72rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:rgba(231,236,239,.72);
+    }
+    .tag.hot{
+      border-color:rgba(248,170,54,.28);
+      color:rgba(248,170,54,.95);
+      background:rgba(248,170,54,.10);
+    }
+    .card .title{
+      margin:0;
+      font-weight:950;
+      font-size:.98rem;
+      line-height:1.25;
+      letter-spacing:.01em;
+      color:rgba(231,236,239,.92);
+      position:relative;
+    }
+    .card .desc{
+      margin:0;
+      color:rgba(231,236,239,.70);
+      font-weight:700;
+      line-height:1.45;
+      font-size:.88rem;
+      position:relative;
+    }
+
+    .card .go{
+      margin-top:auto;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-weight:900;
+      font-size:.82rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:rgba(248,170,54,.95);
+      position:relative;
     }
 
     /* ===== Footer ===== */
     footer{
-      text-align:center; padding:16px; color:#aeb6bf;
-      background:linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.6));
-      border-top:1px solid rgba(255,165,0,.22);
+      text-align:center;
+      padding:18px 16px;
+      color:#aeb6bf;
+      background:linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.60));
+      border-top:1px solid rgba(248,170,54,.22);
       font-size:.78rem;
     }
-    footer a{color:var(--accent); text-decoration:none; font-weight:800; font-size:.78rem;}
+    footer a{color:var(--accent); text-decoration:none; font-weight:900;}
     footer a:hover{text-decoration:underline;}
 
-    /* a11y */
-    .cta-button:focus-visible,
+    /* ===== Responsive ===== */
+    @media (max-width: 980px){
+      .hero-inner{grid-template-columns:1fr; }
+      .featured-row{grid-template-columns:1fr;}
+      .logo{min-width:auto;}
+      .chiprow{margin-left:0;}
+    }
+
+    /* a11y focus */
     .chip:focus-visible,
+    .kbtn:focus-visible,
+    .pill:focus-visible,
+    .card:focus-visible,
     .feature .cta:focus-visible{
-      outline:2px solid var(--accent); outline-offset:2px;
+      outline:2px solid var(--accent);
+      outline-offset:2px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Mini PTSD / Bud CTA -->
-  <div class="gg-mini-cta" role="region" aria-label="PTSD & Bud mini callout">
-    <span class="lead">🍃 Ready to trade the bottle for control?</span>
-    <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
-      Stock up discreetly here
-    </a>
-    <i class="shine" aria-hidden="true"></i>
-  </div>
+  <!-- Sticky Utility Bar -->
+  <div class="utility">
+    <div class="utility-inner">
+      <div class="logo" aria-label="Grit Gear HQ">
+        <div class="badge">GG</div>
+        <div class="title">
+          <div class="kicker">Grit Gear HQ</div>
+          <div class="sub">Blog Directory</div>
+        </div>
+      </div>
 
-  <div class="topbar">
-    <a class="chip" href="index.html">⬅️ Home</a>
-    <a class="chip accent" href="5affirmations.html">💭 5 Affirmations That Are Actually Terrible Advice</a>
+      <div class="chiprow">
+        <a class="chip" href="index.html">⬅️ Home</a>
+        <a class="chip accent" href="5affirmations.html">💭 5 Affirmations (Terrible Advice)</a>
+      </div>
+    </div>
   </div>
 
   <header class="wrap">
-    <h1>🪓 Grit Gear Blog Directory</h1>
-    <p class="deck">
-      Survival field guides, rants, and real-world how-tos from Grit Gear HQ.
-      Pick a card and dive in.
-    </p>
+    <div class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1>🪓 Blog Directory</h1>
+          <p class="deck">
+            Survival field guides, mindset pieces, gear writeups, and real-world stories from Grit Gear HQ.
+            Use search + filters to find exactly what you want fast.
+          </p>
+
+          <!-- Mini CTA -->
+          <div class="gg-mini-cta" role="region" aria-label="PTSD & Bud mini callout">
+            <span class="lead">🍃 Ready to trade the bottle for control?</span>
+            <a href="https://getbudonline.com/subid/christopher.serpico/" target="_blank" rel="nofollow sponsored noopener">
+              Stock up discreetly here
+            </a>
+          </div>
+        </div>
+
+        <div class="tools" aria-label="Directory tools">
+          <div class="search">
+            <span aria-hidden="true">🔎</span>
+            <input id="q" type="search" placeholder="Search posts (title, description, tags)…" autocomplete="off" />
+            <button class="kbtn ghost" id="clear" type="button" title="Clear">Clear</button>
+          </div>
+
+          <div class="filters" aria-label="Quick filters">
+            <div class="pill active" data-filter="all">All</div>
+            <div class="pill" data-filter="featured">Featured</div>
+            <div class="pill" data-filter="survival">Survival</div>
+            <div class="pill" data-filter="gear">Gear</div>
+            <div class="pill" data-filter="mindset">Mindset</div>
+            <div class="pill" data-filter="story">Stories</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="meta" aria-label="Directory stats">
+        <span>⚡ <strong id="shown">0</strong> shown</span>
+        <span>🗂️ <strong id="total">0</strong> total</span>
+        <span>⌨️ Tip: hit <strong>/</strong> to search</span>
+      </div>
+    </div>
   </header>
 
   <main class="wrap">
-    <div class="button-grid">
-      <!-- Featured blog CTA -->
-      <a href="/blog-turning-point.html#top" class="cta-button featured">
-        📰 The Slaying of Charlie Kirk — Read the Post
-        <div class="desc">They didn’t just kill a man — they sparked a movement. Draw the line in the sand.</div>
-      </a>
 
-      <a href="https://gritgearhq.com/cannabis-for-survival.html#top" class="cta-button featured">
-        📰 Bud Over Booze — Read the Post
-        <div class="desc">How I chose the plant that sharpened my edge—and how you can, too.</div>
-      </a>
+    <!-- Featured row -->
+    <div class="featured-row" aria-label="Top picks">
+      <div class="feature" data-tags="featured story">
+        <div>
+          <h3>Featured</h3>
+          <div class="headline">📰 The Slaying of Charlie Kirk — Read the Post</div>
+          <div class="desc">They didn’t just kill a man — they sparked a movement. Draw the line in the sand.</div>
+        </div>
+        <a class="cta" href="/blog-turning-point.html#top">Read now →</a>
+      </div>
 
-      <a href="/grit-quiz.html#grit-quiz" class="cta-button">
-        🧪 Take the Grit Quiz
-        <div class="desc">10 fast questions. Get your score + tailored next steps.</div>
-      </a>
-
-      <a href="https://gritgearhq.com/titan-survival-collab.html#why-550" class="cta-button">
-        🧵 Read the SurvivorCord® Guide →
-        <div class="desc">Why 550 cord isn’t enough anymore—and how SurvivorCord® upgrades your lifeline.</div>
-      </a>
-
-      <a href="/turning-point-shirt.html#cta" class="cta-button">
-        👕 This Is The Turning Point Tee
-        <div class="desc">Premium fit. Bold message. 10% of profits to TPUSA.</div>
-      </a>
-
-      <a href="ant-grasshopper-locked-door.html#fable-start" class="cta-button">
-        🐜 The Ant, the Grasshopper &amp; the Locked Door
-        <div class="desc">Darker modern fable—boundaries, math, and no hard feelings.</div>
-      </a>
-
-      <a href="#seven-day-kit" class="cta-button">
-        🧰 Build Your 7-Day Kit
-        <div class="desc">Water, calories, heat &amp; light, hygiene, info — your don’t-knock baseline.</div>
-      </a>
-
-      <a href="amish-winter-heat.html#amish-winter-heat" class="cta-button">
-        🔥 How the Amish Stay Warm in Winter
-        <div class="desc">Stoves, window quilts, humidity, and a daily rhythm you can steal.</div>
-      </a>
-
-      <a href="hugh-glass.html#hugh-glass" class="cta-button">
-        🐻 Hugh Glass: The Man Who Wouldn’t Die
-        <div class="desc">Pirates, Pawnee, a grizzly, and a 200-mile crawl.</div>
-      </a>
-
-      <a href="5survival-recipes.html#survival-recipes" class="cta-button">
-        🍲 5 Survival &amp; Camp Recipes (No Fridge)
-        <div class="desc">Pantry-only meals that don’t taste like cardboard.</div>
-      </a>
-
-      <a href="skinny-to-strong.html#skinny-to-strong" class="cta-button">
-        💪 From Skinny to Strong
-        <div class="desc">How I went from frail and sick to capable and confident.</div>
-      </a>
-
-      <a href="pale-horse-prepping.html#apocalypse-guide" class="cta-button">
-        🐎 Preparing for the Pale Horse
-        <div class="desc">Revelation, collapse, and how to face the end with grit.</div>
-      </a>
-
-      <a href="top-5-home-water-filters.html#filters" class="cta-button">
-        💧 Top 5 Home Water Filters
-        <div class="desc">From LifeStraw to Berkey—strip the bad stuff out.</div>
-      </a>
-
-      <a href="chicken-shortage-2025.html#chicken-shortage-blog" class="cta-button">
-        🐔 The Chicken Shortage of 2025
-        <div class="desc">Backyard birds, quiet panic, and lessons learned.</div>
-      </a>
-
-      <a href="solar-fan-hat-review.html#solar-fan-hat-review" class="cta-button">
-        🌞 Solar Fan Hat Review (Yes, Seriously)
-        <div class="desc">Looks goofy. Works amazing. Kept me alive at 100°F.</div>
-      </a>
-
-      <a href="collapse.html#collapse-blog" class="cta-button">
-        🔥 5 Things I No Longer Buy
-        <div class="desc">Quit the waste. Keep the grit.</div>
-      </a>
-
-      <a href="surviving-county-jail.html#jail-survival-blog" class="cta-button">
-        🚔 Surviving County Jail
-        <div class="desc">Fear, boredom, and twisted humor—keeping your soul intact.</div>
-      </a>
-
-      <a href="bear-vs-man.html#bear-vs-man" class="cta-button">
-        🐻 Man vs Bear
-        <div class="desc">The internet picked the bear. We picked reality.</div>
-      </a>
-
-      <a href="kamp-king.html#kamp-king-review" class="cta-button">
-        🗡️ Kamp King Knife Review
-        <div class="desc">Classic look. Rugged build. Less gear to carry.</div>
-      </a>
-
-      <a href="manifesto.html#violence-answer" class="cta-button">
-        ⚔️ When Violence Is the Answer
-        <div class="desc">Hard lines, clear rules. No bravado.</div>
-      </a>
-
-      <a href="manifesto.html#masculinity-blog" class="cta-button">
-        💥 The Masculinity Manifesto
-        <div class="desc">Why they hate strong men—and why your family needs one.</div>
-      </a>
-
-      <a href="manifesto.html#ufo-distraction" class="cta-button">
-        🛸 UFOs &amp; Government Deception
-        <div class="desc">Smoke, mirrors, and why you should watch the ground, not the sky.</div>
-      </a>
-
-      <a href="manifesto.html#stockpile-tested" class="cta-button">
-        🎒 Survival Items That Earned Their Place
-        <div class="desc">Not theory—gear that made the cut after real use.</div>
-      </a>
-
-      <a href="manifesto.html#stay-cool" class="cta-button">
-        🧊 How to Keep Cool During a Blackout
-        <div class="desc">Fans, airflow, hydration, and not losing your mind when the AC dies.</div>
-      </a>
-
-      <a href="i-should-be-dead.html" class="cta-button">
-        🩸 I Should Be Dead: The Grit Story
-        <div class="desc">The long road from chaos to responsibility.</div>
-      </a>
-
-      <a href="goout_stove_review_FINAL_WITH_ANCHOR.html#goout-stove-review" class="cta-button">
-        🔥 GoOut Stove Review
-        <div class="desc">Boil water, cook meals, warm your hands.</div>
-      </a>
+      <div class="feature secondary" data-tags="featured mindset">
+        <div>
+          <h3>Featured</h3>
+          <div class="headline">📰 Bud Over Booze — Read the Post</div>
+          <div class="desc">How I chose the plant that sharpened my edge—and how you can, too.</div>
+        </div>
+        <a class="cta" href="https://gritgearhq.com/cannabis-for-survival.html#top">Read now →</a>
+      </div>
     </div>
 
-    <div class="topbar" style="padding-top:4px;padding-bottom:18px;">
-      <a class="chip" href="index.html">← Return to Homepage</a>
+    <div class="section-title">
+      <h2>All Posts</h2>
+      <div class="hint">Search + filters hide what you don’t want. Click any card to open.</div>
     </div>
+
+    <!-- Directory grid -->
+    <div class="grid" id="grid">
+
+      <!-- Keep your real file names/links — each card has data-tags for filtering -->
+      <a class="card" href="/blog-turning-point.html#top" data-tags="featured story">
+        <div class="tagrow">
+          <span class="tag hot">Featured</span>
+          <span class="tag">Story</span>
+        </div>
+        <div class="title">📰 The Slaying of Charlie Kirk — Read the Post</div>
+        <p class="desc">They didn’t just kill a man — they sparked a movement. Draw the line in the sand.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="https://gritgearhq.com/cannabis-for-survival.html#top" data-tags="featured mindset">
+        <div class="tagrow">
+          <span class="tag hot">Featured</span>
+          <span class="tag">Mindset</span>
+        </div>
+        <div class="title">📰 Bud Over Booze — Read the Post</div>
+        <p class="desc">How I chose the plant that sharpened my edge—and how you can, too.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="/grit-quiz.html#grit-quiz" data-tags="mindset featured">
+        <div class="tagrow">
+          <span class="tag hot">Interactive</span>
+          <span class="tag">Mindset</span>
+        </div>
+        <div class="title">🧪 Take the Grit Quiz</div>
+        <p class="desc">10 fast questions. Get your score + tailored next steps.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="https://gritgearhq.com/titan-survival-collab.html#why-550" data-tags="gear survival">
+        <div class="tagrow">
+          <span class="tag">Gear</span>
+          <span class="tag">Survival</span>
+        </div>
+        <div class="title">🧵 Read the SurvivorCord® Guide →</div>
+        <p class="desc">Why 550 cord isn’t enough anymore—and how SurvivorCord® upgrades your lifeline.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="/turning-point-shirt.html#cta" data-tags="gear featured">
+        <div class="tagrow">
+          <span class="tag hot">Merch</span>
+          <span class="tag">Gear</span>
+        </div>
+        <div class="title">👕 This Is The Turning Point Tee</div>
+        <p class="desc">Premium fit. Bold message. 10% of profits to TPUSA.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="ant-grasshopper-locked-door.html#fable-start" data-tags="story mindset">
+        <div class="tagrow">
+          <span class="tag">Story</span>
+          <span class="tag">Mindset</span>
+        </div>
+        <div class="title">🐜 The Ant, the Grasshopper &amp; the Locked Door</div>
+        <p class="desc">Darker modern fable—boundaries, math, and no hard feelings.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <!-- NOTE: This was an anchor with no section in your original. Kept, but now flagged so you notice it. -->
+      <a class="card" href="#seven-day-kit" data-tags="survival">
+        <div class="tagrow">
+          <span class="tag hot">To-Do</span>
+          <span class="tag">Survival</span>
+        </div>
+        <div class="title">🧰 Build Your 7-Day Kit</div>
+        <p class="desc">Water, calories, heat &amp; light, hygiene, info — your don’t-knock baseline.</p>
+        <div class="go">Jump →</div>
+      </a>
+
+      <a class="card" href="amish-winter-heat.html#amish-winter-heat" data-tags="survival">
+        <div class="tagrow"><span class="tag">Survival</span></div>
+        <div class="title">🔥 How the Amish Stay Warm in Winter</div>
+        <p class="desc">Stoves, window quilts, humidity, and a daily rhythm you can steal.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="hugh-glass.html#hugh-glass" data-tags="story survival">
+        <div class="tagrow"><span class="tag">Story</span><span class="tag">Survival</span></div>
+        <div class="title">🐻 Hugh Glass: The Man Who Wouldn’t Die</div>
+        <p class="desc">Pirates, Pawnee, a grizzly, and a 200-mile crawl.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="5survival-recipes.html#survival-recipes" data-tags="survival">
+        <div class="tagrow"><span class="tag">Survival</span></div>
+        <div class="title">🍲 5 Survival &amp; Camp Recipes (No Fridge)</div>
+        <p class="desc">Pantry-only meals that don’t taste like cardboard.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="skinny-to-strong.html#skinny-to-strong" data-tags="mindset story">
+        <div class="tagrow"><span class="tag">Mindset</span><span class="tag">Story</span></div>
+        <div class="title">💪 From Skinny to Strong</div>
+        <p class="desc">How I went from frail and sick to capable and confident.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="pale-horse-prepping.html#apocalypse-guide" data-tags="survival mindset">
+        <div class="tagrow"><span class="tag">Survival</span><span class="tag">Mindset</span></div>
+        <div class="title">🐎 Preparing for the Pale Horse</div>
+        <p class="desc">Revelation, collapse, and how to face the end with grit.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="top-5-home-water-filters.html#filters" data-tags="gear survival">
+        <div class="tagrow"><span class="tag">Gear</span><span class="tag">Survival</span></div>
+        <div class="title">💧 Top 5 Home Water Filters</div>
+        <p class="desc">From LifeStraw to Berkey—strip the bad stuff out.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="chicken-shortage-2025.html#chicken-shortage-blog" data-tags="story survival">
+        <div class="tagrow"><span class="tag">Story</span><span class="tag">Survival</span></div>
+        <div class="title">🐔 The Chicken Shortage of 2025</div>
+        <p class="desc">Backyard birds, quiet panic, and lessons learned.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="solar-fan-hat-review.html#solar-fan-hat-review" data-tags="gear survival">
+        <div class="tagrow"><span class="tag">Gear</span><span class="tag">Survival</span></div>
+        <div class="title">🌞 Solar Fan Hat Review (Yes, Seriously)</div>
+        <p class="desc">Looks goofy. Works amazing. Kept me alive at 100°F.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="collapse.html#collapse-blog" data-tags="mindset">
+        <div class="tagrow"><span class="tag">Mindset</span></div>
+        <div class="title">🔥 5 Things I No Longer Buy</div>
+        <p class="desc">Quit the waste. Keep the grit.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="surviving-county-jail.html#jail-survival-blog" data-tags="story survival mindset">
+        <div class="tagrow"><span class="tag">Story</span><span class="tag">Survival</span></div>
+        <div class="title">🚔 Surviving County Jail</div>
+        <p class="desc">Fear, boredom, and twisted humor—keeping your soul intact.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="bear-vs-man.html#bear-vs-man" data-tags="mindset">
+        <div class="tagrow"><span class="tag">Mindset</span></div>
+        <div class="title">🐻 Man vs Bear</div>
+        <p class="desc">The internet picked the bear. We picked reality.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="kamp-king.html#kamp-king-review" data-tags="gear">
+        <div class="tagrow"><span class="tag">Gear</span></div>
+        <div class="title">🗡️ Kamp King Knife Review</div>
+        <p class="desc">Classic look. Rugged build. Less gear to carry.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="manifesto.html#violence-answer" data-tags="mindset">
+        <div class="tagrow"><span class="tag">Mindset</span></div>
+        <div class="title">⚔️ When Violence Is the Answer</div>
+        <p class="desc">Hard lines, clear rules. No bravado.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="manifesto.html#masculinity-blog" data-tags="mindset">
+        <div class="tagrow"><span class="tag">Mindset</span></div>
+        <div class="title">💥 The Masculinity Manifesto</div>
+        <p class="desc">Why they hate strong men—and why your family needs one.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="manifesto.html#ufo-distraction" data-tags="mindset">
+        <div class="tagrow"><span class="tag">Mindset</span></div>
+        <div class="title">🛸 UFOs &amp; Government Deception</div>
+        <p class="desc">Smoke, mirrors, and why you should watch the ground, not the sky.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="manifesto.html#stockpile-tested" data-tags="gear survival">
+        <div class="tagrow"><span class="tag">Gear</span><span class="tag">Survival</span></div>
+        <div class="title">🎒 Survival Items That Earned Their Place</div>
+        <p class="desc">Not theory—gear that made the cut after real use.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="manifesto.html#stay-cool" data-tags="survival">
+        <div class="tagrow"><span class="tag">Survival</span></div>
+        <div class="title">🧊 How to Keep Cool During a Blackout</div>
+        <p class="desc">Fans, airflow, hydration, and not losing your mind when the AC dies.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="i-should-be-dead.html" data-tags="story mindset">
+        <div class="tagrow"><span class="tag">Story</span><span class="tag">Mindset</span></div>
+        <div class="title">🩸 I Should Be Dead: The Grit Story</div>
+        <p class="desc">The long road from chaos to responsibility.</p>
+        <div class="go">Open →</div>
+      </a>
+
+      <a class="card" href="goout_stove_review_FINAL_WITH_ANCHOR.html#goout-stove-review" data-tags="gear">
+        <div class="tagrow"><span class="tag">Gear</span></div>
+        <div class="title">🔥 GoOut Stove Review</div>
+        <p class="desc">Boil water, cook meals, warm your hands.</p>
+        <div class="go">Open →</div>
+      </a>
+
+    </div>
+
+    <div style="margin-top:16px; display:flex; justify-content:center;">
+      <a class="chip" href="index.html" style="font-size:.9rem;">← Return to Homepage</a>
+    </div>
+
+    <!-- Optional anchor target so the #seven-day-kit link isn't dead -->
+    <div id="seven-day-kit" style="margin-top:26px; max-width:900px;">
+      <div style="
+        border:1px dashed rgba(248,170,54,.35);
+        background:rgba(0,0,0,.22);
+        border-radius:18px;
+        padding:16px;
+        box-shadow: var(--shadow2);
+      ">
+        <div style="
+          font-family:Orbitron,Inter,sans-serif;
+          letter-spacing:.10em;
+          text-transform:uppercase;
+          color:rgba(248,170,54,.95);
+          font-weight:900;
+          margin-bottom:6px;
+        ">🧰 Build Your 7-Day Kit</div>
+        <div style="color:rgba(231,236,239,.74); font-weight:700; line-height:1.5;">
+          This is currently a placeholder anchor so the directory link works.
+          If you want, I’ll turn this into a full “7-Day Kit” page and link it here instead.
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <footer>
@@ -354,6 +830,73 @@
     <a href="affiliate.html">Affiliate Disclosure</a>
   </footer>
 
+  <script>
+    (function(){
+      const q = document.getElementById("q");
+      const clear = document.getElementById("clear");
+      const pills = Array.from(document.querySelectorAll(".pill"));
+      const cards = Array.from(document.querySelectorAll("#grid .card"));
+      const shownEl = document.getElementById("shown");
+      const totalEl = document.getElementById("total");
+
+      let activeFilter = "all";
+
+      function norm(s){ return (s||"").toLowerCase().trim(); }
+
+      function matchesFilter(card){
+        if(activeFilter === "all") return true;
+        const tags = norm(card.getAttribute("data-tags"));
+        if(activeFilter === "featured") return tags.includes("featured");
+        return tags.includes(activeFilter);
+      }
+
+      function matchesQuery(card){
+        const term = norm(q.value);
+        if(!term) return true;
+        const text = norm(card.textContent);
+        const tags = norm(card.getAttribute("data-tags"));
+        return text.includes(term) || tags.includes(term);
+      }
+
+      function apply(){
+        let shown = 0;
+        cards.forEach(card => {
+          const ok = matchesFilter(card) && matchesQuery(card);
+          card.style.display = ok ? "flex" : "none";
+          if(ok) shown++;
+        });
+        shownEl.textContent = String(shown);
+        totalEl.textContent = String(cards.length);
+      }
+
+      pills.forEach(p => {
+        p.addEventListener("click", () => {
+          pills.forEach(x => x.classList.remove("active"));
+          p.classList.add("active");
+          activeFilter = p.getAttribute("data-filter") || "all";
+          apply();
+        });
+      });
+
+      q.addEventListener("input", apply);
+      clear.addEventListener("click", () => { q.value = ""; q.focus(); apply(); });
+
+      // Keyboard shortcut: "/" focuses search (like modern apps)
+      document.addEventListener("keydown", (e) => {
+        if(e.key === "/" && document.activeElement !== q){
+          e.preventDefault();
+          q.focus();
+        }
+        if(e.key === "Escape" && document.activeElement === q){
+          q.value = "";
+          q.blur();
+          apply();
+        }
+      });
+
+      apply();
+    })();
+  </script>
+
 </body>
 </html>
-
