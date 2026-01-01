@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -86,14 +86,24 @@
     a{ color:var(--accent); text-decoration:none; }
     a:hover{ text-decoration:underline; }
     img{ max-width:100%; display:block; height:auto; }
-    .wrap{ max-width: var(--max-width); margin:0 auto; padding: 14px 18px 56px; }
+
+    .wrap{
+      max-width: var(--max-width);
+      margin:0 auto;
+      padding: 14px 18px 56px;
+    }
     @media (max-width:780px){ .wrap{ padding: 10px 14px 50px; } }
 
     .wrap, .center, .sidebar, .rg-wrap, .rg-copy, .rg-gallery, .ad-shell, .bundle-bar, .email-card {
       min-width: 0;
     }
 
-    .skip-link{ position:absolute; left:-999px; top:10px; padding:10px 12px; background:#0b0e14; border:1px solid rgba(255,255,255,0.10); border-radius:10px; color:var(--ink); z-index:9999; }
+    .skip-link{
+      position:absolute; left:-999px; top:10px;
+      padding:10px 12px; background:#0b0e14;
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:10px; color:var(--ink); z-index:9999;
+    }
     .skip-link:focus{ left:12px; }
 
     /* HEADER */
@@ -294,17 +304,25 @@
       margin: 0 auto;
     }
 
-    /* MAIN LAYOUT - Digital Guides Featured */
+    /* =========================
+       MAIN LAYOUT (FIXED)
+       You removed the right sidebar, but the grid was still reserving
+       a 3rd column. This switches it to TWO columns:
+       [left ads] [main content]
+    ========================= */
     .main-layout{
       display:grid;
-      grid-template-columns: 260px 1fr 260px;
+      grid-template-columns: 260px minmax(0, 1fr);
       gap:24px;
       align-items:start;
       margin-top: 30px;
       position:relative;
     }
     @media (max-width:1280px){
-      .main-layout{ grid-template-columns: 240px 1fr 240px; gap:20px; }
+      .main-layout{
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap:20px;
+      }
     }
     @media (max-width:1120px){
       .main-layout{
@@ -313,17 +331,14 @@
       }
     }
 
-    /* SIDEBAR AD STYLING - Subtle, background feel */
-    .ad-sidebar{
-      align-self:start;
-    }
+    /* LEFT SIDEBAR (only) */
+    .ad-sidebar{ align-self:start; min-width:0; }
     @media (min-width:1121px){
       .ad-sidebar{
         position: sticky;
         top: calc(72px + var(--safe-top));
       }
     }
-
     .ad-stack{ display:flex; flex-direction:column; gap:18px; }
 
     .gear-ad-card{
@@ -352,9 +367,7 @@
       text-align:center;
     }
 
-    .gear-ad-content{
-      padding:12px;
-    }
+    .gear-ad-content{ padding:12px; }
 
     .gear-ad-image{
       position:relative;
@@ -416,14 +429,9 @@
     }
 
     /* CENTER - DIGITAL GUIDES SHOWCASE */
-    .guides-showcase{
-      min-width:0;
-    }
+    .guides-showcase{ min-width:0; }
 
-    .showcase-header{
-      text-align:center;
-      margin-bottom:24px;
-    }
+    .showcase-header{ text-align:center; margin-bottom:24px; }
     .showcase-label{
       display:inline-block;
       padding:6px 14px;
@@ -472,6 +480,7 @@
       box-shadow: 0 20px 50px rgba(0,0,0,0.60);
       transition: all 0.3s ease;
       position:relative;
+      min-width:0;
     }
     .guide-card:hover{
       transform: translateY(-4px);
@@ -495,7 +504,6 @@
       margin-bottom:12px;
     }
 
-    /* NEW: priority markers that don't feel salesy */
     .guide-priority{
       position:absolute;
       top:18px;
@@ -599,7 +607,6 @@
       font-weight:600;
     }
 
-    /* NEW: microcopy above CTA (calm, guiding) */
     .guide-micro{
       margin:0 0 10px;
       color: rgba(231,236,239,.72);
@@ -609,11 +616,7 @@
     }
     .guide-micro .accent-word{ color: var(--accent); font-weight:1000; }
 
-    .guide-cta-row{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
+    .guide-cta-row{ display:flex; flex-direction:column; gap:12px; }
 
     .guide-cta-primary{
       display:flex;
@@ -638,7 +641,6 @@
       text-decoration:none;
     }
 
-    /* NEW: secondary CTA (to “go deeper”) */
     .guide-cta-secondary{
       display:flex;
       align-items:center;
@@ -701,7 +703,7 @@
       line-height:1.35;
     }
 
-    /* BUNDLE BAR (UPGRADED: anchors + opens both) */
+    /* BUNDLE BAR */
     .bundle-bar{
       margin-top:24px;
       border-radius:16px;
@@ -1089,11 +1091,9 @@
       text-align:center;
     }
 
-    /* Mobile responsive adjustments */
+    /* Mobile: hide sidebar */
     @media (max-width:1120px){
-      .ad-sidebar{
-        display:none;
-      }
+      .ad-sidebar{ display:none; }
     }
   </style>
 </head>
@@ -1149,7 +1149,7 @@
 
   <main id="main" class="wrap">
 
-    <!-- HERO (sharpened + clearer promise) -->
+    <!-- HERO -->
     <section class="hero" aria-label="Hero">
       <div class="hero-kicker">Digital-first • real-world readiness • no panic bait</div>
 
@@ -1178,7 +1178,7 @@
       <div class="hero-hint">Start with mindset → then build the kit around choices that hold up under stress.</div>
     </section>
 
-    <!-- EMAIL SIGNUP (moved up priority via hero CTA) -->
+    <!-- EMAIL SIGNUP -->
     <section class="email-card" id="email" aria-label="Email signup">
       <div class="email-card__inner">
         <div class="email-copy">
@@ -1212,11 +1212,10 @@
     <!-- MAIN LAYOUT -->
     <section class="main-layout" aria-label="Main content">
 
-      <!-- LEFT SIDEBAR - Gear Ads -->
+      <!-- LEFT SIDEBAR -->
       <aside class="ad-sidebar" aria-label="Left gear ads">
         <div class="ad-stack">
 
-          <!-- Tent Ad -->
           <article class="gear-ad-card">
             <div class="gear-ad-label">Gear Pick • Shelter</div>
             <div class="gear-ad-content">
@@ -1236,7 +1235,6 @@
             </div>
           </article>
 
-          <!-- Backpack Ad -->
           <article class="gear-ad-card">
             <div class="gear-ad-label">Gear Pick • Carry</div>
             <div class="gear-ad-content">
@@ -1256,7 +1254,6 @@
             </div>
           </article>
 
-          <!-- MRE Ad -->
           <article class="gear-ad-card">
             <div class="gear-ad-label">Gear Pick • Food</div>
             <div class="gear-ad-content">
@@ -1279,7 +1276,7 @@
         </div>
       </aside>
 
-      <!-- CENTER - Digital Guides Showcase -->
+      <!-- CENTER -->
       <div class="guides-showcase" id="digital-guides">
 
         <div class="showcase-header">
@@ -1293,7 +1290,6 @@
 
         <div class="guides-grid">
 
-          <!-- Guide 2: Prepared Not Paranoid (PRIORITY FIRST) -->
           <article class="guide-card" id="guide-prepared">
             <span class="guide-badge">⚡ Digital Guide</span>
             <span class="guide-priority"><strong>Best Start</strong> • calm priorities</span>
@@ -1350,7 +1346,6 @@
             </div>
           </article>
 
-          <!-- Guide 1: When Violence (DEPTH / SECOND) -->
           <article class="guide-card" id="guide-violence">
             <span class="guide-badge">⚡ Digital Guide</span>
             <span class="guide-priority"><strong>Depth</strong> • edge cases</span>
@@ -1409,7 +1404,6 @@
 
         </div>
 
-        <!-- Bundle Bar -->
         <div class="bundle-bar" role="region" aria-label="Get both guides">
           <div class="bundle-left">
             <p class="bundle-title">Want the full stack?</p>
@@ -1421,7 +1415,6 @@
           </div>
         </div>
 
-        <!-- Social Proof -->
         <section class="proof" aria-label="Social proof">
           <h3>What people say</h3>
           <div class="proof-grid">
@@ -1446,7 +1439,6 @@
           </div>
         </section>
 
-        <!-- SHOP -->
         <section class="shop" id="shop" aria-label="Merch shop">
           <div class="shop-head">
             <h3>Shop the Grit Gear HQ merch</h3>
@@ -1455,7 +1447,6 @@
 
           <div class="shop-grid">
 
-            <!-- Hat -->
             <article class="shop-card">
               <div class="shop-media">
                 <img src="blackfront.jpg" alt="Rough Gear distressed dad hat" loading="lazy" />
@@ -1476,7 +1467,6 @@
               </div>
             </article>
 
-            <!-- Mug -->
             <article class="shop-card">
               <div class="shop-media">
                 <img src="10029481694b5a6a2fe80__825.webp" alt="Grit Gear HQ enamel mug" loading="lazy" />
@@ -1497,7 +1487,6 @@
               </div>
             </article>
 
-            <!-- Phone Case -->
             <article class="shop-card">
               <div class="shop-media">
                 <img src="phonecase.jpg" alt="Grit Gear HQ MagSafe tough case" loading="lazy" />
@@ -1518,7 +1507,6 @@
               </div>
             </article>
 
-            <!-- MRE Meal -->
             <article class="shop-card">
               <div class="shop-media">
                 <img src="chickbowl.jpg" alt="MRE Chicken Burrito Bowl meal" loading="lazy" />
@@ -1548,7 +1536,6 @@
           </div>
         </section>
 
-        <!-- Quote Box -->
         <div class="quote-box">
           <h3>Reminder</h3>
           <p><strong>Civilization is a rumor.</strong> Your habits are what's real.</p>
@@ -1559,7 +1546,6 @@
         </footer>
 
       </div>
-
     </section>
 
   </main>
@@ -1567,17 +1553,11 @@
   <button class="to-top" id="toTopBtn" type="button" aria-label="Back to top">Top</button>
 
   <script defer>
-    /* Basic event pipe for launch tracking (safe even if you don't add GA/Pixel yet) */
     window.dataLayer = window.dataLayer || [];
     function ggTrack(eventName, payload){
-      try{
-        window.dataLayer.push({ event: eventName, ...payload });
-      }catch(e){}
-      // If you later enable GA4, you can also call gtag() here.
-      // If you later enable Meta Pixel, you can call fbq() here.
+      try{ window.dataLayer.push({ event: eventName, ...payload }); }catch(e){}
     }
 
-    /* Track clicks on elements with data-track */
     (function(){
       document.addEventListener('click', function(e){
         const el = e.target.closest('[data-track]');
@@ -1589,7 +1569,6 @@
       }, { passive:true });
     })();
 
-    /* Mobile nav toggle */
     (function(){
       const header = document.querySelector('header');
       const btn = document.getElementById('navToggleBtn');
@@ -1610,7 +1589,6 @@
       });
     })();
 
-    /* Back to top */
     (function(){
       const toTop = document.getElementById('toTopBtn');
       if(!toTop) return;
@@ -1627,13 +1605,11 @@
       });
     })();
 
-    /* Year */
     (function(){
       const y = document.getElementById('year');
       if(y) y.textContent = new Date().getFullYear();
     })();
 
-    /* "Open Both Guides" button */
     (function(){
       const btn = document.getElementById('buyBothBtn');
       if(!btn) return;
@@ -1643,13 +1619,11 @@
 
       btn.addEventListener('click', () => {
         ggTrack('gg_buy_both', { gg_action: 'open_both' });
-        // Open in two tabs (user gesture allows popups in most browsers)
         window.open(guidePrepared, "_blank", "noopener");
         window.open(guideViolence, "_blank", "noopener");
       });
     })();
 
-    /* Email submit */
     (function(){
       const form = document.getElementById('ggEmailForm');
       if(!form) return;
