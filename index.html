@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -247,7 +247,7 @@
     .hero-sub{
       color: var(--ink-soft);
       font-size:1.08rem;
-      max-width:780px;
+      max-width:820px;
       margin:0 auto 18px;
       line-height:1.6;
       font-weight:650;
@@ -290,6 +290,8 @@
       font-size:0.84rem;
       color: rgba(231,236,239,.70);
       font-weight:700;
+      max-width:920px;
+      margin: 0 auto;
     }
 
     /* MAIN LAYOUT - Digital Guides Featured */
@@ -420,7 +422,7 @@
 
     .showcase-header{
       text-align:center;
-      margin-bottom:30px;
+      margin-bottom:24px;
     }
     .showcase-label{
       display:inline-block;
@@ -443,7 +445,7 @@
     .showcase-subtitle{
       color:var(--ink-soft);
       font-size:1rem;
-      max-width:650px;
+      max-width:700px;
       margin:0 auto;
       line-height:1.5;
       font-weight:650;
@@ -469,6 +471,7 @@
       padding:24px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.60);
       transition: all 0.3s ease;
+      position:relative;
     }
     .guide-card:hover{
       transform: translateY(-4px);
@@ -489,7 +492,30 @@
       text-transform:uppercase;
       font-weight:900;
       color:var(--accent);
-      margin-bottom:16px;
+      margin-bottom:12px;
+    }
+
+    /* NEW: priority markers that don't feel salesy */
+    .guide-priority{
+      position:absolute;
+      top:18px;
+      right:18px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.32);
+      color: rgba(231,236,239,.78);
+      font-size:0.72rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .guide-priority strong{
+      color: var(--accent);
+      font-weight:1000;
     }
 
     .guide-image-wrapper{
@@ -573,6 +599,16 @@
       font-weight:600;
     }
 
+    /* NEW: microcopy above CTA (calm, guiding) */
+    .guide-micro{
+      margin:0 0 10px;
+      color: rgba(231,236,239,.72);
+      font-weight:800;
+      font-size:0.86rem;
+      line-height:1.35;
+    }
+    .guide-micro .accent-word{ color: var(--accent); font-weight:1000; }
+
     .guide-cta-row{
       display:flex;
       flex-direction:column;
@@ -600,6 +636,30 @@
       box-shadow: 0 16px 40px rgba(248,170,54,0.35);
       filter:brightness(1.05);
       text-decoration:none;
+    }
+
+    /* NEW: secondary CTA (to “go deeper”) */
+    .guide-cta-secondary{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(231,236,239,.88);
+      font-weight:950;
+      letter-spacing:.02em;
+      transition: all 0.2s ease;
+      cursor:pointer;
+    }
+    .guide-cta-secondary:hover{
+      text-decoration:none;
+      border-color: rgba(248,170,54,0.22);
+      background: rgba(248,170,54,0.08);
+      color: var(--ink);
+      transform: translateY(-1px);
     }
 
     .guide-meta{
@@ -641,7 +701,7 @@
       line-height:1.35;
     }
 
-    /* BUNDLE BAR (UPGRADED: actually opens both) */
+    /* BUNDLE BAR (UPGRADED: anchors + opens both) */
     .bundle-bar{
       margin-top:24px;
       border-radius:16px;
@@ -785,7 +845,7 @@
     .email-status.is-error{ color: #ffb4b4; }
     .email-status.is-ok{ color: #b9ffcf; }
 
-    /* SOCIAL PROOF (NEW) */
+    /* SOCIAL PROOF */
     .proof{
       margin-top:22px;
       border-radius:16px;
@@ -835,7 +895,7 @@
     }
     .proof-stars{ color: var(--accent); letter-spacing:.10em; white-space:nowrap; }
 
-    /* SHOP GRID (NEW: merch looks like a real shop) */
+    /* SHOP GRID */
     .shop{
       margin-top:22px;
       border-radius:16px;
@@ -1225,64 +1285,18 @@
         <div class="showcase-header">
           <span class="showcase-label">★ Digital Field Guides ★</span>
           <h2 class="showcase-title">Built for Moments When <span class="accent">Hesitation Costs</span></h2>
-          <p class="showcase-subtitle">Not gear lists. Not tactics. The psychology and decision-making framework that determines whether you freeze or act.</p>
+          <p class="showcase-subtitle">
+            Most visitors should start with <strong>Prepared, Not Paranoid</strong> — calm priorities first.
+            If you’re already past that and asking “what if it gets ugly?”, the second guide goes deeper.
+          </p>
         </div>
 
         <div class="guides-grid">
 
-          <!-- Guide 1: When Violence -->
-          <article class="guide-card">
+          <!-- Guide 2: Prepared Not Paranoid (PRIORITY FIRST) -->
+          <article class="guide-card" id="guide-prepared">
             <span class="guide-badge">⚡ Digital Guide</span>
-
-            <div class="guide-image-wrapper">
-              <img src="ChatGPT Image Dec 26, 2025, 12_56_48 AM.png"
-                   alt="When Violence Is the Only Answer cover"
-                   loading="lazy" />
-            </div>
-
-            <h3 class="guide-title">When Violence Is the Only Answer</h3>
-            <p class="guide-subtitle">Decision-Making at the Edge of Survival</p>
-
-            <p class="guide-description">
-              Not tactics — the mind. Why people freeze, how hesitation forms, and what it costs in real scenarios.
-            </p>
-
-            <ul class="guide-features">
-              <li><strong>Recognition delay</strong> and cognitive friction</li>
-              <li><strong>Rules conditioning</strong> that slows response</li>
-              <li><strong>Why observers</strong> judge moments wrong later</li>
-            </ul>
-
-            <div class="guide-highlight">
-              <strong>Bottom line:</strong>
-              <p>Most failures happen before the "decision point." This guide sharpens the part that actually saves lives.</p>
-            </div>
-
-            <div class="guide-cta-row">
-              <a href="https://cserpico.gumroad.com/l/xrvwpt"
-                 class="guide-cta-primary"
-                 target="_blank"
-                 rel="nofollow noopener"
-                 data-track="buy_violence_guide">
-                Buy Digital Guide — $3 →
-              </a>
-
-              <div class="guide-meta">
-                <span class="guide-pill">Instant Download</span>
-                <span class="guide-pill">Printable</span>
-                <span class="guide-pill">No Fluff</span>
-              </div>
-            </div>
-
-            <div class="guide-trust">
-              <div class="guide-stars">★★★★★</div>
-              <div class="guide-trust-text">Reader Rated • Focused • No Hype</div>
-            </div>
-          </article>
-
-          <!-- Guide 2: Prepared Not Paranoid -->
-          <article class="guide-card">
-            <span class="guide-badge">⚡ Digital Guide</span>
+            <span class="guide-priority"><strong>Best Start</strong> • calm priorities</span>
 
             <div class="guide-image-wrapper">
               <img src="dm9iiqoyyg5d3ymdirfk4td4hei1 (1).png"
@@ -1309,12 +1323,18 @@
             </div>
 
             <div class="guide-cta-row">
+              <p class="guide-micro">If you’re unsure where to start: start <span class="accent-word">here</span>.</p>
+
               <a href="https://cserpico.gumroad.com/l/ckmnum"
                  class="guide-cta-primary"
                  target="_blank"
                  rel="nofollow sponsored noopener"
                  data-track="buy_prepared_guide">
                 Buy Digital Guide — $5 →
+              </a>
+
+              <a href="#guide-violence" class="guide-cta-secondary" data-track="to_violence_from_prepared">
+                Go deeper: the hard decisions →
               </a>
 
               <div class="guide-meta">
@@ -1330,13 +1350,70 @@
             </div>
           </article>
 
+          <!-- Guide 1: When Violence (DEPTH / SECOND) -->
+          <article class="guide-card" id="guide-violence">
+            <span class="guide-badge">⚡ Digital Guide</span>
+            <span class="guide-priority"><strong>Depth</strong> • edge cases</span>
+
+            <div class="guide-image-wrapper">
+              <img src="ChatGPT Image Dec 26, 2025, 12_56_48 AM.png"
+                   alt="When Violence Is the Only Answer cover"
+                   loading="lazy" />
+            </div>
+
+            <h3 class="guide-title">When Violence Is the Only Answer</h3>
+            <p class="guide-subtitle">Decision-Making at the Edge of Survival</p>
+
+            <p class="guide-description">
+              Not tactics — the mind. Why people freeze, how hesitation forms, and what it costs in real scenarios.
+            </p>
+
+            <ul class="guide-features">
+              <li><strong>Recognition delay</strong> and cognitive friction</li>
+              <li><strong>Rules conditioning</strong> that slows response</li>
+              <li><strong>Why observers</strong> judge moments wrong later</li>
+            </ul>
+
+            <div class="guide-highlight">
+              <strong>Bottom line:</strong>
+              <p>Most failures happen before the "decision point." This guide sharpens the part that actually saves lives.</p>
+            </div>
+
+            <div class="guide-cta-row">
+              <p class="guide-micro">Already read the first guide? This is the <span class="accent-word">next layer</span>.</p>
+
+              <a href="https://cserpico.gumroad.com/l/xrvwpt"
+                 class="guide-cta-primary"
+                 target="_blank"
+                 rel="nofollow noopener"
+                 data-track="buy_violence_guide">
+                Buy Digital Guide — $3 →
+              </a>
+
+              <a href="#guide-prepared" class="guide-cta-secondary" data-track="back_to_prepared">
+                Not sure? Start with Prepared, Not Paranoid →
+              </a>
+
+              <div class="guide-meta">
+                <span class="guide-pill">Instant Download</span>
+                <span class="guide-pill">Printable</span>
+                <span class="guide-pill">No Fluff</span>
+              </div>
+            </div>
+
+            <div class="guide-trust">
+              <div class="guide-stars">★★★★★</div>
+              <div class="guide-trust-text">Reader Rated • Focused • No Hype</div>
+            </div>
+          </article>
+
         </div>
 
-        <!-- Bundle Bar (now functional) -->
+        <!-- Bundle Bar -->
         <div class="bundle-bar" role="region" aria-label="Get both guides">
           <div class="bundle-left">
-            <p class="bundle-title">Start with mindset.</p>
-            <p class="bundle-sub">Buy the guides first. Then build the kit around decisions that won't collapse under stress.</p>
+            <p class="bundle-title">Want the full stack?</p>
+            <p class="bundle-sub">Start with calm priorities. Add the edge-case decision guide after. If you want both, open both in one click.</p>
           </div>
           <div class="bundle-actions">
             <button class="bundle-cta" id="buyBothBtn" type="button" data-track="buy_both_guides">Open Both Guides →</button>
@@ -1344,7 +1421,7 @@
           </div>
         </div>
 
-        <!-- Social Proof (light, believable, editable later) -->
+        <!-- Social Proof -->
         <section class="proof" aria-label="Social proof">
           <h3>What people say</h3>
           <div class="proof-grid">
@@ -1369,7 +1446,7 @@
           </div>
         </section>
 
-        <!-- SHOP (NEW: looks like a real store; uses your real Printful links) -->
+        <!-- SHOP -->
         <section class="shop" id="shop" aria-label="Merch shop">
           <div class="shop-head">
             <h3>Shop the Grit Gear HQ merch</h3>
@@ -1441,29 +1518,28 @@
               </div>
             </article>
 
-
-          <!-- MRE Meal -->
-<article class="shop-card">
-  <div class="shop-media">
-    <img src="chickbowl.jpg" alt="MRE Chicken Burrito Bowl meal" loading="lazy" />
-  </div>
-  <div class="shop-body">
-    <h4 class="shop-title">MRE Chicken Burrito Bowl</h4>
-    <p class="shop-desc">
-      Sealed field meal. No prep, no fridge, no nonsense. Calories when you actually need them.
-    </p>
-    <div class="shop-row">
-      <span class="shop-price">Field Food</span>
-      <a class="shop-btn"
-         href="https://ebay.us/m/hmyUnT"
-         target="_blank"
-         rel="nofollow sponsored noopener"
-         data-track="shop_mre">
-        $9.10 →
-      </a>
-    </div>
-  </div>
-</article>
+            <!-- MRE Meal -->
+            <article class="shop-card">
+              <div class="shop-media">
+                <img src="chickbowl.jpg" alt="MRE Chicken Burrito Bowl meal" loading="lazy" />
+              </div>
+              <div class="shop-body">
+                <h4 class="shop-title">MRE Chicken Burrito Bowl</h4>
+                <p class="shop-desc">
+                  Sealed field meal. No prep, no fridge, no nonsense. Calories when you actually need them.
+                </p>
+                <div class="shop-row">
+                  <span class="shop-price">Field Food</span>
+                  <a class="shop-btn"
+                     href="https://ebay.us/m/hmyUnT"
+                     target="_blank"
+                     rel="nofollow sponsored noopener"
+                     data-track="shop_mre">
+                    $9.10 →
+                  </a>
+                </div>
+              </div>
+            </article>
 
           </div>
 
@@ -1507,8 +1583,6 @@
               </a>
             </div>
           </article>
-
-
 
         </div>
       </aside>
@@ -1591,14 +1665,14 @@
       const btn = document.getElementById('buyBothBtn');
       if(!btn) return;
 
-      const guide1 = "https://cserpico.gumroad.com/l/xrvwpt";
-      const guide2 = "https://cserpico.gumroad.com/l/ckmnum";
+      const guideViolence = "https://cserpico.gumroad.com/l/xrvwpt";
+      const guidePrepared = "https://cserpico.gumroad.com/l/ckmnum";
 
       btn.addEventListener('click', () => {
         ggTrack('gg_buy_both', { gg_action: 'open_both' });
         // Open in two tabs (user gesture allows popups in most browsers)
-        window.open(guide1, "_blank", "noopener");
-        window.open(guide2, "_blank", "noopener");
+        window.open(guidePrepared, "_blank", "noopener");
+        window.open(guideViolence, "_blank", "noopener");
       });
     })();
 
