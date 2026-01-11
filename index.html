@@ -14,12 +14,12 @@
 
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Ads -->
+  <!-- Google Ads (manual units only; keep Auto Ads OFF in AdSense UI) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
   <!-- Performance hint for hero image -->
   <link rel="preload" as="image" href="respon.jpg" />
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,11 +53,12 @@
     }
 
     *{ box-sizing:border-box; margin:0; padding:0; }
-    
+
     html{
       scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
-    
+
     body{
       background: #0a0e12;
       color:var(--ink);
@@ -67,28 +68,27 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    
-    /* Typography Scale */
+
     h1, h2, h3, h4, h5, h6 {
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.02em;
     }
-    
-    a{ 
-      color:var(--accent-bright); 
-      text-decoration:none; 
+
+    a{
+      color:var(--accent-bright);
+      text-decoration:none;
       transition: all 0.2s ease;
     }
-    a:hover{ 
+    a:hover{
       color:var(--accent-bright);
-      text-decoration:none; 
+      text-decoration:none;
     }
-    
-    img{ 
-      max-width:100%; 
-      display:block; 
-      height:auto; 
+
+    img{
+      max-width:100%;
+      display:block;
+      height:auto;
     }
 
     .wrap{
@@ -96,28 +96,25 @@
       margin:0 auto;
       padding: 0 24px 64px;
     }
-    @media (max-width:780px){ 
-      .wrap{ padding: 0 16px 48px; } 
+    @media (max-width:780px){
+      .wrap{ padding: 0 16px 48px; }
     }
 
-    /* Skip Link */
     .skip-link{
-      position:absolute; 
-      left:-999px; 
+      position:absolute;
+      left:-999px;
       top:10px;
-      padding:12px 16px; 
+      padding:12px 16px;
       background:var(--panel);
       border:1px solid var(--border);
-      border-radius:var(--radius-md); 
-      color:var(--ink); 
+      border-radius:var(--radius-md);
+      color:var(--ink);
       z-index:9999;
       font-weight:600;
     }
     .skip-link:focus{ left:16px; }
 
-    /* ============================================
-       HEADER - Professional & Sticky
-    ============================================ */
+    /* HEADER */
     header{
       position: sticky;
       top: 0;
@@ -138,65 +135,63 @@
       justify-content:space-between;
       gap:24px;
     }
-    @media (max-width:780px){ 
-      .nav-bar{ padding: 12px 16px; } 
+    @media (max-width:780px){
+      .nav-bar{ padding: 12px 16px; }
     }
 
-    .brand{ 
-      display:flex; 
-      align-items:center; 
-      gap:12px; 
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
       min-width:0;
       transition: opacity 0.2s ease;
     }
-    .brand:hover {
-      opacity: 0.85;
-    }
-    
+    .brand:hover { opacity: 0.85; }
+
     .brand-mark{
-      width:40px; 
-      height:40px; 
+      width:40px;
+      height:40px;
       border-radius:var(--radius-sm);
-      display:grid; 
+      display:grid;
       place-items:center;
       background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 50%, var(--accent-bright) 100%);
-      font-weight:900; 
-      font-size:0.9rem; 
+      font-weight:900;
+      font-size:0.9rem;
       letter-spacing:0.1em;
       flex:0 0 auto;
       box-shadow: var(--shadow-sm);
       color: #0a0e12;
     }
-    
-    .brand-text{ 
-      display:flex; 
-      flex-direction:column; 
-      gap:2px; 
-      min-width:0; 
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
     }
     .brand-text span:first-child{
-      font-weight:800; 
-      text-transform:uppercase; 
+      font-weight:800;
+      text-transform:uppercase;
       letter-spacing:0.08em;
-      font-size:1rem; 
-      white-space:nowrap; 
+      font-size:1rem;
+      white-space:nowrap;
       color: var(--ink);
     }
     .brand-text span:last-child{
-      font-size:0.75rem; 
+      font-size:0.75rem;
       color:var(--ink-muted);
       white-space:nowrap;
       font-weight:600;
     }
 
-    .nav-links{ 
-      display:flex; 
-      align-items:center; 
-      gap:32px; 
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:32px;
       font-size:0.9rem;
       font-weight:600;
     }
-    .nav-links a{ 
+    .nav-links a{
       color:var(--ink-soft);
       position: relative;
       padding: 4px 0;
@@ -211,22 +206,17 @@
       background: var(--accent);
       transition: width 0.3s ease;
     }
-    .nav-links a:hover{ 
-      color:var(--ink);
-    }
-    .nav-links a:hover:after {
-      width: 100%;
+    .nav-links a:hover{ color:var(--ink); }
+    .nav-links a:hover:after { width: 100%; }
+
+    .nav-cta{
+      display:flex;
+      gap:12px;
     }
 
-    .nav-cta{ 
-      display:flex; 
-      gap:12px; 
-    }
-
-    /* Button System */
     .btn{
-      display:inline-flex; 
-      align-items:center; 
+      display:inline-flex;
+      align-items:center;
       justify-content:center;
       padding:12px 24px;
       border-radius: var(--radius-pill);
@@ -242,7 +232,7 @@
       min-height:44px;
       text-decoration: none;
     }
-    
+
     .btn-primary{
       background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
       color:#0a0e12;
@@ -254,7 +244,7 @@
       box-shadow: 0 6px 20px rgba(212, 130, 63, 0.4);
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent-bright) 100%);
     }
-    
+
     .btn-ghost{
       border-color: var(--border-strong);
       background: transparent;
@@ -268,14 +258,14 @@
 
     .nav-toggle{
       display:none;
-      width:44px; 
+      width:44px;
       height:44px;
       border-radius:var(--radius-md);
       border:1px solid var(--border);
       background: var(--panel);
       color: var(--ink);
       font-size:1.25rem;
-      align-items:center; 
+      align-items:center;
       justify-content:center;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -284,7 +274,7 @@
       border-color: var(--accent);
       background: var(--panel-soft);
     }
-    
+
     @media (max-width:780px){
       .nav-links, .nav-cta{ display:none; }
       .nav-toggle{ display:inline-flex; margin-left:auto; }
@@ -301,9 +291,7 @@
         gap:12px;
         margin-top: 16px;
       }
-      .nav-open .nav-links {
-        gap: 0;
-      }
+      .nav-open .nav-links { gap: 0; }
       .nav-open .nav-links a{
         padding:12px 16px;
         border-radius:var(--radius-md);
@@ -311,26 +299,20 @@
         border: 1px solid var(--border);
         margin-bottom: 8px;
       }
-      .nav-open .nav-links a:after {
-        display: none;
-      }
-      .nav-open .nav-links a:hover{ 
+      .nav-open .nav-links a:after { display: none; }
+      .nav-open .nav-links a:hover{
         border-color: var(--accent);
         background: rgba(212, 130, 63, 0.1);
       }
       .nav-open .nav-cta a{ width:100%; }
-      .nav-bar {
-        flex-wrap: wrap;
-      }
+      .nav-bar { flex-wrap: wrap; }
     }
 
-    /* ============================================
-       HERO BANNER - Impactful Visual
-    ============================================ */
-    .hero-banner{ 
-      margin: 24px auto 32px; 
-      max-width: var(--max-width); 
-      padding: 0 24px; 
+    /* HERO BANNER */
+    .hero-banner{
+      margin: 24px auto 32px;
+      max-width: var(--max-width);
+      padding: 0 24px;
     }
     .hero-banner__inner{
       border-radius: var(--radius-lg);
@@ -348,9 +330,9 @@
       pointer-events: none;
       z-index: 1;
     }
-    .hero-banner__img{ 
-      width:100%; 
-      height:auto; 
+    .hero-banner__img{
+      width:100%;
+      height:auto;
       display:block;
       position: relative;
     }
@@ -359,17 +341,15 @@
       .hero-banner__inner{ border-radius:var(--radius-md); }
     }
 
-    /* ============================================
-       HERO SECTION - Strong Value Prop
-    ============================================ */
-    .hero{ 
-      padding: 48px 0 64px; 
-      text-align:center; 
+    /* HERO */
+    .hero{
+      padding: 48px 0 64px;
+      text-align:center;
     }
 
     .hero-kicker{
-      display:inline-flex; 
-      align-items:center; 
+      display:inline-flex;
+      align-items:center;
       gap:8px;
       padding:6px 16px;
       border-radius: var(--radius-pill);
@@ -382,7 +362,7 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-    
+
     .hero-title{
       font-size: clamp(2.5rem, 6vw, 4rem);
       line-height:1.1;
@@ -393,9 +373,9 @@
       font-weight: 900;
       letter-spacing: -0.03em;
     }
-    .accent{ 
-      background: linear-gradient(135deg, var(--accent-bright), var(--accent-dark)); 
-      -webkit-background-clip:text; 
+    .accent{
+      background: linear-gradient(135deg, var(--accent-bright), var(--accent-dark));
+      -webkit-background-clip:text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
@@ -450,7 +430,7 @@
       font-size: 0.95rem;
       min-width: 200px;
     }
-    @media (max-width:520px){ 
+    @media (max-width:520px){
       .hero-actions{ flex-direction: column; align-items: center; }
       .hero-actions .btn{ width: 100%; max-width: 400px; }
     }
@@ -464,9 +444,7 @@
       font-style: italic;
     }
 
-    /* ============================================
-       MAIN LAYOUT - Clean Grid
-    ============================================ */
+    /* MAIN LAYOUT */
     .main-layout{
       display:grid;
       grid-template-columns: 280px minmax(0, 1fr);
@@ -488,12 +466,10 @@
       }
     }
 
-    /* ============================================
-       SIDEBAR - Refined Gear Ads
-    ============================================ */
-    .ad-sidebar{ 
-      align-self:start; 
-      min-width:0; 
+    /* SIDEBAR */
+    .ad-sidebar{
+      align-self:start;
+      min-width:0;
     }
     @media (min-width:1121px){
       .ad-sidebar{
@@ -501,10 +477,10 @@
         top: calc(88px + var(--safe-top));
       }
     }
-    .ad-stack{ 
-      display:flex; 
-      flex-direction:column; 
-      gap:20px; 
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
     }
 
     .gear-ad-card{
@@ -533,9 +509,7 @@
       text-align:center;
     }
 
-    .gear-ad-content{ 
-      padding:16px; 
-    }
+    .gear-ad-content{ padding:16px; }
 
     .gear-ad-image{
       position:relative;
@@ -601,9 +575,58 @@
       transform: translateX(2px);
     }
 
-    /* ============================================
-       EMAIL CAPTURE - High Converting
-    ============================================ */
+    /* ✅ CONFINED AD BOXES */
+    .ad-unit-card{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow:hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .ad-unit-card .gear-ad-label{
+      background: rgba(255,255,255,0.06);
+      color: var(--ink-muted);
+    }
+
+    /* Hard “fences” for ads */
+    .ad-fence{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:14px;
+      background: var(--panel-soft);
+      border-top: 1px solid var(--border);
+      overflow:hidden;           /* prevents sprawl */
+    }
+
+    /* Sidebar: 300x600 */
+    .ad-fence--sidebar{
+      width:100%;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .ad-fence--sidebar ins.adsbygoogle{
+      display:block;
+      width: 300px;
+      height: 600px;
+      max-width:100%;
+    }
+
+    /* In-content: 300x250 */
+    .ad-fence--inline{
+      width:100%;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .ad-fence--inline ins.adsbygoogle{
+      display:block;
+      width: 300px;
+      height: 250px;
+      max-width:100%;
+      margin: 0 auto;
+    }
+
+    /* EMAIL CARD */
     .email-card{
       margin-bottom:48px;
       border-radius:var(--radius-lg);
@@ -630,8 +653,8 @@
       align-items:center;
     }
     @media (max-width:900px){
-      .email-card__inner{ 
-        grid-template-columns:1fr; 
+      .email-card__inner{
+        grid-template-columns:1fr;
         padding: 24px;
       }
     }
@@ -657,10 +680,10 @@
       font-size:0.875rem;
       font-weight:600;
     }
-    .email-points span{ 
-      display:inline-flex; 
-      align-items:center; 
-      gap:8px; 
+    .email-points span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
     }
 
     .email-form{
@@ -716,9 +739,9 @@
       box-shadow: 0 6px 16px rgba(212, 130, 63, 0.4);
       background: linear-gradient(135deg, var(--accent), var(--accent-bright));
     }
-    .email-btn:disabled{ 
-      opacity:0.6; 
-      cursor:not-allowed; 
+    .email-btn:disabled{
+      opacity:0.6;
+      cursor:not-allowed;
       transform: none;
     }
     .email-status{
@@ -731,16 +754,12 @@
     .email-status.is-error{ color: #ff6b6b; }
     .email-status.is-ok{ color: #51cf66; }
 
-    /* ============================================
-       GUIDES SHOWCASE - Premium Product Cards
-    ============================================ */
-    .guides-showcase{ 
-      min-width:0; 
-    }
+    /* GUIDES */
+    .guides-showcase{ min-width:0; }
 
-    .showcase-header{ 
-      text-align:center; 
-      margin-bottom:48px; 
+    .showcase-header{
+      text-align:center;
+      margin-bottom:48px;
     }
     .showcase-label{
       display:inline-block;
@@ -778,15 +797,12 @@
       margin-bottom:32px;
     }
     @media (max-width:980px){
-      .guides-grid{ 
-        grid-template-columns:1fr; 
+      .guides-grid{
+        grid-template-columns:1fr;
         gap: 24px;
       }
     }
 
-    /* ============================================
-       GUIDE CARDS - Premium Design
-    ============================================ */
     .guide-card{
       background: var(--panel);
       border:1px solid var(--border-strong);
@@ -939,14 +955,14 @@
       font-size:0.9rem;
       line-height:1.4;
     }
-    .guide-micro .accent-word{ 
-      color: var(--accent-bright); 
-      font-weight:800; 
+    .guide-micro .accent-word{
+      color: var(--accent-bright);
+      font-weight:800;
     }
 
-    .guide-cta-row{ 
-      display:flex; 
-      flex-direction:column; 
+    .guide-cta-row{
+      display:flex;
+      flex-direction:column;
       gap:12px;
       margin-top: auto;
     }
@@ -1041,9 +1057,7 @@
       line-height:1.4;
     }
 
-    /* ============================================
-       BUNDLE BAR - Clear CTA
-    ============================================ */
+    /* BUNDLE BAR */
     .bundle-bar{
       margin: 48px 0;
       border-radius:var(--radius-lg);
@@ -1060,15 +1074,15 @@
     @media (max-width:780px){
       .bundle-bar{ padding: 24px; }
     }
-    .bundle-left{ 
-      min-width:0; 
+    .bundle-left{
+      min-width:0;
       flex: 1;
     }
-    .bundle-title{ 
-      margin:0 0 8px; 
-      font-weight:800; 
-      letter-spacing:-0.01em; 
-      font-size:1.4rem; 
+    .bundle-title{
+      margin:0 0 8px;
+      font-weight:800;
+      letter-spacing:-0.01em;
+      font-size:1.4rem;
     }
     .bundle-sub{
       margin:0;
@@ -1077,10 +1091,10 @@
       font-size:1rem;
       line-height:1.5;
     }
-    .bundle-actions{ 
-      display:flex; 
-      gap:12px; 
-      flex-wrap:wrap; 
+    .bundle-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
     }
     .bundle-cta{
       display:inline-flex;
@@ -1101,7 +1115,7 @@
       font-size: 0.875rem;
       min-height: 48px;
     }
-    .bundle-cta:hover{ 
+    .bundle-cta:hover{
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(212, 130, 63, 0.4);
       background: linear-gradient(135deg, var(--accent), var(--accent-bright));
@@ -1118,9 +1132,7 @@
       color: var(--accent-bright);
     }
 
-    /* ============================================
-       SOCIAL PROOF - Trust Signals
-    ============================================ */
+    /* SOCIAL PROOF */
     .proof{
       margin: 48px 0;
       border-radius:var(--radius-lg);
@@ -1143,8 +1155,8 @@
       grid-template-columns: repeat(3, 1fr);
       gap:20px;
     }
-    @media (max-width:900px){ 
-      .proof-grid{ grid-template-columns:1fr; } 
+    @media (max-width:900px){
+      .proof-grid{ grid-template-columns:1fr; }
     }
     .proof-card{
       border-radius:var(--radius-md);
@@ -1175,16 +1187,14 @@
       font-weight:600;
       font-size:0.8rem;
     }
-    .proof-stars{ 
-      color: var(--accent-bright); 
-      letter-spacing:0.05em; 
+    .proof-stars{
+      color: var(--accent-bright);
+      letter-spacing:0.05em;
       white-space:nowrap;
       font-size: 0.9rem;
     }
 
-    /* ============================================
-       SHOP SECTION - Product Grid
-    ============================================ */
+    /* SHOP */
     .shop{
       margin: 48px 0;
       border-radius:var(--radius-lg);
@@ -1219,17 +1229,15 @@
       grid-template-columns: repeat(4, 1fr);
       gap:20px;
     }
-    @media (max-width:1180px){ 
-      .shop-grid{ grid-template-columns: repeat(2, 1fr); } 
+    @media (max-width:1180px){
+      .shop-grid{ grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width:520px){ 
-      .shop-grid{ 
+    @media (max-width:520px){
+      .shop-grid{
         grid-template-columns: 1fr;
         padding: 0 16px 24px;
-      } 
-      .shop-head {
-        padding: 24px 16px 0;
       }
+      .shop-head { padding: 24px 16px 0; }
     }
 
     .shop-card{
@@ -1326,9 +1334,7 @@
       transform: translateX(2px);
     }
 
-    /* ============================================
-       QUOTE BOX - Memorable Statement
-    ============================================ */
+    /* QUOTE BOX */
     .quote-box{
       margin: 48px 0;
       border-radius: var(--radius-lg);
@@ -1370,9 +1376,7 @@
       font-weight: 800;
     }
 
-    /* ============================================
-       BACK TO TOP BUTTON
-    ============================================ */
+    /* BACK TO TOP */
     .to-top{
       position: fixed;
       right: 20px;
@@ -1393,15 +1397,12 @@
       backdrop-filter: blur(8px);
       transition: all 0.2s ease;
     }
-    .to-top:hover{ 
-      color: var(--accent-bright); 
+    .to-top:hover{
+      color: var(--accent-bright);
       border-color: var(--accent);
       transform: translateY(-2px);
     }
 
-    /* ============================================
-       FOOTER - Professional Closure
-    ============================================ */
     footer{
       margin-top: 64px;
       padding: 32px 0;
@@ -1415,11 +1416,6 @@
     /* Mobile: hide sidebar */
     @media (max-width:1120px){
       .ad-sidebar{ display:none; }
-    }
-    
-    /* Smooth scroll padding for anchors */
-    html {
-      scroll-padding-top: 100px;
     }
   </style>
 </head>
@@ -1599,6 +1595,17 @@
             </div>
           </article>
 
+          <!-- ✅ CONFINED SIDEBAR AD (300x600) -->
+          <article class="ad-unit-card" aria-label="Sponsored ad">
+            <div class="gear-ad-label">Sponsored</div>
+            <div class="ad-fence ad-fence--sidebar">
+              <ins class="adsbygoogle"
+                   style="display:block; width:300px; height:600px;"
+                   data-ad-client="ca-pub-1532367766505583"
+                   data-ad-slot="REPLACE_ME_SIDEBAR_300x600"></ins>
+            </div>
+          </article>
+
         </div>
       </aside>
 
@@ -1616,7 +1623,7 @@
 
         <div class="guides-grid">
 
-          <!-- GUIDE 1: PREPARED NOT PARANOID -->
+          <!-- GUIDE 1 -->
           <article class="guide-card" id="guide-prepared">
             <span class="guide-badge">⚡ Digital Guide</span>
             <span class="guide-priority"><strong>Best Start</strong> • Calm Priorities</span>
@@ -1656,65 +1663,6 @@
                 Buy Digital Guide — $5 →
               </a>
 
-             <!-- GUIDE 2: WHEN VIOLENCE IS THE ONLY ANSWER -->
-<article class="guide-card guide-card--secondary" id="guide-violence">
-  <span class="guide-badge">⚡ Digital Guide</span>
-  <span class="guide-priority"><strong>Depth</strong> • Edge Cases</span>
-
-  <div class="guide-image-wrapper">
-    <img src="when-violence-is-the-only-answer-cover.png"
-         alt="When Violence Is the Only Answer guide cover"
-         loading="lazy" />
-  </div>
-
-  <h3 class="guide-title">When Violence Is the Only Answer</h3>
-  <p class="guide-subtitle">Decision-Making at the Edge of Survival</p>
-
-  <p class="guide-description">
-    Not tactics — the mind. Why people freeze, how hesitation forms, and what it costs in real scenarios.
-  </p>
-
-  <ul class="guide-features">
-    <li><strong>Recognition delay</strong> and cognitive friction</li>
-    <li><strong>Rules conditioning</strong> that slows response</li>
-    <li><strong>Why observers</strong> judge moments wrong later</li>
-  </ul>
-
-  <div class="guide-highlight">
-    <strong>Bottom line:</strong>
-    <p>Most failures happen before the decision point. This sharpens the part that actually saves lives.</p>
-  </div>
-
-  <div class="guide-cta-row">
-    <p class="guide-micro">
-      Best read <em>after</em> <strong>Prepared, Not Paranoid</strong>.
-    </p>
-
-    <a href="https://cserpico.gumroad.com/l/wueiqt"
-       class="guide-cta-secondary"
-       target="_blank"
-       rel="nofollow sponsored noopener"
-       data-track="buy_violence_guide">
-      Buy Digital Guide — $2.95 →
-    </a>
-
-    <div class="guide-meta">
-      <span class="guide-pill">Instant Download</span>
-      <span class="guide-pill">Grounded</span>
-      <span class="guide-pill">Mindset First</span>
-    </div>
-  </div>
-
-  <div class="guide-trust">
-    <div class="guide-stars">★★★★★</div>
-    <div class="guide-trust-text">Reader Favorite • Serious • No Hype</div>
-  </div>
-</article>
-
-              <a href="#guide-prepared" class="guide-cta-secondary" data-track="back_to_prepared">
-                Not sure? Start with Prepared, Not Paranoid →
-              </a>
-
               <div class="guide-meta">
                 <span class="guide-pill">Instant Download</span>
                 <span class="guide-pill">Printable</span>
@@ -1725,6 +1673,61 @@
             <div class="guide-trust">
               <div class="guide-stars">★★★★★</div>
               <div class="guide-trust-text">Reader Rated • Focused • No Hype</div>
+            </div>
+          </article>
+
+          <!-- GUIDE 2 (FIXED: no longer nested inside Guide 1) -->
+          <article class="guide-card" id="guide-violence">
+            <span class="guide-badge">⚡ Digital Guide</span>
+            <span class="guide-priority"><strong>Depth</strong> • Edge Cases</span>
+
+            <div class="guide-image-wrapper">
+              <img src="when-violence-is-the-only-answer-cover.png"
+                   alt="When Violence Is the Only Answer guide cover"
+                   loading="lazy" />
+            </div>
+
+            <h3 class="guide-title">When Violence Is the Only Answer</h3>
+            <p class="guide-subtitle">Decision-Making at the Edge of Survival</p>
+
+            <p class="guide-description">
+              Not tactics — the mind. Why people freeze, how hesitation forms, and what it costs in real scenarios.
+            </p>
+
+            <ul class="guide-features">
+              <li><strong>Recognition delay</strong> and cognitive friction</li>
+              <li><strong>Rules conditioning</strong> that slows response</li>
+              <li><strong>Why observers</strong> judge moments wrong later</li>
+            </ul>
+
+            <div class="guide-highlight">
+              <strong>Bottom line:</strong>
+              <p>Most failures happen before the decision point. This sharpens the part that actually saves lives.</p>
+            </div>
+
+            <div class="guide-cta-row">
+              <p class="guide-micro">
+                Best read <em>after</em> <strong>Prepared, Not Paranoid</strong>.
+              </p>
+
+              <a href="https://cserpico.gumroad.com/l/wueiqt"
+                 class="guide-cta-secondary"
+                 target="_blank"
+                 rel="nofollow sponsored noopener"
+                 data-track="buy_violence_guide">
+                Buy Digital Guide — $2.95 →
+              </a>
+
+              <div class="guide-meta">
+                <span class="guide-pill">Instant Download</span>
+                <span class="guide-pill">Grounded</span>
+                <span class="guide-pill">Mindset First</span>
+              </div>
+            </div>
+
+            <div class="guide-trust">
+              <div class="guide-stars">★★★★★</div>
+              <div class="guide-trust-text">Reader Favorite • Serious • No Hype</div>
             </div>
           </article>
 
@@ -1764,6 +1767,17 @@
                 <span>— Verified Reader</span><span class="proof-stars">★★★★★</span>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- ✅ CONFINED INLINE AD (300x250) -->
+        <section class="ad-unit-card" aria-label="Sponsored ad" style="margin: 28px 0;">
+          <div class="gear-ad-label">Sponsored</div>
+          <div class="ad-fence ad-fence--inline">
+            <ins class="adsbygoogle"
+                 style="display:block; width:300px; height:250px;"
+                 data-ad-client="ca-pub-1532367766505583"
+                 data-ad-slot="REPLACE_ME_INLINE_300x250"></ins>
           </div>
         </section>
 
@@ -1877,11 +1891,25 @@
   </footer>
 
   <script>
+    // Manual AdSense init for the two ad units (confined)
+    (function(){
+      try {
+        // Push after DOM paint
+        window.addEventListener('load', () => {
+          document.querySelectorAll('ins.adsbygoogle').forEach(() => {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          });
+        });
+      } catch (e) {
+        console.warn('AdSense init error:', e);
+      }
+    })();
+
     // Analytics tracking
     window.dataLayer = window.dataLayer || [];
     function ggTrack(eventName, payload){
-      try{ 
-        window.dataLayer.push({ event: eventName, ...payload }); 
+      try{
+        window.dataLayer.push({ event: eventName, ...payload });
         console.log('Track:', eventName, payload);
       }catch(e){
         console.error('Tracking error:', e);
@@ -1912,7 +1940,6 @@
         ggTrack('gg_nav_toggle', { gg_open: open });
       });
 
-      // Close nav when clicking a link
       nav.addEventListener('click', (e) => {
         if(e.target && e.target.matches('a') && header.classList.contains('nav-open')){
           header.classList.remove('nav-open');
@@ -1950,8 +1977,8 @@
       const btn = document.getElementById('buyBothBtn');
       if(!btn) return;
 
-      const guideViolence = "https://cserpico.gumroad.com/l/xrvwpt";
       const guidePrepared = "https://cserpico.gumroad.com/l/krlfn";
+      const guideViolence = "https://cserpico.gumroad.com/l/wueiqt";
 
       btn.addEventListener('click', () => {
         ggTrack('gg_buy_both', { gg_action: 'open_both' });
@@ -1986,9 +2013,9 @@
           return;
         }
 
-        if(btn){ 
-          btn.disabled = true; 
-          btn.textContent = 'Sending…'; 
+        if(btn){
+          btn.disabled = true;
+          btn.textContent = 'Sending…';
         }
         if(statusEl){
           statusEl.className = 'email-status';
