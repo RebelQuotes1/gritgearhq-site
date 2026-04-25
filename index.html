@@ -1,6 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rough Grit</title>
+
+<style>
+body { margin:0; font-family:Arial; background:#0b0b09; color:#eee; }
+
+.video-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2px;
+}
+
+.vcard { background:#181815; }
+.vcard-thumb { aspect-ratio:16/9; }
+.vcard-thumb iframe { width:100%; height:100%; border:0; }
+
+.vcard-body { padding:18px; }
+.vcard-title { font-size:18px; }
+
+.featured-row {
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:2px;
+}
+
+.gear-card {
+  background:#181815;
+  display:flex;
+  flex-direction:column;
+}
+
+.gear-card-img { height:240px; }
+.gear-card-img img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gear-card-body { padding:18px; }
+
+@media (max-width:1100px){
+  .video-grid { grid-template-columns:repeat(2,1fr); }
+  .featured-row { grid-template-columns:1fr; }
+}
+
+@media (max-width:520px){
+  .video-grid {
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+  }
+
+  .vcard-body { padding:12px; }
+  .vcard-title { font-size:14px; }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+
+<div class="featured-row">
+
+  <!-- FEATURED VIDEO -->
+  <article class="vcard">
+    <div class="vcard-thumb">
+      <iframe src="https://www.youtube.com/embed/8AHxExqrED4"></iframe>
+    </div>
+    <div class="vcard-body">
+      <h3 class="vcard-title">What I Carry Daily After 41 Years</h3>
+    </div>
+  </article>
+
+  <!-- GEAR -->
+  <div class="gear-card">
+    <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank">
+
+      <div class="gear-card-img">
+        <img src="https://github.com/RebelQuotes1/gritgearhq-site/blob/main/images/turdt.JPG?raw=true">
+      </div>
+
+      <div class="gear-card-body">
+        <h3>SurvivorCord</h3>
+        <p>Fire starter, fishing line, snare wire.</p>
+      </div>
+
+    </a>
+  </div>
+
+</div>
+
+<!-- VIDEO GRID -->
+<div class="video-grid">
+
+  <article class="vcard">
+    <div class="vcard-thumb">
+      <iframe src="https://www.youtube.com/embed/7EF2ivJrzsk"></iframe>
+    </div>
+    <div class="vcard-body">
+      <h3 class="vcard-title">Stopped Buying This Gear</h3>
+    </div>
+  </article>
+
+  <article class="vcard">
+    <div class="vcard-thumb">
+      <iframe src="https://www.youtube.com/embed/xVUYjnFakcY"></iframe>
+    </div>
+    <div class="vcard-body">
+      <h3 class="vcard-title">Garage Stove</h3>
+    </div>
+  </article>
+
+  <article class="vcard">
+    <div class="vcard-thumb">
+      <iframe src="https://www.youtube.com/embed/UQ6luckJbXs"></iframe>
+    </div>
+    <div class="vcard-body">
+      <h3 class="vcard-title">Gas Shortage</h3>
+    </div>
+  </article>
+
+  <article class="vcard">
+    <div class="vcard-thumb">
+      <iframe src="https://www.youtube.com/embed/CB3PHCQQrgs"></iframe>
+    </div>
+    <div class="vcard-body">
+      <h3 class="vcard-title">Prep Skills</h3>
+    </div>
+  </article>
+
+</div>
+
+</section>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
   <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1532367766505583" crossorigin="anonymous"></script>
 
