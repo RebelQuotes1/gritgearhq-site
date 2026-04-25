@@ -25,7 +25,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -38,15 +37,8 @@
       line-height: 1.5;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(var(--max), calc(100% - 32px));
@@ -70,11 +62,7 @@
       gap: 16px;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+    .brand { display: flex; flex-direction: column; gap: 2px; }
 
     .brand-kicker {
       color: var(--accent);
@@ -99,13 +87,9 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
-    .hero {
-      padding: 42px 0 28px;
-    }
+    .hero { padding: 42px 0 28px; }
 
     .hero-grid {
       display: grid;
@@ -139,9 +123,7 @@
       font-weight: 800;
     }
 
-    .eyebrow {
-      margin-bottom: 14px;
-    }
+    .eyebrow { margin-bottom: 14px; }
 
     h1 {
       margin: 0 0 14px;
@@ -190,9 +172,7 @@
       color: var(--text);
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-    }
+    .btn:hover { transform: translateY(-1px); }
 
     .hero-image {
       min-height: 360px;
@@ -215,9 +195,7 @@
       pointer-events: none;
     }
 
-    .section {
-      padding: 28px 0;
-    }
+    .section { padding: 28px 0; }
 
     .section-head {
       display: flex;
@@ -242,7 +220,7 @@
 
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
       align-items: stretch;
     }
@@ -328,61 +306,7 @@
       box-shadow: 0 0 18px rgba(255, 140, 0, 0.18);
     }
 
-    .gear-highlight .kicker {
-      color: #ffaa00;
-    }
-
-    .gear-thumb {
-      aspect-ratio: 16 / 9;
-      background:
-        radial-gradient(circle at 70% 35%, rgba(255, 115, 20, 0.55), transparent 28%),
-        linear-gradient(135deg, #15120d, #2a1f13 48%, #0d0d0b);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .gear-thumb::before {
-      content: "SURVIVORCORD";
-      position: absolute;
-      top: 16px;
-      left: 18px;
-      font-size: 13px;
-      letter-spacing: 0.16em;
-      color: #ffaa00;
-      font-weight: 900;
-    }
-
-    .gear-thumb::after {
-      content: "FIRE • FISH • WIRE";
-      position: absolute;
-      bottom: 16px;
-      left: 18px;
-      font-size: 14px;
-      color: #fff2d2;
-      font-weight: 900;
-    }
-
-    .cord-visual {
-      width: 78%;
-      height: 70px;
-      border-radius: 999px;
-      background:
-        repeating-linear-gradient(
-          45deg,
-          #ff7a1a 0px,
-          #ff7a1a 8px,
-          #c6450b 8px,
-          #c6450b 14px
-        );
-      box-shadow:
-        0 0 28px rgba(255, 112, 20, 0.42),
-        inset 0 0 12px rgba(0,0,0,0.35);
-      transform: rotate(-7deg);
-    }
+    .gear-highlight .kicker { color: #ffaa00; }
 
     .split-grid {
       display: grid;
@@ -391,16 +315,11 @@
       align-items: start;
     }
 
-    .book-list {
-      display: grid;
-      gap: 16px;
-    }
+    .book-list { display: grid; gap: 16px; }
 
     .book-card,
     .about-card,
-    .mission-card {
-      padding: 18px;
-    }
+    .mission-card { padding: 18px; }
 
     .book-top {
       display: flex;
@@ -460,15 +379,14 @@
       gap: 12px;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid,
-      .split-grid,
-      .featured-pair {
-        grid-template-columns: 1fr;
+    @media (max-width: 1080px) {
+      .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .hero-image {
-        min-height: 300px;
+      .hero-grid,
+      .split-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -480,25 +398,23 @@
         flex-direction: column;
       }
 
-      .hero-copy {
-        padding: 24px;
-      }
+      .hero-copy { padding: 24px; }
+      .brand-title { font-size: 24px; }
+      .nav-links { gap: 10px; }
 
-      .brand-title {
-        font-size: 24px;
-      }
-
-      .nav-links {
-        gap: 10px;
-      }
-
+      .featured-pair,
       .video-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
       }
 
-      .book-content {
-        align-items: center;
-      }
+      .card-body { padding: 11px; }
+      .card-title { font-size: 15px; }
+      .card-text { font-size: 12px; }
+      .kicker { font-size: 9px; }
+      .card-link, .btn { font-size: 11px; }
+
+      .book-content { align-items: center; }
     }
   </style>
 </head>
@@ -581,8 +497,8 @@
 
           <article class="video-card gear-highlight" id="gear">
             <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="noopener">
-              <div class="gear-thumb">
-                <div class="cord-visual"></div>
+              <div class="video-thumb">
+                <img src="https://www.titansurvival.com/cdn/shop/files/SurvivorCord_Orange_1200x.jpg" alt="SurvivorCord">
               </div>
 
               <div class="card-body">
@@ -605,14 +521,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/7EF2ivJrzsk" title="Featured YouTube video" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">Live Video</div>
               <h3 class="card-title">After 41 Years… Stopped Buying This Survival Gear</h3>
-              <p class="card-text">
-                Most survival kits are full of things that look good… but fail when it actually matters. After 41 years of experience, I’ve seen what works—and what people keep wasting money on.
-              </p>
-
+              <p class="card-text">Most survival kits are full of things that look good… but fail when it actually matters. After 41 years of experience, I’ve seen what works—and what people keep wasting money on.</p>
               <div class="card-actions">
                 <a class="card-link" href="https://youtu.be/7EF2ivJrzsk" target="_blank" rel="noopener">Watch on YouTube</a>
               </div>
@@ -623,14 +535,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/xVUYjnFakcY" title="YouTube video 2" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">Video 02</div>
               <h3 class="card-title">This Cheap Stove Outperforms Everything Else in My Garage</h3>
-              <p class="card-text">
-                After 41 years of heating shops, garages, and messing with just about every setup out there… this is the one I wish I had years ago.
-              </p>
-
+              <p class="card-text">After 41 years of heating shops, garages, and messing with just about every setup out there… this is the one I wish I had years ago.</p>
               <div class="card-actions">
                 <a class="card-link" href="https://www.youtube.com/watch?v=xVUYjnFakcY" target="_blank" rel="noopener">Watch on YouTube</a>
               </div>
@@ -641,14 +549,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/UQ6luckJbXs" title="YouTube video 3" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">Video 03</div>
               <h3 class="card-title">Shortage Coming… Learn This Before Gas Stations Close</h3>
-              <p class="card-text">
-                When gas disappears, most people are stuck. This is how you keep your car on the road when fuel shortages hit.
-              </p>
-
+              <p class="card-text">When gas disappears, most people are stuck. This is how you keep your car on the road when fuel shortages hit.</p>
               <div class="card-actions">
                 <a class="card-link" href="https://www.youtube.com/watch?v=UQ6luckJbXs" target="_blank" rel="noopener">Watch on YouTube</a>
               </div>
@@ -659,14 +563,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/CB3PHCQQrgs" title="YouTube video 4" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">Video 04</div>
               <h3 class="card-title">Shortage Coming… Learn This Before Gas Stations Close</h3>
-              <p class="card-text">
-                When gas disappears, most people are stuck. This is how you keep your car on the road when fuel shortages hit.
-              </p>
-
+              <p class="card-text">When gas disappears, most people are stuck. This is how you keep your car on the road when fuel shortages hit.</p>
               <div class="card-actions">
                 <a class="card-link" href="https://www.youtube.com/watch?v=CB3PHCQQrgs" target="_blank" rel="noopener">Watch on YouTube</a>
               </div>
@@ -677,14 +577,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/w3V1bNfzCRw" title="YouTube video 5" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">Video 05</div>
               <h3 class="card-title">County Jail Survival Guide: What Not To Do</h3>
-              <p class="card-text">
-                If you ever find yourself locked up, the first 24 hours in county jail can determine everything that comes after.
-              </p>
-
+              <p class="card-text">If you ever find yourself locked up, the first 24 hours in county jail can determine everything that comes after.</p>
               <div class="card-actions">
                 <a class="card-link" href="https://www.youtube.com/watch?v=w3V1bNfzCRw" target="_blank" rel="noopener">Watch on YouTube</a>
               </div>
@@ -695,14 +591,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/IWdisoYe04U" title="YouTube video 6" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">Video 06</div>
               <h3 class="card-title">Why I Carry 3 Knives (Each One Has a Purpose)</h3>
-              <p class="card-text">
-                Most people carry one knife… I carry three. Find out why.
-              </p>
-
+              <p class="card-text">Most people carry one knife… I carry three. Find out why.</p>
               <div class="card-actions">
                 <a class="card-link" href="https://www.youtube.com/watch?v=IWdisoYe04U" target="_blank" rel="noopener">Watch on YouTube</a>
               </div>
@@ -713,14 +605,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/mur0_l8NeRc" title="YouTube video 7" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">Video 07</div>
               <h3 class="card-title">How to Survive a Famine: Produce and Stretch Food When There's Nothing Left</h3>
-              <p class="card-text">
-                When food disappears, most people won’t be ready. Not because they’re weak… but because they never thought it could happen.
-              </p>
-
+              <p class="card-text">When food disappears, most people won’t be ready. Not because they’re weak… but because they never thought it could happen.</p>
               <div class="card-actions">
                 <a class="card-link" href="https://www.youtube.com/watch?v=mur0_l8NeRc" target="_blank" rel="noopener">Watch on YouTube</a>
               </div>
@@ -731,14 +619,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/XCZK8ieWyLg" title="YouTube video 8" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">Video 08</div>
               <h3 class="card-title">Cody Lundin vs Dave Canterbury: The Real Story</h3>
-              <p class="card-text">
-                What really happened between Cody Lundin and Dave Canterbury on Dual Survival?
-              </p>
-
+              <p class="card-text">What really happened between Cody Lundin and Dave Canterbury on Dual Survival?</p>
               <div class="card-actions">
                 <a class="card-link" href="https://www.youtube.com/watch?v=XCZK8ieWyLg" target="_blank" rel="noopener">Watch on YouTube</a>
               </div>
@@ -749,14 +633,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/lLm4y6oMjtY" title="How to Prep for WW3 in a Small Apartment" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">WW3 Prep</div>
               <h3 class="card-title">Prep in a Small Apartment</h3>
-              <p class="card-text">
-                No space? Doesn’t matter. This is how you actually prepare when you’re limited.
-              </p>
-
+              <p class="card-text">No space? Doesn’t matter. This is how you actually prepare when you’re limited.</p>
               <div class="card-actions">
                 <a class="card-link" href="https://youtu.be/lLm4y6oMjtY" target="_blank" rel="noopener">Watch</a>
               </div>
@@ -767,14 +647,10 @@
             <div class="video-thumb">
               <iframe src="https://www.youtube.com/embed/0_RKbqRGw_k" title="If Nuclear War Started Tomorrow" allowfullscreen loading="lazy"></iframe>
             </div>
-
             <div class="card-body">
               <div class="kicker">Survival Reality</div>
               <h3 class="card-title">Would Your Location Save You?</h3>
-              <p class="card-text">
-                Some places give you a chance. Others don’t. Most people never think about it.
-              </p>
-
+              <p class="card-text">Some places give you a chance. Others don’t. Most people never think about it.</p>
               <div class="card-actions">
                 <a class="card-link" href="https://youtu.be/0_RKbqRGw_k" target="_blank" rel="noopener">Watch</a>
               </div>
@@ -810,9 +686,7 @@
 
               <div class="book-content">
                 <img src="unfk.jfif" alt="How To Unf*ck Your Life Book Cover">
-                <p class="card-text">
-                  "Die as a Legend, Not as a Cautionary Tale." This one is about ownership, discipline, and getting your life under control without excuses.
-                </p>
+                <p class="card-text">"Die as a Legend, Not as a Cautionary Tale." This one is about ownership, discipline, and getting your life under control without excuses.</p>
               </div>
 
               <div class="card-actions">
@@ -831,9 +705,7 @@
 
               <div class="book-content">
                 <img src="groweer.png" alt="Cannabis Grower’s Planner Book Cover">
-                <p class="card-text">
-                  A detailed grow logbook for cultivators and hobbyists. Track your process, fix mistakes, and stop guessing your way through grows.
-                </p>
+                <p class="card-text">A detailed grow logbook for cultivators and hobbyists. Track your process, fix mistakes, and stop guessing your way through grows.</p>
               </div>
 
               <div class="card-actions">
@@ -852,9 +724,7 @@
 
               <div class="book-content">
                 <img src="tcri.png" alt="Thought Crimes Book Cover">
-                <p class="card-text">
-                  A notebook for dangerous ideas. No filters, no guardrails—just a place to think clearly and write what most people won’t.
-                </p>
+                <p class="card-text">A notebook for dangerous ideas. No filters, no guardrails—just a place to think clearly and write what most people won’t.</p>
               </div>
 
               <div class="card-actions">
@@ -873,26 +743,20 @@
               <h2>About the Mission</h2>
             </div>
 
-            <p>
-              This site is for people who want useful survival-minded content, honest gear talk, and practical thinking without fake guru nonsense.
-            </p>
+            <p>This site is for people who want useful survival-minded content, honest gear talk, and practical thinking without fake guru nonsense.</p>
           </div>
 
           <div class="about-grid">
             <article class="about-card">
               <div class="kicker">Who I Am</div>
               <h3 class="card-title">Built, Not Branded</h3>
-              <p class="card-text">
-                I’m not trying to look like an expert—I care about what actually works. Real experience, real lessons, and content that respects your time.
-              </p>
+              <p class="card-text">I’m not trying to look like an expert—I care about what actually works. Real experience, real lessons, and content that respects your time.</p>
             </article>
 
             <article class="mission-card">
               <div class="kicker">The Mission</div>
               <h3 class="card-title">Reality Over Hype</h3>
-              <p class="card-text">
-                No fluff. No fantasy. Just real-world thinking, useful skills, and gear that earns its place.
-              </p>
+              <p class="card-text">No fluff. No fantasy. Just real-world thinking, useful skills, and gear that earns its place.</p>
             </article>
           </div>
         </div>
@@ -907,599 +771,4 @@
     </div>
   </footer>
 </body>
-</html>      gap: 2px;
-    }
-
-    .brand-kicker {
-      color: var(--accent);
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .brand-title {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    .hero {
-      padding: 42px 0 22px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .hero-copy,
-    .hero-image {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .hero-copy {
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(34px, 6vw, 64px);
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-copy p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 62ch;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 6px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(180deg, var(--accent), var(--accent-2));
-      color: #120f09;
-      border-color: transparent;
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.03);
-      color: var(--text);
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-
-    .hero-image {
-      min-height: 100%;
-      position: relative;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 28%;
-      filter: saturate(0.9) contrast(1.03);
-    }
-
-    .hero-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.26));
-      pointer-events: none;
-    }
-
-    .section {
-      padding: 22px 0 12px;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-size: clamp(24px, 4vw, 38px);
-      text-transform: uppercase;
-      line-height: 1;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 52ch;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .video-card,
-    .gear-card,
-    .ebook-card,
-    .about-card,
-    .mission-card {
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .video-thumb {
-      aspect-ratio: 16 / 9;
-      background: #0d0f0d;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .video-thumb iframe,
-    .video-thumb .video-fallback {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .video-fallback {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 18px;
-      color: var(--muted);
-      font-weight: 700;
-      background: linear-gradient(135deg, #191b19, #101210);
-    }
-
-    .card-body {
-      padding: 16px 16px 18px;
-    }
-
-    .kicker {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .card-title {
-      margin: 0 0 8px;
-      font-size: 20px;
-      line-height: 1.15;
-    }
-
-    .card-text {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .card-link {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      border-bottom: 1px solid rgba(255,255,255,0.25);
-      padding-bottom: 2px;
-    }
-
-    .split-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-    }
-
-    .gear-list,
-    .ebook-list {
-      display: grid;
-      gap: 16px;
-    }
-
-    .gear-card,
-    .ebook-card,
-    .about-card,
-    .mission-card {
-      padding: 18px;
-    }
-
-    .gear-top,
-    .ebook-top {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .price-tag {
-      white-space: nowrap;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .disclaimer {
-      margin-top: 8px;
-      color: #968f7d;
-      font-size: 12px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 10px;
-    }
-
-    .footer {
-      padding: 30px 0 46px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer-inner {
-      border-top: 1px solid var(--border);
-      padding-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .split-grid,
-      .about-grid,
-      .video-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .nav-inner,
-      .section-head,
-      .footer-inner {
-        align-items: start;
-        flex-direction: column;
-      }
-
-      .hero-grid,
-      .split-grid,
-      .about-grid,
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy { padding: 24px; }
-      .brand-title { font-size: 24px; }
-      .nav-links { gap: 10px; }
-    }
-  </style>
-</head>
-<body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <span class="brand-kicker">Real-World Survival</span>
-        <span class="brand-title">Rough Grit</span>
-      </div>
-      <nav class="nav-links">
-        <a href="#videos">Videos</a>
-        <a href="#gear">Gear Picks</a>
-        <a href="#ebooks">eBooks</a>
-        <a href="#about">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">No fluff. No fantasy. No fake expert garbage.</div>
-          <h1>Videos First.<br />Gear That Earns Its Spot.</h1>
-          <p>
-            Rough Grit is built around real-world survival thinking, practical gear, and honest videos for people who are tired of polished nonsense. I’m Chris — a husband, father, reseller, builder, and a guy who’s spent plenty of time learning what actually works and what just looks good online. The mission here is simple: give people useful information, recommend gear I can stand behind, and keep the focus on reality over hype.
-          </p>
-          <p>
-            it.
-          </p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#videos">Watch the Videos</a>
-            <a class="btn btn-secondary" href="#gear">See the Gear Picks</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="PXL_20230102_190815922.PORTRAIT.jpg" alt="Chris leaning against a green classic car" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="videos">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Featured Content</div>
-            <h2>Watch First</h2>
-          </div>
-          <p>
-            
-          </p>
-        </div>
-
-        
-         <div class="video-grid">
-
-<div class="video-grid">
-
-  <article class="video-card">
-    <div class="video-thumb">
-      <iframe src="https://www.youtube.com/embed/8AHxExqrED4" title="YouTube video 9" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="card-body">
-      <div class="kicker">Video 09</div>
-      <h3 class="card-title">What I Carry Daily After 41 Years (No BS EDC Setup)</h3>
-      <p class="card-text">
-        After 41 years of everyday carry, you learn what actually matters… and what’s just extra weight.
-      </p>
-      <div class="card-actions">
-        <a class="card-link" href="https://www.youtube.com/watch?v=8AHxExqrED4" target="_blank" rel="noopener">Watch on YouTube</a>
-      </div>
-    </div>
-  </article>
-
-  <article class="video-card" style="border:1px solid rgba(255,140,0,0.25);box-shadow:0 0 12px rgba(255,140,0,0.2);transition:0.2s;">
-    <a href="https://www.titansurvival.com/GRITGEARHQ" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-      <div class="video-thumb">
-        <img src="https://www.titansurvival.com/cdn/shop/files/SurvivorCord_Orange_1200x.jpg" alt="SurvivorCord" style="width:100%;height:100%;object-fit:cover;">
-      </div>
-      <div class="card-body">
-        <div class="kicker" style="color:#ffaa00;">Featured Gear</div>
-        <h3 class="card-title">SurvivorCord (Not Just Paracord)</h3>
-        <p class="card-text">
-          Built-in fire starter, fishing line, and snare wire. One item that actually replaces multiple tools.
-        </p>
-        <div class="card-actions">
-          <span class="btn btn-secondary">20% Off Code: DT-KIBWDDYJ</span>
-        </div>
-      </div>
-    </a>
-  </article>
-
-</div>
-
-<!-- FEATURED SIDE-BY-SIDE VIDEOS (separate from grid) -->
-<div class="featured-row">
-
-  <article class="video-card">
-    <div class="video-thumb">
-      <iframe src="https://www.youtube.com/embed/lLm4y6oMjtY" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="card-body">
-      <div class="kicker">WW3 Prep</div>
-      <h3 class="card-title">Prep in a Small Apartment</h3>
-      <p class="card-text">
-        No space? Doesn’t matter. This is how you actually prepare when you’re limited.
-      </p>
-      <div class="card-actions">
-        <a class="card-link" href="https://youtu.be/lLm4y6oMjtY" target="_blank">Watch</a>
-      </div>
-    </div>
-  </article>
-
-  <article class="video-card">
-    <div class="video-thumb">
-      <iframe src="https://www.youtube.com/embed/0_RKbqRGw_k" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="card-body">
-      <div class="kicker">Survival Reality</div>
-      <h3 class="card-title">Would Your Location Save You?</h3>
-      <p class="card-text">
-        Some places give you a chance. Others don’t. Most people never think about it.
-      </p>
-      <div class="card-actions">
-        <a class="card-link" href="https://youtu.be/0_RKbqRGw_k" target="_blank">Watch</a>
-      </div>
-    </div>
-  </article>
-
-</div>
-</div>
-       
-    </section>
-
-   <section class="section" id="gear">
-  <div class="container split-grid">
-    <div>
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Secondary Revenue</div>
-          <h2>Books That Hit As Hard As The Videos</h2>
-
-          <div class="cta-row" style="margin-top:10px;">
-            <a class="btn btn-primary" href="/blog-index.html">Visit the Blog</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="gear-list">
-
-<article class="gear-card">
-  <div class="gear-top">
-    <div>
-      <div class="kicker">Book 01</div>
-      <h3 class="card-title">How To Unf*ck Your Life</h3>
-    </div>
-    <div class="price-tag">Amazon</div>
-  </div>
-
-  <div style="display:flex; gap:14px; align-items:flex-start; margin-bottom:10px;">
-    <img src="unfk.jfif" alt="How To Unf*ck Your Life Book Cover" style="width:90px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.4);" />
-    
-    <p class="card-text" style="margin:0;">
-      "Die as a Legend, Not as a Cautionary Tale." This one is about ownership, discipline, and getting your life under control without excuses.
-    </p>
-  </div>
-
-  <div class="card-actions">
-    <a class="btn btn-secondary" href="https://www.amazon.com/dp/B0F18V33XD" target="_blank" rel="noopener">
-      View on Amazon
-    </a>
-  </div>
-</article>
-
-       <article class="gear-card">
-  <div class="gear-top">
-    <div>
-      <div class="kicker">Book 02</div>
-      <h3 class="card-title">Cannabis Grower’s Planner</h3>
-    </div>
-    <div class="price-tag">Amazon</div>
-  </div>
-
-  <div style="display:flex; gap:14px; align-items:flex-start; margin-bottom:10px;">
-    <img src="groweer.png" alt="Cannabis Grower’s Planner Book Cover" style="width:90px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.4);" />
-    
-    <p class="card-text" style="margin:0;">
-      A detailed grow logbook for cultivators and hobbyists. Track your process, fix mistakes, and stop guessing your way through grows.
-    </p>
-  </div>
-
-  <div class="card-actions">
-    <a class="btn btn-secondary" href="https://www.amazon.com/dp/B0F4878FYL" target="_blank" rel="noopener">
-      View on Amazon
-    </a>
-  </div>
-</article>
-
-       <article class="gear-card">
-  <div class="gear-top">
-    <div>
-      <div class="kicker">Book 03</div>
-      <h3 class="card-title">Thought Crimes</h3>
-    </div>
-    <div class="price-tag">Amazon</div>
-  </div>
-
-  <div style="display:flex; gap:14px; align-items:flex-start; margin-bottom:10px;">
-    <img src="tcri.png" alt="Thought Crimes Book Cover" style="width:90px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.4);" />
-    
-    <p class="card-text" style="margin:0;">
-      A notebook for dangerous ideas. No filters, no guardrails—just a place to think clearly and write what most people won’t.
-    </p>
-  </div>
-
-  <div class="card-actions">
-    <a class="btn btn-secondary" href="https://www.amazon.com/dp/B0F4JWTDR1" target="_blank" rel="noopener">
-      View on Amazon
-    </a>
-  </div>
-</article>
-        <p class="disclaimer">Some links may earn a commission at no extra cost to you.</p>
-      </div>
-    </div>
-
-    <div id="about">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Who This Is For</div>
-          <h2>About the Mission</h2>
-        </div>
-        <p>
-          This site is for people who want useful survival-minded content, honest gear talk, and practical thinking without fake guru nonsense.
-        </p>
-      </div>
-
-      <div class="about-grid">
-        <article class="about-card">
-          <div class="kicker">Who I Am</div>
-          <h3 class="card-title">Built, Not Branded</h3>
-          <p class="card-text">
-            I’m not trying to look like an expert—I care about what actually works. Real experience, real lessons, and content that respects your time.
-          </p>
-        </article>
-
-     <article class="mission-card">
-  <div class="kicker">The Mission</div>
-  <h3 class="card-title">Reality Over Hype</h3>
-  <p class="card-text">
-    No fluff. No fantasy. Just real-world thinking, useful skills, and gear that earns its place.
-  </p>
-</article>
-      </div>
-    </div>
-  </div>
-</section>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
+</html>
